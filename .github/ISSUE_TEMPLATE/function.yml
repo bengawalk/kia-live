@@ -1,0 +1,61 @@
+name: Backend Function Request
+description: Request a new function or API implementation
+title: "[Function] <Function Name>"
+labels: ["backend", "api"]
+assignees: []
+
+body:
+  - type: markdown
+    attributes:
+      value: "### Backend Function Request"
+
+  - type: input
+    id: function-name
+    attributes:
+      label: "Function Name"
+      placeholder: "GTFS Route Search, Stop Name Lookup, etc."
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: "Function Purpose"
+      description: "Describe what this function should do and where it will be used."
+    validations:
+      required: true
+
+  - type: textarea
+    id: input-params
+    attributes:
+      label: "Input Parameters"
+      description: "List expected parameters (e.g., `route_id`, `stop_name`)."
+
+  - type: textarea
+    id: expected-output
+    attributes:
+      label: "Expected Output"
+      description: "Describe the return format (JSON, object, etc.)."
+
+  - type: textarea
+    id: logic
+    attributes:
+      label: "Function Logic"
+      description: "Provide a brief algorithm or flowchart."
+
+  - type: textarea
+    id: dependencies
+    attributes:
+      label: "Dependencies"
+      description: "List database tables, APIs, or external libraries needed."
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: "Priority Level"
+      options:
+        - "High"
+        - "Medium"
+        - "Low"
+    validations:
+      required: true
