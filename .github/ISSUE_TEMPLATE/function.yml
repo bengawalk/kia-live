@@ -1,4 +1,4 @@
-name: Backend Function Request
+name: Function Request
 description: Request a new function or API implementation
 title: "[Function] <Function Name>"
 labels: ["backend", "api"]
@@ -7,7 +7,7 @@ assignees: []
 body:
   - type: markdown
     attributes:
-      value: "### Backend Function Request"
+      value: "### Function Request"
 
   - type: input
     id: function-name
