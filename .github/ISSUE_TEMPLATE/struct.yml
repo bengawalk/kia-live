@@ -1,0 +1,80 @@
+name: Structure Definition
+description: Define a new structure or modify an existing one
+title: "[Structure] <Structure Name>"
+labels: ["structure", "data-model"]
+assignees: []
+
+body:
+  - type: markdown
+    attributes:
+      value: "### Structure Definition"
+
+  - type: input
+    id: structure-name
+    attributes:
+      label: "Structure Name"
+      placeholder: "Example: Route, Stop, UserProfile"
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: "Description"
+      description: "Explain what this structure is for and how it will be used."
+    validations:
+      required: true
+
+  - type: textarea
+    id: schema
+    attributes:
+      label: "Schema / Object Structure"
+      description: "Provide the structure with expected data types."
+      placeholder: |
+        {
+          "id": "string",
+          "name": "string",
+          "created_at": "timestamp"
+        }
+    validations:
+      required: true
+
+  - type: textarea
+    id: fields
+    attributes:
+      label: "Field Descriptions"
+      description: "Explain each field and its purpose."
+      placeholder: |
+        - `id` (string): Unique identifier.
+        - `name` (string): Name of the entity.
+        - `created_at` (timestamp): When it was created.
+
+  - type: textarea
+    id: relationships
+    attributes:
+      label: "Relationships"
+      description: "Does this structure relate to other structures?"
+      placeholder: "Example: Linked to `User` and `Route` structures."
+
+  - type: textarea
+    id: example
+    attributes:
+      label: "Example Data"
+      description: "Provide a sample JSON or object for reference."
+      placeholder: |
+        {
+          "id": "123",
+          "name": "Bus Stop A",
+          "created_at": "2024-03-07T12:00:00Z"
+        }
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: "Priority Level"
+      options:
+        - "High"
+        - "Medium"
+        - "Low"
+    validations:
+      required: true
