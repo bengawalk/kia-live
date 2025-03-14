@@ -1,0 +1,97 @@
+# This GitHub Actions workflow automates the deployment of a SvelteKit app (using a static adapter)
+# to GitHub Pages. It includes:
+# - Automatic deployment for `main` and `dev` branches
+# - Preview deployments for pull requests
+# - Toggle-able commit-based previews
+# - Workflow dispatch to manually trigger deployments with custom inputs
+# - Caching of dependencies to speed up builds
+
+name: Deploy SvelteKit to GitHub Pages
+
+on:
+  push:
+    # This section triggers the workflow when code is pushed to specific branches.
+    branches:
+      - main  # Deploy when pushing to the main branch (for production/demo)
+      - dev   # Deploy when pushing to the development branch
+    # Uncomment the section below to enable commit previews for all branches
+    #  - '**' # Enable commit previews for all branches
+
+  pull_request:
+    # This section triggers the workflow when a pull request is created or updated.
+    # Allows preview deployments for feature branches before merging.
+    branches:
+      - '**' # Deploy preview for PRs targeting any branch
+      # - main  # Deploy previews for PRs targeting `main`
+      # - dev   # Deploy previews for PRs targeting `dev`
+      # - 'feature/**' # Deploy previews for PRs targeting a feature
+
+  workflow_dispatch:
+    # Enables manual triggering of this workflow with user-defined inputs.
+    # Useful for deploying specific branches or enabling/disabling commit previews dynamically.
+    inputs:
+      deploy_branch:
+        description: "Branch to deploy"
+        required: false
+        default: "main"
+        type: string
+
+# Permissions required for GitHub Actions to interact with GitHub Pages
+permissions:
+  contents: read  # Read repository contents
+  pages: write  # Write to GitHub Pages
+  id-token: write  # Required for authentication
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest  # Specifies the operating system for the runner
+
+    steps:
+      - name: Checkout repository
+        # Checks out the repository so the workflow has access to the code
+        uses: actions/checkout@v4
+
+      - name: Cache Yarn dependencies
+        # Caches Yarn dependencies to speed up subsequent builds
+        # The cache key is based on the contents of `yarn.lock`
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.yarn  # Yarn global cache
+            .yarn/cache  # Cached packages
+            node_modules  # Installed dependencies
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+
+      - name: Install dependencies (Yarn)
+        # Installs project dependencies using Yarn, ensuring they match `yarn.lock`
+        run: yarn install --frozen-lockfile
+
+      - name: Build SvelteKit app
+        # Builds the static site using SvelteKit
+        # Determines the BASE_PATH dynamically based on the branch name
+        run: |
+          export BASE_PATH="${{ github.ref_name == 'main' && '' || format('/{0}', github.ref_name) }}"
+          yarn build
+
+      - name: Deploy to GitHub Pages
+        # Uploads the built site as an artifact for GitHub Pages deployment
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: build  # Path to the build output directory
+
+  publish:
+    needs: deploy  # Ensures deployment completes before publishing
+    runs-on: ubuntu-latest
+
+    # Deployment condition:
+    # - Deploy when pushing to `main`
+    # - Allow manual deployment of a selected branch via workflow dispatch
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main' ||
+      (github.event_name == 'workflow_dispatch' && github.event.inputs.deploy_branch != '')
+
+    steps:
+      - name: Deploy to GitHub Pages
+        # Publishes the site to GitHub Pages
+        uses: actions/deploy-pages@v4
