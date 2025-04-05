@@ -1,8 +1,14 @@
 import type { LayerSpecification } from 'mapbox-gl';
+import mapLocationUser from '../assets/map-location-user.svg?raw';
+import mapLocationInput from '../assets/map-location-input.svg?raw';
+import mapBus from '../assets/map-bus.svg?raw';
+import mapStop from '../assets/map-stop.svg?raw';
+
+// type definitions used ONLY in this file
 
 type ElementMapStyle = {
 	type: 1;
-	html: HTMLElement;
+	html: () => HTMLElement;
 }
 type LayerMapStyle = {
 	type: 0;
@@ -10,6 +16,30 @@ type LayerMapStyle = {
 }
 
 type MapStyle = ElementMapStyle | LayerMapStyle;
+
+
+// helper functions used ONLY in this file
+
+function createMarkerElement(elementKey: keyof typeof MAP_STYLES): HTMLElement {
+	if(MAP_STYLES[elementKey].type === 0) {
+		throw Error;
+	}
+
+	const element = document.createElement('div');
+	element.innerHTML = SVG_ICONS[elementKey];
+	return element;
+}
+
+// constants
+
+const SVG_ICONS: Record<keyof typeof MAP_STYLES, string> = {
+	"USER_LOCATION": mapLocationUser,
+	"USER_LOCATION_INACTIVE": mapLocationUser,
+	"INPUT_LOCATION": mapLocationInput,
+	"BUS": mapBus,
+	"BUS_STOP": mapStop,
+}
+
 export const MAP_STYLES: Record<string, MapStyle> = {
 	"BLACK_LINE": {
 		"type": 0,
@@ -128,21 +158,23 @@ export const MAP_STYLES: Record<string, MapStyle> = {
 		}
 	},
 	"USER_LOCATION": {
-		"type": 1
+		"type": 1,
+		"html": () => createMarkerElement("USER_LOCATION")
 	},
 	"USER_LOCATION_INACTIVE": {
-		"type": 1
+		"type": 1,
+		"html": () => createMarkerElement("USER_LOCATION_INACTIVE")
 	},
 	"INPUT_LOCATION": {
-		"type": 1
+		"type": 1,
+		"html": () => createMarkerElement("INPUT_LOCATION")
 	},
 	"BUS_STOP": {
-		"type": 1
+		"type": 1,
+		"html": () => createMarkerElement("BUS_STOP")
 	},
 	"BUS": {
-		"type": 1
-	},
-	"ROUTE_LABEL": {
-		"type": 1
+		"type": 1,
+		"html": () => createMarkerElement("BUS")
 	},
 }
