@@ -6,13 +6,14 @@
 
 	let mapContainer: HTMLElement | string;
 	let map: mapboxgl.Map;
+
 	onMount(() => {
 		mapboxgl.accessToken = import.meta.env.VITE_MAPBOX_ACCESS_TOKEN;
 		map = new mapboxgl.Map({
 			container: mapContainer,
 			style: 'mapbox://styles/mapbox/light-v11',
-			center: [0, 0], // Default to center of the world
-			zoom: 2, // Default zoom level
+			center: [77.6, 13.02], // Default to Bengaluru
+			zoom: 10.9, // Default zoom level
 			dragRotate: false, // Disable rotation
 			touchZoomRotate: false
 		});
