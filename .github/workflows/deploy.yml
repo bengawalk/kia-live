@@ -44,6 +44,8 @@ permissions:
 
 jobs:
   deploy:
+    env: # Add the github env secret as an env variable
+      VITE_MAPBOX_ACCESS_TOKEN: ${{ secrets.VITE_MAPBOX_ACCESS_TOKEN }}
     runs-on: ubuntu-latest  # Specifies the operating system for the runner
 
     steps:
