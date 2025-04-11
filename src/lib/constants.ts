@@ -18,7 +18,7 @@ type LayerMapStyle = {
 type MapStyle = ElementMapStyle | LayerMapStyle;
 
 
-// helper functions used ONLY in this file
+// helper services used ONLY in this file
 
 function createMarkerElement(elementKey: keyof typeof MAP_STYLES): HTMLElement {
 	if(MAP_STYLES[elementKey].type === 0) {
@@ -38,6 +38,45 @@ const SVG_ICONS: Record<keyof typeof MAP_STYLES, string> = {
 	"INPUT_LOCATION": mapLocationInput,
 	"BUS": mapBus,
 	"BUS_STOP": mapStop,
+}
+
+export const LINE_LABEL_STYLE: LayerSpecification = {
+	type: "symbol",
+	id: "",
+	source: "",
+	layout: {
+		'symbol-placement': 'line-center',
+		'text-field': ['get', 'label'],
+		'text-rotation-alignment': 'viewport',
+	}
+}
+
+export const LINE_COLLISION_STYLE: LayerSpecification = {
+	id: '',
+	type: 'symbol',
+	source: '',
+	layout: {
+		'text-field': ['get', 'label'],
+		'text-size': 10, // tweak for desired collision radius
+		'text-allow-overlap': true,
+		'symbol-placement': 'point'
+	},
+	paint: {
+		'text-color': 'rgba(0, 0, 0, 0)' // fully transparent
+	}
+}
+
+export const POINT_LABEL_STYLE: LayerSpecification = {
+	type: "symbol",
+	id: "",
+	source: "",
+	layout: {
+		'text-field': ['get', 'label'],
+		'text-variable-anchor': ['left', 'top'],
+		'text-radial-offset': 0.85,
+		'text-justify': 'auto',
+		'text-allow-overlap': true,
+	}
 }
 
 export const MAP_STYLES: Record<string, MapStyle> = {
