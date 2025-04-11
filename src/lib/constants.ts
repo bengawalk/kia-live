@@ -1,8 +1,8 @@
 import type { LayerSpecification } from 'mapbox-gl';
-import mapLocationUser from '../assets/map-location-user.svg?raw';
-import mapLocationInput from '../assets/map-location-input.svg?raw';
-import mapBus from '../assets/map-bus.svg?raw';
-import mapStop from '../assets/map-stop.svg?raw';
+import mapLocationUser from '$assets/map-location-user.svg?raw';
+import mapLocationInput from '$assets/map-location-input.svg?raw';
+import mapBus from '$assets/map-bus.svg?raw';
+import mapStop from '$assets/map-stop.svg?raw';
 
 // type definitions used ONLY in this file
 
