@@ -48,6 +48,14 @@ export const LINE_LABEL_STYLE: LayerSpecification = {
 		'symbol-placement': 'line-center',
 		'text-field': ['get', 'label'],
 		'text-rotation-alignment': 'viewport',
+		'icon-text-fit': 'both',
+		'icon-rotation-alignment': 'viewport',
+		'icon-image': ['get', 'image'],
+		'icon-allow-overlap': true,
+		'text-allow-overlap': true,
+	},
+	paint: {
+		'text-color': '#FFFFFF',
 	}
 }
 

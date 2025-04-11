@@ -1,5 +1,6 @@
 import { LINE_COLLISION_STYLE, LINE_LABEL_STYLE, MAP_STYLES, POINT_LABEL_STYLE } from '$lib/constants';
 import mapboxgl, { type LayerSpecification } from 'mapbox-gl';
+import mapLineLabelImage from '$assets/map-line-label.png';
 
 let map: mapboxgl.Map | undefined;
 
@@ -12,6 +13,15 @@ export function loadMap(mapContainer: HTMLElement | string): mapboxgl.Map {
 		zoom: 10.9, // Default zoom level
 		dragRotate: false, // Disable rotation
 		touchZoomRotate: false
+	});
+	map.loadImage(mapLineLabelImage, (error, image) => {
+		if(error) throw error;
+		if(!image) return;
+		map!.addImage('LINE_LABEL', image, {
+			content: [4, 4, 80, 30],
+			stretchX: [[4, 80]],
+			stretchY: [[4, 30]],
+		});
 	});
 	return map;
 }
@@ -26,6 +36,7 @@ export function unloadMap() {
 // Collision layer functions
 const pendingCollisionLayers: LayerSpecification[] = []; // pending layers to apply to map
 const activeCollisionLayers: LayerSpecification[] = []; // collision layers active on map
+// Add pending collision layers to the top of the layer stack
 export function renderPendingCollisions() {
 	if(!map) return;
 	pendingCollisionLayers.forEach((val: LayerSpecification, i) => {
@@ -34,7 +45,7 @@ export function renderPendingCollisions() {
 		delete pendingCollisionLayers[i];
 	});
 }
-
+// Remove all existing collision layers (to re-add on top, or remove leftover ghost layers)
 export function removeRenderedCollisions() {
 	if(!map) return;
 	activeCollisionLayers.forEach((val: LayerSpecification, i) => {
@@ -43,6 +54,7 @@ export function removeRenderedCollisions() {
 	});
 }
 
+// Helper internal function (collision layer points)
 function samplePointsAlongLineCollection(lineFeatureCollection: GeoJSON.FeatureCollection, spacingMeters = 25): GeoJSON.FeatureCollection {
 	function haversineDistance(coord1: GeoJSON.Position, coord2: GeoJSON.Position) {
 		const toRad = (deg: number) => (deg * Math.PI) / 180;
@@ -102,6 +114,7 @@ function samplePointsAlongLineCollection(lineFeatureCollection: GeoJSON.FeatureC
 }
 
 // GeoJSON Layer functions
+// Update / Remove a GeoJSON Layer
 export function updateLayer(
 	layerType: keyof typeof MAP_STYLES,
 	source: mapboxgl.GeoJSONSourceSpecification | null | undefined
@@ -131,6 +144,7 @@ export function updateLayer(
 	}
 	if(MAP_STYLES[layerType].specification.type === 'line'){
 		const collisionPoints: GeoJSON.FeatureCollection = samplePointsAlongLineCollection(source.data! as GeoJSON.FeatureCollection, 5)
+		// If source exists, update collision data; otherwise add source
 		if(collisionSource){
 			collisionSource.setData(collisionPoints);
 		} else {
@@ -153,6 +167,9 @@ export function updateLayer(
 	// If layer does not exist, add it
 	if (!layerExists) {
 		map.addLayer(MAP_STYLES[layerType].specification);
+	}
+	// If the symbol layer (labels) does not exist, add it
+	if (!layerSymbols) {
 		const symbolLayer =
 			MAP_STYLES[layerType].specification.type === 'line' ? LINE_LABEL_STYLE : POINT_LABEL_STYLE;
 		symbolLayer.id = symbolID;
@@ -179,13 +196,15 @@ export function updateMarker(
 	const symbolXID = `symbolx_${layerType}`;
 	const symbolZID = `symbolz_${layerType}`;
 	const mapSource = map.getSource(layerType) as mapboxgl.GeoJSONSource | undefined;
-	const markerExists = layerType in Object.keys(markers);
+	const markerExists = layerType in markers;
 	const hasValidCoords = (lat != undefined && lon != undefined);
 	const layerSymbolX = map.getLayer(symbolXID) !== undefined;
 	const layerSymbolZ = map.getLayer(symbolZID) !== undefined;
-
 	if(!hasValidCoords) {
-		if(markerExists) delete markers[layerType];
+		if(markerExists) {
+			markers[layerType].remove();
+			delete markers[layerType];
+		}
 		if(layerSymbolX) map.removeLayer(symbolXID);
 		if(layerSymbolZ) map.removeLayer(symbolZID);
 		if(mapSource) map.removeSource(layerType);
