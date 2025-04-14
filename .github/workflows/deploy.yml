@@ -44,6 +44,9 @@ permissions:
 
 jobs:
   deploy:
+    env: # Add the github env secret as an env variable
+      VITE_MAPBOX_ACCESS_TOKEN: ${{ secrets.VITE_MAPBOX_ACCESS_TOKEN }}
+      TEST_KEY: ${{ secrets.TEST_KEY }}
     runs-on: ubuntu-latest  # Specifies the operating system for the runner
 
     steps:
@@ -51,15 +54,17 @@ jobs:
         # Checks out the repository so the workflow has access to the code
         uses: actions/checkout@v4
 
-      - name: Cache Yarn dependencies
-        # Caches Yarn dependencies to speed up subsequent builds
-        # The cache key is based on the contents of `yarn.lock`
+
+      - name: Retrieve Yarn Cache Path
+        id: yarn-cache-dir-path
+        # Save the cache path
+        run: echo "::set-output name=dir::$(yarn cache dir)"
+
+      - name: Yarn Cache Packages
         uses: actions/cache@v4
+        id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
         with:
-          path: |
-            ~/.yarn  # Yarn global cache
-            .yarn/cache  # Cached packages
-            node_modules  # Installed dependencies
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
           key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
             ${{ runner.os }}-yarn-
@@ -72,6 +77,7 @@ jobs:
         # Builds the static site using SvelteKit
         # Determines the BASE_PATH dynamically based on the branch name
         run: |
+          echo "$TEST_KEY"
           export BASE_PATH="${{ github.ref_name == 'main' && '' || format('/{0}', github.ref_name) }}"
           yarn build
 

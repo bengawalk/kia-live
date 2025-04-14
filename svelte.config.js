@@ -18,6 +18,7 @@ const config = {
 			entries: ['*']
 		},
 		alias: {
+			$assets: './src/assets',
 			$components: './src/components',
 			$lang: './project.inlang'
 		}

@@ -1,26 +1,19 @@
 <script lang="ts">
 	import { onMount, onDestroy } from 'svelte';
-	import mapboxgl from 'mapbox-gl';
+	// import mapboxgl from 'mapbox-gl';
 	// import LanguageSwitcher from "$components/LanguageSwitcher.svelte";
 	import { messages } from '$lib/stores/language';
+	import { loadMap, unloadMap } from '$lib/services/map';
 
 	let mapContainer: HTMLElement | string;
-	let map: mapboxgl.Map;
+	// let map: mapboxgl.Map | undefined;
+
 	onMount(() => {
-		mapboxgl.accessToken = import.meta.env.VITE_MAPBOX_ACCESS_TOKEN;
-		map = new mapboxgl.Map({
-			container: mapContainer,
-			style: 'mapbox://styles/mapbox/light-v11',
-			center: [0, 0], // Default to center of the world
-			zoom: 2, // Default zoom level
-			dragRotate: false, // Disable rotation
-			touchZoomRotate: false
-		});
+		// map =
+			loadMap(mapContainer);
 	});
 	onDestroy(() => {
-		if(map != undefined){ // svelte will throw errors without this
-			map.remove();
-		}
+		unloadMap();
 	});
 </script>
 
