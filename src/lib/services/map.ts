@@ -12,8 +12,11 @@ export function loadMap(mapContainer: HTMLElement | string): mapboxgl.Map {
 		center: [77.6, 13.02], // Default to Bengaluru
 		zoom: 10.9, // Default zoom level
 		dragRotate: false, // Disable rotation
-		touchZoomRotate: false
+		touchZoomRotate: false,
+		attributionControl: false,
+		logoPosition: "top-right",
 	});
+	map.addControl(new mapboxgl.AttributionControl(), 'top-left');
 	map.loadImage(mapLineLabelImage, (error, image) => {
 		if(error) throw error;
 		if(!image) return;

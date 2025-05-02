@@ -1,4 +1,4 @@
-export type     Stop = {
+export type Stop = {
     stop_id: string;
     stop_name: {
         [lang_key: string]: string;

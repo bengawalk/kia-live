@@ -1,0 +1,76 @@
+<script lang="ts">
+	import { onMount } from 'svelte';
+	import { bottomSheetY, isMobile, sidebarWidth, selected } from '$lib/stores/infoView';
+
+	let dragStartY = 0;
+	let currentY = 0;
+	let heightRatio = 2 / 3;
+
+	function handleResize() {
+		isMobile.set(window.innerWidth < 800);
+	}
+
+	onMount(() => {
+		bottomSheetY.set(window.innerHeight * heightRatio);
+		handleResize();
+		window.addEventListener('resize', handleResize);
+		return () => window.removeEventListener('resize', handleResize);
+	});
+
+	function startDrag(e: TouchEvent | MouseEvent) {
+		dragStartY = (e as TouchEvent).touches?.[0]?.clientY ?? (e as MouseEvent).clientY;
+		document.addEventListener('touchmove', drag, { passive: false });
+		document.addEventListener('touchend', endDrag);
+		document.addEventListener('mousemove', drag);
+		document.addEventListener('mouseup', endDrag);
+	}
+
+	function drag(e: TouchEvent | MouseEvent) {
+		e.preventDefault();
+		currentY = (e as TouchEvent).touches?.[0]?.clientY ?? (e as MouseEvent).clientY;
+		const delta = currentY - dragStartY;
+		const screenHeight = window.innerHeight;
+		bottomSheetY.set(Math.min(screenHeight * 2 / 3, Math.max(screenHeight / 3, screenHeight * heightRatio + delta)));
+	}
+
+	function endDrag() {
+		const screenHeight = window.innerHeight;
+		const midpoint = (screenHeight / 3 + screenHeight * 2 / 3) / 2;
+		heightRatio = $bottomSheetY > midpoint ? 2 / 3 : 1 / 3;
+		bottomSheetY.set(screenHeight * heightRatio);
+
+		document.removeEventListener('touchmove', drag);
+		document.removeEventListener('touchend', endDrag);
+		document.removeEventListener('mousemove', drag);
+		document.removeEventListener('mouseup', endDrag);
+	}
+</script>
+
+{#if $selected !== undefined}
+	{#if $isMobile}
+		<!-- Bottom Sheet Mode -->
+		<div
+			class="fixed bottom-0 w-full bg-black text-white px-6 py-8 transition-transform duration-300 z-40"
+			style="
+				height: calc(100vh - {$bottomSheetY}px);
+				touch-action: none;
+			"
+			role="dialog"
+			aria-hidden=true
+			on:touchstart={startDrag}
+			on:mousedown={startDrag}
+		>
+
+		</div>
+	{:else}
+		<!-- Sidebar Mode -->
+		<div class="fixed left-0 top-0 h-full w-[{$sidebarWidth}px] bg-black text-white px-6 py-8 shadow-lg z-40 overflow-y-auto">
+			{#if Object.hasOwn($selected, 'stop_id')} <!-- Selected is a stop -->
+				<p>Selected is a stop, replace this with StopInfo component</p>
+			{/if}
+			{#if Object.hasOwn($selected, 'trip_id')} <!-- Selected is a trip -->
+				<p>Selected is a trip, replace this with TripInfo component</p>
+			{/if}
+		</div>
+	{/if}
+{/if}
