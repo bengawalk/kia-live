@@ -8,12 +8,24 @@ import ts from 'typescript-eslint';
 const gitignorePath = fileURLToPath(new URL("./.gitignore", import.meta.url));
 
 export default ts.config(
+
   includeIgnoreFile(gitignorePath),
   js.configs.recommended,
   ...ts.configs.recommended,
   ...svelte.configs["flat/recommended"],
   prettier,
   ...svelte.configs['flat/prettier'],
+	{
+		rules: {
+			'@typescript-eslint/no-unused-vars': [
+				'error',
+				{
+					argsIgnorePattern: '^_',
+					varsIgnorePattern: '^_'
+				}
+			]
+		}
+	},
   {
     languageOptions: {
 	  globals: {
@@ -26,9 +38,9 @@ export default ts.config(
     files: ["**/*.svelte"],
 
     languageOptions: {
-	  parserOptions: {
-	    parser: ts.parser
-	  }
-	}
+	  	parserOptions: {
+	    	parser: ts.parser
+	  	}
+		}
   }
 );

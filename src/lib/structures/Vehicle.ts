@@ -8,5 +8,5 @@ export type Vehicle = {
     bearing: number;
     speed: number;
     next_stop_id: string;
-    timestamp: string; // or Date if you're parsing it into a Date object
+    timestamp: Date; // or Date if you're parsing it into a Date object
 };  

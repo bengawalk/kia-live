@@ -1,9 +1,11 @@
 import { LINE_COLLISION_STYLE, LINE_LABEL_STYLE, MAP_STYLES, POINT_LABEL_STYLE } from '$lib/constants';
 import mapboxgl, { type LayerSpecification } from 'mapbox-gl';
 import mapLineLabelImage from '$assets/map-line-label.png';
+import { pollUserLocation } from '$lib/services/location';
+import { handleTap, loadSampleData } from '$lib/services/discovery';
 
 let map: mapboxgl.Map | undefined;
-
+export type NavMode = 'walking' | 'driving-traffic' | 'cycling' | 'driving'
 export function loadMap(mapContainer: HTMLElement | string): mapboxgl.Map {
 	mapboxgl.accessToken = import.meta.env.VITE_MAPBOX_ACCESS_TOKEN;
 	map = new mapboxgl.Map({
@@ -26,6 +28,16 @@ export function loadMap(mapContainer: HTMLElement | string): mapboxgl.Map {
 			stretchY: [[4, 30]],
 		});
 	});
+	// map.showLayers2DWireframe = true;
+	// map.showCollisionBoxes = true;
+	map.on(
+		'load', () => {
+			map?.on('click', handleTap);
+			pollUserLocation();
+			loadSampleData();
+			// map?.on('mouseup', handleTap);
+		}
+	);
 	return map;
 }
 
@@ -44,7 +56,7 @@ export function renderPendingCollisions() {
 	if(!map) return;
 	pendingCollisionLayers.forEach((val: LayerSpecification, i) => {
 		if(!map!.getLayer(val.id)) map!.addLayer(val);
-		pendingCollisionLayers.push(val);
+		activeCollisionLayers.push(val);
 		delete pendingCollisionLayers[i];
 	});
 }
@@ -58,7 +70,7 @@ export function removeRenderedCollisions() {
 }
 
 // Helper internal function (collision layer points)
-function samplePointsAlongLineCollection(lineFeatureCollection: GeoJSON.FeatureCollection, spacingMeters = 25): GeoJSON.FeatureCollection {
+function samplePointsAlongLineCollection(lineFeatureCollection: GeoJSON.FeatureCollection, spacingMeters = 50): GeoJSON.FeatureCollection {
 	function haversineDistance(coord1: GeoJSON.Position, coord2: GeoJSON.Position) {
 		const toRad = (deg: number) => (deg * Math.PI) / 180;
 		const R = 6371000;
@@ -120,7 +132,7 @@ function samplePointsAlongLineCollection(lineFeatureCollection: GeoJSON.FeatureC
 // Update / Remove a GeoJSON Layer
 export function updateLayer(
 	layerType: keyof typeof MAP_STYLES,
-	source: mapboxgl.GeoJSONSourceSpecification | null | undefined
+	source: mapboxgl.GeoJSONSourceSpecification | undefined
 ): void {
 	if(!map) {
 		return;
@@ -176,9 +188,12 @@ export function updateLayer(
 		const symbolLayer =
 			MAP_STYLES[layerType].specification.type === 'line' ? LINE_LABEL_STYLE : POINT_LABEL_STYLE;
 		symbolLayer.id = symbolID;
+		symbolLayer.paint = {"text-color": layerType.includes("GRAY") ? "#999999" : "#000000"};
 		symbolLayer.source = layerType;
 		map.addLayer(symbolLayer);
 	}
+	map.moveLayer(layerType);
+	map.moveLayer(symbolID);
 }
 
 
@@ -189,6 +204,7 @@ export function updateMarker(
 	labels: [string | undefined, string | undefined],
 	lat: number | undefined,
 	lon: number | undefined,
+	handleTap: null | (() => void) = null
 ): void {
 	if(!map) {
 		return;
@@ -244,9 +260,11 @@ export function updateMarker(
 			draggable: false,
 		}).setLngLat({lat: lat, lon: lon}).addTo(map);
 	}
+	markers[layerType].getElement().onclick = handleTap;
 	if(!layerSymbolX) {
 		const styleLayer = {...POINT_LABEL_STYLE};
 		styleLayer.id = symbolXID;
+		styleLayer.paint = {"text-color": layerType.includes("INACTIVE") ? "#999999" : "#000000"};
 		styleLayer.source = layerType;
 		styleLayer.layout = {
 			'text-field': ['get', 'labelX'],
@@ -260,9 +278,11 @@ export function updateMarker(
 	if(!layerSymbolZ) {
 		const styleLayer = {...POINT_LABEL_STYLE};
 		styleLayer.id = symbolZID;
+		styleLayer.paint = {"text-color": layerType.includes("INACTIVE") ? "#999999" : "#000000"};
 		styleLayer.source = layerType;
 		styleLayer.layout = {
 			'text-field': ['get', 'labelZ'],
+			// 'text-font': ['IBM Plex Sans'],
 			'text-variable-anchor': ['bottom', 'right'],
 			'text-radial-offset': 1.0,
 			'text-justify': 'auto',
@@ -270,4 +290,49 @@ export function updateMarker(
 		};
 		map.addLayer(styleLayer);
 	}
+}
+
+function getCacheKey(from: [number, number], to: [number, number], mode: string) {
+	return `nav_${mode}_${from.join(',')}_${to.join(',')}`;
+}
+
+export async function getTravelRouteWithLocalStorage(from: [number, number], to: [number, number], mode: NavMode='walking') {
+	const key = getCacheKey(from, to, mode);
+	const cached = localStorage.getItem(key);
+
+	if (cached) return JSON.parse(cached);
+
+	const url = `https://api.mapbox.com/directions/v5/mapbox/${mode}/${from.join(',')};${to.join(',')}?geometries=geojson&access_token=${mapboxgl.accessToken}`;
+
+	const response = await fetch(url);
+	const data = await response.json();
+	localStorage.setItem(key, JSON.stringify(data)); // cache result
+	return data;
+}
+
+export function fitMapToPoints(coordinates: [number, number][], padding = 180) {
+	if (coordinates.length === 0) return;
+	if (map === undefined) return;
+
+	let minLng = coordinates[0][0], maxLng = coordinates[0][0];
+	let minLat = coordinates[0][1], maxLat = coordinates[0][1];
+
+	for (const [lng, lat] of coordinates) {
+		if (lng < minLng) minLng = lng;
+		if (lng > maxLng) maxLng = lng;
+		if (lat < minLat) minLat = lat;
+		if (lat > maxLat) maxLat = lat;
+	}
+
+	map.fitBounds(
+		[
+			[minLng, minLat],
+			[maxLng, maxLat]
+		],
+		{
+			padding,
+			duration: 1000,
+			maxZoom: 16
+		}
+	);
 }
