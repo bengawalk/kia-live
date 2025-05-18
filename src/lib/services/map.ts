@@ -2,7 +2,7 @@ import { LINE_COLLISION_STYLE, LINE_LABEL_STYLE, MAP_STYLES, POINT_LABEL_STYLE }
 import mapboxgl, { type LayerSpecification } from 'mapbox-gl';
 import mapLineLabelImage from '$assets/map-line-label.png';
 import { pollUserLocation } from '$lib/services/location';
-import { handleTap, loadSampleData } from '$lib/services/discovery';
+import { handleTap } from '$lib/services/discovery';
 
 let map: mapboxgl.Map | undefined;
 export type NavMode = 'walking' | 'driving-traffic' | 'cycling' | 'driving'
@@ -10,7 +10,7 @@ export function loadMap(mapContainer: HTMLElement | string): mapboxgl.Map {
 	mapboxgl.accessToken = import.meta.env.VITE_MAPBOX_ACCESS_TOKEN;
 	map = new mapboxgl.Map({
 		container: mapContainer,
-		style: 'mapbox://styles/mapbox/light-v11',
+		style: 'mapbox://styles/aayushrai/cmaq8dtyu01nh01sk3havblmv', // KIA-Live style containing required fonts
 		center: [77.6, 13.02], // Default to Bengaluru
 		zoom: 10.9, // Default zoom level
 		dragRotate: false, // Disable rotation
@@ -34,7 +34,6 @@ export function loadMap(mapContainer: HTMLElement | string): mapboxgl.Map {
 		'load', () => {
 			map?.on('click', handleTap);
 			pollUserLocation();
-			loadSampleData();
 			// map?.on('mouseup', handleTap);
 		}
 	);
@@ -255,8 +254,8 @@ export function updateMarker(
 	} else {
 		markers[layerType] = new mapboxgl.Marker({
 			element: MAP_STYLES[layerType].html(),
-			anchor: "center",
-			offset: [0, 2.5],
+			anchor: layerType.includes("INPUT_LOCATION") ? "bottom" : "center",
+			offset: [0, layerType.includes("INPUT_LOCATION") ? 0 : 2.5],
 			draggable: false,
 		}).setLngLat({lat: lat, lon: lon}).addTo(map);
 	}
@@ -268,6 +267,7 @@ export function updateMarker(
 		styleLayer.source = layerType;
 		styleLayer.layout = {
 			'text-field': ['get', 'labelX'],
+			'text-font': ['IBM Plex Sans Regular'],
 			'text-variable-anchor': ['top', 'left'],
 			'text-radial-offset': 1.0,
 			'text-justify': 'auto',
@@ -310,7 +310,7 @@ export async function getTravelRouteWithLocalStorage(from: [number, number], to:
 	return data;
 }
 
-export function fitMapToPoints(coordinates: [number, number][], padding = 180) {
+export function fitMapToPoints(coordinates: [number, number][], padding = 80) {
 	if (coordinates.length === 0) return;
 	if (map === undefined) return;
 

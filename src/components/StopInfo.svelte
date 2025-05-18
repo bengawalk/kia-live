@@ -6,10 +6,11 @@
 	import { liveTransitFeed, transitFeedStore } from '$lib/stores/transitFeedStore';
 	import StopTripEntry from '$components/StopTripEntry.svelte';
 	import infoStop from '$assets/info-stop.svg?raw';
+	import { scrollableElement } from '$lib/stores/infoView';
 
 	export let stop: Stop;
 
-	const routes = $transitFeedStore.routes.filter(value => value.stops.includes(stop));
+	const routes = $transitFeedStore.routes.filter(value => value.stops.includes(stop) /* && value.stops[value.stops.length - 1] !== stop */); // Uncomment to remove terminating routes
 	const routeIds = routes.map(route => route.route_id);
 	const staticTrips = routes.flatMap(value => value.trips);
 	const liveTrips = $liveTransitFeed ? $liveTransitFeed.trips.filter(value => routeIds.includes(value.route_id)) : [];
@@ -39,8 +40,13 @@
 		<div class="text-right">Departure</div>
 		<div class="text-right">ETA</div>
 	</div>
+	<div class="overflow-y-scroll scrollbar-hide"
+			 style="
+	height: calc(100vh - {((window.innerHeight / 3) / 2) + 250}px);
+	" bind:this={$scrollableElement}>
 	<!-- Trips -->
 	{#each allTrips as e}
 		<StopTripEntry trip={e} selectedStop={stop.stop_id} />
 	{/each}
+	</div>
 </section>

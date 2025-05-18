@@ -20,7 +20,7 @@ type MapStyle = ElementMapStyle | LayerMapStyle;
 // helper services used ONLY in this file
 function createMarkerElement(
 	elementKey: keyof typeof MAP_STYLES,
-	highlight: boolean = true
+	highlight: boolean = true,
 ): HTMLElement {
 	if (MAP_STYLES[elementKey].type === 0) {
 		throw Error;
@@ -47,7 +47,7 @@ const SVG_ICONS: Record<keyof typeof MAP_STYLES, string> = {
 
 export const AIRPORT_LOCATION: number[] = [13.199110535079635, 77.70822021568426];
 
-export const DEFAULT_LOCATION: number[] = [12, 77];
+export const DEFAULT_LOCATION: number[] = [12.977769, 77.572762];
 
 export const LINE_LABEL_STYLE: LayerSpecification = {
 	type: 'symbol',
@@ -56,6 +56,7 @@ export const LINE_LABEL_STYLE: LayerSpecification = {
 	layout: {
 		'symbol-placement': 'line-center',
 		'text-field': ['get', 'label'],
+		'text-font': ['IBM Plex Sans Regular'],
 		'text-rotation-alignment': 'viewport',
 		'icon-text-fit': 'both',
 		'icon-rotation-alignment': 'viewport',
@@ -74,7 +75,7 @@ export const LINE_COLLISION_STYLE: LayerSpecification = {
 	source: '',
 	layout: {
 		'text-field': ['get', 'label'],
-		'text-size': 10, // tweak for desired collision radius
+		'text-size': 12, // tweak for desired collision radius
 		'text-allow-overlap': true,
 		'symbol-placement': 'point'
 	},
@@ -89,6 +90,7 @@ export const POINT_LABEL_STYLE: LayerSpecification = {
 	source: '',
 	layout: {
 		'text-field': ['get', 'label'],
+		'text-font': ['IBM Plex Sans Regular'],
 		'text-variable-anchor': ['left', 'top'],
 		'text-radial-offset': 0.85,
 		'text-justify': 'auto',

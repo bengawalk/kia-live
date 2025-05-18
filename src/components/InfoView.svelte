@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { Stop } from '$lib/structures/Stop';
 	import { onMount } from 'svelte';
-	import { infoViewY, isMobile, infoViewWidth } from '$lib/stores/infoView';
+	import { infoViewY, isMobile, infoViewWidth, scrollableElement } from '$lib/stores/infoView';
 	import { selected } from '$lib/stores/discovery';
 	import StopInfo from '$components/StopInfo.svelte';
 	import type { Trip } from '$lib/structures/Trip';
@@ -24,7 +24,13 @@
 	});
 
 	function startDrag(e: TouchEvent | MouseEvent) {
-		dragStartY = (e as TouchEvent).touches?.[0]?.clientY ?? (e as MouseEvent).clientY;
+		const y = (e as TouchEvent).touches?.[0]?.clientY ?? (e as MouseEvent).clientY;
+		const x = (e as TouchEvent).touches?.[0]?.clientX ?? (e as MouseEvent).clientX;
+		if ($scrollableElement && $scrollableElement.scrollHeight > $scrollableElement.clientHeight && document.elementsFromPoint(x, y).includes($scrollableElement)) {
+			// Allow scrolling to happen inside scrollable
+			return;
+		}
+		dragStartY = y;
 		document.addEventListener('touchmove', drag, { passive: false });
 		document.addEventListener('touchend', endDrag);
 		document.addEventListener('mousemove', drag);
@@ -62,19 +68,19 @@
 			class="font-[IBM_Plex_Sans] fixed bottom-0 w-full bg-black text-white px-6 py-8 transition-transform duration-300 z-40"
 			style="
 				height: calc(100vh - {$infoViewY}px);
-				touch-action: none;
 			"
 			role="dialog"
 			aria-hidden=true
 			on:touchstart={startDrag}
 			on:mousedown={startDrag}
 		>
-			{#if Object.hasOwn($selected, 'stop_id')} <!-- Selected is a stop -->
-				<StopInfo stop = {selectedStop} />
-			{/if}
-			{#if Object.hasOwn($selected, 'trip_id')} <!-- Selected is a trip -->
-				<TripInfo trip = {selectedTrip} />
-			{/if}
+			<!-- Scrollable content wrapper -->
+				{#if Object.hasOwn($selected, 'stop_id')}
+					<StopInfo stop={selectedStop} />
+				{/if}
+				{#if Object.hasOwn($selected, 'trip_id')}
+					<TripInfo trip={selectedTrip} />
+				{/if}
 		</div>
 	{:else}
 		<!-- Sidebar Mode -->

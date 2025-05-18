@@ -1,7 +1,6 @@
 import type { Stop } from '$lib/structures/Stop';
 import type { Trip } from '$lib/structures/Trip';
 import type { Route } from '$lib/structures/Route';
-import type { TransitFeed } from '$lib/structures/TransitFeed';
 import type { LiveTrip } from '$lib/structures/LiveTrip';
 import type { GeoJSONSourceSpecification, MapMouseEvent } from 'mapbox-gl';
 import { liveTransitFeed, transitFeedStore } from '$lib/stores/transitFeedStore';
@@ -28,242 +27,7 @@ import { language } from '$lib/stores/language';
 
 const tappableLayers = Object.keys(MAP_STYLES).filter((key) => MAP_STYLES[key].type === 0);
 let markerTapped = false;
-
-export function loadSampleData() {
-	const stops: Stop[] = [
-		{ stop_id: 'a_001', stop_name: { en: 'start of a' }, stop_lat: 12.872932, stop_lon: 77.54259 }, // 0
-		{ stop_id: 'a_002', stop_name: { en: 'a 2' }, stop_lat: 12.772932, stop_lon: 77.54259 }, // 1
-		{ stop_id: 'a_004', stop_name: { en: 'a 4' }, stop_lat: 12.672932, stop_lon: 77.54259 }, // 2
-		{ stop_id: 'a_005', stop_name: { en: 'end of a' }, stop_lat: 12.572932, stop_lon: 77.24259 }, // 3
-		{ stop_id: 'b_001', stop_name: { en: 'start of b' }, stop_lat: 12.872932, stop_lon: 77.34259 }, // 4
-		{ stop_id: 'b_002', stop_name: { en: 'b 2' }, stop_lat: 12.872932, stop_lon: 77.44259 }, // 5
-		{ stop_id: 'b_003', stop_name: { en: 'a/b 3' }, stop_lat: 12.72932, stop_lon: 77.54259 }, // 6
-		{ stop_id: 'b_004', stop_name: { en: 'b 4' }, stop_lat: 12.872932, stop_lon: 77.64259 }, // 7
-		{ stop_id: 'b_005', stop_name: { en: 'b 5' }, stop_lat: 12.872932, stop_lon: 77.74259 }, // 8
-		{ stop_id: 'b_006', stop_name: { en: 'end of b' }, stop_lat: 12.872932, stop_lon: 77.84259 } // 9
-	];
-	const now = new Date();
-	const trips: Trip[] = [
-		{
-			trip_id: 'au1',
-			route_id: 'au',
-			stops: [
-				// 0
-				{
-					stop_id: 'a_001',
-					stop_time: new Date(new Date(now).setTime(now.getTime() + 5.6e6)).toString()
-				},
-				{
-					stop_id: 'a_002',
-					stop_time: new Date(new Date(now).setTime(now.getTime() + 5.7e6)).toString()
-				},
-				{
-					stop_id: 'b_003',
-					stop_time: new Date(new Date(now).setTime(now.getTime() + 5.8e6)).toString()
-				},
-				{
-					stop_id: 'a_004',
-					stop_time: new Date(new Date(now).setTime(now.getTime() + 5.9e6)).toString()
-				},
-				{
-					stop_id: 'a_005',
-					stop_time: new Date(new Date(now).setTime(now.getTime() + 6e6)).toString()
-				}
-			]
-		},
-		{
-			trip_id: 'au2',
-			route_id: 'au',
-			stops: [
-				// 1
-				{
-					stop_id: 'a_001',
-					stop_time: new Date(new Date(now).setTime(now.getTime() + 9.6e6)).toString()
-				},
-				{
-					stop_id: 'a_002',
-					stop_time: new Date(new Date(now).setTime(now.getTime() + 9.7e6)).toString()
-				},
-				{
-					stop_id: 'b_003',
-					stop_time: new Date(new Date(now).setTime(now.getTime() + 9.8e6)).toString()
-				},
-				{
-					stop_id: 'a_004',
-					stop_time: new Date(new Date(now).setTime(now.getTime() + 9.9e6)).toString()
-				},
-				{
-					stop_id: 'a_005',
-					stop_time: new Date(new Date(now).setTime(now.getTime() + 10e6)).toString()
-				}
-			]
-		},
-		{
-			trip_id: 'ad1',
-			route_id: 'ad',
-			stops: [
-				// 2
-				{
-					stop_id: 'a_005',
-					stop_time: new Date(new Date(now).setTime(now.getTime() + 8.6e6)).toString()
-				},
-				{
-					stop_id: 'a_004',
-					stop_time: new Date(new Date(now).setTime(now.getTime() + 8.7e6)).toString()
-				},
-				{
-					stop_id: 'b_003',
-					stop_time: new Date(new Date(now).setTime(now.getTime() + 8.8e6)).toString()
-				},
-				{
-					stop_id: 'a_002',
-					stop_time: new Date(new Date(now).setTime(now.getTime() + 8.9e6)).toString()
-				},
-				{
-					stop_id: 'a_001',
-					stop_time: new Date(new Date(now).setTime(now.getTime() + 9e6)).toString()
-				}
-			]
-		},
-		{
-			trip_id: 'bu1',
-			route_id: 'bu',
-			stops: [
-				// 3
-				{
-					stop_id: 'b_001',
-					stop_time: new Date(new Date(now).setTime(now.getTime() + 7.6e6)).toString()
-				},
-				{
-					stop_id: 'b_002',
-					stop_time: new Date(new Date(now).setTime(now.getTime() + 7.7e6)).toString()
-				},
-				{
-					stop_id: 'b_003',
-					stop_time: new Date(new Date(now).setTime(now.getTime() + 7.8e6)).toString()
-				},
-				{
-					stop_id: 'b_004',
-					stop_time: new Date(new Date(now).setTime(now.getTime() + 7.9e6)).toString()
-				},
-				{
-					stop_id: 'b_005',
-					stop_time: new Date(new Date(now).setTime(now.getTime() + 8e6)).toString()
-				},
-				{
-					stop_id: 'b_006',
-					stop_time: new Date(new Date(now).setTime(now.getTime() + 8.1e6)).toString()
-				}
-			]
-		},
-		{
-			trip_id: 'bd1',
-			route_id: 'bd',
-			stops: [
-				// 4
-				{
-					stop_id: 'b_006',
-					stop_time: new Date(new Date(now).setTime(now.getTime() + 9.6e6)).toString()
-				},
-				{
-					stop_id: 'b_005',
-					stop_time: new Date(new Date(now).setTime(now.getTime() + 9.7e6)).toString()
-				},
-				{
-					stop_id: 'b_004',
-					stop_time: new Date(new Date(now).setTime(now.getTime() + 9.8e6)).toString()
-				},
-				{
-					stop_id: 'b_003',
-					stop_time: new Date(new Date(now).setTime(now.getTime() + 9.9e6)).toString()
-				},
-				{
-					stop_id: 'b_002',
-					stop_time: new Date(new Date(now).setTime(now.getTime() + 10e6)).toString()
-				},
-				{
-					stop_id: 'b_001',
-					stop_time: new Date(new Date(now).setTime(now.getTime() + 10.1e6)).toString()
-				}
-			]
-		}
-	];
-	const routes: Route[] = [
-		{
-			route_id: 'au',
-			route_short_name: 'KIA-A',
-			route_long_name: 'A to A',
-			stops: [stops[0], stops[1], stops[6], stops[2], stops[3]],
-			trips: [trips[0], trips[1]],
-			shape: [
-				{ lat: stops[0].stop_lat, lon: stops[0].stop_lon },
-				{ lat: stops[1].stop_lat, lon: stops[1].stop_lon },
-				{ lat: stops[6].stop_lat, lon: stops[6].stop_lon },
-				{ lat: stops[2].stop_lat, lon: stops[2].stop_lon },
-				{ lat: stops[3].stop_lat, lon: stops[3].stop_lon }
-			]
-		},
-		{
-			route_id: 'ad',
-			route_short_name: 'KIA-A',
-			route_long_name: 'A to A',
-			stops: [stops[3], stops[2], stops[6], stops[1], stops[0]],
-			trips: [trips[2]],
-			shape: [
-				{ lat: stops[3].stop_lat, lon: stops[3].stop_lon },
-				{ lat: stops[2].stop_lat, lon: stops[2].stop_lon },
-				{ lat: stops[6].stop_lat, lon: stops[6].stop_lon },
-				{ lat: stops[1].stop_lat, lon: stops[1].stop_lon },
-				{ lat: stops[0].stop_lat, lon: stops[0].stop_lon }
-			]
-		},
-		{
-			route_id: 'bu',
-			route_short_name: 'KIA-B',
-			route_long_name: 'B to B',
-			stops: [stops[4], stops[5], stops[6], stops[7], stops[8], stops[9]],
-			trips: [trips[3]],
-			shape: [
-				{ lat: stops[4].stop_lat, lon: stops[4].stop_lon },
-				{ lat: stops[5].stop_lat, lon: stops[5].stop_lon },
-				{ lat: stops[6].stop_lat, lon: stops[6].stop_lon },
-				{ lat: stops[7].stop_lat, lon: stops[7].stop_lon },
-				{ lat: stops[8].stop_lat, lon: stops[8].stop_lon },
-				{ lat: stops[9].stop_lat, lon: stops[9].stop_lon }
-			]
-		},
-		{
-			route_id: 'bd',
-			route_short_name: 'KIA-B',
-			route_long_name: 'B to B',
-			stops: [stops[9], stops[8], stops[7], stops[6], stops[5], stops[4]],
-			trips: [trips[4]],
-			shape: [
-				{ lat: stops[9].stop_lat, lon: stops[9].stop_lon },
-				{ lat: stops[8].stop_lat, lon: stops[8].stop_lon },
-				{ lat: stops[7].stop_lat, lon: stops[7].stop_lon },
-				{ lat: stops[6].stop_lat, lon: stops[6].stop_lon },
-				{ lat: stops[5].stop_lat, lon: stops[5].stop_lon },
-				{ lat: stops[4].stop_lat, lon: stops[4].stop_lon }
-			]
-		}
-	];
-	const transitFeed: TransitFeed = {
-		routes: routes,
-		stops: stops.reduce(
-			(acc, item) => {
-				acc[item.stop_id] = item;
-				return acc;
-			},
-			{} as Record<string, Stop>
-		),
-		feed_version: 'a/b/1',
-		timestamp: now.toString()
-	};
-	transitFeedStore.set(transitFeed);
-	// selected.set(transitFeed.routes[0].trips[0]);
-	// highlightedStop.set(transitFeed.stops['b_003']);
-}
+let currentRefreshTimeout: NodeJS.Timeout | undefined = undefined;
 
 export function cycleBus() {
 	let currentIndex = get(nextBusIndex);
@@ -275,7 +39,8 @@ export function cycleBus() {
 	}
 	selected.set(undefined);
 	nextBusIndex.set(currentIndex);
-	selectedTripID.set(currentBuses[direction][currentIndex].trip_id);
+	if(currentBuses[direction].length > 0)
+		selectedTripID.set(currentBuses[direction][currentIndex].trip_id);
 }
 
 export async function loadNextBuses() {
@@ -311,6 +76,7 @@ export async function loadNextBuses() {
 		toCity: []
 	};
 	const nextTripTimes: { toCity: number[]; toAirport: number[] } = { toAirport: [], toCity: [] }; // Array for quickly inserting at correct index
+	let timeoutTime = new Date().getTime() + 3600000; // 60 minutes after
 	for (const trip of trips) {
 		if (seenTripIds.has(trip.trip_id)) continue;
 		seenTripIds.add(trip.trip_id);
@@ -356,13 +122,16 @@ export async function loadNextBuses() {
 		if (closestStop === undefined) {
 			continue;
 		}
-		if((Date.parse(closestStop?.stop_time) // Filter out trips that have already passed or will pass before user can reach
-			 < Date.now() + await travelTime(
-				loc.latitude,
-				loc.longitude,
-				transitFeed.stops[closestStop.stop_id].stop_lat,
-				transitFeed.stops[closestStop.stop_id].stop_lon)
-			+ 300))
+		const travelTimeMS = (await travelTime(
+			loc.latitude,
+			loc.longitude,
+			transitFeed.stops[closestStop.stop_id].stop_lat,
+			transitFeed.stops[closestStop.stop_id].stop_lon)*1000)
+		const arrivalToStop = Date.now() + travelTimeMS
+		if(arrivalToStop < timeoutTime)
+			timeoutTime = arrivalToStop;
+		if(Date.parse(closestStop?.stop_time) // Filter out trips that have already passed or will pass before user can reach
+			 < (arrivalToStop + (300*1000)))
 			continue;
 		if (nextTrips[direction].length == 0 || nextTripTimes[direction].length == 0) {
 			nextTrips[direction].push(trip);
@@ -394,6 +163,9 @@ export async function loadNextBuses() {
 			nextTripTimes[direction].pop();
 		}
 	}
+	if(currentRefreshTimeout)
+		clearTimeout(currentRefreshTimeout);
+	currentRefreshTimeout = setTimeout(loadNextBuses, timeoutTime - Date.now());
 	nextBuses.set(nextTrips);
 }
 let displayingTrip: string = '';
@@ -420,6 +192,7 @@ export async function displayCurrentTrip() {
 	const buses = get(nextBuses)[direction];
 	const index = get(nextBusIndex);
 	const selectedTrip = get(selectedTripID);
+	if(!selectedTrip) return;
 	const tripFind = buses.find((val) => val.trip_id === selectedTrip);
 	const currentTrip =
 		tripFind !== undefined ? tripFind : buses.length > index ? buses[index] : null;
@@ -475,8 +248,10 @@ export async function displayCurrentTrip() {
 			(val) => val.stop.stop_id === highlightStop.stop_id
 		);
 		tripStopsFiltered = tripStopsFiltered.filter((value) => value !== tripStopsHighlight);
-		if (tripStopsHighlight !== undefined)
+		if (tripStopsHighlight !== undefined) {
 			updateLayer('WHITE_BLACK_CIRCLE', geoJSONFromStops([tripStopsHighlight]));
+			boundCoordinates.push([tripStopsHighlight.stop.stop_lon, tripStopsHighlight.stop.stop_lat]);
+		}
 	}
 	updateLayer(stopsLayer, geoJSONFromStops(tripStopsFiltered));
 	updateLayer(walkLayer, await geoJsonWalkLineFromPoints(loc.latitude, loc.longitude, closestStop.stop.stop_lat, closestStop.stop.stop_lon));
@@ -527,7 +302,6 @@ export async function displayCurrentTrip() {
 }
 
 nextBuses.subscribe(displayCurrentTrip);
-nextBusIndex.subscribe(displayCurrentTrip);
 selectedTripID.subscribe(displayCurrentTrip);
 selected.subscribe(displayCurrentTrip);
 inputLocation.subscribe(displayCurrentTrip);

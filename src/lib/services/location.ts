@@ -1,17 +1,22 @@
 import { inputLocation, userLocation } from '$lib/stores/location';
 import { DEFAULT_LOCATION } from '$lib/constants';
-import { updateMarker } from '$lib/services/map';
+import { fitMapToPoints, updateMarker } from '$lib/services/map';
 import { get } from 'svelte/store';
 
 export function pollUserLocation() {
+	let firstTime = true;
 	navigator.geolocation.watchPosition((position: GeolocationPosition) => {
 		userLocation.set(position)
+		if(firstTime) fitMapToPoints([[position.coords.longitude, position.coords.latitude]]);
+		firstTime = false;
 	}, () => {
 		console.log("Geolocation not available, using default location.");
 		inputLocation.set({
 			latitude: DEFAULT_LOCATION[0],
 			longitude: DEFAULT_LOCATION[1]
-		})
+		});
+		fitMapToPoints([[DEFAULT_LOCATION[1], DEFAULT_LOCATION[0]]]);
+
 	});
 }
 

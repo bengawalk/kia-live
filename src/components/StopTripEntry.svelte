@@ -15,6 +15,7 @@
 	const currentStaticStopEntry = isLiveTrip && staticTrip ? staticTrip.stops.find((value) => value.stop_id === selectedStop) : undefined
 	const staticStopTime = currentStaticStopEntry ? currentStaticStopEntry.stop_time : undefined;
 	const currentStopEntry = trip.stops.find((value) => value.stop_id === selectedStop);
+	const isLastStop = currentStopEntry ? currentStopEntry.stop_id === trip.stops[trip.stops.length - 1].stop_id : undefined;
 	const stopTime = !currentStopEntry ? undefined : currentStopEntry.stop_time;
 	const departureOnTime = isLiveTrip && stopTime && staticStopTime ? Date.parse(staticStopTime) >= Date.parse(stopTime) : undefined;
 	const arrivalOnTime = isLiveTrip && staticTrip ? Date.parse(staticTrip.stops[staticTrip.stops.length - 1].stop_time) >= Date.parse(Object.values(trip.stops[trip.stops.length - 1])[1]) : undefined
@@ -29,7 +30,7 @@
 			second: undefined,
 			hour12: false,
 		};
-	const departure = new Date(stopTime ? stopTime : trip.stops[0].stop_time).toLocaleString(undefined, formatOptions);
+	const departure = isLastStop ? '-' : new Date(stopTime ? stopTime : trip.stops[0].stop_time).toLocaleString(undefined, formatOptions);
 	const eta = new Date(trip.stops[trip.stops.length - 1].stop_time).toLocaleString(undefined, formatOptions);
 </script>
 

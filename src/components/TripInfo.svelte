@@ -5,6 +5,7 @@
 	import infoBus from '$assets/info-bus.svg?raw';
 	import { transitFeedStore } from '$lib/stores/transitFeedStore';
 	import type { Stop } from '$lib/structures/Stop';
+	import { scrollableElement } from '$lib/stores/infoView';
 
 	// Prop
 	export let trip: Trip | LiveTrip;
@@ -43,13 +44,17 @@
 			<div>
 				{@html infoBus}
 			</div>
-			<span class=" text-white">{routename}</span>
+			<span class=" text-white">{routename} v2</span>
 		</div>
 		<div class="text-right text-white"></div>
 	</div>
-
+	<div class="overflow-y-scroll scrollbar-hide"
+	style="
+	height: calc(100vh - {((window.innerHeight / 3) / 2) + 250}px);
+	" bind:this={$scrollableElement}>
 	<!-- Bus stops -->
 	{#each stops as stop}
 		<TripStopEntry stop={stop[0]} time={stop[1]} isCurrent={stop[0].stop_id === currentStop} onTime={stop[2]} />
 	{/each}
+	</div>
 </section>

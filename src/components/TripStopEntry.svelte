@@ -26,7 +26,7 @@
 </script>
 
 <div class="flex justify-between items-center w-full opacity-{textOpacity}">
-	<button on:click={() => selected.set(stop)} class="flex gap-1 items-center appearance-none bg-transparent border-none cursor-pointer p-0 m-0 w-full text-left">
+	<div  class="flex gap-1 items-center appearance-none bg-transparent border-none p-0 m-0 w-full text-left">
 		{#if isCurrent}
 			<div>
 				<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" class="circle-icon">
@@ -41,7 +41,7 @@
 				</svg>
 			</div>
 		{/if}
-		<span class="text-white {$highlightedStop === stop ? 'font-bold' : ''} ">{Object.hasOwn(stop.stop_name, langstring) ? stop.stop_name[langstring] : stop.stop_name['en']}</span>
-	</button>
+		<button on:click={() => selected.set(stop)} class="cursor-pointer text-white {$highlightedStop === stop ? 'font-bold' : ''} ">{Object.hasOwn(stop.stop_name, langstring) ? stop.stop_name[langstring] : stop.stop_name['en']}</button>
+	</div>
 	<div class=" text-right text-{timeColor}{timeColorWhite ? '' : '-300'} ">{time.toLocaleString(undefined, formatOptions)}</div>
 </div>
