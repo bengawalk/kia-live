@@ -42,6 +42,14 @@ export const transitFeedActions = {
             feed_version: version
         }));
     },
+    getVersion: async (): Promise<string> => {
+        return new Promise((resolve) => {
+            const unsubscribe = transitFeedStore.subscribe(store => {
+                resolve(store.feed_version);
+                unsubscribe();
+            });
+        });
+    },
     updateTimestamp: (timestamp: string) => {
         transitFeedStore.update(current => ({
             ...current,
