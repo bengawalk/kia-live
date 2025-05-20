@@ -10,7 +10,7 @@ const initialTransitFeed: TransitFeed = {
     routes: [],
     stops: {},
     feed_version: '',
-    timestamp: ''
+    timestamp: new Date(),
 };
 const initialLiveFeed: LiveTransitFeed = {
     feed_id: "",
@@ -46,11 +46,11 @@ export const transitFeedActions = {
         return new Promise((resolve) => {
             const unsubscribe = transitFeedStore.subscribe(store => {
                 resolve(store.feed_version);
-                unsubscribe();
             });
+            unsubscribe();
         });
     },
-    updateTimestamp: (timestamp: string) => {
+    updateTimestamp: (timestamp: Date) => {
         transitFeedStore.update(current => ({
             ...current,
             timestamp

@@ -7,5 +7,5 @@ export type TransitFeed = {
     [stop_id: string]: Stop;
     };
     feed_version: string;
-    timestamp: string;
+    timestamp: Date;
 };

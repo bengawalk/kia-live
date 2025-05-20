@@ -5,6 +5,7 @@ export type LiveTrip = {
     stops: {
         stop_id: string;
         stop_time: string;
+        stop_date: () => Date;
     }[];
     timestamp: Date;
 }

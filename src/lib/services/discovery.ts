@@ -130,18 +130,18 @@ export async function loadNextBuses() {
 		const arrivalToStop = Date.now() + travelTimeMS
 		if(arrivalToStop < timeoutTime)
 			timeoutTime = arrivalToStop;
-		if(Date.parse(closestStop?.stop_time) // Filter out trips that have already passed or will pass before user can reach
+		if(closestStop?.stop_date().getTime() // Filter out trips that have already passed or will pass before user can reach
 			 < (arrivalToStop + (300*1000)))
 			continue;
 		if (nextTrips[direction].length == 0 || nextTripTimes[direction].length == 0) {
 			nextTrips[direction].push(trip);
-			nextTripTimes[direction].push(Date.parse(closestStop?.stop_time));
+			nextTripTimes[direction].push(closestStop?.stop_date().getTime());
 			continue;
 		}
 		// Fast exit if the number is too large
 		if (
 			nextTripTimes[direction].length === 10 &&
-			Date.parse(closestStop?.stop_time) >=
+			closestStop?.stop_date().getTime() >=
 				nextTripTimes[direction][nextTripTimes[direction].length - 1]
 		)
 			continue;
@@ -151,12 +151,12 @@ export async function loadNextBuses() {
 			right = nextTripTimes[direction].length;
 		while (left < right) {
 			const mid = (left + right) >> 1;
-			if (nextTripTimes[direction][mid] < Date.parse(closestStop?.stop_time)) left = mid + 1;
+			if (nextTripTimes[direction][mid] < closestStop?.stop_date().getTime()) left = mid + 1;
 			else right = mid;
 		}
 
 		// Insert and trim
-		nextTripTimes[direction].splice(left, 0, Date.parse(closestStop?.stop_time));
+		nextTripTimes[direction].splice(left, 0, closestStop?.stop_date().getTime());
 		nextTrips[direction].splice(left, 0, trip);
 		if (nextTripTimes[direction].length > 10) {
 			nextTrips[direction].pop();
@@ -216,7 +216,7 @@ export async function displayCurrentTrip() {
 	const boundCoordinates: [number, number][] = [[loc.longitude, loc.latitude]];
 	type TripStopList = { stop: Stop; stop_time: Date }[];
 	const tripStops: TripStopList = currentRoute.stops.map((value, index) => {
-		return { stop: value, stop_time: new Date(currentTrip.stops[index].stop_time) };
+		return { stop: value, stop_time: new Date(currentTrip.stops[index].stop_date()) };
 	});
 	const closestStop = await findClosestStop(loc, tripStops);
 	boundCoordinates.push([closestStop.stop.stop_lon, closestStop.stop.stop_lat]);

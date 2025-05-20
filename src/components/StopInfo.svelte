@@ -14,13 +14,29 @@
 	const routeIds = routes.map(route => route.route_id);
 	const staticTrips = routes.flatMap(value => value.trips);
 	const liveTrips = $liveTransitFeed ? $liveTransitFeed.trips.filter(value => routeIds.includes(value.route_id)) : [];
+	const totalTrips = [...liveTrips, ...staticTrips];
+	const tripArrivals = new Map<string, Date>();
+
+	for (const trip of totalTrips) {
+		if (!trip.stops.length) continue;
+		const last = trip.stops[trip.stops.length - 1];
+		const date = last.stop_date(); // today by default
+		if(date < new Date())
+			date.setDate(date.getDate() + 1);
+
+		tripArrivals.set(trip.trip_id, date);
+	}
+	const sortedTrips = totalTrips.sort((a, b) =>
+		tripArrivals.get(a.trip_id).getTime() - tripArrivals.get(b.trip_id).getTime());
 	const allTrips = Array.from(
-		[...liveTrips, ...staticTrips].reduce((map, item) =>
+		sortedTrips.reduce((map, item) =>
 			(!map.has(item.trip_id) || ('vehicle_id' in item && !('vehicle_id' in map.get(item.trip_id)!)))
 				? map.set(item.trip_id, item)
 				: map, new Map<string, Trip | LiveTrip>()
 		).values()
 	).slice(0, 10);
+
+
 </script>
 
 <section class="flex flex-col gap-2 p-6 mx-auto max-w-none bg-transparent w-[346px] max-md:p-4 max-md:w-full max-md:max-w-[991px] max-sm:p-3 max-sm:max-w-screen-sm">

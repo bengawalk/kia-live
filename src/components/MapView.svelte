@@ -4,6 +4,7 @@
 	import { messages } from '$lib/stores/language';
 	import { loadMap, unloadMap } from '$lib/services/map';
 	import InfoView from '$components/InfoView.svelte';
+	import GTFSLoader from '$components/GTFSLoader.svelte';
 
 	let mapContainer: HTMLElement | string;
 
@@ -31,6 +32,7 @@
 <div id="map" class="min-h-screen flex flex-col" bind:this={mapContainer}>
 
 <!--	<LanguageSwitcher />-->
+	<GTFSLoader />
 	<MapButtons />
 	<InfoView />
 </div>
