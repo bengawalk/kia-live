@@ -46,6 +46,9 @@ jobs:
   deploy:
     env: # Add the github env secret as an env variable
       VITE_MAPBOX_ACCESS_TOKEN: ${{ secrets.VITE_MAPBOX_ACCESS_TOKEN }}
+      VITE_STATIC_DATA_VERSION: ${{ vars.VITE_STATIC_DATA_VERSION }}
+      VITE_STATIC_DATA_SOURCE: ${{ vars.VITE_STATIC_DATA_SOURCE }}
+      VITE_LIVE_DATA_SOURCE: ${{ vars.VITE_LIVE_DATA_SOURCE }}
       TEST_KEY: ${{ secrets.TEST_KEY }}
     runs-on: ubuntu-latest  # Specifies the operating system for the runner
 
