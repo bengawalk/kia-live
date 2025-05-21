@@ -304,7 +304,9 @@ async function getDB() {
 	const { openDB } = await import('idb');
 	return await openDB(DB_NAME, 1, {
 		upgrade(db) {
-			db.createObjectStore(STORE_NAME);
+			if (!db.objectStoreNames.contains(STORE_NAME)) {
+				db.createObjectStore(STORE_NAME);
+			}
 		}
 	});
 }

@@ -28,9 +28,12 @@ export async function saveFeed(feed: TransitFeed) {
     const { openDB } = await import('idb');
     const db = await openDB(DB_NAME, 1, {
         upgrade(db) {
-            db.createObjectStore(STORE_NAME);
+            if (!db.objectStoreNames.contains(STORE_NAME)) {
+                db.createObjectStore(STORE_NAME);
+            }
         }
     });
+
     await db.put(STORE_NAME, makeSerializable(feed), 'latest');
 }
 
@@ -39,6 +42,7 @@ export async function loadFeed(): Promise<TransitFeed> {
     if(!browser) return initialTransitFeed;
     const { openDB } = await import('idb');
     const db = await openDB(DB_NAME, 1);
+    if(!db.objectStoreNames.contains(STORE_NAME)) return initialTransitFeed;
     const val = await db.get(STORE_NAME, 'latest');
     return rehydrateFeed(val) ?? initialTransitFeed;
 }
