@@ -8,8 +8,8 @@
 	export let time: Date;
 	export let isCurrent: boolean;
 	export let onTime: boolean | undefined;
-	const textOpacity: "100" | "40" = Date.now() > time.getTime() ? "40" : "100";
-	const timeColor: "white" | "red" | "green" = onTime !== undefined ? onTime ? "green" : "red" : "white";
+	const textOpacity: "100" | "20" = new Date().getTime() > time.getTime() ? "20" : "100";
+	const timeColor: "white" | "red" | "green" = onTime === undefined ? "white" : onTime ? "green" : "red";
 	const timeColorWhite = timeColor === "white";
 	const langstring = $language as string;
 	const formatOptions: Intl.DateTimeFormatOptions =
@@ -41,7 +41,7 @@
 				</svg>
 			</div>
 		{/if}
-		<button on:click={() => selected.set(stop)} class="cursor-pointer text-white {$highlightedStop === stop ? 'font-bold' : ''} ">{Object.hasOwn(stop.stop_name, langstring) ? stop.stop_name[langstring] : stop.stop_name['en']}</button>
+		<button on:click={() => selected.set(stop)} class="cursor-pointer text-white {$highlightedStop?.stop_id === stop.stop_id ? 'font-bold' : ''} ">{Object.hasOwn(stop.stop_name, langstring) ? stop.stop_name[langstring] : stop.stop_name['en']}</button>
 	</div>
 	<div class=" text-right text-{timeColor}{timeColorWhite ? '' : '-300'} ">{time.toLocaleString(undefined, formatOptions)}</div>
 </div>

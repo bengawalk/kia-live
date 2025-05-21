@@ -4,12 +4,9 @@
 	import {
 		airportDirection,
 		isPlanning,
-		nextBuses,
-		nextBusIndex,
 		selected,
-		selectedTripID
 	} from '$lib/stores/discovery';
-	import { cycleBus } from '$lib/services/discovery';
+	import { cycleBus, toggleAirportDirection } from '$lib/services/discovery';
 </script>
 
 <div
@@ -20,30 +17,26 @@
 			bottom: calc({$selected === undefined ? '0' : $isMobile ? '100vh - '+ $infoViewY : '0'}px);
 		"
 >
-	<!-- Left-aligned -->
+	<!-- Left-aligned Airport Direction button-->
 	<button
-		on:click={() => {
-						nextBusIndex.set($nextBusIndex === -1 ? -1 : $nextBuses[$airportDirection ? 'toCity' : 'toAirport'].length >= $nextBusIndex ? $nextBuses[$airportDirection ? 'toCity' : 'toAirport'].length - 1 : $nextBusIndex);
-			airportDirection.set(!$airportDirection);
-			selectedTripID.set(undefined);
-		}}
-		class="text-left pointer-events-auto w-fit px-2"
+		on:click={() => toggleAirportDirection()}
+		class="text-left pointer-events-auto w-fit px-5"
 	>
 		{$airportDirection ? $messages.ToKIA() : $messages.FromKIA()}
 	</button>
 
-	<!-- Center-aligned -->
+	<!-- Center-aligned Plan button -->
 	<button
 		on:click={() => {}}
-		class="text-center text-neutral-400 justify-self-center pointer-events-auto w-fit px-2"
+		class="text-center text-neutral-400 justify-self-center pointer-events-auto w-fit px-5"
 	>
 		{$isPlanning ? $messages.Planning() : $messages.Plan()}
 	</button>
 
-	<!-- Right-aligned -->
+	<!-- Right-aligned Next Bus button -->
 	<button
 		on:click={cycleBus}
-		class="text-right justify-self-end pointer-events-auto w-fit px-2"
+		class="text-right justify-self-end pointer-events-auto w-fit px-5"
 	>
 		{$isPlanning ? "" : $messages.NextBus()}
 	</button>

@@ -18,20 +18,19 @@
 	const stops: [Stop, Date, boolean | undefined][] = [];
 	const now = new Date();
 	const isLiveTrip = Object.hasOwn(trip, 'vehicle_id');
-	const staticTrip = route ? route.trips.find((value) => Object.keys(value)[0] === trip.trip_id) : undefined;
+	const staticTrip = route ? route.trips.find((value) => value.trip_id === trip.trip_id) : undefined;
 
 
 	// Variables
 	let currentStop: string | undefined = undefined;
 	let scrollHeightStyle = '';
-
 	// Processing
 	for(const currStop of trip.stops) {
 		// Assuming stop_time or livetrip equivalent stores in {YYYY}-{MM}-{DD}T{HH}:{MM}:{SS}.000{+5:30} or other Date compatible format
-		let datetime = new Date(currStop.stop_date());
+		let datetime = currStop.stop_date();
 		const currStopID = currStop.stop_id;
 		const currStaticStop = isLiveTrip && staticTrip ? staticTrip.stops.find((value) => value.stop_id === currStopID) : undefined;
-		const onTime = currStaticStop && currentStop === undefined ? new Date(currStaticStop.stop_date()) <= datetime : undefined;
+		const onTime = currStaticStop && currentStop === undefined ? currStaticStop.stop_date() <= datetime : undefined;
 		stops.push([$transitFeedStore.stops[currStopID], datetime, onTime]);
 		if(now > datetime || currentStop !== undefined) {
 			continue;

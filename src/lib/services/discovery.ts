@@ -16,18 +16,23 @@ import { get } from 'svelte/store';
 import { currentLocation, type InputCoords, inputLocation, userLocation } from '$lib/stores/location';
 import {
 	fitMapToPoints,
-	getTravelRouteWithLocalStorage, type NavMode,
+	getTravelRoute, type NavMode,
 	removeRenderedCollisions,
 	renderPendingCollisions,
 	updateLayer,
 	updateMarker
 } from '$lib/services/map';
-import { AIRPORT_LOCATION, MAP_STYLES } from '$lib/constants';
+import { AIRPORT_LOCATION, AIRPORT_SOFTLOCK, MAP_STYLES } from '$lib/constants';
 import { language } from '$lib/stores/language';
 
 const tappableLayers = Object.keys(MAP_STYLES).filter((key) => MAP_STYLES[key].type === 0);
 let markerTapped = false;
 let currentRefreshTimeout: NodeJS.Timeout | undefined = undefined;
+
+export function setMarkerTapped() {
+	markerTapped = true;
+	setTimeout(() => markerTapped = false, 100);
+}
 
 export function cycleBus() {
 	let currentIndex = get(nextBusIndex);
@@ -70,7 +75,7 @@ export async function loadNextBuses() {
 	const liveTrips = liveFeed.trips.filter((value) => staticTripIds.includes(value.trip_id));
 	const trips = Array.from(
 		new Map([...staticTrips, ...liveTrips].map((item) => [item.trip_id, item])).values()
-	);
+	).sort((a, b) => Object.hasOwn(a, 'vehicle_id') && !Object.hasOwn(b, 'vehicle_id') ? -1 : 1);
 	const nextTrips: { toCity: (Trip | LiveTrip)[]; toAirport: (Trip | LiveTrip)[] } = {
 		toAirport: [],
 		toCity: []
@@ -163,16 +168,26 @@ export async function loadNextBuses() {
 			nextTripTimes[direction].pop();
 		}
 	}
+	for(const direction of ['toAirport', 'toCity']) {
+		nextTrips[direction as ('toAirport' | 'toCity')] = nextTrips[direction as ('toAirport' | 'toCity')]
+			.sort((a, b) =>
+				Object.hasOwn(a, 'vehicle_id') && !Object.hasOwn(b, 'vehicle_id') ?
+					-1 :
+					Object.hasOwn(b, 'vehicle_id') && !Object.hasOwn(a, 'vehicle_id') ?
+						1 : 0);
+	}
 	if(currentRefreshTimeout)
 		clearTimeout(currentRefreshTimeout);
 	currentRefreshTimeout = setTimeout(loadNextBuses, timeoutTime - Date.now());
 	nextBuses.set(nextTrips);
 }
 let displayingTrip: string = '';
+let displayingStop: { style: string, stop_id: string, stop_time: number } = {style: '', stop_id: '', stop_time: 0};
+let displayingMarkerStyles: string[] = [];
 export async function displayCurrentTrip() {
 	// Take currently selected trip id, filter next buses, if id not in next buses list, get bus at nextBusIndex from next buses list
 	// display relevant markers and layers on map
-	clearTripLayers(true);
+	displayingMarkerStyles = []
 	const direction = get(airportDirection) ? 'toAirport' : 'toCity';
 	const highlighted = get(selected);
 	const highlightStop =
@@ -200,6 +215,7 @@ export async function displayCurrentTrip() {
 		clearTripLayers();
 		return;
 	}
+	// console.log(currentTrip);
 	const routeFind = get(transitFeedStore).routes.find(
 		(route) => route.route_id === currentTrip.route_id
 	);
@@ -211,11 +227,12 @@ export async function displayCurrentTrip() {
 	if (currentTrip.trip_id !== displayingTrip) {
 		clearTripLayers();
 	}
-	displayingTrip = currentTrip.trip_id;
+
 	const loc = currentLocation();
 	const boundCoordinates: [number, number][] = [[loc.longitude, loc.latitude]];
 	type TripStopList = { stop: Stop; stop_time: Date }[];
-	const tripStops: TripStopList = currentRoute.stops.map((value, index) => {
+	const tripStopIDS = currentTrip.stops.map((stop) => stop.stop_id);
+	const tripStops: TripStopList = currentRoute.stops.filter(val => tripStopIDS.includes(val.stop_id)).map((value, index) => {
 		return { stop: value, stop_time: new Date(currentTrip.stops[index].stop_date()) };
 	});
 	const closestStop = await findClosestStop(loc, tripStops);
@@ -255,26 +272,31 @@ export async function displayCurrentTrip() {
 	}
 	updateLayer(stopsLayer, geoJSONFromStops(tripStopsFiltered));
 	updateLayer(walkLayer, await geoJsonWalkLineFromPoints(loc.latitude, loc.longitude, closestStop.stop.stop_lat, closestStop.stop.stop_lon));
-	updateMarker(
-		highlighted !== undefined &&
-			(highlightStop === undefined || closestStop.stop.stop_id !== highlightStop.stop_id)
-			? 'BUS_STOP_INACTIVE'
-			: 'BUS_STOP',
-		[
-			closestStop.stop.stop_name[get(language)],
-			closestStop.stop_time.toLocaleString(undefined, {
-				hour12: false,
-				minute: '2-digit',
-				hour: '2-digit'
-			})
-		],
-		closestStop.stop.stop_lat,
-		closestStop.stop.stop_lon,
-		() => {
-			markerTapped = true;
-			selected.set(closestStop.stop);
-		}
-	);
+	const busStopStyle = highlighted !== undefined &&
+	(highlightStop === undefined || closestStop.stop.stop_id !== highlightStop.stop_id)
+		? 'BUS_STOP_INACTIVE'
+		: 'BUS_STOP';
+	if ((displayingStop.stop_id !== closestStop.stop.stop_id && displayingStop.stop_time !== closestStop.stop_time.getTime() ) || displayingTrip !== currentTrip.trip_id || displayingStop.style !== busStopStyle)
+	{
+		updateMarker(
+			busStopStyle,
+			[
+				closestStop.stop.stop_name[get(language)],
+				closestStop.stop_time.toLocaleString(undefined, {
+					hour12: false,
+					minute: '2-digit',
+					hour: '2-digit'
+				})
+			],
+			closestStop.stop.stop_lat,
+			closestStop.stop.stop_lon,
+			() => {
+				markerTapped = true;
+				selected.set(closestStop.stop);
+			}
+		);
+	}
+	displayingMarkerStyles.push(busStopStyle);
 	if (Object.hasOwn(currentTrip, 'vehicle_id')) {
 		const vehicle = get(liveTransitFeed).vehicles.find(
 			(vehicle) => vehicle.vehicle_id === (currentTrip as LiveTrip).vehicle_id
@@ -294,11 +316,32 @@ export async function displayCurrentTrip() {
 					selected.set(currentTrip);
 				}
 			);
+			displayingMarkerStyles.push(
+				highlighted !== undefined &&
+			(highlightLiveTrip === undefined || highlightLiveTrip.trip_id !== currentTrip.trip_id)
+				? 'BUS_INACTIVE'
+				: 'BUS');
 		}
 	}
+	clearTripLayers(true);
 	renderPendingCollisions();
-	fitMapToPoints(boundCoordinates);
+	if(displayingTrip !== currentTrip.trip_id)
+		fitMapToPoints(boundCoordinates);
+	displayingTrip = currentTrip.trip_id;
+	displayingStop = {style: busStopStyle, stop_id: closestStop.stop.stop_id, stop_time: closestStop.stop_time.getTime()};
 	highlightedStop.set(closestStop.stop);
+}
+
+export function toggleAirportDirection(direction: boolean | undefined = undefined, toggle: boolean = true) {
+	const current = currentLocation();
+	const airportDir = toggle ? get(airportDirection) : !get(airportDirection);
+	if(haversineDistance(current.latitude, current.longitude, AIRPORT_SOFTLOCK[0], AIRPORT_SOFTLOCK[1]) <= (AIRPORT_SOFTLOCK[2]*1000)) direction = false;
+	const finalCon = direction === undefined ? !airportDir : direction;
+	airportDirection.set(finalCon);
+	const busIndex = get(nextBusIndex);
+	const buses = get(nextBuses);
+	nextBusIndex.set(busIndex === -1 ? -1 : buses[finalCon ? 'toCity' : 'toAirport'].length >= busIndex ? buses[finalCon ? 'toCity' : 'toAirport'].length - 1 : busIndex);
+	selectedTripID.set(undefined);
 }
 
 nextBuses.subscribe(displayCurrentTrip);
@@ -311,6 +354,8 @@ inputLocation.subscribe(loadNextBuses);
 userLocation.subscribe(loadNextBuses);
 transitFeedStore.subscribe(loadNextBuses);
 liveTransitFeed.subscribe(loadNextBuses);
+inputLocation.subscribe(() => toggleAirportDirection(undefined, false));
+userLocation.subscribe(() => toggleAirportDirection(undefined, false));
 
 export function handleTap(e: MapMouseEvent) {
 	if (markerTapped) {
@@ -385,7 +430,7 @@ async function geoJsonWalkLineFromPoints(lat1: number, lng1: number, lat2: numbe
 		features: [
 			{
 				type: 'Feature',
-				geometry: (await getTravelRouteWithLocalStorage([lng1, lat1], [lng2, lat2]))['routes'][0]['geometry'],
+				geometry: (await getTravelRoute([lng1, lat1], [lng2, lat2]))['routes'][0]['geometry'],
 				properties: {}
 			}
 		]
@@ -414,20 +459,20 @@ function geoJSONFromStops(stops: { stop: Stop; stop_time: Date }[]): GeoJSONSour
 	return { type: 'geojson', data: geojson };
 }
 
-function clearTripLayers(onlyMarkers: boolean = false) {
+function clearTripLayers(cleanupMarkers: boolean = false) {
 	removeRenderedCollisions();
 	for (const style of Object.keys(MAP_STYLES)) {
 		if (style.toUpperCase().includes('LOCATION')) continue;
-		if (MAP_STYLES[style].type == 1)
+		if (MAP_STYLES[style].type == 1 && (!cleanupMarkers || !displayingMarkerStyles.includes(style)))
 			updateMarker(style, [undefined, undefined], undefined, undefined);
-		if (MAP_STYLES[style].type == 0 && !onlyMarkers) updateLayer(style, undefined);
+		if (MAP_STYLES[style].type == 0 && !cleanupMarkers) updateLayer(style, undefined);
 	}
 }
 
 async function travelTime(lat1: number, lng1: number, lat2: number, lng2: number, mode: NavMode='walking') {
 	const from: [number, number] = [lng1, lat1];
 	const to: [number, number] = [lng2, lat2];
-	const data = await getTravelRouteWithLocalStorage(from, to, mode);
+	const data = await getTravelRoute(from, to, mode);
 	if (data['routes'] === undefined || data['routes'].length === 0)
 		return -1;
 	return data['routes'][0]['duration'] as number;
@@ -436,11 +481,14 @@ async function travelTime(lat1: number, lng1: number, lat2: number, lng2: number
 async function travelDistance(lat1: number, lng1: number, lat2: number, lng2: number, mode: NavMode='walking') {
 	const from: [number, number] = [lng1, lat1];
 	const to: [number, number] = [lng2, lat2];
-	const data = await getTravelRouteWithLocalStorage(from, to, mode);
+	const data = await getTravelRoute(from, to, mode);
 	if (data['routes'] === undefined || data['routes'].length === 0)
 		return haversineDistance(lat1, lng1, lat2, lng2);
 	return data['routes'][0]['distance'] as number;
 }
+
+
+
 function haversineDistance(lat1: number, lng1: number, lat2: number, lng2: number): number {
 	const R = 6371; // Earth radius in km
 	const dLat = (lat2 - lat1) * (Math.PI / 180);

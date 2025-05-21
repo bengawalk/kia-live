@@ -1,8 +1,9 @@
 import { writable } from 'svelte/store';
 import { type Route } from '$lib/structures/Route'
 import { type Stop } from '$lib/structures/Stop'
-import { type  TransitFeed} from '$lib/structures/TransitFeed'
+import { makeSerializable, rehydrateFeed, type  TransitFeed } from '$lib/structures/TransitFeed';
 import type { LiveTransitFeed } from '$lib/structures/LiveTransitFeed';
+import { openDB } from 'idb';
 
 
 // Initialize with default empty values
@@ -18,9 +19,30 @@ const initialLiveFeed: LiveTransitFeed = {
     trips: [],
     vehicles: []
 }
+const DB_NAME = 'transit-store';
+const STORE_NAME = 'feed';
+
+// Save to DB on every change
+export async function saveFeed(feed: TransitFeed) {
+    const db = await openDB(DB_NAME, 1, {
+        upgrade(db) {
+            db.createObjectStore(STORE_NAME);
+        }
+    });
+    await db.put(STORE_NAME, makeSerializable(feed), 'latest');
+}
+
+// Load from DB if available, else initial transit feed
+export async function loadFeed(): Promise<TransitFeed> {
+    const db = await openDB(DB_NAME, 1);
+    const val = await db.get(STORE_NAME, 'latest');
+    return rehydrateFeed(val) ?? initialTransitFeed;
+}
 // Create the writable store
 export const transitFeedStore = writable<TransitFeed>(initialTransitFeed);
 export const liveTransitFeed = writable<LiveTransitFeed>(initialLiveFeed);
+
+transitFeedStore.subscribe(saveFeed);
 
 // Helper functions for common operations
 export const transitFeedActions = {

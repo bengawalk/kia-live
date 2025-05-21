@@ -8,10 +8,10 @@
 	export let selectedStop: string;
 
 
-	const isLiveTrip = Object.hasOwn(trip, 'vehixcle_id');
+	const isLiveTrip = Object.hasOwn(trip, 'vehicle_id');
 	const route = $transitFeedStore.routes.find((value) => value.route_id === trip.route_id);
 	const routename = route ? route.route_short_name : trip.route_id;
-	const staticTrip = route ? route.trips.find((value) => Object.keys(value)[0] === trip.trip_id) : undefined;
+	const staticTrip = route ? route.trips.find((value) => value.trip_id === trip.trip_id) : undefined;
 	const currentStaticStopEntry = isLiveTrip && staticTrip ? staticTrip.stops.find((value) => value.stop_id === selectedStop) : undefined
 	const staticStopTime = currentStaticStopEntry ? currentStaticStopEntry.stop_date() : undefined;
 	const currentStopEntry = trip.stops.find((value) => value.stop_id === selectedStop);

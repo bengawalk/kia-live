@@ -3,6 +3,8 @@ import mapboxgl, { type LayerSpecification } from 'mapbox-gl';
 import mapLineLabelImage from '$assets/map-line-label.png';
 import { pollUserLocation } from '$lib/services/location';
 import { handleTap } from '$lib/services/discovery';
+import { openDB } from 'idb';
+import { browser } from '$app/environment';
 
 let map: mapboxgl.Map | undefined;
 export type NavMode = 'walking' | 'driving-traffic' | 'cycling' | 'driving'
@@ -295,18 +297,31 @@ export function updateMarker(
 function getCacheKey(from: [number, number], to: [number, number], mode: string) {
 	return `nav_${mode}_${from.join(',')}_${to.join(',')}`;
 }
-
-export async function getTravelRouteWithLocalStorage(from: [number, number], to: [number, number], mode: NavMode='walking') {
+const DB_NAME = 'travel-directions';
+const STORE_NAME = 'nav';
+async function getDB() {
+	// console.log("returning cached response");
+	return await openDB(DB_NAME, 1, {
+		upgrade(db) {
+			db.createObjectStore(STORE_NAME);
+		}
+	});
+}
+export async function getTravelRoute(from: [number, number], to: [number, number], mode: NavMode='walking') {
 	const key = getCacheKey(from, to, mode);
-	const cached = localStorage.getItem(key);
-
-	if (cached) return JSON.parse(cached);
+	if(!browser) return null;
+	const db = await getDB();
+	const cached = await db.get(STORE_NAME, key);
+	if (cached) return cached;
+	// console.log("Failed to retrieve cache response");
 
 	const url = `https://api.mapbox.com/directions/v5/mapbox/${mode}/${from.join(',')};${to.join(',')}?geometries=geojson&access_token=${mapboxgl.accessToken}`;
-
 	const response = await fetch(url);
+
+	if (!response.ok) throw new Error(`Mapbox request failed: ${response.status}`);
 	const data = await response.json();
-	localStorage.setItem(key, JSON.stringify(data)); // cache result
+
+	await db.put(STORE_NAME, data, key);
 	return data;
 }
 

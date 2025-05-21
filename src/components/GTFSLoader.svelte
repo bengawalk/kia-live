@@ -1,17 +1,83 @@
 <script lang="ts">
     import { onMount } from 'svelte';
-    import { transitFeedActions } from '$lib/stores/transitFeedStore';
+    import { liveTransitFeed, loadFeed, transitFeedActions, transitFeedStore } from '$lib/stores/transitFeedStore';
     import JSZip from 'jszip';
     import Papa from 'papaparse';
+    import gtfs_rt from 'gtfs-realtime-bindings';
     import appCaution from '$assets/app-caution.svg?raw';
     import type { Stop } from '$lib/structures/Stop';
     import type { Trip } from '$lib/structures/Trip';
     import type { Route } from '$lib/structures/Route';
+    import type { LiveTrip } from '$lib/structures/LiveTrip';
+    import type { Vehicle } from '$lib/structures/Vehicle';
+    import type Long from 'long';
 
     let error: string | null = null;
 
+    export function normalizeTimestamp(value: number | Long | undefined | null): number | undefined {
+        if (typeof value === 'number') return value;
+        if (value && typeof value.toNumber === 'function') return value.toNumber();
+        return undefined;
+    }
+
+    async function processGTFSRT(): Promise<void> {
+        const endpoint = import.meta.env.VITE_LIVE_DATA_SOURCE;
+
+        const response = await fetch(endpoint);
+        if (!response.ok) throw new Error(`Failed to fetch GTFS-RT: ${response.status}`);
+
+        const buffer = await response.arrayBuffer();
+        const feed = gtfs_rt.transit_realtime.FeedMessage.decode(new Uint8Array(buffer));
+
+        const trips: LiveTrip[] = [];
+        const vehicles: Vehicle[] = [];
+
+        for (const entity of feed.entity) {
+            // Process Trip Updates
+            if (entity.tripUpdate && entity.tripUpdate.trip && entity.tripUpdate.trip.tripId) {
+                const update = entity.tripUpdate;
+                const trip_id = update.trip.tripId;
+                const vehicle_id = update.vehicle?.id || '';
+                const route_id = update.trip.routeId || '';
+                const timestamp = new Date(normalizeTimestamp(update.timestamp) ?? Date.now());
+
+                const stops = (update.stopTimeUpdate || []).map((st) => ({
+                    stop_id: st.stopId || '',
+                    stop_time: new Date((normalizeTimestamp(st.arrival?.time) || normalizeTimestamp(st.departure?.time) || 0) * 1000).toISOString(),
+                    stop_date: () => new Date((normalizeTimestamp(st.arrival?.time) || normalizeTimestamp(st.departure?.time) || 0) * 1000)
+                })).filter((val) => Object.hasOwn($transitFeedStore.stops, val.stop_id));
+                const inputTripID = trip_id ?? '';
+                trips.push({ trip_id: inputTripID, vehicle_id, route_id, stops, timestamp });
+            }
+
+            // Process Vehicle Positions
+            if (entity.vehicle && entity.vehicle.vehicle && entity.vehicle.vehicle.id) {
+                const v = entity.vehicle;
+                vehicles.push({
+                    vehicle_id: v.vehicle?.id || '',
+                    vehicle_reg: v.vehicle?.label || '',
+                    trip_id: v.trip?.tripId || '',
+                    route_id: v.trip?.routeId || '',
+                    latitude: v.position?.latitude || 0,
+                    longitude: v.position?.longitude || 0,
+                    bearing: v.position?.bearing || 0,
+                    speed: v.position?.speed || 0,
+                    next_stop_id: v.stopId || '',
+                    timestamp: new Date((normalizeTimestamp(v.timestamp) || Date.now()) * 1000)
+                });
+            }
+        }
+        liveTransitFeed.set({
+            trips: trips,
+            vehicles: vehicles,
+            feed_id: '',
+            timestamp: new Date((normalizeTimestamp(feed.header.timestamp) || Date.now()) * 1000),
+        })
+    }
+
     async function loadGTFSData(): Promise<boolean> {
         error = null;
+        transitFeedStore.set(await loadFeed());
         try {
             // 1. Get environment variables
             const staticDataSource = import.meta.env.VITE_STATIC_DATA_SOURCE;
@@ -299,6 +365,8 @@
             // Update store
             transitFeedActions.updateVersion(latestVersion);
             transitFeedActions.updateTimestamp(new Date());
+            await processGTFSRT();
+            setInterval(processGTFSRT, 20000); // 20 second interval, shift this to a websocket or server-sent event to eliminate this process
             return true;
         } catch (err) {
             error = err instanceof Error ? err.message : 'Failed to load GTFS data';

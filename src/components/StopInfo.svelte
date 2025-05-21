@@ -19,15 +19,17 @@
 
 	for (const trip of totalTrips) {
 		if (!trip.stops.length) continue;
-		const last = trip.stops[trip.stops.length - 1];
-		const date = last.stop_date(); // today by default
+		// const last = trip.stops[trip.stops.length - 1];
+		const dep = trip.stops.find(st => st.stop_id === stop.stop_id);
+		if(!dep) continue;
+		const date = dep.stop_date(); // today by default
 		if(date < new Date())
 			date.setDate(date.getDate() + 1);
 
 		tripArrivals.set(trip.trip_id, date);
 	}
-	const sortedTrips = totalTrips.sort((a, b) =>
-		tripArrivals.get(a.trip_id).getTime() - tripArrivals.get(b.trip_id).getTime());
+	const sortedTrips = totalTrips.filter(val => tripArrivals.has(val.trip_id)).sort((a, b) =>
+		tripArrivals.get(a.trip_id)!.getTime() - tripArrivals.get(b.trip_id)!.getTime());
 	const allTrips = Array.from(
 		sortedTrips.reduce((map, item) =>
 			(!map.has(item.trip_id) || ('vehicle_id' in item && !('vehicle_id' in map.get(item.trip_id)!)))

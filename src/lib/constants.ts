@@ -46,7 +46,8 @@ const SVG_ICONS: Record<keyof typeof MAP_STYLES, string> = {
 };
 
 export const AIRPORT_LOCATION: number[] = [13.199110535079635, 77.70822021568426];
-
+export const AIRPORT_SOFTLOCK: number[] = [13.205024620008803, 77.70808412641674, 2.5]
+export const CITY_SOFTLOCK: number[] = [12.90683, 77.60127, 11.64]
 export const DEFAULT_LOCATION: number[] = [12.977769, 77.572762];
 
 export const LINE_LABEL_STYLE: LayerSpecification = {
