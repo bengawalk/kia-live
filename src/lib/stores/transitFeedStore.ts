@@ -3,7 +3,7 @@ import { type Route } from '$lib/structures/Route'
 import { type Stop } from '$lib/structures/Stop'
 import { makeSerializable, rehydrateFeed, type  TransitFeed } from '$lib/structures/TransitFeed';
 import type { LiveTransitFeed } from '$lib/structures/LiveTransitFeed';
-import { openDB } from 'idb';
+import { browser } from '$app/environment';
 
 
 // Initialize with default empty values
@@ -24,6 +24,8 @@ const STORE_NAME = 'feed';
 
 // Save to DB on every change
 export async function saveFeed(feed: TransitFeed) {
+    if(!browser) return;
+    const { openDB } = await import('idb');
     const db = await openDB(DB_NAME, 1, {
         upgrade(db) {
             db.createObjectStore(STORE_NAME);
@@ -34,6 +36,8 @@ export async function saveFeed(feed: TransitFeed) {
 
 // Load from DB if available, else initial transit feed
 export async function loadFeed(): Promise<TransitFeed> {
+    if(!browser) return initialTransitFeed;
+    const { openDB } = await import('idb');
     const db = await openDB(DB_NAME, 1);
     const val = await db.get(STORE_NAME, 'latest');
     return rehydrateFeed(val) ?? initialTransitFeed;

@@ -1,7 +1,7 @@
 import { inputLocation, userLocation } from '$lib/stores/location';
 import { DEFAULT_LOCATION } from '$lib/constants';
 import { fitMapToPoints, updateMarker } from '$lib/services/map';
-import { setMarkerTapped, toggleAirportDirection } from '$lib/services/discovery';
+import { setMarkerTapped } from '$lib/services/discovery';
 import { get } from 'svelte/store';
 import { isPlanning } from '$lib/stores/discovery';
 

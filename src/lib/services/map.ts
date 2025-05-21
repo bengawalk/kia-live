@@ -3,7 +3,6 @@ import mapboxgl, { type LayerSpecification } from 'mapbox-gl';
 import mapLineLabelImage from '$assets/map-line-label.png';
 import { pollUserLocation } from '$lib/services/location';
 import { handleTap } from '$lib/services/discovery';
-import { openDB } from 'idb';
 import { browser } from '$app/environment';
 
 let map: mapboxgl.Map | undefined;
@@ -301,6 +300,8 @@ const DB_NAME = 'travel-directions';
 const STORE_NAME = 'nav';
 async function getDB() {
 	// console.log("returning cached response");
+	if(!browser) return undefined;
+	const { openDB } = await import('idb');
 	return await openDB(DB_NAME, 1, {
 		upgrade(db) {
 			db.createObjectStore(STORE_NAME);
@@ -311,6 +312,7 @@ export async function getTravelRoute(from: [number, number], to: [number, number
 	const key = getCacheKey(from, to, mode);
 	if(!browser) return null;
 	const db = await getDB();
+	if(!db) return null;
 	const cached = await db.get(STORE_NAME, key);
 	if (cached) return cached;
 	// console.log("Failed to retrieve cache response");
