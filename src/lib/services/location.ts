@@ -10,7 +10,10 @@ export function pollUserLocation() {
 	let firstTime = true;
 	navigator.geolocation.watchPosition((position: GeolocationPosition) => {
 		userLocation.set(position)
-		if(firstTime) fitMapToPoints([[position.coords.longitude, position.coords.latitude]]);
+		if(firstTime) {
+			inputLocation.set(undefined);
+			fitMapToPoints([[position.coords.longitude, position.coords.latitude]]);
+		}
 		firstTime = false;
 	}, () => {
 		console.log("Geolocation not available, using default location.");
