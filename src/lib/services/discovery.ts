@@ -2,7 +2,7 @@ import type { Stop } from '$lib/structures/Stop';
 import type { Trip } from '$lib/structures/Trip';
 import type { Route } from '$lib/structures/Route';
 import type { LiveTrip } from '$lib/structures/LiveTrip';
-import type { GeoJSONSourceSpecification, MapMouseEvent } from 'mapbox-gl';
+import { type GeoJSONSourceSpecification, type MapMouseEvent, type MapTouchEvent } from 'mapbox-gl';
 import { liveTransitFeed, transitFeedStore } from '$lib/stores/transitFeedStore';
 import {
 	airportDirection,
@@ -22,7 +22,7 @@ import {
 	updateLayer,
 	updateMarker
 } from '$lib/services/map';
-import { AIRPORT_LOCATION, AIRPORT_SOFTLOCK, MAP_STYLES } from '$lib/constants';
+import { AIRPORT_LOCATION, AIRPORT_SOFTLOCK, DEFAULT_LOCATION, MAP_STYLES } from '$lib/constants';
 import { language } from '$lib/stores/language';
 
 const tappableLayers = Object.keys(MAP_STYLES).filter((key) => MAP_STYLES[key].type === 0);
@@ -51,6 +51,7 @@ export function cycleBus() {
 export async function loadNextBuses() {
 	// Take data from transit feed stores, location stores, and generate next buses
 	const loc = currentLocation();
+	// console.log(loc);
 	const transitFeed = get(transitFeedStore);
 	const liveFeed = get(liveTransitFeed);
 	const stops = await filterLocationsByRange(
@@ -207,7 +208,10 @@ export async function displayCurrentTrip() {
 	const buses = get(nextBuses)[direction];
 	const index = get(nextBusIndex);
 	const selectedTrip = get(selectedTripID);
-	if(!selectedTrip) return;
+	if(!selectedTrip) {
+		clearTripLayers(true);
+		return;
+	}
 	const tripFind = buses.find((val) => val.trip_id === selectedTrip);
 	const currentTrip =
 		tripFind !== undefined ? tripFind : buses.length > index ? buses[index] : null;
@@ -342,13 +346,12 @@ export function toggleAirportDirection(direction: boolean | undefined = undefine
 	const buses = get(nextBuses);
 	nextBusIndex.set(busIndex === -1 ? -1 : buses[finalCon ? 'toCity' : 'toAirport'].length >= busIndex ? buses[finalCon ? 'toCity' : 'toAirport'].length - 1 : busIndex);
 	selectedTripID.set(undefined);
+	cycleBus();
 }
 
 nextBuses.subscribe(displayCurrentTrip);
 selectedTripID.subscribe(displayCurrentTrip);
 selected.subscribe(displayCurrentTrip);
-inputLocation.subscribe(displayCurrentTrip);
-userLocation.subscribe(displayCurrentTrip);
 airportDirection.subscribe(displayCurrentTrip);
 inputLocation.subscribe(loadNextBuses);
 userLocation.subscribe(loadNextBuses);
@@ -357,21 +360,102 @@ liveTransitFeed.subscribe(loadNextBuses);
 inputLocation.subscribe(() => toggleAirportDirection(undefined, false));
 userLocation.subscribe(() => toggleAirportDirection(undefined, false));
 
+let changeLocationTimeout: NodeJS.Timeout | undefined = undefined;
+let circleTimer: HTMLElement | undefined = undefined;
+let circleTimeout: NodeJS.Timeout | undefined = undefined;
+let locationChanged = false;
+export function handleTouchStart(e: MapTouchEvent | MapMouseEvent) {
+	if(changeLocationTimeout || circleTimer || circleTimeout) {
+		return;
+	}
+	if(e.originalEvent instanceof MouseEvent) {
+		if((e.originalEvent as MouseEvent).button !== 0) return; // Ensure left mouse click
+	}
+	circleTimeout = setTimeout(() => {
+		circleTimer = document.createElement('div');
+		circleTimer.innerHTML = `
+		      <svg class="w-8 h-8 -rotate-90" viewBox="0 0 100 100" aria-hidden="true">
+        <circle cx="50" cy="50" r="45" class="text-gray-200"
+                stroke="currentColor" stroke-width="10" fill="none"></circle>
+        <circle cx="50" cy="50" r="40" pathLength="100"
+                class="text-black"
+                stroke="currentColor" stroke-width="15" stroke-linecap="round" fill="none"
+                stroke-dasharray="100" stroke-dashoffset="100">
+          <animate attributeName="stroke-dashoffset" from="100" to="0" dur="1s" fill="freeze"></animate>
+        </circle>
+      </svg>
+		`;
+		document.getElementById('map')?.appendChild(circleTimer);
+		circleTimer.className = 'fixed left-0 top-0 -translate-x-1/2 -translate-y-1/2 pointer-events-none';
+		circleTimer.style.left = `${e.point.x + 25}px`;
+		circleTimer.style.top = `${e.point.y - 25}px`;
+		circleTimer.style.zIndex = '100';
+		clearTimeout(circleTimeout);
+		circleTimeout = undefined;
+
+	}, 500);
+
+	changeLocationTimeout = setTimeout(() =>
+	{
+		inputLocation.set({latitude: e.lngLat.lat, longitude: e.lngLat.lng});
+		locationChanged = true;
+		cycleBus();
+		clearTimeout(changeLocationTimeout);
+		changeLocationTimeout = undefined;
+		if(circleTimer)
+			circleTimer.remove();
+		circleTimer = undefined;
+		}
+	, 1500); // 1.5 second later change input location
+}
+// export function handleTouchMove(e: MapTouchEvent | MapMouseEvent) {
+// 	if(changeLocationTimeout) {
+// 		console.log('Touch cancelled change location removed');
+// 		clearTimeout(changeLocationTimeout);
+// 	}
+// 	if(circleTimeout) {
+// 		console.log('Touch cancelled circle timeout removed');
+// 		clearTimeout(circleTimeout);
+// 	}
+// 	if(circleTimer) {
+// 		console.log('Touch cancelled circle removed');
+// 		circleTimer.remove();
+// 	}
+// }
+export function handleTouchEnd(e: MapTouchEvent | MapMouseEvent) {
+	if(changeLocationTimeout) {
+		clearTimeout(changeLocationTimeout);
+		changeLocationTimeout = undefined;
+	}
+	if(circleTimeout) {
+		clearTimeout(circleTimeout);
+		circleTimeout = undefined;
+	}
+	if(circleTimer) {
+		circleTimer.remove();
+		circleTimer.style.visibility = 'hidden';
+		circleTimer = undefined;
+	}
+}
+
 export function handleTap(e: MapMouseEvent) {
 	if (markerTapped) {
 		markerTapped = false;
 		return;
 	}
+	const inputLoc = get(inputLocation);
+	if (!locationChanged && inputLoc && haversineDistance(e.lngLat.lat, e.lngLat.lng, inputLoc.latitude, inputLoc.longitude) <= 75) {
+		if(!get(userLocation)) inputLocation.set({latitude: DEFAULT_LOCATION[0], longitude: DEFAULT_LOCATION[1]});
+		else inputLocation.set(undefined);
+		return;
+	}
+	locationChanged = false;
 	const features = e.target
 		.queryRenderedFeatures(e.point)
 		.filter((feature) => feature.layer !== undefined && tappableLayers.includes(feature.layer.id));
-	const point = e.lngLat;
+	// const point = e.lngLat;
 	if (get(selected) !== undefined) {
 		selected.set(undefined);
-		return;
-	}
-	if (features === undefined || features.length === 0) {
-		inputLocation.set({ latitude: point.lat, longitude: point.lng });
 		return;
 	}
 	const transitFeed = get(transitFeedStore);
@@ -496,7 +580,7 @@ function haversineDistance(lat1: number, lng1: number, lat2: number, lng2: numbe
 	const a =
 		Math.sin(dLat / 2) ** 2 +
 		Math.cos(lat1 * (Math.PI / 180)) * Math.cos(lat2 * (Math.PI / 180)) * Math.sin(dLng / 2) ** 2;
-	return 2 * R * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a)) * 1000;
+	return 2 * R * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a)) * 1000; // meters
 }
 
 async function findClosestStop(loc: InputCoords | GeolocationCoordinates, tripStops: { stop: Stop; stop_time: Date }[]) {

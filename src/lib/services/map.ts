@@ -2,7 +2,7 @@ import { LINE_COLLISION_STYLE, LINE_LABEL_STYLE, MAP_STYLES, POINT_LABEL_STYLE }
 import mapboxgl, { type LayerSpecification } from 'mapbox-gl';
 import mapLineLabelImage from '$assets/map-line-label.png';
 import { pollUserLocation } from '$lib/services/location';
-import { handleTap } from '$lib/services/discovery';
+import { handleTap, handleTouchEnd, handleTouchStart } from '$lib/services/discovery';
 import { browser } from '$app/environment';
 
 let map: mapboxgl.Map | undefined;
@@ -15,7 +15,6 @@ export function loadMap(mapContainer: HTMLElement | string): mapboxgl.Map {
 		center: [77.6, 13.02], // Default to Bengaluru
 		zoom: 10.9, // Default zoom level
 		dragRotate: false, // Disable rotation
-		touchZoomRotate: false,
 		attributionControl: false,
 		logoPosition: "top-right",
 	});
@@ -35,6 +34,13 @@ export function loadMap(mapContainer: HTMLElement | string): mapboxgl.Map {
 		'load', () => {
 			map?.on('click', handleTap);
 			pollUserLocation();
+			map?.on('touchstart', handleTouchStart);
+			map?.on('touchmove', handleTouchEnd);
+			map?.on('touchend', handleTouchEnd);
+			map?.on('mousedown', handleTouchStart);
+			map?.on('mousemove', handleTouchEnd);
+			map?.on('mouseover', handleTouchEnd);
+			map?.on('mouseup', handleTouchEnd);
 			// map?.on('mouseup', handleTap);
 		}
 	);
@@ -209,6 +215,7 @@ export function updateMarker(
 	if(!map) {
 		return;
 	}
+
 	// Skip if the layer type is not Marker
 	if (MAP_STYLES[layerType].type !== 1) return;
 

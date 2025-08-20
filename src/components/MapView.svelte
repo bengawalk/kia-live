@@ -5,6 +5,8 @@
 	import { loadMap, unloadMap } from '$lib/services/map';
 	import InfoView from '$components/InfoView.svelte';
 	import GTFSLoader from '$components/GTFSLoader.svelte';
+	import SearchBar from '$components/SearchBar.svelte';
+	import LanguageSwitcher from '$components/LanguageSwitcher.svelte';
 
 	let mapContainer: HTMLElement | string;
 
@@ -29,10 +31,11 @@
     }
 </style>
 
-<div id="map" class="min-h-screen flex flex-col" bind:this={mapContainer}>
+<div id="map" class="max-h-dvh flex flex-col" bind:this={mapContainer}>
 
 <!--	<LanguageSwitcher />-->
 	<GTFSLoader />
+	<SearchBar />
 	<MapButtons />
 	<InfoView />
 </div>

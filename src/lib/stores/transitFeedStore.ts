@@ -21,19 +21,26 @@ const initialLiveFeed: LiveTransitFeed = {
 }
 const DB_NAME = 'transit-store';
 const STORE_NAME = 'feed';
+const DB_VER = 2
 
-// Save to DB on every change
-export async function saveFeed(feed: TransitFeed) {
-    if(!browser) return;
+async function getDB(){
+    if(!browser) return undefined;
     const { openDB } = await import('idb');
-    const db = await openDB(DB_NAME, 1, {
+    return await openDB(DB_NAME, DB_VER, {
         upgrade(db) {
             if (!db.objectStoreNames.contains(STORE_NAME)) {
                 db.createObjectStore(STORE_NAME);
             }
         }
     });
+}
 
+// Save to DB on every change
+export async function saveFeed(feed: TransitFeed) {
+    if(!browser) return;
+    if(feed == initialTransitFeed) return;
+    const db = await getDB();
+    if(!db) return;
     await db.put(STORE_NAME, makeSerializable(feed), 'latest');
 }
 
@@ -41,7 +48,7 @@ export async function saveFeed(feed: TransitFeed) {
 export async function loadFeed(): Promise<TransitFeed> {
     if(!browser) return initialTransitFeed;
     const { openDB } = await import('idb');
-    const db = await openDB(DB_NAME, 1);
+    const db = await openDB(DB_NAME, DB_VER);
     if(!db.objectStoreNames.contains(STORE_NAME)) return initialTransitFeed;
     const val = await db.get(STORE_NAME, 'latest');
     return rehydrateFeed(val) ?? initialTransitFeed;
