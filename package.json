@@ -66,6 +66,8 @@
     "idb": "^8.0.3",
     "jszip": "^3.10.1",
     "mapbox-gl": "^3.10.0",
-    "papaparse": "^5.5.2"
+    "maplibre-gl": "^5.6.2",
+    "papaparse": "^5.5.2",
+    "vite-plugin-pwa": "^1.0.1"
   }
 }
