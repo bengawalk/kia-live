@@ -39,6 +39,7 @@ export function loadMap(mapContainer: HTMLElement | string): mapboxgl.Map {
 			map?.on('touchend', handleTouchEnd);
 			map?.on('mousedown', handleTouchStart);
 			map?.on('mousemove', handleTouchEnd);
+			map?.on('move', handleTouchEnd);
 			map?.on('mouseover', handleTouchEnd);
 			map?.on('mouseup', handleTouchEnd);
 			// map?.on('mouseup', handleTap);

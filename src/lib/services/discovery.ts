@@ -2,7 +2,7 @@ import type { Stop } from '$lib/structures/Stop';
 import type { Trip } from '$lib/structures/Trip';
 import type { Route } from '$lib/structures/Route';
 import type { LiveTrip } from '$lib/structures/LiveTrip';
-import { type GeoJSONSourceSpecification, type MapMouseEvent, type MapTouchEvent } from 'mapbox-gl';
+import { type GeoJSONSourceSpecification, type MapMouseEvent, type MapTouchEvent, type Map as MapboxMap } from 'mapbox-gl';
 import { liveTransitFeed, transitFeedStore } from '$lib/stores/transitFeedStore';
 import {
 	airportDirection,
@@ -422,7 +422,7 @@ export function handleTouchStart(e: MapTouchEvent | MapMouseEvent) {
 // 		circleTimer.remove();
 // 	}
 // }
-export function handleTouchEnd(e: MapTouchEvent | MapMouseEvent) {
+export function handleTouchEnd(e: MapTouchEvent | MapMouseEvent | {type: 'move'; target: MapboxMap;} & {originalEvent?: MouseEvent | TouchEvent | WheelEvent | undefined;}) {
 	if(changeLocationTimeout) {
 		clearTimeout(changeLocationTimeout);
 		changeLocationTimeout = undefined;

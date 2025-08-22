@@ -4,10 +4,8 @@ import { fitMapToPoints, updateMarker } from '$lib/services/map';
 import { setMarkerTapped } from '$lib/services/discovery';
 import { get } from 'svelte/store';
 import { isPlanning } from '$lib/stores/discovery';
-import { tick } from 'svelte';
-
+let firstTime = true;
 export function pollUserLocation() {
-	let firstTime = true;
 	navigator.geolocation.watchPosition((position: GeolocationPosition) => {
 		userLocation.set(position)
 		if(firstTime) {
@@ -35,8 +33,11 @@ function locationUpdate() {
 		if(!input) updateMarker('INPUT_LOCATION', [undefined, undefined], undefined, undefined);
 	}
 	if(input !== undefined) updateMarker('INPUT_LOCATION', [undefined, undefined], input.latitude, input.longitude, () => {if(!get(isPlanning)) setMarkerTapped(); inputLocation.set(undefined);});
-	if(!input && !user)
-		tick().then(() => inputLocation.set({latitude: DEFAULT_LOCATION[0], longitude: DEFAULT_LOCATION[1]}));
+	if(!input && !user && !firstTime) inputLocation.set({
+		latitude: DEFAULT_LOCATION[0],
+		longitude: DEFAULT_LOCATION[1]
+	});
+
 
 }
 userLocation.subscribe(locationUpdate);
