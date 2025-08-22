@@ -28,7 +28,7 @@
 	<!-- Center-aligned Plan button -->
 	<button
 		on:click={() => {}}
-		class="text-center text-neutral-400 justify-self-center pointer-events-auto w-fit px-5"
+		class="text-center text-neutral-400 justify-self-center pointer-events-auto w-fit px-5 opacity-0 pointer-events-none"
 	>
 		{$isPlanning ? $messages.Planning() : $messages.Plan()}
 	</button>
