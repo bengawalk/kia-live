@@ -10,3 +10,4 @@ export const nextBuses = writable<{toCity: (Trip | LiveTrip)[], toAirport: (Trip
 export const selectedTripID = writable<string | undefined>();
 export const highlightedStop = writable<Stop | undefined>();
 export const selected = writable<Stop | Trip | LiveTrip | undefined>();
+export const connected = writable<boolean>(false);

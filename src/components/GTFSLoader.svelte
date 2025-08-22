@@ -11,6 +11,7 @@
     import type { LiveTrip } from '$lib/structures/LiveTrip';
     import type { Vehicle } from '$lib/structures/Vehicle';
     import type Long from 'long';
+    import { connected } from '$lib/stores/discovery';
 
     let error: string | null = null;
 
@@ -20,13 +21,8 @@
         return undefined;
     }
 
-    async function processGTFSRT(): Promise<void> {
-        const endpoint = import.meta.env.VITE_LIVE_DATA_SOURCE;
+    async function processWSData(buffer: ArrayBuffer): Promise<void> {
 
-        const response = await fetch(endpoint);
-        if (!response.ok) throw new Error(`Failed to fetch GTFS-RT: ${response.status}`);
-
-        const buffer = await response.arrayBuffer();
         const feed = gtfs_rt.transit_realtime.FeedMessage.decode(new Uint8Array(buffer));
 
         const trips: LiveTrip[] = [];
@@ -75,6 +71,41 @@
         })
     }
 
+    async function processGTFSRT(): Promise<void> {
+        const endpoint = import.meta.env.VITE_LIVE_DATA_SOURCE;
+        // console.log('WEBSOCKET ENDPOINT', endpoint);
+        const ws = new WebSocket(endpoint);
+        ws.binaryType = 'arraybuffer';
+        let refreshTimeout: NodeJS.Timeout | null = null;
+        ws.onopen = () => {
+            if (refreshTimeout) {
+                clearTimeout(refreshTimeout);
+            }
+            connected.set(true);
+        }
+        ws.onmessage = (event: MessageEvent) => {
+            try {
+                processWSData(event.data);
+            } catch (e) {
+                console.error('Failed to decode GTFS-RT message', e);
+            }
+        }
+        ws.onclose = () => {
+            refreshTimeout = setTimeout(processGTFSRT, 3000); // simple backoff
+            connected.set(false);
+        };
+        ws.onerror = (e) => {
+            console.error('Failed to set up Web Socket connection', e);
+            connected.set(false);
+            try {
+                ws.close();
+            }
+            catch (e) {
+                console.error('Failed to close Web Socket connection', e);
+            }
+        }
+    }
+
     async function loadGTFSData(): Promise<boolean> {
         error = null;
         transitFeedStore.set(await loadFeed());
@@ -99,6 +130,8 @@
             // 3. Skip download if versions match
             if (localVersion === latestVersion) {
                 console.log('GTFS data is up to date');
+                await processGTFSRT();
+                // setInterval(processGTFSRT, 20000); // 20 second interval, shift this to a websocket or server-sent event to eliminate this process
                 return true;
             }
 
@@ -365,8 +398,9 @@
             // Update store
             transitFeedActions.updateVersion(latestVersion);
             transitFeedActions.updateTimestamp(new Date());
+
             await processGTFSRT();
-            setInterval(processGTFSRT, 20000); // 20 second interval, shift this to a websocket or server-sent event to eliminate this process
+            // setInterval(processGTFSRT, 20000); // 20 second interval, shift this to a websocket or server-sent event to eliminate this process
             return true;
         } catch (err) {
             error = err instanceof Error ? err.message : 'Failed to load GTFS data';
@@ -378,16 +412,3 @@
         loadGTFSData();
     });
 </script>
-
-{#if error}
-    <div class="fixed top-2 left-1/2 transform -translate-x-1/2 z-40 pointer-events-none">
-        <button
-          class="pointer-events-auto"
-          aria-label="Retry loading data"
-          on:click={loadGTFSData}
-        >
-            {@html appCaution}
-        </button>
-    </div>
-
-{/if}
