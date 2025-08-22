@@ -3,7 +3,7 @@
 	import type { LiveTrip } from '$lib/structures/LiveTrip';
 	import type { Trip } from '$lib/structures/Trip';
 	import infoBus from '$assets/info-bus.svg?raw';
-	import { transitFeedStore } from '$lib/stores/transitFeedStore';
+	import { transitFeedStore, liveTransitFeed } from '$lib/stores/transitFeedStore';
 	import type { Stop } from '$lib/structures/Stop';
 	import { scrollableElement } from '$lib/stores/infoView';
 	import { isMobile } from '$lib/stores/infoView';
@@ -18,6 +18,7 @@
 	const stops: [Stop, Date, boolean | undefined][] = [];
 	const now = new Date();
 	const isLiveTrip = Object.hasOwn(trip, 'vehicle_id');
+	$liveTransitFeed; // update on live transit feed change
 	const staticTrip = route ? route.trips.find((value) => value.trip_id === trip.trip_id) : undefined;
 
 

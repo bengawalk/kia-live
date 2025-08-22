@@ -8,7 +8,7 @@
 	export let time: Date;
 	export let isCurrent: boolean;
 	export let onTime: boolean | undefined;
-	const textOpacity: "100" | "20" = new Date().getTime() > time.getTime() ? "20" : "100";
+	const textOpacity: "100" | "40" = new Date().getTime() > time.getTime() ? "40" : "100";
 	const timeColor: "white" | "red" | "green" = onTime === undefined ? "white" : onTime ? "green" : "red";
 	const timeColorWhite = timeColor === "white";
 	const langstring = $language as string;
@@ -25,7 +25,7 @@
 		};
 </script>
 
-<div class="flex justify-between items-center w-full opacity-{textOpacity}">
+<div class="flex justify-between items-center w-full opacity-{textOpacity}" style="opacity:{textOpacity === '40' ? 0.6 : 1.0}">
 	<div  class="flex gap-1 items-center appearance-none bg-transparent border-none p-0 m-0 w-full text-left">
 		{#if isCurrent}
 			<div>
@@ -41,7 +41,7 @@
 				</svg>
 			</div>
 		{/if}
-		<button on:click={() => selected.set(stop)} class="cursor-pointer text-white {$highlightedStop?.stop_id === stop.stop_id ? 'font-bold' : ''} ">{Object.hasOwn(stop.stop_name, langstring) ? stop.stop_name[langstring] : stop.stop_name['en']}</button>
+		<button on:click={() => selected.set(stop)} class=" {isCurrent ? '' : 'pl-5.5'} cursor-pointer text-white {$highlightedStop?.stop_id === stop.stop_id ? 'font-bold' : ''} ">{Object.hasOwn(stop.stop_name, langstring) ? stop.stop_name[langstring] : stop.stop_name['en']}</button>
 	</div>
 	<div class=" text-right text-{timeColor}{timeColorWhite ? '' : '-300'} ">{time.toLocaleString(undefined, formatOptions)}</div>
 </div>
