@@ -10,7 +10,7 @@
 </script>
 
 <div
-	class="font-[IBM_Plex_Sans] absolute inset-x-0 grid grid-cols-3 items-end mt-auto mb-6 text-sm font-medium text-black z-40 px-6 pointer-events-none"
+	class="font-[IBM_Plex_Sans] absolute inset-x-0 grid grid-cols-3 items-end mt-auto mb-6 text-sm font-medium text-black z-1 px-6 pointer-events-none"
 	style=
 		"
 			margin-left: {$selected === undefined ? '0' : $isMobile ? '0' : $infoViewWidth}px;
