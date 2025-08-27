@@ -11,3 +11,5 @@ export const selectedTripID = writable<string | undefined>();
 export const highlightedStop = writable<Stop | undefined>();
 export const selected = writable<Stop | Trip | LiveTrip | undefined>();
 export const connected = writable<boolean>(false);
+export const connectedPopup = writable<boolean>(false);
+export const displayingTrip = writable<Trip | LiveTrip | undefined>(undefined);

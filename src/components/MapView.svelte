@@ -5,8 +5,9 @@
 	import { loadMap, unloadMap } from '$lib/services/map';
 	import InfoView from '$components/InfoView.svelte';
 	import GTFSLoader from '$components/GTFSLoader.svelte';
-	import SearchBar from '$components/SearchBar.svelte';
-	import LanguageSwitcher from '$components/LanguageSwitcher.svelte';
+	// import SearchBar from '$components/SearchBar.svelte';
+	// import LanguageSwitcher from '$components/LanguageSwitcher.svelte';
+	import ConnectedInfo from '$components/ConnectedInfo.svelte';
 
 	let mapContainer: HTMLElement | string;
 
@@ -35,7 +36,7 @@
 
 <!--	<LanguageSwitcher />-->
 	<GTFSLoader />
-	<SearchBar />
+	<ConnectedInfo />
 	<MapButtons />
 	<InfoView />
 </div>

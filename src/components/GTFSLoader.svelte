@@ -4,7 +4,7 @@
     import JSZip from 'jszip';
     import Papa from 'papaparse';
     import gtfs_rt from 'gtfs-realtime-bindings';
-    import appCaution from '$assets/app-caution.svg?raw';
+    // import appCaution from '$assets/app-caution.svg?raw';
     import type { Stop } from '$lib/structures/Stop';
     import type { Trip } from '$lib/structures/Trip';
     import type { Route } from '$lib/structures/Route';
@@ -12,8 +12,9 @@
     import type { Vehicle } from '$lib/structures/Vehicle';
     import type Long from 'long';
     import { connected } from '$lib/stores/discovery';
+		import { get } from 'svelte/store';
 
-    let error: string | null = null;
+    // let error: string | null = null;
 
     export function normalizeTimestamp(value: number | Long | undefined | null): number | undefined {
         if (typeof value === 'number') return value;
@@ -27,6 +28,7 @@
 
         const trips: LiveTrip[] = [];
         const vehicles: Vehicle[] = [];
+				const existingVehicles: Vehicle[] = get(liveTransitFeed).vehicles;
 
         for (const entity of feed.entity) {
             // Process Trip Updates
@@ -49,6 +51,17 @@
             // Process Vehicle Positions
             if (entity.vehicle && entity.vehicle.vehicle && entity.vehicle.vehicle.id) {
                 const v = entity.vehicle;
+								const previous = existingVehicles.find((val) =>
+									val.vehicle_id === v.vehicle?.id || ''
+								);
+								const previousLocations = [];
+								const timestamp = new Date((normalizeTimestamp(v.timestamp) || Date.now()) * 1000)
+								if(previous) {
+									previousLocations.push(...previous.previous_locations);
+									if(previousLocations[previousLocations.length - 1].timestamp < timestamp) {
+										previousLocations.push({latitude: v.position?.latitude || 0, longitude: v.position?.longitude || 0, timestamp: timestamp})
+									}
+								} else previousLocations.push({latitude: v.position?.latitude || 0, longitude: v.position?.longitude || 0, timestamp: timestamp});
                 vehicles.push({
                     vehicle_id: v.vehicle?.id || '',
                     vehicle_reg: v.vehicle?.label || '',
@@ -59,14 +72,15 @@
                     bearing: v.position?.bearing || 0,
                     speed: v.position?.speed || 0,
                     next_stop_id: v.stopId || '',
-                    timestamp: new Date((normalizeTimestamp(v.timestamp) || Date.now()) * 1000)
+										previous_locations: previousLocations,
+                    timestamp: timestamp
                 });
             }
         }
         liveTransitFeed.set({
             trips: trips,
             vehicles: vehicles,
-            feed_id: '',
+            feed_id: '?',
             timestamp: new Date((normalizeTimestamp(feed.header.timestamp) || Date.now()) * 1000),
         })
     }
@@ -107,7 +121,7 @@
     }
 
     async function loadGTFSData(): Promise<boolean> {
-        error = null;
+        // error = null;
         transitFeedStore.set(await loadFeed());
         try {
             // 1. Get environment variables
@@ -403,7 +417,7 @@
             // setInterval(processGTFSRT, 20000); // 20 second interval, shift this to a websocket or server-sent event to eliminate this process
             return true;
         } catch (err) {
-            error = err instanceof Error ? err.message : 'Failed to load GTFS data';
+            // error = err instanceof Error ? err.message : 'Failed to load GTFS data';
             console.error('GTFS load error:', err);
             return false;
         }

@@ -6,5 +6,7 @@
     "FromKIA": "From Airport",
     "NextBus": "Next Bus",
     "Plan": "Plan",
-    "Planning": "Planning"
+    "Planning": "Planning",
+    "Connected": "Connected",
+    "Disconnected": "Disconnected"
 }
