@@ -138,18 +138,19 @@ function samplePointsAlongLineCollection(lineFeatureCollection: GeoJSON.FeatureC
 // GeoJSON Layer functions
 // Update / Remove a GeoJSON Layer
 export function updateLayer(
-	layerType: keyof typeof MAP_STYLES,
+	layerType: keyof typeof MAP_STYLES | undefined,
 	source: mapboxgl.GeoJSONSourceSpecification | undefined
 ): void {
 	if(!map) {
 		return;
 	}
+	if(!layerType) return;
 	// Skip if the layer type is not GeoJSON
 	if (MAP_STYLES[layerType].type !== 0) return;
 	const symbolID = `symbol_${layerType}`; // Labels are in this symbol layer
 	const collisionID = `collision_${layerType}`; // Lines have invisible collision layers to prevent label overlap
-	const collisionSource = map.getSource(collisionID) as mapboxgl.GeoJSONSource | undefined;
-	const mapSource = map.getSource(layerType) as mapboxgl.GeoJSONSource | undefined;
+	const collisionSource = map.getSource(collisionID) as mapboxgl.GeoJSONSource | undefined; // The collision source is a more high resolution version of the line
+	const mapSource = map.getSource(layerType) as mapboxgl.GeoJSONSource | undefined; // The source geojson
 	const hasValidSourceData = source?.data !== undefined;
 	const layerExists = map.getLayer(layerType) !== undefined;
 	const layerSymbols = map.getLayer(symbolID) !== undefined;
@@ -195,7 +196,7 @@ export function updateLayer(
 		const symbolLayer =
 			MAP_STYLES[layerType].specification.type === 'line' ? LINE_LABEL_STYLE : POINT_LABEL_STYLE;
 		symbolLayer.id = symbolID;
-		symbolLayer.paint = {"text-color": layerType.includes("GRAY") ? "#999999" : "#000000"};
+		symbolLayer.paint = {"text-color": layerType.includes("GRAY") ? "#999999" : layerType.includes("BLUE") ? "#1967D3" : "#000000"};
 		symbolLayer.source = layerType;
 		map.addLayer(symbolLayer);
 	}
@@ -206,6 +207,27 @@ export function updateLayer(
 
 // Update Marker function
 const markers: Record<keyof typeof MAP_STYLES, mapboxgl.Marker> = {}; // Simulated marker layer
+export function updateBusMarker(
+	layerType: keyof typeof MAP_STYLES,
+	label: string,
+	lat: number | undefined,
+	lon: number | undefined,
+	handleTap: null | (() => void) = null
+): void {
+	if(!map || !layerType.includes("BUS")) return;
+	if(!lat || !lon){ // Clear the marker
+		updateMarker(layerType, [undefined, undefined], undefined, undefined);
+		return;
+	}
+	const clearStyles = Object.entries(MAP_STYLES).filter(([key, value]) => key.includes('BUS') && !key.includes('STOP') && value.type === 1 && key !== layerType);
+	for(const style of clearStyles) {
+		// console.log('CLEARING STYLE ', style);
+		updateMarker(style[0], [undefined, undefined], undefined, undefined);
+	}
+	updateMarker(layerType, [undefined, undefined], lat, lon, handleTap);
+	const el = document.getElementById("routename-text");
+	if(el) el.innerHTML = label;
+}
 export function updateMarker(
 	layerType: keyof typeof MAP_STYLES,
 	labels: [string | undefined, string | undefined],
@@ -216,7 +238,7 @@ export function updateMarker(
 	if(!map) {
 		return;
 	}
-
+	// console.log('LAYERS MARKERS', markers);
 	// Skip if the layer type is not Marker
 	if (MAP_STYLES[layerType].type !== 1) return;
 
@@ -231,7 +253,9 @@ export function updateMarker(
 		if(markerExists) {
 			markers[layerType].remove();
 			delete markers[layerType];
+			// console.log('REMOVED MARKER ', layerType);
 		}
+
 		if(layerSymbolX) map.removeLayer(symbolXID);
 		if(layerSymbolZ) map.removeLayer(symbolZID);
 		if(mapSource) map.removeSource(layerType);
@@ -261,6 +285,7 @@ export function updateMarker(
 	if(markerExists) {
 		markers[layerType].setLngLat({lon: lon, lat: lat});
 	} else {
+		// console.log('CREATED MARKER ', layerType);
 		markers[layerType] = new mapboxgl.Marker({
 			element: MAP_STYLES[layerType].html(),
 			anchor: layerType.includes("INPUT_LOCATION") ? "bottom" : "center",
@@ -272,7 +297,7 @@ export function updateMarker(
 	if(!layerSymbolX) {
 		const styleLayer = {...POINT_LABEL_STYLE};
 		styleLayer.id = symbolXID;
-		styleLayer.paint = {"text-color": layerType.includes("INACTIVE") ? "#999999" : "#000000"};
+		styleLayer.paint = {"text-color": layerType.includes("INACTIVE") ? "#999999" : layerType.includes("LIVE") ? "#1967D3" : "#000000"};
 		styleLayer.source = layerType;
 		styleLayer.layout = {
 			'text-field': ['get', 'labelX'],
@@ -287,7 +312,7 @@ export function updateMarker(
 	if(!layerSymbolZ) {
 		const styleLayer = {...POINT_LABEL_STYLE};
 		styleLayer.id = symbolZID;
-		styleLayer.paint = {"text-color": layerType.includes("INACTIVE") ? "#999999" : "#000000"};
+		styleLayer.paint = {"text-color": layerType.includes("INACTIVE") ? "#999999" : layerType.includes("LIVE") ? "#1967D3" : "#000000"};
 		styleLayer.source = layerType;
 		styleLayer.layout = {
 			'text-field': ['get', 'labelZ'],
