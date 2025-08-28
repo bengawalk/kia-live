@@ -5,15 +5,15 @@
 </script>
 <!-- Top banner overlay (Mapbox-friendly) -->
 <div
-	class="pointer-events-none absolute inset-x-0 top-10 z-[50] w-full flex items-stretch justify-center font-[500] font-[IBM_Plex_Sans] text-[14px]"
+	class="pointer-events-none absolute inset-x-0 top-10 z-1 w-full flex items-stretch justify-center font-[500] font-[IBM_Plex_Sans] text-[14px]"
 >
 	<button
 		class="pointer-events-auto flex cursor-pointer"
 		on:click={() => connectedPopup.set(true)}
 	>
-		{#if (!$connected) || ($connected && !isConnected)}
+		{#if !isConnected}
 			<!-- Disconnected Bus / Server -->
-			<div class="mt-2 mr-2 h-2 w-2 rounded-t-full rounded-b-full border-[2px] border-black"></div>
+			<div class="mt-[7px] mr-2 h-2 w-2 rounded-t-full rounded-b-full border-[2px] border-black"></div>
 			<div class="text-black">
 				{$messages.Disconnected()}
 			</div>
@@ -21,9 +21,9 @@
 
 		{#if isConnected}
 			<!-- Connected Bus -->
-			<div class="relative mt-2 mr-2 h-2 w-2 rounded-t-full rounded-b-full border-[2px] border-[#1967D3] bg-white">
+			<div class="relative mt-[7px] mr-2 h-2 w-2 rounded-t-full rounded-b-full border-[2px] border-[#1967D3] overflow-visible">
 				<!-- Ping ring (animation remains) -->
-				<div class="absolute inset-0 rounded-t-full rounded-b-full border-[2px] border-[#1967D3] animate-ping opacity-40"></div>
+				<div class="absolute -inset-1 rounded-full border-[4px] border-[#1967D3] opacity-40 animate-ping origin-center"></div>
 			</div>
 			<div class="text-[#1967D3]">
 				{$messages.Connected()}
@@ -37,13 +37,13 @@
 	<!-- Overlay -->
 	<div class="fixed inset-0 z-20 flex items-center justify-center bg-black/60" role="button" tabindex="-1" on:keydown={() => {}} on:click={() => connectedPopup.set(false)}>
 		<!-- Modal -->
-		<div class="text-[14px] font-medium font-[IBM_Plex_Sans] z-[21] w-1/2 max-w-[640px] max-h-[80dvh] rounded-[16px] bg-white p-6 shadow-[4px_4px_24px_#D9D9D9] flex flex-col gap-6">
+		<div class="text-[14px] font-medium font-[IBM_Plex_Sans] z-[21] { window.innerWidth > 700 ? 'w-1/2' : 'w-11/12' } max-w-[650px] rounded-[16px] bg-white p-6 shadow-[4px_4px_24px_#D9D9D9] flex flex-col gap-6">
 
 			{#if isConnected}
 				<!--	Connected popup -->
 				<div class="flex w-full items-center">
-					<div class=" mr-2 border-[2px] w-2 h-2 rounded-t-full rounded-b-full border-[#1967D3] bg-white">
-						<div class="border-[2px] border-[#1967D3] w-2 h-2 rounded-t-full rounded-b-full -translate-1/4 animate-ping opacity-40" ></div>
+					<div class="mt-[2px] mr-2 border-[2px] w-2 h-2 rounded-t-full rounded-b-full border-[#1967D3] bg-white">
+						<div class="border-[4px] border-[#1967D3] w-2 h-2 rounded-t-full rounded-b-full -translate-1/4 animate-ping opacity-40" ></div>
 					</div><!-- Pulsing Circle -->
 					<div class="text-[#1967D3]">
 						{$messages.Connected()}
@@ -64,11 +64,11 @@
 				</div>
 			{/if}
 
-			{#if !$connected || $connected && !isConnected}
+			{#if !isConnected}
 				<!--	Disconnected popup -->
 				<!-- Top header -->
 				<div class="flex w-full items-center">
-					<div class="mr-2 h-2 w-2 rounded-full border-2 border-black"></div>
+					<div class="mt-[2px] mr-2 h-2 w-2 rounded-full border-2 border-black"></div>
 					<div class="text-black">{$messages.Disconnected()}</div>
 					<button class="ms-auto cursor-pointer" aria-label="Close" on:click={() => connectedPopup.set(false)}>
 						<!-- X icon -->
