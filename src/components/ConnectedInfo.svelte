@@ -3,26 +3,35 @@
 	import { messages } from '$lib/stores/language';
 	$: isConnected = $connected ? $displayingTrip ? Object.hasOwn($displayingTrip, 'vehicle_id') : true : false;
 </script>
-<div class="flex items-stretch w-full justify-center mt-10 font-[500] font-[IBM_Plex_Sans] text-[14px] z-1"> <!-- Centered at top of screen -->
-	<button class="flex cursor-pointer" on:click={() => connectedPopup.set(true)}>
-		{#if !$connected || $connected && !isConnected}
-			<!--	Disconnected Bus / Server -->
-			<div class="mt-2 mr-2 border-[2px] w-2 h-2 rounded-t-full rounded-b-full border-black"> </div> <!-- Circle -->
+<!-- Top banner overlay (Mapbox-friendly) -->
+<div
+	class="pointer-events-none absolute inset-x-0 top-10 z-[50] w-full flex items-stretch justify-center font-[500] font-[IBM_Plex_Sans] text-[14px]"
+>
+	<button
+		class="pointer-events-auto flex cursor-pointer"
+		on:click={() => connectedPopup.set(true)}
+	>
+		{#if (!$connected) || ($connected && !isConnected)}
+			<!-- Disconnected Bus / Server -->
+			<div class="mt-2 mr-2 h-2 w-2 rounded-t-full rounded-b-full border-[2px] border-black"></div>
 			<div class="text-black">
 				{$messages.Disconnected()}
 			</div>
 		{/if}
+
 		{#if isConnected}
-			<!--	Connected Bus -->
-			<div class="mt-2 mr-2 border-[2px] w-2 h-2 rounded-t-full rounded-b-full border-[#1967D3] bg-white">
-				<div class="border-[2px] border-[#1967D3] w-2 h-2 rounded-t-full rounded-b-full -translate-1/4 animate-ping opacity-40" ></div>
-			</div><!-- Pulsing Circle -->
+			<!-- Connected Bus -->
+			<div class="relative mt-2 mr-2 h-2 w-2 rounded-t-full rounded-b-full border-[2px] border-[#1967D3] bg-white">
+				<!-- Ping ring (animation remains) -->
+				<div class="absolute inset-0 rounded-t-full rounded-b-full border-[2px] border-[#1967D3] animate-ping opacity-40"></div>
+			</div>
 			<div class="text-[#1967D3]">
 				{$messages.Connected()}
 			</div>
 		{/if}
 	</button>
 </div>
+
 
 {#if $connectedPopup}
 	<!-- Overlay -->
