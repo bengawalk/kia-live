@@ -76,6 +76,7 @@ function getNextDeparture(closestStop: {
 }
 
 export async function loadNextBuses() {
+	console.log("LOADING NEXT BUSES")
 	// Take data from transit feed stores, location stores, and generate next buses
 	const loc = currentLocation();
 	// console.log(loc);
@@ -783,6 +784,7 @@ async function findClosestStop(
 		stop_time: Date;
 	}[]
 ) {
+	console.log("FIND CLOSEST STOP")
 	const distances = await Promise.all(
 		tripStops.map(async (tripStop) => {
 			const distance = await travelDistance(
@@ -794,7 +796,7 @@ async function findClosestStop(
 			return { tripStop, distance };
 		})
 	);
-
+	console.log(distances);
 	return distances.reduce((min, curr) => (curr.distance < min.distance ? curr : min)).tripStop;
 }
 
@@ -1124,6 +1126,7 @@ async function animateBusMarker(trip: Trip | LiveTrip, closestStop: Stop) {
 		: undefined;
 	let previousAfterStop: GeoJSONSourceSpecification | undefined = undefined;
 	let previousAfterShape: GeoJSONSourceSpecification | undefined = undefined;
+	let updateLine: boolean = false;
 	busMarkerInterval = setInterval(async () => {
 		const end_days = trip.stops[trip.stops.length - 1].stop_date() < trip.stops[0].stop_date() && trip.stops[trip.stops.length - 1].stop_date() < new Date() ? 1 : 0;
 		const start_days = trip.stops[0].stop_date() > trip.stops[trip.stops.length - 1].stop_date() && trip.stops[0].stop_date() > new Date() && end_days !== 0 ? -1 : 0;
@@ -1233,6 +1236,10 @@ async function animateBusMarker(trip: Trip | LiveTrip, closestStop: Stop) {
 					newLoc.longitude = previousLiveLoc.longitude;
 					currentLiveLoc = { latitude: newLoc.latitude, longitude: newLoc.longitude };
 				}
+			} else if (currentBus) {
+				const loc = moveTowards([currentBus.latitude, currentBus.longitude], [closestStop.stop_lat, closestStop.stop_lon], 50);
+				newLoc.latitude = loc[0];
+				newLoc.longitude = loc[1];
 			}
 			/* Update Live Vehicle
 			 * Get current marker location
@@ -1240,7 +1247,7 @@ async function animateBusMarker(trip: Trip | LiveTrip, closestStop: Stop) {
 			 * If marker location is equal to current position, attempt to assume next position based on next stop time on trip, if within 50m of shape, use shape as guidance.
 			 * Based on marker update location call splitTrip and save updates for marker layer and geojson for lines and points
 			 */
-			const splitRes = await splitTrip(trip, [newLoc.longitude, newLoc.latitude]);
+			const splitRes = await splitTrip(trip, [newLoc.latitude, newLoc.longitude]);
 			splitRes.stopsBefore = splitRes.stopsBefore.filter((c) => c.stop_id !== closestStop.stop_id);
 			splitRes.stopsAfter = splitRes.stopsAfter.filter((c) => c.stop_id !== closestStop.stop_id); // Filter out the stops
 			if (s && Object.hasOwn(s, 'stop_id')) {
@@ -1251,12 +1258,12 @@ async function animateBusMarker(trip: Trip | LiveTrip, closestStop: Stop) {
 				splitRes.stopsAfter = splitRes.stopsAfter.filter((c) => c.stop_id !== (s as Stop).stop_id); // Filter out the stops
 			}
 			updates.lines = {
-				layer: 'BLACK_LINE',
+				layer: 'BLUE_LINE',
 				before: geoJSONFromShape(splitRes.shapeBefore.map((r) => [r.lon, r.lat])),
 				after: geoJSONFromShape(splitRes.shapeAfter.map((r) => [r.lon, r.lat]))
 			};
 			updates.stops = {
-				layer: 'WHITE_BLACK_CIRCLE',
+				layer: 'WHITE_BLUE_CIRCLE',
 				before: geoJSONFromStops(
 					splitRes.stopsBefore.map((v) => ({
 						stop: stops[v.stop_id],
@@ -1303,15 +1310,16 @@ async function animateBusMarker(trip: Trip | LiveTrip, closestStop: Stop) {
 			);
 		} else {
 			// console.log('IS NOT SELECTED!');
-			if (previousAfterShape !== updates.lines!.after)
+			if (previousAfterShape !== updates.lines!.after && updateLine)
 				updateLayer('GRAY_LINE', updates.lines.before);
 			if (previousAfterStop !== updates.stops.after)
 				updateLayer('WHITE_GRAY_CIRCLE', updates.stops.before);
-			if (previousAfterShape !== updates.lines!.after)
+			if (previousAfterShape !== updates.lines!.after && updateLine)
 				updateLayer(updates.lines.layer, updates.lines.after);
 			if (previousAfterStop !== updates.stops.after)
 				updateLayer(updates.stops.layer, updates.stops.after);
 			// console.log(`UPDATE LINES LAYER`, updates)
+			updateLine = !updateLine;
 			updateBusMarker(
 				updates.vehicle!.layer,
 				updates.vehicle!.label,
