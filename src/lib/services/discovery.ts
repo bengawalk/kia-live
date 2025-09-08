@@ -38,7 +38,6 @@ import {
 } from '$lib/services/map';
 import { AIRPORT_LOCATION, AIRPORT_SOFTLOCK, DEFAULT_LOCATION, MAP_STYLES } from '$lib/constants';
 import { language } from '$lib/stores/language';
-import { tick } from 'svelte';
 
 const tappableLayers = Object.keys(MAP_STYLES).filter((key) => MAP_STYLES[key].type === 0);
 let markerTapped = false;
@@ -76,7 +75,7 @@ function getNextDeparture(closestStop: {
 }
 
 export async function loadNextBuses() {
-	console.log("LOADING NEXT BUSES")
+	// console.log("LOADING NEXT BUSES")
 	// Take data from transit feed stores, location stores, and generate next buses
 	const loc = currentLocation();
 	// console.log(loc);
@@ -583,7 +582,7 @@ export function handleTouchStart(e: MapTouchEvent | MapMouseEvent) {
 // 	}
 // }
 export function handleTouchEnd(
-	e:
+	_:
 		| MapTouchEvent
 		| MapMouseEvent
 		| ({ type: 'move'; target: MapboxMap } & {
@@ -784,7 +783,7 @@ async function findClosestStop(
 		stop_time: Date;
 	}[]
 ) {
-	console.log("FIND CLOSEST STOP")
+	// console.log("FIND CLOSEST STOP")
 	const distances = await Promise.all(
 		tripStops.map(async (tripStop) => {
 			const distance = await travelDistance(
@@ -796,7 +795,7 @@ async function findClosestStop(
 			return { tripStop, distance };
 		})
 	);
-	console.log(distances);
+	// console.log(distances);
 	return distances.reduce((min, curr) => (curr.distance < min.distance ? curr : min)).tripStop;
 }
 
@@ -882,7 +881,7 @@ async function splitTrip(
 	const splitIndex = nearestShapeIndex(shape, position);
 
 	// 3) Split shape at matched point.
-	// Include the split vertex in both halves so they “touch”.
+	// Include the split vertex in both halves so they "touch".
 	const shapeBefore = shape.slice(0, splitIndex + 1);
 	const shapeAfter = shape.slice(splitIndex);
 
@@ -898,13 +897,40 @@ async function splitTrip(
 	});
 
 	// Use stop_date() to classify last past & next upcoming stops relative to "now"
-	// (works for both Trip and LiveTrip since args are optional for Trip)
+	// Properly handle midnight trips by calculating the correct days offset per stop
 	const now = new Date();
 	let lastPastStopIndex: number | null = null;
 	let nextUpcomingStopIndex: number | null = null;
-	const days = trip.stops[trip.stops.length - 1].stop_date() < now ? 1 : 0;
+	
+	// Check if trip crosses midnight by comparing first and last stop times
+	const firstStopDate = trip.stops[0].stop_date(undefined, 0);
+	const lastStopDate = trip.stops[trip.stops.length - 1].stop_date(undefined, 0);
+	const tripCrossesMidnight = firstStopDate > lastStopDate;
+	
 	for (let i = 0; i < trip.stops.length; i++) {
-		const sd = trip.stops[i].stop_date(undefined, days); // Trip: optional args, LiveTrip: no args
+		let sd: Date;
+		if (Object.hasOwn(trip, 'vehicle_id')) {
+			// LiveTrip doesn't take parameters for stop_date
+			sd = trip.stops[i].stop_date();
+		} else {
+			// Trip takes optional parameters - calculate days offset for this specific stop
+			let days = 0;
+			if (tripCrossesMidnight) {
+				// Determine if this stop is "before midnight" or "after midnight" based on stop time
+				const stopHour = parseInt(trip.stops[i].stop_time.split(':')[0]);
+				const isStopAfterMidnight = stopHour >= 0 && stopHour < 12;
+				
+				// If now is past midnight (0-11 AM) and this stop is before midnight (12+ PM), use days=-1
+				if (now.getHours() >= 0 && now.getHours() < 12 && !isStopAfterMidnight) {
+					days = -1;
+				}
+				// If now is before midnight (12+ PM) and this stop is after midnight (0-11 AM), use days=1
+				else if (now.getHours() >= 12 && isStopAfterMidnight) {
+					days = 1;
+				}
+			}
+			sd = trip.stops[i].stop_date(undefined, days);
+		}
 		if (sd <= now) lastPastStopIndex = i;
 		if (sd > now && nextUpcomingStopIndex === null) {
 			nextUpcomingStopIndex = i;
@@ -923,19 +949,6 @@ async function splitTrip(
 	};
 }
 
-// async function splitTrip(trip: Trip | LiveTrip, position: [number, number]) {
-// 	const transitFeed = get(transitFeedStore);
-// 	const shape = transitFeed.routes.find((v) => v.trips.map((t) => t.trip_id).includes(trip.trip_id))?.shape;
-// 	const stops = trip.stops.map(v => transitFeed.stops[v.stop_id]);
-// 	if (!shape) return undefined;
-// 	/*
-// 	 * 1. Match stops to shape points.
-// 	 * 2. Match provided position to a shape point.
-// 	 * 3. Split shape at matched point.
-// 	 * 4. Split stops depending on which shape matches are in which split.
-// 	 */
-// }
-
 function clamp01(x: number) {
 	if (x < 0) return 0;
 	if (x > 1) return 1;
@@ -944,7 +957,7 @@ function clamp01(x: number) {
 
 async function getVehicleEstimate(trip: Trip): Promise<{ lat: number; lon: number }> {
 	const transitFeed = get(transitFeedStore);
-	const days = trip.stops[trip.stops.length - 1].stop_date() < new Date() ? 1 : 0;
+	
 	const shape = transitFeed.routes.find((v: Route) =>
 		v.trips.some((t) => t.trip_id === trip.trip_id)
 	)?.shape;
@@ -958,12 +971,40 @@ async function getVehicleEstimate(trip: Trip): Promise<{ lat: number; lon: numbe
 	if (!shape || shape.length === 0) throw Error(`Expected to find shape for trip ${trip.trip_id}`);
 	if (!stops.length) throw Error(`Expected to find stops for trip ${trip.trip_id}`);
 
+	// Check if trip crosses midnight
+	const firstStopDate = trip.stops[0].stop_date(undefined, 0);
+	const lastStopDate = trip.stops[trip.stops.length - 1].stop_date(undefined, 0);
+	const tripCrossesMidnight = firstStopDate > lastStopDate;
+
 	// 1) Match stops to shape points
 	const stopInfos = stops
 		.map((s, idx) => {
 			if (!s.stop) return null;
 			const shapeIdx = nearestShapeIndex(shape, [s.stop.stop_lat, s.stop.stop_lon]);
-			const when = s.stop_date(undefined, days); // use stop_date() for absolute Date
+			
+			// Calculate days offset for this specific stop
+			let days = 0;
+			if (tripCrossesMidnight) {
+				// const stopDate = s.stop_date(undefined, 0);
+				const now = new Date();
+				
+				// Determine if this stop is "before midnight" or "after midnight" based on stop time
+				// Stops with hours >= 0 and < 12 are considered "after midnight" (next day)
+				// Stops with hours >= 12 are considered "before midnight" (same day)
+				const stopHour = parseInt(s.time.split(':')[0]);
+				const isStopAfterMidnight = stopHour >= 0 && stopHour < 12;
+				
+				// If now is past midnight (0-11 AM) and this stop is before midnight (12+ PM), use days=-1
+				if (now.getHours() >= 0 && now.getHours() < 12 && !isStopAfterMidnight) {
+					days = -1;
+				}
+				// If now is before midnight (12+ PM) and this stop is after midnight (0-11 AM), use days=1
+				else if (now.getHours() >= 12 && isStopAfterMidnight) {
+					days = 1;
+				}
+			}
+			
+			const when = s.stop_date(undefined, days);
 			return {
 				i: idx,
 				stop_id: s.stop.stop_id,
@@ -1075,20 +1116,6 @@ async function getVehicleEstimate(trip: Trip): Promise<{ lat: number; lon: numbe
 	return { lat: lat, lon: lon };
 }
 
-// async function getVehicleEstimate(trip: Trip) {
-// 	const transitFeed = get(transitFeedStore)
-// 	const shape = transitFeed.routes.find((v) => v.trips.map((t) => t.trip_id).includes(trip.trip_id))?.shape;
-// 	const stops = trip.stops.map(v => ({stop_date: v.stop_date, time: v.stop_time, stop: transitFeed.stops[v.stop_id]}));
-// 	if (!shape) return undefined;
-// 	/*
-// 	 * 1. Match stops to shape points.
-// 	 * 2. Determine pass point of vehicle based on trip scheduled timings. If not matching with time.now continue, else return matched shape location.
-// 	 * 4. Extract points between passed stop and upcoming stop.
-// 	 * 5. Divide the time difference based on distance,
-// 	 * 6. Assume location of vehicle based on current time, passed stop time, upcoming stop time. Location along the shape points, in an interpolated point between two points if necessary
-// 	 */
-// }
-
 function mergeGeoJSONSpecifications(
 	jsons: GeoJSONSourceSpecification[]
 ): GeoJSONSourceSpecification {
@@ -1105,284 +1132,262 @@ function mergeGeoJSONSpecifications(
 async function animateBusMarker(trip: Trip | LiveTrip, closestStop: Stop) {
 	// Change location every 50 ms, for live trips make assumptions of next positions
 	if (busMarkerInterval) await cancelAnimateBusMarker();
-	const currentBus = Object.hasOwn(trip, 'vehicle_id')
-		? get(liveTransitFeed).vehicles.find((e) => (trip as LiveTrip).vehicle_id === e.vehicle_id)
-		: undefined;
-	const previousLiveLoc = currentBus
-		? currentBus.previous_locations.length > 1
-			? currentBus.previous_locations[currentBus.previous_locations.length - 2]
-			: {
-					latitude: currentBus.latitude,
-					longitude: currentBus.longitude
-				}
-		: undefined;
-	let currentLiveLoc:
-		| {
-				latitude: number;
-				longitude: number;
-		  }
-		| undefined = currentBus
-		? { latitude: currentBus.latitude, longitude: currentBus.longitude }
-		: undefined;
-	let previousAfterStop: GeoJSONSourceSpecification | undefined = undefined;
-	let previousAfterShape: GeoJSONSourceSpecification | undefined = undefined;
-	let updateLine: boolean = false;
+
+	// Helper to clamp values between min and max
+	const clamp = (x: number, min: number, max: number) => (x < min ? min : x > max ? max : x);
+
+	// Cache route for label and shape updates
+	const transitFeed = get(transitFeedStore);
+	const route = transitFeed.routes.find((r: Route) => r.route_id === trip.route_id);
+	const routeShortName = route?.route_short_name ?? '';
+
+	// Helper for computing style names consistent with displayCurrentTrip
+	function computeStyles() {
+		const highlighted = get(selected);
+		const highlightStop =
+			highlighted !== undefined && Object.hasOwn(highlighted, 'stop_id')
+				? (highlighted as Stop)
+				: undefined;
+		const highlightTrip =
+			highlighted !== undefined &&
+			Object.hasOwn(highlighted, 'trip_id') &&
+			!Object.hasOwn(highlighted, 'vehicle_id')
+				? (highlighted as Trip)
+				: undefined;
+
+		const isLive = Object.hasOwn(trip, 'vehicle_id');
+		const lineLayer = highlighted !== undefined ? 'GRAY_LINE' : isLive ? 'BLUE_LINE' : 'BLACK_LINE';
+		const stopsLayer =
+			highlighted === undefined ? (isLive ? 'WHITE_BLUE_CIRCLE' : 'WHITE_BLACK_CIRCLE') : 'WHITE_GRAY_CIRCLE';
+
+		const busStyle =
+			highlighted !== undefined && (highlightStop !== undefined || (highlightTrip && highlightTrip.trip_id !== trip.trip_id))
+				? 'BUS_INACTIVE'
+				: isLive
+					? 'BUS_LIVE'
+					: 'BUS';
+
+		return { lineLayer, stopsLayer, busStyle } as const;
+	}
+
+	// Animation state
+	let fromLat = 0;
+	let fromLon = 0;
+	let toLat = 0;
+	let toLon = 0;
+	let animStart = 0;
+	let animDuration = 0; // ms
+	let haveActiveAnimation = false;
+
+	// Control cadence for geojson shape updates (every ~4s max)
+	let lastGeojsonUpdate = 0;
+
+	// Live bus tracking state
+	let lastLiveTimestampMs: number | undefined = undefined;
+
+	// For static trip estimation cadence
+	let lastEstimate: { lat: number; lon: number } | undefined = undefined;
+	let lastEstimateTime = 0;
+
+	const FRAMERATE_MS = 50; // smooth enough without being heavy
+	const GEOJSON_UPDATE_MS = 4000; // update line layers every 4s
+	const ESTIMATE_INTERVAL_MS = 1000; // refresh estimates every 1s for smoother marker animation
+
 	busMarkerInterval = setInterval(async () => {
-		const end_days = trip.stops[trip.stops.length - 1].stop_date() < trip.stops[0].stop_date() && trip.stops[trip.stops.length - 1].stop_date() < new Date() ? 1 : 0;
-		const start_days = trip.stops[0].stop_date() > trip.stops[trip.stops.length - 1].stop_date() && trip.stops[0].stop_date() > new Date() && end_days !== 0 ? -1 : 0;
-		// console.log(`start${start_days},end${end_days}`);
-		if(trip.stops[trip.stops.length - 1].stop_date(undefined, end_days) < new Date()) return; // Fast exit if trip has completed
-		if(trip.stops[0].stop_date(undefined, start_days) > new Date()) return; // Fast exit if trip has not started yet
-		const updates: {
-			vehicle:
-				| { lat: number; lon: number; label: string; layer: keyof typeof MAP_STYLES }
-				| undefined;
-			lines:
-				| {
-						before: GeoJSONSourceSpecification;
-						after: GeoJSONSourceSpecification;
-						layer: keyof typeof MAP_STYLES;
-				  }
-				| undefined;
-			stops:
-				| {
-						before: GeoJSONSourceSpecification;
-						after: GeoJSONSourceSpecification;
-						layer: keyof typeof MAP_STYLES;
-				  }
-				| undefined;
-		} = {
-			vehicle: undefined,
-			lines: undefined,
-			stops: undefined
-		};
-		const s = get(selected);
-		const route = get(transitFeedStore).routes.find((r) => r.route_id === trip.route_id);
-		const stops = get(transitFeedStore).stops;
-		if (!route) return;
-		let showSelectedStop: boolean = false;
-		if (!currentBus) {
-			/* Update Static Vehicle
-			 * Call getVehicleEstimate and splitTrip
-			 * Save updates for marker layer and geojson for lines and points
-			 */
-			const location = await getVehicleEstimate(trip as Trip);
-			updates.vehicle = {
-				...location,
-				label: route.route_short_name,
-				layer:
-					!s ||
-					(s && Object.hasOwn(s, 'trip_id') && (s as Trip | LiveTrip).trip_id === trip.trip_id)
-						? 'BUS'
-						: 'BUS_INACTIVE'
-			};
-			const splitRes = await splitTrip(trip, [location.lat, location.lon]);
-			splitRes.stopsBefore = splitRes.stopsBefore.filter((c) => c.stop_id !== closestStop.stop_id);
-			splitRes.stopsAfter = splitRes.stopsAfter.filter((c) => c.stop_id !== closestStop.stop_id); // Filter out the closest stop
-			if (s && Object.hasOwn(s, 'stop_id')) {
-				showSelectedStop = (s as Stop).stop_id !== closestStop.stop_id;
-				splitRes.stopsBefore = splitRes.stopsBefore.filter(
-					(c) => c.stop_id !== (s as Stop).stop_id
-				);
-				splitRes.stopsAfter = splitRes.stopsAfter.filter((c) => c.stop_id !== (s as Stop).stop_id); // Filter out the selected stop
-			}
-			updates.lines = {
-				layer: 'BLACK_LINE',
-				before: geoJSONFromShape(splitRes.shapeBefore.map((r) => [r.lon, r.lat])),
-				after: geoJSONFromShape(splitRes.shapeAfter.map((r) => [r.lon, r.lat]))
-			};
-			updates.stops = {
-				layer: 'WHITE_BLACK_CIRCLE',
-				before: geoJSONFromStops(
-					splitRes.stopsBefore.map((v) => ({
-						stop: stops[v.stop_id],
-						stop_time: new Date(v.stop_date())
-					}))
-				),
-				after: geoJSONFromStops(
-					splitRes.stopsAfter.map((v) => ({
-						stop: stops[v.stop_id],
-						stop_time: new Date(v.stop_date())
-					}))
-				)
-			};
-		} else {
-			const newLoc: {
-				latitude: number;
-				longitude: number;
-				label: string;
-				layer: keyof typeof MAP_STYLES;
-			} = {
-				latitude: currentBus.latitude,
-				longitude: currentBus.longitude,
-				label: route.route_short_name,
-				layer:
-					!s ||
-					(s && Object.hasOwn(s, 'trip_id') && (s as Trip | LiveTrip).trip_id === trip.trip_id)
-						? 'BUS_LIVE'
-						: 'BUS_INACTIVE'
-			};
-			if (previousLiveLoc) {
-				if (currentLiveLoc && currentBus) {
-					const loc = moveTowards(
-						[currentLiveLoc.latitude, currentLiveLoc.longitude],
-						[currentBus.latitude, currentBus.longitude],
-						100
-					);
-					newLoc.latitude = loc[0];
-					newLoc.longitude = loc[1];
-				} else {
-					newLoc.latitude = previousLiveLoc.latitude;
-					newLoc.longitude = previousLiveLoc.longitude;
-					currentLiveLoc = { latitude: newLoc.latitude, longitude: newLoc.longitude };
+		// Determine whether this is a live trip
+		const isLive = Object.hasOwn(trip, 'vehicle_id');
+
+		if (isLive) {
+			const liveBus = get(liveTransitFeed).vehicles.find(
+				(e) => (trip as LiveTrip).vehicle_id === e.vehicle_id
+			);
+			if (liveBus) {
+				const hist = liveBus.previous_locations || [];
+				const latest = hist.length > 0 ? hist[hist.length - 1] : undefined;
+				const prev = hist.length > 1 ? hist[hist.length - 2] : undefined;
+
+				const latestTs = latest ? new Date(latest.timestamp).getTime() : undefined;
+				// If we have a new latest point, set up a fresh animation from prev -> latest
+				if (
+					latest && prev && (lastLiveTimestampMs === undefined || latestTs! > lastLiveTimestampMs)
+				) {
+					fromLat = prev.latitude;
+					fromLon = prev.longitude;
+					toLat = latest.latitude;
+					toLon = latest.longitude;
+					const dist = haversineDistance(fromLat, fromLon, toLat, toLon); // meters
+					animDuration = clamp(dist, 400, 3000); // ~1ms per meter, clamped
+					animStart = Date.now();
+					haveActiveAnimation = true;
+					lastLiveTimestampMs = latestTs;
+
+					// Update line (and if needed, circle) layers immediately to the latest location
+					try {
+						const split = await splitTrip(trip, [toLat, toLon]);
+						const { lineLayer, stopsLayer } = computeStyles();
+						const geoAfter = geoJSONFromShape(split.shapeAfter.map((v) => [v.lon, v.lat]));
+						const geoBefore = geoJSONFromShape(split.shapeBefore.map((v) => [v.lon, v.lat]));
+						// Ensure lines are drawn before circles by updating lines first
+						updateLayer(lineLayer, geoAfter);
+						updateLayer('GRAY_LINE', stopsLayer === 'WHITE_GRAY_CIRCLE' ? mergeGeoJSONSpecifications([geoBefore, geoAfter]) : geoBefore);
+
+						// If style requires, also update circles so they stay above lines with correct color
+						if (route) {
+							const days = Object.hasOwn(trip, 'vehicle_id')
+								? 0
+								: (trip as Trip).stops[(trip as Trip).stops.length - 1].stop_date() < new Date()
+									? 1
+									: 0;
+							const stopsAfter = split.stopsAfter.map((v) => ({
+								stop: route.stops.find((va) => va.stop_id === v.stop_id)!,
+								stop_time: new Date(v.stop_date(undefined, days))
+							})).filter((v) => v.stop.stop_id != closestStop.stop_id);
+							const stopsBefore = split.stopsBefore.map((v) => ({
+								stop: route.stops.find((va) => va.stop_id === v.stop_id)!,
+								stop_time: new Date(v.stop_date(undefined, days))
+							})).filter((v) => v.stop.stop_id != closestStop.stop_id);
+							const selectedStop = get(selected) ? Object.hasOwn(get(selected), 'stop_id') ? get(selected) as Stop : undefined : undefined;
+							if(stopsLayer !== 'WHITE_GRAY_CIRCLE')
+								updateLayer(stopsLayer, geoJSONFromStops(stopsAfter));
+							else updateLayer(isLive ? 'WHITE_BLUE_CIRCLE' : 'WHITE_BLACK_CIRCLE', geoJSONFromStops([...stopsBefore, ...stopsAfter].filter((v) => selectedStop && v.stop.stop_id === selectedStop.stop_id)));
+							updateLayer(
+								'WHITE_GRAY_CIRCLE',
+								stopsLayer === 'WHITE_GRAY_CIRCLE'
+									? mergeGeoJSONSpecifications([
+										geoJSONFromStops(
+											stopsBefore.filter(
+												(v) => !selectedStop || (selectedStop && selectedStop.stop_id !== v.stop.stop_id))),
+										geoJSONFromStops(
+											stopsAfter.filter(
+												(v) => !selectedStop || (selectedStop && selectedStop.stop_id !== v.stop.stop_id)))])
+									: geoJSONFromStops(stopsBefore)
+							);
+						}
+						lastGeojsonUpdate = Date.now();
+					} catch (_) {
+						// ignore split errors; marker animation still proceeds
+					}
 				}
-			} else if (currentBus) {
-				const loc = moveTowards([currentBus.latitude, currentBus.longitude], [closestStop.stop_lat, closestStop.stop_lon], 50);
-				newLoc.latitude = loc[0];
-				newLoc.longitude = loc[1];
+
+				// Compute current interpolated position
+				let curLat = liveBus.latitude;
+				let curLon = liveBus.longitude;
+				if (haveActiveAnimation) {
+					const t = clamp((Date.now() - animStart) / (animDuration || 1), 0, 1);
+					curLat = fromLat + (toLat - fromLat) * t;
+					curLon = fromLon + (toLon - fromLon) * t;
+					if (t >= 1) haveActiveAnimation = false;
+				}
+
+				const { busStyle } = computeStyles();
+				updateBusMarker(busStyle, routeShortName, curLat, curLon, () => {
+					markerTapped = true;
+					selected.set(trip);
+				});
 			}
-			/* Update Live Vehicle
-			 * Get current marker location
-			 * If marker location is not equal to current position (or latest entry in previous positions) then based on timestamps update the marker location towards the latest location (maintaining a maximum of 40 sec delay on timestamps)
-			 * If marker location is equal to current position, attempt to assume next position based on next stop time on trip, if within 50m of shape, use shape as guidance.
-			 * Based on marker update location call splitTrip and save updates for marker layer and geojson for lines and points
-			 */
-			const splitRes = await splitTrip(trip, [newLoc.latitude, newLoc.longitude]);
-			splitRes.stopsBefore = splitRes.stopsBefore.filter((c) => c.stop_id !== closestStop.stop_id);
-			splitRes.stopsAfter = splitRes.stopsAfter.filter((c) => c.stop_id !== closestStop.stop_id); // Filter out the stops
-			if (s && Object.hasOwn(s, 'stop_id')) {
-				showSelectedStop = (s as Stop).stop_id !== closestStop.stop_id;
-				splitRes.stopsBefore = splitRes.stopsBefore.filter(
-					(c) => c.stop_id !== (s as Stop).stop_id
-				);
-				splitRes.stopsAfter = splitRes.stopsAfter.filter((c) => c.stop_id !== (s as Stop).stop_id); // Filter out the stops
-			}
-			updates.lines = {
-				layer: 'BLUE_LINE',
-				before: geoJSONFromShape(splitRes.shapeBefore.map((r) => [r.lon, r.lat])),
-				after: geoJSONFromShape(splitRes.shapeAfter.map((r) => [r.lon, r.lat]))
-			};
-			updates.stops = {
-				layer: 'WHITE_BLUE_CIRCLE',
-				before: geoJSONFromStops(
-					splitRes.stopsBefore.map((v) => ({
-						stop: stops[v.stop_id],
-						stop_time: new Date(v.stop_date())
-					}))
-				),
-				after: geoJSONFromStops(
-					splitRes.stopsAfter.map((v) => ({
-						stop: stops[v.stop_id],
-						stop_time: new Date(v.stop_date())
-					}))
-				)
-			};
-		}
-		// console.log(updates);
-		if (s) {
-			// console.log('is selected!');
-			if (previousAfterShape !== updates.lines.after)
-				updateLayer(
-					'GRAY_LINE',
-					mergeGeoJSONSpecifications([updates.lines!.before, updates.lines!.after])
-				);
-			if (previousAfterStop !== updates.stops.after)
-				updateLayer(
-					'WHITE_GRAY_CIRCLE',
-					mergeGeoJSONSpecifications([updates.stops!.before, updates.stops!.after])
-				);
-			if (!Object.hasOwn(s, 'trip_id') || (s as Trip | LiveTrip).trip_id !== trip.trip_id)
-				updates.vehicle!.layer = 'BUS_INACTIVE';
-			if (Object.hasOwn(s, 'stop_id') && showSelectedStop) {
-				const tripStop = trip.stops.find((c) => c.stop_id === (s as Stop).stop_id);
-				if (tripStop) {
-					const geojson = geoJSONFromStops([
-						{ stop: s as Stop, stop_time: new Date(tripStop.stop_date()) }
-					]);
-					updateLayer(updates.stops!.layer, geojson);
+		} else {
+			// Static trip: continuously animate marker using scheduled estimate.
+			const now = Date.now();
+			if (!lastEstimate || now - lastEstimateTime >= ESTIMATE_INTERVAL_MS) {
+				try {
+					const newEstimate = await getVehicleEstimate(trip as Trip);
+					if (lastEstimate) {
+						// set up animation from last -> new
+						fromLat = lastEstimate.lat;
+						fromLon = lastEstimate.lon;
+						toLat = newEstimate.lat;
+						toLon = newEstimate.lon;
+						const dist = haversineDistance(fromLat, fromLon, toLat, toLon);
+						animDuration = clamp(dist, 400, 3000);
+						animStart = now;
+						haveActiveAnimation = true;
+					}
+					lastEstimate = newEstimate;
+					lastEstimateTime = now;
+				} catch (_) {
+					// ignore estimate errors
 				}
 			}
-			updateBusMarker(
-				updates.vehicle!.layer,
-				updates.vehicle!.label,
-				updates.vehicle!.lat,
-				updates.vehicle!.lon
-			);
-		} else {
-			// console.log('IS NOT SELECTED!');
-			if (previousAfterShape !== updates.lines!.after && updateLine)
-				updateLayer('GRAY_LINE', updates.lines.before);
-			if (previousAfterStop !== updates.stops.after)
-				updateLayer('WHITE_GRAY_CIRCLE', updates.stops.before);
-			if (previousAfterShape !== updates.lines!.after && updateLine)
-				updateLayer(updates.lines.layer, updates.lines.after);
-			if (previousAfterStop !== updates.stops.after)
-				updateLayer(updates.stops.layer, updates.stops.after);
-			// console.log(`UPDATE LINES LAYER`, updates)
-			updateLine = !updateLine;
-			updateBusMarker(
-				updates.vehicle!.layer,
-				updates.vehicle!.label,
-				updates.vehicle!.lat,
-				updates.vehicle!.lon
-			);
+
+			// Update line layers at most every 4 seconds using the latest estimate
+			if (lastEstimate && now - lastGeojsonUpdate >= GEOJSON_UPDATE_MS) {
+				try {
+					const split = await splitTrip(trip, [lastEstimate.lat, lastEstimate.lon]);
+					const { lineLayer, stopsLayer } = computeStyles();
+					const geoAfter = geoJSONFromShape(split.shapeAfter.map((v) => [v.lon, v.lat]));
+					const geoBefore = geoJSONFromShape(split.shapeBefore.map((v) => [v.lon, v.lat]));
+					updateLayer(lineLayer, geoAfter);
+					updateLayer('GRAY_LINE', stopsLayer === 'WHITE_GRAY_CIRCLE' ? mergeGeoJSONSpecifications([geoBefore, geoAfter]) : geoBefore);
+
+					if (route) {
+						const days = Object.hasOwn(trip, 'vehicle_id')
+							? 0
+							: (trip as Trip).stops[(trip as Trip).stops.length - 1].stop_date() < new Date()
+								? 1
+								: 0;
+						const stopsAfter = split.stopsAfter.map((v) => ({
+							stop: route.stops.find((va) => va.stop_id === v.stop_id)!,
+							stop_time: new Date(v.stop_date(undefined, days))
+						})).filter((v) => v.stop.stop_id != closestStop.stop_id);
+						const stopsBefore = split.stopsBefore.map((v) => ({
+							stop: route.stops.find((va) => va.stop_id === v.stop_id)!,
+							stop_time: new Date(v.stop_date(undefined, days))
+						})).filter((v) => v.stop.stop_id != closestStop.stop_id);
+						const selectedStop = get(selected) ? Object.hasOwn(get(selected), 'stop_id') ? get(selected) as Stop : undefined : undefined;
+						if(stopsLayer !== 'WHITE_GRAY_CIRCLE')
+							updateLayer(stopsLayer, geoJSONFromStops(stopsAfter));
+						else updateLayer(isLive ? 'WHITE_BLUE_CIRCLE' : 'WHITE_BLACK_CIRCLE', geoJSONFromStops([...stopsBefore, ...stopsAfter].filter((v) => selectedStop && v.stop.stop_id === selectedStop.stop_id)));
+						updateLayer(
+							'WHITE_GRAY_CIRCLE',
+							stopsLayer === 'WHITE_GRAY_CIRCLE'
+								? mergeGeoJSONSpecifications([
+									geoJSONFromStops(
+										stopsBefore.filter(
+											(v) => !selectedStop || (selectedStop && selectedStop.stop_id !== v.stop.stop_id))),
+									geoJSONFromStops(
+										stopsAfter.filter(
+											(v) => !selectedStop || (selectedStop && selectedStop.stop_id !== v.stop.stop_id)))])
+								: geoJSONFromStops(stopsBefore)
+						);
+					}
+
+					lastGeojsonUpdate = now;
+				} catch (_) {
+					// ignore split errors
+				}
+			}
+
+			// Interpolate and paint marker
+			let curLat: number;
+			let curLon: number;
+			if (haveActiveAnimation && lastEstimate) {
+				const t = clamp((Date.now() - animStart) / (animDuration || 1), 0, 1);
+				curLat = fromLat + (toLat - fromLat) * t;
+				curLon = fromLon + (toLon - fromLon) * t;
+				if (t >= 1) haveActiveAnimation = false;
+			} else if (lastEstimate) {
+				curLat = lastEstimate.lat;
+				curLon = lastEstimate.lon;
+			} else {
+				// Fallback to closest stop while we wait for first estimate
+				curLat = closestStop.stop_lat;
+				curLon = closestStop.stop_lon;
+			}
+
+			const { busStyle } = computeStyles();
+			updateBusMarker(busStyle, routeShortName, curLat, curLon, () => {
+				markerTapped = true;
+				selected.set(trip);
+			});
 		}
-		previousAfterStop = updates.stops.after;
-		previousAfterShape = updates.lines.after;
-		// Based on value of selected, update layers in map
-	}, 100);
+	}, FRAMERATE_MS);
 }
 async function cancelAnimateBusMarker() {
 	if(busMarkerInterval){
 		clearInterval(busMarkerInterval);
 		busMarkerInterval = undefined;
-		await tick(); // Wait for map to reflect changes
+		// await tick(); // Wait for map to reflect changes
 	}
 }
-type LatLng = [lat: number, lon: number];
-export function moveTowards(p1: LatLng, p2: LatLng, meters: number): LatLng {
-	const R = 6371000; // Earth radius (m)
-	const [lat1, lon1] = [toRad(p1[0]), toRad(p1[1])];
-	const [lat2, lon2] = [toRad(p2[0]), toRad(p2[1])];
-
-	// Distance p1->p2 (haversine)
-	const d = 2 * R * Math.asin(Math.sqrt(
-		Math.sin((lat2 - lat1) / 2) ** 2 +
-		Math.cos(lat1) * Math.cos(lat2) * Math.sin((lon2 - lon1) / 2) ** 2
-	));
-	if (d === 0) return p1;
-
-	// Clamp to p2 if overshooting
-	const dist = Math.min(Math.max(meters, 0), d);
-	if (dist === d) return p2;
-
-	// Initial bearing p1->p2
-	const y = Math.sin(lon2 - lon1) * Math.cos(lat2);
-	const x = Math.cos(lat1) * Math.sin(lat2) -
-		Math.sin(lat1) * Math.cos(lat2) * Math.cos(lon2 - lon1);
-	const brng = Math.atan2(y, x);
-
-	// Destination point formula
-	const δ = dist / R;
-	const sinLat1 = Math.sin(lat1), cosLat1 = Math.cos(lat1);
-	const sinδ = Math.sin(δ), cosδ = Math.cos(δ);
-
-	const lat3 = Math.asin(sinLat1 * cosδ + cosLat1 * sinδ * Math.cos(brng));
-	const lon3 = lon1 + Math.atan2(
-		Math.sin(brng) * sinδ * cosLat1,
-		cosδ - sinLat1 * Math.sin(lat3)
-	);
-
-	return [toDeg(lat3), normalizeLon(toDeg(lon3))];
-}
-
-// helpers
-const toRad = (deg: number) => (deg * Math.PI) / 180;
-const toDeg = (rad: number) => (rad * 180) / Math.PI;
-const normalizeLon = (lon: number) =>
-	((lon + 540) % 360) - 180; // -> [-180, 180)
-
-// TODO: Add method for getting estimated vehicle location based on trip information
-// TODO: Add method for splitting shape, stops into passed and upcoming
 // TODO: Animating bus movement based on estimations
 

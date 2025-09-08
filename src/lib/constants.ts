@@ -43,7 +43,7 @@ function createBusMarkerElement(
 	textColor: string // IN HEX
 ): HTMLElement {
 	// Create the marker element and put a text box with a placeholder class for the routename to be populated
-	console.log("CREATING BUS MARKER EL WITH COLOR ", textColor);
+	// console.log("CREATING BUS MARKER EL WITH COLOR ", textColor);
 	const element = document.createElement('div');
 	 element.innerHTML = `
 <div

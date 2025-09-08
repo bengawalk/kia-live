@@ -21,7 +21,7 @@
 
 		{#if isConnected}
 			<!-- Connected Bus -->
-			<div class="relative mt-[7px] mr-2 h-2 w-2 rounded-t-full rounded-b-full border-[2px] border-[#1967D3] overflow-visible">
+			<div class="relative mt-[6px] mr-2 h-2 w-2 rounded-t-full rounded-b-full border-[2px] border-[#1967D3] overflow-visible">
 				<!-- Ping ring (animation remains) -->
 				<div class="absolute -inset-1 rounded-full border-[4px] border-[#1967D3] opacity-40 animate-ping origin-center"></div>
 			</div>
