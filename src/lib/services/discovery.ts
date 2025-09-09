@@ -67,8 +67,8 @@ function getNextDeparture(closestStop: {
 	stop_id?: string;
 	stop_time?: string;
 	stop_date: (baseDate?: Date, days?: number) => Date;
-}): Date {
-	if (closestStop.stop_date().getTime() < Date.now()) {
+}, isLiveTrip: boolean = false): Date {
+	if (closestStop.stop_date().getTime() < Date.now() && !isLiveTrip) {
 		return closestStop.stop_date(undefined, 1);
 	}
 	return closestStop.stop_date();
@@ -111,7 +111,7 @@ export async function loadNextBuses() {
 	const nextTripTimes: { toCity: number[]; toAirport: number[] } = { toAirport: [], toCity: [] }; // Array for quickly inserting at correct index
 	let timeoutTime = new Date().getTime() + 3600000; // 60 minutes after
 	for (const trip of trips) {
-		if (seenTripIds.has(trip.trip_id)) continue;
+		if (seenTripIds.has(trip.trip_id) && !Object.hasOwn(trip, 'vehicle_id')) continue;
 		seenTripIds.add(trip.trip_id);
 		const routeFind = routes.find((value) => value.route_id === trip.route_id);
 		const direction =
@@ -164,12 +164,13 @@ export async function loadNextBuses() {
 				transitFeed.stops[closestStop.stop_id].stop_lon
 			)) * 1000;
 		const arrivalToStop = Date.now() + travelTimeMS;
-		if (arrivalToStop < timeoutTime) timeoutTime = arrivalToStop;
+		// if (arrivalToStop < timeoutTime) timeoutTime = arrivalToStop;
 		if (
-			getNextDeparture(closestStop).getTime() < // Filter out trips that have already passed or will pass before user can reach
-			arrivalToStop + 300 * 1000
-		)
+			getNextDeparture(closestStop, Object.hasOwn(trip, 'vehicle_id')) < // Filter out trips that have already passed or will pass before user can reach
+			new Date(arrivalToStop + (300 * 1000))
+		) {
 			continue;
+		}
 		if (nextTrips[direction].length == 0 || nextTripTimes[direction].length == 0) {
 			nextTrips[direction].push(trip);
 			nextTripTimes[direction].push(getNextDeparture(closestStop).getTime());
@@ -214,7 +215,6 @@ export async function loadNextBuses() {
 	if (currentRefreshTimeout) clearTimeout(currentRefreshTimeout);
 	currentRefreshTimeout = setTimeout(loadNextBuses, timeoutTime - Date.now());
 	nextBuses.set(nextTrips);
-	// console.log(nextTrips);
 }
 
 let displayingTripID: string = '';
@@ -224,6 +224,14 @@ let displayingStop: { style: string; stop_id: string; stop_time: number } = {
 	stop_time: 0
 };
 let displayingMarkerStyles: string[] = [];
+
+// Remember last display signature to avoid redundant re-renders
+let lastDisplaySignature: string = '';
+// Remember last known live marker position and timestamp to avoid restarting animations
+let liveMarkerMemory: { tripId: string; lat: number; lon: number; lastTs?: number } | undefined =
+	undefined;
+// Track which trip owns the running animation interval
+let busMarkerTripId: string | undefined = undefined;
 
 export async function displayCurrentTrip() {
 	// Take currently selected trip id, filter next buses, if id not in next buses list, get bus at nextBusIndex from next buses list
@@ -251,7 +259,7 @@ export async function displayCurrentTrip() {
 	// 		: undefined;
 	const buses = get(nextBuses)[direction];
 	const index = get(nextBusIndex);
-	await cancelAnimateBusMarker();
+	// Only cancel existing animation if the trip changes; otherwise preserve animation continuity
 	const selectedTrip = get(selectedTripID);
 	if (!selectedTrip) {
 		clearTripLayers(true);
@@ -274,6 +282,7 @@ export async function displayCurrentTrip() {
 	}
 	if (currentTrip.trip_id !== displayingTripID) {
 		clearTripLayers();
+		await cancelAnimateBusMarker();
 	}
 
 	const loc = currentLocation();
@@ -318,19 +327,49 @@ export async function displayCurrentTrip() {
 				? 'BLUE_LINE'
 				: 'BLACK_LINE';
 	let tripStopsHighlight: undefined | { stop: Stop; stop_time: Date } = undefined;
-	removeRenderedCollisions();
-	updateLayer(removeStopsLayer, undefined);
-	updateLayer(removeLiveStopsLayer, undefined);
-	updateLayer(removeLineLayer, undefined);
-	updateLayer(removeLiveLineLayer, undefined);
-	updateLayer(removeStopsLayer, undefined);
-	updateLayer(removeWalkLayer, undefined);
+	// Defer clearing layers until we know there are changes to display
 	const vehicle = Object.hasOwn(currentTrip, 'vehicle_id')
 		? get(liveTransitFeed).vehicles.find(
 				(vehicle) => vehicle.vehicle_id === (currentTrip as LiveTrip).vehicle_id
 			)
 		: undefined;
 	const vehicleEstimate = await getVehicleEstimate(currentTrip);
+
+	// Build a lightweight signature to decide if we need to update layers/markers
+	const highlightedSel = get(selected);
+	const selKey =
+		highlightedSel === undefined
+			? 'none'
+			: Object.hasOwn(highlightedSel as object, 'stop_id')
+				? `stop:${(highlightedSel as Stop).stop_id}`
+				: Object.hasOwn(highlightedSel as object, 'trip_id')
+					? `trip:${(highlightedSel as Trip | LiveTrip).trip_id}`
+					: 'other';
+	const latestLiveTs = vehicle?.previous_locations?.length
+		? new Date(vehicle.previous_locations[vehicle.previous_locations.length - 1].timestamp).getTime()
+		: 0;
+	const nextStaticTime = tripStops.find((v) => v.stop_time.getTime() > Date.now())?.stop_time.getTime() || 0;
+	const displaySignature = `${currentTrip.trip_id}|${direction}|${selKey}|$${
+		Object.hasOwn(currentTrip, 'vehicle_id') ? `live:${latestLiveTs}` : `static:${nextStaticTime}`
+	}|${closestStop.stop.stop_id}|${closestStop.stop_time.getTime()}`;
+
+	if (displaySignature === lastDisplaySignature) {
+		// No changes to render; ensure marker remains at last known memory for live trips
+		if (Object.hasOwn(currentTrip, 'vehicle_id') && liveMarkerMemory && liveMarkerMemory.tripId === currentTrip.trip_id) {
+			updateBusMarker(
+				Object.hasOwn(currentTrip, 'vehicle_id') ? 'BUS_LIVE' : 'BUS',
+				get(transitFeedStore).routes.find((r) => r.route_id === currentTrip.route_id)?.route_short_name ?? '',
+				liveMarkerMemory.lat,
+				liveMarkerMemory.lon,
+				() => {
+					markerTapped = true;
+					selected.set(currentTrip);
+				}
+			);
+		}
+		// Skip clearing or re-drawing layers to avoid flicker/clears
+		return;
+	}
 	const splitRes = await splitTrip(
 		currentTrip,
 		vehicle ? [vehicle.latitude, vehicle.longitude] : [vehicleEstimate.lat, vehicleEstimate.lon]
@@ -441,9 +480,11 @@ export async function displayCurrentTrip() {
 		undefined,
 		undefined
 	);
+	// Ensure bus highlight only when this trip is selected
 	updateBusMarker(
-		highlighted !== undefined &&
-			(highlightTrip === undefined || highlightTrip.trip_id !== currentTrip.trip_id)
+		highlighted !== undefined && highlightTrip !== undefined && highlightTrip.trip_id === currentTrip.trip_id
+			? (Object.hasOwn(currentTrip, 'vehicle_id') ? 'BUS_LIVE' : 'BUS')
+			: highlighted !== undefined
 			? 'BUS_INACTIVE'
 			: Object.hasOwn(currentTrip, 'vehicle_id')
 				? 'BUS_LIVE'
@@ -476,6 +517,9 @@ export async function displayCurrentTrip() {
 	displayingTrip.set(currentTrip);
 	highlightedStop.set(closestStop.stop);
 	await animateBusMarker(currentTrip, closestStop.stop);
+
+	// Save the current display signature as last rendered
+	lastDisplaySignature = displaySignature;
 }
 
 export function toggleAirportDirection(
@@ -1131,7 +1175,11 @@ function mergeGeoJSONSpecifications(
 
 async function animateBusMarker(trip: Trip | LiveTrip, closestStop: Stop) {
 	// Change location every 50 ms, for live trips make assumptions of next positions
-	if (busMarkerInterval) await cancelAnimateBusMarker();
+	// If an animation is already running for this trip, do not restart it (prevents re-animation on re-renders)
+	if (busMarkerInterval && busMarkerTripId === trip.trip_id) return;
+	// If an animation is running for a different trip, cancel it
+	if (busMarkerInterval && busMarkerTripId !== trip.trip_id) await cancelAnimateBusMarker();
+	busMarkerTripId = trip.trip_id;
 
 	// Helper to clamp values between min and max
 	const clamp = (x: number, min: number, max: number) => (x < min ? min : x > max ? max : x);
@@ -1147,7 +1195,7 @@ async function animateBusMarker(trip: Trip | LiveTrip, closestStop: Stop) {
 		const highlightStop =
 			highlighted !== undefined && Object.hasOwn(highlighted, 'stop_id')
 				? (highlighted as Stop)
-				: undefined;
+		: undefined;
 		const highlightTrip =
 			highlighted !== undefined &&
 			Object.hasOwn(highlighted, 'trip_id') &&
@@ -1246,7 +1294,8 @@ async function animateBusMarker(trip: Trip | LiveTrip, closestStop: Stop) {
 								stop: route.stops.find((va) => va.stop_id === v.stop_id)!,
 								stop_time: new Date(v.stop_date(undefined, days))
 							})).filter((v) => v.stop.stop_id != closestStop.stop_id);
-							const selectedStop = get(selected) ? Object.hasOwn(get(selected), 'stop_id') ? get(selected) as Stop : undefined : undefined;
+							const _sel1 = get(selected);
+							const selectedStop = _sel1 && Object.hasOwn(_sel1 as object, 'stop_id') ? (_sel1 as Stop) : undefined;
 							if(stopsLayer !== 'WHITE_GRAY_CIRCLE')
 								updateLayer(stopsLayer, geoJSONFromStops(stopsAfter));
 							else updateLayer(isLive ? 'WHITE_BLUE_CIRCLE' : 'WHITE_BLACK_CIRCLE', geoJSONFromStops([...stopsBefore, ...stopsAfter].filter((v) => selectedStop && v.stop.stop_id === selectedStop.stop_id)));
@@ -1284,6 +1333,9 @@ async function animateBusMarker(trip: Trip | LiveTrip, closestStop: Stop) {
 					markerTapped = true;
 					selected.set(trip);
 				});
+
+				// Remember last live marker position
+				liveMarkerMemory = { tripId: (trip as LiveTrip).trip_id, lat: curLat, lon: curLon, lastTs: lastLiveTimestampMs };
 			}
 		} else {
 			// Static trip: continuously animate marker using scheduled estimate.
@@ -1333,7 +1385,8 @@ async function animateBusMarker(trip: Trip | LiveTrip, closestStop: Stop) {
 							stop: route.stops.find((va) => va.stop_id === v.stop_id)!,
 							stop_time: new Date(v.stop_date(undefined, days))
 						})).filter((v) => v.stop.stop_id != closestStop.stop_id);
-						const selectedStop = get(selected) ? Object.hasOwn(get(selected), 'stop_id') ? get(selected) as Stop : undefined : undefined;
+						const _sel2 = get(selected);
+						const selectedStop = _sel2 && Object.hasOwn(_sel2 as object, 'stop_id') ? (_sel2 as Stop) : undefined;
 						if(stopsLayer !== 'WHITE_GRAY_CIRCLE')
 							updateLayer(stopsLayer, geoJSONFromStops(stopsAfter));
 						else updateLayer(isLive ? 'WHITE_BLUE_CIRCLE' : 'WHITE_BLACK_CIRCLE', geoJSONFromStops([...stopsBefore, ...stopsAfter].filter((v) => selectedStop && v.stop.stop_id === selectedStop.stop_id)));
