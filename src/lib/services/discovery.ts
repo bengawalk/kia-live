@@ -265,7 +265,14 @@ export async function displayCurrentTrip() {
 		clearTripLayers(true);
 		return;
 	}
-	const tripFind = buses.find((val) => val.trip_id === selectedTrip);
+	let tripFind = buses.find((val) => val.trip_id === selectedTrip);
+	// If the selected/displaying trip is no longer in nextBuses, auto move to next available
+	if (!tripFind) {
+		if (buses.length > 0) {
+			selectedTripID.set(buses[Math.min(Math.max(index, 0), buses.length - 1)].trip_id);
+			return; // Will re-render with the new selection
+		}
+	}
 	const currentTrip =
 		tripFind !== undefined ? tripFind : buses.length > index ? buses[index] : null;
 	if (currentTrip == null) {
@@ -395,8 +402,6 @@ export async function displayCurrentTrip() {
 			? mergeGeoJSONSpecifications([geoJSONShapeBefore, geoJSONShapeAfter])
 			: geoJSONShapeBefore
 	);
-	// updateLayer(lineLayer, geoJSONFromRoute(currentRoute, currentTrip));
-	// updateLayer('GRAY_LINE', geoJSONFromRoute(currentRoute, currentTrip));
 	if (highlightStop !== undefined && highlightStop.stop_id !== closestStop.stop.stop_id) {
 		tripStopsHighlight = [...stopsBefore, ...stopsAfter].find(
 			(val) => val.stop.stop_id === highlightStop.stop_id
@@ -481,6 +486,7 @@ export async function displayCurrentTrip() {
 		undefined
 	);
 	// Ensure bus highlight only when this trip is selected
+	const liveLoc = vehicle ? vehicle.previous_locations.length > 1 ? vehicle.previous_locations[vehicle.previous_locations.length - 2] : vehicle.previous_locations[vehicle.previous_locations.length - 1] : undefined;
 	updateBusMarker(
 		highlighted !== undefined && highlightTrip !== undefined && highlightTrip.trip_id === currentTrip.trip_id
 			? (Object.hasOwn(currentTrip, 'vehicle_id') ? 'BUS_LIVE' : 'BUS')
@@ -490,8 +496,8 @@ export async function displayCurrentTrip() {
 				? 'BUS_LIVE'
 				: 'BUS',
 		currentRoute.route_short_name,
-		vehicle ? vehicle.latitude : vehicleEstimate.lat,
-		vehicle ? vehicle.longitude : vehicleEstimate.lon,
+		liveLoc ? liveLoc.latitude : vehicleEstimate.lat,
+		liveLoc ? liveLoc.longitude : vehicleEstimate.lon,
 		() => {
 			markerTapped = true;
 			selected.set(currentTrip);
@@ -611,20 +617,6 @@ export function handleTouchStart(e: MapTouchEvent | MapMouseEvent) {
 	}, 1500); // 1.5 second later change input location
 }
 
-// export function handleTouchMove(e: MapTouchEvent | MapMouseEvent) {
-// 	if(changeLocationTimeout) {
-// 		console.log('Touch cancelled change location removed');
-// 		clearTimeout(changeLocationTimeout);
-// 	}
-// 	if(circleTimeout) {
-// 		console.log('Touch cancelled circle timeout removed');
-// 		clearTimeout(circleTimeout);
-// 	}
-// 	if(circleTimer) {
-// 		console.log('Touch cancelled circle removed');
-// 		circleTimer.remove();
-// 	}
-// }
 export function handleTouchEnd(
 	_:
 		| MapTouchEvent
@@ -981,6 +973,20 @@ async function splitTrip(
 		}
 	}
 
+	// If the trip has not started yet, ensure "before" sections are empty
+	if (lastPastStopIndex === null) {
+		return {
+			splitIndex: 0,
+			shapeBefore: [],
+			shapeAfter: shape,
+			stopsBefore: [],
+			stopsAfter: trip.stops,
+			matchedStopShapeIndex,
+			lastPastStopIndex,
+			nextUpcomingStopIndex
+		};
+	}
+
 	return {
 		splitIndex,
 		shapeBefore,
@@ -1086,8 +1092,7 @@ async function getVehicleEstimate(trip: Trip): Promise<{ lat: number; lon: numbe
 
 	// Edge cases: before first stop or after last stop
 	if (lastIdx < 0) {
-		const first = stopInfos[0];
-		const p = shape[first.shapeIdx];
+		const p = shape[0];
 		return { lat: p.lat, lon: p.lon };
 	}
 	if (lastIdx >= stopInfos.length - 1) {
@@ -1240,6 +1245,7 @@ async function animateBusMarker(trip: Trip | LiveTrip, closestStop: Stop) {
 	const FRAMERATE_MS = 50; // smooth enough without being heavy
 	const GEOJSON_UPDATE_MS = 4000; // update line layers every 4s
 	const ESTIMATE_INTERVAL_MS = 1000; // refresh estimates every 1s for smoother marker animation
+	let WAIT_MS = 300;
 
 	busMarkerInterval = setInterval(async () => {
 		// Determine whether this is a live trip
@@ -1249,11 +1255,15 @@ async function animateBusMarker(trip: Trip | LiveTrip, closestStop: Stop) {
 			const liveBus = get(liveTransitFeed).vehicles.find(
 				(e) => (trip as LiveTrip).vehicle_id === e.vehicle_id
 			);
+
 			if (liveBus) {
 				const hist = liveBus.previous_locations || [];
 				const latest = hist.length > 0 ? hist[hist.length - 1] : undefined;
 				const prev = hist.length > 1 ? hist[hist.length - 2] : undefined;
-
+				if(WAIT_MS > 0) {
+					WAIT_MS -= FRAMERATE_MS;
+					return;
+				}
 				const latestTs = latest ? new Date(latest.timestamp).getTime() : undefined;
 				// If we have a new latest point, set up a fresh animation from prev -> latest
 				if (
@@ -1442,5 +1452,3 @@ async function cancelAnimateBusMarker() {
 		// await tick(); // Wait for map to reflect changes
 	}
 }
-// TODO: Animating bus movement based on estimations
-
