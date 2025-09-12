@@ -6,6 +6,7 @@ import { defineConfig } from 'vite';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { storybookTest } from '@storybook/experimental-addon-test/vitest-plugin';
+import { VitePWA } from 'vite-plugin-pwa';
 const dirname =
 	typeof __dirname !== 'undefined' ? __dirname : path.dirname(fileURLToPath(import.meta.url));
 
@@ -13,6 +14,32 @@ const dirname =
 export default defineConfig({
 	plugins: [
 		sveltekit(),
+		VitePWA({
+			devOptions: {
+				enabled: true
+			},
+			registerType: 'autoUpdate',
+			includeAssets: ['favicon.ico', 'apple-touch-icon.png'],
+			manifest: {
+				name: 'KIA-Live',
+				short_name: 'KIA Live',
+				description: 'Live bus tracking and finder for KIA buses in Bengaluru.',
+				theme_color: '#ffffff',
+				display: 'standalone',
+				icons: [
+					{
+						src: 'icon-192x192.png',
+						sizes: '192x192',
+						type: 'image/png'
+					},
+					{
+						src: 'icon-512x512.png',
+						sizes: '512x512',
+						type: 'image/png'
+					}
+				]
+			}
+		}),
 		tailwindcss(),
 		paraglide({
 			project: './project.inlang',
@@ -21,6 +48,9 @@ export default defineConfig({
 	],
 	define: {
 		'process.env': {}
+	},
+	server: {
+		host: true
 	},
 	test: {
 		workspace: [

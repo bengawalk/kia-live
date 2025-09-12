@@ -1,16 +1,20 @@
 <script lang="ts">
 	import { onMount, onDestroy } from 'svelte';
-	// import mapboxgl from 'mapbox-gl';
-	// import LanguageSwitcher from "$components/LanguageSwitcher.svelte";
+	import MapButtons from '$components/MapButtons.svelte'
 	import { messages } from '$lib/stores/language';
 	import { loadMap, unloadMap } from '$lib/services/map';
+	import InfoView from '$components/InfoView.svelte';
+	import GTFSLoader from '$components/GTFSLoader.svelte';
+	// import SearchBar from '$components/SearchBar.svelte';
+	// import LanguageSwitcher from '$components/LanguageSwitcher.svelte';
+	import ConnectedInfo from '$components/ConnectedInfo.svelte';
 
 	let mapContainer: HTMLElement | string;
-	// let map: mapboxgl.Map | undefined;
 
 	onMount(() => {
 		// map =
 			loadMap(mapContainer);
+
 	});
 	onDestroy(() => {
 		unloadMap();
@@ -28,6 +32,11 @@
     }
 </style>
 
-<div id="map" bind:this={mapContainer}>
+<div id="map" class="max-h-dvh flex flex-col" bind:this={mapContainer}>
+
 <!--	<LanguageSwitcher />-->
+	<GTFSLoader />
+	<ConnectedInfo />
+	<MapButtons />
+	<InfoView />
 </div>

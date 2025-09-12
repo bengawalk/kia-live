@@ -4,5 +4,6 @@ export type Trip = {
     stops: {
         stop_id: string;
         stop_time: string;
+        stop_date: (baseDate?: Date, days?: number) => Date;
     }[];
 }

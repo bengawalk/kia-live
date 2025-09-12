@@ -1,5 +1,12 @@
 {
     "$schema": "https://inlang.com/schema/inlang-message-format",
     "Title": "KIA Live",
-    "LanguageLabel": "ಕನ್ನಡ"
+    "LanguageLabel": "ಕನ್ನಡ",
+    "ToKIA": "To Airport",
+    "FromKIA": "From Airport",
+    "NextBus": "Next Bus",
+    "Plan": "Plan",
+    "Planning": "Planning",
+    "Connected": "Connected",
+    "Disconnected": "Disconnected"
 }

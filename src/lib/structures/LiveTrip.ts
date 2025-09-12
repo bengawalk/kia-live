@@ -3,7 +3,9 @@ export type LiveTrip = {
     vehicle_id: string;
     route_id: string;
     stops: {
-        [stop_id: string]: string;
+        stop_id: string;
+        stop_time: string;
+        stop_date: () => Date;
     }[];
-    timestamp: string;
+    timestamp: Date;
 }

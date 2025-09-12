@@ -21,7 +21,7 @@
         position: absolute;
         top: 1rem;
         right: 1rem;
-        z-index: 1000;
+        z-index: 1;
         background: transparent;
         border: none;
         font-size: 14px;

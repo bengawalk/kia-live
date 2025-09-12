@@ -1,5 +1,12 @@
 {
     "$schema": "https://inlang.com/schema/inlang-message-format",
     "Title": "ಕಿಯಾ ಲೈವ್",
-    "LanguageLabel": "English"
+    "LanguageLabel": "English",
+    "ToKIA": "ಐರ್ಪೊರ್ತ್ ಗೆ",
+    "FromKIA": "ಐರ್ಪೊರ್ತ್ ನಿಂದ",
+    "NextBus": "ಅಕ್ಲಾ ಬಸ್",
+    "Plan": "ಯೋಜನೆ ಮಾಡಿ",
+    "Planning": "ಯೋಜನೆ ನಡೆಯುತ್ತಿದೆ",
+    "Connected": "Connected",
+    "Disconnected": "Disconnected"
 }
