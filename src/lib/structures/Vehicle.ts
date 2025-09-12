@@ -8,6 +8,6 @@ export type Vehicle = {
     bearing: number;
     speed: number;
     next_stop_id: string;
-    previous_locations: {latitude: number, longitude: number, timestamp: Date}[]; // Most recent is last, Oldest is first
+    previous_locations: {latitude: number, longitude: number, bearing: number, timestamp: Date}[]; // Most recent is last, Oldest is first
     timestamp: Date; // or Date if you're parsing it into a Date object
 };  

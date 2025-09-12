@@ -1212,6 +1212,15 @@ async function animateBusMarker(trip: Trip | LiveTrip, closestStop: Stop) {
 		const lineLayer = highlighted !== undefined ? 'GRAY_LINE' : isLive ? 'BLUE_LINE' : 'BLACK_LINE';
 		const stopsLayer =
 			highlighted === undefined ? (isLive ? 'WHITE_BLUE_CIRCLE' : 'WHITE_BLACK_CIRCLE') : 'WHITE_GRAY_CIRCLE';
+		if (stopsLayer === 'WHITE_GRAY_CIRCLE') {
+			const highlighted = get(selected);
+			if (!highlighted || !Object.hasOwn(highlighted, 'stop_id')) {
+				updateLayer('WHITE_BLUE_CIRCLE', undefined);
+				updateLayer('WHITE_BLACK_CIRCLE', undefined);
+			}
+			updateLayer('BLACK_LINE', undefined);
+			updateLayer('BLUE_LINE', undefined);
+		}
 
 		const busStyle =
 			highlighted !== undefined && (highlightStop !== undefined || (highlightTrip && highlightTrip.trip_id !== trip.trip_id))
@@ -1286,7 +1295,7 @@ async function animateBusMarker(trip: Trip | LiveTrip, closestStop: Stop) {
 						const geoAfter = geoJSONFromShape(split.shapeAfter.map((v) => [v.lon, v.lat]));
 						const geoBefore = geoJSONFromShape(split.shapeBefore.map((v) => [v.lon, v.lat]));
 						// Ensure lines are drawn before circles by updating lines first
-						updateLayer(lineLayer, geoAfter);
+						if(stopsLayer !== 'WHITE_GRAY_CIRCLE') updateLayer(lineLayer, geoAfter);
 						updateLayer('GRAY_LINE', stopsLayer === 'WHITE_GRAY_CIRCLE' ? mergeGeoJSONSpecifications([geoBefore, geoAfter]) : geoBefore);
 
 						// If style requires, also update circles so they stay above lines with correct color
@@ -1321,6 +1330,15 @@ async function animateBusMarker(trip: Trip | LiveTrip, closestStop: Stop) {
 												(v) => !selectedStop || (selectedStop && selectedStop.stop_id !== v.stop.stop_id)))])
 									: geoJSONFromStops(stopsBefore)
 							);
+						}
+						if (stopsLayer === 'WHITE_GRAY_CIRCLE') {
+							const highlighted = get(selected);
+							if (!highlighted || !Object.hasOwn(highlighted, 'stop_id')) {
+								updateLayer('WHITE_BLUE_CIRCLE', undefined);
+								updateLayer('WHITE_BLACK_CIRCLE', undefined);
+							}
+							updateLayer('BLACK_LINE', undefined);
+							updateLayer('BLUE_LINE', undefined);
 						}
 						lastGeojsonUpdate = Date.now();
 					} catch (_) {
@@ -1378,7 +1396,7 @@ async function animateBusMarker(trip: Trip | LiveTrip, closestStop: Stop) {
 					const { lineLayer, stopsLayer } = computeStyles();
 					const geoAfter = geoJSONFromShape(split.shapeAfter.map((v) => [v.lon, v.lat]));
 					const geoBefore = geoJSONFromShape(split.shapeBefore.map((v) => [v.lon, v.lat]));
-					updateLayer(lineLayer, geoAfter);
+					if(stopsLayer !== 'WHITE_GRAY_CIRCLE') updateLayer(lineLayer, geoAfter);
 					updateLayer('GRAY_LINE', stopsLayer === 'WHITE_GRAY_CIRCLE' ? mergeGeoJSONSpecifications([geoBefore, geoAfter]) : geoBefore);
 
 					if (route) {
@@ -1413,7 +1431,15 @@ async function animateBusMarker(trip: Trip | LiveTrip, closestStop: Stop) {
 								: geoJSONFromStops(stopsBefore)
 						);
 					}
-
+					if (stopsLayer === 'WHITE_GRAY_CIRCLE') {
+						const highlighted = get(selected);
+						if (!highlighted || !Object.hasOwn(highlighted, 'stop_id')) {
+							updateLayer('WHITE_BLUE_CIRCLE', undefined);
+							updateLayer('WHITE_BLACK_CIRCLE', undefined);
+						}
+						updateLayer('BLACK_LINE', undefined);
+						updateLayer('BLUE_LINE', undefined);
+					}
 					lastGeojsonUpdate = now;
 				} catch (_) {
 					// ignore split errors
@@ -1436,7 +1462,6 @@ async function animateBusMarker(trip: Trip | LiveTrip, closestStop: Stop) {
 				curLat = closestStop.stop_lat;
 				curLon = closestStop.stop_lon;
 			}
-
 			const { busStyle } = computeStyles();
 			updateBusMarker(busStyle, routeShortName, curLat, curLon, () => {
 				markerTapped = true;

@@ -59,9 +59,9 @@
 								if(previous) {
 									previousLocations.push(...previous.previous_locations);
 									if(previousLocations[previousLocations.length - 1].timestamp < timestamp) {
-										previousLocations.push({latitude: v.position?.latitude || 0, longitude: v.position?.longitude || 0, timestamp: timestamp})
+										previousLocations.push({latitude: v.position?.latitude || 0, longitude: v.position?.longitude || 0, bearing: v.position?.bearing || 0, timestamp: timestamp})
 									}
-								} else previousLocations.push({latitude: v.position?.latitude || 0, longitude: v.position?.longitude || 0, timestamp: timestamp});
+								} else previousLocations.push({latitude: v.position?.latitude || 0, longitude: v.position?.longitude || 0, bearing: v.position?.bearing || 0, timestamp: timestamp});
                 vehicles.push({
                     vehicle_id: v.vehicle?.id || '',
                     vehicle_reg: v.vehicle?.label || '',
