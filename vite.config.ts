@@ -16,26 +16,32 @@ export default defineConfig({
 		sveltekit(),
 		VitePWA({
 			devOptions: {
-				enabled: true
+				enabled: true,
+				type: 'module'
 			},
 			registerType: 'autoUpdate',
-			includeAssets: ['favicon.ico', 'apple-touch-icon.png'],
+			includeAssets: ['favicon.ico', 'apple-touch-icon.png', 'icon-192x192.png', 'icon-512x512.png'],
 			manifest: {
 				name: 'KIA-Live',
 				short_name: 'KIA Live',
 				description: 'Live bus tracking and finder for KIA buses in Bengaluru.',
 				theme_color: '#ffffff',
 				display: 'standalone',
+				orientation: 'portrait',
+				scope: '/',
+				start_url: '/',
 				icons: [
 					{
 						src: 'icon-192x192.png',
 						sizes: '192x192',
-						type: 'image/png'
+						type: 'image/png',
+						purpose: 'maskable'
 					},
 					{
 						src: 'icon-512x512.png',
 						sizes: '512x512',
-						type: 'image/png'
+						type: 'image/png',
+						purpose: 'maskable'
 					}
 				]
 			}
