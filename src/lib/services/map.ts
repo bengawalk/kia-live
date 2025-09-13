@@ -43,6 +43,7 @@ export function loadMap(mapContainer: HTMLElement | string): mapboxgl.Map {
 			map?.on('mouseover', handleTouchEnd);
 			map?.on('mouseup', handleTouchEnd);
 			// map?.on('mouseup', handleTap);
+			map?.touchZoomRotate.disableRotation();
 		}
 	);
 	return map;
