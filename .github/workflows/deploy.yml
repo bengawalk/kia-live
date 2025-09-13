@@ -17,15 +17,6 @@ on:
     # Uncomment the section below to enable commit previews for all branches
     #  - '**' # Enable commit previews for all branches
 
-  pull_request:
-    # This section triggers the workflow when a pull request is created or updated.
-    # Allows preview deployments for feature branches before merging.
-    branches:
-      - '**' # Deploy preview for PRs targeting any branch
-      # - main  # Deploy previews for PRs targeting `main`
-      # - dev   # Deploy previews for PRs targeting `dev`
-      # - 'feature/**' # Deploy previews for PRs targeting a feature
-
   workflow_dispatch:
     # Enables manual triggering of this workflow with user-defined inputs.
     # Useful for deploying specific branches or enabling/disabling commit previews dynamically.
