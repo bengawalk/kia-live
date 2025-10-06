@@ -13,7 +13,7 @@ on:
     # This section triggers the workflow when code is pushed to specific branches.
     branches:
       - main  # Deploy when pushing to the main branch (for production/demo)
-      - dev   # Deploy when pushing to the development branch
+    #  - dev   # Deploy when pushing to the development branch
     # Uncomment the section below to enable commit previews for all branches
     #  - '**' # Enable commit previews for all branches
 
