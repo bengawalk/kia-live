@@ -40,7 +40,6 @@ jobs:
       VITE_STATIC_DATA_VERSION: ${{ vars.VITE_STATIC_DATA_VERSION }}
       VITE_STATIC_DATA_SOURCE: ${{ vars.VITE_STATIC_DATA_SOURCE }}
       VITE_LIVE_DATA_SOURCE: ${{ vars.VITE_LIVE_DATA_SOURCE }}
-      TEST_KEY: ${{ secrets.TEST_KEY }}
     runs-on: ubuntu-latest  # Specifies the operating system for the runner
 
     steps:
@@ -71,8 +70,6 @@ jobs:
         # Builds the static site using SvelteKit
         # Determines the BASE_PATH dynamically based on the branch name
         run: |
-          echo "$TEST_KEY"
-          export BASE_PATH="${{ github.ref_name == 'main' && '' || format('/{0}', github.ref_name) }}"
           yarn build
 
       - name: Deploy to GitHub Pages
