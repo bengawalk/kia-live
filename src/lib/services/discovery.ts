@@ -166,8 +166,8 @@ export async function loadNextBuses() {
 		const arrivalToStop = Date.now() + travelTimeMS;
 		// if (arrivalToStop < timeoutTime) timeoutTime = arrivalToStop;
 		if (
-			getNextDeparture(closestStop, Object.hasOwn(trip, 'vehicle_id')) < // Filter out trips that have already passed or will pass before user can reach
-			new Date(arrivalToStop + (300 * 1000))
+			getNextDeparture(closestStop, Object.hasOwn(trip, 'vehicle_id')) < // Filter out trips that have already passed or will pass before user can reach, keep a 30 second delay in case the user is tracking the bus to get on.
+			new Date(arrivalToStop - (30 * 1000))
 		) {
 			continue;
 		}
@@ -562,7 +562,7 @@ export function toggleAirportDirection(
 nextBuses.subscribe(displayCurrentTrip);
 selectedTripID.subscribe(displayCurrentTrip);
 selected.subscribe(displayCurrentTrip);
-airportDirection.subscribe(displayCurrentTrip);
+// airportDirection.subscribe(displayCurrentTrip);
 inputLocation.subscribe(loadNextBuses);
 userLocation.subscribe(loadNextBuses);
 transitFeedStore.subscribe(loadNextBuses);
@@ -609,7 +609,7 @@ export function handleTouchStart(e: MapTouchEvent | MapMouseEvent) {
 	changeLocationTimeout = setTimeout(() => {
 		inputLocation.set({ latitude: e.lngLat.lat, longitude: e.lngLat.lng });
 		locationChanged = true;
-		cycleBus();
+		// cycleBus();
 		clearTimeout(changeLocationTimeout);
 		changeLocationTimeout = undefined;
 		if (circleTimer) circleTimer.remove();
