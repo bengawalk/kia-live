@@ -1,4 +1,10 @@
-import { LINE_COLLISION_STYLE, LINE_LABEL_STYLE, MAP_STYLES, POINT_LABEL_STYLE } from '$lib/constants';
+import {
+	LINE_COLLISION_STYLE,
+	LINE_LABEL_STYLE,
+	MAP_STYLES,
+	POINT_LABEL_STYLE,
+	POINT_LABEL_STYLE_OVERLAP
+} from '$lib/constants';
 import mapboxgl, { type LayerSpecification } from 'mapbox-gl';
 import mapLineLabelImage from '$assets/map-line-label.png';
 import { pollUserLocation } from '$lib/services/location';
@@ -140,7 +146,8 @@ function samplePointsAlongLineCollection(lineFeatureCollection: GeoJSON.FeatureC
 // Update / Remove a GeoJSON Layer
 export function updateLayer(
 	layerType: keyof typeof MAP_STYLES | undefined,
-	source: mapboxgl.GeoJSONSourceSpecification | undefined
+	source: mapboxgl.GeoJSONSourceSpecification | undefined,
+	labelOverlap: boolean = false
 ): void {
 	if(!map) {
 		return;
@@ -195,7 +202,7 @@ export function updateLayer(
 	// If the symbol layer (labels) does not exist, add it
 	if (!layerSymbols) {
 		const symbolLayer =
-			MAP_STYLES[layerType].specification.type === 'line' ? LINE_LABEL_STYLE : POINT_LABEL_STYLE;
+			MAP_STYLES[layerType].specification.type === 'line' ? LINE_LABEL_STYLE : labelOverlap ? POINT_LABEL_STYLE_OVERLAP : POINT_LABEL_STYLE;
 		symbolLayer.id = symbolID;
 		symbolLayer.paint = {"text-color": layerType.includes("GRAY") ? "#999999" : layerType.includes("BLUE") ? "#1967D3" : "#000000"};
 		symbolLayer.source = layerType;
@@ -296,7 +303,7 @@ export function updateMarker(
 	}
 	markers[layerType].getElement().onclick = handleTap;
 	if(!layerSymbolX) {
-		const styleLayer = {...POINT_LABEL_STYLE};
+		const styleLayer = {...POINT_LABEL_STYLE_OVERLAP};
 		styleLayer.id = symbolXID;
 		styleLayer.paint = {"text-color": layerType.includes("INACTIVE") ? "#999999" : layerType.includes("LIVE") ? "#1967D3" : "#000000"};
 		styleLayer.source = layerType;
@@ -306,12 +313,11 @@ export function updateMarker(
 			'text-variable-anchor': ['top', 'left'],
 			'text-radial-offset': 1.0,
 			'text-justify': 'auto',
-			'text-allow-overlap': true,
 		};
 		map.addLayer(styleLayer);
 	}
 	if(!layerSymbolZ) {
-		const styleLayer = {...POINT_LABEL_STYLE};
+		const styleLayer = {...POINT_LABEL_STYLE_OVERLAP};
 		styleLayer.id = symbolZID;
 		styleLayer.paint = {"text-color": layerType.includes("INACTIVE") ? "#999999" : layerType.includes("LIVE") ? "#1967D3" : "#000000"};
 		styleLayer.source = layerType;
@@ -321,7 +327,6 @@ export function updateMarker(
 			'text-variable-anchor': ['bottom', 'right'],
 			'text-radial-offset': 1.0,
 			'text-justify': 'auto',
-			'text-allow-overlap': true,
 		};
 		map.addLayer(styleLayer);
 	}
