@@ -138,6 +138,19 @@ export const POINT_LABEL_STYLE: LayerSpecification = {
 		'text-variable-anchor': ['left', 'top'],
 		'text-radial-offset': 0.85,
 		'text-justify': 'auto',
+		'text-allow-overlap': false
+	}
+};
+export const POINT_LABEL_STYLE_OVERLAP: LayerSpecification = {
+	type: 'symbol',
+	id: '',
+	source: '',
+	layout: {
+		'text-field': ['get', 'label'],
+		'text-font': ['IBM Plex Sans Regular'],
+		'text-variable-anchor': ['left', 'top'],
+		'text-radial-offset': 0.85,
+		'text-justify': 'auto',
 		'text-allow-overlap': true
 	}
 };
