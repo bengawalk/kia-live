@@ -313,6 +313,7 @@ export function updateMarker(
 			'text-variable-anchor': ['top', 'left'],
 			'text-radial-offset': 1.0,
 			'text-justify': 'auto',
+			'text-allow-overlap': true,
 		};
 		map.addLayer(styleLayer);
 	}
@@ -327,6 +328,7 @@ export function updateMarker(
 			'text-variable-anchor': ['bottom', 'right'],
 			'text-radial-offset': 1.0,
 			'text-justify': 'auto',
+			'text-allow-overlap': true,
 		};
 		map.addLayer(styleLayer);
 	}
