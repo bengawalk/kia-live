@@ -1,1 +1,34 @@
 @import 'tailwindcss';
+
+/* Scrollbar styles - hidden on mobile, translucent on desktop */
+.scrollbar-hide {
+	/* Hide scrollbar on mobile */
+	-ms-overflow-style: none;  /* IE and Edge */
+	scrollbar-width: none;  /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+	/* Translucent scrollbar on desktop */
+	width: 8px;
+}
+
+.scrollbar-hide::-webkit-scrollbar-track {
+	background: transparent;
+}
+
+.scrollbar-hide::-webkit-scrollbar-thumb {
+	background: rgba(255, 255, 255, 0.2);
+	border-radius: 4px;
+}
+
+.scrollbar-hide::-webkit-scrollbar-thumb:hover {
+	background: rgba(255, 255, 255, 0.3);
+}
+
+/* Hide scrollbar completely on mobile devices */
+@media (max-width: 768px) {
+	.scrollbar-hide::-webkit-scrollbar {
+		display: none;
+		width: 0;
+	}
+}
