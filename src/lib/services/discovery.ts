@@ -196,7 +196,7 @@ export async function loadNextBuses() {
 		// Insert and trim
 		nextTripTimes[direction].splice(left, 0, getNextDeparture(closestStop).getTime());
 		nextTrips[direction].splice(left, 0, trip);
-		if (nextTripTimes[direction].length > 10) {
+		if (nextTripTimes[direction].length > 4) {
 			nextTrips[direction].pop();
 			nextTripTimes[direction].pop();
 		}
@@ -315,18 +315,12 @@ export async function displayCurrentTrip() {
 	// 	(value) => value.stop.stop_id !== closestStop.stop.stop_id
 	// );
 	const walkLayer = highlighted === undefined ? 'THIN_BLACK_LINE' : 'THIN_GRAY_LINE';
-	const removeWalkLayer = highlighted !== undefined ? 'THIN_BLACK_LINE' : 'THIN_GRAY_LINE';
 	const stopsLayer =
 		highlighted === undefined
 			? Object.hasOwn(currentTrip, 'vehicle_id')
 				? 'WHITE_BLUE_CIRCLE'
 				: 'WHITE_BLACK_CIRCLE'
 			: 'WHITE_GRAY_CIRCLE';
-	const removeStopsLayer = highlighted !== undefined ? 'WHITE_BLACK_CIRCLE' : 'WHITE_GRAY_CIRCLE';
-	const removeLiveStopsLayer =
-		highlighted !== undefined ? 'WHITE_BLUE_CIRCLE' : 'WHITE_GRAY_CIRCLE';
-	const removeLineLayer = highlighted === undefined ? 'GRAY_LINE' : 'BLACK_LINE';
-	const removeLiveLineLayer = highlighted === undefined ? 'GRAY_LINE' : 'BLUE_LINE';
 	const lineLayer =
 		highlighted !== undefined
 			? 'GRAY_LINE'
