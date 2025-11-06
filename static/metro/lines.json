@@ -6,7 +6,7 @@
       "type": "Feature",
       "properties": {
         "name": "Yellow Line",
-        "line_color": "#ffff00",
+        "line_color": "#efef00",
         "network": "namma-metro",
         "mode": "metro_rail"
       },
