@@ -21,7 +21,7 @@ const initialLiveFeed: LiveTransitFeed = {
 }
 const DB_NAME = 'transit-store';
 const STORE_NAME = 'feed';
-const DB_VER = 2
+const DB_VER = 3 // Incremented to trigger upgrade
 
 async function getDB(){
     if(!browser) return undefined;
