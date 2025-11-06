@@ -18,19 +18,21 @@
 		isMobile.set(window.innerWidth < 800);
 	}
 
-	onMount(async () => {
+	onMount(() => {
 		infoViewY.set(window.innerHeight * heightRatio);
 		handleResize();
 		window.addEventListener('resize', handleResize);
 
 		// Load metro station list
-		try {
-			const stationIndex = await fetch('metro/stops/index.json');
-			const stationJSON = await stationIndex.json();
-			allStations = stationJSON.map((station: any) => station.stop_id);
-		} catch (error) {
-			console.error('Failed to load metro station index:', error);
-		}
+		(async () => {
+			try {
+				const stationIndex = await fetch('metro/stops/index.json');
+				const stationJSON = await stationIndex.json();
+				allStations = stationJSON.map((station: any) => station.stop_id);
+			} catch (error) {
+				console.error('Failed to load metro station index:', error);
+			}
+		})();
 
 		return () => window.removeEventListener('resize', handleResize);
 	});

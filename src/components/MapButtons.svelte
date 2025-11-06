@@ -11,7 +11,7 @@
 	import { cycleBus, toggleAirportDirection } from '$lib/services/discovery';
 
 	// Reactive variables for circle indicators
-	$: direction = $airportDirection ? 'toAirport' : 'toCity';
+	$: direction = ($airportDirection ? 'toAirport' : 'toCity') as 'toAirport' | 'toCity';
 	$: busCount = $nextBuses[direction].length;
 	$: currentIndex = $nextBusIndex;
 
