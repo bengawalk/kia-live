@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { language } from '$lib/stores/language';
-	import { scrollableElement } from '$lib/stores/infoView';
+	import { scrollableElement, isMobile } from '$lib/stores/infoView';
 	import StationDepartureEntry from '$components/StationDepartureEntry.svelte';
 	import metroIcon from '$assets/metro-icon.svg?raw';
 
@@ -49,6 +49,7 @@
 	let loading = true;
 	let error = false;
 	let currentTime = new Date();
+	let scrollHeightStyle = '';
 
 	// Filter state
 	let selectedRoutes: Set<string> = new Set();
@@ -102,16 +103,25 @@
 		}
 	}
 
+	const updateScrollHeight = () => {
+		const offset = ((window.innerHeight / 3) / 2) + 225;
+		scrollHeightStyle = `height: calc(100vh - ${offset}px);`;
+	};
+
 	onMount(() => {
 		loadStationData();
+		updateScrollHeight();
 
 		// Update current time every minute to refresh departure list
 		const interval = setInterval(() => {
 			currentTime = new Date();
 		}, 60000); // 60000ms = 1 minute
 
+		window.addEventListener('resize', updateScrollHeight);
+
 		return () => {
 			clearInterval(interval);
+			window.removeEventListener('resize', updateScrollHeight);
 		};
 	});
 
@@ -381,7 +391,7 @@
 		<!-- Scrollable departures list -->
 		<div
 			class="overflow-y-scroll scrollbar-hide"
-
+			style={$isMobile ? scrollHeightStyle : undefined}
 			bind:this={$scrollableElement}
 		>
 			{#if nextDepartures.length === 0}

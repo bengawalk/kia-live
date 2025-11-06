@@ -172,6 +172,7 @@
         // Check if we already have data loaded
         const currentStore = get(transitFeedStore);
         const hasExistingData = currentStore.routes.length > 0;
+        const localVersion = await transitFeedActions.getVersion();
 
         try {
             // 1. Get environment variables
@@ -182,25 +183,32 @@
                 throw new Error('Missing required environment variables');
             }
 
-            // 2. Get local version
-            console.log('Checking for updates...');
-            const localVersion = await transitFeedActions.getVersion();
-            const versionResponse = await fetch(versionSource);
-            if (!versionResponse.ok) {
-                throw new Error('Failed to fetch version info');
+            // 2. Skip version check if no local version exists
+            let latestVersion = '';
+            if (!localVersion || localVersion === '') {
+                console.log('No local version found, downloading GTFS data...');
+                // Skip version check and proceed to download
+            } else {
+                // 3. Check version only if we have a local version
+                console.log('Checking for updates...');
+                const versionResponse = await fetch(versionSource);
+                if (!versionResponse.ok) {
+                    throw new Error('Failed to fetch version info');
+                }
+
+                latestVersion = await versionResponse.text();
+
+                // 4. Skip download if versions match
+                if (localVersion === latestVersion) {
+                    console.log('GTFS data is up to date');
+                    retryCount = 0; // Reset retry count on success
+                    await processGTFSRT();
+                    return true;
+                }
+                console.log(`Version mismatch: local=${localVersion}, latest=${latestVersion}. Updating...`);
             }
 
-            const latestVersion = await versionResponse.text();
-
-            // 3. Skip download if versions match
-            if (localVersion === latestVersion) {
-                console.log('GTFS data is up to date');
-                retryCount = 0; // Reset retry count on success
-                await processGTFSRT();
-                return true;
-            }
-
-            // 4. Fetch and process new data
+            // 5. Fetch and process new data
             console.log('Downloading transit data...');
             const dataResponse = await fetch(staticDataSource);
             if (!dataResponse.ok) {
