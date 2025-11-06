@@ -25,7 +25,7 @@
 
 		// Load metro station list
 		try {
-			const stationIndex = await fetch('/metro/stops/index.json');
+			const stationIndex = await fetch('metro/stops/index.json');
 			const stationJSON = await stationIndex.json();
 			allStations = stationJSON.map((station: any) => station.stop_id);
 		} catch (error) {

@@ -26,7 +26,7 @@ export async function loadMetroLines() {
 	if (!map || metroLinesLoaded) return;
 
 	try {
-		const response = await fetch('/metro/lines.json');
+		const response = await fetch('metro/lines.json');
 		if (!response.ok) {
 			console.log('Metro lines not found, skipping metro rendering');
 			return;
@@ -133,7 +133,7 @@ export async function loadMetroStops() {
 	if (!map || metroStopsLoaded) return;
 
 	try {
-		const response = await fetch('/metro/stops/index.json');
+		const response = await fetch('metro/stops/index.json');
 		if (!response.ok) {
 			console.log('Metro stops not found, skipping stops rendering');
 			return;

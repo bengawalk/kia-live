@@ -85,7 +85,7 @@
 		error = false;
 
 		try {
-			const response = await fetch(`/metro/stops/${stationId}.json`);
+			const response = await fetch(`metro/stops/${stationId}.json`);
 			if (!response.ok) {
 				console.error(`Metro station data not found for ${stationId}`);
 				error = true;
