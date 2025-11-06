@@ -43,6 +43,7 @@ const tappableLayers = Object.keys(MAP_STYLES).filter((key) => MAP_STYLES[key].t
 let markerTapped = false;
 let currentRefreshTimeout: NodeJS.Timeout | undefined = undefined;
 let busMarkerInterval: NodeJS.Timeout | undefined = undefined;
+let nextBusesRefreshInterval: NodeJS.Timeout | undefined = undefined;
 
 export function setMarkerTapped() {
 	markerTapped = true;
@@ -215,6 +216,11 @@ export async function loadNextBuses() {
 	if (currentRefreshTimeout) clearTimeout(currentRefreshTimeout);
 	currentRefreshTimeout = setTimeout(loadNextBuses, timeoutTime - Date.now());
 	nextBuses.set(nextTrips);
+
+	// Set up minute-by-minute refresh if not already running
+	if (!nextBusesRefreshInterval) {
+		nextBusesRefreshInterval = setInterval(loadNextBuses, 60000); // 60000ms = 1 minute
+	}
 }
 
 let displayingTripID: string = '';

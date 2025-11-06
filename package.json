@@ -16,7 +16,8 @@
     "test": "npm run test:e2e && npm run test:unit -- --run",
     "test:unit": "vitest",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "generate:metro": "node scripts/generate-metro-departures.cjs"
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^3.2.4",
@@ -40,6 +41,7 @@
     "@types/papaparse": "^5.3.16",
     "@vitest/browser": "^3.0.7",
     "@vitest/coverage-v8": "^3.0.7",
+    "csv-parser": "^3.2.0",
     "eslint": "^9.18.0",
     "eslint-config-prettier": "^10.0.1",
     "eslint-plugin-svelte": "^2.46.1",

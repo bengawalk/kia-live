@@ -10,6 +10,7 @@ import mapLineLabelImage from '$assets/map-line-label.png';
 import { pollUserLocation } from '$lib/services/location';
 import { handleTap, handleTouchEnd, handleTouchStart } from '$lib/services/discovery';
 import { browser } from '$app/environment';
+import { initMetroMap, loadMetroLines, unloadMetroMap } from '$lib/services/metroMap';
 
 let map: mapboxgl.Map | undefined;
 export type NavMode = 'walking' | 'driving-traffic' | 'cycling' | 'driving'
@@ -50,6 +51,12 @@ export function loadMap(mapContainer: HTMLElement | string): mapboxgl.Map {
 			map?.on('mouseup', handleTouchEnd);
 			// map?.on('mouseup', handleTap);
 			map?.touchZoomRotate.disableRotation();
+
+			// Initialize and load metro lines and stops
+			if (map) {
+				initMetroMap(map);
+				loadMetroLines();
+			}
 		}
 	);
 	return map;
@@ -57,6 +64,7 @@ export function loadMap(mapContainer: HTMLElement | string): mapboxgl.Map {
 
 export function unloadMap() {
 	if(map != undefined){
+		unloadMetroMap();
 		map.remove();
 		map = undefined;
 	}
@@ -83,8 +91,8 @@ export function removeRenderedCollisions() {
 	});
 }
 
-// Helper internal function (collision layer points)
-function samplePointsAlongLineCollection(lineFeatureCollection: GeoJSON.FeatureCollection, spacingMeters = 50): GeoJSON.FeatureCollection {
+// Helper function (collision layer points) - exported for metro map use
+export function samplePointsAlongLineCollection(lineFeatureCollection: GeoJSON.FeatureCollection, spacingMeters = 50): GeoJSON.FeatureCollection {
 	function haversineDistance(coord1: GeoJSON.Position, coord2: GeoJSON.Position) {
 		const toRad = (deg: number) => (deg * Math.PI) / 180;
 		const R = 6371000;

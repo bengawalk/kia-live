@@ -2,24 +2,36 @@
 	import type { Stop } from '$lib/structures/Stop';
 	import { onMount } from 'svelte';
 	import { infoViewY, isMobile, infoViewWidth, scrollableElement } from '$lib/stores/infoView';
-	import { selected } from '$lib/stores/discovery';
+	import { selected, selectedMetroStation } from '$lib/stores/discovery';
 	import StopInfo from '$components/StopInfo.svelte';
 	import type { Trip } from '$lib/structures/Trip';
 	import type { LiveTrip } from '$lib/structures/LiveTrip';
 	import TripInfo from '$components/TripInfo.svelte';
+	import MetroStationInfo from '$components/MetroStationInfo.svelte';
 
 	let dragStartY = 0;
 	let currentY = 0;
 	let heightRatio = 2 / 3;
+	let allStations: string[] = [];
 
 	function handleResize() {
 		isMobile.set(window.innerWidth < 800);
 	}
 
-	onMount(() => {
+	onMount(async () => {
 		infoViewY.set(window.innerHeight * heightRatio);
 		handleResize();
 		window.addEventListener('resize', handleResize);
+
+		// Load metro station list
+		try {
+			const stationIndex = await fetch('/metro/stops/index.json');
+			const stationJSON = await stationIndex.json();
+			allStations = stationJSON.map((station: any) => station.stop_id);
+		} catch (error) {
+			console.error('Failed to load metro station index:', error);
+		}
+
 		return () => window.removeEventListener('resize', handleResize);
 	});
 
@@ -59,9 +71,12 @@
 
 	$: selectedTrip = $selected as Trip | LiveTrip;
 	$: selectedStop = $selected as Stop;
+	$: hasSelectedMetro = allStations.includes($selectedMetroStation);
+	console.log(hasSelectedMetro);
+
 </script>
 
-{#if $selected !== undefined}
+{#if $selected !== undefined || hasSelectedMetro}
 	{#if $isMobile}
 		<!-- Bottom Sheet Mode -->
 		<div
@@ -74,6 +89,7 @@
 			on:touchstart={startDrag}
 			on:mousedown={startDrag}
 		>
+			{#if $selected !== undefined && !hasSelectedMetro}
 			<!-- Scrollable content wrapper -->
 				{#if Object.hasOwn($selected, 'stop_id')}
 					<StopInfo stop={selectedStop} />
@@ -81,15 +97,24 @@
 				{#if Object.hasOwn($selected, 'trip_id')}
 					<TripInfo trip={selectedTrip} />
 				{/if}
+			{/if}
+			{#if hasSelectedMetro}
+				<MetroStationInfo stationId={$selectedMetroStation} />
+			{/if}
 		</div>
 	{:else}
 		<!-- Sidebar Mode -->
 		<div class="font-[IBM_Plex_Sans] fixed left-0 top-0 h-full w-[{$infoViewWidth}px] bg-black text-white px-6 py-8 shadow-lg z-1 overflow-y-auto">
-			{#if Object.hasOwn($selected, 'stop_id')} <!-- Selected is a stop -->
-				<StopInfo stop = {selectedStop} />
+			{#if $selected !== undefined && !hasSelectedMetro}
+				{#if Object.hasOwn($selected, 'stop_id')} <!-- Selected is a stop -->
+					<StopInfo stop = {selectedStop} />
+				{/if}
+				{#if Object.hasOwn($selected, 'trip_id')} <!-- Selected is a trip -->
+					<TripInfo trip = {selectedTrip} />
+				{/if}
 			{/if}
-			{#if Object.hasOwn($selected, 'trip_id')} <!-- Selected is a trip -->
-				<TripInfo trip = {selectedTrip} />
+			{#if hasSelectedMetro}
+				<MetroStationInfo stationId={$selectedMetroStation} />
 			{/if}
 		</div>
 	{/if}
