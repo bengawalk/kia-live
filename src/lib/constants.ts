@@ -5,6 +5,7 @@ import mapBus from '$assets/map-bus.svg?raw';
 import mapStop from '$assets/map-stop.svg?raw';
 import mapBusLive from '$assets/map-bus-live.svg?raw';
 import mapStopLive from '$assets/map-stop-live.svg?raw';
+import busPng from '$assets/bus.png';
 
 // type definitions used ONLY in this file
 
@@ -49,9 +50,9 @@ function createBusMarkerElement(
 <div class="relative inline-flex items-center justify-center">
   <!-- BUS IMAGE -->
   <img
-    src="/src/assets/bus.png"
+    src="${busPng}"
     class="bus-image w-[64px] h-auto object-contain"
-    style="transform: rotate(0deg); transition: transform 0.3s ease-out; ${highlight ? '' : 'filter: brightness(0.6);'}"
+    style="transform: rotate(0deg); transition: transform 0.3s ease-out;"
     alt="Bus"
   />
 

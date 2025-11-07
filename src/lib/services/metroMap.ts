@@ -2,7 +2,7 @@ import { get } from 'svelte/store';
 import { language } from '$lib/stores/language';
 import { selectedMetroStation } from '$lib/stores/discovery';
 import type mapboxgl from 'mapbox-gl';
-import metroIconSvg from '$assets/metro-icon.svg';
+import metroIconSvg from '$assets/metro-icon.svg?raw';
 import { samplePointsAlongLineCollection } from '$lib/services/map';
 
 let map: mapboxgl.Map | undefined;
@@ -163,24 +163,18 @@ export async function loadMetroStops() {
 			}))
 		};
 
-		// Load metro station icon from assets using map.loadImage
-		await new Promise<void>((resolve, reject) => {
-			map!.loadImage(metroIconSvg, (error, image) => {
-				if (error) {
-					console.error('Failed to load metro icon:', error);
-					createFallbackMetroIcon().then(resolve).catch(reject);
-					return;
-				}
-				if (!image) {
-					createFallbackMetroIcon().then(resolve).catch(reject);
-					return;
-				}
-				if (!map!.hasImage('metro-station-icon')) {
-					map!.addImage('metro-station-icon', image);
-				}
-				resolve();
-			});
-		});
+		// Convert SVG to PNG and load metro station icon
+		// This automatically reflects any changes to the SVG file
+		try {
+			const imageData = await svgToPngImageData(metroIconSvg, 48, 48);
+			if (!map.hasImage('metro-station-icon')) {
+				map.addImage('metro-station-icon', imageData as any);
+			}
+			console.log('Metro icon loaded successfully from SVG');
+		} catch (error) {
+			console.error('Failed to convert SVG to PNG, using fallback:', error);
+			await createFallbackMetroIcon();
+		}
 
 		// Add source for metro stops
 		if (!map.getSource('metro-stops')) {
@@ -305,6 +299,52 @@ export async function loadMetroStops() {
 	} catch (error) {
 		console.error('Failed to load metro stops:', error);
 	}
+}
+
+/**
+ * Convert SVG string to PNG ImageData using canvas
+ * This allows SVG changes to be automatically reflected
+ */
+async function svgToPngImageData(svgString: string, width: number = 48, height: number = 48): Promise<ImageData> {
+	return new Promise((resolve, reject) => {
+		// Create an image element
+		const img = new Image();
+
+		// Convert SVG string to data URL
+		const svgBlob = new Blob([svgString], { type: 'image/svg+xml;charset=utf-8' });
+		const url = URL.createObjectURL(svgBlob);
+
+		img.onload = () => {
+			// Create canvas to render the SVG
+			const canvas = document.createElement('canvas');
+			canvas.width = width;
+			canvas.height = height;
+			const ctx = canvas.getContext('2d');
+
+			if (!ctx) {
+				URL.revokeObjectURL(url);
+				reject(new Error('Could not get canvas context'));
+				return;
+			}
+
+			// Draw the SVG onto the canvas
+			ctx.drawImage(img, 0, 0, width, height);
+
+			// Get image data
+			const imageData = ctx.getImageData(0, 0, width, height);
+
+			// Clean up
+			URL.revokeObjectURL(url);
+			resolve(imageData);
+		};
+
+		img.onerror = () => {
+			URL.revokeObjectURL(url);
+			reject(new Error('Failed to load SVG'));
+		};
+
+		img.src = url;
+	});
 }
 
 /**
