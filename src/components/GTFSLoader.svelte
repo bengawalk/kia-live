@@ -205,17 +205,13 @@
                     await processGTFSRT();
                     return true;
                 }
-                console.log(`Version mismatch: local=${localVersion}, latest=${latestVersion}. Updating...`);
             }
 
             // 5. Fetch and process new data
-            console.log('Downloading transit data...');
             const dataResponse = await fetch(staticDataSource);
             if (!dataResponse.ok) {
                 throw new Error('Failed to fetch GTFS data');
             }
-
-            console.log('Processing transit data...');
             const zipData = await dataResponse.arrayBuffer();
             const zip = await JSZip.loadAsync(zipData);
             const processTranslations = async (parsed: Papa.ParseResult<unknown>) => {
@@ -464,8 +460,6 @@
                     }
                 }
             };
-
-            console.log('Finalizing...');
             const { stops, routes } = await processFile('routes.txt') as {stops: {[stop_id: string]: Stop}; routes: Route[]};
             transitFeedActions.updateStops(stops);
             transitFeedActions.updateRoutes(routes);
@@ -473,8 +467,6 @@
             // Update store
             transitFeedActions.updateVersion(latestVersion);
             transitFeedActions.updateTimestamp(new Date());
-
-            console.log('GTFS data loaded successfully');
             retryCount = 0; // Reset retry count on success
             await processGTFSRT();
             return true;
@@ -497,7 +489,6 @@
 
             // If we have existing data, try to connect to WebSocket anyway
             if (hasExistingData && retryCount === 1) {
-                console.log('Using cached data, attempting to connect to live feed...');
                 processGTFSRT();
             }
 

@@ -59,6 +59,7 @@ async function loadNextBusesThrottled() {
 
 	// Check time throttle (60 seconds = 60000ms)
 	const timeSinceLastLoad = now - lastLoadNextBusesTime;
+
 	if (timeSinceLastLoad < 60000) {
 		// Check distance throttle (50 meters)
 		if (lastLoadNextBusesLocation) {
@@ -69,8 +70,6 @@ async function loadNextBusesThrottled() {
 				lastLoadNextBusesLocation.lon
 			);
 			if (distance < 50) {
-				// Too soon and too close - skip
-				console.log('[discovery] Throttled: < 60s and < 50m from last load');
 				return;
 			}
 		}
@@ -272,8 +271,8 @@ let displayingMarkerStyles: string[] = [];
 
 // Remember last display signature to avoid redundant re-renders
 let lastDisplaySignature: string = '';
-// Remember last known live marker position and timestamp to avoid restarting animations
-let liveMarkerMemory: { tripId: string; lat: number; lon: number; lastTs?: number } | undefined =
+// Remember last known live marker position, bearing, and timestamp to avoid restarting animations
+let liveMarkerMemory: { tripId: string; lat: number; lon: number; bearing: number; lastTs?: number } | undefined =
 	undefined;
 // Track which trip owns the running animation interval
 let busMarkerTripId: string | undefined = undefined;
@@ -416,7 +415,8 @@ export async function displayCurrentTrip() {
 				() => {
 					markerTapped = true;
 					selected.set(currentTrip);
-				}
+				},
+				liveMarkerMemory.bearing
 			);
 		}
 		// Skip clearing or re-drawing layers to avoid flicker/clears
@@ -532,6 +532,7 @@ export async function displayCurrentTrip() {
 	);
 	// Ensure bus highlight only when this trip is selected
 	const liveLoc = vehicle ? vehicle.previous_locations.length > 1 ? vehicle.previous_locations[vehicle.previous_locations.length - 2] : vehicle.previous_locations[vehicle.previous_locations.length - 1] : undefined;
+	const bearing = liveLoc ? liveLoc.bearing : vehicle ? vehicle.bearing : 0;
 	updateBusMarker(
 		highlighted !== undefined && highlightTrip !== undefined && highlightTrip.trip_id === currentTrip.trip_id
 			? (Object.hasOwn(currentTrip, 'vehicle_id') ? 'BUS_LIVE' : 'BUS')
@@ -546,7 +547,8 @@ export async function displayCurrentTrip() {
 		() => {
 			markerTapped = true;
 			selected.set(currentTrip);
-		}
+		},
+		bearing
 	);
 	displayingMarkerStyles.push(
 		highlighted !== undefined &&
@@ -573,9 +575,10 @@ export async function displayCurrentTrip() {
 	lastDisplaySignature = displaySignature;
 }
 
-export function toggleAirportDirection(
+function toggleAirportDirectionInternal(
 	direction: boolean | undefined = undefined,
-	toggle: boolean = true
+	toggle: boolean = true,
+	shouldCycleBus: boolean = true
 ) {
 	const current = currentLocation();
 	const airportDir = toggle ? get(airportDirection) : !get(airportDirection);
@@ -590,18 +593,63 @@ export function toggleAirportDirection(
 	)
 		direction = false;
 	const finalCon = direction === undefined ? !airportDir : direction;
-	airportDirection.set(finalCon);
-	const busIndex = get(nextBusIndex);
-	const buses = get(nextBuses);
-	nextBusIndex.set(
-		busIndex === -1
-			? -1
-			: buses[finalCon ? 'toCity' : 'toAirport'].length >= busIndex
-				? buses[finalCon ? 'toCity' : 'toAirport'].length - 1
-				: busIndex
-	);
-	selectedTripID.set(undefined);
-	cycleBus();
+	const previousDirection = get(airportDirection);
+
+	// Only update if direction actually changed or if explicitly toggling
+	if (previousDirection !== finalCon || toggle) {
+		airportDirection.set(finalCon);
+		const busIndex = get(nextBusIndex);
+		const buses = get(nextBuses);
+		nextBusIndex.set(
+			busIndex === -1
+				? -1
+				: buses[finalCon ? 'toCity' : 'toAirport'].length >= busIndex
+					? buses[finalCon ? 'toCity' : 'toAirport'].length - 1
+					: busIndex
+		);
+
+		// Only cycle bus if requested (for manual toggles, not location updates)
+		if (shouldCycleBus) {
+			selectedTripID.set(undefined);
+			cycleBus();
+		}
+	}
+}
+
+// Public wrapper for non-location-based triggers
+export function toggleAirportDirection(
+	direction: boolean | undefined = undefined,
+	toggle: boolean = true
+) {
+	toggleAirportDirectionInternal(direction, toggle, true);
+}
+
+// Throttled wrapper for user location changes only
+// This should ONLY update direction if near airport, NOT cycle buses
+function toggleAirportDirectionThrottled() {
+	const now = Date.now();
+	const loc = currentLocation();
+
+	// Use same throttling logic as loadNextBuses
+	const timeSinceLastLoad = now - lastLoadNextBusesTime;
+	if (timeSinceLastLoad < 60000) {
+		if (lastLoadNextBusesLocation) {
+			const distance = haversineDistance(
+				loc.latitude,
+				loc.longitude,
+				lastLoadNextBusesLocation.lat,
+				lastLoadNextBusesLocation.lon
+			);
+			if (distance < 50) {
+				// Too soon and too close - skip
+				return;
+			}
+		}
+	}
+
+	// Check if direction needs updating based on airport proximity
+	// Do NOT cycle buses - just update direction if needed
+	toggleAirportDirectionInternal(undefined, false, false);
 }
 
 nextBuses.subscribe(displayCurrentTrip);
@@ -613,7 +661,7 @@ userLocation.subscribe(loadNextBusesThrottled); // Throttled for user location c
 transitFeedStore.subscribe(loadNextBuses);
 liveTransitFeed.subscribe(loadNextBuses);
 inputLocation.subscribe(() => toggleAirportDirection(undefined, false));
-userLocation.subscribe(() => toggleAirportDirection(undefined, false));
+userLocation.subscribe(toggleAirportDirectionThrottled); // Throttled for user location changes
 
 let changeLocationTimeout: NodeJS.Timeout | undefined = undefined;
 let circleTimer: HTMLElement | undefined = undefined;
@@ -855,6 +903,48 @@ function haversineDistance(lat1: number, lng1: number, lat2: number, lng2: numbe
 		Math.sin(dLat / 2) ** 2 +
 		Math.cos(lat1 * (Math.PI / 180)) * Math.cos(lat2 * (Math.PI / 180)) * Math.sin(dLng / 2) ** 2;
 	return 2 * R * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a)) * 1000; // meters
+}
+
+// Calculate bearing (direction) from point 1 to point 2 in degrees (0 = north, 90 = east)
+function calculateBearing(lat1: number, lng1: number, lat2: number, lng2: number): number {
+	const dLng = (lng2 - lng1) * (Math.PI / 180);
+	const lat1Rad = lat1 * (Math.PI / 180);
+	const lat2Rad = lat2 * (Math.PI / 180);
+
+	const y = Math.sin(dLng) * Math.cos(lat2Rad);
+	const x = Math.cos(lat1Rad) * Math.sin(lat2Rad) -
+			  Math.sin(lat1Rad) * Math.cos(lat2Rad) * Math.cos(dLng);
+
+	let bearing = Math.atan2(y, x) * (180 / Math.PI);
+	// Normalize to 0-360 range
+	bearing = (bearing + 360) % 360;
+	return bearing;
+}
+
+// Get bearing for static trip by looking at next shape point ahead
+function getBearingForStaticTrip(trip: Trip, currentLat: number, currentLon: number): number {
+	const transitFeed = get(transitFeedStore);
+	const route = transitFeed.routes.find((r: Route) => r.trips.some((t) => t.trip_id === trip.trip_id));
+	const shape = route?.shape;
+
+	if (!shape || shape.length < 2) return 0;
+
+	// Find closest shape point to current position
+	const currentShapeIdx = nearestShapeIndex(shape, [currentLat, currentLon]);
+
+	// Look ahead for next shape point (or use next point if at end)
+	const nextIdx = Math.min(currentShapeIdx + 1, shape.length - 1);
+
+	// If we're at the last point, look back to previous point for direction
+	if (currentShapeIdx === shape.length - 1 && shape.length > 1) {
+		const prevPoint = shape[shape.length - 2];
+		const currentPoint = shape[shape.length - 1];
+		return calculateBearing(prevPoint.lat, prevPoint.lon, currentPoint.lat, currentPoint.lon);
+	}
+
+	// Calculate bearing from current position to next shape point
+	const nextPoint = shape[nextIdx];
+	return calculateBearing(currentLat, currentLon, nextPoint.lat, nextPoint.lon);
 }
 
 async function findClosestStop(
@@ -1402,13 +1492,15 @@ async function animateBusMarker(trip: Trip | LiveTrip, closestStop: Stop) {
 				}
 
 				const { busStyle } = computeStyles();
+				// Get bearing from current vehicle or latest location
+				const bearing = latest ? latest.bearing : liveBus.bearing;
 				updateBusMarker(busStyle, routeShortName, curLat, curLon, () => {
 					markerTapped = true;
 					selected.set(trip);
-				});
+				}, bearing);
 
-				// Remember last live marker position
-				liveMarkerMemory = { tripId: (trip as LiveTrip).trip_id, lat: curLat, lon: curLon, lastTs: lastLiveTimestampMs };
+				// Remember last live marker position and bearing
+				liveMarkerMemory = { tripId: (trip as LiveTrip).trip_id, lat: curLat, lon: curLon, bearing, lastTs: lastLiveTimestampMs };
 			}
 		} else {
 			// Static trip: continuously animate marker using scheduled estimate.
@@ -1508,10 +1600,12 @@ async function animateBusMarker(trip: Trip | LiveTrip, closestStop: Stop) {
 				curLon = closestStop.stop_lon;
 			}
 			const { busStyle } = computeStyles();
+			// Calculate bearing to next shape point for static trips
+			const bearing = getBearingForStaticTrip(trip as Trip, curLat, curLon);
 			updateBusMarker(busStyle, routeShortName, curLat, curLon, () => {
 				markerTapped = true;
 				selected.set(trip);
-			});
+			}, bearing);
 		}
 	}, FRAMERATE_MS);
 }

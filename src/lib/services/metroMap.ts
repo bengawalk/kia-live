@@ -275,7 +275,6 @@ export async function loadMetroStops() {
 				const stationId = feature.properties?.stop_id;
 				if (stationId) {
 					selectedMetroStation.set(stationId);
-					console.log('Selected metro station:', stationId);
 				}
 			}
 		});

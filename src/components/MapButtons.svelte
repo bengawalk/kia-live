@@ -15,8 +15,6 @@
 	$: busCount = $nextBuses[direction].length;
 	$: currentIndex = $nextBusIndex;
 
-	// Debug logging
-	$: console.log('MapButtons Debug:', { direction, busCount, currentIndex, isPlanning: $isPlanning, nextBuses: $nextBuses });
 </script>
 
 <div

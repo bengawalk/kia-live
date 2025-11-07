@@ -40,22 +40,15 @@ export async function saveFeed(feed: TransitFeed) {
     if(!browser) return;
     // Skip saving if routes and stops are empty (initial state)
     if(feed.routes.length === 0 && Object.keys(feed.stops).length === 0) {
-        console.log('[transitFeedStore] Skipping save: empty feed');
         return;
     }
     const db = await getDB();
     if(!db) return;
 
     try {
-        console.log('[transitFeedStore] Saving feed to IndexedDB...', {
-            routes: feed.routes.length,
-            stops: Object.keys(feed.stops).length,
-            version: feed.feed_version
-        });
         await db.put(STORE_NAME, makeSerializable(feed), 'latest');
-        console.log('[transitFeedStore] Save successful ✓');
     } catch (err) {
-        console.error('[transitFeedStore] Save failed:', err);
+        console.error('Transit feed save failed:', err);
     }
 }
 
@@ -68,29 +61,21 @@ export async function loadFeed(): Promise<TransitFeed> {
         const db = await openDB(DB_NAME, DB_VER, {
             upgrade(db) {
                 if (!db.objectStoreNames.contains(STORE_NAME)) {
-                    console.log('[transitFeedStore] Creating object store during load');
                     db.createObjectStore(STORE_NAME);
                 }
             }
         });
 
         if(!db.objectStoreNames.contains(STORE_NAME)) {
-            console.log('[transitFeedStore] Store not found, returning initial feed');
             return initialTransitFeed;
         }
 
         const val = await db.get(STORE_NAME, 'latest');
 
         if (!val) {
-            console.log('[transitFeedStore] No data found at key "latest"');
             return initialTransitFeed;
         }
 
-        console.log('[transitFeedStore] Loaded feed from IndexedDB:', {
-            routes: val.routes?.length,
-            stops: val.stops ? Object.keys(val.stops).length : 0,
-            version: val.feed_version
-        });
 
         return rehydrateFeed(val) ?? initialTransitFeed;
     } catch (err) {
