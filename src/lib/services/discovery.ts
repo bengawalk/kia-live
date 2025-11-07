@@ -44,6 +44,41 @@ let markerTapped = false;
 let currentRefreshTimeout: NodeJS.Timeout | undefined = undefined;
 let busMarkerInterval: NodeJS.Timeout | undefined = undefined;
 let nextBusesRefreshInterval: NodeJS.Timeout | undefined = undefined;
+let lastLoadNextBusesTime = 0;
+let lastLoadNextBusesLocation: { lat: number; lon: number } | undefined = undefined;
+
+// Public function for non-location-based triggers (feed updates, timers)
+async function loadNextBuses() {
+	await loadNextBusesInternal();
+}
+
+// Throttled wrapper for user location changes only
+async function loadNextBusesThrottled() {
+	const now = Date.now();
+	const loc = currentLocation();
+
+	// Check time throttle (60 seconds = 60000ms)
+	const timeSinceLastLoad = now - lastLoadNextBusesTime;
+	if (timeSinceLastLoad < 60000) {
+		// Check distance throttle (50 meters)
+		if (lastLoadNextBusesLocation) {
+			const distance = haversineDistance(
+				loc.latitude,
+				loc.longitude,
+				lastLoadNextBusesLocation.lat,
+				lastLoadNextBusesLocation.lon
+			);
+			if (distance < 50) {
+				// Too soon and too close - skip
+				console.log('[discovery] Throttled: < 60s and < 50m from last load');
+				return;
+			}
+		}
+	}
+
+	// Passed throttling checks - proceed with load
+	await loadNextBusesInternal();
+}
 
 export function setMarkerTapped() {
 	markerTapped = true;
@@ -75,10 +110,14 @@ function getNextDeparture(closestStop: {
 	return closestStop.stop_date();
 }
 
-export async function loadNextBuses() {
+async function loadNextBusesInternal() {
 	// console.log("LOADING NEXT BUSES")
 	// Take data from transit feed stores, location stores, and generate next buses
 	const loc = currentLocation();
+
+	// Update last load location for throttling
+	lastLoadNextBusesLocation = { lat: loc.latitude, lon: loc.longitude };
+	lastLoadNextBusesTime = Date.now();
 	// console.log(loc);
 	const transitFeed = get(transitFeedStore);
 	const liveFeed = get(liveTransitFeed);
@@ -272,10 +311,16 @@ export async function displayCurrentTrip() {
 		return;
 	}
 	let tripFind = buses.find((val) => val.trip_id === selectedTrip);
-	// If the selected/displaying trip is no longer in nextBuses, auto move to next available
+	// If the selected/displaying trip is no longer in nextBuses, find its new index or reset gracefully
 	if (!tripFind) {
 		if (buses.length > 0) {
-			selectedTripID.set(buses[Math.min(Math.max(index, 0), buses.length - 1)].trip_id);
+			// Try to keep the same index if it's still valid, otherwise clamp to valid range
+			const newIndex = Math.min(Math.max(index, 0), buses.length - 1);
+			// Only update if the index changed OR if we need to select a bus
+			if (index !== newIndex || !selectedTrip) {
+				nextBusIndex.set(newIndex);
+			}
+			selectedTripID.set(buses[newIndex].trip_id);
 			return; // Will re-render with the new selection
 		}
 	}
@@ -564,7 +609,7 @@ selectedTripID.subscribe(displayCurrentTrip);
 selected.subscribe(displayCurrentTrip);
 // airportDirection.subscribe(displayCurrentTrip);
 inputLocation.subscribe(loadNextBuses);
-userLocation.subscribe(loadNextBuses);
+userLocation.subscribe(loadNextBusesThrottled); // Throttled for user location changes
 transitFeedStore.subscribe(loadNextBuses);
 liveTransitFeed.subscribe(loadNextBuses);
 inputLocation.subscribe(() => toggleAirportDirection(undefined, false));
