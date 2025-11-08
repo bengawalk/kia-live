@@ -5,15 +5,22 @@ import { setMarkerTapped } from '$lib/services/discovery';
 import { get } from 'svelte/store';
 import { isPlanning } from '$lib/stores/discovery';
 let firstTime = true;
+let lastLoc: null | GeolocationPosition = null;
 export function pollUserLocation() {
 	navigator.geolocation.watchPosition((position: GeolocationPosition) => {
-		userLocation.set(position)
+		userLocation.set(position);
+		lastLoc = position;
 		if(firstTime) {
 			inputLocation.set(undefined);
 			fitMapToPoints([[position.coords.longitude, position.coords.latitude]]);
 		}
 		firstTime = false;
 	}, () => {
+		if(!firstTime && lastLoc) {
+			console.log("Geolocation error call, skipping....");
+			userLocation.set(lastLoc);
+			return;
+		}
 		console.log("Geolocation not available, using default location.");
 		inputLocation.set({
 			latitude: DEFAULT_LOCATION[0],

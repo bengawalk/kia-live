@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { onMount } from 'svelte';
+    import { onMount, onDestroy } from 'svelte';
     import { liveTransitFeed, loadFeed, transitFeedActions, transitFeedStore } from '$lib/stores/transitFeedStore';
     import JSZip from 'jszip';
     import Papa from 'papaparse';
@@ -14,7 +14,13 @@
     import { connected } from '$lib/stores/discovery';
 		import { get } from 'svelte/store';
 
-    // let error: string | null = null;
+    // Loading state - reactive based on whether we have cached data
+    $: isLoading = $transitFeedStore.routes.length === 0;
+    let retryCount = 0;
+    let wsRetryCount = 0;
+    let currentWs: WebSocket | null = null;
+    let wsReconnectTimeout: ReturnType<typeof setTimeout> | null = null;
+    let dataLoadRetryTimeout: ReturnType<typeof setTimeout> | null = null;
 
     export function normalizeTimestamp(value: number | Long | undefined | null): number | undefined {
         if (typeof value === 'number') return value;
@@ -87,16 +93,35 @@
 
     async function processGTFSRT(): Promise<void> {
         const endpoint = import.meta.env.VITE_LIVE_DATA_SOURCE;
-        // console.log('WEBSOCKET ENDPOINT', endpoint);
-        const ws = new WebSocket(endpoint);
-        ws.binaryType = 'arraybuffer';
-        let refreshTimeout: NodeJS.Timeout | null = null;
-        ws.onopen = () => {
-            if (refreshTimeout) {
-                clearTimeout(refreshTimeout);
+
+        // Clear any existing reconnect timeout
+        if (wsReconnectTimeout) {
+            clearTimeout(wsReconnectTimeout);
+            wsReconnectTimeout = null;
+        }
+
+        // Close existing WebSocket if any
+        if (currentWs) {
+            try {
+                currentWs.close();
+            } catch (e) {
+                console.error('Error closing existing WebSocket', e);
             }
+            currentWs = null;
+        }
+
+        console.log(`Connecting to GTFS-RT WebSocket (attempt ${wsRetryCount + 1})...`);
+
+        const ws = new WebSocket(endpoint);
+        currentWs = ws;
+        ws.binaryType = 'arraybuffer';
+
+        ws.onopen = () => {
+            console.log('GTFS-RT WebSocket connected');
+            wsRetryCount = 0; // Reset retry count on successful connection
             connected.set(true);
         }
+
         ws.onmessage = (event: MessageEvent) => {
             try {
                 processWSData(event.data);
@@ -104,25 +129,51 @@
                 console.error('Failed to decode GTFS-RT message', e);
             }
         }
-        ws.onclose = () => {
-            refreshTimeout = setTimeout(processGTFSRT, 3000); // simple backoff
+
+        ws.onclose = (event) => {
+            console.log('GTFS-RT WebSocket closed', event.code, event.reason);
             connected.set(false);
+            currentWs = null;
+
+            // Exponential backoff: start at 3s, max at 30s
+            wsRetryCount++;
+            const backoffDelay = Math.min(3000 * Math.pow(1.5, wsRetryCount - 1), 30000);
+
+            console.log(`Connection lost. Reconnecting in ${Math.round(backoffDelay / 1000)}s...`);
+
+            wsReconnectTimeout = setTimeout(() => {
+                processGTFSRT();
+            }, backoffDelay);
         };
+
         ws.onerror = (e) => {
-            console.error('Failed to set up Web Socket connection', e);
+            console.error('GTFS-RT WebSocket error', e);
             connected.set(false);
+
             try {
                 ws.close();
-            }
-            catch (e) {
-                console.error('Failed to close Web Socket connection', e);
+            } catch (closeError) {
+                console.error('Error closing WebSocket after error', closeError);
             }
         }
     }
 
     async function loadGTFSData(): Promise<boolean> {
-        // error = null;
+        // Clear any existing retry timeout
+        if (dataLoadRetryTimeout) {
+            clearTimeout(dataLoadRetryTimeout);
+            dataLoadRetryTimeout = null;
+        }
+
+        console.log(`Loading GTFS data (attempt ${retryCount + 1})...`);
+
         transitFeedStore.set(await loadFeed());
+
+        // Check if we already have data loaded
+        const currentStore = get(transitFeedStore);
+        const hasExistingData = currentStore.routes.length > 0;
+        const localVersion = await transitFeedActions.getVersion();
+
         try {
             // 1. Get environment variables
             const staticDataSource = import.meta.env.VITE_STATIC_DATA_SOURCE;
@@ -132,29 +183,35 @@
                 throw new Error('Missing required environment variables');
             }
 
-            // 2. Get local version
-            const localVersion = await transitFeedActions.getVersion();
-            const versionResponse = await fetch(versionSource);
-            if (!versionResponse.ok) {
-                throw new Error('Failed to fetch version info');
+            // 2. Skip version check if no local version exists
+            let latestVersion = '';
+            if (!localVersion || localVersion === '') {
+                console.log('No local version found, downloading GTFS data...');
+                // Skip version check and proceed to download
+            } else {
+                // 3. Check version only if we have a local version
+                console.log('Checking for updates...');
+                const versionResponse = await fetch(versionSource);
+                if (!versionResponse.ok) {
+                    throw new Error('Failed to fetch version info');
+                }
+
+                latestVersion = await versionResponse.text();
+
+                // 4. Skip download if versions match
+                if (localVersion === latestVersion) {
+                    console.log('GTFS data is up to date');
+                    retryCount = 0; // Reset retry count on success
+                    await processGTFSRT();
+                    return true;
+                }
             }
 
-            const latestVersion = await versionResponse.text();
-
-            // 3. Skip download if versions match
-            if (localVersion === latestVersion) {
-                console.log('GTFS data is up to date');
-                await processGTFSRT();
-                // setInterval(processGTFSRT, 20000); // 20 second interval, shift this to a websocket or server-sent event to eliminate this process
-                return true;
-            }
-
-            // 4. Fetch and process new data
+            // 5. Fetch and process new data
             const dataResponse = await fetch(staticDataSource);
             if (!dataResponse.ok) {
                 throw new Error('Failed to fetch GTFS data');
             }
-
             const zipData = await dataResponse.arrayBuffer();
             const zip = await JSZip.loadAsync(zipData);
             const processTranslations = async (parsed: Papa.ParseResult<unknown>) => {
@@ -403,26 +460,68 @@
                     }
                 }
             };
-
             const { stops, routes } = await processFile('routes.txt') as {stops: {[stop_id: string]: Stop}; routes: Route[]};
             transitFeedActions.updateStops(stops);
             transitFeedActions.updateRoutes(routes);
 
-
             // Update store
             transitFeedActions.updateVersion(latestVersion);
             transitFeedActions.updateTimestamp(new Date());
-
+            retryCount = 0; // Reset retry count on success
             await processGTFSRT();
-            // setInterval(processGTFSRT, 20000); // 20 second interval, shift this to a websocket or server-sent event to eliminate this process
             return true;
         } catch (err) {
-            // error = err instanceof Error ? err.message : 'Failed to load GTFS data';
             console.error('GTFS load error:', err);
+
+            // Exponential backoff: start at 5s, max at 60s
+            retryCount++;
+            const backoffDelay = Math.min(5000 * Math.pow(1.5, retryCount - 1), 60000);
+
+            const errorMessage = err instanceof Error ? err.message : 'Unknown error';
+            const message = hasExistingData
+                ? `Update failed. Using cached data. Retrying in ${Math.round(backoffDelay / 1000)}s...`
+                : `Failed to load data. Retrying in ${Math.round(backoffDelay / 1000)}s...`;
+            console.log(`${message} (Error: ${errorMessage})`);
+
+            dataLoadRetryTimeout = setTimeout(() => {
+                loadGTFSData();
+            }, backoffDelay);
+
+            // If we have existing data, try to connect to WebSocket anyway
+            if (hasExistingData && retryCount === 1) {
+                processGTFSRT();
+            }
+
             return false;
         }
     }
     onMount(() => {
         loadGTFSData();
     });
+
+    onDestroy(() => {
+        // Clean up timeouts
+        if (wsReconnectTimeout) {
+            clearTimeout(wsReconnectTimeout);
+        }
+        if (dataLoadRetryTimeout) {
+            clearTimeout(dataLoadRetryTimeout);
+        }
+        // Close WebSocket
+        if (currentWs) {
+            try {
+                currentWs.close();
+            } catch (e) {
+                console.error('Error closing WebSocket on destroy', e);
+            }
+        }
+    });
 </script>
+
+{#if isLoading}
+    <div class="fixed inset-0 z-50 bg-black bg-opacity-40 opacity-80 backdrop-blur-sm">
+    </div>
+	<div class="fixed inset-0 flex items-center justify-center z-51">
+		<div class="animate-spin rounded-full h-16 w-16 border-2 border-b-1 border-[#1967D3] bg-opacity-100"></div>
+	</div>
+{/if}

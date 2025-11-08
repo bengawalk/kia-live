@@ -10,6 +10,7 @@ import mapLineLabelImage from '$assets/map-line-label.png';
 import { pollUserLocation } from '$lib/services/location';
 import { handleTap, handleTouchEnd, handleTouchStart } from '$lib/services/discovery';
 import { browser } from '$app/environment';
+import { initMetroMap, loadMetroLines, unloadMetroMap } from '$lib/services/metroMap';
 
 let map: mapboxgl.Map | undefined;
 export type NavMode = 'walking' | 'driving-traffic' | 'cycling' | 'driving'
@@ -50,6 +51,12 @@ export function loadMap(mapContainer: HTMLElement | string): mapboxgl.Map {
 			map?.on('mouseup', handleTouchEnd);
 			// map?.on('mouseup', handleTap);
 			map?.touchZoomRotate.disableRotation();
+
+			// Initialize and load metro lines and stops
+			if (map) {
+				initMetroMap(map);
+				loadMetroLines();
+			}
 		}
 	);
 	return map;
@@ -57,6 +64,7 @@ export function loadMap(mapContainer: HTMLElement | string): mapboxgl.Map {
 
 export function unloadMap() {
 	if(map != undefined){
+		unloadMetroMap();
 		map.remove();
 		map = undefined;
 	}
@@ -83,8 +91,8 @@ export function removeRenderedCollisions() {
 	});
 }
 
-// Helper internal function (collision layer points)
-function samplePointsAlongLineCollection(lineFeatureCollection: GeoJSON.FeatureCollection, spacingMeters = 50): GeoJSON.FeatureCollection {
+// Helper function (collision layer points) - exported for metro map use
+export function samplePointsAlongLineCollection(lineFeatureCollection: GeoJSON.FeatureCollection, spacingMeters = 50): GeoJSON.FeatureCollection {
 	function haversineDistance(coord1: GeoJSON.Position, coord2: GeoJSON.Position) {
 		const toRad = (deg: number) => (deg * Math.PI) / 180;
 		const R = 6371000;
@@ -220,7 +228,8 @@ export function updateBusMarker(
 	label: string,
 	lat: number | undefined,
 	lon: number | undefined,
-	handleTap: null | (() => void) = null
+	handleTap: null | (() => void) = null,
+	bearing: number = 0 // Bearing in degrees (0 = north, 90 = east, etc.)
 ): void {
 	if(!map || !layerType.includes("BUS")) return;
 	if(!lat || !lon){ // Clear the marker
@@ -233,8 +242,56 @@ export function updateBusMarker(
 		updateMarker(style[0], [undefined, undefined], undefined, undefined);
 	}
 	updateMarker(layerType, [undefined, undefined], lat, lon, handleTap);
-	const el = document.getElementById("routename-text");
-	if(el) el.innerHTML = label;
+
+	// Update label text
+	const labelEl = document.getElementById("routename-text");
+	if(labelEl) labelEl.innerHTML = label;
+
+	// Get current map zoom level for scaling
+	const zoom = map?.getZoom() || 14;
+	// Scale interpolation: zoom 10 = 0.5x, zoom 14 = 1x, zoom 18 = 2x
+	const minZoom = 10;
+	const maxZoom = 18;
+	const minScale = 0.8;
+	const maxScale = 2.0;
+	const scale = minScale + ((zoom - minZoom) / (maxZoom - minZoom)) * (maxScale - minScale);
+	const clampedScale = Math.max(minScale, Math.min(maxScale, scale));
+
+	// Update bus image rotation, scaling, and apply filters
+	const busImageEl = document.querySelector(".bus-image") as HTMLElement;
+	if(busImageEl) {
+		bearing -= 90;
+		if(bearing < 0) bearing += 360;
+		busImageEl.style.transform = `rotate(${bearing}deg) scale(${clampedScale})`;
+		// Add brightness and vibrancy filters to make the bus more visible
+		busImageEl.style.filter = `brightness(1.2) saturate(1.3) contrast(1.1)`;
+	}
+
+	// Interpolate label distance based on rotation and zoom
+	// When horizontal (bearing = 90° or 270°), label is closer
+	// When vertical (bearing = 0° or 180°), label is farther
+	// Also adjust for zoom level (larger bus = more distance, smaller bus = less distance)
+	const busLabelEl = document.querySelector(".bus-label") as HTMLElement;
+	if(busLabelEl) {
+		// Normalize bearing to 0-180 range for calculation
+		const normalizedBearing = Math.abs((bearing % 180));
+
+		// Base distances at zoom 14 (scale = 1.0)
+		const baseDistHorizontal = 20; // Base distance when horizontal at 1x scale
+		const baseDistVertical = 4;  // Max distance when vertical at 1x scale
+
+		// Calculate bearing interpolation factor (0 = horizontal, 1 = vertical)
+		const bearingFactor = Math.abs(Math.cos((normalizedBearing * Math.PI) / 180));
+
+		// Calculate base distance for current bearing (before zoom adjustment)
+		const baseDistance = baseDistHorizontal + (baseDistVertical - baseDistHorizontal) * bearingFactor;
+
+		// Adjust distance based on zoom scale
+		// At scale 0.5x (zoomed out), reduce distance by 50%
+		// At scale 2.0x (zoomed in), increase distance by 100%
+		const scaledDistance = (baseDistance * clampedScale) * 1.1;
+		busLabelEl.style.marginTop = `${scaledDistance}px`;
+	}
 }
 export function updateMarker(
 	layerType: keyof typeof MAP_STYLES,
@@ -313,6 +370,7 @@ export function updateMarker(
 			'text-variable-anchor': ['top', 'left'],
 			'text-radial-offset': 1.0,
 			'text-justify': 'auto',
+			'text-allow-overlap': true,
 		};
 		map.addLayer(styleLayer);
 	}
@@ -327,6 +385,7 @@ export function updateMarker(
 			'text-variable-anchor': ['bottom', 'right'],
 			'text-radial-offset': 1.0,
 			'text-justify': 'auto',
+			'text-allow-overlap': true,
 		};
 		map.addLayer(styleLayer);
 	}

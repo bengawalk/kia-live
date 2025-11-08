@@ -1,0 +1,6 @@
+<svg width="512" height="512" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+  <!-- Outer circle -->
+  <circle cx="24" cy="24" r="22" fill="#000" stroke="#ffffff" stroke-width="0.5"/>
+  <!-- Inner M for Metro -->
+  <text x="24" y="24" font-family="IBM Plex Sans, Arial, sans-serif" font-size="24" font-weight="400" fill="#ffffff" text-anchor="middle" dominant-baseline="central">M</text>
+</svg>
