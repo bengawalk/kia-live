@@ -148,7 +148,7 @@ async function loadNextBusesInternal() {
 		toCity: []
 	};
 	const nextTripTimes: { toCity: number[]; toAirport: number[] } = { toAirport: [], toCity: [] }; // Array for quickly inserting at correct index
-	let timeoutTime = new Date().getTime() + 3600000; // 60 minutes after
+	let earliestNextBusTime = new Date().getTime() + 3600000; // Track earliest bus for smart refresh scheduling
 	for (const trip of trips) {
 		if (seenTripIds.has(trip.trip_id) && !Object.hasOwn(trip, 'vehicle_id')) continue;
 		seenTripIds.add(trip.trip_id);
@@ -203,9 +203,15 @@ async function loadNextBusesInternal() {
 				transitFeed.stops[closestStop.stop_id].stop_lon
 			)) * 1000;
 		const arrivalToStop = Date.now() + travelTimeMS;
-		// if (arrivalToStop < timeoutTime) timeoutTime = arrivalToStop;
+		const nextDepartureTime = getNextDeparture(closestStop, Object.hasOwn(trip, 'vehicle_id'));
+
+		// Track earliest bus departure for smart refresh scheduling
+		if (nextDepartureTime.getTime() < earliestNextBusTime) {
+			earliestNextBusTime = nextDepartureTime.getTime();
+		}
+
 		if (
-			getNextDeparture(closestStop, Object.hasOwn(trip, 'vehicle_id')) < // Filter out trips that have already passed or will pass before user can reach, keep a 30 second delay in case the user is tracking the bus to get on.
+			nextDepartureTime < // Filter out trips that have already passed or will pass before user can reach, keep a 30 second delay in case the user is tracking the bus to get on.
 			new Date(arrivalToStop - (30 * 1000))
 		) {
 			continue;
@@ -272,13 +278,19 @@ async function loadNextBusesInternal() {
 			});
 		}
 	}
+
+	// Schedule smart refresh: trigger when earliest bus departs (buses change), but ensure at least every minute
 	if (currentRefreshTimeout) clearTimeout(currentRefreshTimeout);
-	currentRefreshTimeout = setTimeout(loadNextBuses, timeoutTime - Date.now());
+	const timeUntilEarliestBus = earliestNextBusTime - Date.now();
+	const refreshDelay = Math.max(Math.min(timeUntilEarliestBus, 60000), 10000); // Between 10s and 60s
+	currentRefreshTimeout = setTimeout(loadNextBuses, refreshDelay);
+
 	nextBuses.set(nextTrips);
 
-	// Set up minute-by-minute refresh if not already running
-	if (!nextBusesRefreshInterval) {
-		nextBusesRefreshInterval = setInterval(loadNextBuses, 60000); // 60000ms = 1 minute
+	// No longer need the minute-by-minute interval since we're using smart refresh
+	if (nextBusesRefreshInterval) {
+		clearInterval(nextBusesRefreshInterval);
+		nextBusesRefreshInterval = undefined;
 	}
 }
 
