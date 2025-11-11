@@ -232,24 +232,45 @@ async function loadNextBusesInternal() {
 			else right = mid;
 		}
 
-		// Insert and trim
+		// Insert and trim to max 10 (we'll filter to 4 later based on live/static priority)
 		nextTripTimes[direction].splice(left, 0, getNextDeparture(closestStop).getTime());
 		nextTrips[direction].splice(left, 0, trip);
-		if (nextTripTimes[direction].length > 4) {
+		if (nextTripTimes[direction].length > 10) {
 			nextTrips[direction].pop();
 			nextTripTimes[direction].pop();
 		}
 	}
+
+	// Now apply the priority logic: prefer live trips, but use static if needed
 	for (const direction of ['toAirport', 'toCity']) {
-		nextTrips[direction as 'toAirport' | 'toCity'] = nextTrips[
-			direction as 'toAirport' | 'toCity'
-		].sort((a, b) =>
-			Object.hasOwn(a, 'vehicle_id') && !Object.hasOwn(b, 'vehicle_id')
-				? -1
-				: Object.hasOwn(b, 'vehicle_id') && !Object.hasOwn(a, 'vehicle_id')
-					? 1
-					: 0
-		);
+		const allTrips = nextTrips[direction as 'toAirport' | 'toCity'];
+
+		// Separate live and static trips while preserving time order
+		const liveTrips = allTrips.filter((t) => Object.hasOwn(t, 'vehicle_id'));
+		const staticTrips = allTrips.filter((t) => !Object.hasOwn(t, 'vehicle_id'));
+
+		// If we have 4+ live trips, use only live trips (up to 4)
+		if (liveTrips.length >= 4) {
+			nextTrips[direction as 'toAirport' | 'toCity'] = liveTrips.slice(0, 4);
+		} else {
+			// Otherwise, use all live trips + enough static trips to reach 4 total
+			const needed = 4 - liveTrips.length;
+			nextTrips[direction as 'toAirport' | 'toCity'] = [
+				...liveTrips,
+				...staticTrips.slice(0, needed)
+			].sort((a, b) => {
+				// First, prioritize live buses over static buses
+				const aIsLive = Object.hasOwn(a, 'vehicle_id');
+				const bIsLive = Object.hasOwn(b, 'vehicle_id');
+				if (aIsLive && !bIsLive) return -1;
+				if (!aIsLive && bIsLive) return 1;
+
+				// If both are live or both are static, sort by time
+				const aTime = a.stops.find(s => stopIds.includes(s.stop_id))?.stop_date().getTime() || 0;
+				const bTime = b.stops.find(s => stopIds.includes(s.stop_id))?.stop_date().getTime() || 0;
+				return aTime - bTime;
+			});
+		}
 	}
 	if (currentRefreshTimeout) clearTimeout(currentRefreshTimeout);
 	currentRefreshTimeout = setTimeout(loadNextBuses, timeoutTime - Date.now());
