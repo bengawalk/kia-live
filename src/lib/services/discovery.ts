@@ -148,7 +148,7 @@ async function loadNextBusesInternal() {
 		toCity: []
 	};
 	const nextTripTimes: { toCity: number[]; toAirport: number[] } = { toAirport: [], toCity: [] }; // Array for quickly inserting at correct index
-	let timeoutTime = new Date().getTime() + 3600000; // 60 minutes after
+	let earliestNextBusTime = new Date().getTime() + 3600000; // Track earliest bus for smart refresh scheduling
 	for (const trip of trips) {
 		if (seenTripIds.has(trip.trip_id) && !Object.hasOwn(trip, 'vehicle_id')) continue;
 		seenTripIds.add(trip.trip_id);
@@ -203,9 +203,15 @@ async function loadNextBusesInternal() {
 				transitFeed.stops[closestStop.stop_id].stop_lon
 			)) * 1000;
 		const arrivalToStop = Date.now() + travelTimeMS;
-		// if (arrivalToStop < timeoutTime) timeoutTime = arrivalToStop;
+		const nextDepartureTime = getNextDeparture(closestStop, Object.hasOwn(trip, 'vehicle_id'));
+
+		// Track earliest bus departure for smart refresh scheduling
+		if (nextDepartureTime.getTime() < earliestNextBusTime) {
+			earliestNextBusTime = nextDepartureTime.getTime();
+		}
+
 		if (
-			getNextDeparture(closestStop, Object.hasOwn(trip, 'vehicle_id')) < // Filter out trips that have already passed or will pass before user can reach, keep a 30 second delay in case the user is tracking the bus to get on.
+			nextDepartureTime < // Filter out trips that have already passed or will pass before user can reach, keep a 30 second delay in case the user is tracking the bus to get on.
 			new Date(arrivalToStop - (30 * 1000))
 		) {
 			continue;
@@ -232,32 +238,59 @@ async function loadNextBusesInternal() {
 			else right = mid;
 		}
 
-		// Insert and trim
+		// Insert and trim to max 10 (we'll filter to 4 later based on live/static priority)
 		nextTripTimes[direction].splice(left, 0, getNextDeparture(closestStop).getTime());
 		nextTrips[direction].splice(left, 0, trip);
-		if (nextTripTimes[direction].length > 4) {
+		if (nextTripTimes[direction].length > 10) {
 			nextTrips[direction].pop();
 			nextTripTimes[direction].pop();
 		}
 	}
+
+	// Now apply the priority logic: prefer live trips, but use static if needed
 	for (const direction of ['toAirport', 'toCity']) {
-		nextTrips[direction as 'toAirport' | 'toCity'] = nextTrips[
-			direction as 'toAirport' | 'toCity'
-		].sort((a, b) =>
-			Object.hasOwn(a, 'vehicle_id') && !Object.hasOwn(b, 'vehicle_id')
-				? -1
-				: Object.hasOwn(b, 'vehicle_id') && !Object.hasOwn(a, 'vehicle_id')
-					? 1
-					: 0
-		);
+		const allTrips = nextTrips[direction as 'toAirport' | 'toCity'];
+
+		// Separate live and static trips while preserving time order
+		const liveTrips = allTrips.filter((t) => Object.hasOwn(t, 'vehicle_id'));
+		const staticTrips = allTrips.filter((t) => !Object.hasOwn(t, 'vehicle_id'));
+
+		// If we have 4+ live trips, use only live trips (up to 4)
+		if (liveTrips.length >= 4) {
+			nextTrips[direction as 'toAirport' | 'toCity'] = liveTrips.slice(0, 4);
+		} else {
+			// Otherwise, use all live trips + enough static trips to reach 4 total
+			const needed = 4 - liveTrips.length;
+			nextTrips[direction as 'toAirport' | 'toCity'] = [
+				...liveTrips,
+				...staticTrips.slice(0, needed)
+			].sort((a, b) => {
+				// First, prioritize live buses over static buses
+				const aIsLive = Object.hasOwn(a, 'vehicle_id');
+				const bIsLive = Object.hasOwn(b, 'vehicle_id');
+				if (aIsLive && !bIsLive) return -1;
+				if (!aIsLive && bIsLive) return 1;
+
+				// If both are live or both are static, sort by time
+				const aTime = a.stops.find(s => stopIds.includes(s.stop_id))?.stop_date().getTime() || 0;
+				const bTime = b.stops.find(s => stopIds.includes(s.stop_id))?.stop_date().getTime() || 0;
+				return aTime - bTime;
+			});
+		}
 	}
+
+	// Schedule smart refresh: trigger when earliest bus departs (buses change), but ensure at least every minute
 	if (currentRefreshTimeout) clearTimeout(currentRefreshTimeout);
-	currentRefreshTimeout = setTimeout(loadNextBuses, timeoutTime - Date.now());
+	const timeUntilEarliestBus = earliestNextBusTime - Date.now();
+	const refreshDelay = Math.max(Math.min(timeUntilEarliestBus, 60000), 10000); // Between 10s and 60s
+	currentRefreshTimeout = setTimeout(loadNextBuses, refreshDelay);
+
 	nextBuses.set(nextTrips);
 
-	// Set up minute-by-minute refresh if not already running
-	if (!nextBusesRefreshInterval) {
-		nextBusesRefreshInterval = setInterval(loadNextBuses, 60000); // 60000ms = 1 minute
+	// No longer need the minute-by-minute interval since we're using smart refresh
+	if (nextBusesRefreshInterval) {
+		clearInterval(nextBusesRefreshInterval);
+		nextBusesRefreshInterval = undefined;
 	}
 }
 
@@ -1386,12 +1419,33 @@ async function animateBusMarker(trip: Trip | LiveTrip, closestStop: Stop) {
 	let lastEstimate: { lat: number; lon: number } | undefined = undefined;
 	let lastEstimateTime = 0;
 
+	// Cache the bus style to prevent flickering (only update on selection changes)
+	let cachedBusStyle: 'BUS' | 'BUS_LIVE' | 'BUS_INACTIVE' = Object.hasOwn(trip, 'vehicle_id') ? 'BUS_LIVE' : 'BUS';
+	let lastSelectionState: string = 'none';
+
 	const FRAMERATE_MS = 50; // smooth enough without being heavy
 	const GEOJSON_UPDATE_MS = 4000; // update line layers every 4s
 	const ESTIMATE_INTERVAL_MS = 1000; // refresh estimates every 1s for smoother marker animation
 	let WAIT_MS = 300;
 
 	busMarkerInterval = setInterval(async () => {
+		// Check if selection state changed - if so, update cached bus style
+		const highlighted = get(selected);
+		const currentSelectionState = highlighted === undefined
+			? 'none'
+			: Object.hasOwn(highlighted as object, 'stop_id')
+				? `stop:${(highlighted as Stop).stop_id}`
+				: Object.hasOwn(highlighted as object, 'trip_id')
+					? `trip:${(highlighted as Trip | LiveTrip).trip_id}`
+					: 'other';
+
+		if (currentSelectionState !== lastSelectionState) {
+			// Selection changed - recalculate bus style
+			const { busStyle } = computeStyles();
+			cachedBusStyle = busStyle;
+			lastSelectionState = currentSelectionState;
+		}
+
 		// Determine whether this is a live trip
 		const isLive = Object.hasOwn(trip, 'vehicle_id');
 
@@ -1491,10 +1545,10 @@ async function animateBusMarker(trip: Trip | LiveTrip, closestStop: Stop) {
 					if (t >= 1) haveActiveAnimation = false;
 				}
 
-				const { busStyle } = computeStyles();
+				// Use cached bus style to prevent flickering
 				// Get bearing from current vehicle or latest location
 				const bearing = latest ? latest.bearing : liveBus.bearing;
-				updateBusMarker(busStyle, routeShortName, curLat, curLon, () => {
+				updateBusMarker(cachedBusStyle, routeShortName, curLat, curLon, () => {
 					markerTapped = true;
 					selected.set(trip);
 				}, bearing);
@@ -1599,10 +1653,10 @@ async function animateBusMarker(trip: Trip | LiveTrip, closestStop: Stop) {
 				curLat = closestStop.stop_lat;
 				curLon = closestStop.stop_lon;
 			}
-			const { busStyle } = computeStyles();
+			// Use cached bus style to prevent flickering
 			// Calculate bearing to next shape point for static trips
 			const bearing = getBearingForStaticTrip(trip as Trip, curLat, curLon);
-			updateBusMarker(busStyle, routeShortName, curLat, curLon, () => {
+			updateBusMarker(cachedBusStyle, routeShortName, curLat, curLon, () => {
 				markerTapped = true;
 				selected.set(trip);
 			}, bearing);
