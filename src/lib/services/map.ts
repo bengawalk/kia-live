@@ -277,8 +277,8 @@ export function updateBusMarker(
 		const normalizedBearing = Math.abs((bearing % 180));
 
 		// Base distances at zoom 14 (scale = 1.0)
-		const baseDistHorizontal = 20; // Base distance when horizontal at 1x scale
-		const baseDistVertical = 4;  // Max distance when vertical at 1x scale
+		const baseDistHorizontal = 30; // Base distance when horizontal at 1x scale
+		const baseDistVertical = 10;  // Max distance when vertical at 1x scale
 
 		// Calculate bearing interpolation factor (0 = horizontal, 1 = vertical)
 		const bearingFactor = Math.abs(Math.cos((normalizedBearing * Math.PI) / 180));
