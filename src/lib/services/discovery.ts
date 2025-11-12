@@ -1419,12 +1419,33 @@ async function animateBusMarker(trip: Trip | LiveTrip, closestStop: Stop) {
 	let lastEstimate: { lat: number; lon: number } | undefined = undefined;
 	let lastEstimateTime = 0;
 
+	// Cache the bus style to prevent flickering (only update on selection changes)
+	let cachedBusStyle: 'BUS' | 'BUS_LIVE' | 'BUS_INACTIVE' = Object.hasOwn(trip, 'vehicle_id') ? 'BUS_LIVE' : 'BUS';
+	let lastSelectionState: string = 'none';
+
 	const FRAMERATE_MS = 50; // smooth enough without being heavy
 	const GEOJSON_UPDATE_MS = 4000; // update line layers every 4s
 	const ESTIMATE_INTERVAL_MS = 1000; // refresh estimates every 1s for smoother marker animation
 	let WAIT_MS = 300;
 
 	busMarkerInterval = setInterval(async () => {
+		// Check if selection state changed - if so, update cached bus style
+		const highlighted = get(selected);
+		const currentSelectionState = highlighted === undefined
+			? 'none'
+			: Object.hasOwn(highlighted as object, 'stop_id')
+				? `stop:${(highlighted as Stop).stop_id}`
+				: Object.hasOwn(highlighted as object, 'trip_id')
+					? `trip:${(highlighted as Trip | LiveTrip).trip_id}`
+					: 'other';
+
+		if (currentSelectionState !== lastSelectionState) {
+			// Selection changed - recalculate bus style
+			const { busStyle } = computeStyles();
+			cachedBusStyle = busStyle;
+			lastSelectionState = currentSelectionState;
+		}
+
 		// Determine whether this is a live trip
 		const isLive = Object.hasOwn(trip, 'vehicle_id');
 
@@ -1524,10 +1545,10 @@ async function animateBusMarker(trip: Trip | LiveTrip, closestStop: Stop) {
 					if (t >= 1) haveActiveAnimation = false;
 				}
 
-				const { busStyle } = computeStyles();
+				// Use cached bus style to prevent flickering
 				// Get bearing from current vehicle or latest location
 				const bearing = latest ? latest.bearing : liveBus.bearing;
-				updateBusMarker(busStyle, routeShortName, curLat, curLon, () => {
+				updateBusMarker(cachedBusStyle, routeShortName, curLat, curLon, () => {
 					markerTapped = true;
 					selected.set(trip);
 				}, bearing);
@@ -1632,10 +1653,10 @@ async function animateBusMarker(trip: Trip | LiveTrip, closestStop: Stop) {
 				curLat = closestStop.stop_lat;
 				curLon = closestStop.stop_lon;
 			}
-			const { busStyle } = computeStyles();
+			// Use cached bus style to prevent flickering
 			// Calculate bearing to next shape point for static trips
 			const bearing = getBearingForStaticTrip(trip as Trip, curLat, curLon);
-			updateBusMarker(busStyle, routeShortName, curLat, curLon, () => {
+			updateBusMarker(cachedBusStyle, routeShortName, curLat, curLon, () => {
 				markerTapped = true;
 				selected.set(trip);
 			}, bearing);
