@@ -253,16 +253,16 @@ class BusModel3DLayer {
 
 		// Rotation (in degrees, will be converted to radians)
 		rotationX: 90,  // Pitch: -90 = lay flat, 0 = standing up, 90 = upside down
-		rotationY: -90,    // Yaw: additional rotation around vertical axis
-		rotationZ: -90,    // Roll: tilt left/right
+		rotationY: 0,    // Yaw: additional rotation around vertical axis
+		rotationZ: 180,    // Roll: tilt left/right
 
 		// Bearing adjustment
 		bearingOffset: 0,    // Add offset to bearing in degrees (0, 90, 180, 270)
-		bearingMultiplier: -1, // 1 or -1 to flip bearing direction
+		bearingMultiplier: 1, // 1 or -1 to flip bearing direction
 
 		// Tilt for 3D effect
-		tiltZDegrees: 7.5, // Forward/backward tilt in degrees (0 = no tilt)
-		tiltXDegrees: 0.5,
+		tiltZDegrees: 0, // Forward/backward tilt in degrees (0 = no tilt)
+		tiltXDegrees: 0,
 
 		// Position offset relative to the coordinate point
 		offsetX: 0,  // Longitude offset in mercator units (usually 0)
@@ -336,7 +336,9 @@ class BusModel3DLayer {
 		this.renderer = new THREE.WebGLRenderer({
 			canvas: mapInstance.getCanvas(),
 			context: _gl,
-			antialias: true
+			antialias: true,
+			alpha: true,
+			premultipliedAlpha: false
 		});
 		this.renderer.autoClear = false;
 	}
@@ -384,40 +386,40 @@ class BusModel3DLayer {
 		const tiltXRad = (this.config.tiltXDegrees * Math.PI) / 180;
 		const tiltZRad = (this.config.tiltZDegrees * Math.PI) / 180;
 
-		// Create rotation matrices using config
-		const rotationX = new THREE.Matrix4().makeRotationX(rotXRad);
-		const rotationY = new THREE.Matrix4().makeRotationY(rotYRad);
-		const rotationZ = new THREE.Matrix4().makeRotationZ(rotZRad);
-		const bearingRotation = new THREE.Matrix4().makeRotationZ(bearingRad);
-		const tiltZ = new THREE.Matrix4().makeRotationZ(tiltZRad);
-		const tiltX = new THREE.Matrix4().makeRotationX(tiltXRad);
+		// Apply transformations directly to the model
+		// This ensures rotations are visible in all browsers
+		this.busModel.rotation.set(0, 0, 0);
+		this.busModel.position.set(0, 0, 0);
+		this.busModel.scale.set(1, 1, 1);
 
-		// Create transformation matrix
-		// Matrix operations are applied in REVERSE order (right to left when reading)
-		// Execution order: scale -> rotations -> translate
-		const modelTransform = new THREE.Matrix4()
-			.multiply(
-				new THREE.Matrix4().makeTranslation(
-					mercatorCoordinate.x + this.config.offsetX,
-					mercatorCoordinate.y + this.config.offsetY,
-					mercatorCoordinate.z
-				)
-			)
-			.multiply(bearingRotation)  // Apply bearing rotation (based on direction of travel)
-			.multiply(tiltZ)            // Apply Z tilt for 3D effect (rotational tilt)
-			.multiply(tiltX)            // Apply X tilt for 3D effect (forward/backward tilt)
-			.multiply(rotationX)        // Apply X rotation from config (pitch)
-			.multiply(rotationY)        // Apply Y rotation from config (yaw)
-			.multiply(rotationZ)        // Apply Z rotation from config (roll)
-			.multiply(
-				new THREE.Matrix4().makeScale(
-					modelScale * this.config.scaleX,
-					modelScale * this.config.scaleY,
-					modelScale * this.config.scaleZ
-				)
+		// Apply rotations in the correct order
+		// THREE.js uses Euler angles: rotationX (pitch), rotationY (yaw), rotationZ (roll)
+		this.busModel.rotation.order = 'XYZ';
+		this.busModel.rotation.x = rotXRad + tiltXRad;  // Pitch + forward/backward tilt
+		this.busModel.rotation.y = rotYRad + bearingRad;              // Yaw
+		this.busModel.rotation.z = rotZRad + tiltZRad;  // Roll + bearing + rotational tilt
+
+		// Apply scale
+		this.busModel.scale.set(
+			modelScale * this.config.scaleX,
+			modelScale * this.config.scaleY,
+			modelScale * this.config.scaleZ
+		);
+
+		// Create transformation matrix for positioning
+		const modelMatrix = new THREE.Matrix4()
+			.makeTranslation(
+				mercatorCoordinate.x + this.config.offsetX,
+				mercatorCoordinate.y + this.config.offsetY,
+				mercatorCoordinate.z
 			);
 
-		this.camera.projectionMatrix = new THREE.Matrix4().fromArray(matrix).multiply(modelTransform);
+		// Set camera projection matrix from Mapbox
+		this.camera.projectionMatrix = new THREE.Matrix4()
+			.fromArray(matrix)
+			.multiply(modelMatrix);
+
+		// Render the scene
 		this.renderer.resetState();
 		this.renderer.render(this.scene!, this.camera);
 		map.triggerRepaint();
