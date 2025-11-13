@@ -3,7 +3,8 @@ import {
 	LINE_LABEL_STYLE,
 	MAP_STYLES,
 	POINT_LABEL_STYLE,
-	POINT_LABEL_STYLE_OVERLAP
+	POINT_LABEL_STYLE_OVERLAP,
+	BUS_GLB_URL
 } from '$lib/constants';
 import mapboxgl, { type LayerSpecification } from 'mapbox-gl';
 import mapLineLabelImage from '$assets/map-line-label.png';
@@ -11,6 +12,8 @@ import { pollUserLocation } from '$lib/services/location';
 import { handleTap, handleTouchEnd, handleTouchStart } from '$lib/services/discovery';
 import { browser } from '$app/environment';
 import { initMetroMap, loadMetroLines, unloadMetroMap } from '$lib/services/metroMap';
+import type * as THREE_NS from 'three';
+import type { GLTF } from 'three/examples/jsm/loaders/GLTFLoader.js';
 
 let map: mapboxgl.Map | undefined;
 export type NavMode = 'walking' | 'driving-traffic' | 'cycling' | 'driving'
@@ -26,6 +29,7 @@ export function loadMap(mapContainer: HTMLElement | string): mapboxgl.Map {
 		logoPosition: "top-right",
 	});
 	map.addControl(new mapboxgl.AttributionControl(), 'top-left');
+
 	map.loadImage(mapLineLabelImage, (error, image) => {
 		if(error) throw error;
 		if(!image) return;
@@ -221,8 +225,218 @@ export function updateLayer(
 }
 
 
-// Update Marker function
+// 3D Bus Model Management using THREE.js
+// Custom 3D Layer for bus rendering
+class BusModel3DLayer {
+	id: string;
+	type = 'custom' as const;
+	renderingMode = '3d' as const;
+	private camera: THREE_NS.Camera | null = null;
+	private scene: THREE_NS.Scene | null = null;
+	private renderer: THREE_NS.WebGLRenderer | null = null;
+	private busModel: THREE_NS.Object3D | null = null;
+	public location: [number, number];
+	public bearing: number;
+
+	// ========== ADJUSTABLE PARAMETERS ==========
+	// Tweak these values to fix orientation and scaling
+	private config = {
+		// Scale - linear interpolation matching text-size behavior
+		// Text goes from 10px@zoom10 -> 14px@zoom14 -> 20px@zoom18
+		// So we use similar linear interpolation for the bus
+		scaleAtMinZoom: 0.0008,   // Scale at zoom 10 (smaller when far)
+		scaleAtMidZoom: 0.0001,   // Scale at zoom 14 (medium)
+		scaleAtMaxZoom: 0.00001,   // Scale at zoom 18 (smaller when close, maintains apparent size)
+		minZoom: 10,               // Minimum zoom
+		midZoom: 14,               // Middle reference zoom
+		maxZoom: 18,               // Maximum zoom
+
+		// Rotation (in degrees, will be converted to radians)
+		rotationX: 90,  // Pitch: -90 = lay flat, 0 = standing up, 90 = upside down
+		rotationY: -90,    // Yaw: additional rotation around vertical axis
+		rotationZ: -90,    // Roll: tilt left/right
+
+		// Bearing adjustment
+		bearingOffset: 0,    // Add offset to bearing in degrees (0, 90, 180, 270)
+		bearingMultiplier: -1, // 1 or -1 to flip bearing direction
+
+		// Tilt for 3D effect
+		tiltZDegrees: 7.5, // Forward/backward tilt in degrees (0 = no tilt)
+		tiltXDegrees: 0.5,
+
+		// Position offset relative to the coordinate point
+		offsetX: 0,  // Longitude offset in mercator units (usually 0)
+		offsetY: 0,  // Latitude offset in mercator units (usually 0)
+		offsetZ: 2,  // Height offset in mercator units (0 = ground level)
+
+		// Scale flip (useful if model is mirrored)
+		scaleX: 1,   // 1 or -1
+		scaleY: -1,  // 1 or -1 (Mapbox uses -1 for Y axis)
+		scaleZ: 1    // 1 or -1
+	};
+	// ==========================================
+
+	constructor(id: string, location: [number, number], bearing: number) {
+		this.id = id;
+		this.location = location;
+		this.bearing = bearing;
+	}
+
+	async onAdd(mapInstance: mapboxgl.Map, _gl: WebGLRenderingContext) {
+		// Use dynamic import for THREE.js to avoid SSR issues
+		const THREE = await import('three');
+		const { GLTFLoader } = await import('three/examples/jsm/loaders/GLTFLoader.js');
+
+		// Create THREE.js scene
+		this.camera = new THREE.Camera();
+		this.scene = new THREE.Scene();
+
+		// Add basic lighting (no modifications to brightness)
+		const directionalLight = new THREE.DirectionalLight(0xffffff, 1.0);
+		directionalLight.position.set(0, 1, 0);
+		this.scene.add(directionalLight);
+
+		const ambientLight = new THREE.AmbientLight(0xffffff, 1.0);
+		this.scene.add(ambientLight);
+
+		// Load the GLB model
+		const loader = new GLTFLoader();
+		await new Promise<GLTF>((resolve, reject) => {
+			loader.load(
+				BUS_GLB_URL,
+				(gltf: GLTF) => {
+					this.busModel = gltf.scene;
+
+					// Calculate bounding box to find model's center
+					const box = new THREE.Box3().setFromObject(this.busModel);
+					const center = new THREE.Vector3();
+					box.getCenter(center);
+
+					// Recenter the model by offsetting all children
+					// This moves the pivot point to the geometric center
+					this.busModel.position.set(-center.x, -center.y, -center.z);
+
+					// Wrap in a group so rotations happen around the new centered origin
+					const centeredGroup = new THREE.Group();
+					centeredGroup.add(this.busModel);
+
+					// Replace busModel reference with the centered group
+					this.busModel = centeredGroup;
+
+					// No material modifications - use textures as-is
+					this.scene!.add(this.busModel);
+					resolve(gltf);
+				},
+				undefined,
+				reject
+			);
+		});
+
+		// Create renderer from map's gl context
+		this.renderer = new THREE.WebGLRenderer({
+			canvas: mapInstance.getCanvas(),
+			context: _gl,
+			antialias: true
+		});
+		this.renderer.autoClear = false;
+	}
+
+	async render(_gl: WebGLRenderingContext, matrix: number[]) {
+		if (!this.busModel || !map || !this.camera || !this.renderer) return;
+
+		const THREE = await import('three');
+
+		// Get map's transform for positioning with offset
+		const mercatorCoordinate = mapboxgl.MercatorCoordinate.fromLngLat(
+			this.location,
+			this.config.offsetZ
+		);
+
+		const zoom = map.getZoom();
+
+		// Calculate linear interpolation matching text-size behavior
+		// Text: zoom 10->10px, zoom 14->14px, zoom 18->20px
+		// Bus: zoom 10->scaleAtMinZoom, zoom 14->scaleAtMidZoom, zoom 18->scaleAtMaxZoom
+		const clampedZoom = Math.max(
+			this.config.minZoom,
+			Math.min(this.config.maxZoom, zoom)
+		);
+
+		let modelScale: number;
+		if (clampedZoom <= this.config.midZoom) {
+			// Interpolate between minZoom and midZoom
+			const t = (clampedZoom - this.config.minZoom) / (this.config.midZoom - this.config.minZoom);
+			modelScale = this.config.scaleAtMinZoom + t * (this.config.scaleAtMidZoom - this.config.scaleAtMinZoom);
+		} else {
+			// Interpolate between midZoom and maxZoom
+			const t = (clampedZoom - this.config.midZoom) / (this.config.maxZoom - this.config.midZoom);
+			modelScale = this.config.scaleAtMidZoom + t * (this.config.scaleAtMaxZoom - this.config.scaleAtMidZoom);
+		}
+
+		// Calculate bearing with config adjustments
+		const adjustedBearing = (this.bearing * this.config.bearingMultiplier) + this.config.bearingOffset;
+		const bearingRad = (adjustedBearing * Math.PI) / 180;
+
+		// Convert config rotation degrees to radians
+		const rotXRad = (this.config.rotationX * Math.PI) / 180;
+		const rotYRad = (this.config.rotationY * Math.PI) / 180;
+		const rotZRad = (this.config.rotationZ * Math.PI) / 180;
+		const tiltXRad = (this.config.tiltXDegrees * Math.PI) / 180;
+		const tiltZRad = (this.config.tiltZDegrees * Math.PI) / 180;
+
+		// Create rotation matrices using config
+		const rotationX = new THREE.Matrix4().makeRotationX(rotXRad);
+		const rotationY = new THREE.Matrix4().makeRotationY(rotYRad);
+		const rotationZ = new THREE.Matrix4().makeRotationZ(rotZRad);
+		const bearingRotation = new THREE.Matrix4().makeRotationZ(bearingRad);
+		const tiltZ = new THREE.Matrix4().makeRotationZ(tiltZRad);
+		const tiltX = new THREE.Matrix4().makeRotationX(tiltXRad);
+
+		// Create transformation matrix
+		// Matrix operations are applied in REVERSE order (right to left when reading)
+		// Execution order: scale -> rotations -> translate
+		const modelTransform = new THREE.Matrix4()
+			.multiply(
+				new THREE.Matrix4().makeTranslation(
+					mercatorCoordinate.x + this.config.offsetX,
+					mercatorCoordinate.y + this.config.offsetY,
+					mercatorCoordinate.z
+				)
+			)
+			.multiply(bearingRotation)  // Apply bearing rotation (based on direction of travel)
+			.multiply(tiltZ)            // Apply Z tilt for 3D effect (rotational tilt)
+			.multiply(tiltX)            // Apply X tilt for 3D effect (forward/backward tilt)
+			.multiply(rotationX)        // Apply X rotation from config (pitch)
+			.multiply(rotationY)        // Apply Y rotation from config (yaw)
+			.multiply(rotationZ)        // Apply Z rotation from config (roll)
+			.multiply(
+				new THREE.Matrix4().makeScale(
+					modelScale * this.config.scaleX,
+					modelScale * this.config.scaleY,
+					modelScale * this.config.scaleZ
+				)
+			);
+
+		this.camera.projectionMatrix = new THREE.Matrix4().fromArray(matrix).multiply(modelTransform);
+		this.renderer.resetState();
+		this.renderer.render(this.scene!, this.camera);
+		map.triggerRepaint();
+	}
+
+	updatePosition(location: [number, number], bearing: number) {
+		this.location = location;
+		this.bearing = bearing;
+		// Trigger map repaint to apply new position and bearing-based offsets
+		if (map) {
+			map.triggerRepaint();
+		}
+	}
+}
+
+// Update Marker function (keeping for non-bus markers)
 const markers: Record<keyof typeof MAP_STYLES, mapboxgl.Marker> = {}; // Simulated marker layer
+const bus3DLayers: Record<string, BusModel3DLayer> = {}; // 3D model layers
+
 export function updateBusMarker(
 	layerType: keyof typeof MAP_STYLES,
 	label: string,
@@ -232,65 +446,171 @@ export function updateBusMarker(
 	bearing: number = 0 // Bearing in degrees (0 = north, 90 = east, etc.)
 ): void {
 	if(!map || !layerType.includes("BUS")) return;
-	if(!lat || !lon){ // Clear the marker
-		updateMarker(layerType, [undefined, undefined], undefined, undefined);
+
+	const modelLayerId = `bus_model_${layerType}`;
+	const labelLayerId = `bus_label_${layerType}`;
+	const clickLayerId = `bus_click_${layerType}`;
+	const sourceId = `bus_source_${layerType}`;
+
+	// Clear the bus if no coordinates
+	if(!lat || !lon) {
+		if(map.getLayer(modelLayerId)) map.removeLayer(modelLayerId);
+		if(map.getLayer(labelLayerId)) map.removeLayer(labelLayerId);
+		if(map.getLayer(clickLayerId)) map.removeLayer(clickLayerId);
+		if(map.getSource(sourceId)) map.removeSource(sourceId);
+		delete bus3DLayers[modelLayerId];
 		return;
 	}
-	const clearStyles = Object.entries(MAP_STYLES).filter(([key, value]) => key.includes('BUS') && !key.includes('STOP') && value.type === 1 && key !== layerType);
-	for(const style of clearStyles) {
-		// console.log('CLEARING STYLE ', style);
-		updateMarker(style[0], [undefined, undefined], undefined, undefined);
-	}
-	updateMarker(layerType, [undefined, undefined], lat, lon, handleTap);
 
-	// Update label text
-	const labelEl = document.getElementById("routename-text");
-	if(labelEl) labelEl.innerHTML = label;
-
-	// Get current map zoom level for scaling
-	const zoom = map?.getZoom() || 14;
-	// Scale interpolation: zoom 10 = 0.5x, zoom 14 = 1x, zoom 18 = 2x
-	const minZoom = 10;
-	const maxZoom = 18;
-	const minScale = 0.8;
-	const maxScale = 2.0;
-	const scale = minScale + ((zoom - minZoom) / (maxZoom - minZoom)) * (maxScale - minScale);
-	const clampedScale = Math.max(minScale, Math.min(maxScale, scale));
-
-	// Update bus image rotation, scaling, and apply filters
-	const busImageEl = document.querySelector(".bus-image") as HTMLElement;
-	if(busImageEl) {
-		bearing -= 90;
-		if(bearing < 0) bearing += 360;
-		busImageEl.style.transform = `rotate(${bearing}deg) scale(${clampedScale})`;
-		// Add brightness and vibrancy filters to make the bus more visible
-		busImageEl.style.filter = `brightness(1.2) saturate(1.3) contrast(1.1)`;
+	// Clear other bus layers
+	const clearStyles = Object.entries(MAP_STYLES).filter(([key]) =>
+		key.includes('BUS') && !key.includes('STOP') && key !== layerType
+	);
+	for(const [key] of clearStyles) {
+		const oldModelId = `bus_model_${key}`;
+		const oldLabelId = `bus_label_${key}`;
+		const oldClickId = `bus_click_${key}`;
+		const oldSourceId = `bus_source_${key}`;
+		if(map.getLayer(oldModelId)) map.removeLayer(oldModelId);
+		if(map.getLayer(oldLabelId)) map.removeLayer(oldLabelId);
+		if(map.getLayer(oldClickId)) map.removeLayer(oldClickId);
+		if(map.getSource(oldSourceId)) map.removeSource(oldSourceId);
+		delete bus3DLayers[oldModelId];
 	}
 
-	// Interpolate label distance based on rotation and zoom
-	// When horizontal (bearing = 90° or 270°), label is closer
-	// When vertical (bearing = 0° or 180°), label is farther
-	// Also adjust for zoom level (larger bus = more distance, smaller bus = less distance)
-	const busLabelEl = document.querySelector(".bus-label") as HTMLElement;
-	if(busLabelEl) {
-		// Normalize bearing to 0-180 range for calculation
-		const normalizedBearing = Math.abs((bearing % 180));
+	// Determine color based on layer type
+	const labelColor = layerType.includes("LIVE") ? "#1967D3" : layerType.includes("INACTIVE") ? "#999999" : "#000000";
 
-		// Base distances at zoom 14 (scale = 1.0)
-		const baseDistHorizontal = 30; // Base distance when horizontal at 1x scale
-		const baseDistVertical = 10;  // Max distance when vertical at 1x scale
+	// Create or update 3D layer
+	if (bus3DLayers[modelLayerId]) {
+		// Update existing layer
+		bus3DLayers[modelLayerId].updatePosition([lon, lat], bearing);
+	} else {
+		// Create new 3D layer
+		const layer = new BusModel3DLayer(modelLayerId, [lon, lat], bearing);
+		bus3DLayers[modelLayerId] = layer;
 
-		// Calculate bearing interpolation factor (0 = horizontal, 1 = vertical)
-		const bearingFactor = Math.abs(Math.cos((normalizedBearing * Math.PI) / 180));
+		// Add layer to map
+		if (!map.getLayer(modelLayerId)) {
+			// eslint-disable-next-line @typescript-eslint/no-explicit-any
+			map.addLayer(layer as any);
+		}
+	}
 
-		// Calculate base distance for current bearing (before zoom adjustment)
-		const baseDistance = baseDistHorizontal + (baseDistVertical - baseDistHorizontal) * bearingFactor;
+	// Calculate optimal label anchor based on bearing
+	// We want the label to appear perpendicular to the bus direction
+	// Normalize bearing to 0-360
+	const normalizedBearing = ((bearing % 360) + 360) % 360;
 
-		// Adjust distance based on zoom scale
-		// At scale 0.5x (zoomed out), reduce distance by 50%
-		// At scale 2.0x (zoomed in), increase distance by 100%
-		const scaledDistance = (baseDistance * clampedScale) * 1.1;
-		busLabelEl.style.marginTop = `${scaledDistance}px`;
+	// Determine which side to place the label based on bearing direction
+	let textAnchor: string[];
+	if (normalizedBearing >= 315 || normalizedBearing < 45) {
+		// Bus facing North: label on right (East)
+		textAnchor = ['left', 'top-left', 'bottom-left'];
+	} else if (normalizedBearing >= 45 && normalizedBearing < 135) {
+		// Bus facing East: label on bottom (South)
+		textAnchor = ['top', 'top-left', 'top-right'];
+	} else if (normalizedBearing >= 135 && normalizedBearing < 225) {
+		// Bus facing South: label on left (West)
+		textAnchor = ['right', 'top-right', 'bottom-right'];
+	} else {
+		// Bus facing West: label on top (North)
+		textAnchor = ['bottom', 'bottom-left', 'bottom-right'];
+	}
+
+	// Create GeoJSON source for the label
+	const sourceData: GeoJSON.Feature = {
+		type: 'Feature',
+		geometry: {
+			type: 'Point',
+			coordinates: [lon, lat]
+		},
+		properties: {
+			label: label,
+			bearing: bearing
+		}
+	};
+
+	// Add or update source
+	const source = map.getSource(sourceId) as mapboxgl.GeoJSONSource;
+	if(source) {
+		source.setData(sourceData);
+	} else {
+		map.addSource(sourceId, {
+			type: 'geojson',
+			data: sourceData
+		});
+	}
+
+	// Add invisible clickable circle layer over the bus for click detection
+	if(!map.getLayer(clickLayerId)) {
+		map.addLayer({
+			id: clickLayerId,
+			type: 'circle',
+			source: sourceId,
+			paint: {
+				'circle-radius': [
+					'interpolate',
+					['linear'],
+					['zoom'],
+					10, 15,   // At zoom 10, radius 15px
+					14, 20,   // At zoom 14, radius 20px
+					18, 25    // At zoom 18, radius 25px
+				],
+				'circle-opacity': 0,  // Invisible
+				'circle-stroke-opacity': 0
+			}
+		});
+	}
+
+	// Add symbol layer for the route label with directional anchor
+	if(!map.getLayer(labelLayerId)) {
+		map.addLayer({
+			id: labelLayerId,
+			type: 'symbol',
+			source: sourceId,
+			layout: {
+				'text-field': ['get', 'label'],
+				'text-font': ['IBM Plex Sans Bold', 'Arial Unicode MS Bold'],
+				'text-size': [
+					'interpolate',
+					['linear'],
+					['zoom'],
+					10, 10,
+					14, 14,
+					18, 20
+				],
+				// Position label with directional anchor and radial offset
+				'text-radial-offset': 2.5,
+				'text-variable-anchor': textAnchor as any,
+				'text-justify': 'center',
+				'text-allow-overlap': true,
+				'text-ignore-placement': false
+			},
+			paint: {
+				'text-color': labelColor,
+				'text-halo-color': '#ffffff',
+				'text-halo-width': 2,
+				'text-halo-blur': 1,
+				'text-opacity': layerType.includes("INACTIVE") ? 0.6 : 1.0
+			}
+		});
+	} else {
+		// Update existing label layer with new anchor
+		map.setLayoutProperty(labelLayerId, 'text-variable-anchor', textAnchor);
+		map.setPaintProperty(labelLayerId, 'text-color', labelColor);
+		map.setPaintProperty(labelLayerId, 'text-opacity', layerType.includes("INACTIVE") ? 0.6 : 1.0);
+	}
+
+	// Handle tap/click events on both the invisible click layer and label layer
+	if(handleTap) {
+		// Click on the invisible circle over the bus
+		map.off('click', clickLayerId, handleTap);
+		map.on('click', clickLayerId, handleTap);
+
+		// Click on the label
+		map.off('click', labelLayerId, handleTap);
+		map.on('click', labelLayerId, handleTap);
 	}
 }
 export function updateMarker(
