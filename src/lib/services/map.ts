@@ -291,13 +291,26 @@ class BusModel3DLayer {
 		this.camera = new THREE.Camera();
 		this.scene = new THREE.Scene();
 
-		// Add basic lighting (no modifications to brightness)
-		const directionalLight = new THREE.DirectionalLight(0xffffff, 1.0);
-		directionalLight.position.set(0, 1, 0);
+		// create three.js lights to light the model correctly
+		const directionalLight = new THREE.DirectionalLight(0xffffff, 5); // top
+		directionalLight.position.set(0, 245, 0).normalize();
 		this.scene.add(directionalLight);
 
-		const ambientLight = new THREE.AmbientLight(0xffffff, 1.0);
-		this.scene.add(ambientLight);
+		const directionalLight2 = new THREE.DirectionalLight(0xffffff, 10); // front
+		directionalLight2.position.set(90, 0, 0).normalize();
+		this.scene.add(directionalLight2);
+		const directionalLight3 = new THREE.DirectionalLight(0xffffff, 10); // back
+		directionalLight3.position.set(0, 0, 90).normalize();
+		this.scene.add(directionalLight3);
+
+		const directionalLight4 = new THREE.DirectionalLight(0xffffff, 10); // left
+		directionalLight4.position.set(-90, 0, 0).normalize();
+		this.scene.add(directionalLight4);
+
+
+		const directionalLight5 = new THREE.DirectionalLight(0xffffff, 10); // right
+		directionalLight5.position.set(0, 0, -90).normalize();
+		this.scene.add(directionalLight5);
 
 		// Load the GLB model
 		const loader = new GLTFLoader();
@@ -337,8 +350,6 @@ class BusModel3DLayer {
 			canvas: mapInstance.getCanvas(),
 			context: _gl,
 			antialias: true,
-			alpha: true,
-			premultipliedAlpha: false
 		});
 		this.renderer.autoClear = false;
 	}
