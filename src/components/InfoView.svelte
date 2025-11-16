@@ -8,13 +8,11 @@
 	import type { LiveTrip } from '$lib/structures/LiveTrip';
 	import TripInfo from '$components/TripInfo.svelte';
 	import MetroStationInfo from '$components/MetroStationInfo.svelte';
-	import { updateBus3DConfig } from '$lib/services/map';
 
 	let dragStartY = 0;
 	let currentY = 0;
 	let heightRatio = 2 / 3;
 	let allStations: string[] = [];
-	let rotations: [number, number, number] = [0, 0, 0];
 
 	function handleResize() {
 		isMobile.set(window.innerWidth < 800);
