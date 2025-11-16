@@ -41,6 +41,7 @@ export function loadMap(mapContainer: HTMLElement | string): mapboxgl.Map {
 		map.getCanvas().getContext('webgl') as WebGLRenderingContext,
 		{
 			defaultLights: true,
+			realSunlight: true,
 			enableSelectingObjects: false,
 			enableDraggingObjects: false,
 			enableRotatingObjects: false,
@@ -378,23 +379,6 @@ function loadBusModel(modelId: string, coords: [number, number], bearing: number
 	};
 
 	tb.loadObj(options, (model: IThreeboxObject) => {
-		// Access the underlying Three.js object
-		const threeObj = (model as any).object;
-
-		if (threeObj) {
-			// Calculate bounding box to find the center
-			// const box = new THREE.Box3().setFromObject(threeObj);
-			// const center = new THREE.Vector3();
-			// box.getCenter(center);
-			// const size = new THREE.Vector3();
-			// box.getSize(size);
-
-			// console.log('[Model Debug] Bounding box center:', center);
-			// console.log('[Model Debug] Bounding box size:', size);
-
-			// Center the model by offsetting the object position
-			// threeObj.position.set(-center.x, -center.y, -center.z);
-		}
 
 		// Store model globally
 		busModels[modelId] = model;
@@ -409,38 +393,31 @@ function loadBusModel(modelId: string, coords: [number, number], bearing: number
 	});
 }
 
-// Update bus model lighting intensity
+// Update bus model lighting intensity using Threebox lights
 // isActive: true for BUS (higher intensity), false for BUS_INACTIVE (lower intensity)
 function updateBusModelLighting(modelId: string, isActive: boolean) {
-	const model = busModels[modelId];
-	if (!model) return;
+	const tb = (window as any).tb;
+	if (!tb || !tb.lights) return;
 
-	// Access the underlying Three.js object
-	// Threebox models wrap Three.js objects, accessible via model property
-	const threeObj = (model as any).object;
-	if (!threeObj) return;
+	// Adjust the global Threebox lights intensity
+	// BUS_INACTIVE: lower ambient light, BUS: higher ambient light
+	const ambientIntensity = isActive ? 1.5 : 0.8;
+	const directionalIntensity = isActive ? 1.2 : 0.6;
 
-	// Traverse the Three.js scene graph to find all meshes and update their materials
-	threeObj.traverse((child: any) => {
-		if (child.isMesh && child.material) {
-			// Adjust material emissive intensity to simulate lighting difference
-			// BUS_INACTIVE: lower emissive (0.2), BUS: higher emissive (0.8)
-			const emissiveIntensity = isActive ? 0.8 : 0.2;
+	// Threebox has ambient and directional lights
+	if (tb.lights.ambientLight) {
+		tb.lights.ambientLight.intensity = ambientIntensity;
+	}
 
-			if (child.material.emissive) {
-				// For materials with emissive property (MeshStandardMaterial, MeshPhongMaterial)
-				child.material.emissiveIntensity = emissiveIntensity;
-			}
+	if (tb.lights.dirLightBack) {
+		tb.lights.dirLightBack.intensity = directionalIntensity;
+	}
 
-			// Also adjust roughness/metalness for additional brightness effect
-			if (child.material.roughness !== undefined) {
-				child.material.roughness = isActive ? 0.3 : 0.7; // Lower roughness = more reflective = brighter
-			}
+	if (tb.lights.dirLightFront) {
+		tb.lights.dirLightFront.intensity = directionalIntensity;
+	}
 
-			// Mark material for update
-			child.material.needsUpdate = true;
-		}
-	});
+	console.log(`[Lighting] Set to ${isActive ? 'active' : 'inactive'} - ambient: ${ambientIntensity}, directional: ${directionalIntensity}`);
 }
 
 function calculateBusAltitude(): number {
@@ -712,7 +689,6 @@ export function updateMarker(
 		if(markerExists) {
 			markers[layerType].remove();
 			delete markers[layerType];
-			// console.log('REMOVED MARKER ', layerType);
 		}
 
 		if(layerSymbolX) map.removeLayer(symbolXID);
