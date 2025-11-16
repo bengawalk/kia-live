@@ -15,8 +15,6 @@ import { initMetroMap, loadMetroLines, unloadMetroMap } from '$lib/services/metr
 import { Threebox } from 'threebox-plugin';
 import type { IThreeboxObject } from 'threebox-plugin';
 import 'threebox-plugin/dist/threebox.css';
-import * as THREE from 'three';
-import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 
 let map: mapboxgl.Map | undefined;
 
@@ -299,17 +297,6 @@ function normalizeDegrees(degrees: number): number {
 // Global storage for Threebox bus models (following threebox example pattern)
 const busModels: Record<string, IThreeboxObject> = {};
 
-// Update all bus model scales on zoom change
-function updateAllBusScales() {
-	const currentScale = calculateBusScale();
-	Object.values(busModels).forEach(model => {
-		if (model && model.setScale) {
-			model.setScale(currentScale);
-			// console.log(`setting model scale ${model} ${currentScale}`);
-		}
-	});
-}
-
 // Create Threebox custom layer (following threebox-plugin documentation pattern)
 // This is created ONCE and models are loaded inside onAdd
 const busLayer = {
@@ -492,7 +479,7 @@ function updateBusModelPosition(modelId: string, coords: [number, number], beari
 
 	// Update rotation using Threebox API (setRotation uses DEGREES)
 	if (model.setRotation) {
-		console.log(`current rotations ${BUS_3D_CONFIG.rotationX}, ${BUS_3D_CONFIG.rotationY}, ${BUS_3D_CONFIG.rotationZ}`);
+		// console.log(`current rotations ${BUS_3D_CONFIG.rotationX}, ${BUS_3D_CONFIG.rotationY}, ${BUS_3D_CONFIG.rotationZ}`);
 		model.setRotation({
 			x: BUS_3D_CONFIG.rotationX + BUS_3D_CONFIG.tiltXDegrees,
 			y: BUS_3D_CONFIG.rotationY + -bearing,
@@ -519,66 +506,6 @@ function removeBusModel(modelId: string) {
 	tb.remove(model);
 	delete busModels[modelId];
 	console.log('[Threebox] Bus model removed:', modelId);
-}
-
-// DEBUG: Add orientation guide to visualize bearing
-function addDebugOrientationGuide(coords: [number, number], bearing: number) {
-	if (!map) return;
-
-	// Remove old debug layers
-	if (map.getLayer('debug-orientation')) map.removeLayer('debug-orientation');
-	if (map.getSource('debug-orientation')) map.removeSource('debug-orientation');
-
-	// Calculate offset for arrows (0.0001 degrees ≈ 11 meters)
-	const offset = 0.0003;
-
-	// Create arrow points for North, East, South, West
-	const arrows = [
-		{ label: 'N', coords: [coords[0], coords[1] + offset], color: '#FF0000' }, // North (red)
-		{ label: 'E', coords: [coords[0] + offset, coords[1]], color: '#00FF00' }, // East (green)
-		{ label: 'S', coords: [coords[0], coords[1] - offset], color: '#0000FF' }, // South (blue)
-		{ label: 'W', coords: [coords[0] - offset, coords[1]], color: '#FFFF00' }, // West (yellow)
-	];
-
-	const features = arrows.map(arrow => ({
-		type: 'Feature' as const,
-		geometry: {
-			type: 'Point' as const,
-			coordinates: arrow.coords
-		},
-		properties: {
-			label: arrow.label,
-			color: arrow.color,
-			bearing: bearing
-		}
-	}));
-
-	map.addSource('debug-orientation', {
-		type: 'geojson',
-		data: {
-			type: 'FeatureCollection',
-			features: features
-		}
-	});
-
-	map.addLayer({
-		id: 'debug-orientation',
-		type: 'symbol',
-		source: 'debug-orientation',
-		layout: {
-			'text-field': ['get', 'label'],
-			'text-font': ['IBM Plex Sans Bold', 'Arial Unicode MS Bold'],
-			'text-size': 20,
-			'text-allow-overlap': true
-		},
-		paint: {
-			'text-color': ['get', 'color'],
-			'text-halo-color': '#000000',
-			'text-halo-width': 2
-		}
-	});
-
-	console.log(`[DEBUG] Orientation guide: N(red) E(green) S(blue) W(yellow) | Bearing: ${bearing}°`);
 }
 
 // Marker storage

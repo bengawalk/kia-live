@@ -21,6 +21,9 @@ export default defineConfig({
 			},
 			registerType: 'autoUpdate',
 			includeAssets: ['favicon.ico', 'apple-touch-icon.png', 'icon-192x192.png', 'icon-512x512.png'],
+			workbox: {
+				maximumFileSizeToCacheInBytes: 5 * 1024 * 1024 // 5 MB limit for large JS bundles
+			},
 			manifest: {
 				name: 'KIA-Live',
 				short_name: 'KIA Live',
