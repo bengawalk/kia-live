@@ -247,6 +247,11 @@ export function updateLayer(
 	}
 	map.moveLayer(layerType);
 	map.moveLayer(symbolID);
+
+	// Ensure 3D bus layer stays on top of all 2D layers
+	if (map.getLayer('3d-buses')) {
+		map.moveLayer('3d-buses');
+	}
 }
 
 
@@ -508,6 +513,7 @@ export function updateBusMarker(
 	// Ensure the Threebox layer exists (add once, following threebox pattern)
 	if (!map.getLayer('3d-buses')) {
 		map.addLayer(busLayer as any);
+		map.moveLayer('3d-buses'); // Move to top to ensure it renders above 2D layers
 		console.log('[Threebox] Added 3d-buses layer to map');
 	}
 
