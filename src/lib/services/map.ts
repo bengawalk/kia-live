@@ -12,10 +12,14 @@ import { pollUserLocation } from '$lib/services/location';
 import { handleTap, handleTouchEnd, handleTouchStart } from '$lib/services/discovery';
 import { browser } from '$app/environment';
 import { initMetroMap, loadMetroLines, unloadMetroMap } from '$lib/services/metroMap';
-import type * as THREE_NS from 'three';
-import type { GLTF } from 'three/examples/jsm/loaders/GLTFLoader.js';
+import { Threebox } from 'threebox-plugin';
+import type { IThreeboxObject } from 'threebox-plugin';
+import 'threebox-plugin/dist/threebox.css';
+import * as THREE from 'three';
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 
 let map: mapboxgl.Map | undefined;
+
 export type NavMode = 'walking' | 'driving-traffic' | 'cycling' | 'driving'
 export function loadMap(mapContainer: HTMLElement | string): mapboxgl.Map {
 	mapboxgl.accessToken = import.meta.env.VITE_MAPBOX_ACCESS_TOKEN;
@@ -27,8 +31,25 @@ export function loadMap(mapContainer: HTMLElement | string): mapboxgl.Map {
 		dragRotate: false, // Disable rotation
 		attributionControl: false,
 		logoPosition: "top-right",
+		antialias: true // Enable antialiasing for 3D rendering
 	});
 	map.addControl(new mapboxgl.AttributionControl(), 'top-left');
+
+	// Initialize Threebox immediately after map creation (following threebox-plugin documentation)
+	// CRITICAL: Threebox library expects 'tb' to be globally accessible (window.tb)
+	// The library's internal methods reference 'tb' directly (see AnimationManager.js line 254)
+	(window as any).tb = new Threebox(
+		map,
+		map.getCanvas().getContext('webgl') as WebGLRenderingContext,
+		{
+			defaultLights: true,
+			enableSelectingObjects: false,
+			enableDraggingObjects: false,
+			enableRotatingObjects: false,
+			enableTooltips: false
+		}
+	);
+	console.log('[Threebox] Initialized on map creation as window.tb');
 
 	map.loadImage(mapLineLabelImage, (error, image) => {
 		if(error) throw error;
@@ -56,6 +77,9 @@ export function loadMap(mapContainer: HTMLElement | string): mapboxgl.Map {
 			// map?.on('mouseup', handleTap);
 			map?.touchZoomRotate.disableRotation();
 
+			// // Add zoom event listener to update bus model scales
+			// map?.on('zoom', updateAllBusScales);
+
 			// Initialize and load metro lines and stops
 			if (map) {
 				initMetroMap(map);
@@ -63,6 +87,8 @@ export function loadMap(mapContainer: HTMLElement | string): mapboxgl.Map {
 			}
 		}
 	);
+
+	// Note: Threebox layers (bus models) will be added dynamically when updateBusMarker is called
 	return map;
 }
 
@@ -225,230 +251,338 @@ export function updateLayer(
 }
 
 
-// 3D Bus Model Management using THREE.js
-// Custom 3D Layer for bus rendering
-class BusModel3DLayer {
-	id: string;
-	type = 'custom' as const;
-	renderingMode = '3d' as const;
-	private camera: THREE_NS.Camera | null = null;
-	private scene: THREE_NS.Scene | null = null;
-	private renderer: THREE_NS.WebGLRenderer | null = null;
-	private busModel: THREE_NS.Object3D | null = null;
-	public location: [number, number];
-	public bearing: number;
+// 3D Bus Model Management using Threebox
+// Following threebox-plugin pattern: models stored globally, accessible throughout code
 
-	// ========== ADJUSTABLE PARAMETERS ==========
-	// Tweak these values to fix orientation and scaling
-	private config = {
-		// Scale - linear interpolation matching text-size behavior
-		// Text goes from 10px@zoom10 -> 14px@zoom14 -> 20px@zoom18
-		// So we use similar linear interpolation for the bus
-		scaleAtMinZoom: 0.0008,   // Scale at zoom 10 (smaller when far)
-		scaleAtMidZoom: 0.0001,   // Scale at zoom 14 (medium)
-		scaleAtMaxZoom: 0.00001,   // Scale at zoom 18 (smaller when close, maintains apparent size)
-		minZoom: 10,               // Minimum zoom
-		midZoom: 14,               // Middle reference zoom
-		maxZoom: 18,               // Maximum zoom
+// ========== ADJUSTABLE PARAMETERS ==========
+// Configuration for bus 3D model appearance
+const BUS_3D_CONFIG = {
+	// Scale - linear interpolation matching text-size behavior
+	// Text goes from 10px@zoom10 -> 14px@zoom14 -> 20px@zoom18
+	// Scale proportionally: 10→14→20 gives ratio 1.0→1.4→2.0
+	scaleAtMinZoom: 60,     // Scale at zoom 10 (smaller when far)
+	scaleAtMidZoom: 15,     // Scale at zoom 14 (medium) - matches text size
+	scaleAtMaxZoom: 0.5,     // Scale at zoom 18 (larger when close) - matches text size
+	minZoom: 10,            // Minimum zoom
+	midZoom: 12,            // Middle reference zoom
+	maxZoom: 20,            // Maximum zoom
 
-		// Rotation (in degrees, will be converted to radians)
-		rotationX: 90,  // Pitch: -90 = lay flat, 0 = standing up, 90 = upside down
-		rotationY: 0,    // Yaw: additional rotation around vertical axis
-		rotationZ: 180,    // Roll: tilt left/right
+	// Rotation (in degrees) - will be converted to radians
+	rotationX: 90,          // Pitch: lay flat on map
+	rotationY: 0,         // Yaw: additional rotation (added to bearing)
+	rotationZ: 0,           // Roll: flip orientation
 
-		// Bearing adjustment
-		bearingOffset: 0,    // Add offset to bearing in degrees (0, 90, 180, 270)
-		bearingMultiplier: 1, // 1 or -1 to flip bearing direction
+	// Height offset - raise slightly above ground to prevent z-fighting with line layers
+	altitude: 3,            // Height above ground in meters (prevents lines showing through)
 
-		// Tilt for 3D effect
-		tiltZDegrees: 0, // Forward/backward tilt in degrees (0 = no tilt)
-		tiltXDegrees: 0,
+	// Tilt for 3D effect (in degrees) - will be converted to radians
+	tiltXDegrees: 0,        // Left/right tilt
+	tiltZDegrees: 0,        // Forward/backward tilt
+};
+// ==========================================
+export function updateBus3DConfig(x: number, y: number, z: number) {
+	BUS_3D_CONFIG.rotationX = Number(x);
+	BUS_3D_CONFIG.rotationY = Number(y);
+	BUS_3D_CONFIG.rotationZ = Number(z);
+}
+// Helper function to convert degrees to radians
+function degreesToRadians(degrees: number): number {
+	return normalizeDegrees(degrees) * (Math.PI / 180);
+}
 
-		// Position offset relative to the coordinate point
-		offsetX: 0,  // Longitude offset in mercator units (usually 0)
-		offsetY: 0,  // Latitude offset in mercator units (usually 0)
-		offsetZ: 2,  // Height offset in mercator units (0 = ground level)
+// Helper function to normalize degrees to 0-360 range
+function normalizeDegrees(degrees: number): number {
+	const normalized = degrees % 360;
+	return normalized < 0 ? normalized + 360 : normalized;
+}
 
-		// Scale flip (useful if model is mirrored)
-		scaleX: 1,   // 1 or -1
-		scaleY: -1,  // 1 or -1 (Mapbox uses -1 for Y axis)
-		scaleZ: 1    // 1 or -1
+// Global storage for Threebox bus models (following threebox example pattern)
+const busModels: Record<string, IThreeboxObject> = {};
+
+// Update all bus model scales on zoom change
+function updateAllBusScales() {
+	const currentScale = calculateBusScale();
+	Object.values(busModels).forEach(model => {
+		if (model && model.setScale) {
+			model.setScale(currentScale);
+			// console.log(`setting model scale ${model} ${currentScale}`);
+		}
+	});
+}
+
+// Create Threebox custom layer (following threebox-plugin documentation pattern)
+// This is created ONCE and models are loaded inside onAdd
+const busLayer = {
+	id: '3d-buses',
+	type: 'custom' as const,
+	renderingMode: '3d' as const,
+
+	onAdd: function(_map: mapboxgl.Map, _gl: WebGLRenderingContext | WebGL2RenderingContext) {
+		console.log('[Threebox] Bus layer onAdd called');
+		// Layer is added, models will be loaded on demand via loadBusModel()
+	},
+
+	render: function(_gl: WebGLRenderingContext, _matrix: number[]) {
+		// Update Threebox on each render frame (following threebox pattern)
+		const tb = (window as any).tb;
+		if (tb) {
+			tb.update();
+		}
+	}
+};
+
+// Calculate zoom-based scale matching text-size interpolation
+function calculateBusScale(): number {
+	if (!map) return BUS_3D_CONFIG.scaleAtMidZoom;
+
+	const zoom = map.getZoom();
+	const clampedZoom = Math.max(
+		BUS_3D_CONFIG.minZoom,
+		Math.min(BUS_3D_CONFIG.maxZoom, zoom)
+	);
+
+	let modelScale: number;
+	if (clampedZoom <= BUS_3D_CONFIG.midZoom) {
+		// Interpolate between minZoom and midZoom
+		const t = (clampedZoom - BUS_3D_CONFIG.minZoom) / (BUS_3D_CONFIG.midZoom - BUS_3D_CONFIG.minZoom);
+		modelScale = BUS_3D_CONFIG.scaleAtMinZoom + t * (BUS_3D_CONFIG.scaleAtMidZoom - BUS_3D_CONFIG.scaleAtMinZoom);
+	} else {
+		// Interpolate between midZoom and maxZoom
+		const t = (clampedZoom - BUS_3D_CONFIG.midZoom) / (BUS_3D_CONFIG.maxZoom - BUS_3D_CONFIG.midZoom);
+		modelScale = BUS_3D_CONFIG.scaleAtMidZoom + t * (BUS_3D_CONFIG.scaleAtMaxZoom - BUS_3D_CONFIG.scaleAtMidZoom);
+	}
+
+	return modelScale;
+}
+
+// Load a bus model for a specific bus (following threebox pattern)
+// isActive: true for BUS (higher light intensity), false for BUS_INACTIVE (lower intensity)
+function loadBusModel(modelId: string, coords: [number, number], bearing: number, isActive: boolean = true) {
+	const tb = (window as any).tb;
+	if (!tb) {
+		console.warn('[loadBusModel] Threebox not initialized');
+		return;
+	}
+
+	// If model already exists, just update position and lighting
+	if (busModels[modelId]) {
+		updateBusModelPosition(modelId, coords, bearing);
+		updateBusModelLighting(modelId, isActive);
+		return;
+	}
+
+	// Calculate initial scale based on current zoom
+	const initialScale = calculateBusScale();
+
+	// Load using Threebox's loadObj method with URL
+	const options = {
+		obj: BUS_GLB_URL,
+		type: 'gltf',
+		scale: initialScale,
+		units: 'meters',
+		rotation: {
+			x: 0,
+			y: 0, // + bearing,
+			z: 0,
+		},
+		anchor: 'auto',
+		adjustment: {x: 0, y: -0.5, z: 0.5},
+		bbox: true
 	};
-	// ==========================================
 
-	constructor(id: string, location: [number, number], bearing: number) {
-		this.id = id;
-		this.location = location;
-		this.bearing = bearing;
-	}
+	tb.loadObj(options, (model: IThreeboxObject) => {
+		// Access the underlying Three.js object
+		const threeObj = (model as any).object;
 
-	async onAdd(mapInstance: mapboxgl.Map, _gl: WebGLRenderingContext) {
-		// Use dynamic import for THREE.js to avoid SSR issues
-		const THREE = await import('three');
-		const { GLTFLoader } = await import('three/examples/jsm/loaders/GLTFLoader.js');
+		if (threeObj) {
+			// Calculate bounding box to find the center
+			// const box = new THREE.Box3().setFromObject(threeObj);
+			// const center = new THREE.Vector3();
+			// box.getCenter(center);
+			// const size = new THREE.Vector3();
+			// box.getSize(size);
 
-		// Create THREE.js scene
-		this.camera = new THREE.Camera();
-		this.scene = new THREE.Scene();
+			// console.log('[Model Debug] Bounding box center:', center);
+			// console.log('[Model Debug] Bounding box size:', size);
 
-		// create three.js lights to light the model correctly
-		const directionalLight = new THREE.DirectionalLight(0xffffff, 5); // top
-		directionalLight.position.set(0, 245, 0).normalize();
-		this.scene.add(directionalLight);
-
-		const directionalLight2 = new THREE.DirectionalLight(0xffffff, 10); // front
-		directionalLight2.position.set(90, 0, 0).normalize();
-		this.scene.add(directionalLight2);
-		const directionalLight3 = new THREE.DirectionalLight(0xffffff, 10); // back
-		directionalLight3.position.set(0, 0, 90).normalize();
-		this.scene.add(directionalLight3);
-
-		const directionalLight4 = new THREE.DirectionalLight(0xffffff, 10); // left
-		directionalLight4.position.set(-90, 0, 0).normalize();
-		this.scene.add(directionalLight4);
-
-
-		const directionalLight5 = new THREE.DirectionalLight(0xffffff, 10); // right
-		directionalLight5.position.set(0, 0, -90).normalize();
-		this.scene.add(directionalLight5);
-
-		// Load the GLB model
-		const loader = new GLTFLoader();
-		await new Promise<GLTF>((resolve, reject) => {
-			loader.load(
-				BUS_GLB_URL,
-				(gltf: GLTF) => {
-					this.busModel = gltf.scene;
-
-					// Calculate bounding box to find model's center
-					const box = new THREE.Box3().setFromObject(this.busModel);
-					const center = new THREE.Vector3();
-					box.getCenter(center);
-
-					// Recenter the model by offsetting all children
-					// This moves the pivot point to the geometric center
-					this.busModel.position.set(-center.x, -center.y, -center.z);
-
-					// Wrap in a group so rotations happen around the new centered origin
-					const centeredGroup = new THREE.Group();
-					centeredGroup.add(this.busModel);
-
-					// Replace busModel reference with the centered group
-					this.busModel = centeredGroup;
-
-					// No material modifications - use textures as-is
-					this.scene!.add(this.busModel);
-					resolve(gltf);
-				},
-				undefined,
-				reject
-			);
-		});
-
-		// Create renderer from map's gl context
-		this.renderer = new THREE.WebGLRenderer({
-			canvas: mapInstance.getCanvas(),
-			context: _gl,
-			antialias: true,
-		});
-		this.renderer.autoClear = false;
-	}
-
-	async render(_gl: WebGLRenderingContext, matrix: number[]) {
-		if (!this.busModel || !map || !this.camera || !this.renderer) return;
-
-		const THREE = await import('three');
-
-		// Get map's transform for positioning with offset
-		const mercatorCoordinate = mapboxgl.MercatorCoordinate.fromLngLat(
-			this.location,
-			this.config.offsetZ
-		);
-
-		const zoom = map.getZoom();
-
-		// Calculate linear interpolation matching text-size behavior
-		// Text: zoom 10->10px, zoom 14->14px, zoom 18->20px
-		// Bus: zoom 10->scaleAtMinZoom, zoom 14->scaleAtMidZoom, zoom 18->scaleAtMaxZoom
-		const clampedZoom = Math.max(
-			this.config.minZoom,
-			Math.min(this.config.maxZoom, zoom)
-		);
-
-		let modelScale: number;
-		if (clampedZoom <= this.config.midZoom) {
-			// Interpolate between minZoom and midZoom
-			const t = (clampedZoom - this.config.minZoom) / (this.config.midZoom - this.config.minZoom);
-			modelScale = this.config.scaleAtMinZoom + t * (this.config.scaleAtMidZoom - this.config.scaleAtMinZoom);
-		} else {
-			// Interpolate between midZoom and maxZoom
-			const t = (clampedZoom - this.config.midZoom) / (this.config.maxZoom - this.config.midZoom);
-			modelScale = this.config.scaleAtMidZoom + t * (this.config.scaleAtMaxZoom - this.config.scaleAtMidZoom);
+			// Center the model by offsetting the object position
+			// threeObj.position.set(-center.x, -center.y, -center.z);
 		}
 
-		// Calculate bearing with config adjustments
-		const adjustedBearing = (this.bearing * this.config.bearingMultiplier) + this.config.bearingOffset;
-		const bearingRad = (adjustedBearing * Math.PI) / 180;
+		// Store model globally
+		busModels[modelId] = model;
+		model.setCoords([coords[0], coords[1], BUS_3D_CONFIG.altitude]);
 
-		// Convert config rotation degrees to radians
-		const rotXRad = (this.config.rotationX * Math.PI) / 180;
-		const rotYRad = (this.config.rotationY * Math.PI) / 180;
-		const rotZRad = (this.config.rotationZ * Math.PI) / 180;
-		const tiltXRad = (this.config.tiltXDegrees * Math.PI) / 180;
-		const tiltZRad = (this.config.tiltZDegrees * Math.PI) / 180;
+		// Set initial lighting based on active state
+		updateBusModelLighting(modelId, isActive);
 
-		// Apply transformations directly to the model
-		// This ensures rotations are visible in all browsers
-		this.busModel.rotation.set(0, 0, 0);
-		this.busModel.position.set(0, 0, 0);
-		this.busModel.scale.set(1, 1, 1);
+		tb.add(model);
 
-		// Apply rotations in the correct order
-		// THREE.js uses Euler angles: rotationX (pitch), rotationY (yaw), rotationZ (roll)
-		this.busModel.rotation.order = 'XYZ';
-		this.busModel.rotation.x = rotXRad + tiltXRad;  // Pitch + forward/backward tilt
-		this.busModel.rotation.y = rotYRad + bearingRad;              // Yaw
-		this.busModel.rotation.z = rotZRad + tiltZRad;  // Roll + bearing + rotational tilt
+		console.log('[Model Debug] Model loaded, centered, and added successfully');
+	});
+}
 
-		// Apply scale
-		this.busModel.scale.set(
-			modelScale * this.config.scaleX,
-			modelScale * this.config.scaleY,
-			modelScale * this.config.scaleZ
-		);
+// Update bus model lighting intensity
+// isActive: true for BUS (higher intensity), false for BUS_INACTIVE (lower intensity)
+function updateBusModelLighting(modelId: string, isActive: boolean) {
+	const model = busModels[modelId];
+	if (!model) return;
 
-		// Create transformation matrix for positioning
-		const modelMatrix = new THREE.Matrix4()
-			.makeTranslation(
-				mercatorCoordinate.x + this.config.offsetX,
-				mercatorCoordinate.y + this.config.offsetY,
-				mercatorCoordinate.z
-			);
+	// Access the underlying Three.js object
+	// Threebox models wrap Three.js objects, accessible via model property
+	const threeObj = (model as any).object;
+	if (!threeObj) return;
 
-		// Set camera projection matrix from Mapbox
-		this.camera.projectionMatrix = new THREE.Matrix4()
-			.fromArray(matrix)
-			.multiply(modelMatrix);
+	// Traverse the Three.js scene graph to find all meshes and update their materials
+	threeObj.traverse((child: any) => {
+		if (child.isMesh && child.material) {
+			// Adjust material emissive intensity to simulate lighting difference
+			// BUS_INACTIVE: lower emissive (0.2), BUS: higher emissive (0.8)
+			const emissiveIntensity = isActive ? 0.8 : 0.2;
 
-		// Render the scene
-		this.renderer.resetState();
-		this.renderer.render(this.scene!, this.camera);
-		map.triggerRepaint();
+			if (child.material.emissive) {
+				// For materials with emissive property (MeshStandardMaterial, MeshPhongMaterial)
+				child.material.emissiveIntensity = emissiveIntensity;
+			}
+
+			// Also adjust roughness/metalness for additional brightness effect
+			if (child.material.roughness !== undefined) {
+				child.material.roughness = isActive ? 0.3 : 0.7; // Lower roughness = more reflective = brighter
+			}
+
+			// Mark material for update
+			child.material.needsUpdate = true;
+		}
+	});
+}
+
+function calculateBusAltitude(): number {
+	if (!map) return BUS_3D_CONFIG.scaleAtMidZoom;
+
+	const zoom = map.getZoom();
+	const clampedZoom = Math.max(
+		BUS_3D_CONFIG.minZoom,
+		Math.min(BUS_3D_CONFIG.maxZoom, zoom)
+	);
+
+	let modelScale: number;
+	if (clampedZoom <= BUS_3D_CONFIG.midZoom) {
+		// Interpolate between minZoom and midZoom
+		const t = (clampedZoom - BUS_3D_CONFIG.minZoom) / (BUS_3D_CONFIG.midZoom - BUS_3D_CONFIG.minZoom);
+		modelScale = BUS_3D_CONFIG.scaleAtMinZoom + t * (BUS_3D_CONFIG.scaleAtMidZoom - BUS_3D_CONFIG.scaleAtMinZoom);
+	} else {
+		// Interpolate between midZoom and maxZoom
+		const t = (clampedZoom - BUS_3D_CONFIG.midZoom) / (BUS_3D_CONFIG.maxZoom - BUS_3D_CONFIG.midZoom);
+		modelScale = BUS_3D_CONFIG.scaleAtMidZoom + t * (BUS_3D_CONFIG.scaleAtMaxZoom - BUS_3D_CONFIG.scaleAtMidZoom);
+	}
+	return modelScale * 6;
+}
+
+// Update bus model position (following threebox pattern)
+function updateBusModelPosition(modelId: string, coords: [number, number], bearing: number) {
+	const tb = (window as any).tb;
+	const model = busModels[modelId];
+	if (!model || !tb) return;
+
+	// Calculate current scale based on zoom
+	const currentScale = calculateBusScale();
+
+	// Update position using setCoords (following threebox pattern)
+	model.setCoords([coords[0], coords[1], calculateBusAltitude()]);
+
+	// Update rotation using Threebox API (setRotation uses DEGREES)
+	if (model.setRotation) {
+		console.log(`current rotations ${BUS_3D_CONFIG.rotationX}, ${BUS_3D_CONFIG.rotationY}, ${BUS_3D_CONFIG.rotationZ}`);
+		model.setRotation({
+			x: BUS_3D_CONFIG.rotationX + BUS_3D_CONFIG.tiltXDegrees,
+			y: BUS_3D_CONFIG.rotationY + -bearing,
+			z: BUS_3D_CONFIG.rotationZ,
+		});
+		// console.log(`Rotation - bearing: ${bearing}°, Y-axis: ${BUS_3D_CONFIG.rotationY + bearing}°`);
 	}
 
-	updatePosition(location: [number, number], bearing: number) {
-		this.location = location;
-		this.bearing = bearing;
-		// Trigger map repaint to apply new position and bearing-based offsets
-		if (map) {
-			map.triggerRepaint();
-		}
+	// Update scale using Threebox API or direct property
+	if (model.scale) {
+		model.scale.x = currentScale;
+		model.scale.y = currentScale;
+		model.scale.z = currentScale;
+		// console.log(`Setting scale ${currentScale}`);
 	}
 }
 
-// Update Marker function (keeping for non-bus markers)
-const markers: Record<keyof typeof MAP_STYLES, mapboxgl.Marker> = {}; // Simulated marker layer
-const bus3DLayers: Record<string, BusModel3DLayer> = {}; // 3D model layers
+// Remove bus model (following threebox pattern)
+function removeBusModel(modelId: string) {
+	const tb = (window as any).tb;
+	const model = busModels[modelId];
+	if (!model || !tb) return;
+
+	tb.remove(model);
+	delete busModels[modelId];
+	console.log('[Threebox] Bus model removed:', modelId);
+}
+
+// DEBUG: Add orientation guide to visualize bearing
+function addDebugOrientationGuide(coords: [number, number], bearing: number) {
+	if (!map) return;
+
+	// Remove old debug layers
+	if (map.getLayer('debug-orientation')) map.removeLayer('debug-orientation');
+	if (map.getSource('debug-orientation')) map.removeSource('debug-orientation');
+
+	// Calculate offset for arrows (0.0001 degrees ≈ 11 meters)
+	const offset = 0.0003;
+
+	// Create arrow points for North, East, South, West
+	const arrows = [
+		{ label: 'N', coords: [coords[0], coords[1] + offset], color: '#FF0000' }, // North (red)
+		{ label: 'E', coords: [coords[0] + offset, coords[1]], color: '#00FF00' }, // East (green)
+		{ label: 'S', coords: [coords[0], coords[1] - offset], color: '#0000FF' }, // South (blue)
+		{ label: 'W', coords: [coords[0] - offset, coords[1]], color: '#FFFF00' }, // West (yellow)
+	];
+
+	const features = arrows.map(arrow => ({
+		type: 'Feature' as const,
+		geometry: {
+			type: 'Point' as const,
+			coordinates: arrow.coords
+		},
+		properties: {
+			label: arrow.label,
+			color: arrow.color,
+			bearing: bearing
+		}
+	}));
+
+	map.addSource('debug-orientation', {
+		type: 'geojson',
+		data: {
+			type: 'FeatureCollection',
+			features: features
+		}
+	});
+
+	map.addLayer({
+		id: 'debug-orientation',
+		type: 'symbol',
+		source: 'debug-orientation',
+		layout: {
+			'text-field': ['get', 'label'],
+			'text-font': ['IBM Plex Sans Bold', 'Arial Unicode MS Bold'],
+			'text-size': 20,
+			'text-allow-overlap': true
+		},
+		paint: {
+			'text-color': ['get', 'color'],
+			'text-halo-color': '#000000',
+			'text-halo-width': 2
+		}
+	});
+
+	console.log(`[DEBUG] Orientation guide: N(red) E(green) S(blue) W(yellow) | Bearing: ${bearing}°`);
+}
+
+// Marker storage
+const markers: Record<keyof typeof MAP_STYLES, mapboxgl.Marker> = {};
 
 export function updateBusMarker(
 	layerType: keyof typeof MAP_STYLES,
@@ -460,55 +594,54 @@ export function updateBusMarker(
 ): void {
 	if(!map || !layerType.includes("BUS")) return;
 
-	const modelLayerId = `bus_model_${layerType}`;
+	// Use a shared model ID for all bus states (BUS, BUS_INACTIVE, BUS_LIVE, etc.)
+	// This ensures we reuse the same model and only update lighting/labels
+	const modelId = 'SHARED_BUS_MODEL';
 	const labelLayerId = `bus_label_${layerType}`;
 	const clickLayerId = `bus_click_${layerType}`;
 	const sourceId = `bus_source_${layerType}`;
 
+	// Ensure the Threebox layer exists (add once, following threebox pattern)
+	if (!map.getLayer('3d-buses')) {
+		map.addLayer(busLayer as any);
+		console.log('[Threebox] Added 3d-buses layer to map');
+	}
+
 	// Clear the bus if no coordinates
 	if(!lat || !lon) {
-		if(map.getLayer(modelLayerId)) map.removeLayer(modelLayerId);
+		removeBusModel(modelId);
 		if(map.getLayer(labelLayerId)) map.removeLayer(labelLayerId);
 		if(map.getLayer(clickLayerId)) map.removeLayer(clickLayerId);
 		if(map.getSource(sourceId)) map.removeSource(sourceId);
-		delete bus3DLayers[modelLayerId];
 		return;
 	}
 
-	// Clear other bus layers
+	// Clear labels and sources for other bus layers, but keep the shared model
 	const clearStyles = Object.entries(MAP_STYLES).filter(([key]) =>
 		key.includes('BUS') && !key.includes('STOP') && key !== layerType
 	);
 	for(const [key] of clearStyles) {
-		const oldModelId = `bus_model_${key}`;
+		// Only remove labels/sources, NOT the model itself
 		const oldLabelId = `bus_label_${key}`;
 		const oldClickId = `bus_click_${key}`;
 		const oldSourceId = `bus_source_${key}`;
-		if(map.getLayer(oldModelId)) map.removeLayer(oldModelId);
 		if(map.getLayer(oldLabelId)) map.removeLayer(oldLabelId);
 		if(map.getLayer(oldClickId)) map.removeLayer(oldClickId);
 		if(map.getSource(oldSourceId)) map.removeSource(oldSourceId);
-		delete bus3DLayers[oldModelId];
 	}
 
-	// Determine color based on layer type
+	// Determine color and active state based on layer type
 	const labelColor = layerType.includes("LIVE") ? "#1967D3" : layerType.includes("INACTIVE") ? "#999999" : "#000000";
+	const isActive = !layerType.includes("INACTIVE"); // BUS_INACTIVE = false, BUS = true
 
-	// Create or update 3D layer
-	if (bus3DLayers[modelLayerId]) {
-		// Update existing layer
-		bus3DLayers[modelLayerId].updatePosition([lon, lat], bearing);
-	} else {
-		// Create new 3D layer
-		const layer = new BusModel3DLayer(modelLayerId, [lon, lat], bearing);
-		bus3DLayers[modelLayerId] = layer;
-
-		// Add layer to map
-		if (!map.getLayer(modelLayerId)) {
-			// eslint-disable-next-line @typescript-eslint/no-explicit-any
-			map.addLayer(layer as any);
-		}
+	// Load or update bus model (following threebox pattern)
+	const tb = (window as any).tb;
+	if (!tb) {
+		console.warn('[updateBusMarker] Threebox not initialized yet');
+		return;
 	}
+
+	loadBusModel(modelId, [lon, lat], bearing, isActive);
 
 	// Calculate optimal label anchor based on bearing
 	// We want the label to appear perpendicular to the bus direction
@@ -516,7 +649,8 @@ export function updateBusMarker(
 	const normalizedBearing = ((bearing % 360) + 360) % 360;
 
 	// Determine which side to place the label based on bearing direction
-	let textAnchor: string[];
+	type TextAnchorValue = 'top-right' | 'top-left' | 'top' | 'right' | 'bottom-right' | 'bottom' | 'bottom-left' | 'left' | 'center';
+	let textAnchor: TextAnchorValue[];
 	if (normalizedBearing >= 315 || normalizedBearing < 45) {
 		// Bus facing North: label on right (East)
 		textAnchor = ['left', 'top-left', 'bottom-left'];
