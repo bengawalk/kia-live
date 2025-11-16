@@ -76,23 +76,6 @@
 	$: selectedTrip = $selected as Trip | LiveTrip;
 	$: selectedStop = $selected as Stop;
 	$: hasSelectedMetro = allStations.includes($selectedMetroStation);
-	// console.log(hasSelectedMetro);
-	function updateObjX(x) {
-		x = x.target.value as number;
-		updateBus3DConfig(x, rotations[1], rotations[2]);
-		rotations[0] = x;
-	}
-	function updateObjY(y) {
-		y = y.target.value as number;
-		updateBus3DConfig(rotations[0], y, rotations[2]);
-		rotations[1] = y;
-	}
-	function updateObjZ(z) {
-		z = z.target.value as number;
-		updateBus3DConfig(rotations[0], rotations[1], z);
-		rotations[2] = z;
-	}
-
 </script>
 
 {#if $selected !== undefined || hasSelectedMetro}
@@ -124,11 +107,6 @@
 	{:else}
 		<!-- Sidebar Mode -->
 		<div class="font-[IBM_Plex_Sans] fixed left-0 top-0 h-full w-[{$infoViewWidth}px] bg-black text-white px-6 py-8 shadow-lg z-1 overflow-y-auto">
-			<div>
-				<input type="range" min="0" max="360" value="0" class="slider" id="x" on:input={updateObjX}>
-				<input type="range" min="0" max="360" value="0" class="slider" id="y" on:input={updateObjY}>
-				<input type="range" min="0" max="360" value="0" class="slider" id="z" on:input={updateObjZ}>
-			</div>
 			{#if $selected !== undefined && !hasSelectedMetro}
 				{#if Object.hasOwn($selected, 'stop_id')} <!-- Selected is a stop -->
 					<StopInfo stop = {selectedStop} />
