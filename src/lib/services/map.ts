@@ -12,7 +12,9 @@ import { pollUserLocation } from '$lib/services/location';
 import { handleTap, handleTouchEnd, handleTouchStart } from '$lib/services/discovery';
 import { browser } from '$app/environment';
 import { initMetroMap, loadMetroLines, unloadMetroMap } from '$lib/services/metroMap';
+// @ts-expect-error threebox has no types
 import { Threebox } from 'threebox-plugin';
+// @ts-expect-error threebox does not have types
 import type { IThreeboxObject } from 'threebox-plugin';
 import 'threebox-plugin/dist/threebox.css';
 
@@ -657,6 +659,12 @@ export function updateBusMarker(
 		map.setLayoutProperty(labelLayerId, 'text-variable-anchor', textAnchor);
 		map.setPaintProperty(labelLayerId, 'text-color', labelColor);
 		map.setPaintProperty(labelLayerId, 'text-opacity', layerType.includes("INACTIVE") ? 0.6 : 1.0);
+	}
+
+	// Ensure layer order: 3D bus layer below label layer
+	// Move 3D bus layer to just before the label layer
+	if (map.getLayer('3d-buses') && map.getLayer(labelLayerId)) {
+		map.moveLayer('3d-buses', labelLayerId);
 	}
 
 	// Handle tap/click events on both the invisible click layer and label layer
