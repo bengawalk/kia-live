@@ -50,7 +50,6 @@ export function loadMap(mapContainer: HTMLElement | string): mapboxgl.Map {
 			enableTooltips: false
 		}
 	);
-	console.log('[Threebox] Initialized on map creation as window.tb');
 
 	map.loadImage(mapLineLabelImage, (error, image) => {
 		if(error) throw error;
@@ -101,6 +100,84 @@ export function unloadMap() {
 	}
 }
 
+// Layer ordering constants - defines the z-index hierarchy
+// Lower index = rendered first (bottom), higher index = rendered last (top)
+const LAYER_ORDER = [
+	'LINE',           // 0: Line geometries (routes)
+	'LINE_LABEL',     // 1: Line labels
+	'3D_BUS',         // 2: 3D bus models
+	'STOP_CIRCLE',    // 3: Stop circles
+	'STOP_SYMBOL',    // 4: Stop symbols/labels
+	'BUS_LABEL'       // 5: Bus labels (top)
+] as const;
+
+// Get the layer type category for ordering
+function getLayerCategory(layerId: string): string {
+	if (layerId === '3d-buses') return '3D_BUS';
+	if (layerId.startsWith('bus_label_')) return 'BUS_LABEL';
+	if (layerId.startsWith('bus_click_')) return 'BUS_LABEL'; // Click layers same level as labels
+	if (layerId.startsWith('symbol_')) return 'LINE_LABEL';
+	if (layerId.startsWith('collision_')) return 'LINE_LABEL';
+	if (layerId.includes('STOP')) {
+		if (layerId.startsWith('symbol')) return 'STOP_SYMBOL';
+		return 'STOP_CIRCLE';
+	}
+	if (layerId.includes('LINE')) return 'LINE';
+	return 'LINE'; // Default to bottom
+}
+
+// Enforce correct layer ordering
+function enforceLayerOrder() {
+	if (!map) return;
+	const styles = map.getStyle();
+	if (!styles) return;
+
+	// Get all current layer IDs from style layers
+	const allLayers = styles.layers || [];
+	let ourLayers = allLayers
+		.map(layer => layer.id)
+		.filter(id =>
+			id.includes('LINE') ||
+			id.includes('STOP') ||
+			id.includes('BUS') ||
+			id.startsWith('symbol_') ||
+			id.startsWith('collision_') ||
+			id.startsWith('bus_')
+		);
+
+	// Add custom layers (like 3d-buses) if they exist
+	// Custom layers don't appear in getStyle().layers but can be checked with getLayer()
+	if (map.getLayer('3d-buses')) {
+		ourLayers.push('3d-buses');
+	}
+
+	// Sort layers by their category order
+	const sortedLayers = ourLayers.sort((a, b) => {
+		const catA = getLayerCategory(a);
+		const catB = getLayerCategory(b);
+		const indexA = LAYER_ORDER.indexOf(catA as any);
+		const indexB = LAYER_ORDER.indexOf(catB as any);
+		return indexA - indexB;
+	});
+
+	// Move layers to enforce order
+	// Strategy: Move each layer to be just before the next higher category layer
+	for (let i = 0; i < sortedLayers.length - 1; i++) {
+		const currentLayer = sortedLayers[i];
+		const nextLayer = sortedLayers[i + 1];
+
+		if (map.getLayer(currentLayer) && map.getLayer(nextLayer)) {
+			try {
+				// Move nextLayer to come after currentLayer
+				// This ensures nextLayer is positioned correctly relative to currentLayer
+				map.moveLayer(nextLayer);
+			} catch (e) {
+				console.warn(`Could not reorder layer ${nextLayer}:`, e);
+			}
+		}
+	}
+}
+
 // Collision layer functions
 const pendingCollisionLayers: LayerSpecification[] = []; // pending layers to apply to map
 const activeCollisionLayers: LayerSpecification[] = []; // collision layers active on map
@@ -112,6 +189,7 @@ export function renderPendingCollisions() {
 		activeCollisionLayers.push(val);
 		delete pendingCollisionLayers[i];
 	});
+	enforceLayerOrder(); // Ensure correct order after adding collision layers
 }
 // Remove all existing collision layers (to re-add on top, or remove leftover ghost layers)
 export function removeRenderedCollisions() {
@@ -247,13 +325,8 @@ export function updateLayer(
 		symbolLayer.source = layerType;
 		map.addLayer(symbolLayer);
 	}
-	map.moveLayer(layerType);
-	map.moveLayer(symbolID);
-
-	// Ensure 3D bus layer stays on top of all 2D layers
-	if (map.getLayer('3d-buses')) {
-		map.moveLayer('3d-buses');
-	}
+	// Enforce consistent layer ordering
+	enforceLayerOrder();
 }
 
 
@@ -292,9 +365,7 @@ export function updateBus3DConfig(x: number, y: number, z: number) {
 	BUS_3D_CONFIG.rotationZ = Number(z);
 }
 // Helper function to convert degrees to radians
-function degreesToRadians(degrees: number): number {
-	return normalizeDegrees(degrees) * (Math.PI / 180);
-}
+
 
 // Helper function to normalize degrees to 0-360 range
 function normalizeDegrees(degrees: number): number {
@@ -313,7 +384,6 @@ const busLayer = {
 	renderingMode: '3d' as const,
 
 	onAdd: function(_map: mapboxgl.Map, _gl: WebGLRenderingContext | WebGL2RenderingContext) {
-		console.log('[Threebox] Bus layer onAdd called');
 		// Layer is added, models will be loaded on demand via loadBusModel()
 	},
 
@@ -395,8 +465,6 @@ function loadBusModel(modelId: string, coords: [number, number], bearing: number
 		updateBusModelLighting(modelId, isActive);
 
 		tb.add(model);
-
-		console.log('[Model Debug] Model loaded, centered, and added successfully');
 	});
 }
 
@@ -424,7 +492,6 @@ function updateBusModelLighting(modelId: string, isActive: boolean) {
 		tb.lights.dirLightFront.intensity = directionalIntensity;
 	}
 
-	console.log(`[Lighting] Set to ${isActive ? 'active' : 'inactive'} - ambient: ${ambientIntensity}, directional: ${directionalIntensity}`);
 }
 
 function calculateBusAltitude(): number {
@@ -463,13 +530,11 @@ function updateBusModelPosition(modelId: string, coords: [number, number], beari
 
 	// Update rotation using Threebox API (setRotation uses DEGREES)
 	if (model.setRotation) {
-		// console.log(`current rotations ${BUS_3D_CONFIG.rotationX}, ${BUS_3D_CONFIG.rotationY}, ${BUS_3D_CONFIG.rotationZ}`);
 		model.setRotation({
 			x: BUS_3D_CONFIG.rotationX + BUS_3D_CONFIG.tiltXDegrees,
 			y: BUS_3D_CONFIG.rotationY + -bearing,
 			z: BUS_3D_CONFIG.rotationZ,
 		});
-		// console.log(`Rotation - bearing: ${bearing}°, Y-axis: ${BUS_3D_CONFIG.rotationY + bearing}°`);
 	}
 
 	// Update scale using Threebox API or direct property
@@ -477,7 +542,6 @@ function updateBusModelPosition(modelId: string, coords: [number, number], beari
 		model.scale.x = currentScale;
 		model.scale.y = currentScale;
 		model.scale.z = currentScale;
-		// console.log(`Setting scale ${currentScale}`);
 	}
 }
 
@@ -489,7 +553,6 @@ function removeBusModel(modelId: string) {
 
 	tb.remove(model);
 	delete busModels[modelId];
-	console.log('[Threebox] Bus model removed:', modelId);
 }
 
 // Marker storage
@@ -514,9 +577,8 @@ export function updateBusMarker(
 
 	// Ensure the Threebox layer exists (add once, following threebox pattern)
 	if (!map.getLayer('3d-buses')) {
-		map.addLayer(busLayer as any);
+		map.addLayer(busLayer);
 		map.moveLayer('3d-buses'); // Move to top to ensure it renders above 2D layers
-		console.log('[Threebox] Added 3d-buses layer to map');
 	}
 
 	// Clear the bus if no coordinates
@@ -661,11 +723,8 @@ export function updateBusMarker(
 		map.setPaintProperty(labelLayerId, 'text-opacity', layerType.includes("INACTIVE") ? 0.6 : 1.0);
 	}
 
-	// Ensure layer order: 3D bus layer below label layer
-	// Move 3D bus layer to just before the label layer
-	if (map.getLayer('3d-buses') && map.getLayer(labelLayerId)) {
-		map.moveLayer('3d-buses', labelLayerId);
-	}
+	// Enforce consistent layer ordering across all layers
+	enforceLayerOrder();
 
 	// Handle tap/click events on both the invisible click layer and label layer
 	if(handleTap) {
@@ -688,7 +747,7 @@ export function updateMarker(
 	if(!map) {
 		return;
 	}
-	// console.log('LAYERS MARKERS', markers);
+
 	// Skip if the layer type is not Marker
 	if (MAP_STYLES[layerType].type !== 1) return;
 
@@ -734,7 +793,6 @@ export function updateMarker(
 	if(markerExists) {
 		markers[layerType].setLngLat({lon: lon, lat: lat});
 	} else {
-		// console.log('CREATED MARKER ', layerType);
 		markers[layerType] = new mapboxgl.Marker({
 			element: MAP_STYLES[layerType].html(),
 			anchor: layerType.includes("INPUT_LOCATION") ? "bottom" : "center",
@@ -781,7 +839,6 @@ function getCacheKey(from: [number, number], to: [number, number], mode: string)
 const DB_NAME = 'travel-directions';
 const STORE_NAME = 'nav';
 async function getDB() {
-	// console.log("returning cached response");
 	if(!browser) return undefined;
 	const { openDB } = await import('idb');
 	return await openDB(DB_NAME, 1, {
@@ -799,7 +856,6 @@ export async function getTravelRoute(from: [number, number], to: [number, number
 	if(!db) return null;
 	const cached = await db.get(STORE_NAME, key);
 	if (cached) return cached;
-	// console.log("Failed to retrieve cache response");
 
 	const url = `https://api.mapbox.com/directions/v5/mapbox/${mode}/${from.join(',')};${to.join(',')}?geometries=geojson&access_token=${mapboxgl.accessToken}`;
 	const response = await fetch(url);
