@@ -70,13 +70,15 @@ async function loadNextBusesThrottled() {
 				lastLoadNextBusesLocation.lon
 			);
 			if (distance < 50) {
+				console.log('skipping nextBuses load')
 				return;
 			}
 		}
 	}
-
+	console.log('starting nextBuses load')
 	// Passed throttling checks - proceed with load
 	await loadNextBusesInternal();
+	console.log('finished nextBuses load')
 }
 
 export function setMarkerTapped() {
@@ -110,7 +112,7 @@ function getNextDeparture(closestStop: {
 }
 
 async function loadNextBusesInternal() {
-	// console.log("LOADING NEXT BUSES")
+	console.log("LOADING NEXT BUSES")
 	// Take data from transit feed stores, location stores, and generate next buses
 	const loc = currentLocation();
 
@@ -288,10 +290,11 @@ async function loadNextBusesInternal() {
 	nextBuses.set(nextTrips);
 
 	// No longer need the minute-by-minute interval since we're using smart refresh
-	if (nextBusesRefreshInterval) {
-		clearInterval(nextBusesRefreshInterval);
-		nextBusesRefreshInterval = undefined;
-	}
+	// if (nextBusesRefreshInterval) {
+	// 	clearInterval(nextBusesRefreshInterval);
+	// 	nextBusesRefreshInterval = undefined;
+	// }
+	console.log("LOADING NEXT BUSES")
 }
 
 let displayingTripID: string = '';
@@ -1423,10 +1426,10 @@ async function animateBusMarker(trip: Trip | LiveTrip, closestStop: Stop) {
 	let cachedBusStyle: 'BUS' | 'BUS_LIVE' | 'BUS_INACTIVE' = Object.hasOwn(trip, 'vehicle_id') ? 'BUS_LIVE' : 'BUS';
 	let lastSelectionState: string = 'none';
 
-	const FRAMERATE_MS = 50; // smooth enough without being heavy
+	const FRAMERATE_MS = 100; // smooth enough without being heavy
 	const GEOJSON_UPDATE_MS = 4000; // update line layers every 4s
-	const ESTIMATE_INTERVAL_MS = 1000; // refresh estimates every 1s for smoother marker animation
-	let WAIT_MS = 300;
+	const ESTIMATE_INTERVAL_MS = 200; // refresh estimates every 1s for smoother marker animation
+	let WAIT_MS = 500;
 
 	busMarkerInterval = setInterval(async () => {
 		// Check if selection state changed - if so, update cached bus style

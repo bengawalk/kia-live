@@ -17,6 +17,7 @@ import { Threebox } from 'threebox-plugin';
 // @ts-expect-error threebox does not have types
 import type { IThreeboxObject } from 'threebox-plugin';
 import 'threebox-plugin/dist/threebox.css';
+import { modelScale } from 'three/src/Three.TSL';
 
 let map: mapboxgl.Map | undefined;
 
@@ -116,12 +117,12 @@ function getLayerCategory(layerId: string): string {
 	if (layerId === '3d-buses') return '3D_BUS';
 	if (layerId.startsWith('bus_label_')) return 'BUS_LABEL';
 	if (layerId.startsWith('bus_click_')) return 'BUS_LABEL'; // Click layers same level as labels
-	if (layerId.startsWith('symbol_')) return 'LINE_LABEL';
-	if (layerId.startsWith('collision_')) return 'LINE_LABEL';
-	if (layerId.includes('STOP')) {
+	if (layerId.includes('CIRCLE')) {
 		if (layerId.startsWith('symbol')) return 'STOP_SYMBOL';
 		return 'STOP_CIRCLE';
 	}
+	if (layerId.startsWith('symbol_')) return 'LINE_LABEL';
+	if (layerId.startsWith('collision_')) return 'LINE_LABEL';
 	if (layerId.includes('LINE')) return 'LINE';
 	return 'LINE'; // Default to bottom
 }
@@ -138,7 +139,7 @@ function enforceLayerOrder() {
 		.map(layer => layer.id)
 		.filter(id =>
 			id.includes('LINE') ||
-			id.includes('STOP') ||
+			id.includes('CIRCLE') ||
 			id.includes('BUS') ||
 			id.startsWith('symbol_') ||
 			id.startsWith('collision_') ||
@@ -358,20 +359,6 @@ const BUS_3D_CONFIG = {
 	tiltXDegrees: 0,        // Left/right tilt
 	tiltZDegrees: 0,        // Forward/backward tilt
 };
-// ==========================================
-export function updateBus3DConfig(x: number, y: number, z: number) {
-	BUS_3D_CONFIG.rotationX = Number(x);
-	BUS_3D_CONFIG.rotationY = Number(y);
-	BUS_3D_CONFIG.rotationZ = Number(z);
-}
-// Helper function to convert degrees to radians
-
-
-// Helper function to normalize degrees to 0-360 range
-function normalizeDegrees(degrees: number): number {
-	const normalized = degrees % 360;
-	return normalized < 0 ? normalized + 360 : normalized;
-}
 
 // Global storage for Threebox bus models (following threebox example pattern)
 const busModels: Record<string, IThreeboxObject> = {};
@@ -495,25 +482,21 @@ function updateBusModelLighting(modelId: string, isActive: boolean) {
 }
 
 function calculateBusAltitude(): number {
-	if (!map) return BUS_3D_CONFIG.scaleAtMidZoom;
+	const modelScale = calculateBusScale();
+	return modelScale * 6.1;
+}
 
-	const zoom = map.getZoom();
-	const clampedZoom = Math.max(
-		BUS_3D_CONFIG.minZoom,
-		Math.min(BUS_3D_CONFIG.maxZoom, zoom)
-	);
-
-	let modelScale: number;
-	if (clampedZoom <= BUS_3D_CONFIG.midZoom) {
-		// Interpolate between minZoom and midZoom
-		const t = (clampedZoom - BUS_3D_CONFIG.minZoom) / (BUS_3D_CONFIG.midZoom - BUS_3D_CONFIG.minZoom);
-		modelScale = BUS_3D_CONFIG.scaleAtMinZoom + t * (BUS_3D_CONFIG.scaleAtMidZoom - BUS_3D_CONFIG.scaleAtMinZoom);
-	} else {
-		// Interpolate between midZoom and maxZoom
-		const t = (clampedZoom - BUS_3D_CONFIG.midZoom) / (BUS_3D_CONFIG.maxZoom - BUS_3D_CONFIG.midZoom);
-		modelScale = BUS_3D_CONFIG.scaleAtMidZoom + t * (BUS_3D_CONFIG.scaleAtMaxZoom - BUS_3D_CONFIG.scaleAtMidZoom);
+function updateBusModelScales(modelId: string) {
+	const model = busModels[modelId];
+	if(!model) return;
+	const currentScale = calculateBusScale();
+	const coords = model.coordinates;
+	model.setCoords([coords[0], coords[1], calculateBusAltitude()]);
+	if (model.scale) {
+		model.scale.x = currentScale;
+		model.scale.y = currentScale;
+		model.scale.z = currentScale;
 	}
-	return modelScale * 6;
 }
 
 // Update bus model position (following threebox pattern)
@@ -544,6 +527,8 @@ function updateBusModelPosition(modelId: string, coords: [number, number], beari
 		model.scale.z = currentScale;
 	}
 }
+
+let zoomUpdate = 0;
 
 // Remove bus model (following threebox pattern)
 function removeBusModel(modelId: string) {
@@ -725,6 +710,13 @@ export function updateBusMarker(
 
 	// Enforce consistent layer ordering across all layers
 	enforceLayerOrder();
+	map.on('zoom', () => {
+		if(zoomUpdate < new Date().getTime()) {
+			updateBusModelScales(modelId);
+			zoomUpdate = new Date().getTime() + 50;
+		}
+		return;
+	});
 
 	// Handle tap/click events on both the invisible click layer and label layer
 	if(handleTap) {
