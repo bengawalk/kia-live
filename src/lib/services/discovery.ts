@@ -4,9 +4,9 @@ import type { Route } from '$lib/structures/Route';
 import type { LiveTrip } from '$lib/structures/LiveTrip';
 import {
 	type GeoJSONSourceSpecification,
+	type Map as MapboxMap,
 	type MapMouseEvent,
 	type MapTouchEvent,
-	type Map as MapboxMap,
 	type PointLike
 } from 'mapbox-gl';
 import { liveTransitFeed, transitFeedStore } from '$lib/stores/transitFeedStore';
@@ -20,12 +20,7 @@ import {
 	selectedTripID
 } from '$lib/stores/discovery';
 import { get } from 'svelte/store';
-import {
-	currentLocation,
-	type InputCoords,
-	inputLocation,
-	userLocation
-} from '$lib/stores/location';
+import { currentLocation, type InputCoords, inputLocation, userLocation } from '$lib/stores/location';
 import {
 	fitMapToPoints,
 	getTravelRoute,
@@ -43,7 +38,6 @@ const tappableLayers = Object.keys(MAP_STYLES).filter((key) => MAP_STYLES[key].t
 let markerTapped = false;
 let currentRefreshTimeout: NodeJS.Timeout | undefined = undefined;
 let busMarkerInterval: NodeJS.Timeout | undefined = undefined;
-let nextBusesRefreshInterval: NodeJS.Timeout | undefined = undefined;
 let lastLoadNextBusesTime = 0;
 let lastLoadNextBusesLocation: { lat: number; lon: number } | undefined = undefined;
 
@@ -294,7 +288,7 @@ async function loadNextBusesInternal() {
 	// 	clearInterval(nextBusesRefreshInterval);
 	// 	nextBusesRefreshInterval = undefined;
 	// }
-	console.log("LOADING NEXT BUSES")
+	console.log("DONE LOADING NEXT BUSES")
 }
 
 let displayingTripID: string = '';
@@ -345,7 +339,7 @@ export async function displayCurrentTrip() {
 		clearTripLayers(true);
 		return;
 	}
-	let tripFind = buses.find((val) => val.trip_id === selectedTrip);
+	const tripFind = buses.find((val) => val.trip_id === selectedTrip);
 	// If the selected/displaying trip is no longer in nextBuses, find its new index or reset gracefully
 	if (!tripFind) {
 		if (buses.length > 0) {
@@ -1080,8 +1074,7 @@ async function splitTrip(
 	const matchedStopShapeIndex: Record<string, number> = {};
 	for (let i = 0; i < stopsOrdered.length; i++) {
 		const s = stopsOrdered[i];
-		const idx = nearestShapeIndex(shape, [s.stop_lat, s.stop_lon]);
-		matchedStopShapeIndex[s.stop_id] = idx;
+		matchedStopShapeIndex[s.stop_id] = nearestShapeIndex(shape, [s.stop_lat, s.stop_lon]);
 	}
 
 	// 2) Match provided position to a shape point.
@@ -1533,6 +1526,7 @@ async function animateBusMarker(trip: Trip | LiveTrip, closestStop: Stop) {
 							updateLayer('BLUE_LINE', undefined);
 						}
 						lastGeojsonUpdate = Date.now();
+						// eslint-disable-next-line @typescript-eslint/no-unused-vars
 					} catch (_) {
 						// ignore split errors; marker animation still proceeds
 					}
@@ -1578,6 +1572,7 @@ async function animateBusMarker(trip: Trip | LiveTrip, closestStop: Stop) {
 					}
 					lastEstimate = newEstimate;
 					lastEstimateTime = now;
+					// eslint-disable-next-line @typescript-eslint/no-unused-vars
 				} catch (_) {
 					// ignore estimate errors
 				}
@@ -1635,6 +1630,7 @@ async function animateBusMarker(trip: Trip | LiveTrip, closestStop: Stop) {
 						updateLayer('BLUE_LINE', undefined);
 					}
 					lastGeojsonUpdate = now;
+					// eslint-disable-next-line @typescript-eslint/no-unused-vars
 				} catch (_) {
 					// ignore split errors
 				}

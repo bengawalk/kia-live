@@ -17,7 +17,6 @@ import { Threebox } from 'threebox-plugin';
 // @ts-expect-error threebox does not have types
 import type { IThreeboxObject } from 'threebox-plugin';
 import 'threebox-plugin/dist/threebox.css';
-import { modelScale } from 'three/src/Three.TSL';
 
 let map: mapboxgl.Map | undefined;
 
@@ -39,7 +38,8 @@ export function loadMap(mapContainer: HTMLElement | string): mapboxgl.Map {
 	// Initialize Threebox immediately after map creation (following threebox-plugin documentation)
 	// CRITICAL: Threebox library expects 'tb' to be globally accessible (window.tb)
 	// The library's internal methods reference 'tb' directly (see AnimationManager.js line 254)
-	(window as any).tb = new Threebox(
+	// @ts-expect-error threebox-plugin expects this in window.
+	(window as unknown).tb = new Threebox(
 		map,
 		map.getCanvas().getContext('webgl') as WebGLRenderingContext,
 		{
@@ -113,7 +113,7 @@ const LAYER_ORDER = [
 ] as const;
 
 // Get the layer type category for ordering
-function getLayerCategory(layerId: string): string {
+function getLayerCategory(layerId: string): '3D_BUS' | 'BUS_LABEL' | 'STOP_SYMBOL' | 'STOP_CIRCLE' | 'LINE_LABEL' | 'LINE' {
 	if (layerId === '3d-buses') return '3D_BUS';
 	if (layerId.startsWith('bus_label_')) return 'BUS_LABEL';
 	if (layerId.startsWith('bus_click_')) return 'BUS_LABEL'; // Click layers same level as labels
@@ -135,7 +135,7 @@ function enforceLayerOrder() {
 
 	// Get all current layer IDs from style layers
 	const allLayers = styles.layers || [];
-	let ourLayers = allLayers
+	const ourLayers = allLayers
 		.map(layer => layer.id)
 		.filter(id =>
 			id.includes('LINE') ||
@@ -156,8 +156,8 @@ function enforceLayerOrder() {
 	const sortedLayers = ourLayers.sort((a, b) => {
 		const catA = getLayerCategory(a);
 		const catB = getLayerCategory(b);
-		const indexA = LAYER_ORDER.indexOf(catA as any);
-		const indexB = LAYER_ORDER.indexOf(catB as any);
+		const indexA = LAYER_ORDER.indexOf(catA);
+		const indexB = LAYER_ORDER.indexOf(catB);
 		return indexA - indexB;
 	});
 
@@ -370,13 +370,14 @@ const busLayer = {
 	type: 'custom' as const,
 	renderingMode: '3d' as const,
 
-	onAdd: function(_map: mapboxgl.Map, _gl: WebGLRenderingContext | WebGL2RenderingContext) {
-		// Layer is added, models will be loaded on demand via loadBusModel()
-	},
+	// onAdd: function(_map: mapboxgl.Map, _gl: WebGLRenderingContext | WebGL2RenderingContext) {
+	// 	// Layer is added, models will be loaded on demand via loadBusModel()
+	// },
 
 	render: function(_gl: WebGLRenderingContext, _matrix: number[]) {
 		// Update Threebox on each render frame (following threebox pattern)
-		const tb = (window as any).tb;
+		// @ts-expect-error threebox-plugin uses window.tb for instance management
+		const tb = (window as unknown).tb;
 		if (tb) {
 			tb.update();
 		}
@@ -410,7 +411,8 @@ function calculateBusScale(): number {
 // Load a bus model for a specific bus (following threebox pattern)
 // isActive: true for BUS (higher light intensity), false for BUS_INACTIVE (lower intensity)
 function loadBusModel(modelId: string, coords: [number, number], bearing: number, isActive: boolean = true) {
-	const tb = (window as any).tb;
+	// @ts-expect-error threebox-plugin expects this in window.
+	const tb = (window as unknown).tb;
 	if (!tb) {
 		console.warn('[loadBusModel] Threebox not initialized');
 		return;
@@ -458,7 +460,8 @@ function loadBusModel(modelId: string, coords: [number, number], bearing: number
 // Update bus model lighting intensity using Threebox lights
 // isActive: true for BUS (higher intensity), false for BUS_INACTIVE (lower intensity)
 function updateBusModelLighting(modelId: string, isActive: boolean) {
-	const tb = (window as any).tb;
+	// @ts-expect-error threebox-plugin expects this in window.
+	const tb = (window as unknown).tb;
 	if (!tb || !tb.lights) return;
 
 	// Adjust the global Threebox lights intensity
@@ -501,7 +504,8 @@ function updateBusModelScales(modelId: string) {
 
 // Update bus model position (following threebox pattern)
 function updateBusModelPosition(modelId: string, coords: [number, number], bearing: number) {
-	const tb = (window as any).tb;
+	// @ts-expect-error threebox-plugin expects this in window.
+	const tb = (window as unknown).tb;
 	const model = busModels[modelId];
 	if (!model || !tb) return;
 
@@ -532,7 +536,8 @@ let zoomUpdate = 0;
 
 // Remove bus model (following threebox pattern)
 function removeBusModel(modelId: string) {
-	const tb = (window as any).tb;
+	// @ts-expect-error threebox-plugin expects this in window.
+	const tb = (window as unknown).tb;
 	const model = busModels[modelId];
 	if (!model || !tb) return;
 
@@ -594,7 +599,8 @@ export function updateBusMarker(
 	const isActive = !layerType.includes("INACTIVE"); // BUS_INACTIVE = false, BUS = true
 
 	// Load or update bus model (following threebox pattern)
-	const tb = (window as any).tb;
+	// @ts-expect-error threebox-plugin expects this in window.
+	const tb = (window as unknown).tb;
 	if (!tb) {
 		console.warn('[updateBusMarker] Threebox not initialized yet');
 		return;
@@ -688,7 +694,7 @@ export function updateBusMarker(
 				],
 				// Position label with directional anchor and radial offset
 				'text-radial-offset': 2.5,
-				'text-variable-anchor': textAnchor as any,
+				'text-variable-anchor': textAnchor,
 				'text-justify': 'center',
 				'text-allow-overlap': true,
 				'text-ignore-placement': false
