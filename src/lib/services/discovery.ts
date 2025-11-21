@@ -4,9 +4,9 @@ import type { Route } from '$lib/structures/Route';
 import type { LiveTrip } from '$lib/structures/LiveTrip';
 import {
 	type GeoJSONSourceSpecification,
+	type Map as MapboxMap,
 	type MapMouseEvent,
 	type MapTouchEvent,
-	type Map as MapboxMap,
 	type PointLike
 } from 'mapbox-gl';
 import { liveTransitFeed, transitFeedStore } from '$lib/stores/transitFeedStore';
@@ -20,12 +20,7 @@ import {
 	selectedTripID
 } from '$lib/stores/discovery';
 import { get } from 'svelte/store';
-import {
-	currentLocation,
-	type InputCoords,
-	inputLocation,
-	userLocation
-} from '$lib/stores/location';
+import { currentLocation, type InputCoords, inputLocation, userLocation } from '$lib/stores/location';
 import {
 	fitMapToPoints,
 	getTravelRoute,
@@ -43,7 +38,6 @@ const tappableLayers = Object.keys(MAP_STYLES).filter((key) => MAP_STYLES[key].t
 let markerTapped = false;
 let currentRefreshTimeout: NodeJS.Timeout | undefined = undefined;
 let busMarkerInterval: NodeJS.Timeout | undefined = undefined;
-let nextBusesRefreshInterval: NodeJS.Timeout | undefined = undefined;
 let lastLoadNextBusesTime = 0;
 let lastLoadNextBusesLocation: { lat: number; lon: number } | undefined = undefined;
 
@@ -70,13 +64,15 @@ async function loadNextBusesThrottled() {
 				lastLoadNextBusesLocation.lon
 			);
 			if (distance < 50) {
+				console.log('skipping nextBuses load')
 				return;
 			}
 		}
 	}
-
+	console.log('starting nextBuses load')
 	// Passed throttling checks - proceed with load
 	await loadNextBusesInternal();
+	console.log('finished nextBuses load')
 }
 
 export function setMarkerTapped() {
@@ -110,7 +106,7 @@ function getNextDeparture(closestStop: {
 }
 
 async function loadNextBusesInternal() {
-	// console.log("LOADING NEXT BUSES")
+	console.log("LOADING NEXT BUSES")
 	// Take data from transit feed stores, location stores, and generate next buses
 	const loc = currentLocation();
 
@@ -288,10 +284,11 @@ async function loadNextBusesInternal() {
 	nextBuses.set(nextTrips);
 
 	// No longer need the minute-by-minute interval since we're using smart refresh
-	if (nextBusesRefreshInterval) {
-		clearInterval(nextBusesRefreshInterval);
-		nextBusesRefreshInterval = undefined;
-	}
+	// if (nextBusesRefreshInterval) {
+	// 	clearInterval(nextBusesRefreshInterval);
+	// 	nextBusesRefreshInterval = undefined;
+	// }
+	console.log("DONE LOADING NEXT BUSES")
 }
 
 let displayingTripID: string = '';
@@ -342,7 +339,7 @@ export async function displayCurrentTrip() {
 		clearTripLayers(true);
 		return;
 	}
-	let tripFind = buses.find((val) => val.trip_id === selectedTrip);
+	const tripFind = buses.find((val) => val.trip_id === selectedTrip);
 	// If the selected/displaying trip is no longer in nextBuses, find its new index or reset gracefully
 	if (!tripFind) {
 		if (buses.length > 0) {
@@ -1077,8 +1074,7 @@ async function splitTrip(
 	const matchedStopShapeIndex: Record<string, number> = {};
 	for (let i = 0; i < stopsOrdered.length; i++) {
 		const s = stopsOrdered[i];
-		const idx = nearestShapeIndex(shape, [s.stop_lat, s.stop_lon]);
-		matchedStopShapeIndex[s.stop_id] = idx;
+		matchedStopShapeIndex[s.stop_id] = nearestShapeIndex(shape, [s.stop_lat, s.stop_lon]);
 	}
 
 	// 2) Match provided position to a shape point.
@@ -1423,10 +1419,10 @@ async function animateBusMarker(trip: Trip | LiveTrip, closestStop: Stop) {
 	let cachedBusStyle: 'BUS' | 'BUS_LIVE' | 'BUS_INACTIVE' = Object.hasOwn(trip, 'vehicle_id') ? 'BUS_LIVE' : 'BUS';
 	let lastSelectionState: string = 'none';
 
-	const FRAMERATE_MS = 50; // smooth enough without being heavy
+	const FRAMERATE_MS = 100; // smooth enough without being heavy
 	const GEOJSON_UPDATE_MS = 4000; // update line layers every 4s
-	const ESTIMATE_INTERVAL_MS = 1000; // refresh estimates every 1s for smoother marker animation
-	let WAIT_MS = 300;
+	const ESTIMATE_INTERVAL_MS = 200; // refresh estimates every 1s for smoother marker animation
+	let WAIT_MS = 500;
 
 	busMarkerInterval = setInterval(async () => {
 		// Check if selection state changed - if so, update cached bus style
@@ -1530,6 +1526,7 @@ async function animateBusMarker(trip: Trip | LiveTrip, closestStop: Stop) {
 							updateLayer('BLUE_LINE', undefined);
 						}
 						lastGeojsonUpdate = Date.now();
+						// eslint-disable-next-line @typescript-eslint/no-unused-vars
 					} catch (_) {
 						// ignore split errors; marker animation still proceeds
 					}
@@ -1575,6 +1572,7 @@ async function animateBusMarker(trip: Trip | LiveTrip, closestStop: Stop) {
 					}
 					lastEstimate = newEstimate;
 					lastEstimateTime = now;
+					// eslint-disable-next-line @typescript-eslint/no-unused-vars
 				} catch (_) {
 					// ignore estimate errors
 				}
@@ -1632,6 +1630,7 @@ async function animateBusMarker(trip: Trip | LiveTrip, closestStop: Stop) {
 						updateLayer('BLUE_LINE', undefined);
 					}
 					lastGeojsonUpdate = now;
+					// eslint-disable-next-line @typescript-eslint/no-unused-vars
 				} catch (_) {
 					// ignore split errors
 				}

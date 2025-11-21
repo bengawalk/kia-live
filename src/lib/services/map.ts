@@ -3,7 +3,8 @@ import {
 	LINE_LABEL_STYLE,
 	MAP_STYLES,
 	POINT_LABEL_STYLE,
-	POINT_LABEL_STYLE_OVERLAP
+	POINT_LABEL_STYLE_OVERLAP,
+	BUS_GLB_URL
 } from '$lib/constants';
 import mapboxgl, { type LayerSpecification } from 'mapbox-gl';
 import mapLineLabelImage from '$assets/map-line-label.png';
@@ -11,8 +12,14 @@ import { pollUserLocation } from '$lib/services/location';
 import { handleTap, handleTouchEnd, handleTouchStart } from '$lib/services/discovery';
 import { browser } from '$app/environment';
 import { initMetroMap, loadMetroLines, unloadMetroMap } from '$lib/services/metroMap';
+// @ts-expect-error threebox has no types
+import { Threebox } from 'threebox-plugin';
+// @ts-expect-error threebox does not have types
+import type { IThreeboxObject } from 'threebox-plugin';
+import 'threebox-plugin/dist/threebox.css';
 
 let map: mapboxgl.Map | undefined;
+
 export type NavMode = 'walking' | 'driving-traffic' | 'cycling' | 'driving'
 export function loadMap(mapContainer: HTMLElement | string): mapboxgl.Map {
 	mapboxgl.accessToken = import.meta.env.VITE_MAPBOX_ACCESS_TOKEN;
@@ -24,8 +31,27 @@ export function loadMap(mapContainer: HTMLElement | string): mapboxgl.Map {
 		dragRotate: false, // Disable rotation
 		attributionControl: false,
 		logoPosition: "top-right",
+		antialias: true // Enable antialiasing for 3D rendering
 	});
 	map.addControl(new mapboxgl.AttributionControl(), 'top-left');
+
+	// Initialize Threebox immediately after map creation (following threebox-plugin documentation)
+	// CRITICAL: Threebox library expects 'tb' to be globally accessible (window.tb)
+	// The library's internal methods reference 'tb' directly (see AnimationManager.js line 254)
+	// @ts-expect-error threebox-plugin expects this in window.
+	(window as unknown).tb = new Threebox(
+		map,
+		map.getCanvas().getContext('webgl') as WebGLRenderingContext,
+		{
+			defaultLights: true,
+			realSunlight: true,
+			enableSelectingObjects: false,
+			enableDraggingObjects: false,
+			enableRotatingObjects: false,
+			enableTooltips: false
+		}
+	);
+
 	map.loadImage(mapLineLabelImage, (error, image) => {
 		if(error) throw error;
 		if(!image) return;
@@ -52,6 +78,9 @@ export function loadMap(mapContainer: HTMLElement | string): mapboxgl.Map {
 			// map?.on('mouseup', handleTap);
 			map?.touchZoomRotate.disableRotation();
 
+			// // Add zoom event listener to update bus model scales
+			// map?.on('zoom', updateAllBusScales);
+
 			// Initialize and load metro lines and stops
 			if (map) {
 				initMetroMap(map);
@@ -59,6 +88,8 @@ export function loadMap(mapContainer: HTMLElement | string): mapboxgl.Map {
 			}
 		}
 	);
+
+	// Note: Threebox layers (bus models) will be added dynamically when updateBusMarker is called
 	return map;
 }
 
@@ -67,6 +98,84 @@ export function unloadMap() {
 		unloadMetroMap();
 		map.remove();
 		map = undefined;
+	}
+}
+
+// Layer ordering constants - defines the z-index hierarchy
+// Lower index = rendered first (bottom), higher index = rendered last (top)
+const LAYER_ORDER = [
+	'LINE',           // 0: Line geometries (routes)
+	'LINE_LABEL',     // 1: Line labels
+	'3D_BUS',         // 2: 3D bus models
+	'STOP_CIRCLE',    // 3: Stop circles
+	'STOP_SYMBOL',    // 4: Stop symbols/labels
+	'BUS_LABEL'       // 5: Bus labels (top)
+] as const;
+
+// Get the layer type category for ordering
+function getLayerCategory(layerId: string): '3D_BUS' | 'BUS_LABEL' | 'STOP_SYMBOL' | 'STOP_CIRCLE' | 'LINE_LABEL' | 'LINE' {
+	if (layerId === '3d-buses') return '3D_BUS';
+	if (layerId.startsWith('bus_label_')) return 'BUS_LABEL';
+	if (layerId.startsWith('bus_click_')) return 'BUS_LABEL'; // Click layers same level as labels
+	if (layerId.includes('CIRCLE')) {
+		if (layerId.startsWith('symbol')) return 'STOP_SYMBOL';
+		return 'STOP_CIRCLE';
+	}
+	if (layerId.startsWith('symbol_')) return 'LINE_LABEL';
+	if (layerId.startsWith('collision_')) return 'LINE_LABEL';
+	if (layerId.includes('LINE')) return 'LINE';
+	return 'LINE'; // Default to bottom
+}
+
+// Enforce correct layer ordering
+function enforceLayerOrder() {
+	if (!map) return;
+	const styles = map.getStyle();
+	if (!styles) return;
+
+	// Get all current layer IDs from style layers
+	const allLayers = styles.layers || [];
+	const ourLayers = allLayers
+		.map(layer => layer.id)
+		.filter(id =>
+			id.includes('LINE') ||
+			id.includes('CIRCLE') ||
+			id.includes('BUS') ||
+			id.startsWith('symbol_') ||
+			id.startsWith('collision_') ||
+			id.startsWith('bus_')
+		);
+
+	// Add custom layers (like 3d-buses) if they exist
+	// Custom layers don't appear in getStyle().layers but can be checked with getLayer()
+	if (map.getLayer('3d-buses')) {
+		ourLayers.push('3d-buses');
+	}
+
+	// Sort layers by their category order
+	const sortedLayers = ourLayers.sort((a, b) => {
+		const catA = getLayerCategory(a);
+		const catB = getLayerCategory(b);
+		const indexA = LAYER_ORDER.indexOf(catA);
+		const indexB = LAYER_ORDER.indexOf(catB);
+		return indexA - indexB;
+	});
+
+	// Move layers to enforce order
+	// Strategy: Move each layer to be just before the next higher category layer
+	for (let i = 0; i < sortedLayers.length - 1; i++) {
+		const currentLayer = sortedLayers[i];
+		const nextLayer = sortedLayers[i + 1];
+
+		if (map.getLayer(currentLayer) && map.getLayer(nextLayer)) {
+			try {
+				// Move nextLayer to come after currentLayer
+				// This ensures nextLayer is positioned correctly relative to currentLayer
+				map.moveLayer(nextLayer);
+			} catch (e) {
+				console.warn(`Could not reorder layer ${nextLayer}:`, e);
+			}
+		}
 	}
 }
 
@@ -81,6 +190,7 @@ export function renderPendingCollisions() {
 		activeCollisionLayers.push(val);
 		delete pendingCollisionLayers[i];
 	});
+	enforceLayerOrder(); // Ensure correct order after adding collision layers
 }
 // Remove all existing collision layers (to re-add on top, or remove leftover ghost layers)
 export function removeRenderedCollisions() {
@@ -216,13 +326,228 @@ export function updateLayer(
 		symbolLayer.source = layerType;
 		map.addLayer(symbolLayer);
 	}
-	map.moveLayer(layerType);
-	map.moveLayer(symbolID);
+	// Enforce consistent layer ordering
+	enforceLayerOrder();
 }
 
 
-// Update Marker function
-const markers: Record<keyof typeof MAP_STYLES, mapboxgl.Marker> = {}; // Simulated marker layer
+// 3D Bus Model Management using Threebox
+// Following threebox-plugin pattern: models stored globally, accessible throughout code
+
+// ========== ADJUSTABLE PARAMETERS ==========
+// Configuration for bus 3D model appearance
+const BUS_3D_CONFIG = {
+	// Scale - linear interpolation matching text-size behavior
+	// Text goes from 10px@zoom10 -> 14px@zoom14 -> 20px@zoom18
+	// Scale proportionally: 10→14→20 gives ratio 1.0→1.4→2.0
+	scaleAtMinZoom: 60,     // Scale at zoom 10 (smaller when far)
+	scaleAtMidZoom: 15,     // Scale at zoom 14 (medium) - matches text size
+	scaleAtMaxZoom: 0.5,     // Scale at zoom 18 (larger when close) - matches text size
+	minZoom: 10,            // Minimum zoom
+	midZoom: 12,            // Middle reference zoom
+	maxZoom: 20,            // Maximum zoom
+
+	// Rotation (in degrees) - will be converted to radians
+	rotationX: 90,          // Pitch: lay flat on map
+	rotationY: 0,         // Yaw: additional rotation (added to bearing)
+	rotationZ: 0,           // Roll: flip orientation
+
+	// Height offset - raise slightly above ground to prevent z-fighting with line layers
+	altitude: 3,            // Height above ground in meters (prevents lines showing through)
+
+	// Tilt for 3D effect (in degrees) - will be converted to radians
+	tiltXDegrees: 0,        // Left/right tilt
+	tiltZDegrees: 0,        // Forward/backward tilt
+};
+
+// Global storage for Threebox bus models (following threebox example pattern)
+const busModels: Record<string, IThreeboxObject> = {};
+
+// Create Threebox custom layer (following threebox-plugin documentation pattern)
+// This is created ONCE and models are loaded inside onAdd
+const busLayer = {
+	id: '3d-buses',
+	type: 'custom' as const,
+	renderingMode: '3d' as const,
+
+	// onAdd: function(_map: mapboxgl.Map, _gl: WebGLRenderingContext | WebGL2RenderingContext) {
+	// 	// Layer is added, models will be loaded on demand via loadBusModel()
+	// },
+
+	render: function(_gl: WebGLRenderingContext, _matrix: number[]) {
+		// Update Threebox on each render frame (following threebox pattern)
+		// @ts-expect-error threebox-plugin uses window.tb for instance management
+		const tb = (window as unknown).tb;
+		if (tb) {
+			tb.update();
+		}
+	}
+};
+
+// Calculate zoom-based scale matching text-size interpolation
+function calculateBusScale(): number {
+	if (!map) return BUS_3D_CONFIG.scaleAtMidZoom;
+
+	const zoom = map.getZoom();
+	const clampedZoom = Math.max(
+		BUS_3D_CONFIG.minZoom,
+		Math.min(BUS_3D_CONFIG.maxZoom, zoom)
+	);
+
+	let modelScale: number;
+	if (clampedZoom <= BUS_3D_CONFIG.midZoom) {
+		// Interpolate between minZoom and midZoom
+		const t = (clampedZoom - BUS_3D_CONFIG.minZoom) / (BUS_3D_CONFIG.midZoom - BUS_3D_CONFIG.minZoom);
+		modelScale = BUS_3D_CONFIG.scaleAtMinZoom + t * (BUS_3D_CONFIG.scaleAtMidZoom - BUS_3D_CONFIG.scaleAtMinZoom);
+	} else {
+		// Interpolate between midZoom and maxZoom
+		const t = (clampedZoom - BUS_3D_CONFIG.midZoom) / (BUS_3D_CONFIG.maxZoom - BUS_3D_CONFIG.midZoom);
+		modelScale = BUS_3D_CONFIG.scaleAtMidZoom + t * (BUS_3D_CONFIG.scaleAtMaxZoom - BUS_3D_CONFIG.scaleAtMidZoom);
+	}
+
+	return modelScale;
+}
+
+// Load a bus model for a specific bus (following threebox pattern)
+// isActive: true for BUS (higher light intensity), false for BUS_INACTIVE (lower intensity)
+function loadBusModel(modelId: string, coords: [number, number], bearing: number, isActive: boolean = true) {
+	// @ts-expect-error threebox-plugin expects this in window.
+	const tb = (window as unknown).tb;
+	if (!tb) {
+		console.warn('[loadBusModel] Threebox not initialized');
+		return;
+	}
+
+	// If model already exists, just update position and lighting
+	if (busModels[modelId]) {
+		updateBusModelPosition(modelId, coords, bearing);
+		updateBusModelLighting(modelId, isActive);
+		return;
+	}
+
+	// Calculate initial scale based on current zoom
+	const initialScale = calculateBusScale();
+
+	// Load using Threebox's loadObj method with URL
+	const options = {
+		obj: BUS_GLB_URL,
+		type: 'gltf',
+		scale: initialScale,
+		units: 'meters',
+		rotation: {
+			x: 0,
+			y: 0, // + bearing,
+			z: 0,
+		},
+		anchor: 'auto',
+		adjustment: {x: 0, y: -0.5, z: 0.5},
+		bbox: true
+	};
+
+	tb.loadObj(options, (model: IThreeboxObject) => {
+
+		// Store model globally
+		busModels[modelId] = model;
+		model.setCoords([coords[0], coords[1], BUS_3D_CONFIG.altitude]);
+
+		// Set initial lighting based on active state
+		updateBusModelLighting(modelId, isActive);
+
+		tb.add(model);
+	});
+}
+
+// Update bus model lighting intensity using Threebox lights
+// isActive: true for BUS (higher intensity), false for BUS_INACTIVE (lower intensity)
+function updateBusModelLighting(modelId: string, isActive: boolean) {
+	// @ts-expect-error threebox-plugin expects this in window.
+	const tb = (window as unknown).tb;
+	if (!tb || !tb.lights) return;
+
+	// Adjust the global Threebox lights intensity
+	// BUS_INACTIVE: lower ambient light, BUS: higher ambient light
+	const ambientIntensity = isActive ? 1.5 : 0.8;
+	const directionalIntensity = isActive ? 1.2 : 0.6;
+
+	// Threebox has ambient and directional lights
+	if (tb.lights.ambientLight) {
+		tb.lights.ambientLight.intensity = ambientIntensity;
+	}
+
+	if (tb.lights.dirLightBack) {
+		tb.lights.dirLightBack.intensity = directionalIntensity;
+	}
+
+	if (tb.lights.dirLightFront) {
+		tb.lights.dirLightFront.intensity = directionalIntensity;
+	}
+
+}
+
+function calculateBusAltitude(): number {
+	const modelScale = calculateBusScale();
+	return modelScale * 6.1;
+}
+
+function updateBusModelScales(modelId: string) {
+	const model = busModels[modelId];
+	if(!model) return;
+	const currentScale = calculateBusScale();
+	const coords = model.coordinates;
+	model.setCoords([coords[0], coords[1], calculateBusAltitude()]);
+	if (model.scale) {
+		model.scale.x = currentScale;
+		model.scale.y = currentScale;
+		model.scale.z = currentScale;
+	}
+}
+
+// Update bus model position (following threebox pattern)
+function updateBusModelPosition(modelId: string, coords: [number, number], bearing: number) {
+	// @ts-expect-error threebox-plugin expects this in window.
+	const tb = (window as unknown).tb;
+	const model = busModels[modelId];
+	if (!model || !tb) return;
+
+	// Calculate current scale based on zoom
+	const currentScale = calculateBusScale();
+
+	// Update position using setCoords (following threebox pattern)
+	model.setCoords([coords[0], coords[1], calculateBusAltitude()]);
+
+	// Update rotation using Threebox API (setRotation uses DEGREES)
+	if (model.setRotation) {
+		model.setRotation({
+			x: BUS_3D_CONFIG.rotationX + BUS_3D_CONFIG.tiltXDegrees,
+			y: BUS_3D_CONFIG.rotationY + -bearing,
+			z: BUS_3D_CONFIG.rotationZ,
+		});
+	}
+
+	// Update scale using Threebox API or direct property
+	if (model.scale) {
+		model.scale.x = currentScale;
+		model.scale.y = currentScale;
+		model.scale.z = currentScale;
+	}
+}
+
+let zoomUpdate = 0;
+
+// Remove bus model (following threebox pattern)
+function removeBusModel(modelId: string) {
+	// @ts-expect-error threebox-plugin expects this in window.
+	const tb = (window as unknown).tb;
+	const model = busModels[modelId];
+	if (!model || !tb) return;
+
+	tb.remove(model);
+	delete busModels[modelId];
+}
+
+// Marker storage
+const markers: Record<keyof typeof MAP_STYLES, mapboxgl.Marker> = {};
+
 export function updateBusMarker(
 	layerType: keyof typeof MAP_STYLES,
 	label: string,
@@ -232,65 +557,182 @@ export function updateBusMarker(
 	bearing: number = 0 // Bearing in degrees (0 = north, 90 = east, etc.)
 ): void {
 	if(!map || !layerType.includes("BUS")) return;
-	if(!lat || !lon){ // Clear the marker
-		updateMarker(layerType, [undefined, undefined], undefined, undefined);
+
+	// Use a shared model ID for all bus states (BUS, BUS_INACTIVE, BUS_LIVE, etc.)
+	// This ensures we reuse the same model and only update lighting/labels
+	const modelId = 'SHARED_BUS_MODEL';
+	const labelLayerId = `bus_label_${layerType}`;
+	const clickLayerId = `bus_click_${layerType}`;
+	const sourceId = `bus_source_${layerType}`;
+
+	// Ensure the Threebox layer exists (add once, following threebox pattern)
+	if (!map.getLayer('3d-buses')) {
+		map.addLayer(busLayer);
+		map.moveLayer('3d-buses'); // Move to top to ensure it renders above 2D layers
+	}
+
+	// Clear the bus if no coordinates
+	if(!lat || !lon) {
+		removeBusModel(modelId);
+		if(map.getLayer(labelLayerId)) map.removeLayer(labelLayerId);
+		if(map.getLayer(clickLayerId)) map.removeLayer(clickLayerId);
+		if(map.getSource(sourceId)) map.removeSource(sourceId);
 		return;
 	}
-	const clearStyles = Object.entries(MAP_STYLES).filter(([key, value]) => key.includes('BUS') && !key.includes('STOP') && value.type === 1 && key !== layerType);
-	for(const style of clearStyles) {
-		// console.log('CLEARING STYLE ', style);
-		updateMarker(style[0], [undefined, undefined], undefined, undefined);
-	}
-	updateMarker(layerType, [undefined, undefined], lat, lon, handleTap);
 
-	// Update label text
-	const labelEl = document.getElementById("routename-text");
-	if(labelEl) labelEl.innerHTML = label;
-
-	// Get current map zoom level for scaling
-	const zoom = map?.getZoom() || 14;
-	// Scale interpolation: zoom 10 = 0.5x, zoom 14 = 1x, zoom 18 = 2x
-	const minZoom = 10;
-	const maxZoom = 18;
-	const minScale = 0.8;
-	const maxScale = 2.0;
-	const scale = minScale + ((zoom - minZoom) / (maxZoom - minZoom)) * (maxScale - minScale);
-	const clampedScale = Math.max(minScale, Math.min(maxScale, scale));
-
-	// Update bus image rotation, scaling, and apply filters
-	const busImageEl = document.querySelector(".bus-image") as HTMLElement;
-	if(busImageEl) {
-		bearing -= 90;
-		if(bearing < 0) bearing += 360;
-		busImageEl.style.transform = `rotate(${bearing}deg) scale(${clampedScale})`;
-		// Add brightness and vibrancy filters to make the bus more visible
-		busImageEl.style.filter = `brightness(1.2) saturate(1.3) contrast(1.1)`;
+	// Clear labels and sources for other bus layers, but keep the shared model
+	const clearStyles = Object.entries(MAP_STYLES).filter(([key]) =>
+		key.includes('BUS') && !key.includes('STOP') && key !== layerType
+	);
+	for(const [key] of clearStyles) {
+		// Only remove labels/sources, NOT the model itself
+		const oldLabelId = `bus_label_${key}`;
+		const oldClickId = `bus_click_${key}`;
+		const oldSourceId = `bus_source_${key}`;
+		if(map.getLayer(oldLabelId)) map.removeLayer(oldLabelId);
+		if(map.getLayer(oldClickId)) map.removeLayer(oldClickId);
+		if(map.getSource(oldSourceId)) map.removeSource(oldSourceId);
 	}
 
-	// Interpolate label distance based on rotation and zoom
-	// When horizontal (bearing = 90° or 270°), label is closer
-	// When vertical (bearing = 0° or 180°), label is farther
-	// Also adjust for zoom level (larger bus = more distance, smaller bus = less distance)
-	const busLabelEl = document.querySelector(".bus-label") as HTMLElement;
-	if(busLabelEl) {
-		// Normalize bearing to 0-180 range for calculation
-		const normalizedBearing = Math.abs((bearing % 180));
+	// Determine color and active state based on layer type
+	const labelColor = layerType.includes("LIVE") ? "#1967D3" : layerType.includes("INACTIVE") ? "#999999" : "#000000";
+	const isActive = !layerType.includes("INACTIVE"); // BUS_INACTIVE = false, BUS = true
 
-		// Base distances at zoom 14 (scale = 1.0)
-		const baseDistHorizontal = 20; // Base distance when horizontal at 1x scale
-		const baseDistVertical = 4;  // Max distance when vertical at 1x scale
+	// Load or update bus model (following threebox pattern)
+	// @ts-expect-error threebox-plugin expects this in window.
+	const tb = (window as unknown).tb;
+	if (!tb) {
+		console.warn('[updateBusMarker] Threebox not initialized yet');
+		return;
+	}
 
-		// Calculate bearing interpolation factor (0 = horizontal, 1 = vertical)
-		const bearingFactor = Math.abs(Math.cos((normalizedBearing * Math.PI) / 180));
+	loadBusModel(modelId, [lon, lat], bearing, isActive);
 
-		// Calculate base distance for current bearing (before zoom adjustment)
-		const baseDistance = baseDistHorizontal + (baseDistVertical - baseDistHorizontal) * bearingFactor;
+	// Calculate optimal label anchor based on bearing
+	// We want the label to appear perpendicular to the bus direction
+	// Normalize bearing to 0-360
+	const normalizedBearing = ((bearing % 360) + 360) % 360;
 
-		// Adjust distance based on zoom scale
-		// At scale 0.5x (zoomed out), reduce distance by 50%
-		// At scale 2.0x (zoomed in), increase distance by 100%
-		const scaledDistance = (baseDistance * clampedScale) * 1.1;
-		busLabelEl.style.marginTop = `${scaledDistance}px`;
+	// Determine which side to place the label based on bearing direction
+	type TextAnchorValue = 'top-right' | 'top-left' | 'top' | 'right' | 'bottom-right' | 'bottom' | 'bottom-left' | 'left' | 'center';
+	let textAnchor: TextAnchorValue[];
+	if (normalizedBearing >= 315 || normalizedBearing < 45) {
+		// Bus facing North: label on right (East)
+		textAnchor = ['left', 'top-left', 'bottom-left'];
+	} else if (normalizedBearing >= 45 && normalizedBearing < 135) {
+		// Bus facing East: label on bottom (South)
+		textAnchor = ['top', 'top-left', 'top-right'];
+	} else if (normalizedBearing >= 135 && normalizedBearing < 225) {
+		// Bus facing South: label on left (West)
+		textAnchor = ['right', 'top-right', 'bottom-right'];
+	} else {
+		// Bus facing West: label on top (North)
+		textAnchor = ['bottom', 'bottom-left', 'bottom-right'];
+	}
+
+	// Create GeoJSON source for the label
+	const sourceData: GeoJSON.Feature = {
+		type: 'Feature',
+		geometry: {
+			type: 'Point',
+			coordinates: [lon, lat]
+		},
+		properties: {
+			label: label,
+			bearing: bearing
+		}
+	};
+
+	// Add or update source
+	const source = map.getSource(sourceId) as mapboxgl.GeoJSONSource;
+	if(source) {
+		source.setData(sourceData);
+	} else {
+		map.addSource(sourceId, {
+			type: 'geojson',
+			data: sourceData
+		});
+	}
+
+	// Add invisible clickable circle layer over the bus for click detection
+	if(!map.getLayer(clickLayerId)) {
+		map.addLayer({
+			id: clickLayerId,
+			type: 'circle',
+			source: sourceId,
+			paint: {
+				'circle-radius': [
+					'interpolate',
+					['linear'],
+					['zoom'],
+					10, 15,   // At zoom 10, radius 15px
+					14, 20,   // At zoom 14, radius 20px
+					18, 25    // At zoom 18, radius 25px
+				],
+				'circle-opacity': 0,  // Invisible
+				'circle-stroke-opacity': 0
+			}
+		});
+	}
+
+	// Add symbol layer for the route label with directional anchor
+	if(!map.getLayer(labelLayerId)) {
+		map.addLayer({
+			id: labelLayerId,
+			type: 'symbol',
+			source: sourceId,
+			layout: {
+				'text-field': ['get', 'label'],
+				'text-font': ['IBM Plex Sans Bold', 'Arial Unicode MS Bold'],
+				'text-size': [
+					'interpolate',
+					['linear'],
+					['zoom'],
+					10, 10,
+					14, 14,
+					18, 20
+				],
+				// Position label with directional anchor and radial offset
+				'text-radial-offset': 2.5,
+				'text-variable-anchor': textAnchor,
+				'text-justify': 'center',
+				'text-allow-overlap': true,
+				'text-ignore-placement': false
+			},
+			paint: {
+				'text-color': labelColor,
+				'text-halo-color': '#ffffff',
+				'text-halo-width': 2,
+				'text-halo-blur': 1,
+				'text-opacity': layerType.includes("INACTIVE") ? 0.6 : 1.0
+			}
+		});
+	} else {
+		// Update existing label layer with new anchor
+		map.setLayoutProperty(labelLayerId, 'text-variable-anchor', textAnchor);
+		map.setPaintProperty(labelLayerId, 'text-color', labelColor);
+		map.setPaintProperty(labelLayerId, 'text-opacity', layerType.includes("INACTIVE") ? 0.6 : 1.0);
+	}
+
+	// Enforce consistent layer ordering across all layers
+	enforceLayerOrder();
+	map.on('zoom', () => {
+		if(zoomUpdate < new Date().getTime()) {
+			updateBusModelScales(modelId);
+			zoomUpdate = new Date().getTime() + 50;
+		}
+		return;
+	});
+
+	// Handle tap/click events on both the invisible click layer and label layer
+	if(handleTap) {
+		// Click on the invisible circle over the bus
+		map.off('click', clickLayerId, handleTap);
+		map.on('click', clickLayerId, handleTap);
+
+		// Click on the label
+		map.off('click', labelLayerId, handleTap);
+		map.on('click', labelLayerId, handleTap);
 	}
 }
 export function updateMarker(
@@ -303,7 +745,7 @@ export function updateMarker(
 	if(!map) {
 		return;
 	}
-	// console.log('LAYERS MARKERS', markers);
+
 	// Skip if the layer type is not Marker
 	if (MAP_STYLES[layerType].type !== 1) return;
 
@@ -318,7 +760,6 @@ export function updateMarker(
 		if(markerExists) {
 			markers[layerType].remove();
 			delete markers[layerType];
-			// console.log('REMOVED MARKER ', layerType);
 		}
 
 		if(layerSymbolX) map.removeLayer(symbolXID);
@@ -350,7 +791,6 @@ export function updateMarker(
 	if(markerExists) {
 		markers[layerType].setLngLat({lon: lon, lat: lat});
 	} else {
-		// console.log('CREATED MARKER ', layerType);
 		markers[layerType] = new mapboxgl.Marker({
 			element: MAP_STYLES[layerType].html(),
 			anchor: layerType.includes("INPUT_LOCATION") ? "bottom" : "center",
@@ -397,7 +837,6 @@ function getCacheKey(from: [number, number], to: [number, number], mode: string)
 const DB_NAME = 'travel-directions';
 const STORE_NAME = 'nav';
 async function getDB() {
-	// console.log("returning cached response");
 	if(!browser) return undefined;
 	const { openDB } = await import('idb');
 	return await openDB(DB_NAME, 1, {
@@ -415,7 +854,6 @@ export async function getTravelRoute(from: [number, number], to: [number, number
 	if(!db) return null;
 	const cached = await db.get(STORE_NAME, key);
 	if (cached) return cached;
-	// console.log("Failed to retrieve cache response");
 
 	const url = `https://api.mapbox.com/directions/v5/mapbox/${mode}/${from.join(',')};${to.join(',')}?geometries=geojson&access_token=${mapboxgl.accessToken}`;
 	const response = await fetch(url);

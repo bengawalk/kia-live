@@ -74,8 +74,6 @@
 	$: selectedTrip = $selected as Trip | LiveTrip;
 	$: selectedStop = $selected as Stop;
 	$: hasSelectedMetro = allStations.includes($selectedMetroStation);
-	console.log(hasSelectedMetro);
-
 </script>
 
 {#if $selected !== undefined || hasSelectedMetro}

@@ -5,7 +5,7 @@ import mapBus from '$assets/map-bus.svg?raw';
 import mapStop from '$assets/map-stop.svg?raw';
 import mapBusLive from '$assets/map-bus-live.svg?raw';
 import mapStopLive from '$assets/map-stop-live.svg?raw';
-import busPng from '$assets/bus.png';
+import busGlb from '$assets/bus.glb?url';
 
 // type definitions used ONLY in this file
 
@@ -30,6 +30,7 @@ function createMarkerElement(
 	}
 
 	const element = document.createElement('div');
+
 	// if(!highlight) {
 	// 	element.style.filter = " invert(1) brightness(60%);";
 	// }
@@ -43,26 +44,13 @@ function createBusMarkerElement(
 	highlight: boolean = true,
 	textColor: string // IN HEX
 ): HTMLElement {
-	// Create the marker element with bus.png and rotatable container
+	// Note: Bus rendering now uses 3D models, this function is kept for backward compatibility
+	// but should not be used for new bus markers
 	const element = document.createElement('div');
-	element.className = 'bus-marker-container';
+	element.className = 'bus-marker-container-deprecated';
 	element.innerHTML = `
 <div class="relative inline-flex items-center justify-center">
-  <!-- BUS IMAGE -->
-  <img
-    src="${busPng}"
-    class="bus-image w-[64px] h-auto object-contain"
-    style="transform: rotate(0deg); transition: transform 0.3s ease-out;"
-    alt="Bus"
-  />
-
-  <!-- TEXT LABEL -->
-  <span
-    class="bus-label pointer-events-none absolute text-[14px] leading-none tracking-wide text-center font-[700] whitespace-nowrap"
-    style="color: ${textColor}; top: 100%; margin-top: 4px;"
-    id="routename-text"
-  >
-  </span>
+  <span style="color: ${textColor}; font-size: 16px;">🚌</span>
 </div>
 	`;
 	return element;
@@ -78,6 +66,8 @@ const SVG_ICONS: Record<keyof typeof MAP_STYLES, string> = {
 	BUS_STOP_LIVE: mapStopLive,
 	BUS_STOP: mapStop
 };
+
+export const BUS_GLB_URL = busGlb;
 
 export const AIRPORT_LOCATION: number[] = [13.199110535079635, 77.70822021568426];
 export const AIRPORT_SOFTLOCK: number[] = [13.205024620008803, 77.70808412641674, 2.5]
