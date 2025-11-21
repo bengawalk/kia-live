@@ -392,7 +392,7 @@
 
                 for (const row of parsed.data as { route_id: string, route_short_name: string, route_long_name: string }[]) {
                     const route_id = row.route_id;
-                    const route_short_name = row.route_short_name || '';
+                    const route_short_name = row.route_short_name.split(' ')[0].replace('-', '') || '';
                     const route_long_name = row.route_long_name || '';
 
                     const trips = tripsByRoute[route_id] || [];
