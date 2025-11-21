@@ -145,65 +145,95 @@ async function loadNextBusesInternal() {
 	};
 	const nextTripTimes: { toCity: number[]; toAirport: number[] } = { toAirport: [], toCity: [] }; // Array for quickly inserting at correct index
 	let earliestNextBusTime = new Date().getTime() + 3600000; // Track earliest bus for smart refresh scheduling
+
+	// Cache: Pre-calculate route directions to avoid repeated haversine calculations
+	const routeDirections = new Map<string, 'toAirport' | 'toCity'>();
+	for (const route of routes) {
+		const direction = haversineDistance(
+			route.stops[0].stop_lat,
+			route.stops[0].stop_lon,
+			AIRPORT_LOCATION[0],
+			AIRPORT_LOCATION[1]
+		) >
+		haversineDistance(
+			route.stops[route.stops.length - 1].stop_lat,
+			route.stops[route.stops.length - 1].stop_lon,
+			AIRPORT_LOCATION[0],
+			AIRPORT_LOCATION[1]
+		)
+			? 'toAirport'
+			: 'toCity';
+		routeDirections.set(route.route_id, direction);
+	}
+
+	// Cache: Pre-calculate travel times/distances for all nearby stops in parallel
+	const stopTravelInfo = new Map<string, { distance: number; travelTime: number }>();
+	const uniqueStopIds = new Set<string>();
+	for (const trip of trips) {
+		const nearbyStops = trip.stops.filter((t) => stopIds.includes(t.stop_id));
+		for (const stop of nearbyStops) {
+			uniqueStopIds.add(stop.stop_id);
+		}
+	}
+
+	// Batch all travel calculations in parallel
+	const travelPromises = Array.from(uniqueStopIds).map(async (stopId) => {
+		const stop = transitFeed.stops[stopId];
+		const distance = await travelDistance(
+			loc.latitude,
+			loc.longitude,
+			stop.stop_lat,
+			stop.stop_lon
+		);
+		const time = await travelTime(
+			loc.latitude,
+			loc.longitude,
+			stop.stop_lat,
+			stop.stop_lon
+		);
+		return { stopId, distance, travelTime: time };
+	});
+
+	const travelResults = await Promise.all(travelPromises);
+	for (const result of travelResults) {
+		stopTravelInfo.set(result.stopId, { distance: result.distance, travelTime: result.travelTime });
+	}
+
 	for (const trip of trips) {
 		if (seenTripIds.has(trip.trip_id) && !Object.hasOwn(trip, 'vehicle_id')) continue;
 		seenTripIds.add(trip.trip_id);
-		const routeFind = routes.find((value) => value.route_id === trip.route_id);
-		const direction =
-			routeFind === undefined
-				? null
-				: haversineDistance(
-							routeFind.stops[0].stop_lat,
-							routeFind.stops[0].stop_lon,
-							AIRPORT_LOCATION[0],
-							AIRPORT_LOCATION[1]
-					  ) >
-					  haversineDistance(
-							routeFind.stops[routeFind.stops.length - 1].stop_lat,
-							routeFind.stops[routeFind.stops.length - 1].stop_lon,
-							AIRPORT_LOCATION[0],
-							AIRPORT_LOCATION[1]
-					  )
-					? 'toAirport'
-					: 'toCity';
-		if (direction === null) continue;
+
+		const direction = routeDirections.get(trip.route_id);
+		if (!direction) continue;
+
 		const nearbyStops = trip.stops.filter((t) => stopIds.includes(t.stop_id));
 		if (nearbyStops.length == 0) {
 			continue;
 		}
-		let closestStop = undefined;
-		let closestDistance = undefined;
-		for (const closeStop of nearbyStops) {
-			const distance = await travelDistance(
-				// to get the actual closest stop we use walking distance
-				loc.latitude,
-				loc.longitude,
-				transitFeed.stops[closeStop.stop_id].stop_lat,
-				transitFeed.stops[closeStop.stop_id].stop_lon
-			);
-			closestDistance = closestDistance !== undefined ? closestDistance : distance;
-			closestStop = closestStop !== undefined ? closestStop : closeStop;
+
+		// Find closest stop using pre-calculated distances
+		let closestStop = nearbyStops[0];
+		let closestDistance = stopTravelInfo.get(closestStop.stop_id)?.distance ?? Infinity;
+
+		for (let i = 1; i < nearbyStops.length; i++) {
+			const distance = stopTravelInfo.get(nearbyStops[i].stop_id)?.distance ?? Infinity;
 			if (distance < closestDistance) {
-				closestStop = closeStop;
+				closestStop = nearbyStops[i];
 				closestDistance = distance;
 			}
 		}
-		if (closestStop === undefined) {
-			continue;
-		}
-		const travelTimeMS =
-			(await travelTime(
-				loc.latitude,
-				loc.longitude,
-				transitFeed.stops[closestStop.stop_id].stop_lat,
-				transitFeed.stops[closestStop.stop_id].stop_lon
-			)) * 1000;
+
+		const travelInfo = stopTravelInfo.get(closestStop.stop_id);
+		if (!travelInfo) continue;
+
+		const travelTimeMS = travelInfo.travelTime * 1000;
 		const arrivalToStop = Date.now() + travelTimeMS;
 		const nextDepartureTime = getNextDeparture(closestStop, Object.hasOwn(trip, 'vehicle_id'));
+		const nextDepartureTimeMs = nextDepartureTime.getTime();
 
 		// Track earliest bus departure for smart refresh scheduling
-		if (nextDepartureTime.getTime() < earliestNextBusTime) {
-			earliestNextBusTime = nextDepartureTime.getTime();
+		if (nextDepartureTimeMs < earliestNextBusTime) {
+			earliestNextBusTime = nextDepartureTimeMs;
 		}
 
 		if (
@@ -214,13 +244,13 @@ async function loadNextBusesInternal() {
 		}
 		if (nextTrips[direction].length == 0 || nextTripTimes[direction].length == 0) {
 			nextTrips[direction].push(trip);
-			nextTripTimes[direction].push(getNextDeparture(closestStop).getTime());
+			nextTripTimes[direction].push(nextDepartureTimeMs);
 			continue;
 		}
 		// Fast exit if the number is too large
 		if (
 			nextTripTimes[direction].length === 10 &&
-			getNextDeparture(closestStop).getTime() >=
+			nextDepartureTimeMs >=
 				nextTripTimes[direction][nextTripTimes[direction].length - 1]
 		)
 			continue;
@@ -230,12 +260,12 @@ async function loadNextBusesInternal() {
 			right = nextTripTimes[direction].length;
 		while (left < right) {
 			const mid = (left + right) >> 1;
-			if (nextTripTimes[direction][mid] < getNextDeparture(closestStop).getTime()) left = mid + 1;
+			if (nextTripTimes[direction][mid] < nextDepartureTimeMs) left = mid + 1;
 			else right = mid;
 		}
 
 		// Insert and trim to max 10 (we'll filter to 4 later based on live/static priority)
-		nextTripTimes[direction].splice(left, 0, getNextDeparture(closestStop).getTime());
+		nextTripTimes[direction].splice(left, 0, nextDepartureTimeMs);
 		nextTrips[direction].splice(left, 0, trip);
 		if (nextTripTimes[direction].length > 10) {
 			nextTrips[direction].pop();
@@ -282,12 +312,6 @@ async function loadNextBusesInternal() {
 	currentRefreshTimeout = setTimeout(loadNextBuses, refreshDelay);
 
 	nextBuses.set(nextTrips);
-
-	// No longer need the minute-by-minute interval since we're using smart refresh
-	// if (nextBusesRefreshInterval) {
-	// 	clearInterval(nextBusesRefreshInterval);
-	// 	nextBusesRefreshInterval = undefined;
-	// }
 	console.log("DONE LOADING NEXT BUSES")
 }
 
