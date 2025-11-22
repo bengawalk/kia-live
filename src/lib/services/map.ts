@@ -1,10 +1,10 @@
 import {
+	BUS_GLB_URL,
 	LINE_COLLISION_STYLE,
 	LINE_LABEL_STYLE,
 	MAP_STYLES,
 	POINT_LABEL_STYLE,
-	POINT_LABEL_STYLE_OVERLAP,
-	BUS_GLB_URL
+	POINT_LABEL_STYLE_OVERLAP
 } from '$lib/constants';
 import mapboxgl, { type LayerSpecification } from 'mapbox-gl';
 import mapLineLabelImage from '$assets/map-line-label.png';
@@ -12,10 +12,10 @@ import { pollUserLocation } from '$lib/services/location';
 import { handleTap, handleTouchEnd, handleTouchStart } from '$lib/services/discovery';
 import { browser } from '$app/environment';
 import { initMetroMap, loadMetroLines, unloadMetroMap } from '$lib/services/metroMap';
-// @ts-expect-error threebox has no types
-import { Threebox } from 'threebox-plugin';
 // @ts-expect-error threebox does not have types
 import type { IThreeboxObject } from 'threebox-plugin';
+// @ts-expect-error threebox has no types
+import { Threebox } from 'threebox-plugin';
 import 'threebox-plugin/dist/threebox.css';
 
 let map: mapboxgl.Map | undefined;
@@ -104,22 +104,27 @@ export function unloadMap() {
 // Layer ordering constants - defines the z-index hierarchy
 // Lower index = rendered first (bottom), higher index = rendered last (top)
 const LAYER_ORDER = [
-	'LINE',           // 0: Line geometries (routes)
-	'LINE_LABEL',     // 1: Line labels
-	'3D_BUS',         // 2: 3D bus models
-	'STOP_CIRCLE',    // 3: Stop circles
-	'STOP_SYMBOL',    // 4: Stop symbols/labels
-	'BUS_LABEL'       // 5: Bus labels (top)
+	'LINE',            // 0: Line geometries (routes)
+	'LINE_LABEL',      // 1: Line labels
+	'METRO_STOP',      // 2
+	'METRO_STOP_LABEL',// 3
+	'3D_BUS',          // 4: 3D bus models
+	'STOP_CIRCLE',     // 5: Stop circles
+	'STOP_SYMBOL',     // 6: Stop symbols/labels
+	'BUS_LABEL'        // 7: Bus labels (top)
 ] as const;
-
 // Get the layer type category for ordering
-function getLayerCategory(layerId: string): '3D_BUS' | 'BUS_LABEL' | 'STOP_SYMBOL' | 'STOP_CIRCLE' | 'LINE_LABEL' | 'LINE' {
+function getLayerCategory(layerId: string): typeof LAYER_ORDER[number] {
 	if (layerId === '3d-buses') return '3D_BUS';
 	if (layerId.startsWith('bus_label_')) return 'BUS_LABEL';
 	if (layerId.startsWith('bus_click_')) return 'BUS_LABEL'; // Click layers same level as labels
-	if (layerId.includes('CIRCLE')) {
+	if (layerId.includes('CIRCLE') || layerId.includes("BUS_STOP")) {
 		if (layerId.startsWith('symbol')) return 'STOP_SYMBOL';
 		return 'STOP_CIRCLE';
+	}
+	if(layerId.includes('metro-stops')) {
+		if(layerId.endsWith('labels')) return 'METRO_STOP_LABEL';
+		return 'METRO_STOP';
 	}
 	if (layerId.startsWith('symbol_')) return 'LINE_LABEL';
 	if (layerId.startsWith('collision_')) return 'LINE_LABEL';
@@ -142,6 +147,8 @@ function enforceLayerOrder() {
 			id.includes('CIRCLE') ||
 			id.includes('BUS') ||
 			id.startsWith('symbol_') ||
+			id.includes('BUS_STOP') ||
+			id.includes('metro-stops') ||
 			id.startsWith('collision_') ||
 			id.startsWith('bus_')
 		);
@@ -322,7 +329,12 @@ export function updateLayer(
 		const symbolLayer =
 			MAP_STYLES[layerType].specification.type === 'line' ? LINE_LABEL_STYLE : labelOverlap ? POINT_LABEL_STYLE_OVERLAP : POINT_LABEL_STYLE;
 		symbolLayer.id = symbolID;
-		symbolLayer.paint = {"text-color": layerType.includes("GRAY") ? "#999999" : layerType.includes("BLUE") ? "#1967D3" : "#000000"};
+		symbolLayer.paint = {
+			"text-color": layerType.includes("GRAY") ? "#999999" : layerType.includes("BLUE") ? "#1967D3" : "#000000",
+			'text-halo-color': '#ffffff',
+			'text-halo-width': 2,
+			'text-halo-blur': 1,
+		};
 		symbolLayer.source = layerType;
 		map.addLayer(symbolLayer);
 	}
@@ -337,15 +349,19 @@ export function updateLayer(
 // ========== ADJUSTABLE PARAMETERS ==========
 // Configuration for bus 3D model appearance
 const BUS_3D_CONFIG = {
-	// Scale - linear interpolation matching text-size behavior
-	// Text goes from 10px@zoom10 -> 14px@zoom14 -> 20px@zoom18
-	// Scale proportionally: 10→14→20 gives ratio 1.0→1.4→2.0
-	scaleAtMinZoom: 60,     // Scale at zoom 10 (smaller when far)
-	scaleAtMidZoom: 15,     // Scale at zoom 14 (medium) - matches text size
-	scaleAtMaxZoom: 0.5,     // Scale at zoom 18 (larger when close) - matches text size
-	minZoom: 10,            // Minimum zoom
+	// Scale - exponential scaling for constant screen size
+	// Formula: scale(zoom) = scaleAtMidZoom * 2^(midZoom - zoom)
+	// Adjust scaleAtMidZoom to control overall bus size on screen
+	scaleAtMidZoom: 60*2,     // Reference scale at zoom 12 (adjust this to resize bus)
+	minZoom: 10,             // Minimum zoom
 	midZoom: 12,            // Middle reference zoom
-	maxZoom: 20,            // Maximum zoom
+	maxZoom: 19,            // Maximum zoom
+
+	// Calculated values (for reference, not used directly):
+	// scaleAtMinZoom: 60 * 2^5 = 1920 (at zoom 7)
+	// scaleAtMaxZoom: 60 * 2^-6 = 0.9375 (at zoom 18)
+	scaleAtMinZoom: 0,      // Unused - kept for compatibility
+	scaleAtMaxZoom: 0,      // Unused - kept for compatibility
 
 	// Rotation (in degrees) - will be converted to radians
 	rotationX: 90,          // Pitch: lay flat on map
@@ -394,18 +410,10 @@ function calculateBusScale(): number {
 		Math.min(BUS_3D_CONFIG.maxZoom, zoom)
 	);
 
-	let modelScale: number;
-	if (clampedZoom <= BUS_3D_CONFIG.midZoom) {
-		// Interpolate between minZoom and midZoom
-		const t = (clampedZoom - BUS_3D_CONFIG.minZoom) / (BUS_3D_CONFIG.midZoom - BUS_3D_CONFIG.minZoom);
-		modelScale = BUS_3D_CONFIG.scaleAtMinZoom + t * (BUS_3D_CONFIG.scaleAtMidZoom - BUS_3D_CONFIG.scaleAtMinZoom);
-	} else {
-		// Interpolate between midZoom and maxZoom
-		const t = (clampedZoom - BUS_3D_CONFIG.midZoom) / (BUS_3D_CONFIG.maxZoom - BUS_3D_CONFIG.midZoom);
-		modelScale = BUS_3D_CONFIG.scaleAtMidZoom + t * (BUS_3D_CONFIG.scaleAtMaxZoom - BUS_3D_CONFIG.scaleAtMidZoom);
-	}
-
-	return modelScale;
+	// Exponential scale: maintains constant screen size
+	// Formula: scale = baseScale * 2^(referenceZoom - currentZoom)
+	// Using midZoom as reference: scale = scaleAtMidZoom * 2^(midZoom - zoom)
+	return BUS_3D_CONFIG.scaleAtMidZoom * Math.pow(2, BUS_3D_CONFIG.midZoom - clampedZoom);
 }
 
 // Load a bus model for a specific bus (following threebox pattern)
@@ -466,20 +474,23 @@ function updateBusModelLighting(modelId: string, isActive: boolean) {
 
 	// Adjust the global Threebox lights intensity
 	// BUS_INACTIVE: lower ambient light, BUS: higher ambient light
-	const ambientIntensity = isActive ? 1.5 : 0.8;
-	const directionalIntensity = isActive ? 1.2 : 0.6;
+	const ambientIntensity = isActive ? 2.0 : 1.2;
+	const directionalIntensity = isActive ? 1.6 : 0.8;
 
 	// Threebox has ambient and directional lights
 	if (tb.lights.ambientLight) {
 		tb.lights.ambientLight.intensity = ambientIntensity;
+		tb.lights.ambientLight.color.set('#fbeecf');
 	}
 
 	if (tb.lights.dirLightBack) {
 		tb.lights.dirLightBack.intensity = directionalIntensity;
+		tb.lights.dirLightBack.color.set('#faecd9');
 	}
 
 	if (tb.lights.dirLightFront) {
 		tb.lights.dirLightFront.intensity = directionalIntensity;
+		tb.lights.dirLightFront.color.set('#FFF');
 	}
 
 }
@@ -719,7 +730,7 @@ export function updateBusMarker(
 	map.on('zoom', () => {
 		if(zoomUpdate < new Date().getTime()) {
 			updateBusModelScales(modelId);
-			zoomUpdate = new Date().getTime() + 50;
+			zoomUpdate = new Date().getTime() + 10;
 		}
 		return;
 	});
@@ -802,7 +813,12 @@ export function updateMarker(
 	if(!layerSymbolX) {
 		const styleLayer = {...POINT_LABEL_STYLE_OVERLAP};
 		styleLayer.id = symbolXID;
-		styleLayer.paint = {"text-color": layerType.includes("INACTIVE") ? "#999999" : layerType.includes("LIVE") ? "#1967D3" : "#000000"};
+		styleLayer.paint = {
+			"text-color": layerType.includes("INACTIVE") ? "#999999" : layerType.includes("LIVE") ? "#1967D3" : "#000000",
+			'text-halo-color': '#ffffff',
+			'text-halo-width': 2,
+			'text-halo-blur': 1,
+		};
 		styleLayer.source = layerType;
 		styleLayer.layout = {
 			'text-field': ['get', 'labelX'],
@@ -817,7 +833,11 @@ export function updateMarker(
 	if(!layerSymbolZ) {
 		const styleLayer = {...POINT_LABEL_STYLE_OVERLAP};
 		styleLayer.id = symbolZID;
-		styleLayer.paint = {"text-color": layerType.includes("INACTIVE") ? "#999999" : layerType.includes("LIVE") ? "#1967D3" : "#000000"};
+		styleLayer.paint = {
+			"text-color": layerType.includes("INACTIVE") ? "#999999" : layerType.includes("LIVE") ? "#1967D3" : "#000000",
+			'text-halo-color': '#ffffff',
+			'text-halo-width': 2,
+			'text-halo-blur': 1,};
 		styleLayer.source = layerType;
 		styleLayer.layout = {
 			'text-field': ['get', 'labelZ'],
