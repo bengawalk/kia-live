@@ -316,7 +316,6 @@ function writeDepartureFiles(stopDepartures) {
     const stats = {
         total_stops: stopDepartures.size,
         generation_date: new Date().toISOString(),
-        gtfs_source: GTFS_PATH,
         stops_with_departures: Array.from(stopDepartures.values()).filter(
             s => s.departures.weekday.length > 0 ||
                  s.departures.sunday.length > 0 ||

@@ -866,7 +866,7 @@
   },
   {
     "stop_id": "HSR_Layout",
-    "stop_name": "HSR Layout",
+    "stop_name": "Bommanahalli",
     "stop_name_translations": {},
     "location": {
       "lat": 12.911032,
@@ -877,7 +877,7 @@
   },
   {
     "stop_id": "Oxford_College",
-    "stop_name": "Oxford College",
+    "stop_name": "Hongasandra",
     "stop_name_translations": {},
     "location": {
       "lat": 12.901631,
@@ -888,7 +888,7 @@
   },
   {
     "stop_id": "Muneshwara_Nagar",
-    "stop_name": "Muneshwara Nagar",
+    "stop_name": "Kudlu Gate",
     "stop_name_translations": {},
     "location": {
       "lat": 12.889923,
@@ -899,7 +899,7 @@
   },
   {
     "stop_id": "Chikkabegur",
-    "stop_name": "Chikkabegur",
+    "stop_name": "Singasandra",
     "stop_name_translations": {},
     "location": {
       "lat": 12.880055,
@@ -910,7 +910,7 @@
   },
   {
     "stop_id": "Basapura_Road",
-    "stop_name": "Basapura Road",
+    "stop_name": "Hosa Road",
     "stop_name_translations": {},
     "location": {
       "lat": 12.87054,
@@ -921,7 +921,7 @@
   },
   {
     "stop_id": "Hosa_Road",
-    "stop_name": "Hosa Road",
+    "stop_name": "Beratena Agrahara",
     "stop_name_translations": {},
     "location": {
       "lat": 12.863205,
@@ -932,7 +932,7 @@
   },
   {
     "stop_id": "Electronic_City_I",
-    "stop_name": "Electronic City-I",
+    "stop_name": "Electronic City",
     "stop_name_translations": {},
     "location": {
       "lat": 12.856689,
@@ -943,7 +943,7 @@
   },
   {
     "stop_id": "Electronic_City_II",
-    "stop_name": "Electronic City-II",
+    "stop_name": "Konappana Agrahara",
     "stop_name_translations": {},
     "location": {
       "lat": 12.846783,

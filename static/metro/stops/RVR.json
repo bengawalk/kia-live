@@ -91,6 +91,18 @@
         "trip_id": "G1_weekday_0_1"
       },
       {
+        "time": "06:17",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_weekday_0_61"
+      },
+      {
         "time": "06:22",
         "headsign": {
           "en": "Madavara"
@@ -138,18 +150,6 @@
       {
         "time": "06:40",
         "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_weekday_0_61"
-      },
-      {
-        "time": "06:40",
-        "headsign": {
           "en": "Silk Institute",
           "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
         },
@@ -158,6 +158,18 @@
         "route_color": "009933",
         "direction_id": 0,
         "trip_id": "G1_weekday_0_3"
+      },
+      {
+        "time": "06:42",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_weekday_0_62"
       },
       {
         "time": "06:47",
@@ -192,6 +204,18 @@
         "route_color": "009933",
         "direction_id": 0,
         "trip_id": "G1_weekday_0_4"
+      },
+      {
+        "time": "06:57",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_weekday_0_63"
       },
       {
         "time": "06:59",
@@ -229,18 +253,6 @@
         "trip_id": "G1_weekday_1_316"
       },
       {
-        "time": "07:05",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_weekday_0_62"
-      },
-      {
         "time": "07:07",
         "headsign": {
           "en": "Madavara"
@@ -274,6 +286,18 @@
         "route_color": "009933",
         "direction_id": 0,
         "trip_id": "G1_weekday_0_5"
+      },
+      {
+        "time": "07:12",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_weekday_0_64"
       },
       {
         "time": "07:14",
@@ -313,18 +337,6 @@
       {
         "time": "07:20",
         "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_weekday_0_63"
-      },
-      {
-        "time": "07:20",
-        "headsign": {
           "en": "Silk Institute",
           "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
         },
@@ -356,6 +368,18 @@
         "route_color": "009933",
         "direction_id": 1,
         "trip_id": "G1_weekday_1_320"
+      },
+      {
+        "time": "07:27",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_weekday_0_65"
       },
       {
         "time": "07:29",
@@ -416,18 +440,6 @@
         "trip_id": "G1_weekday_1_322"
       },
       {
-        "time": "07:35",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_weekday_0_64"
-      },
-      {
         "time": "07:39",
         "headsign": {
           "en": "Peenya Industry",
@@ -450,6 +462,18 @@
         "route_color": "009933",
         "direction_id": 0,
         "trip_id": "G1_weekday_0_8"
+      },
+      {
+        "time": "07:42",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_weekday_0_66"
       },
       {
         "time": "07:42",
@@ -500,18 +524,6 @@
       {
         "time": "07:50",
         "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_weekday_0_65"
-      },
-      {
-        "time": "07:50",
-        "headsign": {
           "en": "Silk Institute",
           "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
         },
@@ -543,6 +555,18 @@
         "route_color": "009933",
         "direction_id": 1,
         "trip_id": "G1_weekday_1_326"
+      },
+      {
+        "time": "07:57",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_weekday_0_67"
       },
       {
         "time": "07:59",
@@ -603,18 +627,6 @@
         "trip_id": "G1_weekday_1_328"
       },
       {
-        "time": "08:05",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_weekday_0_66"
-      },
-      {
         "time": "08:09",
         "headsign": {
           "en": "Peenya Industry",
@@ -637,6 +649,18 @@
         "route_color": "009933",
         "direction_id": 0,
         "trip_id": "G1_weekday_0_11"
+      },
+      {
+        "time": "08:12",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_weekday_0_68"
       },
       {
         "time": "08:12",
@@ -699,18 +723,6 @@
       {
         "time": "08:20",
         "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_weekday_0_67"
-      },
-      {
-        "time": "08:20",
-        "headsign": {
           "en": "Silk Institute",
           "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
         },
@@ -766,6 +778,18 @@
         "route_color": "009933",
         "direction_id": 0,
         "trip_id": "G1_weekday_0_118"
+      },
+      {
+        "time": "08:27",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_weekday_0_69"
       },
       {
         "time": "08:29",
@@ -840,18 +864,6 @@
       {
         "time": "08:35",
         "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_weekday_0_68"
-      },
-      {
-        "time": "08:35",
-        "headsign": {
           "en": "Yelachenahalli",
           "kn": "ಯಲಚೇನಹಳ್ಳಿ"
         },
@@ -896,6 +908,18 @@
         "route_color": "009933",
         "direction_id": 0,
         "trip_id": "G1_weekday_0_121"
+      },
+      {
+        "time": "08:42",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_weekday_0_70"
       },
       {
         "time": "08:42",
@@ -958,18 +982,6 @@
       {
         "time": "08:50",
         "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_weekday_0_69"
-      },
-      {
-        "time": "08:50",
-        "headsign": {
           "en": "Silk Institute",
           "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
         },
@@ -1025,6 +1037,18 @@
         "route_color": "009933",
         "direction_id": 0,
         "trip_id": "G1_weekday_0_124"
+      },
+      {
+        "time": "08:57",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_weekday_0_71"
       },
       {
         "time": "08:59",
@@ -1099,18 +1123,6 @@
       {
         "time": "09:05",
         "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_weekday_0_70"
-      },
-      {
-        "time": "09:05",
-        "headsign": {
           "en": "Yelachenahalli",
           "kn": "ಯಲಚೇನಹಳ್ಳಿ"
         },
@@ -1155,6 +1167,18 @@
         "route_color": "009933",
         "direction_id": 0,
         "trip_id": "G1_weekday_0_127"
+      },
+      {
+        "time": "09:12",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_weekday_0_72"
       },
       {
         "time": "09:12",
@@ -1217,18 +1241,6 @@
       {
         "time": "09:20",
         "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_weekday_0_71"
-      },
-      {
-        "time": "09:20",
-        "headsign": {
           "en": "Silk Institute",
           "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
         },
@@ -1284,6 +1296,18 @@
         "route_color": "009933",
         "direction_id": 0,
         "trip_id": "G1_weekday_0_130"
+      },
+      {
+        "time": "09:27",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_weekday_0_73"
       },
       {
         "time": "09:29",
@@ -1358,18 +1382,6 @@
       {
         "time": "09:35",
         "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_weekday_0_72"
-      },
-      {
-        "time": "09:35",
-        "headsign": {
           "en": "Yelachenahalli",
           "kn": "ಯಲಚೇನಹಳ್ಳಿ"
         },
@@ -1414,6 +1426,18 @@
         "route_color": "009933",
         "direction_id": 0,
         "trip_id": "G1_weekday_0_133"
+      },
+      {
+        "time": "09:42",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_weekday_0_74"
       },
       {
         "time": "09:42",
@@ -1472,18 +1496,6 @@
         "route_color": "009933",
         "direction_id": 1,
         "trip_id": "G1_weekday_1_349"
-      },
-      {
-        "time": "09:50",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_weekday_0_73"
       },
       {
         "time": "09:50",
@@ -1581,6 +1593,18 @@
         "trip_id": "G1_weekday_0_137"
       },
       {
+        "time": "10:01",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_weekday_0_75"
+      },
+      {
         "time": "10:02",
         "headsign": {
           "en": "Bommasandra"
@@ -1613,18 +1637,6 @@
         "route_color": "009933",
         "direction_id": 1,
         "trip_id": "G1_weekday_1_352"
-      },
-      {
-        "time": "10:05",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_weekday_0_74"
       },
       {
         "time": "10:05",
@@ -1724,6 +1736,18 @@
       {
         "time": "10:20",
         "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_weekday_0_76"
+      },
+      {
+        "time": "10:20",
+        "headsign": {
           "en": "Silk Institute",
           "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
         },
@@ -1766,18 +1790,6 @@
         "route_color": "009933",
         "direction_id": 1,
         "trip_id": "G1_weekday_1_225"
-      },
-      {
-        "time": "10:24",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_weekday_0_75"
       },
       {
         "time": "10:24",
@@ -1877,6 +1889,18 @@
       {
         "time": "10:39",
         "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_weekday_0_77"
+      },
+      {
+        "time": "10:39",
+        "headsign": {
           "en": "Peenya Industry",
           "kn": "ಪೀಣ್ಯ ಇಂಡಸ್ಟ್ರಿ"
         },
@@ -1931,18 +1955,6 @@
         "route_color": "009933",
         "direction_id": 1,
         "trip_id": "G1_weekday_1_227"
-      },
-      {
-        "time": "10:43",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_weekday_0_76"
       },
       {
         "time": "10:45",
@@ -2004,6 +2016,18 @@
         "trip_id": "G1_weekday_0_148"
       },
       {
+        "time": "10:58",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_weekday_0_78"
+      },
+      {
         "time": "10:59",
         "headsign": {
           "en": "Bommasandra"
@@ -2037,18 +2061,6 @@
         "route_color": "009933",
         "direction_id": 0,
         "trip_id": "G1_weekday_0_149"
-      },
-      {
-        "time": "11:02",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_weekday_0_77"
       },
       {
         "time": "11:02",
@@ -2121,6 +2133,18 @@
         "trip_id": "G1_weekday_0_152"
       },
       {
+        "time": "11:17",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_weekday_0_79"
+      },
+      {
         "time": "11:18",
         "headsign": {
           "en": "Bommasandra"
@@ -2154,18 +2178,6 @@
         "route_color": "009933",
         "direction_id": 0,
         "trip_id": "G1_weekday_0_153"
-      },
-      {
-        "time": "11:21",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_weekday_0_78"
       },
       {
         "time": "11:22",
@@ -2250,6 +2262,18 @@
         "trip_id": "G1_weekday_0_156"
       },
       {
+        "time": "11:36",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_weekday_0_80"
+      },
+      {
         "time": "11:37",
         "headsign": {
           "en": "Bommasandra"
@@ -2270,18 +2294,6 @@
         "route_color": "009933",
         "direction_id": 1,
         "trip_id": "G1_weekday_1_233"
-      },
-      {
-        "time": "11:40",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_weekday_0_79"
       },
       {
         "time": "11:40",
@@ -2333,6 +2345,18 @@
       {
         "time": "11:55",
         "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_weekday_0_81"
+      },
+      {
+        "time": "11:55",
+        "headsign": {
           "en": "Madavara"
         },
         "route_id": "G1",
@@ -2363,18 +2387,6 @@
         "route_color": "009933",
         "direction_id": 0,
         "trip_id": "G1_weekday_0_35"
-      },
-      {
-        "time": "11:59",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_weekday_0_80"
       },
       {
         "time": "12:03",
@@ -2413,6 +2425,18 @@
       {
         "time": "12:14",
         "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_weekday_0_82"
+      },
+      {
+        "time": "12:14",
+        "headsign": {
           "en": "Silk Institute",
           "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
         },
@@ -2432,18 +2456,6 @@
         "route_color": "FFD700",
         "direction_id": 1,
         "trip_id": "Y1_weekday_1_22"
-      },
-      {
-        "time": "12:18",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_weekday_0_81"
       },
       {
         "time": "12:19",
@@ -2492,6 +2504,18 @@
         "trip_id": "G1_weekday_0_39"
       },
       {
+        "time": "12:33",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_weekday_0_83"
+      },
+      {
         "time": "12:34",
         "headsign": {
           "en": "Bommasandra"
@@ -2512,18 +2536,6 @@
         "route_color": "009933",
         "direction_id": 1,
         "trip_id": "G1_weekday_1_240"
-      },
-      {
-        "time": "12:37",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_weekday_0_82"
       },
       {
         "time": "12:38",
@@ -2572,6 +2584,18 @@
         "trip_id": "G1_weekday_1_242"
       },
       {
+        "time": "12:52",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_weekday_0_84"
+      },
+      {
         "time": "12:53",
         "headsign": {
           "en": "Bommasandra"
@@ -2593,18 +2617,6 @@
         "route_color": "009933",
         "direction_id": 0,
         "trip_id": "G1_weekday_0_42"
-      },
-      {
-        "time": "12:56",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_weekday_0_83"
       },
       {
         "time": "12:59",
@@ -2653,6 +2665,18 @@
         "trip_id": "G1_weekday_0_44"
       },
       {
+        "time": "13:11",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_weekday_0_85"
+      },
+      {
         "time": "13:12",
         "headsign": {
           "en": "Bommasandra"
@@ -2662,18 +2686,6 @@
         "route_color": "FFD700",
         "direction_id": 1,
         "trip_id": "Y1_weekday_1_25"
-      },
-      {
-        "time": "13:15",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_weekday_0_84"
       },
       {
         "time": "13:15",
@@ -2722,6 +2734,18 @@
         "trip_id": "G1_weekday_0_46"
       },
       {
+        "time": "13:30",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_weekday_0_86"
+      },
+      {
         "time": "13:31",
         "headsign": {
           "en": "Bommasandra"
@@ -2742,18 +2766,6 @@
         "route_color": "009933",
         "direction_id": 1,
         "trip_id": "G1_weekday_1_247"
-      },
-      {
-        "time": "13:34",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_weekday_0_85"
       },
       {
         "time": "13:34",
@@ -2802,6 +2814,18 @@
         "trip_id": "G1_weekday_1_249"
       },
       {
+        "time": "13:49",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_weekday_0_87"
+      },
+      {
         "time": "13:50",
         "headsign": {
           "en": "Bommasandra"
@@ -2823,18 +2847,6 @@
         "route_color": "009933",
         "direction_id": 0,
         "trip_id": "G1_weekday_0_49"
-      },
-      {
-        "time": "13:53",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_weekday_0_86"
       },
       {
         "time": "13:55",
@@ -2883,6 +2895,18 @@
         "trip_id": "G1_weekday_0_51"
       },
       {
+        "time": "14:08",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_weekday_0_88"
+      },
+      {
         "time": "14:09",
         "headsign": {
           "en": "Bommasandra"
@@ -2903,18 +2927,6 @@
         "route_color": "009933",
         "direction_id": 1,
         "trip_id": "G1_weekday_1_252"
-      },
-      {
-        "time": "14:12",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_weekday_0_87"
       },
       {
         "time": "14:14",
@@ -2954,6 +2966,18 @@
       {
         "time": "14:27",
         "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_weekday_0_89"
+      },
+      {
+        "time": "14:27",
+        "headsign": {
           "en": "Madavara"
         },
         "route_id": "G1",
@@ -2984,18 +3008,6 @@
         "route_color": "009933",
         "direction_id": 0,
         "trip_id": "G1_weekday_0_54"
-      },
-      {
-        "time": "14:31",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_weekday_0_88"
       },
       {
         "time": "14:35",
@@ -3034,6 +3046,18 @@
       {
         "time": "14:46",
         "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_weekday_0_90"
+      },
+      {
+        "time": "14:46",
+        "headsign": {
           "en": "Silk Institute",
           "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
         },
@@ -3053,18 +3077,6 @@
         "route_color": "FFD700",
         "direction_id": 1,
         "trip_id": "Y1_weekday_1_30"
-      },
-      {
-        "time": "14:50",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_weekday_0_89"
       },
       {
         "time": "14:51",
@@ -3113,6 +3125,18 @@
         "trip_id": "G1_weekday_0_58"
       },
       {
+        "time": "15:05",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_weekday_0_91"
+      },
+      {
         "time": "15:06",
         "headsign": {
           "en": "Bommasandra"
@@ -3133,18 +3157,6 @@
         "route_color": "009933",
         "direction_id": 1,
         "trip_id": "G1_weekday_1_259"
-      },
-      {
-        "time": "15:09",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_weekday_0_90"
       },
       {
         "time": "15:10",
@@ -3193,6 +3205,18 @@
         "trip_id": "G1_weekday_1_261"
       },
       {
+        "time": "15:24",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_weekday_0_92"
+      },
+      {
         "time": "15:25",
         "headsign": {
           "en": "Bommasandra"
@@ -3214,18 +3238,6 @@
         "route_color": "009933",
         "direction_id": 0,
         "trip_id": "G1_weekday_0_61"
-      },
-      {
-        "time": "15:28",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_weekday_0_91"
       },
       {
         "time": "15:31",
@@ -3274,6 +3286,18 @@
         "trip_id": "G1_weekday_0_63"
       },
       {
+        "time": "15:43",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_weekday_0_93"
+      },
+      {
         "time": "15:44",
         "headsign": {
           "en": "Bommasandra"
@@ -3283,18 +3307,6 @@
         "route_color": "FFD700",
         "direction_id": 1,
         "trip_id": "Y1_weekday_1_33"
-      },
-      {
-        "time": "15:47",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_weekday_0_92"
       },
       {
         "time": "15:47",
@@ -3343,6 +3355,18 @@
         "trip_id": "G1_weekday_0_65"
       },
       {
+        "time": "16:02",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_weekday_0_94"
+      },
+      {
         "time": "16:03",
         "headsign": {
           "en": "Bommasandra"
@@ -3363,18 +3387,6 @@
         "route_color": "009933",
         "direction_id": 1,
         "trip_id": "G1_weekday_1_266"
-      },
-      {
-        "time": "16:06",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_weekday_0_93"
       },
       {
         "time": "16:06",
@@ -3423,6 +3435,18 @@
         "trip_id": "G1_weekday_1_268"
       },
       {
+        "time": "16:21",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_weekday_0_95"
+      },
+      {
         "time": "16:22",
         "headsign": {
           "en": "Bommasandra"
@@ -3444,18 +3468,6 @@
         "route_color": "009933",
         "direction_id": 0,
         "trip_id": "G1_weekday_0_68"
-      },
-      {
-        "time": "16:25",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_weekday_0_94"
       },
       {
         "time": "16:27",
@@ -3530,6 +3542,18 @@
       {
         "time": "16:40",
         "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_weekday_0_96"
+      },
+      {
+        "time": "16:40",
+        "headsign": {
           "en": "Peenya Industry",
           "kn": "ಪೀಣ್ಯ ಇಂಡಸ್ಟ್ರಿ"
         },
@@ -3560,18 +3584,6 @@
         "route_color": "009933",
         "direction_id": 1,
         "trip_id": "G1_weekday_1_271"
-      },
-      {
-        "time": "16:44",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_weekday_0_95"
       },
       {
         "time": "16:45",
@@ -3619,6 +3631,18 @@
         "route_color": "009933",
         "direction_id": 1,
         "trip_id": "G1_weekday_1_272"
+      },
+      {
+        "time": "16:55",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_weekday_0_97"
       },
       {
         "time": "16:55",
@@ -3679,18 +3703,6 @@
         "trip_id": "G1_weekday_1_366"
       },
       {
-        "time": "17:03",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_weekday_0_96"
-      },
-      {
         "time": "17:05",
         "headsign": {
           "en": "Peenya Industry",
@@ -3724,6 +3736,18 @@
         "route_color": "009933",
         "direction_id": 1,
         "trip_id": "G1_weekday_1_274"
+      },
+      {
+        "time": "17:10",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_weekday_0_98"
       },
       {
         "time": "17:10",
@@ -3784,18 +3808,6 @@
         "trip_id": "G1_weekday_0_74"
       },
       {
-        "time": "17:18",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_weekday_0_97"
-      },
-      {
         "time": "17:20",
         "headsign": {
           "en": "Madavara"
@@ -3817,6 +3829,18 @@
         "route_color": "009933",
         "direction_id": 1,
         "trip_id": "G1_weekday_1_370"
+      },
+      {
+        "time": "17:25",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_weekday_0_99"
       },
       {
         "time": "17:25",
@@ -3877,18 +3901,6 @@
         "trip_id": "G1_weekday_1_372"
       },
       {
-        "time": "17:33",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_weekday_0_98"
-      },
-      {
         "time": "17:35",
         "headsign": {
           "en": "Peenya Industry",
@@ -3911,6 +3923,18 @@
         "route_color": "009933",
         "direction_id": 0,
         "trip_id": "G1_weekday_0_76"
+      },
+      {
+        "time": "17:40",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_weekday_0_100"
       },
       {
         "time": "17:40",
@@ -3971,18 +3995,6 @@
         "trip_id": "G1_weekday_0_77"
       },
       {
-        "time": "17:48",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_weekday_0_99"
-      },
-      {
         "time": "17:50",
         "headsign": {
           "en": "Madavara"
@@ -4016,6 +4028,18 @@
         "route_color": "009933",
         "direction_id": 0,
         "trip_id": "G1_weekday_0_158"
+      },
+      {
+        "time": "17:55",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_weekday_0_101"
       },
       {
         "time": "17:55",
@@ -4090,18 +4114,6 @@
       {
         "time": "18:03",
         "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_weekday_0_100"
-      },
-      {
-        "time": "18:03",
-        "headsign": {
           "en": "Yelachenahalli",
           "kn": "ಯಲಚೇನಹಳ್ಳಿ"
         },
@@ -4146,6 +4158,18 @@
         "route_color": "009933",
         "direction_id": 0,
         "trip_id": "G1_weekday_0_161"
+      },
+      {
+        "time": "18:10",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_weekday_0_102"
       },
       {
         "time": "18:10",
@@ -4220,18 +4244,6 @@
       {
         "time": "18:18",
         "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_weekday_0_101"
-      },
-      {
-        "time": "18:18",
-        "headsign": {
           "en": "Yelachenahalli",
           "kn": "ಯಲಚೇನಹಳ್ಳಿ"
         },
@@ -4275,6 +4287,18 @@
         "route_color": "009933",
         "direction_id": 0,
         "trip_id": "G1_weekday_0_164"
+      },
+      {
+        "time": "18:25",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_weekday_0_103"
       },
       {
         "time": "18:25",
@@ -4349,18 +4373,6 @@
       {
         "time": "18:33",
         "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_weekday_0_102"
-      },
-      {
-        "time": "18:33",
-        "headsign": {
           "en": "Yelachenahalli",
           "kn": "ಯಲಚೇನಹಳ್ಳಿ"
         },
@@ -4405,6 +4417,18 @@
         "route_color": "009933",
         "direction_id": 0,
         "trip_id": "G1_weekday_0_167"
+      },
+      {
+        "time": "18:40",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_weekday_0_104"
       },
       {
         "time": "18:40",
@@ -4479,18 +4503,6 @@
       {
         "time": "18:48",
         "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_weekday_0_103"
-      },
-      {
-        "time": "18:48",
-        "headsign": {
           "en": "Yelachenahalli",
           "kn": "ಯಲಚೇನಹಳ್ಳಿ"
         },
@@ -4534,6 +4546,18 @@
         "route_color": "009933",
         "direction_id": 0,
         "trip_id": "G1_weekday_0_170"
+      },
+      {
+        "time": "18:55",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_weekday_0_105"
       },
       {
         "time": "18:55",
@@ -4608,18 +4632,6 @@
       {
         "time": "19:03",
         "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_weekday_0_104"
-      },
-      {
-        "time": "19:03",
-        "headsign": {
           "en": "Yelachenahalli",
           "kn": "ಯಲಚೇನಹಳ್ಳಿ"
         },
@@ -4664,6 +4676,18 @@
         "route_color": "009933",
         "direction_id": 0,
         "trip_id": "G1_weekday_0_173"
+      },
+      {
+        "time": "19:10",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_weekday_0_106"
       },
       {
         "time": "19:10",
@@ -4738,18 +4762,6 @@
       {
         "time": "19:18",
         "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_weekday_0_105"
-      },
-      {
-        "time": "19:18",
-        "headsign": {
           "en": "Yelachenahalli",
           "kn": "ಯಲಚೇನಹಳ್ಳಿ"
         },
@@ -4793,6 +4805,18 @@
         "route_color": "009933",
         "direction_id": 0,
         "trip_id": "G1_weekday_0_176"
+      },
+      {
+        "time": "19:25",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_weekday_0_107"
       },
       {
         "time": "19:25",
@@ -4867,18 +4891,6 @@
       {
         "time": "19:33",
         "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_weekday_0_106"
-      },
-      {
-        "time": "19:33",
-        "headsign": {
           "en": "Yelachenahalli",
           "kn": "ಯಲಚೇನಹಳ್ಳಿ"
         },
@@ -4923,6 +4935,18 @@
         "route_color": "009933",
         "direction_id": 0,
         "trip_id": "G1_weekday_0_179"
+      },
+      {
+        "time": "19:40",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_weekday_0_108"
       },
       {
         "time": "19:40",
@@ -4997,18 +5021,6 @@
       {
         "time": "19:48",
         "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_weekday_0_107"
-      },
-      {
-        "time": "19:48",
-        "headsign": {
           "en": "Yelachenahalli",
           "kn": "ಯಲಚೇನಹಳ್ಳಿ"
         },
@@ -5052,6 +5064,18 @@
         "route_color": "009933",
         "direction_id": 0,
         "trip_id": "G1_weekday_0_182"
+      },
+      {
+        "time": "19:55",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_weekday_0_109"
       },
       {
         "time": "19:55",
@@ -5126,18 +5150,6 @@
       {
         "time": "20:03",
         "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_weekday_0_108"
-      },
-      {
-        "time": "20:03",
-        "headsign": {
           "en": "Yelachenahalli",
           "kn": "ಯಲಚೇನಹಳ್ಳಿ"
         },
@@ -5170,6 +5182,18 @@
         "route_color": "009933",
         "direction_id": 0,
         "trip_id": "G1_weekday_0_185"
+      },
+      {
+        "time": "20:10",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_weekday_0_110"
       },
       {
         "time": "20:10",
@@ -5220,18 +5244,6 @@
       {
         "time": "20:18",
         "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_weekday_0_109"
-      },
-      {
-        "time": "20:18",
-        "headsign": {
           "en": "Yelachenahalli",
           "kn": "ಯಲಚೇನಹಳ್ಳಿ"
         },
@@ -5263,6 +5275,18 @@
         "route_color": "009933",
         "direction_id": 0,
         "trip_id": "G1_weekday_0_188"
+      },
+      {
+        "time": "20:25",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_weekday_0_111"
       },
       {
         "time": "20:26",
@@ -5309,18 +5333,6 @@
         "route_color": "009933",
         "direction_id": 1,
         "trip_id": "G1_weekday_1_295"
-      },
-      {
-        "time": "20:33",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_weekday_0_110"
       },
       {
         "time": "20:33",
@@ -5373,6 +5385,18 @@
       {
         "time": "20:40",
         "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_weekday_0_112"
+      },
+      {
+        "time": "20:40",
+        "headsign": {
           "en": "Madavara"
         },
         "route_id": "G1",
@@ -5415,18 +5439,6 @@
         "route_color": "009933",
         "direction_id": 0,
         "trip_id": "G1_weekday_0_96"
-      },
-      {
-        "time": "20:48",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_weekday_0_111"
       },
       {
         "time": "20:48",
@@ -5477,6 +5489,18 @@
       {
         "time": "20:55",
         "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_weekday_0_113"
+      },
+      {
+        "time": "20:55",
+        "headsign": {
           "en": "Silk Institute",
           "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
         },
@@ -5519,18 +5543,6 @@
         "route_color": "FFD700",
         "direction_id": 1,
         "trip_id": "Y1_weekday_1_53"
-      },
-      {
-        "time": "21:03",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_weekday_0_112"
       },
       {
         "time": "21:03",
@@ -5580,6 +5592,18 @@
         "trip_id": "G1_weekday_0_197"
       },
       {
+        "time": "21:10",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_weekday_0_114"
+      },
+      {
         "time": "21:11",
         "headsign": {
           "en": "Silk Institute",
@@ -5626,18 +5650,6 @@
         "trip_id": "G1_weekday_1_301"
       },
       {
-        "time": "21:18",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_weekday_0_113"
-      },
-      {
         "time": "21:19",
         "headsign": {
           "en": "Silk Institute",
@@ -5659,6 +5671,18 @@
         "route_color": "009933",
         "direction_id": 1,
         "trip_id": "G1_weekday_1_302"
+      },
+      {
+        "time": "21:25",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_weekday_0_115"
       },
       {
         "time": "21:29",
@@ -5695,18 +5719,6 @@
         "trip_id": "G1_weekday_1_303"
       },
       {
-        "time": "21:33",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_weekday_0_114"
-      },
-      {
         "time": "21:39",
         "headsign": {
           "en": "Silk Institute",
@@ -5730,6 +5742,18 @@
         "trip_id": "G1_weekday_1_304"
       },
       {
+        "time": "21:40",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_weekday_0_116"
+      },
+      {
         "time": "21:45",
         "headsign": {
           "en": "Bommasandra"
@@ -5750,18 +5774,6 @@
         "route_color": "009933",
         "direction_id": 1,
         "trip_id": "G1_weekday_1_305"
-      },
-      {
-        "time": "21:48",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_weekday_0_115"
       },
       {
         "time": "21:49",
@@ -5787,6 +5799,18 @@
         "trip_id": "G1_weekday_1_306"
       },
       {
+        "time": "21:55",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_weekday_0_117"
+      },
+      {
         "time": "21:59",
         "headsign": {
           "en": "Silk Institute",
@@ -5808,18 +5832,6 @@
         "route_color": "009933",
         "direction_id": 1,
         "trip_id": "G1_weekday_1_307"
-      },
-      {
-        "time": "22:03",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_weekday_0_116"
       },
       {
         "time": "22:05",
@@ -5845,6 +5857,18 @@
         "trip_id": "G1_weekday_0_105"
       },
       {
+        "time": "22:10",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_weekday_0_118"
+      },
+      {
         "time": "22:12",
         "headsign": {
           "en": "Madavara"
@@ -5854,18 +5878,6 @@
         "route_color": "009933",
         "direction_id": 1,
         "trip_id": "G1_weekday_1_308"
-      },
-      {
-        "time": "22:18",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_weekday_0_117"
       },
       {
         "time": "22:19",
@@ -5889,6 +5901,18 @@
         "route_color": "009933",
         "direction_id": 1,
         "trip_id": "G1_weekday_1_309"
+      },
+      {
+        "time": "22:25",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_weekday_0_119"
       },
       {
         "time": "22:29",
@@ -5925,18 +5949,6 @@
         "trip_id": "G1_weekday_1_310"
       },
       {
-        "time": "22:33",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_weekday_0_118"
-      },
-      {
         "time": "22:39",
         "headsign": {
           "en": "Silk Institute",
@@ -5949,6 +5961,18 @@
         "trip_id": "G1_weekday_0_108"
       },
       {
+        "time": "22:40",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_weekday_0_120"
+      },
+      {
         "time": "22:42",
         "headsign": {
           "en": "Madavara"
@@ -5958,18 +5982,6 @@
         "route_color": "009933",
         "direction_id": 1,
         "trip_id": "G1_weekday_1_311"
-      },
-      {
-        "time": "22:48",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_weekday_0_119"
       },
       {
         "time": "22:49",
@@ -6027,18 +6039,6 @@
         "route_color": "009933",
         "direction_id": 1,
         "trip_id": "G1_weekday_1_313"
-      },
-      {
-        "time": "23:03",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_weekday_0_120"
       },
       {
         "time": "23:09",
@@ -6136,6 +6136,18 @@
         "trip_id": "Y1_sunday_1_0"
       },
       {
+        "time": "07:17",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_sunday_0_58"
+      },
+      {
         "time": "07:22",
         "headsign": {
           "en": "Bommasandra"
@@ -6156,6 +6168,18 @@
         "route_color": "009933",
         "direction_id": 1,
         "trip_id": "G1_sunday_1_110"
+      },
+      {
+        "time": "07:32",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_sunday_0_59"
       },
       {
         "time": "07:37",
@@ -6180,7 +6204,7 @@
         "trip_id": "G1_sunday_1_111"
       },
       {
-        "time": "07:40",
+        "time": "07:47",
         "headsign": {
           "en": "Rashtreeya Vidyalaya Road",
           "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
@@ -6189,7 +6213,7 @@
         "route_name": "Yellow",
         "route_color": "FFD700",
         "direction_id": 0,
-        "trip_id": "Y1_sunday_0_58"
+        "trip_id": "Y1_sunday_0_60"
       },
       {
         "time": "07:52",
@@ -6216,18 +6240,6 @@
       {
         "time": "07:55",
         "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_sunday_0_59"
-      },
-      {
-        "time": "07:55",
-        "headsign": {
           "en": "Silk Institute",
           "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
         },
@@ -6236,6 +6248,18 @@
         "route_color": "009933",
         "direction_id": 0,
         "trip_id": "G1_sunday_0_0"
+      },
+      {
+        "time": "08:02",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_sunday_0_61"
       },
       {
         "time": "08:05",
@@ -6272,18 +6296,6 @@
         "trip_id": "G1_sunday_1_113"
       },
       {
-        "time": "08:10",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_sunday_0_60"
-      },
-      {
         "time": "08:15",
         "headsign": {
           "en": "Silk Institute",
@@ -6294,6 +6306,18 @@
         "route_color": "009933",
         "direction_id": 0,
         "trip_id": "G1_sunday_0_2"
+      },
+      {
+        "time": "08:17",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_sunday_0_62"
       },
       {
         "time": "08:20",
@@ -6320,18 +6344,6 @@
       {
         "time": "08:25",
         "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_sunday_0_61"
-      },
-      {
-        "time": "08:25",
-        "headsign": {
           "en": "Silk Institute",
           "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
         },
@@ -6351,6 +6363,18 @@
         "route_color": "009933",
         "direction_id": 1,
         "trip_id": "G1_sunday_1_115"
+      },
+      {
+        "time": "08:32",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_sunday_0_63"
       },
       {
         "time": "08:35",
@@ -6378,18 +6402,6 @@
       {
         "time": "08:40",
         "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_sunday_0_62"
-      },
-      {
-        "time": "08:40",
-        "headsign": {
           "en": "Madavara"
         },
         "route_id": "G1",
@@ -6409,6 +6421,18 @@
         "route_color": "009933",
         "direction_id": 0,
         "trip_id": "G1_sunday_0_5"
+      },
+      {
+        "time": "08:47",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_sunday_0_64"
       },
       {
         "time": "08:50",
@@ -6435,18 +6459,6 @@
       {
         "time": "08:55",
         "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_sunday_0_63"
-      },
-      {
-        "time": "08:55",
-        "headsign": {
           "en": "Silk Institute",
           "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
         },
@@ -6466,6 +6478,18 @@
         "route_color": "009933",
         "direction_id": 1,
         "trip_id": "G1_sunday_1_118"
+      },
+      {
+        "time": "09:02",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_sunday_0_65"
       },
       {
         "time": "09:05",
@@ -6493,18 +6517,6 @@
       {
         "time": "09:10",
         "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_sunday_0_64"
-      },
-      {
-        "time": "09:10",
-        "headsign": {
           "en": "Madavara"
         },
         "route_id": "G1",
@@ -6524,6 +6536,18 @@
         "route_color": "009933",
         "direction_id": 0,
         "trip_id": "G1_sunday_0_8"
+      },
+      {
+        "time": "09:17",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_sunday_0_66"
       },
       {
         "time": "09:20",
@@ -6550,18 +6574,6 @@
       {
         "time": "09:25",
         "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_sunday_0_65"
-      },
-      {
-        "time": "09:25",
-        "headsign": {
           "en": "Silk Institute",
           "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
         },
@@ -6581,6 +6593,18 @@
         "route_color": "009933",
         "direction_id": 1,
         "trip_id": "G1_sunday_1_121"
+      },
+      {
+        "time": "09:32",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_sunday_0_67"
       },
       {
         "time": "09:35",
@@ -6608,18 +6632,6 @@
       {
         "time": "09:40",
         "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_sunday_0_66"
-      },
-      {
-        "time": "09:40",
-        "headsign": {
           "en": "Madavara"
         },
         "route_id": "G1",
@@ -6639,6 +6651,18 @@
         "route_color": "009933",
         "direction_id": 0,
         "trip_id": "G1_sunday_0_11"
+      },
+      {
+        "time": "09:47",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_sunday_0_68"
       },
       {
         "time": "09:50",
@@ -6665,18 +6689,6 @@
       {
         "time": "09:55",
         "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_sunday_0_67"
-      },
-      {
-        "time": "09:55",
-        "headsign": {
           "en": "Silk Institute",
           "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
         },
@@ -6696,6 +6708,18 @@
         "route_color": "009933",
         "direction_id": 1,
         "trip_id": "G1_sunday_1_124"
+      },
+      {
+        "time": "10:02",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_sunday_0_69"
       },
       {
         "time": "10:05",
@@ -6723,18 +6747,6 @@
       {
         "time": "10:10",
         "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_sunday_0_68"
-      },
-      {
-        "time": "10:10",
-        "headsign": {
           "en": "Madavara"
         },
         "route_id": "G1",
@@ -6754,6 +6766,18 @@
         "route_color": "009933",
         "direction_id": 0,
         "trip_id": "G1_sunday_0_14"
+      },
+      {
+        "time": "10:17",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_sunday_0_70"
       },
       {
         "time": "10:20",
@@ -6776,18 +6800,6 @@
         "route_color": "FFD700",
         "direction_id": 1,
         "trip_id": "Y1_sunday_1_13"
-      },
-      {
-        "time": "10:25",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_sunday_0_69"
       },
       {
         "time": "10:25",
@@ -6825,6 +6837,18 @@
         "trip_id": "G1_sunday_0_16"
       },
       {
+        "time": "10:36",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_sunday_0_71"
+      },
+      {
         "time": "10:37",
         "headsign": {
           "en": "Bommasandra"
@@ -6834,18 +6858,6 @@
         "route_color": "FFD700",
         "direction_id": 1,
         "trip_id": "Y1_sunday_1_14"
-      },
-      {
-        "time": "10:40",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_sunday_0_70"
       },
       {
         "time": "10:40",
@@ -6884,6 +6896,18 @@
       {
         "time": "10:55",
         "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_sunday_0_72"
+      },
+      {
+        "time": "10:55",
+        "headsign": {
           "en": "Silk Institute",
           "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
         },
@@ -6903,18 +6927,6 @@
         "route_color": "FFD700",
         "direction_id": 1,
         "trip_id": "Y1_sunday_1_15"
-      },
-      {
-        "time": "10:59",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_sunday_0_71"
       },
       {
         "time": "11:00",
@@ -6951,6 +6963,18 @@
         "trip_id": "G1_sunday_1_131"
       },
       {
+        "time": "11:14",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_sunday_0_73"
+      },
+      {
         "time": "11:15",
         "headsign": {
           "en": "Bommasandra"
@@ -6972,18 +6996,6 @@
         "route_color": "009933",
         "direction_id": 0,
         "trip_id": "G1_sunday_0_20"
-      },
-      {
-        "time": "11:18",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_sunday_0_72"
       },
       {
         "time": "11:20",
@@ -7020,6 +7032,18 @@
         "trip_id": "G1_sunday_1_133"
       },
       {
+        "time": "11:33",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_sunday_0_74"
+      },
+      {
         "time": "11:34",
         "headsign": {
           "en": "Bommasandra"
@@ -7041,18 +7065,6 @@
         "route_color": "009933",
         "direction_id": 0,
         "trip_id": "G1_sunday_0_22"
-      },
-      {
-        "time": "11:37",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_sunday_0_73"
       },
       {
         "time": "11:40",
@@ -7101,6 +7113,18 @@
         "trip_id": "G1_sunday_1_135"
       },
       {
+        "time": "11:52",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_sunday_0_75"
+      },
+      {
         "time": "11:53",
         "headsign": {
           "en": "Bommasandra"
@@ -7110,18 +7134,6 @@
         "route_color": "FFD700",
         "direction_id": 1,
         "trip_id": "Y1_sunday_1_18"
-      },
-      {
-        "time": "11:56",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_sunday_0_74"
       },
       {
         "time": "11:58",
@@ -7170,6 +7182,18 @@
         "trip_id": "G1_sunday_1_137"
       },
       {
+        "time": "12:11",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_sunday_0_76"
+      },
+      {
         "time": "12:12",
         "headsign": {
           "en": "Bommasandra"
@@ -7193,18 +7217,6 @@
         "trip_id": "G1_sunday_0_27"
       },
       {
-        "time": "12:15",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_sunday_0_75"
-      },
-      {
         "time": "12:20",
         "headsign": {
           "en": "Madavara"
@@ -7226,6 +7238,18 @@
         "route_color": "009933",
         "direction_id": 0,
         "trip_id": "G1_sunday_0_28"
+      },
+      {
+        "time": "12:30",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_sunday_0_77"
       },
       {
         "time": "12:30",
@@ -7260,18 +7284,6 @@
         "route_color": "FFD700",
         "direction_id": 1,
         "trip_id": "Y1_sunday_1_20"
-      },
-      {
-        "time": "12:34",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_sunday_0_76"
       },
       {
         "time": "12:38",
@@ -7320,6 +7332,18 @@
         "trip_id": "G1_sunday_1_141"
       },
       {
+        "time": "12:49",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_sunday_0_78"
+      },
+      {
         "time": "12:50",
         "headsign": {
           "en": "Bommasandra"
@@ -7329,18 +7353,6 @@
         "route_color": "FFD700",
         "direction_id": 1,
         "trip_id": "Y1_sunday_1_21"
-      },
-      {
-        "time": "12:53",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_sunday_0_77"
       },
       {
         "time": "12:54",
@@ -7389,6 +7401,18 @@
         "trip_id": "G1_sunday_1_143"
       },
       {
+        "time": "13:08",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_sunday_0_79"
+      },
+      {
         "time": "13:09",
         "headsign": {
           "en": "Bommasandra"
@@ -7421,18 +7445,6 @@
         "route_color": "009933",
         "direction_id": 1,
         "trip_id": "G1_sunday_1_144"
-      },
-      {
-        "time": "13:12",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_sunday_0_78"
       },
       {
         "time": "13:18",
@@ -7481,6 +7493,18 @@
         "trip_id": "G1_sunday_1_146"
       },
       {
+        "time": "13:27",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_sunday_0_80"
+      },
+      {
         "time": "13:28",
         "headsign": {
           "en": "Bommasandra"
@@ -7490,18 +7514,6 @@
         "route_color": "FFD700",
         "direction_id": 1,
         "trip_id": "Y1_sunday_1_23"
-      },
-      {
-        "time": "13:31",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_sunday_0_79"
       },
       {
         "time": "13:34",
@@ -7550,6 +7562,18 @@
         "trip_id": "G1_sunday_1_148"
       },
       {
+        "time": "13:46",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_sunday_0_81"
+      },
+      {
         "time": "13:47",
         "headsign": {
           "en": "Bommasandra"
@@ -7559,18 +7583,6 @@
         "route_color": "FFD700",
         "direction_id": 1,
         "trip_id": "Y1_sunday_1_24"
-      },
-      {
-        "time": "13:50",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_sunday_0_80"
       },
       {
         "time": "13:50",
@@ -7619,6 +7631,18 @@
         "trip_id": "G1_sunday_1_150"
       },
       {
+        "time": "14:05",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_sunday_0_82"
+      },
+      {
         "time": "14:06",
         "headsign": {
           "en": "Bommasandra"
@@ -7651,18 +7675,6 @@
         "route_color": "009933",
         "direction_id": 1,
         "trip_id": "G1_sunday_1_151"
-      },
-      {
-        "time": "14:09",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_sunday_0_81"
       },
       {
         "time": "14:14",
@@ -7711,6 +7723,18 @@
         "trip_id": "G1_sunday_1_153"
       },
       {
+        "time": "14:24",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_sunday_0_83"
+      },
+      {
         "time": "14:25",
         "headsign": {
           "en": "Bommasandra"
@@ -7720,18 +7744,6 @@
         "route_color": "FFD700",
         "direction_id": 1,
         "trip_id": "Y1_sunday_1_26"
-      },
-      {
-        "time": "14:28",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_sunday_0_82"
       },
       {
         "time": "14:30",
@@ -7780,6 +7792,18 @@
         "trip_id": "G1_sunday_1_155"
       },
       {
+        "time": "14:43",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_sunday_0_84"
+      },
+      {
         "time": "14:44",
         "headsign": {
           "en": "Bommasandra"
@@ -7814,18 +7838,6 @@
         "trip_id": "G1_sunday_1_156"
       },
       {
-        "time": "14:47",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_sunday_0_83"
-      },
-      {
         "time": "14:54",
         "headsign": {
           "en": "Silk Institute",
@@ -7847,6 +7859,18 @@
         "route_color": "009933",
         "direction_id": 1,
         "trip_id": "G1_sunday_1_157"
+      },
+      {
+        "time": "15:02",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_sunday_0_85"
       },
       {
         "time": "15:02",
@@ -7881,18 +7905,6 @@
         "route_color": "FFD700",
         "direction_id": 1,
         "trip_id": "Y1_sunday_1_28"
-      },
-      {
-        "time": "15:06",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_sunday_0_84"
       },
       {
         "time": "15:10",
@@ -7941,6 +7953,18 @@
         "trip_id": "G1_sunday_1_160"
       },
       {
+        "time": "15:21",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_sunday_0_86"
+      },
+      {
         "time": "15:22",
         "headsign": {
           "en": "Bommasandra"
@@ -7950,18 +7974,6 @@
         "route_color": "FFD700",
         "direction_id": 1,
         "trip_id": "Y1_sunday_1_29"
-      },
-      {
-        "time": "15:25",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_sunday_0_85"
       },
       {
         "time": "15:26",
@@ -8010,6 +8022,18 @@
         "trip_id": "G1_sunday_1_162"
       },
       {
+        "time": "15:40",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_sunday_0_87"
+      },
+      {
         "time": "15:41",
         "headsign": {
           "en": "Bommasandra"
@@ -8042,18 +8066,6 @@
         "route_color": "009933",
         "direction_id": 1,
         "trip_id": "G1_sunday_1_163"
-      },
-      {
-        "time": "15:44",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_sunday_0_86"
       },
       {
         "time": "15:50",
@@ -8102,6 +8114,18 @@
         "trip_id": "G1_sunday_1_165"
       },
       {
+        "time": "15:59",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_sunday_0_88"
+      },
+      {
         "time": "16:00",
         "headsign": {
           "en": "Bommasandra"
@@ -8111,18 +8135,6 @@
         "route_color": "FFD700",
         "direction_id": 1,
         "trip_id": "Y1_sunday_1_31"
-      },
-      {
-        "time": "16:03",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_sunday_0_87"
       },
       {
         "time": "16:06",
@@ -8171,6 +8183,18 @@
         "trip_id": "G1_sunday_1_167"
       },
       {
+        "time": "16:18",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_sunday_0_89"
+      },
+      {
         "time": "16:19",
         "headsign": {
           "en": "Bommasandra"
@@ -8180,18 +8204,6 @@
         "route_color": "FFD700",
         "direction_id": 1,
         "trip_id": "Y1_sunday_1_32"
-      },
-      {
-        "time": "16:22",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_sunday_0_88"
       },
       {
         "time": "16:22",
@@ -8240,6 +8252,18 @@
         "trip_id": "G1_sunday_1_169"
       },
       {
+        "time": "16:37",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_sunday_0_90"
+      },
+      {
         "time": "16:38",
         "headsign": {
           "en": "Bommasandra"
@@ -8274,18 +8298,6 @@
         "trip_id": "G1_sunday_1_170"
       },
       {
-        "time": "16:41",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_sunday_0_89"
-      },
-      {
         "time": "16:46",
         "headsign": {
           "en": "Silk Institute",
@@ -8307,6 +8319,18 @@
         "route_color": "009933",
         "direction_id": 1,
         "trip_id": "G1_sunday_1_171"
+      },
+      {
+        "time": "16:52",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_sunday_0_91"
       },
       {
         "time": "16:54",
@@ -8343,18 +8367,6 @@
         "trip_id": "Y1_sunday_1_34"
       },
       {
-        "time": "17:00",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_sunday_0_90"
-      },
-      {
         "time": "17:02",
         "headsign": {
           "en": "Silk Institute",
@@ -8376,6 +8388,18 @@
         "route_color": "009933",
         "direction_id": 1,
         "trip_id": "G1_sunday_1_173"
+      },
+      {
+        "time": "17:07",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_sunday_0_92"
       },
       {
         "time": "17:10",
@@ -8412,18 +8436,6 @@
         "trip_id": "Y1_sunday_1_35"
       },
       {
-        "time": "17:15",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_sunday_0_91"
-      },
-      {
         "time": "17:18",
         "headsign": {
           "en": "Silk Institute",
@@ -8445,6 +8457,18 @@
         "route_color": "009933",
         "direction_id": 1,
         "trip_id": "G1_sunday_1_175"
+      },
+      {
+        "time": "17:22",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_sunday_0_93"
       },
       {
         "time": "17:26",
@@ -8481,18 +8505,6 @@
         "trip_id": "Y1_sunday_1_36"
       },
       {
-        "time": "17:30",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_sunday_0_92"
-      },
-      {
         "time": "17:34",
         "headsign": {
           "en": "Silk Institute",
@@ -8514,6 +8526,18 @@
         "route_color": "009933",
         "direction_id": 1,
         "trip_id": "G1_sunday_1_177"
+      },
+      {
+        "time": "17:37",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_sunday_0_94"
       },
       {
         "time": "17:42",
@@ -8550,18 +8574,6 @@
         "trip_id": "G1_sunday_1_178"
       },
       {
-        "time": "17:45",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_sunday_0_93"
-      },
-      {
         "time": "17:50",
         "headsign": {
           "en": "Silk Institute",
@@ -8583,6 +8595,18 @@
         "route_color": "009933",
         "direction_id": 1,
         "trip_id": "G1_sunday_1_179"
+      },
+      {
+        "time": "17:52",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_sunday_0_95"
       },
       {
         "time": "17:57",
@@ -8619,18 +8643,6 @@
         "trip_id": "G1_sunday_1_180"
       },
       {
-        "time": "18:00",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_sunday_0_94"
-      },
-      {
         "time": "18:06",
         "headsign": {
           "en": "Silk Institute",
@@ -8652,6 +8664,18 @@
         "route_color": "009933",
         "direction_id": 1,
         "trip_id": "G1_sunday_1_181"
+      },
+      {
+        "time": "18:07",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_sunday_0_96"
       },
       {
         "time": "18:12",
@@ -8688,7 +8712,7 @@
         "trip_id": "G1_sunday_1_182"
       },
       {
-        "time": "18:15",
+        "time": "18:22",
         "headsign": {
           "en": "Rashtreeya Vidyalaya Road",
           "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
@@ -8697,7 +8721,7 @@
         "route_name": "Yellow",
         "route_color": "FFD700",
         "direction_id": 0,
-        "trip_id": "Y1_sunday_0_95"
+        "trip_id": "Y1_sunday_0_97"
       },
       {
         "time": "18:22",
@@ -8736,18 +8760,6 @@
       {
         "time": "18:30",
         "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_sunday_0_96"
-      },
-      {
-        "time": "18:30",
-        "headsign": {
           "en": "Silk Institute",
           "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
         },
@@ -8767,6 +8779,18 @@
         "route_color": "009933",
         "direction_id": 1,
         "trip_id": "G1_sunday_1_184"
+      },
+      {
+        "time": "18:37",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_sunday_0_98"
       },
       {
         "time": "18:38",
@@ -8803,18 +8827,6 @@
         "trip_id": "Y1_sunday_1_41"
       },
       {
-        "time": "18:45",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_sunday_0_97"
-      },
-      {
         "time": "18:46",
         "headsign": {
           "en": "Silk Institute",
@@ -8836,6 +8848,18 @@
         "route_color": "009933",
         "direction_id": 1,
         "trip_id": "G1_sunday_1_186"
+      },
+      {
+        "time": "18:52",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_sunday_0_99"
       },
       {
         "time": "18:54",
@@ -8872,18 +8896,6 @@
         "trip_id": "Y1_sunday_1_42"
       },
       {
-        "time": "19:00",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_sunday_0_98"
-      },
-      {
         "time": "19:02",
         "headsign": {
           "en": "Silk Institute",
@@ -8905,6 +8917,18 @@
         "route_color": "009933",
         "direction_id": 1,
         "trip_id": "G1_sunday_1_188"
+      },
+      {
+        "time": "19:07",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_sunday_0_100"
       },
       {
         "time": "19:10",
@@ -8941,18 +8965,6 @@
         "trip_id": "Y1_sunday_1_43"
       },
       {
-        "time": "19:15",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_sunday_0_99"
-      },
-      {
         "time": "19:18",
         "headsign": {
           "en": "Silk Institute",
@@ -8974,6 +8986,18 @@
         "route_color": "009933",
         "direction_id": 1,
         "trip_id": "G1_sunday_1_190"
+      },
+      {
+        "time": "19:22",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_sunday_0_101"
       },
       {
         "time": "19:26",
@@ -9010,18 +9034,6 @@
         "trip_id": "Y1_sunday_1_44"
       },
       {
-        "time": "19:30",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_sunday_0_100"
-      },
-      {
         "time": "19:34",
         "headsign": {
           "en": "Silk Institute",
@@ -9043,6 +9055,18 @@
         "route_color": "009933",
         "direction_id": 1,
         "trip_id": "G1_sunday_1_192"
+      },
+      {
+        "time": "19:37",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_sunday_0_102"
       },
       {
         "time": "19:42",
@@ -9079,18 +9103,6 @@
         "trip_id": "G1_sunday_1_193"
       },
       {
-        "time": "19:45",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_sunday_0_101"
-      },
-      {
         "time": "19:50",
         "headsign": {
           "en": "Silk Institute",
@@ -9112,6 +9124,18 @@
         "route_color": "009933",
         "direction_id": 1,
         "trip_id": "G1_sunday_1_194"
+      },
+      {
+        "time": "19:52",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_sunday_0_103"
       },
       {
         "time": "19:57",
@@ -9148,18 +9172,6 @@
         "trip_id": "G1_sunday_1_195"
       },
       {
-        "time": "20:00",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_sunday_0_102"
-      },
-      {
         "time": "20:06",
         "headsign": {
           "en": "Silk Institute",
@@ -9181,6 +9193,18 @@
         "route_color": "009933",
         "direction_id": 1,
         "trip_id": "G1_sunday_1_196"
+      },
+      {
+        "time": "20:07",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_sunday_0_104"
       },
       {
         "time": "20:12",
@@ -9217,7 +9241,7 @@
         "trip_id": "G1_sunday_1_197"
       },
       {
-        "time": "20:15",
+        "time": "20:22",
         "headsign": {
           "en": "Rashtreeya Vidyalaya Road",
           "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
@@ -9226,7 +9250,7 @@
         "route_name": "Yellow",
         "route_color": "FFD700",
         "direction_id": 0,
-        "trip_id": "Y1_sunday_0_103"
+        "trip_id": "Y1_sunday_0_105"
       },
       {
         "time": "20:22",
@@ -9265,18 +9289,6 @@
       {
         "time": "20:30",
         "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_sunday_0_104"
-      },
-      {
-        "time": "20:30",
-        "headsign": {
           "en": "Silk Institute",
           "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
         },
@@ -9296,6 +9308,18 @@
         "route_color": "009933",
         "direction_id": 1,
         "trip_id": "G1_sunday_1_199"
+      },
+      {
+        "time": "20:37",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_sunday_0_106"
       },
       {
         "time": "20:38",
@@ -9332,18 +9356,6 @@
         "trip_id": "Y1_sunday_1_49"
       },
       {
-        "time": "20:45",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_sunday_0_105"
-      },
-      {
         "time": "20:46",
         "headsign": {
           "en": "Silk Institute",
@@ -9365,6 +9377,18 @@
         "route_color": "009933",
         "direction_id": 1,
         "trip_id": "G1_sunday_1_201"
+      },
+      {
+        "time": "20:52",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_sunday_0_107"
       },
       {
         "time": "20:54",
@@ -9401,18 +9425,6 @@
         "trip_id": "Y1_sunday_1_50"
       },
       {
-        "time": "21:00",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_sunday_0_106"
-      },
-      {
         "time": "21:02",
         "headsign": {
           "en": "Silk Institute",
@@ -9434,6 +9446,18 @@
         "route_color": "009933",
         "direction_id": 1,
         "trip_id": "G1_sunday_1_203"
+      },
+      {
+        "time": "21:07",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_sunday_0_108"
       },
       {
         "time": "21:10",
@@ -9470,18 +9494,6 @@
         "trip_id": "Y1_sunday_1_51"
       },
       {
-        "time": "21:15",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_sunday_0_107"
-      },
-      {
         "time": "21:18",
         "headsign": {
           "en": "Madavara"
@@ -9503,6 +9515,18 @@
         "route_color": "009933",
         "direction_id": 0,
         "trip_id": "G1_sunday_0_95"
+      },
+      {
+        "time": "21:22",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_sunday_0_109"
       },
       {
         "time": "21:26",
@@ -9529,18 +9553,6 @@
       {
         "time": "21:30",
         "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_sunday_0_108"
-      },
-      {
-        "time": "21:30",
-        "headsign": {
           "en": "Silk Institute",
           "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
         },
@@ -9560,6 +9572,18 @@
         "route_color": "009933",
         "direction_id": 1,
         "trip_id": "G1_sunday_1_207"
+      },
+      {
+        "time": "21:37",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_sunday_0_110"
       },
       {
         "time": "21:40",
@@ -9596,18 +9620,6 @@
         "trip_id": "G1_sunday_1_208"
       },
       {
-        "time": "21:45",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_sunday_0_109"
-      },
-      {
         "time": "21:50",
         "headsign": {
           "en": "Silk Institute",
@@ -9631,6 +9643,18 @@
         "trip_id": "G1_sunday_1_209"
       },
       {
+        "time": "21:52",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_sunday_0_111"
+      },
+      {
         "time": "21:58",
         "headsign": {
           "en": "Madavara"
@@ -9640,18 +9664,6 @@
         "route_color": "009933",
         "direction_id": 1,
         "trip_id": "G1_sunday_1_210"
-      },
-      {
-        "time": "22:00",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_sunday_0_110"
       },
       {
         "time": "22:00",
@@ -9688,6 +9700,18 @@
         "trip_id": "G1_sunday_1_211"
       },
       {
+        "time": "22:07",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_sunday_0_112"
+      },
+      {
         "time": "22:10",
         "headsign": {
           "en": "Silk Institute",
@@ -9698,18 +9722,6 @@
         "route_color": "009933",
         "direction_id": 0,
         "trip_id": "G1_sunday_0_100"
-      },
-      {
-        "time": "22:15",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_sunday_0_111"
       },
       {
         "time": "22:16",
@@ -9733,6 +9745,18 @@
         "route_color": "009933",
         "direction_id": 0,
         "trip_id": "G1_sunday_0_101"
+      },
+      {
+        "time": "22:22",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_sunday_0_113"
       },
       {
         "time": "22:26",
@@ -9759,18 +9783,6 @@
       {
         "time": "22:30",
         "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_sunday_0_112"
-      },
-      {
-        "time": "22:30",
-        "headsign": {
           "en": "Silk Institute",
           "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
         },
@@ -9792,6 +9804,18 @@
         "trip_id": "G1_sunday_1_214"
       },
       {
+        "time": "22:37",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_sunday_0_114"
+      },
+      {
         "time": "22:40",
         "headsign": {
           "en": "Silk Institute",
@@ -9802,18 +9826,6 @@
         "route_color": "009933",
         "direction_id": 0,
         "trip_id": "G1_sunday_0_103"
-      },
-      {
-        "time": "22:45",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_sunday_0_113"
       },
       {
         "time": "22:46",
@@ -9859,18 +9871,6 @@
         "route_color": "FFD700",
         "direction_id": 1,
         "trip_id": "Y1_sunday_1_56"
-      },
-      {
-        "time": "23:00",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_sunday_0_114"
       },
       {
         "time": "23:00",
@@ -10047,6 +10047,18 @@
         "trip_id": "G1_holiday_0_1"
       },
       {
+        "time": "06:17",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_holiday_0_61"
+      },
+      {
         "time": "06:22",
         "headsign": {
           "en": "Madavara"
@@ -10094,18 +10106,6 @@
       {
         "time": "06:40",
         "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_holiday_0_61"
-      },
-      {
-        "time": "06:40",
-        "headsign": {
           "en": "Silk Institute",
           "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
         },
@@ -10114,6 +10114,18 @@
         "route_color": "009933",
         "direction_id": 0,
         "trip_id": "G1_holiday_0_3"
+      },
+      {
+        "time": "06:42",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_holiday_0_62"
       },
       {
         "time": "06:47",
@@ -10150,6 +10162,18 @@
         "trip_id": "G1_holiday_0_4"
       },
       {
+        "time": "06:57",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_holiday_0_63"
+      },
+      {
         "time": "07:02",
         "headsign": {
           "en": "Bommasandra"
@@ -10159,18 +10183,6 @@
         "route_color": "FFD700",
         "direction_id": 1,
         "trip_id": "Y1_holiday_1_3"
-      },
-      {
-        "time": "07:05",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_holiday_0_62"
       },
       {
         "time": "07:07",
@@ -10196,6 +10208,18 @@
         "trip_id": "G1_holiday_0_5"
       },
       {
+        "time": "07:12",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_holiday_0_64"
+      },
+      {
         "time": "07:17",
         "headsign": {
           "en": "Bommasandra"
@@ -10205,18 +10229,6 @@
         "route_color": "FFD700",
         "direction_id": 1,
         "trip_id": "Y1_holiday_1_4"
-      },
-      {
-        "time": "07:20",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_holiday_0_63"
       },
       {
         "time": "07:20",
@@ -10240,6 +10252,18 @@
         "route_color": "009933",
         "direction_id": 1,
         "trip_id": "G1_holiday_1_133"
+      },
+      {
+        "time": "07:27",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_holiday_0_65"
       },
       {
         "time": "07:30",
@@ -10276,18 +10300,6 @@
         "trip_id": "G1_holiday_1_134"
       },
       {
-        "time": "07:35",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_holiday_0_64"
-      },
-      {
         "time": "07:40",
         "headsign": {
           "en": "Silk Institute",
@@ -10298,6 +10310,18 @@
         "route_color": "009933",
         "direction_id": 0,
         "trip_id": "G1_holiday_0_8"
+      },
+      {
+        "time": "07:42",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_holiday_0_66"
       },
       {
         "time": "07:42",
@@ -10324,18 +10348,6 @@
       {
         "time": "07:50",
         "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_holiday_0_65"
-      },
-      {
-        "time": "07:50",
-        "headsign": {
           "en": "Silk Institute",
           "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
         },
@@ -10355,6 +10367,18 @@
         "route_color": "009933",
         "direction_id": 1,
         "trip_id": "G1_holiday_1_136"
+      },
+      {
+        "time": "07:57",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_holiday_0_67"
       },
       {
         "time": "07:58",
@@ -10391,18 +10415,6 @@
         "trip_id": "G1_holiday_1_137"
       },
       {
-        "time": "08:05",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_holiday_0_66"
-      },
-      {
         "time": "08:06",
         "headsign": {
           "en": "Silk Institute",
@@ -10413,6 +10425,18 @@
         "route_color": "009933",
         "direction_id": 0,
         "trip_id": "G1_holiday_0_11"
+      },
+      {
+        "time": "08:12",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_holiday_0_68"
       },
       {
         "time": "08:12",
@@ -10449,18 +10473,6 @@
         "trip_id": "Y1_holiday_1_8"
       },
       {
-        "time": "08:20",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_holiday_0_67"
-      },
-      {
         "time": "08:22",
         "headsign": {
           "en": "Silk Institute",
@@ -10482,6 +10494,18 @@
         "route_color": "009933",
         "direction_id": 1,
         "trip_id": "G1_holiday_1_139"
+      },
+      {
+        "time": "08:27",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_holiday_0_69"
       },
       {
         "time": "08:30",
@@ -10518,18 +10542,6 @@
         "trip_id": "G1_holiday_1_140"
       },
       {
-        "time": "08:35",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_holiday_0_68"
-      },
-      {
         "time": "08:38",
         "headsign": {
           "en": "Silk Institute",
@@ -10540,6 +10552,18 @@
         "route_color": "009933",
         "direction_id": 0,
         "trip_id": "G1_holiday_0_15"
+      },
+      {
+        "time": "08:42",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_holiday_0_70"
       },
       {
         "time": "08:42",
@@ -10576,18 +10600,6 @@
         "trip_id": "Y1_holiday_1_10"
       },
       {
-        "time": "08:50",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_holiday_0_69"
-      },
-      {
         "time": "08:52",
         "headsign": {
           "en": "Madavara"
@@ -10609,6 +10621,18 @@
         "route_color": "009933",
         "direction_id": 0,
         "trip_id": "G1_holiday_0_17"
+      },
+      {
+        "time": "08:57",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_holiday_0_71"
       },
       {
         "time": "09:02",
@@ -10645,18 +10669,6 @@
         "trip_id": "G1_holiday_1_143"
       },
       {
-        "time": "09:05",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_holiday_0_70"
-      },
-      {
         "time": "09:10",
         "headsign": {
           "en": "Silk Institute",
@@ -10678,6 +10690,18 @@
         "route_color": "009933",
         "direction_id": 1,
         "trip_id": "G1_holiday_1_144"
+      },
+      {
+        "time": "09:12",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_holiday_0_72"
       },
       {
         "time": "09:17",
@@ -10714,18 +10738,6 @@
         "trip_id": "G1_holiday_1_145"
       },
       {
-        "time": "09:20",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_holiday_0_71"
-      },
-      {
         "time": "09:26",
         "headsign": {
           "en": "Silk Institute",
@@ -10747,6 +10759,18 @@
         "route_color": "009933",
         "direction_id": 1,
         "trip_id": "G1_holiday_1_146"
+      },
+      {
+        "time": "09:27",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_holiday_0_73"
       },
       {
         "time": "09:32",
@@ -10783,7 +10807,7 @@
         "trip_id": "G1_holiday_1_147"
       },
       {
-        "time": "09:35",
+        "time": "09:42",
         "headsign": {
           "en": "Rashtreeya Vidyalaya Road",
           "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
@@ -10792,7 +10816,7 @@
         "route_name": "Yellow",
         "route_color": "FFD700",
         "direction_id": 0,
-        "trip_id": "Y1_holiday_0_72"
+        "trip_id": "Y1_holiday_0_74"
       },
       {
         "time": "09:42",
@@ -10827,18 +10851,6 @@
         "route_color": "FFD700",
         "direction_id": 1,
         "trip_id": "Y1_holiday_1_14"
-      },
-      {
-        "time": "09:50",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_holiday_0_73"
       },
       {
         "time": "09:50",
@@ -10887,6 +10899,18 @@
         "trip_id": "G1_holiday_1_150"
       },
       {
+        "time": "10:01",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_holiday_0_75"
+      },
+      {
         "time": "10:02",
         "headsign": {
           "en": "Bommasandra"
@@ -10896,18 +10920,6 @@
         "route_color": "FFD700",
         "direction_id": 1,
         "trip_id": "Y1_holiday_1_15"
-      },
-      {
-        "time": "10:05",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_holiday_0_74"
       },
       {
         "time": "10:06",
@@ -10956,6 +10968,18 @@
         "trip_id": "G1_holiday_1_152"
       },
       {
+        "time": "10:20",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_holiday_0_76"
+      },
+      {
         "time": "10:21",
         "headsign": {
           "en": "Bommasandra"
@@ -10988,18 +11012,6 @@
         "route_color": "009933",
         "direction_id": 1,
         "trip_id": "G1_holiday_1_153"
-      },
-      {
-        "time": "10:24",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_holiday_0_75"
       },
       {
         "time": "10:30",
@@ -11048,6 +11060,18 @@
         "trip_id": "G1_holiday_1_155"
       },
       {
+        "time": "10:39",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_holiday_0_77"
+      },
+      {
         "time": "10:40",
         "headsign": {
           "en": "Bommasandra"
@@ -11057,18 +11081,6 @@
         "route_color": "FFD700",
         "direction_id": 1,
         "trip_id": "Y1_holiday_1_17"
-      },
-      {
-        "time": "10:43",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_holiday_0_76"
       },
       {
         "time": "10:46",
@@ -11117,6 +11129,18 @@
         "trip_id": "G1_holiday_1_157"
       },
       {
+        "time": "10:58",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_holiday_0_78"
+      },
+      {
         "time": "10:59",
         "headsign": {
           "en": "Bommasandra"
@@ -11126,18 +11150,6 @@
         "route_color": "FFD700",
         "direction_id": 1,
         "trip_id": "Y1_holiday_1_18"
-      },
-      {
-        "time": "11:02",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_holiday_0_77"
       },
       {
         "time": "11:02",
@@ -11186,6 +11198,18 @@
         "trip_id": "G1_holiday_1_159"
       },
       {
+        "time": "11:17",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_holiday_0_79"
+      },
+      {
         "time": "11:18",
         "headsign": {
           "en": "Bommasandra"
@@ -11218,18 +11242,6 @@
         "route_color": "009933",
         "direction_id": 1,
         "trip_id": "G1_holiday_1_160"
-      },
-      {
-        "time": "11:21",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_holiday_0_78"
       },
       {
         "time": "11:26",
@@ -11278,6 +11290,18 @@
         "trip_id": "G1_holiday_1_162"
       },
       {
+        "time": "11:36",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_holiday_0_80"
+      },
+      {
         "time": "11:37",
         "headsign": {
           "en": "Bommasandra"
@@ -11287,18 +11311,6 @@
         "route_color": "FFD700",
         "direction_id": 1,
         "trip_id": "Y1_holiday_1_20"
-      },
-      {
-        "time": "11:40",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_holiday_0_79"
       },
       {
         "time": "11:42",
@@ -11347,6 +11359,18 @@
         "trip_id": "G1_holiday_1_164"
       },
       {
+        "time": "11:55",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_holiday_0_81"
+      },
+      {
         "time": "11:56",
         "headsign": {
           "en": "Bommasandra"
@@ -11381,18 +11405,6 @@
         "trip_id": "G1_holiday_1_165"
       },
       {
-        "time": "11:59",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_holiday_0_80"
-      },
-      {
         "time": "12:06",
         "headsign": {
           "en": "Silk Institute",
@@ -11414,6 +11426,18 @@
         "route_color": "009933",
         "direction_id": 1,
         "trip_id": "G1_holiday_1_166"
+      },
+      {
+        "time": "12:14",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_holiday_0_82"
       },
       {
         "time": "12:14",
@@ -11448,18 +11472,6 @@
         "route_color": "FFD700",
         "direction_id": 1,
         "trip_id": "Y1_holiday_1_22"
-      },
-      {
-        "time": "12:18",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_holiday_0_81"
       },
       {
         "time": "12:22",
@@ -11508,6 +11520,18 @@
         "trip_id": "G1_holiday_1_169"
       },
       {
+        "time": "12:33",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_holiday_0_83"
+      },
+      {
         "time": "12:34",
         "headsign": {
           "en": "Bommasandra"
@@ -11517,18 +11541,6 @@
         "route_color": "FFD700",
         "direction_id": 1,
         "trip_id": "Y1_holiday_1_23"
-      },
-      {
-        "time": "12:37",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_holiday_0_82"
       },
       {
         "time": "12:38",
@@ -11577,6 +11589,18 @@
         "trip_id": "G1_holiday_1_171"
       },
       {
+        "time": "12:52",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_holiday_0_84"
+      },
+      {
         "time": "12:53",
         "headsign": {
           "en": "Bommasandra"
@@ -11609,18 +11633,6 @@
         "route_color": "009933",
         "direction_id": 1,
         "trip_id": "G1_holiday_1_172"
-      },
-      {
-        "time": "12:56",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_holiday_0_83"
       },
       {
         "time": "13:02",
@@ -11669,6 +11681,18 @@
         "trip_id": "G1_holiday_1_174"
       },
       {
+        "time": "13:11",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_holiday_0_85"
+      },
+      {
         "time": "13:12",
         "headsign": {
           "en": "Bommasandra"
@@ -11678,18 +11702,6 @@
         "route_color": "FFD700",
         "direction_id": 1,
         "trip_id": "Y1_holiday_1_25"
-      },
-      {
-        "time": "13:15",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_holiday_0_84"
       },
       {
         "time": "13:18",
@@ -11738,6 +11750,18 @@
         "trip_id": "G1_holiday_1_176"
       },
       {
+        "time": "13:30",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_holiday_0_86"
+      },
+      {
         "time": "13:31",
         "headsign": {
           "en": "Bommasandra"
@@ -11747,18 +11771,6 @@
         "route_color": "FFD700",
         "direction_id": 1,
         "trip_id": "Y1_holiday_1_26"
-      },
-      {
-        "time": "13:34",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_holiday_0_85"
       },
       {
         "time": "13:34",
@@ -11807,6 +11819,18 @@
         "trip_id": "G1_holiday_1_178"
       },
       {
+        "time": "13:49",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_holiday_0_87"
+      },
+      {
         "time": "13:50",
         "headsign": {
           "en": "Bommasandra"
@@ -11839,18 +11863,6 @@
         "route_color": "009933",
         "direction_id": 1,
         "trip_id": "G1_holiday_1_179"
-      },
-      {
-        "time": "13:53",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_holiday_0_86"
       },
       {
         "time": "13:58",
@@ -11899,6 +11911,18 @@
         "trip_id": "G1_holiday_1_181"
       },
       {
+        "time": "14:08",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_holiday_0_88"
+      },
+      {
         "time": "14:09",
         "headsign": {
           "en": "Bommasandra"
@@ -11908,18 +11932,6 @@
         "route_color": "FFD700",
         "direction_id": 1,
         "trip_id": "Y1_holiday_1_28"
-      },
-      {
-        "time": "14:12",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_holiday_0_87"
       },
       {
         "time": "14:14",
@@ -11968,6 +11980,18 @@
         "trip_id": "G1_holiday_1_183"
       },
       {
+        "time": "14:27",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_holiday_0_89"
+      },
+      {
         "time": "14:28",
         "headsign": {
           "en": "Bommasandra"
@@ -12002,18 +12026,6 @@
         "trip_id": "G1_holiday_1_184"
       },
       {
-        "time": "14:31",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_holiday_0_88"
-      },
-      {
         "time": "14:38",
         "headsign": {
           "en": "Silk Institute",
@@ -12035,6 +12047,18 @@
         "route_color": "009933",
         "direction_id": 1,
         "trip_id": "G1_holiday_1_185"
+      },
+      {
+        "time": "14:46",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_holiday_0_90"
       },
       {
         "time": "14:46",
@@ -12069,18 +12093,6 @@
         "route_color": "FFD700",
         "direction_id": 1,
         "trip_id": "Y1_holiday_1_30"
-      },
-      {
-        "time": "14:50",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_holiday_0_89"
       },
       {
         "time": "14:54",
@@ -12129,6 +12141,18 @@
         "trip_id": "G1_holiday_1_188"
       },
       {
+        "time": "15:05",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_holiday_0_91"
+      },
+      {
         "time": "15:06",
         "headsign": {
           "en": "Bommasandra"
@@ -12138,18 +12162,6 @@
         "route_color": "FFD700",
         "direction_id": 1,
         "trip_id": "Y1_holiday_1_31"
-      },
-      {
-        "time": "15:09",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_holiday_0_90"
       },
       {
         "time": "15:10",
@@ -12198,6 +12210,18 @@
         "trip_id": "G1_holiday_1_190"
       },
       {
+        "time": "15:24",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_holiday_0_92"
+      },
+      {
         "time": "15:25",
         "headsign": {
           "en": "Bommasandra"
@@ -12230,18 +12254,6 @@
         "route_color": "009933",
         "direction_id": 1,
         "trip_id": "G1_holiday_1_191"
-      },
-      {
-        "time": "15:28",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_holiday_0_91"
       },
       {
         "time": "15:34",
@@ -12290,6 +12302,18 @@
         "trip_id": "G1_holiday_1_193"
       },
       {
+        "time": "15:43",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_holiday_0_93"
+      },
+      {
         "time": "15:44",
         "headsign": {
           "en": "Bommasandra"
@@ -12299,18 +12323,6 @@
         "route_color": "FFD700",
         "direction_id": 1,
         "trip_id": "Y1_holiday_1_33"
-      },
-      {
-        "time": "15:47",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_holiday_0_92"
       },
       {
         "time": "15:50",
@@ -12359,6 +12371,18 @@
         "trip_id": "G1_holiday_1_195"
       },
       {
+        "time": "16:02",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_holiday_0_94"
+      },
+      {
         "time": "16:03",
         "headsign": {
           "en": "Bommasandra"
@@ -12368,18 +12392,6 @@
         "route_color": "FFD700",
         "direction_id": 1,
         "trip_id": "Y1_holiday_1_34"
-      },
-      {
-        "time": "16:06",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_holiday_0_93"
       },
       {
         "time": "16:06",
@@ -12428,6 +12440,18 @@
         "trip_id": "G1_holiday_1_197"
       },
       {
+        "time": "16:21",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_holiday_0_95"
+      },
+      {
         "time": "16:22",
         "headsign": {
           "en": "Bommasandra"
@@ -12460,18 +12484,6 @@
         "route_color": "009933",
         "direction_id": 1,
         "trip_id": "G1_holiday_1_198"
-      },
-      {
-        "time": "16:25",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_holiday_0_94"
       },
       {
         "time": "16:30",
@@ -12520,6 +12532,18 @@
         "trip_id": "G1_holiday_1_200"
       },
       {
+        "time": "16:40",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_holiday_0_96"
+      },
+      {
         "time": "16:41",
         "headsign": {
           "en": "Bommasandra"
@@ -12529,18 +12553,6 @@
         "route_color": "FFD700",
         "direction_id": 1,
         "trip_id": "Y1_holiday_1_36"
-      },
-      {
-        "time": "16:44",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_holiday_0_95"
       },
       {
         "time": "16:46",
@@ -12589,6 +12601,18 @@
         "trip_id": "G1_holiday_1_202"
       },
       {
+        "time": "16:55",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_holiday_0_97"
+      },
+      {
         "time": "17:00",
         "headsign": {
           "en": "Bommasandra"
@@ -12623,7 +12647,7 @@
         "trip_id": "G1_holiday_1_203"
       },
       {
-        "time": "17:03",
+        "time": "17:10",
         "headsign": {
           "en": "Rashtreeya Vidyalaya Road",
           "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
@@ -12632,7 +12656,7 @@
         "route_name": "Yellow",
         "route_color": "FFD700",
         "direction_id": 0,
-        "trip_id": "Y1_holiday_0_96"
+        "trip_id": "Y1_holiday_0_98"
       },
       {
         "time": "17:10",
@@ -12671,18 +12695,6 @@
       {
         "time": "17:18",
         "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_holiday_0_97"
-      },
-      {
-        "time": "17:18",
-        "headsign": {
           "en": "Silk Institute",
           "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
         },
@@ -12702,6 +12714,18 @@
         "route_color": "009933",
         "direction_id": 1,
         "trip_id": "G1_holiday_1_205"
+      },
+      {
+        "time": "17:25",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_holiday_0_99"
       },
       {
         "time": "17:26",
@@ -12738,18 +12762,6 @@
         "trip_id": "Y1_holiday_1_39"
       },
       {
-        "time": "17:33",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_holiday_0_98"
-      },
-      {
         "time": "17:34",
         "headsign": {
           "en": "Silk Institute",
@@ -12771,6 +12783,18 @@
         "route_color": "009933",
         "direction_id": 1,
         "trip_id": "G1_holiday_1_207"
+      },
+      {
+        "time": "17:40",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_holiday_0_100"
       },
       {
         "time": "17:42",
@@ -12807,18 +12831,6 @@
         "trip_id": "Y1_holiday_1_40"
       },
       {
-        "time": "17:48",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_holiday_0_99"
-      },
-      {
         "time": "17:50",
         "headsign": {
           "en": "Silk Institute",
@@ -12840,6 +12852,18 @@
         "route_color": "009933",
         "direction_id": 1,
         "trip_id": "G1_holiday_1_209"
+      },
+      {
+        "time": "17:55",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_holiday_0_101"
       },
       {
         "time": "17:58",
@@ -12876,18 +12900,6 @@
         "trip_id": "Y1_holiday_1_41"
       },
       {
-        "time": "18:03",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_holiday_0_100"
-      },
-      {
         "time": "18:06",
         "headsign": {
           "en": "Silk Institute",
@@ -12909,6 +12921,18 @@
         "route_color": "009933",
         "direction_id": 1,
         "trip_id": "G1_holiday_1_211"
+      },
+      {
+        "time": "18:10",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_holiday_0_102"
       },
       {
         "time": "18:14",
@@ -12945,18 +12969,6 @@
         "trip_id": "Y1_holiday_1_42"
       },
       {
-        "time": "18:18",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_holiday_0_101"
-      },
-      {
         "time": "18:22",
         "headsign": {
           "en": "Silk Institute",
@@ -12978,6 +12990,18 @@
         "route_color": "009933",
         "direction_id": 1,
         "trip_id": "G1_holiday_1_213"
+      },
+      {
+        "time": "18:25",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_holiday_0_103"
       },
       {
         "time": "18:30",
@@ -13014,18 +13038,6 @@
         "trip_id": "G1_holiday_1_214"
       },
       {
-        "time": "18:33",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_holiday_0_102"
-      },
-      {
         "time": "18:38",
         "headsign": {
           "en": "Silk Institute",
@@ -13047,6 +13059,18 @@
         "route_color": "009933",
         "direction_id": 1,
         "trip_id": "G1_holiday_1_215"
+      },
+      {
+        "time": "18:40",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_holiday_0_104"
       },
       {
         "time": "18:45",
@@ -13083,18 +13107,6 @@
         "trip_id": "G1_holiday_1_216"
       },
       {
-        "time": "18:48",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_holiday_0_103"
-      },
-      {
         "time": "18:54",
         "headsign": {
           "en": "Silk Institute",
@@ -13116,6 +13128,18 @@
         "route_color": "009933",
         "direction_id": 1,
         "trip_id": "G1_holiday_1_217"
+      },
+      {
+        "time": "18:55",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_holiday_0_105"
       },
       {
         "time": "19:00",
@@ -13152,7 +13176,7 @@
         "trip_id": "G1_holiday_1_218"
       },
       {
-        "time": "19:03",
+        "time": "19:10",
         "headsign": {
           "en": "Rashtreeya Vidyalaya Road",
           "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
@@ -13161,7 +13185,7 @@
         "route_name": "Yellow",
         "route_color": "FFD700",
         "direction_id": 0,
-        "trip_id": "Y1_holiday_0_104"
+        "trip_id": "Y1_holiday_0_106"
       },
       {
         "time": "19:10",
@@ -13200,18 +13224,6 @@
       {
         "time": "19:18",
         "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_holiday_0_105"
-      },
-      {
-        "time": "19:18",
-        "headsign": {
           "en": "Silk Institute",
           "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
         },
@@ -13231,6 +13243,18 @@
         "route_color": "009933",
         "direction_id": 1,
         "trip_id": "G1_holiday_1_220"
+      },
+      {
+        "time": "19:25",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_holiday_0_107"
       },
       {
         "time": "19:26",
@@ -13267,18 +13291,6 @@
         "trip_id": "Y1_holiday_1_47"
       },
       {
-        "time": "19:33",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_holiday_0_106"
-      },
-      {
         "time": "19:34",
         "headsign": {
           "en": "Silk Institute",
@@ -13300,6 +13312,18 @@
         "route_color": "009933",
         "direction_id": 1,
         "trip_id": "G1_holiday_1_222"
+      },
+      {
+        "time": "19:40",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_holiday_0_108"
       },
       {
         "time": "19:42",
@@ -13336,18 +13360,6 @@
         "trip_id": "Y1_holiday_1_48"
       },
       {
-        "time": "19:48",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_holiday_0_107"
-      },
-      {
         "time": "19:50",
         "headsign": {
           "en": "Silk Institute",
@@ -13369,6 +13381,18 @@
         "route_color": "009933",
         "direction_id": 1,
         "trip_id": "G1_holiday_1_224"
+      },
+      {
+        "time": "19:55",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_holiday_0_109"
       },
       {
         "time": "19:58",
@@ -13405,18 +13429,6 @@
         "trip_id": "Y1_holiday_1_49"
       },
       {
-        "time": "20:03",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_holiday_0_108"
-      },
-      {
         "time": "20:06",
         "headsign": {
           "en": "Silk Institute",
@@ -13438,6 +13450,18 @@
         "route_color": "009933",
         "direction_id": 1,
         "trip_id": "G1_holiday_1_226"
+      },
+      {
+        "time": "20:10",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_holiday_0_110"
       },
       {
         "time": "20:14",
@@ -13474,18 +13498,6 @@
         "trip_id": "Y1_holiday_1_50"
       },
       {
-        "time": "20:18",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_holiday_0_109"
-      },
-      {
         "time": "20:22",
         "headsign": {
           "en": "Silk Institute",
@@ -13507,6 +13519,18 @@
         "route_color": "009933",
         "direction_id": 1,
         "trip_id": "G1_holiday_1_228"
+      },
+      {
+        "time": "20:25",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_holiday_0_111"
       },
       {
         "time": "20:30",
@@ -13543,18 +13567,6 @@
         "trip_id": "G1_holiday_1_229"
       },
       {
-        "time": "20:33",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_holiday_0_110"
-      },
-      {
         "time": "20:38",
         "headsign": {
           "en": "Silk Institute",
@@ -13576,6 +13588,18 @@
         "route_color": "009933",
         "direction_id": 1,
         "trip_id": "G1_holiday_1_230"
+      },
+      {
+        "time": "20:40",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_holiday_0_112"
       },
       {
         "time": "20:45",
@@ -13612,18 +13636,6 @@
         "trip_id": "G1_holiday_1_231"
       },
       {
-        "time": "20:48",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_holiday_0_111"
-      },
-      {
         "time": "20:54",
         "headsign": {
           "en": "Silk Institute",
@@ -13645,6 +13657,18 @@
         "route_color": "009933",
         "direction_id": 1,
         "trip_id": "G1_holiday_1_232"
+      },
+      {
+        "time": "20:55",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_holiday_0_113"
       },
       {
         "time": "21:00",
@@ -13681,7 +13705,7 @@
         "trip_id": "G1_holiday_1_233"
       },
       {
-        "time": "21:03",
+        "time": "21:10",
         "headsign": {
           "en": "Rashtreeya Vidyalaya Road",
           "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
@@ -13690,7 +13714,7 @@
         "route_name": "Yellow",
         "route_color": "FFD700",
         "direction_id": 0,
-        "trip_id": "Y1_holiday_0_112"
+        "trip_id": "Y1_holiday_0_114"
       },
       {
         "time": "21:10",
@@ -13729,18 +13753,6 @@
       {
         "time": "21:18",
         "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_holiday_0_113"
-      },
-      {
-        "time": "21:18",
-        "headsign": {
           "en": "Madavara"
         },
         "route_id": "G1",
@@ -13760,6 +13772,18 @@
         "route_color": "009933",
         "direction_id": 0,
         "trip_id": "G1_holiday_0_110"
+      },
+      {
+        "time": "21:25",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_holiday_0_115"
       },
       {
         "time": "21:26",
@@ -13796,18 +13820,6 @@
         "trip_id": "G1_holiday_0_111"
       },
       {
-        "time": "21:33",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_holiday_0_114"
-      },
-      {
         "time": "21:34",
         "headsign": {
           "en": "Madavara"
@@ -13817,6 +13829,18 @@
         "route_color": "009933",
         "direction_id": 1,
         "trip_id": "G1_holiday_1_237"
+      },
+      {
+        "time": "21:40",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_holiday_0_116"
       },
       {
         "time": "21:40",
@@ -13853,18 +13877,6 @@
         "trip_id": "Y1_holiday_1_56"
       },
       {
-        "time": "21:48",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_holiday_0_115"
-      },
-      {
         "time": "21:50",
         "headsign": {
           "en": "Silk Institute",
@@ -13888,6 +13900,18 @@
         "trip_id": "G1_holiday_1_239"
       },
       {
+        "time": "21:55",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_holiday_0_117"
+      },
+      {
         "time": "21:58",
         "headsign": {
           "en": "Madavara"
@@ -13909,18 +13933,6 @@
         "route_color": "009933",
         "direction_id": 0,
         "trip_id": "G1_holiday_0_114"
-      },
-      {
-        "time": "22:03",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_holiday_0_116"
       },
       {
         "time": "22:05",
@@ -13947,6 +13959,18 @@
       {
         "time": "22:10",
         "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_holiday_0_118"
+      },
+      {
+        "time": "22:10",
+        "headsign": {
           "en": "Silk Institute",
           "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
         },
@@ -13968,18 +13992,6 @@
         "trip_id": "G1_holiday_1_242"
       },
       {
-        "time": "22:18",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_holiday_0_117"
-      },
-      {
         "time": "22:20",
         "headsign": {
           "en": "Silk Institute",
@@ -13990,6 +14002,18 @@
         "route_color": "009933",
         "direction_id": 0,
         "trip_id": "G1_holiday_0_116"
+      },
+      {
+        "time": "22:25",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_holiday_0_119"
       },
       {
         "time": "22:26",
@@ -14026,18 +14050,6 @@
         "trip_id": "G1_holiday_0_117"
       },
       {
-        "time": "22:33",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_holiday_0_118"
-      },
-      {
         "time": "22:36",
         "headsign": {
           "en": "Madavara"
@@ -14047,6 +14059,18 @@
         "route_color": "009933",
         "direction_id": 1,
         "trip_id": "G1_holiday_1_244"
+      },
+      {
+        "time": "22:40",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_holiday_0_120"
       },
       {
         "time": "22:40",
@@ -14070,18 +14094,6 @@
         "route_color": "009933",
         "direction_id": 1,
         "trip_id": "G1_holiday_1_245"
-      },
-      {
-        "time": "22:48",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_holiday_0_119"
       },
       {
         "time": "22:50",
@@ -14128,18 +14140,6 @@
         "route_color": "009933",
         "direction_id": 0,
         "trip_id": "G1_holiday_0_120"
-      },
-      {
-        "time": "23:03",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_holiday_0_120"
       },
       {
         "time": "23:06",
