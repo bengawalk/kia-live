@@ -17,7 +17,7 @@ const path = require('path');
 const csv = require('csv-parser');
 
 // Configuration
-const GTFS_PATH = '/Users/aayushrai/devproj/TRANSIT_PROJECT/assets/gtfs/bmrcl-19-07-2024';
+const GTFS_PATH = path.join(__dirname, '../gtfs_output');
 const OUTPUT_PATH = path.join(__dirname, '../static/metro/stops');
 
 // Data structures
@@ -121,10 +121,10 @@ async function loadGTFSData() {
     routesData.forEach(route => {
         routes.set(route.route_id, {
             route_id: route.route_id,
-            route_short_name: route.route_short_name,
+            route_short_name: route.route_short_name.replace('line', '').trim(),
             route_long_name: route.route_long_name,
             route_color: route.route_color,
-            route_text_color: route.route_text_color
+            route_text_color: route.route_text_color.replace('line', '').trim()
         });
     });
     console.log(`Loaded ${routes.size} routes`);
