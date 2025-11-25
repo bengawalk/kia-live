@@ -106,7 +106,6 @@ function getNextDeparture(closestStop: {
 }
 
 async function loadNextBusesInternal() {
-	console.log("LOADING NEXT BUSES")
 	// Take data from transit feed stores, location stores, and generate next buses
 	const loc = currentLocation();
 
@@ -312,7 +311,6 @@ async function loadNextBusesInternal() {
 	currentRefreshTimeout = setTimeout(loadNextBuses, refreshDelay);
 
 	nextBuses.set(nextTrips);
-	console.log("DONE LOADING NEXT BUSES")
 }
 
 let displayingTripID: string = '';

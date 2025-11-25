@@ -352,7 +352,7 @@ const BUS_3D_CONFIG = {
 	// Scale - exponential scaling for constant screen size
 	// Formula: scale(zoom) = scaleAtMidZoom * 2^(midZoom - zoom)
 	// Adjust scaleAtMidZoom to control overall bus size on screen
-	scaleAtMidZoom: 60*2,     // Reference scale at zoom 12 (adjust this to resize bus)
+	scaleAtMidZoom: 60*1.9,     // Reference scale at zoom 12 (adjust this to resize bus)
 	minZoom: 10,             // Minimum zoom
 	midZoom: 12,            // Middle reference zoom
 	maxZoom: 19,            // Maximum zoom
