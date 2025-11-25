@@ -352,7 +352,7 @@ const BUS_3D_CONFIG = {
 	// Scale - exponential scaling for constant screen size
 	// Formula: scale(zoom) = scaleAtMidZoom * 2^(midZoom - zoom)
 	// Adjust scaleAtMidZoom to control overall bus size on screen
-	scaleAtMidZoom: 60*2,     // Reference scale at zoom 12 (adjust this to resize bus)
+	scaleAtMidZoom: 60*1.9,     // Reference scale at zoom 12 (adjust this to resize bus)
 	minZoom: 10,             // Minimum zoom
 	midZoom: 12,            // Middle reference zoom
 	maxZoom: 19,            // Maximum zoom
@@ -378,6 +378,9 @@ const BUS_3D_CONFIG = {
 
 // Global storage for Threebox bus models (following threebox example pattern)
 const busModels: Record<string, IThreeboxObject> = {};
+
+// Track if zoom listener has been registered to prevent multiple registrations
+let zoomListenerRegistered = false;
 
 // Create Threebox custom layer (following threebox-plugin documentation pattern)
 // This is created ONCE and models are loaded inside onAdd
@@ -437,11 +440,12 @@ function loadBusModel(modelId: string, coords: [number, number], bearing: number
 	const initialScale = calculateBusScale();
 
 	// Load using Threebox's loadObj method with URL
+	// Use 'scene' units for consistent behavior across dev/prod builds
 	const options = {
 		obj: BUS_GLB_URL,
 		type: 'gltf',
 		scale: initialScale,
-		units: 'meters',
+		units: 'scene',
 		rotation: {
 			x: 0,
 			y: 0, // + bearing,
@@ -580,6 +584,17 @@ export function updateBusMarker(
 	if (!map.getLayer('3d-buses')) {
 		map.addLayer(busLayer);
 		map.moveLayer('3d-buses'); // Move to top to ensure it renders above 2D layers
+
+		// Register zoom listener ONCE when layer is first added
+		if (!zoomListenerRegistered) {
+			zoomListenerRegistered = true;
+			map.on('zoom', () => {
+				if(zoomUpdate < new Date().getTime()) {
+					updateBusModelScales(modelId);
+					zoomUpdate = new Date().getTime() + 10;
+				}
+			});
+		}
 	}
 
 	// Clear the bus if no coordinates
@@ -727,13 +742,6 @@ export function updateBusMarker(
 
 	// Enforce consistent layer ordering across all layers
 	enforceLayerOrder();
-	map.on('zoom', () => {
-		if(zoomUpdate < new Date().getTime()) {
-			updateBusModelScales(modelId);
-			zoomUpdate = new Date().getTime() + 10;
-		}
-		return;
-	});
 
 	// Handle tap/click events on both the invisible click layer and label layer
 	if(handleTap) {
