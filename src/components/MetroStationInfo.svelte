@@ -360,7 +360,7 @@
 				{/each}
 			</div>
 		{/if}
-
+		<span class="text-[10.8px] font-light text-neutral-400 italic">(!) Metro timings are estimated on publicly available sources.</span>
 		<!-- Destination filter (only show if multiple destinations) -->
 		{#if uniqueDestinations.length > 1}
 			<div class="flex flex-wrap gap-2 mt-2">
