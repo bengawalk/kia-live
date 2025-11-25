@@ -445,7 +445,7 @@ function loadBusModel(modelId: string, coords: [number, number], bearing: number
 		obj: BUS_GLB_URL,
 		type: 'gltf',
 		scale: initialScale,
-		units: 'meters',
+		units: 'scene',
 		rotation: {
 			x: 0,
 			y: 0, // + bearing,
