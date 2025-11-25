@@ -1,249 +1,132 @@
 [
   {
-    "stop_id": "AGPP",
-    "stop_name": "Attiguppe",
+    "stop_id": "YPM",
+    "stop_name": "Yeshwantpur",
     "stop_name_translations": {
-      "kn": "ಅತ್ತಿಗುಪ್ಪೆ ಮೆಟ್ರೋ"
+      "kn": "ಯಶವಂತಪುರ"
     },
     "location": {
-      "lat": 12.961893,
-      "lon": 77.53358
+      "lat": 13.023172,
+      "lon": 77.549859
     },
-    "zone_id": "AGPP",
-    "color": "purple"
-  },
-  {
-    "stop_id": "BYPH",
-    "stop_name": "Baiyappanahalli",
-    "stop_name_translations": {
-      "kn": "ಬೈಯ್ಯಪ್ಪನಹಳ್ಳಿ ಮೆಟ್ರೋ ನಿಲ್ದಾಣ"
-    },
-    "location": {
-      "lat": 12.990759,
-      "lon": 77.65236
-    },
-    "zone_id": "BYPH",
-    "color": "purple"
-  },
-  {
-    "stop_id": "BSNK",
-    "stop_name": "Banashankari",
-    "stop_name_translations": {
-      "kn": "ಬನಶಂಕರಿ"
-    },
-    "location": {
-      "lat": 12.915221,
-      "lon": 77.5736
-    },
-    "zone_id": "BSNK",
+    "zone_id": "YPM",
     "color": "green"
   },
   {
-    "stop_id": "JTPM",
-    "stop_name": "Benniganahalli",
+    "stop_id": "SSFY",
+    "stop_name": "Sandal Soap Factory",
     "stop_name_translations": {
-      "kn": "ಬೆನ್ನಿಗಾನಹಳ್ಳಿ"
+      "kn": "ಸಾಂಡಲ್ ಸೋಪ್ ಕಾರ್ಖಾನೆ"
     },
     "location": {
-      "lat": 12.996516,
-      "lon": 77.668465
+      "lat": 13.014698,
+      "lon": 77.553933
     },
-    "zone_id": "JTPM",
-    "color": "purple"
-  },
-  {
-    "stop_id": "CLGA",
-    "stop_name": "Challaghatta",
-    "stop_name_translations": {
-      "kn": "ಚಲ್ಲಘಟ್ಟ"
-    },
-    "location": {
-      "lat": 12.897354,
-      "lon": 77.46129
-    },
-    "zone_id": "CLGA",
-    "color": "purple"
-  },
-  {
-    "stop_id": "CKPE",
-    "stop_name": "Chickpete",
-    "stop_name_translations": {
-      "kn": "ಚಿಕ್ಕಪೇಟೆ"
-    },
-    "location": {
-      "lat": 12.966893,
-      "lon": 77.57457
-    },
-    "zone_id": "CKPE",
+    "zone_id": "SSFY",
     "color": "green"
   },
   {
-    "stop_id": "CBPK",
-    "stop_name": "Cubbon Park",
+    "stop_id": "MHLI",
+    "stop_name": "Mahalakshmi",
     "stop_name_translations": {
-      "kn": "ಕಬ್ಬನ್ ಪಾರ್ಕ್"
+      "kn": "ಮಹಾಲಕ್ಷ್ಮಿ"
     },
     "location": {
-      "lat": 12.980958,
-      "lon": 77.59757
+      "lat": 13.008193,
+      "lon": 77.54881
     },
-    "zone_id": "CBPK",
-    "color": "purple"
-  },
-  {
-    "stop_id": "DSH",
-    "stop_name": "Dasarahalli",
-    "stop_name_translations": {
-      "kn": "ದಾಸರಹಳ್ಳಿ"
-    },
-    "location": {
-      "lat": 13.043261,
-      "lon": 77.51255
-    },
-    "zone_id": "DSH",
+    "zone_id": "MHLI",
     "color": "green"
   },
   {
-    "stop_id": "DJNR",
-    "stop_name": "Deepanjali Nagar",
+    "stop_id": "RJNR",
+    "stop_name": "Rajajinagar",
     "stop_name_translations": {
-      "kn": "ದೀಪಾಂಜಲಿ ನಗರ"
+      "kn": "ರಾಜಾಜಿನಗರ"
     },
     "location": {
-      "lat": 12.952058,
-      "lon": 77.53701
+      "lat": 13.000334,
+      "lon": 77.549701
     },
-    "zone_id": "DJNR",
-    "color": "purple"
-  },
-  {
-    "stop_id": "KLPK",
-    "stop_name": "Doddakallasandra",
-    "stop_name_translations": {
-      "kn": "ದೊಡ್ಡಕಲ್ಲಸಂದ್ರ"
-    },
-    "location": {
-      "lat": 12.884643,
-      "lon": 77.55276
-    },
-    "zone_id": "KLPK",
+    "zone_id": "RJNR",
     "color": "green"
   },
   {
-    "stop_id": "VDSA",
-    "stop_name": "Dr. B. R. Ambedkar Station, Vidhana Soudha",
+    "stop_id": "KVPR",
+    "stop_name": "Mahakavi Kuvempu Road",
     "stop_name_translations": {
-      "kn": "ಡಾ.ಬಿ.ಆರ್. ಅಂಬೇಡ್ಕರ್ ಠಾಣೆ, ವಿಧಾನಸೌಧ"
+      "kn": "ಮಹಾಕವಿ ಕುವೆಂಪು ರಸ್ತೆ"
     },
     "location": {
-      "lat": 12.978742,
-      "lon": 77.59164
+      "lat": 12.998523,
+      "lon": 77.556972
     },
-    "zone_id": "VDSA",
-    "color": "purple"
-  },
-  {
-    "stop_id": "GDCP",
-    "stop_name": "Garudacharpalya",
-    "stop_name_translations": {
-      "kn": "ಗರುಡಾಚಾರ್ ಪಾಳ್ಯ"
-    },
-    "location": {
-      "lat": 12.99345,
-      "lon": 77.703674
-    },
-    "zone_id": "GDCP",
-    "color": "purple"
-  },
-  {
-    "stop_id": "YPI",
-    "stop_name": "Goraguntepalya",
-    "stop_name_translations": {
-      "kn": "ಗೊರಗುಂಟೆಪಾಳ್ಯ"
-    },
-    "location": {
-      "lat": 13.028408,
-      "lon": 77.54089
-    },
-    "zone_id": "YPI",
+    "zone_id": "KVPR",
     "color": "green"
   },
   {
-    "stop_id": "HLRU",
-    "stop_name": "Halasuru",
+    "stop_id": "SPRU",
+    "stop_name": "Srirampura",
     "stop_name_translations": {
-      "kn": "ಹಲಸೂರು"
+      "kn": "ಶ್ರೀರಾಮಪುರ"
     },
     "location": {
-      "lat": 12.976499,
-      "lon": 77.626686
+      "lat": 12.996461,
+      "lon": 77.563439
     },
-    "zone_id": "HLRU",
-    "color": "purple"
-  },
-  {
-    "stop_id": "DKIA",
-    "stop_name": "Hoodi",
-    "stop_name_translations": {
-      "kn": "ಹೂಡಿ"
-    },
-    "location": {
-      "lat": 12.988803,
-      "lon": 77.71133
-    },
-    "zone_id": "DKIA",
-    "color": "purple"
-  },
-  {
-    "stop_id": "UWVL",
-    "stop_name": "Hopefarm Channasandra",
-    "stop_name_translations": {
-      "kn": "ಹೋಪ್ ಫಾರ್ಮ್ ಚನ್ನಸಂದ್ರ"
-    },
-    "location": {
-      "lat": 12.987343,
-      "lon": 77.7538
-    },
-    "zone_id": "UWVL",
-    "color": "purple"
-  },
-  {
-    "stop_id": "IDN",
-    "stop_name": "Indiranagar",
-    "stop_name_translations": {
-      "kn": "ಇಂದಿರಾನಗರ"
-    },
-    "location": {
-      "lat": 12.978333,
-      "lon": 77.638664
-    },
-    "zone_id": "IDN",
-    "color": "purple"
-  },
-  {
-    "stop_id": "JLHL",
-    "stop_name": "Jalahalli",
-    "stop_name_translations": {
-      "kn": "ಜಾಲಹಳ್ಳಿ"
-    },
-    "location": {
-      "lat": 13.03941,
-      "lon": 77.51974
-    },
-    "zone_id": "JLHL",
+    "zone_id": "SPRU",
     "color": "green"
   },
   {
-    "stop_id": "JPN",
-    "stop_name": "Jaya Prakash Nagar",
+    "stop_id": "SPGD",
+    "stop_name": "Mantri Square Sampige Road",
     "stop_name_translations": {
-      "kn": "ಜೆಪಿ ನಗರ"
+      "kn": "ಮಂತ್ರಿ ಸ್ಕ್ವೇರ್ ಸಂಪಿಗೆ ರಸ್ತೆ"
     },
     "location": {
-      "lat": 12.907475,
-      "lon": 77.57313
+      "lat": 12.990502,
+      "lon": 77.57077
     },
-    "zone_id": "JPN",
+    "zone_id": "SPGD",
+    "color": "green"
+  },
+  {
+    "stop_id": "NLC",
+    "stop_name": "National College",
+    "stop_name_translations": {
+      "kn": "ನ್ಯಾಶನಲ್ ಕಾಲೇಜು"
+    },
+    "location": {
+      "lat": 12.95059,
+      "lon": 77.573669
+    },
+    "zone_id": "NLC",
+    "color": "green"
+  },
+  {
+    "stop_id": "LBGH",
+    "stop_name": "Lalbagh",
+    "stop_name_translations": {
+      "kn": "ಲಾಲ್ ಬಾಗ್"
+    },
+    "location": {
+      "lat": 12.946408,
+      "lon": 77.58002
+    },
+    "zone_id": "LBGH",
+    "color": "green"
+  },
+  {
+    "stop_id": "SECE",
+    "stop_name": "South End Circle",
+    "stop_name_translations": {
+      "kn": "ತಿ.ನಂ.ಶ್ರೀ ವೃತ್ತ"
+    },
+    "location": {
+      "lat": 12.938377,
+      "lon": 77.580096
+    },
+    "zone_id": "SECE",
     "color": "green"
   },
   {
@@ -253,23 +136,88 @@
       "kn": "ಜಯನಗರ"
     },
     "location": {
-      "lat": 12.929507,
-      "lon": 77.58015
+      "lat": 12.929641,
+      "lon": 77.58016
     },
     "zone_id": "JYN",
     "color": "green"
   },
   {
-    "stop_id": "BGUC",
-    "stop_name": "Jnanabharathi",
+    "stop_id": "RVR",
+    "stop_name": "Rashtreeya Vidyalaya Road",
     "stop_name_translations": {
-      "kn": "ಜ್ಞಾನ ಭಾರತಿ"
+      "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
     },
     "location": {
-      "lat": 12.935436,
-      "lon": 77.512405
+      "lat": 12.921464,
+      "lon": 77.580128
     },
-    "zone_id": "BGUC",
+    "zone_id": "RVR",
+    "color": "green-yellow"
+  },
+  {
+    "stop_id": "BSNK",
+    "stop_name": "Banashankari",
+    "stop_name_translations": {
+      "kn": "ಬನಶಂಕರಿ"
+    },
+    "location": {
+      "lat": 12.915649,
+      "lon": 77.573588
+    },
+    "zone_id": "BSNK",
+    "color": "green"
+  },
+  {
+    "stop_id": "JPN",
+    "stop_name": "Jaya Prakash Nagar",
+    "stop_name_translations": {
+      "kn": "ಜೆಪಿ ನಗರ"
+    },
+    "location": {
+      "lat": 12.907382,
+      "lon": 77.573213
+    },
+    "zone_id": "JPN",
+    "color": "green"
+  },
+  {
+    "stop_id": "VJN",
+    "stop_name": "Vijayanagar",
+    "stop_name_translations": {
+      "kn": "ವಿಜಯನಗರ"
+    },
+    "location": {
+      "lat": 12.970795,
+      "lon": 77.537389
+    },
+    "zone_id": "VJN",
+    "color": "purple"
+  },
+  {
+    "stop_id": "BRCS",
+    "stop_name": "Krantivira Sangolli Rayanna Railway Station",
+    "stop_name_translations": {
+      "kn": "ಕ್ರಾಂತಿವೀರ ಸಂಗೊಳ್ಳಿ ರಾಯಣ್ಣ"
+    },
+    "location": {
+      "lat": 12.975842,
+      "lon": 77.566017
+    },
+    "zone_id": "BRCS",
+    "color": "purple"
+  },
+  {
+    "stop_id": "CBPK",
+    "stop_name": "Cubbon Park",
+    "stop_name_translations": {
+      "kn": "ಕಬ್ಬನ್ ಪಾರ್ಕ್"
+    },
+    "location": {
+      "lat": 12.981227,
+      "lon": 77.596645
+    },
+    "zone_id": "CBPK",
     "color": "purple"
   },
   {
@@ -279,23 +227,36 @@
       "kn": "ಕಾಡುಗೋಡಿ ಟ್ರೀ ಪಾರ್ಕ್"
     },
     "location": {
-      "lat": 12.98565,
-      "lon": 77.74701
+      "lat": 12.985824,
+      "lon": 77.74651
     },
     "zone_id": "KDGD",
     "color": "purple"
   },
   {
-    "stop_id": "KGIT",
-    "stop_name": "Kengeri",
+    "stop_id": "WHTM",
+    "stop_name": "Whitefield (Kadugodi)",
     "stop_name_translations": {
-      "kn": "ಕೆಂಗೇರಿ"
+      "kn": "ವೈಟ್‌ಫೀಲ್ಡ್ (ಕಾಡುಗೋಡಿ)"
     },
     "location": {
-      "lat": 12.90791,
-      "lon": 77.47658
+      "lat": 12.993819,
+      "lon": 77.757732
     },
-    "zone_id": "KGIT",
+    "zone_id": "WHTM",
+    "color": "purple"
+  },
+  {
+    "stop_id": "PATG",
+    "stop_name": "Pattanagere",
+    "stop_name_translations": {
+      "kn": "ಪಟ್ಟಣಗೆರೆ"
+    },
+    "location": {
+      "lat": 12.924326,
+      "lon": 77.498288
+    },
+    "zone_id": "PATG",
     "color": "purple"
   },
   {
@@ -305,8 +266,8 @@
       "kn": "ಕೆಂಗೇರಿ ಬಸ್ ಟರ್ಮಿನಲ್"
     },
     "location": {
-      "lat": 12.914689,
-      "lon": 77.487854
+      "lat": 12.914962,
+      "lon": 77.48731
     },
     "zone_id": "MLSD",
     "color": "purple"
@@ -318,167 +279,111 @@
       "kn": "ಕೋಣನಕುಂಟೆ ಕ್ರಾಸ್"
     },
     "location": {
-      "lat": 12.888967,
-      "lon": 77.56267
+      "lat": 12.888872,
+      "lon": 77.562602
     },
     "zone_id": "APRC",
     "color": "green"
   },
   {
-    "stop_id": "BRCS",
-    "stop_name": "Krantivira Sangolli Rayanna Railway Station",
+    "stop_id": "KLPK",
+    "stop_name": "Doddakallasandra",
     "stop_name_translations": {
-      "kn": "ಕ್ರಾಂತಿವೀರ ಸಂಗೊಳ್ಳಿ ರಾಯಣ್ಣ"
+      "kn": "ದೊಡ್ಡಕಲ್ಲಸಂದ್ರ"
     },
     "location": {
-      "lat": 12.975877,
-      "lon": 77.56538
+      "lat": 12.884636,
+      "lon": 77.552683
     },
-    "zone_id": "BRCS",
-    "color": "purple"
-  },
-  {
-    "stop_id": "KRMT",
-    "stop_name": "Krishna Rajendra Market",
-    "stop_name_translations": {
-      "kn": "ಕೃಷ್ಣರಾಜೇಂದ್ರ ಮಾರುಕಟ್ಟೆ"
-    },
-    "location": {
-      "lat": 12.960879,
-      "lon": 77.57466
-    },
-    "zone_id": "KRMT",
+    "zone_id": "KLPK",
     "color": "green"
   },
   {
-    "stop_id": "KRAM",
-    "stop_name": "Krishnarajapura",
+    "stop_id": "VJRH",
+    "stop_name": "Vajarahalli",
     "stop_name_translations": {
-      "kn": "ಕೃಷ್ಣರಾಜಪುರ (ಕೆ.ಆರ್.ಪುರ)"
+      "kn": "ವಾಜರಹಳ್ಳಿ"
     },
     "location": {
-      "lat": 12.999902,
-      "lon": 77.67767
+      "lat": 12.877513,
+      "lon": 77.544739
     },
-    "zone_id": "KRAM",
-    "color": "purple"
-  },
-  {
-    "stop_id": "KDNH",
-    "stop_name": "Kundalahalli",
-    "stop_name_translations": {
-      "kn": "ಕುಂದಲಹಳ್ಳಿ"
-    },
-    "location": {
-      "lat": 12.977594,
-      "lon": 77.71556
-    },
-    "zone_id": "KDNH",
-    "color": "purple"
-  },
-  {
-    "stop_id": "LBGH",
-    "stop_name": "Lalbagh",
-    "stop_name_translations": {
-      "kn": "ಲಾಲ್ ಬಾಗ್"
-    },
-    "location": {
-      "lat": 12.946526,
-      "lon": 77.58002
-    },
-    "zone_id": "LBGH",
+    "zone_id": "VJRH",
     "color": "green"
   },
   {
-    "stop_id": "MIRD",
-    "stop_name": "Magadi Road",
+    "stop_id": "TGTP",
+    "stop_name": "Thalaghattapura",
     "stop_name_translations": {
-      "kn": "ಮಾಗಡಿ ರಸ್ತೆ ಮೆಟ್ರೊ"
+      "kn": "ತಲಘಟ್ಟಪುರ"
     },
     "location": {
-      "lat": 12.975632,
-      "lon": 77.55535
+      "lat": 12.871395,
+      "lon": 77.538398
     },
-    "zone_id": "MIRD",
-    "color": "purple"
-  },
-  {
-    "stop_id": "KVPR",
-    "stop_name": "Mahakavi Kuvempu Road",
-    "stop_name_translations": {
-      "kn": "ಮಹಾಕವಿ ಕುವೆಂಪು ರಸ್ತೆ"
-    },
-    "location": {
-      "lat": 12.99853,
-      "lon": 77.5569
-    },
-    "zone_id": "KVPR",
+    "zone_id": "TGTP",
     "color": "green"
   },
   {
-    "stop_id": "MHLI",
-    "stop_name": "Mahalakshmi",
+    "stop_id": "APTS",
+    "stop_name": "Silk Institute",
     "stop_name_translations": {
-      "kn": "ಮಹಾಲಕ್ಷ್ಮಿ"
+      "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
     },
     "location": {
-      "lat": 13.008095,
-      "lon": 77.54871
+      "lat": 12.861809,
+      "lon": 77.529868
     },
-    "zone_id": "MHLI",
+    "zone_id": "APTS",
     "color": "green"
   },
   {
-    "stop_id": "MAGR",
-    "stop_name": "Mahatma Gandhi Road",
+    "stop_id": "Ragigudda",
+    "stop_name": "Ragigudda",
+    "stop_name_translations": {},
+    "location": {
+      "lat": 12.917184,
+      "lon": 77.588324
+    },
+    "zone_id": "",
+    "color": "yellow"
+  },
+  {
+    "stop_id": "Jayadeva_Hospital",
+    "stop_name": "Jayadeva Hospital",
+    "stop_name_translations": {},
+    "location": {
+      "lat": 12.91675,
+      "lon": 77.599925
+    },
+    "zone_id": "",
+    "color": "yellow"
+  },
+  {
+    "stop_id": "CLGA",
+    "stop_name": "Challaghatta",
     "stop_name_translations": {
-      "kn": "ಮಹಾತ್ಮ ಗಾಂಧಿ ರಸ್ತೆ"
+      "kn": "ಚಲ್ಲಘಟ್ಟ"
     },
     "location": {
-      "lat": 12.975526,
-      "lon": 77.60679
+      "lat": 12.89707,
+      "lon": 77.461
     },
-    "zone_id": "MAGR",
+    "zone_id": "CLGA",
     "color": "purple"
   },
   {
-    "stop_id": "SPGD",
-    "stop_name": "Mantri Square Sampige Road",
+    "stop_id": "UWVL",
+    "stop_name": "Hopefarm Channasandra",
     "stop_name_translations": {
-      "kn": "ಮಂತ್ರಿ ಸ್ಕ್ವೇರ್ ಸಂಪಿಗೆ ರಸ್ತೆ"
+      "kn": "ಹೋಪ್ ಫಾರ್ಮ್ ಚನ್ನಸಂದ್ರ"
     },
     "location": {
-      "lat": 12.990463,
-      "lon": 77.57073
+      "lat": 12.987251504235132,
+      "lon": 77.75378750091028
     },
-    "zone_id": "SPGD",
-    "color": "green"
-  },
-  {
-    "stop_id": "MYRD",
-    "stop_name": "Mysore Road",
-    "stop_name_translations": {
-      "kn": "ಮೈಸೂರು ರಸ್ತೆ ಮೆಟ್ರೋ"
-    },
-    "location": {
-      "lat": 12.946718,
-      "lon": 77.53016
-    },
-    "zone_id": "MYRD",
+    "zone_id": "UWVL",
     "color": "purple"
-  },
-  {
-    "stop_id": "KGWA",
-    "stop_name": "Nadaprabhu Kempegowda Station, Majestic",
-    "stop_name_translations": {
-      "kn": "ನಾಡಪ್ರಭು ಕೆಂಪೇಗೌಡ ನಿಲ್ದಾಣ, ಮೆಜೆಸ್ಟಿಕ್"
-    },
-    "location": {
-      "lat": 12.975708,
-      "lon": 77.572876
-    },
-    "zone_id": "KGWA",
-    "color": "green-purple"
   },
   {
     "stop_id": "NGSA",
@@ -487,88 +392,36 @@
       "kn": "ನಾಗಸಂದ್ರ"
     },
     "location": {
-      "lat": 13.047954,
-      "lon": 77.500145
+      "lat": 13.04802,
+      "lon": 77.500112
     },
     "zone_id": "NGSA",
     "color": "green"
   },
   {
-    "stop_id": "VDHP",
-    "stop_name": "Nallurahalli",
+    "stop_id": "DSH",
+    "stop_name": "Dasarahalli",
     "stop_name_translations": {
-      "kn": "ನಲ್ಲೂರಹಳ್ಳಿ"
+      "kn": "ದಾಸರಹಳ್ಳಿ"
     },
     "location": {
-      "lat": 12.976641,
-      "lon": 77.724884
+      "lat": 13.043338,
+      "lon": 77.512407
     },
-    "zone_id": "VDHP",
-    "color": "purple"
-  },
-  {
-    "stop_id": "NLC",
-    "stop_name": "National College",
-    "stop_name_translations": {
-      "kn": "ನ್ಯಾಶನಲ್ ಕಾಲೇಜು"
-    },
-    "location": {
-      "lat": 12.950516,
-      "lon": 77.57368
-    },
-    "zone_id": "NLC",
+    "zone_id": "DSH",
     "color": "green"
   },
   {
-    "stop_id": "NYHM",
-    "stop_name": "Nayandahalli",
+    "stop_id": "JLHL",
+    "stop_name": "Jalahalli",
     "stop_name_translations": {
-      "kn": "ನಾಯಂಡಹಳ್ಳಿ"
+      "kn": "ಜಾಲಹಳ್ಳಿ"
     },
     "location": {
-      "lat": 12.941671,
-      "lon": 77.525116
+      "lat": 13.039429,
+      "lon": 77.519698
     },
-    "zone_id": "NYHM",
-    "color": "purple"
-  },
-  {
-    "stop_id": "PATG",
-    "stop_name": "Pattanagere",
-    "stop_name_translations": {
-      "kn": "ಪಟ್ಟಣಗೆರೆ"
-    },
-    "location": {
-      "lat": 12.92425,
-      "lon": 77.49835
-    },
-    "zone_id": "PATG",
-    "color": "purple"
-  },
-  {
-    "stop_id": "ITPL",
-    "stop_name": "Pattandur Agrahara",
-    "stop_name_translations": {
-      "kn": "ಪಟ್ಟಂದೂರು ಅಗ್ರಹಾರ"
-    },
-    "location": {
-      "lat": 12.987639,
-      "lon": 77.73777
-    },
-    "zone_id": "ITPL",
-    "color": "purple"
-  },
-  {
-    "stop_id": "PEYA",
-    "stop_name": "Peenya",
-    "stop_name_translations": {
-      "kn": "ಪೀಣ್ಯ"
-    },
-    "location": {
-      "lat": 13.033019,
-      "lon": 77.5332
-    },
-    "zone_id": "PEYA",
+    "zone_id": "JLHL",
     "color": "green"
   },
   {
@@ -578,101 +431,153 @@
       "kn": "ಪೀಣ್ಯ ಇಂಡಸ್ಟ್ರಿ"
     },
     "location": {
-      "lat": 13.036318,
-      "lon": 77.52549
+      "lat": 13.03628,
+      "lon": 77.52544
     },
     "zone_id": "PYID",
     "color": "green"
   },
   {
-    "stop_id": "RJNR",
-    "stop_name": "Rajajinagar",
+    "stop_id": "PEYA",
+    "stop_name": "Peenya",
     "stop_name_translations": {
-      "kn": "ರಾಜಾಜಿನಗರ"
+      "kn": "ಪೀಣ್ಯ"
     },
     "location": {
-      "lat": 13.000525,
-      "lon": 77.54966
+      "lat": 13.032815,
+      "lon": 77.533227
     },
-    "zone_id": "RJNR",
+    "zone_id": "PEYA",
     "color": "green"
   },
   {
-    "stop_id": "RRRN",
-    "stop_name": "Rajarajeshwari Nagar",
+    "stop_id": "YPI",
+    "stop_name": "Goraguntepalya",
     "stop_name_translations": {
-      "kn": "ರಾಜರಾಜೇಶ್ವರಿ ನಗರ"
+      "kn": "ಗೊರಗುಂಟೆಪಾಳ್ಯ"
     },
     "location": {
-      "lat": 12.9366,
-      "lon": 77.51968
+      "lat": 13.028383,
+      "lon": 77.540772
     },
-    "zone_id": "RRRN",
+    "zone_id": "YPI",
+    "color": "green"
+  },
+  {
+    "stop_id": "KGWA",
+    "stop_name": "Nadaprabhu Kempegowda Station, Majestic",
+    "stop_name_translations": {
+      "kn": "ನಾಡಪ್ರಭು ಕೆಂಪೇಗೌಡ ನಿಲ್ದಾಣ, ಮೆಜೆಸ್ಟಿಕ್"
+    },
+    "location": {
+      "lat": 12.975697,
+      "lon": 77.572967
+    },
+    "zone_id": "KGWA",
+    "color": "green-purple"
+  },
+  {
+    "stop_id": "CKPE",
+    "stop_name": "Chickpete",
+    "stop_name_translations": {
+      "kn": "ಚಿಕ್ಕಪೇಟೆ"
+    },
+    "location": {
+      "lat": 12.96666,
+      "lon": 77.574678
+    },
+    "zone_id": "CKPE",
+    "color": "green"
+  },
+  {
+    "stop_id": "KRMT",
+    "stop_name": "Krishna Rajendra Market",
+    "stop_name_translations": {
+      "kn": "ಕೃಷ್ಣರಾಜೇಂದ್ರ ಮಾರುಕಟ್ಟೆ"
+    },
+    "location": {
+      "lat": 12.961108,
+      "lon": 77.574828
+    },
+    "zone_id": "KRMT",
+    "color": "green"
+  },
+  {
+    "stop_id": "PUTH",
+    "stop_name": "Yelachenahalli",
+    "stop_name_translations": {
+      "kn": "ಯಲಚೇನಹಳ್ಳಿ"
+    },
+    "location": {
+      "lat": 12.895952,
+      "lon": 77.570193
+    },
+    "zone_id": "PUTH",
+    "color": "green"
+  },
+  {
+    "stop_id": "MYRD",
+    "stop_name": "Mysore Road",
+    "stop_name_translations": {
+      "kn": "ಮೈಸೂರು ರಸ್ತೆ ಮೆಟ್ರೋ"
+    },
+    "location": {
+      "lat": 12.946549,
+      "lon": 77.52971
+    },
+    "zone_id": "MYRD",
     "color": "purple"
   },
   {
-    "stop_id": "RVR",
-    "stop_name": "Rashtreeya Vidyalaya Road",
+    "stop_id": "DJNR",
+    "stop_name": "Deepanjali Nagar",
     "stop_name_translations": {
-      "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+      "kn": "ದೀಪಾಂಜಲಿ ನಗರ"
     },
     "location": {
-      "lat": 12.921331,
-      "lon": 77.58027
+      "lat": 12.952191,
+      "lon": 77.536973
     },
-    "zone_id": "RVR",
-    "color": "green"
-  },
-  {
-    "stop_id": "SSFY",
-    "stop_name": "Sandal Soap Factory",
-    "stop_name_translations": {
-      "kn": "ಸಾಂಡಲ್ ಸೋಪ್ ಕಾರ್ಖಾನೆ"
-    },
-    "location": {
-      "lat": 13.014654,
-      "lon": 77.553986
-    },
-    "zone_id": "SSFY",
-    "color": "green"
-  },
-  {
-    "stop_id": "VWIA",
-    "stop_name": "Seetharampalya",
-    "stop_name_translations": {
-      "kn": "ಸೀತಾರಾಮ ಪಾಳ್ಯ"
-    },
-    "location": {
-      "lat": 12.980856,
-      "lon": 77.708786
-    },
-    "zone_id": "VWIA",
+    "zone_id": "DJNR",
     "color": "purple"
   },
   {
-    "stop_id": "APTS",
-    "stop_name": "Silk Institute",
+    "stop_id": "AGPP",
+    "stop_name": "Attiguppe",
     "stop_name_translations": {
-      "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
+      "kn": "ಅತ್ತಿಗುಪ್ಪೆ ಮೆಟ್ರೋ"
     },
     "location": {
-      "lat": 12.86173,
-      "lon": 77.52995
+      "lat": 12.961954,
+      "lon": 77.533589
     },
-    "zone_id": "APTS",
-    "color": "green"
+    "zone_id": "AGPP",
+    "color": "purple"
   },
   {
-    "stop_id": "MDVP",
-    "stop_name": "Singayyanapalya",
+    "stop_id": "HSLI",
+    "stop_name": "Sri Balagangadharanatha Swamiji Station, Hosahalli",
     "stop_name_translations": {
-      "kn": "ಸಿಂಗಯ್ಯನಪಾಳ್ಯ"
+      "kn": "ಶ್ರೀ ಬಾಲಗಂಗಾಧರನಾಥ ಮೆಟ್ರೋ"
     },
     "location": {
-      "lat": 12.996545,
-      "lon": 77.69272
+      "lat": 12.97424,
+      "lon": 77.545541
     },
-    "zone_id": "MDVP",
+    "zone_id": "HSLI",
+    "color": "purple"
+  },
+  {
+    "stop_id": "MIRD",
+    "stop_name": "Magadi Road",
+    "stop_name_translations": {
+      "kn": "ಮಾಗಡಿ ರಸ್ತೆ ಮೆಟ್ರೊ"
+    },
+    "location": {
+      "lat": 12.975633,
+      "lon": 77.5555
+    },
+    "zone_id": "MIRD",
     "color": "purple"
   },
   {
@@ -682,36 +587,192 @@
       "kn": "ಸರ್ ಎಂ ವಿಶ್ವೇಶ್ವರಯ್ಯ - ಸೆಂಟ್ರಲ್ ಕಾಲೇಜು"
     },
     "location": {
-      "lat": 12.97452,
-      "lon": 77.58422
+      "lat": 12.974345,
+      "lon": 77.583998
     },
     "zone_id": "VSWA",
     "color": "purple"
   },
   {
-    "stop_id": "SECE",
-    "stop_name": "South End Circle",
+    "stop_id": "VDSA",
+    "stop_name": "Dr. B. R. Ambedkar Station, Vidhana Soudha",
     "stop_name_translations": {
-      "kn": "ತಿ.ನಂ.ಶ್ರೀ ವೃತ್ತ"
+      "kn": "ಡಾ.ಬಿ.ಆರ್. ಅಂಬೇಡ್ಕರ್ ಠಾಣೆ, ವಿಧಾನಸೌಧ"
     },
     "location": {
-      "lat": 12.938257,
-      "lon": 77.580055
+      "lat": 12.978793,
+      "lon": 77.591752
     },
-    "zone_id": "SECE",
-    "color": "green"
+    "zone_id": "VDSA",
+    "color": "purple"
   },
   {
-    "stop_id": "HSLI",
-    "stop_name": "Sri Balagangadharanatha Swamiji Station, Hosahalli",
+    "stop_id": "MAGR",
+    "stop_name": "Mahatma Gandhi Road",
     "stop_name_translations": {
-      "kn": "ಶ್ರೀ ಬಾಲಗಂಗಾಧರನಾಥ ಮೆಟ್ರೋ"
+      "kn": "ಮಹಾತ್ಮ ಗಾಂಧಿ ರಸ್ತೆ"
     },
     "location": {
-      "lat": 12.974293,
-      "lon": 77.54562
+      "lat": 12.975505,
+      "lon": 77.606762
     },
-    "zone_id": "HSLI",
+    "zone_id": "MAGR",
+    "color": "purple"
+  },
+  {
+    "stop_id": "TTY",
+    "stop_name": "Trinity",
+    "stop_name_translations": {
+      "kn": "ಟ್ರಿನಿಟಿ ಮೆಟ್ರೊ ನಿಲ್ದಾಣ"
+    },
+    "location": {
+      "lat": 12.973033,
+      "lon": 77.616984
+    },
+    "zone_id": "TTY",
+    "color": "purple"
+  },
+  {
+    "stop_id": "HLRU",
+    "stop_name": "Halasuru",
+    "stop_name_translations": {
+      "kn": "ಹಲಸೂರು"
+    },
+    "location": {
+      "lat": 12.976431,
+      "lon": 77.626616
+    },
+    "zone_id": "HLRU",
+    "color": "purple"
+  },
+  {
+    "stop_id": "IDN",
+    "stop_name": "Indiranagar",
+    "stop_name_translations": {
+      "kn": "ಇಂದಿರಾನಗರ"
+    },
+    "location": {
+      "lat": 12.978318,
+      "lon": 77.638731
+    },
+    "zone_id": "IDN",
+    "color": "purple"
+  },
+  {
+    "stop_id": "SVRD",
+    "stop_name": "Swami Vivekananda Road",
+    "stop_name_translations": {
+      "kn": "ಸ್ವಾಮಿ ವಿವೇಕಾನಂದ ರಸ್ತೆ"
+    },
+    "location": {
+      "lat": 12.98595,
+      "lon": 77.64493
+    },
+    "zone_id": "SVRD",
+    "color": "purple"
+  },
+  {
+    "stop_id": "BYPH",
+    "stop_name": "Baiyappanahalli",
+    "stop_name_translations": {
+      "kn": "ಬೈಯ್ಯಪ್ಪನಹಳ್ಳಿ ಮೆಟ್ರೋ ನಿಲ್ದಾಣ"
+    },
+    "location": {
+      "lat": 12.990738,
+      "lon": 77.652504
+    },
+    "zone_id": "BYPH",
+    "color": "purple"
+  },
+  {
+    "stop_id": "JTPM",
+    "stop_name": "Benniganahalli",
+    "stop_name_translations": {
+      "kn": "ಬೆನ್ನಿಗಾನಹಳ್ಳಿ"
+    },
+    "location": {
+      "lat": 12.9964994,
+      "lon": 77.6683239
+    },
+    "zone_id": "JTPM",
+    "color": "purple"
+  },
+  {
+    "stop_id": "MDVP",
+    "stop_name": "Singayyanapalya",
+    "stop_name_translations": {
+      "kn": "ಸಿಂಗಯ್ಯನಪಾಳ್ಯ"
+    },
+    "location": {
+      "lat": 12.996623,
+      "lon": 77.692534
+    },
+    "zone_id": "MDVP",
+    "color": "purple"
+  },
+  {
+    "stop_id": "GDCP",
+    "stop_name": "Garudacharpalya",
+    "stop_name_translations": {
+      "kn": "ಗರುಡಾಚಾರ್ ಪಾಳ್ಯ"
+    },
+    "location": {
+      "lat": 12.993393,
+      "lon": 77.703896
+    },
+    "zone_id": "GDCP",
+    "color": "purple"
+  },
+  {
+    "stop_id": "DKIA",
+    "stop_name": "Hoodi",
+    "stop_name_translations": {
+      "kn": "ಹೂಡಿ"
+    },
+    "location": {
+      "lat": 12.988396,
+      "lon": 77.710515
+    },
+    "zone_id": "DKIA",
+    "color": "purple"
+  },
+  {
+    "stop_id": "VWIA",
+    "stop_name": "Seetharampalya",
+    "stop_name_translations": {
+      "kn": "ಸೀತಾರಾಮ ಪಾಳ್ಯ"
+    },
+    "location": {
+      "lat": 12.981041,
+      "lon": 77.708791
+    },
+    "zone_id": "VWIA",
+    "color": "purple"
+  },
+  {
+    "stop_id": "KDNH",
+    "stop_name": "Kundalahalli",
+    "stop_name_translations": {
+      "kn": "ಕುಂದಲಹಳ್ಳಿ"
+    },
+    "location": {
+      "lat": 12.977701,
+      "lon": 77.714957
+    },
+    "zone_id": "KDNH",
+    "color": "purple"
+  },
+  {
+    "stop_id": "VDHP",
+    "stop_name": "Nallurahalli",
+    "stop_name_translations": {
+      "kn": "ನಲ್ಲೂರಹಳ್ಳಿ"
+    },
+    "location": {
+      "lat": 12.97677,
+      "lon": 77.72394
+    },
+    "zone_id": "VDHP",
     "color": "purple"
   },
   {
@@ -721,127 +782,264 @@
       "kn": "ಶ್ರೀ ಸತ್ಯ ಸಾಯಿ ಆಸ್ಪತ್ರೆ"
     },
     "location": {
-      "lat": 12.981195,
-      "lon": 77.72754
+      "lat": 12.981848,
+      "lon": 77.727703
     },
     "zone_id": "SSHP",
     "color": "purple"
   },
   {
-    "stop_id": "SPRU",
-    "stop_name": "Srirampura",
+    "stop_id": "ITPL",
+    "stop_name": "Pattandur Agrahara",
     "stop_name_translations": {
-      "kn": "ಶ್ರೀರಾಮಪುರ"
+      "kn": "ಪಟ್ಟಂದೂರು ಅಗ್ರಹಾರ"
     },
     "location": {
-      "lat": 12.996525,
-      "lon": 77.563194
+      "lat": 12.98768,
+      "lon": 77.738169
     },
-    "zone_id": "SPRU",
-    "color": "green"
-  },
-  {
-    "stop_id": "SVRD",
-    "stop_name": "Swami Vivekananda Road",
-    "stop_name_translations": {
-      "kn": "ಸ್ವಾಮಿ ವಿವೇಕಾನಂದ ರಸ್ತೆ"
-    },
-    "location": {
-      "lat": 12.985931,
-      "lon": 77.6449
-    },
-    "zone_id": "SVRD",
+    "zone_id": "ITPL",
     "color": "purple"
   },
   {
-    "stop_id": "TGTP",
-    "stop_name": "Thalaghattapura",
+    "stop_id": "NYHM",
+    "stop_name": "Nayandahalli",
     "stop_name_translations": {
-      "kn": "ತಲಘಟ್ಟಪುರ"
+      "kn": "ನಾಯಂಡಹಳ್ಳಿ"
     },
     "location": {
-      "lat": 12.87141,
-      "lon": 77.5384
+      "lat": 12.942479,
+      "lon": 77.525598
     },
-    "zone_id": "TGTP",
-    "color": "green"
-  },
-  {
-    "stop_id": "TTY",
-    "stop_name": "Trinity",
-    "stop_name_translations": {
-      "kn": "ಟ್ರಿನಿಟಿ ಮೆಟ್ರೊ ನಿಲ್ದಾಣ"
-    },
-    "location": {
-      "lat": 12.973022,
-      "lon": 77.61702
-    },
-    "zone_id": "TTY",
+    "zone_id": "NYHM",
     "color": "purple"
   },
   {
-    "stop_id": "VJRH",
-    "stop_name": "Vajarahalli",
+    "stop_id": "RRRN",
+    "stop_name": "Rajarajeshwari Nagar",
     "stop_name_translations": {
-      "kn": "ವಾಜರಹಳ್ಳಿ"
+      "kn": "ರಾಜರಾಜೇಶ್ವರಿ ನಗರ"
     },
     "location": {
-      "lat": 12.877437,
-      "lon": 77.54474
+      "lat": 12.936662,
+      "lon": 77.519593
     },
-    "zone_id": "VJRH",
-    "color": "green"
-  },
-  {
-    "stop_id": "VJN",
-    "stop_name": "Vijayanagar",
-    "stop_name_translations": {
-      "kn": "ವಿಜಯನಗರ"
-    },
-    "location": {
-      "lat": 12.970956,
-      "lon": 77.53741
-    },
-    "zone_id": "VJN",
+    "zone_id": "RRRN",
     "color": "purple"
   },
   {
-    "stop_id": "WHTM",
-    "stop_name": "Whitefield (Kadugodi)",
+    "stop_id": "BGUC",
+    "stop_name": "Jnanabharathi",
     "stop_name_translations": {
-      "kn": "ವೈಟ್‌ಫೀಲ್ಡ್ (ಕಾಡುಗೋಡಿ)"
+      "kn": "ಜ್ಞಾನ ಭಾರತಿ"
     },
     "location": {
-      "lat": 12.995646,
-      "lon": 77.75786
+      "lat": 12.935423,
+      "lon": 77.512182
     },
-    "zone_id": "WHTM",
+    "zone_id": "BGUC",
     "color": "purple"
   },
   {
-    "stop_id": "PUTH",
-    "stop_name": "Yelachenahalli",
+    "stop_id": "KGIT",
+    "stop_name": "Kengeri",
     "stop_name_translations": {
-      "kn": "ಯಲಚೇನಹಳ್ಳಿ"
+      "kn": "ಕೆಂಗೇರಿ"
     },
     "location": {
-      "lat": 12.89605,
-      "lon": 77.57012
+      "lat": 12.907963,
+      "lon": 77.476466
     },
-    "zone_id": "PUTH",
+    "zone_id": "KGIT",
+    "color": "purple"
+  },
+  {
+    "stop_id": "BTM_Layout",
+    "stop_name": "BTM Layout",
+    "stop_name_translations": {},
+    "location": {
+      "lat": 12.916584,
+      "lon": 77.608238
+    },
+    "zone_id": "",
+    "color": "yellow"
+  },
+  {
+    "stop_id": "HSR_Layout",
+    "stop_name": "Bommanahalli",
+    "stop_name_translations": {},
+    "location": {
+      "lat": 12.911032,
+      "lon": 77.62638
+    },
+    "zone_id": "",
+    "color": "yellow"
+  },
+  {
+    "stop_id": "Oxford_College",
+    "stop_name": "Hongasandra",
+    "stop_name_translations": {},
+    "location": {
+      "lat": 12.901631,
+      "lon": 77.632044
+    },
+    "zone_id": "",
+    "color": "yellow"
+  },
+  {
+    "stop_id": "Muneshwara_Nagar",
+    "stop_name": "Kudlu Gate",
+    "stop_name_translations": {},
+    "location": {
+      "lat": 12.889923,
+      "lon": 77.639233
+    },
+    "zone_id": "",
+    "color": "yellow"
+  },
+  {
+    "stop_id": "Chikkabegur",
+    "stop_name": "Singasandra",
+    "stop_name_translations": {},
+    "location": {
+      "lat": 12.880055,
+      "lon": 77.645327
+    },
+    "zone_id": "",
+    "color": "yellow"
+  },
+  {
+    "stop_id": "Basapura_Road",
+    "stop_name": "Hosa Road",
+    "stop_name_translations": {},
+    "location": {
+      "lat": 12.87054,
+      "lon": 77.65259
+    },
+    "zone_id": "",
+    "color": "yellow"
+  },
+  {
+    "stop_id": "Hosa_Road",
+    "stop_name": "Beratena Agrahara",
+    "stop_name_translations": {},
+    "location": {
+      "lat": 12.863205,
+      "lon": 77.658416
+    },
+    "zone_id": "",
+    "color": "yellow"
+  },
+  {
+    "stop_id": "Electronic_City_I",
+    "stop_name": "Electronic City",
+    "stop_name_translations": {},
+    "location": {
+      "lat": 12.856689,
+      "lon": 77.663544
+    },
+    "zone_id": "",
+    "color": "yellow"
+  },
+  {
+    "stop_id": "Electronic_City_II",
+    "stop_name": "Konappana Agrahara",
+    "stop_name_translations": {},
+    "location": {
+      "lat": 12.846783,
+      "lon": 77.671114
+    },
+    "zone_id": "",
+    "color": "yellow"
+  },
+  {
+    "stop_id": "Huskur_Road",
+    "stop_name": "Huskur Road",
+    "stop_name_translations": {},
+    "location": {
+      "lat": 12.839366,
+      "lon": 77.67724
+    },
+    "zone_id": "",
+    "color": "yellow"
+  },
+  {
+    "stop_id": "Hebbagodi",
+    "stop_name": "Hebbagodi",
+    "stop_name_translations": {},
+    "location": {
+      "lat": 12.828393,
+      "lon": 77.681612
+    },
+    "zone_id": "",
+    "color": "yellow"
+  },
+  {
+    "stop_id": "Bommasandra",
+    "stop_name": "Bommasandra",
+    "stop_name_translations": {},
+    "location": {
+      "lat": 12.820364,
+      "lon": 77.68747
+    },
+    "zone_id": "",
+    "color": "yellow"
+  },
+  {
+    "stop_id": "Central_Silkboard",
+    "stop_name": "Central Silkboard",
+    "stop_name_translations": {},
+    "location": {
+      "lat": 12.9166869,
+      "lon": 77.6208328
+    },
+    "zone_id": "",
+    "color": "yellow"
+  },
+  {
+    "stop_id": "KRAM",
+    "stop_name": "Krishnarajapura",
+    "stop_name_translations": {
+      "kn": "ಕೃಷ್ಣರಾಜಪುರ (ಕೆ.ಆರ್.ಪುರ)"
+    },
+    "location": {
+      "lat": 13.0001332,
+      "lon": 77.6774275
+    },
+    "zone_id": "KRAM",
+    "color": "purple"
+  },
+  {
+    "stop_id": "MNJN",
+    "stop_name": "Manjunathanagar",
+    "stop_name_translations": {},
+    "location": {
+      "lat": 13.05004576216291,
+      "lon": 77.49442261502452
+    },
+    "zone_id": "",
     "color": "green"
   },
   {
-    "stop_id": "YPM",
-    "stop_name": "Yeshwantpur",
-    "stop_name_translations": {
-      "kn": "ಯಶವಂತಪುರ"
-    },
+    "stop_id": "JIDL",
+    "stop_name": "Chikkabidarakallu",
+    "stop_name_translations": {},
     "location": {
-      "lat": 13.023268,
-      "lon": 77.54987
+      "lat": 13.052322452390996,
+      "lon": 77.48789775877572
     },
-    "zone_id": "YPM",
+    "zone_id": "",
+    "color": "green"
+  },
+  {
+    "stop_id": "BIET",
+    "stop_name": "Madavara",
+    "stop_name_translations": {},
+    "location": {
+      "lat": 13.05729825712217,
+      "lon": 77.47278748339596
+    },
+    "zone_id": "",
     "color": "green"
   }
 ]

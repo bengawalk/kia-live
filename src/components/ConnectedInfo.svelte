@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { connected, displayingTrip, connectedPopup } from '$lib/stores/discovery';
 	import { messages } from '$lib/stores/language';
-	$: isConnected = $connected ? $displayingTrip ? Object.hasOwn($displayingTrip, 'vehicle_id') : true : false;
+	$: isConnected = $displayingTrip ? Object.hasOwn($displayingTrip, 'vehicle_id') : $connected;
 </script>
 <!-- Top banner overlay (Mapbox-friendly) -->
 <div

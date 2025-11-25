@@ -1,6 +1,5 @@
 {
-  "total_stops": 65,
-  "generation_date": "2025-11-05T15:29:50.449Z",
-  "gtfs_source": "/Users/aayushrai/devproj/TRANSIT_PROJECT/assets/gtfs/bmrcl-19-07-2024",
-  "stops_with_departures": 65
+  "total_stops": 83,
+  "generation_date": "2025-11-25T11:37:57.322Z",
+  "stops_with_departures": 83
 }
