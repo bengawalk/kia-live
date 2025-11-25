@@ -515,7 +515,6 @@ function updateBusModelScales(modelId: string) {
 		model.scale.y = currentScale;
 		model.scale.z = currentScale;
 	}
-	console.log('updating scale to new zoom scale', currentScale);
 }
 
 // Update bus model position (following threebox pattern)
