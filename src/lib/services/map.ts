@@ -379,6 +379,9 @@ const BUS_3D_CONFIG = {
 // Global storage for Threebox bus models (following threebox example pattern)
 const busModels: Record<string, IThreeboxObject> = {};
 
+// Track models that are currently loading to prevent duplicates
+const loadingModels: Set<string> = new Set();
+
 // Track if zoom listener has been registered to prevent multiple registrations
 let zoomListenerRegistered = false;
 
@@ -436,16 +439,25 @@ function loadBusModel(modelId: string, coords: [number, number], bearing: number
 		return;
 	}
 
+	// RACE CONDITION FIX: Check if model is currently loading
+	// If already loading, skip to prevent duplicate models
+	if (loadingModels.has(modelId)) {
+		console.log(`[loadBusModel] Model ${modelId} is already loading, skipping duplicate request`);
+		return;
+	}
+
+	// Mark model as loading
+	loadingModels.add(modelId);
+
 	// Calculate initial scale based on current zoom
 	const initialScale = calculateBusScale();
 
 	// Load using Threebox's loadObj method with URL
-	// Use 'scene' units for consistent behavior across dev/prod builds
 	const options = {
 		obj: BUS_GLB_URL,
 		type: 'gltf',
 		scale: initialScale,
-		units: 'scene',
+		units: 'meters',
 		rotation: {
 			x: 0,
 			y: 0, // + bearing,
@@ -457,6 +469,8 @@ function loadBusModel(modelId: string, coords: [number, number], bearing: number
 	};
 
 	tb.loadObj(options, (model: IThreeboxObject) => {
+		// Remove from loading set
+		loadingModels.delete(modelId);
 
 		// Store model globally
 		busModels[modelId] = model;
@@ -558,6 +572,9 @@ function removeBusModel(modelId: string) {
 
 	tb.remove(model);
 	delete busModels[modelId];
+
+	// Also remove from loading set in case removal happens during load
+	loadingModels.delete(modelId);
 }
 
 // Marker storage
