@@ -6,14 +6,26 @@ import { defineConfig } from 'vite';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { readFileSync } from 'node:fs';
+import { execSync } from 'node:child_process';
 import { storybookTest } from '@storybook/experimental-addon-test/vitest-plugin';
 import { VitePWA } from 'vite-plugin-pwa';
 const dirname =
 	typeof __dirname !== 'undefined' ? __dirname : path.dirname(fileURLToPath(import.meta.url));
 
-// Read version from package.json for cache busting
-const packageJson = JSON.parse(readFileSync(path.join(dirname, 'package.json'), 'utf-8'));
-const version = packageJson.version;
+// Generate cache version based on git commit hash or timestamp
+// This automatically invalidates cache on new builds without manual version bumping
+function getCacheVersion(): string {
+	try {
+		// Try to get git commit hash (short form)
+		const gitHash = execSync('git rev-parse --short HEAD', { encoding: 'utf-8' }).trim();
+		return gitHash;
+	} catch (error) {
+		// Fallback to timestamp if not in git repo or git not available
+		return Date.now().toString();
+	}
+}
+
+const version = getCacheVersion();
 
 // More info at: https://storybook.js.org/docs/writing-tests/test-addon
 export default defineConfig({
@@ -31,20 +43,23 @@ export default defineConfig({
 				cleanupOutdatedCaches: true, // Remove old caches automatically
 				skipWaiting: true, // Force new service worker to activate immediately
 				clientsClaim: true, // Take control of all clients immediately
+				// Add version to cache names to force cache invalidation on new builds
+				cacheId: `kia-live-v${version}`,
 				runtimeCaching: [
 					{
 						// Cache JS/CSS with network-first strategy to ensure fresh code
 						urlPattern: /^https?.*\.(js|css)$/,
 						handler: 'NetworkFirst',
 						options: {
-							cacheName: 'assets-cache',
+							cacheName: `assets-v${version}`,
 							expiration: {
 								maxEntries: 50,
 								maxAgeSeconds: 60 * 60 // 1 hour
 							},
 							cacheableResponse: {
 								statuses: [0, 200]
-							}
+							},
+							networkTimeoutSeconds: 3 // Fallback to cache if network is slow
 						}
 					},
 					{
@@ -52,7 +67,7 @@ export default defineConfig({
 						urlPattern: /^https?.*\.(png|jpg|jpeg|svg|gif|webp|woff|woff2|ttf|otf|glb)$/,
 						handler: 'CacheFirst',
 						options: {
-							cacheName: 'media-cache',
+							cacheName: `media-v${version}`,
 							expiration: {
 								maxEntries: 100,
 								maxAgeSeconds: 60 * 60 * 24 * 30 // 30 days
@@ -95,17 +110,6 @@ export default defineConfig({
 			outdir: './src/lib/paraglide'
 		})
 	],
-	build: {
-		// Generate unique filenames for cache busting
-		rollupOptions: {
-			output: {
-				// Add hash to chunk filenames for automatic cache invalidation
-				chunkFileNames: 'chunks/[name]-[hash].js',
-				entryFileNames: 'entries/[name]-[hash].js',
-				assetFileNames: 'assets/[name]-[hash].[ext]'
-			}
-		}
-	},
 	define: {
 		'process.env': {}
 	},
