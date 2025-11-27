@@ -5,7 +5,7 @@ import mapBus from '$assets/map-bus.svg?raw';
 import mapStop from '$assets/map-stop.svg?raw';
 import mapBusLive from '$assets/map-bus-live.svg?raw';
 import mapStopLive from '$assets/map-stop-live.svg?raw';
-import busGlb from '$assets/bus.glb?url';
+import busGlb from '$assets/bus3.glb?url';
 
 // type definitions used ONLY in this file
 

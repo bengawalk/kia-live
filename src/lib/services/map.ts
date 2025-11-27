@@ -352,10 +352,10 @@ const BUS_3D_CONFIG = {
 	// Scale - exponential scaling for constant screen size
 	// Formula: scale(zoom) = scaleAtMidZoom * 2^(midZoom - zoom)
 	// Adjust scaleAtMidZoom to control overall bus size on screen
-	scaleAtMidZoom: 60*1.9,     // Reference scale at zoom 12 (adjust this to resize bus)
+	scaleAtMidZoom: 10.5,     // Reference scale at zoom 12 (adjust this to resize bus)
 	minZoom: 10,             // Minimum zoom
 	midZoom: 12,            // Middle reference zoom
-	maxZoom: 19,            // Maximum zoom
+	maxZoom: 20,            // Maximum zoom
 
 	// Calculated values (for reference, not used directly):
 	// scaleAtMinZoom: 60 * 2^5 = 1920 (at zoom 7)
@@ -365,11 +365,11 @@ const BUS_3D_CONFIG = {
 
 	// Rotation (in degrees) - will be converted to radians
 	rotationX: 90,          // Pitch: lay flat on map
-	rotationY: 0,         // Yaw: additional rotation (added to bearing)
+	rotationY: -90,         // Yaw: additional rotation (added to bearing)
 	rotationZ: 0,           // Roll: flip orientation
 
 	// Height offset - raise slightly above ground to prevent z-fighting with line layers
-	altitude: 3,            // Height above ground in meters (prevents lines showing through)
+	altitude: 0.02,            // Height above ground in meters (prevents lines showing through)
 
 	// Tilt for 3D effect (in degrees) - will be converted to radians
 	tiltXDegrees: 0,        // Left/right tilt
@@ -464,7 +464,7 @@ function loadBusModel(modelId: string, coords: [number, number], bearing: number
 			z: 0,
 		},
 		anchor: 'auto',
-		adjustment: {x: 0, y: -0.5, z: 0.5},
+		adjustment: {x: 0, y: 1, z: -0.6},
 		bbox: true
 	};
 
@@ -492,8 +492,8 @@ function updateBusModelLighting(modelId: string, isActive: boolean) {
 
 	// Adjust the global Threebox lights intensity
 	// BUS_INACTIVE: lower ambient light, BUS: higher ambient light
-	const ambientIntensity = isActive ? 2.0 : 1.2;
-	const directionalIntensity = isActive ? 1.6 : 0.8;
+	const ambientIntensity = isActive ? 1.0 : 0.8;
+	const directionalIntensity = isActive ? 0.8 : 0.6;
 
 	// Threebox has ambient and directional lights
 	if (tb.lights.ambientLight) {
@@ -514,8 +514,9 @@ function updateBusModelLighting(modelId: string, isActive: boolean) {
 }
 
 function calculateBusAltitude(): number {
-	const modelScale = calculateBusScale();
-	return modelScale * 6.1;
+	// const modelScale = calculateBusScale();
+	return 0;
+	// return modelScale * 6.1;
 }
 
 function updateBusModelScales(modelId: string) {
