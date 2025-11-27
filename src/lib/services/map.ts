@@ -410,6 +410,7 @@ function create2DBusIcon(bearing: number, isActive: boolean): HTMLElement {
 	container.style.position = 'relative';
 	container.style.display = 'inline-block';
 	container.style.transformOrigin = 'center center';
+	container.style.zIndex = '2'; // Ensure bus appears above bus stops and other markers
 
 	// Use original high-resolution image (2946×1020) and scale via CSS
 	// This maintains quality better than using a pre-scaled image
