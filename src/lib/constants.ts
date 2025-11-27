@@ -6,6 +6,7 @@ import mapStop from '$assets/map-stop.svg?raw';
 import mapBusLive from '$assets/map-bus-live.svg?raw';
 import mapStopLive from '$assets/map-stop-live.svg?raw';
 import busGlb from '$assets/bus3.glb?url';
+import busPng from '$assets/bus2.png';
 
 // type definitions used ONLY in this file
 
@@ -68,6 +69,7 @@ const SVG_ICONS: Record<keyof typeof MAP_STYLES, string> = {
 };
 
 export const BUS_GLB_URL = busGlb;
+export const BUS_PNG_URL = busPng;
 
 export const AIRPORT_LOCATION: number[] = [13.199110535079635, 77.70822021568426];
 export const AIRPORT_SOFTLOCK: number[] = [13.205024620008803, 77.70808412641674, 2.5]

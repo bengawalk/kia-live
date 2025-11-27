@@ -1,5 +1,5 @@
 import {
-	BUS_GLB_URL,
+	BUS_PNG_URL,
 	LINE_COLLISION_STYLE,
 	LINE_LABEL_STYLE,
 	MAP_STYLES,
@@ -12,8 +12,7 @@ import { pollUserLocation } from '$lib/services/location';
 import { handleTap, handleTouchEnd, handleTouchStart } from '$lib/services/discovery';
 import { browser } from '$app/environment';
 import { initMetroMap, loadMetroLines, unloadMetroMap } from '$lib/services/metroMap';
-// @ts-expect-error threebox does not have types
-import type { IThreeboxObject } from 'threebox-plugin';
+import { busLayer, load3DBusModel, remove3DBusModel, setup3DBusZoomListener } from '$lib/services/3dbus';
 // @ts-expect-error threebox has no types
 import { Threebox } from 'threebox-plugin';
 import 'threebox-plugin/dist/threebox.css';
@@ -343,243 +342,163 @@ export function updateLayer(
 }
 
 
-// 3D Bus Model Management using Threebox
-// Following threebox-plugin pattern: models stored globally, accessible throughout code
+// Hardware capability detection for fallback to 2D rendering
+let use2DFallback: boolean | null = true;
 
-// ========== ADJUSTABLE PARAMETERS ==========
-// Configuration for bus 3D model appearance
-const BUS_3D_CONFIG = {
-	// Scale - exponential scaling for constant screen size
-	// Formula: scale(zoom) = scaleAtMidZoom * 2^(midZoom - zoom)
-	// Adjust scaleAtMidZoom to control overall bus size on screen
-	scaleAtMidZoom: 10.5,     // Reference scale at zoom 12 (adjust this to resize bus)
-	minZoom: 10,             // Minimum zoom
-	midZoom: 12,            // Middle reference zoom
-	maxZoom: 20,            // Maximum zoom
+/**
+ * Detect if device is low-end and should use 2D PNG fallback instead of 3D models
+ * Checks WebGL support, device memory, and hardware concurrency
+ */
+function shouldUse2DFallback(): boolean {
+	if (use2DFallback !== null) return use2DFallback;
 
-	// Calculated values (for reference, not used directly):
-	// scaleAtMinZoom: 60 * 2^5 = 1920 (at zoom 7)
-	// scaleAtMaxZoom: 60 * 2^-6 = 0.9375 (at zoom 18)
-	scaleAtMinZoom: 0,      // Unused - kept for compatibility
-	scaleAtMaxZoom: 0,      // Unused - kept for compatibility
+	// Check for WebGL support
+	const canvas = document.createElement('canvas');
+	const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
 
-	// Rotation (in degrees) - will be converted to radians
-	rotationX: 90,          // Pitch: lay flat on map
-	rotationY: -90,         // Yaw: additional rotation (added to bearing)
-	rotationZ: 0,           // Roll: flip orientation
-
-	// Height offset - raise slightly above ground to prevent z-fighting with line layers
-	altitude: 0.02,            // Height above ground in meters (prevents lines showing through)
-
-	// Tilt for 3D effect (in degrees) - will be converted to radians
-	tiltXDegrees: 0,        // Left/right tilt
-	tiltZDegrees: 0,        // Forward/backward tilt
-};
-
-// Global storage for Threebox bus models (following threebox example pattern)
-const busModels: Record<string, IThreeboxObject> = {};
-
-// Track models that are currently loading to prevent duplicates
-const loadingModels: Set<string> = new Set();
-
-// Track if zoom listener has been registered to prevent multiple registrations
-let zoomListenerRegistered = false;
-
-// Create Threebox custom layer (following threebox-plugin documentation pattern)
-// This is created ONCE and models are loaded inside onAdd
-const busLayer = {
-	id: '3d-buses',
-	type: 'custom' as const,
-	renderingMode: '3d' as const,
-
-	// onAdd: function(_map: mapboxgl.Map, _gl: WebGLRenderingContext | WebGL2RenderingContext) {
-	// 	// Layer is added, models will be loaded on demand via loadBusModel()
-	// },
-
-	render: function(_gl: WebGLRenderingContext, _matrix: number[]) {
-		// Update Threebox on each render frame (following threebox pattern)
-		// @ts-expect-error threebox-plugin uses window.tb for instance management
-		const tb = (window as unknown).tb;
-		if (tb) {
-			tb.update();
-		}
-	}
-};
-
-// Calculate zoom-based scale matching text-size interpolation
-function calculateBusScale(): number {
-	if (!map) return BUS_3D_CONFIG.scaleAtMidZoom;
-
-	const zoom = map.getZoom();
-	const clampedZoom = Math.max(
-		BUS_3D_CONFIG.minZoom,
-		Math.min(BUS_3D_CONFIG.maxZoom, zoom)
-	);
-
-	// Exponential scale: maintains constant screen size
-	// Formula: scale = baseScale * 2^(referenceZoom - currentZoom)
-	// Using midZoom as reference: scale = scaleAtMidZoom * 2^(midZoom - zoom)
-	return BUS_3D_CONFIG.scaleAtMidZoom * Math.pow(2, BUS_3D_CONFIG.midZoom - clampedZoom);
-}
-
-// Load a bus model for a specific bus (following threebox pattern)
-// isActive: true for BUS (higher light intensity), false for BUS_INACTIVE (lower intensity)
-function loadBusModel(modelId: string, coords: [number, number], bearing: number, isActive: boolean = true) {
-	// @ts-expect-error threebox-plugin expects this in window.
-	const tb = (window as unknown).tb;
-	if (!tb) {
-		console.warn('[loadBusModel] Threebox not initialized');
-		return;
+	if (!gl) {
+		console.log('[Bus Rendering] WebGL not supported, using 2D fallback');
+		use2DFallback = true;
+		return true;
 	}
 
-	// If model already exists, just update position and lighting
-	if (busModels[modelId]) {
-		updateBusModelPosition(modelId, coords, bearing);
-		updateBusModelLighting(modelId, isActive);
-		return;
+	// Check device memory (if available)
+	// @ts-expect-error deviceMemory is experimental
+	const deviceMemory = navigator.deviceMemory;
+	if (deviceMemory && deviceMemory < 4) {
+		console.log(`[Bus Rendering] Low device memory (${deviceMemory}GB), using 2D fallback`);
+		use2DFallback = true;
+		return true;
 	}
 
-	// RACE CONDITION FIX: Check if model is currently loading
-	// If already loading, skip to prevent duplicate models
-	if (loadingModels.has(modelId)) {
-		console.log(`[loadBusModel] Model ${modelId} is already loading, skipping duplicate request`);
-		return;
+	// Check hardware concurrency (CPU cores)
+	const cores = navigator.hardwareConcurrency;
+	if (cores && cores < 4) {
+		console.log(`[Bus Rendering] Low CPU cores (${cores}), using 2D fallback`);
+		use2DFallback = true;
+		return true;
 	}
 
-	// Mark model as loading
-	loadingModels.add(modelId);
-
-	// Calculate initial scale based on current zoom
-	const initialScale = calculateBusScale();
-
-	// Load using Threebox's loadObj method with URL
-	const options = {
-		obj: BUS_GLB_URL,
-		type: 'gltf',
-		scale: initialScale,
-		units: 'meters',
-		rotation: {
-			x: 0,
-			y: 0, // + bearing,
-			z: 0,
-		},
-		anchor: 'auto',
-		adjustment: {x: 0, y: 1, z: -0.6},
-		bbox: true
-	};
-
-	tb.loadObj(options, (model: IThreeboxObject) => {
-		// Remove from loading set
-		loadingModels.delete(modelId);
-
-		// Store model globally
-		busModels[modelId] = model;
-		model.setCoords([coords[0], coords[1], BUS_3D_CONFIG.altitude]);
-
-		// Set initial lighting based on active state
-		updateBusModelLighting(modelId, isActive);
-
-		tb.add(model);
-	});
-}
-
-// Update bus model lighting intensity using Threebox lights
-// isActive: true for BUS (higher intensity), false for BUS_INACTIVE (lower intensity)
-function updateBusModelLighting(modelId: string, isActive: boolean) {
-	// @ts-expect-error threebox-plugin expects this in window.
-	const tb = (window as unknown).tb;
-	if (!tb || !tb.lights) return;
-
-	// Adjust the global Threebox lights intensity
-	// BUS_INACTIVE: lower ambient light, BUS: higher ambient light
-	const ambientIntensity = isActive ? 1.0 : 0.8;
-	const directionalIntensity = isActive ? 0.8 : 0.6;
-
-	// Threebox has ambient and directional lights
-	if (tb.lights.ambientLight) {
-		tb.lights.ambientLight.intensity = ambientIntensity;
-		tb.lights.ambientLight.color.set('#fbeecf');
+	// Check for mobile devices with limited GPU
+	const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+	if (isMobile) {
+		// For mobile, be more conservative
+		console.log('[Bus Rendering] Mobile device detected, using 2D fallback for better performance');
+		use2DFallback = true;
+		return true;
 	}
 
-	if (tb.lights.dirLightBack) {
-		tb.lights.dirLightBack.intensity = directionalIntensity;
-		tb.lights.dirLightBack.color.set('#faecd9');
-	}
-
-	if (tb.lights.dirLightFront) {
-		tb.lights.dirLightFront.intensity = directionalIntensity;
-		tb.lights.dirLightFront.color.set('#FFF');
-	}
-
-}
-
-function calculateBusAltitude(): number {
-	// const modelScale = calculateBusScale();
-	return 0;
-	// return modelScale * 6.1;
-}
-
-function updateBusModelScales(modelId: string) {
-	const model = busModels[modelId];
-	if(!model) return;
-	const currentScale = calculateBusScale();
-	const coords = model.coordinates;
-	model.setCoords([coords[0], coords[1], calculateBusAltitude()]);
-	if (model.scale) {
-		model.scale.x = currentScale;
-		model.scale.y = currentScale;
-		model.scale.z = currentScale;
-	}
-}
-
-// Update bus model position (following threebox pattern)
-function updateBusModelPosition(modelId: string, coords: [number, number], bearing: number) {
-	// @ts-expect-error threebox-plugin expects this in window.
-	const tb = (window as unknown).tb;
-	const model = busModels[modelId];
-	if (!model || !tb) return;
-
-	// Calculate current scale based on zoom
-	const currentScale = calculateBusScale();
-
-	// Update position using setCoords (following threebox pattern)
-	model.setCoords([coords[0], coords[1], calculateBusAltitude()]);
-
-	// Update rotation using Threebox API (setRotation uses DEGREES)
-	if (model.setRotation) {
-		model.setRotation({
-			x: BUS_3D_CONFIG.rotationX + BUS_3D_CONFIG.tiltXDegrees,
-			y: BUS_3D_CONFIG.rotationY + -bearing,
-			z: BUS_3D_CONFIG.rotationZ,
-		});
-	}
-
-	// Update scale using Threebox API or direct property
-	if (model.scale) {
-		model.scale.x = currentScale;
-		model.scale.y = currentScale;
-		model.scale.z = currentScale;
-	}
-}
-
-let zoomUpdate = 0;
-
-// Remove bus model (following threebox pattern)
-function removeBusModel(modelId: string) {
-	// @ts-expect-error threebox-plugin expects this in window.
-	const tb = (window as unknown).tb;
-	const model = busModels[modelId];
-	if (!model || !tb) return;
-
-	tb.remove(model);
-	delete busModels[modelId];
-
-	// Also remove from loading set in case removal happens during load
-	loadingModels.delete(modelId);
+	console.log('[Bus Rendering] Using 3D models');
+	use2DFallback = false;
+	return false;
 }
 
 // Marker storage
 const markers: Record<keyof typeof MAP_STYLES, mapboxgl.Marker> = {};
+
+// Storage for 2D bus icon markers (fallback for low-end hardware)
+const bus2DMarkers: Record<string, mapboxgl.Marker> = {};
+const adujstmentVal = -90;
+/**
+ * Create a 2D bus icon element using PNG image
+ * Used as fallback on low-end hardware instead of 3D models
+ * Bus image dimensions: 2946×1020 (aspect ratio 2.89:1 - width:height)
+ */
+function create2DBusIcon(bearing: number, isActive: boolean): HTMLElement {
+	const container = document.createElement('div');
+	container.className = 'bus-icon-2d-container';
+	container.style.position = 'relative';
+	container.style.display = 'inline-block';
+	container.style.transformOrigin = 'center center';
+
+	// Use original high-resolution image (2946×1020) and scale via CSS
+	// This maintains quality better than using a pre-scaled image
+	// Original aspect ratio: 2946:1020 ≈ 2.89:1 (width is ~3x height)
+	const img = document.createElement('img');
+	img.src = BUS_PNG_URL;
+
+	// Apply bearing offset to align image orientation with map bearing
+	const adjustedBearing = bearing + adujstmentVal; // Offset due to image orientation
+
+	// Scale down while maintaining aspect ratio
+	// Width 100px → height will be ~35px (100/2.89 ≈ 35)
+	img.style.width = '100px';
+	img.style.height = 'auto'; // Maintains 2946:1020 aspect ratio
+	img.style.display = 'block';
+	img.style.transform = `rotate(${adjustedBearing}deg)`;
+	img.style.transformOrigin = 'center center';
+	img.style.pointerEvents = 'none'; // Prevent interaction issues
+	img.style.imageRendering = 'high-quality'; // Better quality scaling
+	img.style.userSelect = 'none';
+	img.draggable = false;
+
+	// Apply opacity for inactive state
+	if (!isActive) {
+		img.style.opacity = '0.6';
+		img.style.filter = 'grayscale(50%)';
+	}
+
+	container.appendChild(img);
+	return container;
+}
+
+/**
+ * Update 2D bus marker (PNG fallback for low-end hardware)
+ * Follows the same pattern as bus stops to prevent jitter
+ */
+function update2DBusMarker(
+	modelId: string,
+	coords: [number, number],
+	bearing: number,
+	isActive: boolean
+): void {
+	if (!map) return;
+
+	const markerId = `bus2d_${modelId}`;
+
+	// Check if marker exists
+	if (bus2DMarkers[markerId]) {
+		// Update existing marker position
+		bus2DMarkers[markerId].setLngLat([coords[0], coords[1]]);
+
+		// Apply bearing offset to align image orientation with map bearing
+		const adjustedBearing = bearing + adujstmentVal; // Offset due to image orientation
+
+		// Update rotation and state by modifying the existing element
+		const element = bus2DMarkers[markerId].getElement();
+		const img = element.querySelector('img');
+		if (img) {
+			img.style.transform = `rotate(${adjustedBearing}deg)`;
+
+			// Update active/inactive state
+			if (isActive) {
+				img.style.opacity = '1';
+				img.style.filter = 'none';
+			} else {
+				img.style.opacity = '0.6';
+				img.style.filter = 'grayscale(50%)';
+			}
+		}
+	} else {
+		// Create new marker
+		const element = create2DBusIcon(bearing, isActive);
+		bus2DMarkers[markerId] = new mapboxgl.Marker({
+			element,
+			anchor: 'center'
+		}).setLngLat([coords[0], coords[1]]).addTo(map);
+	}
+}
+
+/**
+ * Remove 2D bus marker
+ */
+function remove2DBusMarker(modelId: string): void {
+	const markerId = `bus2d_${modelId}`;
+	if (bus2DMarkers[markerId]) {
+		bus2DMarkers[markerId].remove();
+		delete bus2DMarkers[markerId];
+	}
+}
 
 export function updateBusMarker(
 	layerType: keyof typeof MAP_STYLES,
@@ -598,26 +517,28 @@ export function updateBusMarker(
 	const clickLayerId = `bus_click_${layerType}`;
 	const sourceId = `bus_source_${layerType}`;
 
-	// Ensure the Threebox layer exists (add once, following threebox pattern)
-	if (!map.getLayer('3d-buses')) {
-		map.addLayer(busLayer);
-		map.moveLayer('3d-buses'); // Move to top to ensure it renders above 2D layers
+	// Check hardware capabilities and use appropriate rendering method
+	const use2D = shouldUse2DFallback();
 
-		// Register zoom listener ONCE when layer is first added
-		if (!zoomListenerRegistered) {
-			zoomListenerRegistered = true;
-			map.on('zoom', () => {
-				if(zoomUpdate < new Date().getTime()) {
-					updateBusModelScales(modelId);
-					zoomUpdate = new Date().getTime() + 10;
-				}
-			});
+	// Only setup 3D layer if not using 2D fallback
+	if (!use2D) {
+		// Ensure the Threebox layer exists (add once, following threebox pattern)
+		if (!map.getLayer('3d-buses')) {
+			map.addLayer(busLayer);
+			map.moveLayer('3d-buses'); // Move to top to ensure it renders above 2D layers
+
+			// Setup zoom listener for 3D models
+			setup3DBusZoomListener(modelId, map);
 		}
 	}
 
 	// Clear the bus if no coordinates
 	if(!lat || !lon) {
-		removeBusModel(modelId);
+		if (use2D) {
+			remove2DBusMarker(modelId);
+		} else {
+			remove3DBusModel(modelId);
+		}
 		if(map.getLayer(labelLayerId)) map.removeLayer(labelLayerId);
 		if(map.getLayer(clickLayerId)) map.removeLayer(clickLayerId);
 		if(map.getSource(sourceId)) map.removeSource(sourceId);
@@ -642,15 +563,21 @@ export function updateBusMarker(
 	const labelColor = layerType.includes("LIVE") ? "#1967D3" : layerType.includes("INACTIVE") ? "#999999" : "#000000";
 	const isActive = !layerType.includes("INACTIVE"); // BUS_INACTIVE = false, BUS = true
 
-	// Load or update bus model (following threebox pattern)
-	// @ts-expect-error threebox-plugin expects this in window.
-	const tb = (window as unknown).tb;
-	if (!tb) {
-		console.warn('[updateBusMarker] Threebox not initialized yet');
-		return;
-	}
+	if (use2D) {
+		// Use 2D PNG fallback for low-end hardware
+		update2DBusMarker(modelId, [lon, lat], bearing, isActive);
+	} else {
+		// Use 3D GLB model for capable hardware
+		// @ts-expect-error threebox-plugin expects this in window.
+		const tb = (window as unknown).tb;
+		if (!tb) {
+			console.warn('[updateBusMarker] Threebox not initialized yet, falling back to 2D');
+			update2DBusMarker(modelId, [lon, lat], bearing, isActive);
+			return;
+		}
 
-	loadBusModel(modelId, [lon, lat], bearing, isActive);
+		load3DBusModel(modelId, [lon, lat], bearing, isActive, map);
+	}
 
 	// Calculate optimal label anchor based on bearing
 	// We want the label to appear perpendicular to the bus direction
