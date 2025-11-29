@@ -80,7 +80,7 @@
 	{#if $isMobile}
 		<!-- Bottom Sheet Mode -->
 		<div
-			class="font-[IBM_Plex_Sans] fixed bottom-0 w-full bg-black text-white px-6 py-8 transition-transform duration-300 z-1"
+			class="font-[IBM_Plex_Sans] fixed bottom-0 w-full bg-black text-white px-6 py-8 transition-transform duration-300 z-[3]"
 			style="
 				height: calc(100vh - {$infoViewY}px);
 			"
@@ -104,7 +104,7 @@
 		</div>
 	{:else}
 		<!-- Sidebar Mode -->
-		<div class="font-[IBM_Plex_Sans] fixed left-0 top-0 h-full w-[{$infoViewWidth}px] bg-black text-white px-6 py-8 shadow-lg z-1 overflow-y-auto">
+		<div class="font-[IBM_Plex_Sans] fixed left-0 top-0 h-full w-[{$infoViewWidth}px] bg-black text-white px-6 py-8 shadow-lg z-[3] overflow-y-auto">
 			{#if $selected !== undefined && !hasSelectedMetro}
 				{#if Object.hasOwn($selected, 'stop_id')} <!-- Selected is a stop -->
 					<StopInfo stop = {selectedStop} />
