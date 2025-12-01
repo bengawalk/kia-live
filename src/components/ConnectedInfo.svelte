@@ -60,7 +60,7 @@
 				<div class="flex-1 whitespace-pre-line text-black overflow-auto">
 					You’re looking at the live positions of the BMTC airport buses.
 
-					If you want to know more about this, go <a class="text-black-600 underline" href="github.com/bengawalk/kia-live/blob/main/README.md/" target="_blank">here</a>.
+					If you want to know more about this, go <a class="text-black-600 underline" href="https://github.com/bengawalk/kia-live/blob/main/README.md/" target="_blank">here</a>.
 				</div>
 			{/if}
 
@@ -84,7 +84,7 @@
 
 					The data you’re seeing is predictions based on previous journeys by the same buses on the same routes. Wait for sometime, we are working to establish the connection again.
 
-					If you want to know more about this, go <a class="text-black-600 underline" href="github.com/bengawalk/kia-live/blob/main/README.md/" target="_blank">here</a>.
+					If you want to know more about this, go <a class="text-black-600 underline" href="https://github.com/bengawalk/kia-live/blob/main/README.md/" target="_blank">here</a>.
 				</div>
 
 			{/if}
