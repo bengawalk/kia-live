@@ -3,7 +3,7 @@ KIA Live App - A Progressive Web Application for live bus tracking and finding K
 
 ## Overview
 
-KIA-Live provides real-time transit information by consuming GTFS (General Transit Feed Specification) static data and GTFS-RT (GTFS Realtime) data via WebSocket. The application is built with SvelteKit 2 and functions as a PWA for offline capability.
+KIA-Live provides real-time transit information by consuming GTFS (General Transit Feed Specification) static data and GTFS-RT (GTFS Realtime) data via WebSocket. The application is built with SvelteKit 2 and functions as a PWA for offline capability. The backend service ingests BMTC website information to provide GTFS static and GTFS-RT data.
 
 ### Data Flow & Architecture
 
@@ -12,10 +12,17 @@ KIA-Live provides real-time transit information by consuming GTFS (General Trans
 - Backend repository: [kia-live-serverside](https://github.com/bengawalk/kia-live-serverside)
 
 **FAQ:**
-- **Source of Truth (for the backend)**: BMTC (Bangalore Metropolitan Transport Corporation) via their Namma BMTC web application
-- **Realtime Data**: Only static trips that match realtime vehicles are available in our webapp as realtime trips
+- **Source of Truth (for the backend)**: BMTC (Bangalore Metropolitan Transport Corporation) via their Namma BMTC website
+- **Realtime Data**: Only static trips that match realtime vehicles are available in our webapp as realtime trips, they are matched by the scheduled start time
 - **Static Data Fallback**: Static/schedule trips are shown when realtime trips are no longer available for the location
-- **Dynamic Static Data**: Static/schedule data varies based on time of day and historical realtime data
+- **Dynamic Static Data**: Static/schedule data varies based on time of day and historical realtime data, adhering to the scheduled start times provided by the source
+
+## Credits
+- *Pravar Choudhary* for the initial designs and user flow.
+- *Ajith Kumar* for the bus model and image.
+- *[Aayush](https://github.com/croyla)* for the project plan and data flow.
+- *[Adnan](https://github.com/adnansalik) and [Aayush](https://github.com/croyla)* for the front-end code and design implementation.
+- *[Shikha](https://github.com/trinityinblue) and [Aayush](https://github.com/croyla)* for the back-end code and data flow implementation.
 
 ## Local Setup
 
