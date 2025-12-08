@@ -18,7 +18,7 @@ KIA-Live provides real-time transit information by consuming GTFS (General Trans
 - **Dynamic Static Data**: Static/schedule data varies based on time of day and historical realtime data, adhering to the scheduled start times provided by the source
 
 ## Credits
-- *Pravar Choudhary* for the initial designs and user flow.
+- *Pravar Choudhary* for the initial designs, iconography, and user flow.
 - *Ajith Kumar* for the bus model and image.
 - *[Aayush](https://github.com/croyla)* for the project plan and data flow.
 - *[Adnan](https://github.com/adnansalik) and [Aayush](https://github.com/croyla)* for the front-end code and design implementation.
