@@ -52,3 +52,7 @@ yarn run build
 You can preview the production build with `yarn run preview`.
 
 The app is intended to function as PWA.
+
+
+
+For further discussions feel free to join the [bengawalk discord server](https://discord.gg/NwQF9y3SjJ)
