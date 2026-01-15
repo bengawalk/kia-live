@@ -68,7 +68,6 @@
     "gtfs-realtime-bindings": "^1.1.1",
     "idb": "^8.0.3",
     "jszip": "^3.10.1",
-    "mapbox-gl": "^3.10.0",
     "maplibre-gl": "^5.6.2",
     "papaparse": "^5.5.2",
     "three": "^0.181.1",

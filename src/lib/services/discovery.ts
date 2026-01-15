@@ -2,13 +2,13 @@ import type { Stop } from '$lib/structures/Stop';
 import type { Trip } from '$lib/structures/Trip';
 import type { Route } from '$lib/structures/Route';
 import type { LiveTrip } from '$lib/structures/LiveTrip';
-import {
+import maplibregl, {
 	type GeoJSONSourceSpecification,
 	type Map as MapboxMap,
 	type MapMouseEvent,
 	type MapTouchEvent,
 	type PointLike
-} from 'mapbox-gl';
+} from 'maplibre-gl';
 import { liveTransitFeed, transitFeedStore } from '$lib/stores/transitFeedStore';
 import {
 	airportDirection,
@@ -27,6 +27,7 @@ import {
 	type NavMode,
 	removeRenderedCollisions,
 	renderPendingCollisions,
+	routeUpdateTrigger,
 	updateBusMarker,
 	updateLayer,
 	updateMarker
@@ -40,6 +41,9 @@ let currentRefreshTimeout: NodeJS.Timeout | undefined = undefined;
 let busMarkerInterval: NodeJS.Timeout | undefined = undefined;
 let lastLoadNextBusesTime = 0;
 let lastLoadNextBusesLocation: { lat: number; lon: number } | undefined = undefined;
+
+// Note: Walking routes now use high priority, so they get OSRM data immediately
+// No need for background update subscription since routes are fetched with priority='high'
 
 // Public function for non-location-based triggers (feed updates, timers)
 async function loadNextBuses() {
@@ -527,6 +531,7 @@ export async function displayCurrentTrip() {
 			: geoJSONFromStops(stopsBefore)
 	);
 	// if(!highlighted) updateLayer('WHITE_GRAY_CIRCLE', geoJSONFromStops(tripStopsFiltered));
+	// Walking route uses high priority to get OSRM data immediately
 	updateLayer(
 		walkLayer,
 		await geoJsonWalkLineFromPoints(
@@ -809,7 +814,7 @@ export function handleTap(e: MapMouseEvent) {
 	];
 	const features = e.target
 		.queryRenderedFeatures(bbox)
-		.filter((feature) => feature.layer !== undefined && tappableLayers.includes(feature.layer.id));
+		.filter((feature: maplibregl.MapGeoJSONFeature) => feature.layer !== undefined && tappableLayers.includes(feature.layer.id));
 	// const point = e.lngLat;
 	if (get(selected) !== undefined) {
 		selected.set(undefined);
@@ -872,12 +877,14 @@ async function geoJsonWalkLineFromPoints(
 	lat2: number,
 	lng2: number
 ): Promise<GeoJSONSourceSpecification> {
+	// High priority: walking route rendering should get OSRM data immediately
+	const routeData = await getTravelRoute([lng1, lat1], [lng2, lat2], 'walking', 'high');
 	const geojson: GeoJSON.FeatureCollection = {
 		type: 'FeatureCollection',
 		features: [
 			{
 				type: 'Feature',
-				geometry: (await getTravelRoute([lng1, lat1], [lng2, lat2]))['routes'][0]['geometry'],
+				geometry: routeData['routes'][0]['geometry'],
 				properties: {}
 			}
 		]
@@ -1006,9 +1013,25 @@ async function findClosestStop(
 		stop_time: Date;
 	}[]
 ) {
-	// console.log("FIND CLOSEST STOP")
-	const distances = await Promise.all(
-		tripStops.map(async (tripStop) => {
+	// Optimization: First filter to 5 nearest stops using haversine (fast),
+	// then only query routing for those stops
+	const haversineDistances = tripStops.map((tripStop) => ({
+		tripStop,
+		distance: haversineDistance(
+			loc.latitude,
+			loc.longitude,
+			tripStop.stop.stop_lat,
+			tripStop.stop.stop_lon
+		)
+	}));
+
+	// Sort by haversine distance and take top 5
+	haversineDistances.sort((a, b) => a.distance - b.distance);
+	const nearestStops = haversineDistances.slice(0, 5);
+
+	// Now query routing only for these 5 nearest stops
+	const routingDistances = await Promise.all(
+		nearestStops.map(async ({ tripStop }) => {
 			const distance = await travelDistance(
 				loc.latitude,
 				loc.longitude,
@@ -1018,8 +1041,9 @@ async function findClosestStop(
 			return { tripStop, distance };
 		})
 	);
-	// console.log(distances);
-	return distances.reduce((min, curr) => (curr.distance < min.distance ? curr : min)).tripStop;
+
+	// Return the closest by actual routing distance
+	return routingDistances.reduce((min, curr) => (curr.distance < min.distance ? curr : min)).tripStop;
 }
 
 async function filterLocationsByRange(

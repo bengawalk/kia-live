@@ -1,19 +1,19 @@
 import { get } from 'svelte/store';
 import { language } from '$lib/stores/language';
 import { selectedMetroStation } from '$lib/stores/discovery';
-import type mapboxgl from 'mapbox-gl';
+import type maplibregl from 'maplibre-gl';
 import metroIconSvg from '$assets/metro-icon.svg?raw';
 import { samplePointsAlongLineCollection } from '$lib/services/map';
 
-let map: mapboxgl.Map | undefined;
+let map: maplibregl.Map | undefined;
 let metroLinesLoaded = false;
 let metroStopsLoaded = false;
 
 /**
  * Initialize metro map rendering
- * @param mapInstance - The Mapbox map instance
+ * @param mapInstance - The MapLibre map instance
  */
-export function initMetroMap(mapInstance: mapboxgl.Map) {
+export function initMetroMap(mapInstance: maplibregl.Map) {
 	map = mapInstance;
 	// map.showLayers2DWireframe = true;
 	// map.showCollisionBoxes = true;

@@ -6,59 +6,68 @@ import {
 	POINT_LABEL_STYLE,
 	POINT_LABEL_STYLE_OVERLAP
 } from '$lib/constants';
-import mapboxgl, { type LayerSpecification } from 'mapbox-gl';
+import maplibregl, { type LayerSpecification } from 'maplibre-gl';
+import 'maplibre-gl/dist/maplibre-gl.css';
 import mapLineLabelImage from '$assets/map-line-label.png';
 import { pollUserLocation } from '$lib/services/location';
 import { handleTap, handleTouchEnd, handleTouchStart } from '$lib/services/discovery';
 import { browser } from '$app/environment';
 import { initMetroMap, loadMetroLines, unloadMetroMap } from '$lib/services/metroMap';
 import { busLayer, load3DBusModel, remove3DBusModel, setup3DBusZoomListener } from '$lib/services/3dbus';
-// @ts-expect-error threebox has no types
-import { Threebox } from 'threebox-plugin';
-import 'threebox-plugin/dist/threebox.css';
+import { writable } from 'svelte/store';
 
-let map: mapboxgl.Map | undefined;
+// Store to notify when OSRM route data is ready (triggers UI update)
+export const routeUpdateTrigger = writable<string | null>(null);
+
+let map: maplibregl.Map | undefined;
 
 export type NavMode = 'walking' | 'driving-traffic' | 'cycling' | 'driving'
-export function loadMap(mapContainer: HTMLElement | string): mapboxgl.Map {
-	mapboxgl.accessToken = import.meta.env.VITE_MAPBOX_ACCESS_TOKEN;
-	map = new mapboxgl.Map({
+export function loadMap(mapContainer: HTMLElement | string): maplibregl.Map {
+	map = new maplibregl.Map({
 		container: mapContainer,
-		style: 'mapbox://styles/aayushrai/cmaq8dtyu01nh01sk3havblmv', // KIA-Live style containing required fonts
+		style: {
+			version: 8,
+			sources: {
+				'carto-positron': {
+					type: 'raster',
+					tiles: [
+						'https://a.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png',
+						'https://b.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png',
+						'https://c.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png',
+						'https://d.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png'
+					],
+					tileSize: 256,
+					attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
+				}
+			},
+			layers: [
+				{
+					id: 'carto-positron-layer',
+					type: 'raster',
+					source: 'carto-positron',
+					minzoom: 0,
+					maxzoom: 22
+				}
+			],
+			glyphs: 'https://demotiles.maplibre.org/font/{fontstack}/{range}.pbf'
+		},
 		center: [77.6, 13.02], // Default to Bengaluru
 		zoom: 10.9, // Default zoom level
 		dragRotate: false, // Disable rotation
-		attributionControl: false,
-		logoPosition: "top-right",
-		antialias: true // Enable antialiasing for 3D rendering
+		attributionControl: false
 	});
-	map.addControl(new mapboxgl.AttributionControl(), 'top-left');
+	map.addControl(new maplibregl.AttributionControl(), 'top-left');
 
-	// Initialize Threebox immediately after map creation (following threebox-plugin documentation)
-	// CRITICAL: Threebox library expects 'tb' to be globally accessible (window.tb)
-	// The library's internal methods reference 'tb' directly (see AnimationManager.js line 254)
-	// @ts-expect-error threebox-plugin expects this in window.
-	(window as unknown).tb = new Threebox(
-		map,
-		map.getCanvas().getContext('webgl') as WebGLRenderingContext,
-		{
-			defaultLights: true,
-			realSunlight: true,
-			enableSelectingObjects: false,
-			enableDraggingObjects: false,
-			enableRotatingObjects: false,
-			enableTooltips: false
+	map.loadImage(mapLineLabelImage).then((image) => {
+		if(image && image.data) {
+			map!.addImage('LINE_LABEL', image.data, {
+				content: [4, 4, 80, 30],
+				stretchX: [[4, 80]],
+				stretchY: [[4, 30]],
+			});
 		}
-	);
-
-	map.loadImage(mapLineLabelImage, (error, image) => {
-		if(error) throw error;
-		if(!image) return;
-		map!.addImage('LINE_LABEL', image, {
-			content: [4, 4, 80, 30],
-			stretchX: [[4, 80]],
-			stretchY: [[4, 30]],
-		});
+	}).catch((error) => {
+		throw error;
 	});
 	// map.showLayers2DWireframe = true;
 	// map.showCollisionBoxes = true;
@@ -270,7 +279,7 @@ export function samplePointsAlongLineCollection(lineFeatureCollection: GeoJSON.F
 // Update / Remove a GeoJSON Layer
 export function updateLayer(
 	layerType: keyof typeof MAP_STYLES | undefined,
-	source: mapboxgl.GeoJSONSourceSpecification | undefined,
+	source: maplibregl.GeoJSONSourceSpecification | undefined,
 	labelOverlap: boolean = false
 ): void {
 	if(!map) {
@@ -281,8 +290,8 @@ export function updateLayer(
 	if (MAP_STYLES[layerType].type !== 0) return;
 	const symbolID = `symbol_${layerType}`; // Labels are in this symbol layer
 	const collisionID = `collision_${layerType}`; // Lines have invisible collision layers to prevent label overlap
-	const collisionSource = map.getSource(collisionID) as mapboxgl.GeoJSONSource | undefined; // The collision source is a more high resolution version of the line
-	const mapSource = map.getSource(layerType) as mapboxgl.GeoJSONSource | undefined; // The source geojson
+	const collisionSource = map.getSource(collisionID) as maplibregl.GeoJSONSource | undefined; // The collision source is a more high resolution version of the line
+	const mapSource = map.getSource(layerType) as maplibregl.GeoJSONSource | undefined; // The source geojson
 	const hasValidSourceData = source?.data !== undefined;
 	const layerExists = map.getLayer(layerType) !== undefined;
 	const layerSymbols = map.getLayer(symbolID) !== undefined;
@@ -306,10 +315,10 @@ export function updateLayer(
 			map.addSource(collisionID, {type: 'geojson', data: collisionPoints});
 		}
 		if(!layerCollision) {
-			const styleLayer = {...LINE_COLLISION_STYLE};
+			const styleLayer = {...LINE_COLLISION_STYLE} as LayerSpecification & { source: string };
 			styleLayer.id = collisionID;
 			styleLayer.source = collisionID;
-			pendingCollisionLayers.push(styleLayer);
+			pendingCollisionLayers.push(styleLayer as LayerSpecification);
 		}
 	}
 	// If source exists, update data; otherwise add source
@@ -325,8 +334,9 @@ export function updateLayer(
 	}
 	// If the symbol layer (labels) does not exist, add it
 	if (!layerSymbols) {
-		const symbolLayer =
+		const baseSymbolLayer =
 			MAP_STYLES[layerType].specification.type === 'line' ? LINE_LABEL_STYLE : labelOverlap ? POINT_LABEL_STYLE_OVERLAP : POINT_LABEL_STYLE;
+		const symbolLayer = {...baseSymbolLayer} as LayerSpecification & { source: string };
 		symbolLayer.id = symbolID;
 		symbolLayer.paint = {
 			"text-color": layerType.includes("GRAY") ? "#999999" : layerType.includes("BLUE") ? "#1967D3" : "#000000",
@@ -335,69 +345,28 @@ export function updateLayer(
 			'text-halo-blur': 1,
 		};
 		symbolLayer.source = layerType;
-		map.addLayer(symbolLayer);
+		map.addLayer(symbolLayer as LayerSpecification);
 	}
 	// Enforce consistent layer ordering
 	enforceLayerOrder();
 }
 
 
-// Hardware capability detection for fallback to 2D rendering
-let use2DFallback: boolean | null = true;
-
 /**
- * Detect if device is low-end and should use 2D PNG fallback instead of 3D models
- * Checks WebGL support, device memory, and hardware concurrency
+ * 3D rendering is temporarily disabled for MapLibre GL
+ * TODO: Implement threelibre (https://github.com/piemonSong/threelibre) for 3D bus models
+ * For now, all buses render as 2D PNG markers
  */
 function shouldUse2DFallback(): boolean {
-	if (use2DFallback !== null) return use2DFallback;
-
-	// Check for WebGL support
-	const canvas = document.createElement('canvas');
-	const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
-
-	if (!gl) {
-		console.log('[Bus Rendering] WebGL not supported, using 2D fallback');
-		use2DFallback = true;
-		return true;
-	}
-
-	// Check device memory (if available)
-	// @ts-expect-error deviceMemory is experimental
-	const deviceMemory = navigator.deviceMemory;
-	if (deviceMemory && deviceMemory < 4) {
-		console.log(`[Bus Rendering] Low device memory (${deviceMemory}GB), using 2D fallback`);
-		use2DFallback = true;
-		return true;
-	}
-
-	// Check hardware concurrency (CPU cores)
-	const cores = navigator.hardwareConcurrency;
-	if (cores && cores < 4) {
-		console.log(`[Bus Rendering] Low CPU cores (${cores}), using 2D fallback`);
-		use2DFallback = true;
-		return true;
-	}
-
-	// Check for mobile devices with limited GPU
-	const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-	if (isMobile) {
-		// For mobile, be more conservative
-		console.log('[Bus Rendering] Mobile device detected, using 2D fallback for better performance');
-		use2DFallback = true;
-		return true;
-	}
-
-	console.log('[Bus Rendering] Using 3D models');
-	use2DFallback = false;
-	return false;
+	// Always use 2D markers with MapLibre GL (3D rendering disabled)
+	return true;
 }
 
 // Marker storage
-const markers: Record<keyof typeof MAP_STYLES, mapboxgl.Marker> = {};
+const markers: Record<keyof typeof MAP_STYLES, maplibregl.Marker> = {};
 
 // Storage for 2D bus icon markers (fallback for low-end hardware)
-const bus2DMarkers: Record<string, mapboxgl.Marker> = {};
+const bus2DMarkers: Record<string, maplibregl.Marker> = {};
 const adujstmentVal = -90;
 /**
  * Create a 2D bus icon element using PNG image
@@ -483,7 +452,7 @@ function update2DBusMarker(
 	} else {
 		// Create new marker
 		const element = create2DBusIcon(bearing, isActive);
-		bus2DMarkers[markerId] = new mapboxgl.Marker({
+		bus2DMarkers[markerId] = new maplibregl.Marker({
 			element,
 			anchor: 'center'
 		}).setLngLat([coords[0], coords[1]]).addTo(map);
@@ -616,7 +585,7 @@ export function updateBusMarker(
 	};
 
 	// Add or update source
-	const source = map.getSource(sourceId) as mapboxgl.GeoJSONSource;
+	const source = map.getSource(sourceId) as maplibregl.GeoJSONSource;
 	if(source) {
 		source.setData(sourceData);
 	} else {
@@ -716,7 +685,7 @@ export function updateMarker(
 
 	const symbolXID = `symbolx_${layerType}`;
 	const symbolZID = `symbolz_${layerType}`;
-	const mapSource = map.getSource(layerType) as mapboxgl.GeoJSONSource | undefined;
+	const mapSource = map.getSource(layerType) as maplibregl.GeoJSONSource | undefined;
 	const markerExists = layerType in markers;
 	const hasValidCoords = (lat != undefined && lon != undefined);
 	const layerSymbolX = map.getLayer(symbolXID) !== undefined;
@@ -754,18 +723,18 @@ export function updateMarker(
 		});
 	}
 	if(markerExists) {
-		markers[layerType].setLngLat({lon: lon, lat: lat});
+		markers[layerType].setLngLat([lon, lat]);
 	} else {
-		markers[layerType] = new mapboxgl.Marker({
+		markers[layerType] = new maplibregl.Marker({
 			element: MAP_STYLES[layerType].html(),
 			anchor: layerType.includes("INPUT_LOCATION") ? "bottom" : "center",
 			offset: [0, layerType.includes("INPUT_LOCATION") ? 0 : 2.5],
 			draggable: false,
-		}).setLngLat({lat: lat, lon: lon}).addTo(map);
+		}).setLngLat([lon, lat]).addTo(map);
 	}
 	markers[layerType].getElement().onclick = handleTap;
 	if(!layerSymbolX) {
-		const styleLayer = {...POINT_LABEL_STYLE_OVERLAP};
+		const styleLayer = {...POINT_LABEL_STYLE_OVERLAP} as LayerSpecification & { source: string };
 		styleLayer.id = symbolXID;
 		styleLayer.paint = {
 			"text-color": layerType.includes("INACTIVE") ? "#999999" : layerType.includes("LIVE") ? "#1967D3" : "#000000",
@@ -782,10 +751,10 @@ export function updateMarker(
 			'text-justify': 'auto',
 			'text-allow-overlap': true,
 		};
-		map.addLayer(styleLayer);
+		map.addLayer(styleLayer as LayerSpecification);
 	}
 	if(!layerSymbolZ) {
-		const styleLayer = {...POINT_LABEL_STYLE_OVERLAP};
+		const styleLayer = {...POINT_LABEL_STYLE_OVERLAP} as LayerSpecification & { source: string };
 		styleLayer.id = symbolZID;
 		styleLayer.paint = {
 			"text-color": layerType.includes("INACTIVE") ? "#999999" : layerType.includes("LIVE") ? "#1967D3" : "#000000",
@@ -801,7 +770,7 @@ export function updateMarker(
 			'text-justify': 'auto',
 			'text-allow-overlap': true,
 		};
-		map.addLayer(styleLayer);
+		map.addLayer(styleLayer as LayerSpecification);
 	}
 }
 
@@ -821,22 +790,212 @@ async function getDB() {
 		}
 	});
 }
-export async function getTravelRoute(from: [number, number], to: [number, number], mode: NavMode='walking') {
+
+// Request queue for throttling OSRM API calls
+class RequestQueue {
+	private queue: Array<() => Promise<void>> = [];
+	private activeRequests = 0;
+	private maxConcurrent = 3; // Maximum concurrent requests
+	private minDelay = 150; // Minimum delay between requests in ms
+	private lastRequestTime = 0;
+
+	async add<T>(fn: () => Promise<T>): Promise<T> {
+		return new Promise((resolve, reject) => {
+			this.queue.push(async () => {
+				try {
+					// Enforce minimum delay between requests
+					const now = Date.now();
+					const timeSinceLastRequest = now - this.lastRequestTime;
+					if (timeSinceLastRequest < this.minDelay) {
+						await new Promise(r => setTimeout(r, this.minDelay - timeSinceLastRequest));
+					}
+					this.lastRequestTime = Date.now();
+
+					const result = await fn();
+					resolve(result);
+				} catch (error) {
+					reject(error);
+				} finally {
+					this.activeRequests--;
+					this.processQueue();
+				}
+			});
+			this.processQueue();
+		});
+	}
+
+	private processQueue() {
+		while (this.activeRequests < this.maxConcurrent && this.queue.length > 0) {
+			const task = this.queue.shift();
+			if (task) {
+				this.activeRequests++;
+				task();
+			}
+		}
+	}
+}
+
+const requestQueue = new RequestQueue();
+
+// Haversine distance calculation for fallback
+function haversineDistance(lat1: number, lng1: number, lat2: number, lng2: number): number {
+	const R = 6371000; // Earth radius in meters
+	const dLat = (lat2 - lat1) * (Math.PI / 180);
+	const dLng = (lng2 - lng1) * (Math.PI / 180);
+	const a =
+		Math.sin(dLat / 2) ** 2 +
+		Math.cos(lat1 * (Math.PI / 180)) * Math.cos(lat2 * (Math.PI / 180)) * Math.sin(dLng / 2) ** 2;
+	return 2 * R * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+}
+
+// Create haversine-based route data
+function createHaversineRoute(from: [number, number], to: [number, number]): any {
+	const distance = haversineDistance(from[1], from[0], to[1], to[0]);
+	// Estimate walking time: assume 1.4 m/s (5 km/h) walking speed
+	const duration = distance / 1.4;
+
+	return {
+		routes: [{
+			distance: distance,
+			duration: duration,
+			geometry: {
+				type: 'LineString',
+				coordinates: [from, to]
+			}
+		}],
+		_source: 'haversine' // Mark as haversine for debugging
+	};
+}
+
+// Core OSRM fetch function
+async function fetchOSRM(
+	from: [number, number],
+	to: [number, number],
+	mode: NavMode
+): Promise<any> {
+	if (!browser) throw new Error('Browser only');
+
+	// Map mode to OSRM profile
+	const profileMap: Record<NavMode, string> = {
+		'walking': 'foot',
+		'driving': 'car',
+		'driving-traffic': 'car',
+		'cycling': 'bike'
+	};
+	const profile = profileMap[mode] || 'foot';
+
+	// Use request queue to throttle API calls
+	return await requestQueue.add(async () => {
+		const url = `https://router.project-osrm.org/route/v1/${profile}/${from.join(',')};${to.join(',')}?overview=full&geometries=geojson`;
+		const response = await fetch(url);
+
+		if (!response.ok) {
+			throw new Error(`OSRM routing request failed: ${response.status}`);
+		}
+		return await response.json();
+	});
+}
+
+// Background OSRM fetch (fire-and-forget)
+async function fetchOSRMInBackground(
+	from: [number, number],
+	to: [number, number],
+	mode: NavMode,
+	key: string
+): Promise<void> {
+	try {
+		const data = await fetchOSRM(from, to, mode);
+
+		// Mark as OSRM data
+		data._source = 'osrm';
+
+		// Update cache with OSRM data
+		const db = await getDB();
+		if (db) {
+			await db.put(STORE_NAME, data, key);
+			console.log(`[Routing] OSRM data ready for ${key}, triggering UI update`);
+
+			// Trigger UI update by notifying subscribers
+			routeUpdateTrigger.set(key);
+		}
+	} catch (error) {
+		// Silent failure - haversine data is already in use
+		console.warn('[Routing] Background OSRM fetch failed, keeping haversine data:', error);
+	}
+}
+
+// Two-pass routing with priority support
+// priority: 'high' = wait for OSRM (for rendering), 'low' = haversine first (for ranking)
+export async function getTravelRoute(
+	from: [number, number],
+	to: [number, number],
+	mode: NavMode='walking',
+	priority: 'high' | 'low' = 'low'
+) {
 	const key = getCacheKey(from, to, mode);
 	if(!browser) return null;
 	const db = await getDB();
 	if(!db) return null;
+
+	// Check cache first
 	const cached = await db.get(STORE_NAME, key);
-	if (cached) return cached;
+	if (cached) {
+		// If we have OSRM data, return it
+		if (cached._source === 'osrm') {
+			return cached;
+		}
 
-	const url = `https://api.mapbox.com/directions/v5/mapbox/${mode}/${from.join(',')};${to.join(',')}?geometries=geojson&access_token=${mapboxgl.accessToken}`;
-	const response = await fetch(url);
+		// If high priority and we only have haversine, fetch OSRM now (blocking)
+		if (priority === 'high') {
+			console.log(`[Routing] High priority - fetching OSRM immediately for ${key}`);
+			try {
+				const osrmData = await fetchOSRM(from, to, mode);
+				osrmData._source = 'osrm';
+				await db.put(STORE_NAME, osrmData, key);
+				routeUpdateTrigger.set(key);
+				return osrmData;
+			} catch (error) {
+				console.warn('[Routing] OSRM fetch failed, using haversine:', error);
+				return cached; // Fall back to haversine
+			}
+		}
 
-	if (!response.ok) throw new Error(`Mapbox request failed: ${response.status}`);
-	const data = await response.json();
+		// Low priority with haversine: trigger background fetch and return haversine
+		if (cached._source === 'haversine') {
+			fetchOSRMInBackground(from, to, mode, key).catch(() => {
+				// Ignore errors in background fetch
+			});
+		}
+		return cached;
+	}
 
-	await db.put(STORE_NAME, data, key);
-	return data;
+	// No cache - decide based on priority
+	if (priority === 'high') {
+		// High priority: try OSRM first, fall back to haversine
+		console.log(`[Routing] High priority - fetching OSRM (no cache) for ${key}`);
+		try {
+			const osrmData = await fetchOSRM(from, to, mode);
+			osrmData._source = 'osrm';
+			await db.put(STORE_NAME, osrmData, key);
+			return osrmData;
+		} catch (error) {
+			console.warn('[Routing] OSRM fetch failed, using haversine:', error);
+			const haversineData = createHaversineRoute(from, to);
+			await db.put(STORE_NAME, haversineData, key);
+			return haversineData;
+		}
+	}
+
+	// Low priority: haversine first, OSRM in background
+	const haversineData = createHaversineRoute(from, to);
+	await db.put(STORE_NAME, haversineData, key);
+
+	// Trigger OSRM fetch in background (non-blocking)
+	fetchOSRMInBackground(from, to, mode, key).catch(() => {
+		// Ignore errors - haversine data is already cached and working
+	});
+
+	return haversineData;
 }
 
 export function fitMapToPoints(coordinates: [number, number][], padding = 80) {
