@@ -28,7 +28,6 @@ KIA-Live provides real-time transit information by consuming GTFS (General Trans
 
 - Install the required packages with the command `yarn`
 - Add a .env file
-- Add the environment variable `VITE_MAPBOX_ACCESS_TOKEN` and populate it accordingly.
 - Add the environment variables `VITE_LIVE_DATA_SOURCE`, `VITE_STATIC_DATA_SOURCE`, `VITE_STATIC_DATA_VERSION` to facilitate data ingest. CORS-enabled GTFS and GTFS-RT endpoints are expected.
 
 ## Developing

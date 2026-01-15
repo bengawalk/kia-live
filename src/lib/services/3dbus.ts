@@ -6,7 +6,7 @@
 import { BUS_GLB_URL } from '$lib/constants';
 // @ts-expect-error threebox does not have types
 import type { IThreeboxObject } from 'threebox-plugin';
-import type mapboxgl from 'mapbox-gl';
+import type maplibregl from 'maplibre-gl';
 
 // ========== ADJUSTABLE PARAMETERS ==========
 // Configuration for bus 3D model appearance
@@ -50,7 +50,7 @@ export const busLayer = {
 	type: 'custom' as const,
 	renderingMode: '3d' as const,
 
-	render: function(_gl: WebGLRenderingContext, _matrix: number[]) {
+	render: function() {
 		// Update Threebox on each render frame (following threebox pattern)
 		// @ts-expect-error threebox-plugin uses window.tb for instance management
 		const tb = (window as unknown).tb;
@@ -61,7 +61,7 @@ export const busLayer = {
 };
 
 // Calculate zoom-based scale matching text-size interpolation
-function calculateBusScale(map: mapboxgl.Map): number {
+function calculateBusScale(map: maplibregl.Map): number {
 	const zoom = map.getZoom();
 	const clampedZoom = Math.max(
 		BUS_3D_CONFIG.minZoom,
@@ -87,7 +87,7 @@ export function load3DBusModel(
 	coords: [number, number],
 	bearing: number,
 	isActive: boolean = true,
-	map: mapboxgl.Map
+	map: maplibregl.Map
 ) {
 	// @ts-expect-error threebox-plugin expects this in window.
 	const tb = (window as unknown).tb;
@@ -181,7 +181,7 @@ function update3DBusModelLighting(modelId: string, isActive: boolean) {
 /**
  * Update model scales based on zoom level
  */
-export function update3DBusModelScales(modelId: string, map: mapboxgl.Map) {
+export function update3DBusModelScales(modelId: string, map: maplibregl.Map) {
 	const model = busModels[modelId];
 	if(!model) return;
 	const currentScale = calculateBusScale(map);
@@ -197,7 +197,7 @@ export function update3DBusModelScales(modelId: string, map: mapboxgl.Map) {
 /**
  * Update bus model position (following threebox pattern)
  */
-function update3DBusModelPosition(modelId: string, coords: [number, number], bearing: number, map: mapboxgl.Map) {
+function update3DBusModelPosition(modelId: string, coords: [number, number], bearing: number, map: maplibregl.Map) {
 	// @ts-expect-error threebox-plugin expects this in window.
 	const tb = (window as unknown).tb;
 	const model = busModels[modelId];
@@ -245,7 +245,7 @@ export function remove3DBusModel(modelId: string) {
 /**
  * Setup zoom listener for 3D bus models
  */
-export function setup3DBusZoomListener(modelId: string, map: mapboxgl.Map) {
+export function setup3DBusZoomListener(modelId: string, map: maplibregl.Map) {
 	if (zoomListenerRegistered) return;
 
 	zoomListenerRegistered = true;

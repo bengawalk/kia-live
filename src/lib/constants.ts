@@ -1,4 +1,4 @@
-import type { LayerSpecification } from 'mapbox-gl';
+import type { LayerSpecification } from 'maplibre-gl';
 import mapLocationUser from '$assets/map-location-user.svg?raw';
 import mapLocationInput from '$assets/map-location-input.svg?raw';
 import mapBus from '$assets/map-bus.svg?raw';
@@ -148,8 +148,7 @@ export const MAP_STYLES: Record<string, MapStyle> = {
 				'line-color': '#1967D3',
 				'line-width': {
 					type: 'exponential',
-					base: 1,
-					stops: [
+						stops: [
 						[10, 3],
 						[14, 8],
 						[18, 3]
@@ -172,8 +171,7 @@ export const MAP_STYLES: Record<string, MapStyle> = {
 				'line-color': '#000000',
 				'line-width': {
 					type: 'exponential',
-					base: 1,
-					stops: [
+						stops: [
 						[10, 3],
 						[14, 8],
 						[18, 3]
@@ -196,8 +194,7 @@ export const MAP_STYLES: Record<string, MapStyle> = {
 				'line-color': '#999999',
 				'line-width': {
 					type: 'exponential',
-					base: 1,
-					stops: [
+						stops: [
 						[10, 3],
 						[14, 8],
 						[18, 3]
@@ -220,8 +217,7 @@ export const MAP_STYLES: Record<string, MapStyle> = {
 				'line-color': '#999999',
 				'line-width': {
 					type: 'exponential',
-					base: 1,
-					stops: [
+						stops: [
 						[10, 1],
 						[14, 1],
 						[18, 1]
@@ -244,8 +240,7 @@ export const MAP_STYLES: Record<string, MapStyle> = {
 				'line-color': '#000000',
 				'line-width': {
 					type: 'exponential',
-					base: 1,
-					stops: [
+						stops: [
 						[10, 1],
 						[14, 1],
 						[18, 1]
@@ -267,8 +262,7 @@ export const MAP_STYLES: Record<string, MapStyle> = {
 			paint: {
 				'circle-radius': {
 					type: 'exponential',
-					base: 1,
-					stops: [
+						stops: [
 						[10, 2],
 						[14, 6],
 						[18, 2]
@@ -289,8 +283,7 @@ export const MAP_STYLES: Record<string, MapStyle> = {
 			paint: {
 				'circle-radius': {
 					type: 'exponential',
-					base: 1,
-					stops: [
+						stops: [
 						[10, 2],
 						[14, 6],
 						[18, 2]
@@ -311,8 +304,7 @@ export const MAP_STYLES: Record<string, MapStyle> = {
 			paint: {
 				'circle-radius': {
 					type: 'exponential',
-					base: 1,
-					stops: [
+						stops: [
 						[10, 2],
 						[14, 6],
 						[18, 2]

@@ -35,8 +35,7 @@ permissions:
 
 jobs:
   deploy:
-    env: # Add the github env secret as an env variable
-      VITE_MAPBOX_ACCESS_TOKEN: ${{ secrets.VITE_MAPBOX_ACCESS_TOKEN }}
+    env: # Add the github env variables
       VITE_STATIC_DATA_VERSION: ${{ vars.VITE_STATIC_DATA_VERSION }}
       VITE_STATIC_DATA_SOURCE: ${{ vars.VITE_STATIC_DATA_SOURCE }}
       VITE_LIVE_DATA_SOURCE: ${{ vars.VITE_LIVE_DATA_SOURCE }}
