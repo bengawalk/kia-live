@@ -1,0 +1,46 @@
+name: Bug report
+description: Report a bug or an issue with the service.
+title: "[Bug] "
+labels: ["bug"]
+assignees: []
+
+body:
+  - type: markdown
+    attributes:
+      value: "### Bug Report"
+
+  - type: input
+    id: bug-name
+    attributes:
+      label: "Bug Info"
+      description: "Short description on the bug."
+      placeholder: "Example: Stop timings not showing up."
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: "Description"
+      description: "Explain the issue in more detail."
+      placeholder: "Example: The stop timings are not rendering when next bus is clicked frequently, the issue does not exist if the next bus is not clicked rapidly."
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: "Steps to Reproduce"
+      description: "Provide steps to reproduce."
+
+  - type: textarea
+    id: console
+    attributes:
+      label: "Console Logs"
+      description: "Provide console logs if available or captured."
+
+  - type: textarea
+    id: attachments
+    attributes:
+      label: "Attachments"
+      description: "Please provide images or screen recordings of the issue here."
