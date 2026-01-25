@@ -1,0 +1,39 @@
+name: Feature Request
+description: Request a new feature
+title: "[Feature Request] "
+labels: ["enhancement"]
+assignees: []
+
+body:
+  - type: markdown
+    attributes:
+      value: "### Feature Request"
+
+  - type: input
+    id: feature-name
+    attributes:
+      label: "Feature Name"
+      placeholder: "Search Bar, Suburban rail info, etc."
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: "Description"
+      description: "Describe the purpose of this feature and where it will be used."
+    validations:
+      required: true
+
+  - type: textarea
+    id: behavior
+    attributes:
+      label: "Expected Behavior"
+      description: "Describe how this feature should behave."
+      placeholder: "This feature shows suburban rail lines on the map, with times just like the metro."
+
+  - type: textarea
+    id: references
+    attributes:
+      label: "Existing References"
+      description: "Please attach references, if any."
