@@ -242,18 +242,6 @@
       {
         "time": "07:51",
         "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_weekday_0_111"
-      },
-      {
-        "time": "07:51",
-        "headsign": {
           "en": "Whitefield (Kadugodi)",
           "kn": "ವೈಟ್‌ಫೀಲ್ಡ್ (ಕಾಡುಗೋಡಿ)"
         },
@@ -262,18 +250,6 @@
         "route_color": "8C2877",
         "direction_id": 1,
         "trip_id": "P1_weekday_1_198"
-      },
-      {
-        "time": "07:56",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_weekday_0_112"
       },
       {
         "time": "08:01",
@@ -290,18 +266,6 @@
       {
         "time": "08:01",
         "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_weekday_0_113"
-      },
-      {
-        "time": "08:01",
-        "headsign": {
           "en": "Whitefield (Kadugodi)",
           "kn": "ವೈಟ್‌ಫೀಲ್ಡ್ (ಕಾಡುಗೋಡಿ)"
         },
@@ -310,18 +274,6 @@
         "route_color": "8C2877",
         "direction_id": 1,
         "trip_id": "P1_weekday_1_199"
-      },
-      {
-        "time": "08:06",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_weekday_0_114"
       },
       {
         "time": "08:11",
@@ -338,18 +290,6 @@
       {
         "time": "08:11",
         "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_weekday_0_115"
-      },
-      {
-        "time": "08:11",
-        "headsign": {
           "en": "Whitefield (Kadugodi)",
           "kn": "ವೈಟ್‌ಫೀಲ್ಡ್ (ಕಾಡುಗೋಡಿ)"
         },
@@ -358,18 +298,6 @@
         "route_color": "8C2877",
         "direction_id": 1,
         "trip_id": "P1_weekday_1_200"
-      },
-      {
-        "time": "08:16",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_weekday_0_116"
       },
       {
         "time": "08:21",
@@ -386,18 +314,6 @@
       {
         "time": "08:21",
         "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_weekday_0_117"
-      },
-      {
-        "time": "08:21",
-        "headsign": {
           "en": "Whitefield (Kadugodi)",
           "kn": "ವೈಟ್‌ಫೀಲ್ಡ್ (ಕಾಡುಗೋಡಿ)"
         },
@@ -406,18 +322,6 @@
         "route_color": "8C2877",
         "direction_id": 1,
         "trip_id": "P1_weekday_1_201"
-      },
-      {
-        "time": "08:26",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_weekday_0_118"
       },
       {
         "time": "08:31",
@@ -434,18 +338,6 @@
       {
         "time": "08:31",
         "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_weekday_0_119"
-      },
-      {
-        "time": "08:31",
-        "headsign": {
           "en": "Whitefield (Kadugodi)",
           "kn": "ವೈಟ್‌ಫೀಲ್ಡ್ (ಕಾಡುಗೋಡಿ)"
         },
@@ -454,18 +346,6 @@
         "route_color": "8C2877",
         "direction_id": 1,
         "trip_id": "P1_weekday_1_202"
-      },
-      {
-        "time": "08:36",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_weekday_0_120"
       },
       {
         "time": "08:41",
@@ -482,18 +362,6 @@
       {
         "time": "08:41",
         "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_weekday_0_121"
-      },
-      {
-        "time": "08:41",
-        "headsign": {
           "en": "Whitefield (Kadugodi)",
           "kn": "ವೈಟ್‌ಫೀಲ್ಡ್ (ಕಾಡುಗೋಡಿ)"
         },
@@ -502,18 +370,6 @@
         "route_color": "8C2877",
         "direction_id": 1,
         "trip_id": "P1_weekday_1_203"
-      },
-      {
-        "time": "08:46",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_weekday_0_122"
       },
       {
         "time": "08:51",
@@ -530,18 +386,6 @@
       {
         "time": "08:51",
         "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_weekday_0_123"
-      },
-      {
-        "time": "08:51",
-        "headsign": {
           "en": "Whitefield (Kadugodi)",
           "kn": "ವೈಟ್‌ಫೀಲ್ಡ್ (ಕಾಡುಗೋಡಿ)"
         },
@@ -550,18 +394,6 @@
         "route_color": "8C2877",
         "direction_id": 1,
         "trip_id": "P1_weekday_1_204"
-      },
-      {
-        "time": "08:56",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_weekday_0_124"
       },
       {
         "time": "09:01",
@@ -578,18 +410,6 @@
       {
         "time": "09:01",
         "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_weekday_0_125"
-      },
-      {
-        "time": "09:01",
-        "headsign": {
           "en": "Whitefield (Kadugodi)",
           "kn": "ವೈಟ್‌ಫೀಲ್ಡ್ (ಕಾಡುಗೋಡಿ)"
         },
@@ -598,18 +418,6 @@
         "route_color": "8C2877",
         "direction_id": 1,
         "trip_id": "P1_weekday_1_205"
-      },
-      {
-        "time": "09:06",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_weekday_0_126"
       },
       {
         "time": "09:11",
@@ -626,18 +434,6 @@
       {
         "time": "09:11",
         "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_weekday_0_127"
-      },
-      {
-        "time": "09:11",
-        "headsign": {
           "en": "Whitefield (Kadugodi)",
           "kn": "ವೈಟ್‌ಫೀಲ್ಡ್ (ಕಾಡುಗೋಡಿ)"
         },
@@ -646,18 +442,6 @@
         "route_color": "8C2877",
         "direction_id": 1,
         "trip_id": "P1_weekday_1_206"
-      },
-      {
-        "time": "09:16",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_weekday_0_128"
       },
       {
         "time": "09:21",
@@ -674,18 +458,6 @@
       {
         "time": "09:21",
         "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_weekday_0_129"
-      },
-      {
-        "time": "09:21",
-        "headsign": {
           "en": "Whitefield (Kadugodi)",
           "kn": "ವೈಟ್‌ಫೀಲ್ಡ್ (ಕಾಡುಗೋಡಿ)"
         },
@@ -694,18 +466,6 @@
         "route_color": "8C2877",
         "direction_id": 1,
         "trip_id": "P1_weekday_1_207"
-      },
-      {
-        "time": "09:26",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_weekday_0_130"
       },
       {
         "time": "09:31",
@@ -722,18 +482,6 @@
       {
         "time": "09:31",
         "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_weekday_0_131"
-      },
-      {
-        "time": "09:31",
-        "headsign": {
           "en": "Whitefield (Kadugodi)",
           "kn": "ವೈಟ್‌ಫೀಲ್ಡ್ (ಕಾಡುಗೋಡಿ)"
         },
@@ -742,18 +490,6 @@
         "route_color": "8C2877",
         "direction_id": 1,
         "trip_id": "P1_weekday_1_208"
-      },
-      {
-        "time": "09:36",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_weekday_0_132"
       },
       {
         "time": "09:41",
@@ -770,18 +506,6 @@
       {
         "time": "09:41",
         "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_weekday_0_133"
-      },
-      {
-        "time": "09:41",
-        "headsign": {
           "en": "Whitefield (Kadugodi)",
           "kn": "ವೈಟ್‌ಫೀಲ್ಡ್ (ಕಾಡುಗೋಡಿ)"
         },
@@ -790,18 +514,6 @@
         "route_color": "8C2877",
         "direction_id": 1,
         "trip_id": "P1_weekday_1_209"
-      },
-      {
-        "time": "09:46",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_weekday_0_134"
       },
       {
         "time": "09:51",
@@ -818,18 +530,6 @@
       {
         "time": "09:51",
         "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_weekday_0_135"
-      },
-      {
-        "time": "09:51",
-        "headsign": {
           "en": "Whitefield (Kadugodi)",
           "kn": "ವೈಟ್‌ಫೀಲ್ಡ್ (ಕಾಡುಗೋಡಿ)"
         },
@@ -838,18 +538,6 @@
         "route_color": "8C2877",
         "direction_id": 1,
         "trip_id": "P1_weekday_1_210"
-      },
-      {
-        "time": "09:56",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_weekday_0_136"
       },
       {
         "time": "10:01",
@@ -866,18 +554,6 @@
       {
         "time": "10:01",
         "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_weekday_0_137"
-      },
-      {
-        "time": "10:01",
-        "headsign": {
           "en": "Whitefield (Kadugodi)",
           "kn": "ವೈಟ್‌ಫೀಲ್ಡ್ (ಕಾಡುಗೋಡಿ)"
         },
@@ -886,18 +562,6 @@
         "route_color": "8C2877",
         "direction_id": 1,
         "trip_id": "P1_weekday_1_211"
-      },
-      {
-        "time": "10:06",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_weekday_0_138"
       },
       {
         "time": "10:11",
@@ -914,18 +578,6 @@
       {
         "time": "10:11",
         "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_weekday_0_139"
-      },
-      {
-        "time": "10:11",
-        "headsign": {
           "en": "Whitefield (Kadugodi)",
           "kn": "ವೈಟ್‌ಫೀಲ್ಡ್ (ಕಾಡುಗೋಡಿ)"
         },
@@ -934,18 +586,6 @@
         "route_color": "8C2877",
         "direction_id": 1,
         "trip_id": "P1_weekday_1_212"
-      },
-      {
-        "time": "10:16",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_weekday_0_140"
       },
       {
         "time": "10:21",
@@ -962,18 +602,6 @@
       {
         "time": "10:21",
         "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_weekday_0_141"
-      },
-      {
-        "time": "10:21",
-        "headsign": {
           "en": "Whitefield (Kadugodi)",
           "kn": "ವೈಟ್‌ಫೀಲ್ಡ್ (ಕಾಡುಗೋಡಿ)"
         },
@@ -982,18 +610,6 @@
         "route_color": "8C2877",
         "direction_id": 1,
         "trip_id": "P1_weekday_1_213"
-      },
-      {
-        "time": "10:26",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_weekday_0_142"
       },
       {
         "time": "10:31",
@@ -1010,18 +626,6 @@
       {
         "time": "10:31",
         "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_weekday_0_143"
-      },
-      {
-        "time": "10:31",
-        "headsign": {
           "en": "Whitefield (Kadugodi)",
           "kn": "ವೈಟ್‌ಫೀಲ್ಡ್ (ಕಾಡುಗೋಡಿ)"
         },
@@ -1030,18 +634,6 @@
         "route_color": "8C2877",
         "direction_id": 1,
         "trip_id": "P1_weekday_1_214"
-      },
-      {
-        "time": "10:36",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_weekday_0_144"
       },
       {
         "time": "10:41",
@@ -1058,18 +650,6 @@
       {
         "time": "10:41",
         "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_weekday_0_145"
-      },
-      {
-        "time": "10:41",
-        "headsign": {
           "en": "Whitefield (Kadugodi)",
           "kn": "ವೈಟ್‌ಫೀಲ್ಡ್ (ಕಾಡುಗೋಡಿ)"
         },
@@ -1078,18 +658,6 @@
         "route_color": "8C2877",
         "direction_id": 1,
         "trip_id": "P1_weekday_1_215"
-      },
-      {
-        "time": "10:46",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_weekday_0_146"
       },
       {
         "time": "10:51",
@@ -1106,18 +674,6 @@
       {
         "time": "10:51",
         "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_weekday_0_147"
-      },
-      {
-        "time": "10:51",
-        "headsign": {
           "en": "Whitefield (Kadugodi)",
           "kn": "ವೈಟ್‌ಫೀಲ್ಡ್ (ಕಾಡುಗೋಡಿ)"
         },
@@ -1126,18 +682,6 @@
         "route_color": "8C2877",
         "direction_id": 1,
         "trip_id": "P1_weekday_1_216"
-      },
-      {
-        "time": "10:56",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_weekday_0_148"
       },
       {
         "time": "11:01",
@@ -1154,18 +698,6 @@
       {
         "time": "11:01",
         "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_weekday_0_149"
-      },
-      {
-        "time": "11:01",
-        "headsign": {
           "en": "Whitefield (Kadugodi)",
           "kn": "ವೈಟ್‌ಫೀಲ್ಡ್ (ಕಾಡುಗೋಡಿ)"
         },
@@ -1174,18 +706,6 @@
         "route_color": "8C2877",
         "direction_id": 1,
         "trip_id": "P1_weekday_1_217"
-      },
-      {
-        "time": "11:06",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_weekday_0_150"
       },
       {
         "time": "11:11",
@@ -1202,18 +722,6 @@
       {
         "time": "11:11",
         "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_weekday_0_151"
-      },
-      {
-        "time": "11:11",
-        "headsign": {
           "en": "Whitefield (Kadugodi)",
           "kn": "ವೈಟ್‌ಫೀಲ್ಡ್ (ಕಾಡುಗೋಡಿ)"
         },
@@ -1222,18 +730,6 @@
         "route_color": "8C2877",
         "direction_id": 1,
         "trip_id": "P1_weekday_1_218"
-      },
-      {
-        "time": "11:16",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_weekday_0_152"
       },
       {
         "time": "11:21",
@@ -1250,18 +746,6 @@
       {
         "time": "11:21",
         "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_weekday_0_153"
-      },
-      {
-        "time": "11:21",
-        "headsign": {
           "en": "Whitefield (Kadugodi)",
           "kn": "ವೈಟ್‌ಫೀಲ್ಡ್ (ಕಾಡುಗೋಡಿ)"
         },
@@ -1270,18 +754,6 @@
         "route_color": "8C2877",
         "direction_id": 1,
         "trip_id": "P1_weekday_1_219"
-      },
-      {
-        "time": "11:26",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_weekday_0_154"
       },
       {
         "time": "11:31",
@@ -1298,18 +770,6 @@
       {
         "time": "11:31",
         "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_weekday_0_155"
-      },
-      {
-        "time": "11:31",
-        "headsign": {
           "en": "Whitefield (Kadugodi)",
           "kn": "ವೈಟ್‌ಫೀಲ್ಡ್ (ಕಾಡುಗೋಡಿ)"
         },
@@ -1318,18 +778,6 @@
         "route_color": "8C2877",
         "direction_id": 1,
         "trip_id": "P1_weekday_1_220"
-      },
-      {
-        "time": "11:36",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_weekday_0_156"
       },
       {
         "time": "11:41",
@@ -1346,18 +794,6 @@
       {
         "time": "11:41",
         "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_weekday_0_157"
-      },
-      {
-        "time": "11:41",
-        "headsign": {
           "en": "Whitefield (Kadugodi)",
           "kn": "ವೈಟ್‌ಫೀಲ್ಡ್ (ಕಾಡುಗೋಡಿ)"
         },
@@ -1366,18 +802,6 @@
         "route_color": "8C2877",
         "direction_id": 1,
         "trip_id": "P1_weekday_1_221"
-      },
-      {
-        "time": "11:46",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_weekday_0_158"
       },
       {
         "time": "11:51",
@@ -1390,18 +814,6 @@
         "route_color": "8C2877",
         "direction_id": 0,
         "trip_id": "P1_weekday_0_32"
-      },
-      {
-        "time": "11:51",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_weekday_0_159"
       },
       {
         "time": "11:51",
@@ -2436,18 +1848,6 @@
         "trip_id": "P1_weekday_1_265"
       },
       {
-        "time": "17:48",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_weekday_0_160"
-      },
-      {
         "time": "17:52",
         "headsign": {
           "en": "Challaghatta",
@@ -2472,30 +1872,6 @@
         "trip_id": "P1_weekday_1_266"
       },
       {
-        "time": "17:53",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_weekday_0_161"
-      },
-      {
-        "time": "17:58",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_weekday_0_162"
-      },
-      {
         "time": "18:02",
         "headsign": {
           "en": "Challaghatta",
@@ -2518,18 +1894,6 @@
         "route_color": "8C2877",
         "direction_id": 1,
         "trip_id": "P1_weekday_1_267"
-      },
-      {
-        "time": "18:03",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_weekday_0_163"
       },
       {
         "time": "18:12",
@@ -2652,18 +2016,6 @@
         "trip_id": "P1_weekday_1_272"
       },
       {
-        "time": "19:00",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_weekday_0_399"
-      },
-      {
         "time": "19:02",
         "headsign": {
           "en": "Challaghatta",
@@ -2686,18 +2038,6 @@
         "route_color": "8C2877",
         "direction_id": 1,
         "trip_id": "P1_weekday_1_273"
-      },
-      {
-        "time": "19:08",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_weekday_0_164"
       },
       {
         "time": "19:12",
@@ -2724,30 +2064,6 @@
         "trip_id": "P1_weekday_1_274"
       },
       {
-        "time": "19:13",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_weekday_0_165"
-      },
-      {
-        "time": "19:18",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_weekday_0_166"
-      },
-      {
         "time": "19:22",
         "headsign": {
           "en": "Challaghatta",
@@ -2770,30 +2086,6 @@
         "route_color": "8C2877",
         "direction_id": 1,
         "trip_id": "P1_weekday_1_275"
-      },
-      {
-        "time": "19:23",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_weekday_0_167"
-      },
-      {
-        "time": "19:28",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_weekday_0_168"
       },
       {
         "time": "19:32",
@@ -2820,7 +2112,7 @@
         "trip_id": "P1_weekday_1_276"
       },
       {
-        "time": "19:33",
+        "time": "19:35",
         "headsign": {
           "en": "Challaghatta",
           "kn": "ಚಲ್ಲಘಟ್ಟ"
@@ -2829,19 +2121,7 @@
         "route_name": "Purple",
         "route_color": "8C2877",
         "direction_id": 0,
-        "trip_id": "P1_weekday_0_169"
-      },
-      {
-        "time": "19:38",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_weekday_0_170"
+        "trip_id": "P1_weekday_0_327"
       },
       {
         "time": "19:42",
@@ -2868,7 +2148,7 @@
         "trip_id": "P1_weekday_1_277"
       },
       {
-        "time": "19:43",
+        "time": "19:45",
         "headsign": {
           "en": "Challaghatta",
           "kn": "ಚಲ್ಲಘಟ್ಟ"
@@ -2877,19 +2157,7 @@
         "route_name": "Purple",
         "route_color": "8C2877",
         "direction_id": 0,
-        "trip_id": "P1_weekday_0_171"
-      },
-      {
-        "time": "19:48",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_weekday_0_172"
+        "trip_id": "P1_weekday_0_328"
       },
       {
         "time": "19:52",
@@ -2916,30 +2184,6 @@
         "trip_id": "P1_weekday_1_278"
       },
       {
-        "time": "19:53",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_weekday_0_173"
-      },
-      {
-        "time": "19:58",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_weekday_0_174"
-      },
-      {
         "time": "20:02",
         "headsign": {
           "en": "Challaghatta",
@@ -2962,30 +2206,6 @@
         "route_color": "8C2877",
         "direction_id": 1,
         "trip_id": "P1_weekday_1_279"
-      },
-      {
-        "time": "20:03",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_weekday_0_175"
-      },
-      {
-        "time": "20:08",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_weekday_0_176"
       },
       {
         "time": "20:12",
@@ -3012,30 +2232,6 @@
         "trip_id": "P1_weekday_1_280"
       },
       {
-        "time": "20:13",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_weekday_0_177"
-      },
-      {
-        "time": "20:18",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_weekday_0_178"
-      },
-      {
         "time": "20:22",
         "headsign": {
           "en": "Challaghatta",
@@ -3058,30 +2254,6 @@
         "route_color": "8C2877",
         "direction_id": 1,
         "trip_id": "P1_weekday_1_281"
-      },
-      {
-        "time": "20:23",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_weekday_0_179"
-      },
-      {
-        "time": "20:28",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_weekday_0_180"
       },
       {
         "time": "20:32",
@@ -3108,30 +2280,6 @@
         "trip_id": "P1_weekday_1_282"
       },
       {
-        "time": "20:33",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_weekday_0_181"
-      },
-      {
-        "time": "20:38",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_weekday_0_182"
-      },
-      {
         "time": "20:42",
         "headsign": {
           "en": "Challaghatta",
@@ -3154,30 +2302,6 @@
         "route_color": "8C2877",
         "direction_id": 1,
         "trip_id": "P1_weekday_1_283"
-      },
-      {
-        "time": "20:43",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_weekday_0_183"
-      },
-      {
-        "time": "20:48",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_weekday_0_184"
       },
       {
         "time": "20:52",
@@ -3204,30 +2328,6 @@
         "trip_id": "P1_weekday_1_284"
       },
       {
-        "time": "20:53",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_weekday_0_185"
-      },
-      {
-        "time": "20:58",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_weekday_0_186"
-      },
-      {
         "time": "21:02",
         "headsign": {
           "en": "Challaghatta",
@@ -3250,18 +2350,6 @@
         "route_color": "8C2877",
         "direction_id": 1,
         "trip_id": "P1_weekday_1_285"
-      },
-      {
-        "time": "21:03",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_weekday_0_187"
       },
       {
         "time": "21:12",
@@ -6242,3056 +5330,7 @@
         "trip_id": "P1_sunday_0_108"
       }
     ],
-    "holiday": [
-      {
-        "time": "05:17",
-        "headsign": {
-          "en": "Whitefield (Kadugodi)",
-          "kn": "ವೈಟ್‌ಫೀಲ್ಡ್ (ಕಾಡುಗೋಡಿ)"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 1,
-        "trip_id": "P1_holiday_1_126"
-      },
-      {
-        "time": "05:27",
-        "headsign": {
-          "en": "Whitefield (Kadugodi)",
-          "kn": "ವೈಟ್‌ಫೀಲ್ಡ್ (ಕಾಡುಗೋಡಿ)"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 1,
-        "trip_id": "P1_holiday_1_127"
-      },
-      {
-        "time": "05:37",
-        "headsign": {
-          "en": "Whitefield (Kadugodi)",
-          "kn": "ವೈಟ್‌ಫೀಲ್ಡ್ (ಕಾಡುಗೋಡಿ)"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 1,
-        "trip_id": "P1_holiday_1_128"
-      },
-      {
-        "time": "05:47",
-        "headsign": {
-          "en": "Whitefield (Kadugodi)",
-          "kn": "ವೈಟ್‌ಫೀಲ್ಡ್ (ಕಾಡುಗೋಡಿ)"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 1,
-        "trip_id": "P1_holiday_1_129"
-      },
-      {
-        "time": "05:57",
-        "headsign": {
-          "en": "Whitefield (Kadugodi)",
-          "kn": "ವೈಟ್‌ಫೀಲ್ಡ್ (ಕಾಡುಗೋಡಿ)"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 1,
-        "trip_id": "P1_holiday_1_130"
-      },
-      {
-        "time": "06:07",
-        "headsign": {
-          "en": "Whitefield (Kadugodi)",
-          "kn": "ವೈಟ್‌ಫೀಲ್ಡ್ (ಕಾಡುಗೋಡಿ)"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 1,
-        "trip_id": "P1_holiday_1_131"
-      },
-      {
-        "time": "06:17",
-        "headsign": {
-          "en": "Whitefield (Kadugodi)",
-          "kn": "ವೈಟ್‌ಫೀಲ್ಡ್ (ಕಾಡುಗೋಡಿ)"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 1,
-        "trip_id": "P1_holiday_1_132"
-      },
-      {
-        "time": "06:21",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_holiday_0_0"
-      },
-      {
-        "time": "06:27",
-        "headsign": {
-          "en": "Whitefield (Kadugodi)",
-          "kn": "ವೈಟ್‌ಫೀಲ್ಡ್ (ಕಾಡುಗೋಡಿ)"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 1,
-        "trip_id": "P1_holiday_1_133"
-      },
-      {
-        "time": "06:31",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_holiday_0_1"
-      },
-      {
-        "time": "06:37",
-        "headsign": {
-          "en": "Whitefield (Kadugodi)",
-          "kn": "ವೈಟ್‌ಫೀಲ್ಡ್ (ಕಾಡುಗೋಡಿ)"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 1,
-        "trip_id": "P1_holiday_1_134"
-      },
-      {
-        "time": "06:41",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_holiday_0_2"
-      },
-      {
-        "time": "06:47",
-        "headsign": {
-          "en": "Whitefield (Kadugodi)",
-          "kn": "ವೈಟ್‌ಫೀಲ್ಡ್ (ಕಾಡುಗೋಡಿ)"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 1,
-        "trip_id": "P1_holiday_1_135"
-      },
-      {
-        "time": "06:51",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_holiday_0_3"
-      },
-      {
-        "time": "06:57",
-        "headsign": {
-          "en": "Whitefield (Kadugodi)",
-          "kn": "ವೈಟ್‌ಫೀಲ್ಡ್ (ಕಾಡುಗೋಡಿ)"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 1,
-        "trip_id": "P1_holiday_1_136"
-      },
-      {
-        "time": "07:01",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_holiday_0_4"
-      },
-      {
-        "time": "07:07",
-        "headsign": {
-          "en": "Whitefield (Kadugodi)",
-          "kn": "ವೈಟ್‌ಫೀಲ್ಡ್ (ಕಾಡುಗೋಡಿ)"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 1,
-        "trip_id": "P1_holiday_1_137"
-      },
-      {
-        "time": "07:11",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_holiday_0_5"
-      },
-      {
-        "time": "07:17",
-        "headsign": {
-          "en": "Whitefield (Kadugodi)",
-          "kn": "ವೈಟ್‌ಫೀಲ್ಡ್ (ಕಾಡುಗೋಡಿ)"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 1,
-        "trip_id": "P1_holiday_1_138"
-      },
-      {
-        "time": "07:21",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_holiday_0_6"
-      },
-      {
-        "time": "07:27",
-        "headsign": {
-          "en": "Whitefield (Kadugodi)",
-          "kn": "ವೈಟ್‌ಫೀಲ್ಡ್ (ಕಾಡುಗೋಡಿ)"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 1,
-        "trip_id": "P1_holiday_1_139"
-      },
-      {
-        "time": "07:31",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_holiday_0_7"
-      },
-      {
-        "time": "07:37",
-        "headsign": {
-          "en": "Whitefield (Kadugodi)",
-          "kn": "ವೈಟ್‌ಫೀಲ್ಡ್ (ಕಾಡುಗೋಡಿ)"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 1,
-        "trip_id": "P1_holiday_1_140"
-      },
-      {
-        "time": "07:41",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_holiday_0_8"
-      },
-      {
-        "time": "07:47",
-        "headsign": {
-          "en": "Whitefield (Kadugodi)",
-          "kn": "ವೈಟ್‌ಫೀಲ್ಡ್ (ಕಾಡುಗೋಡಿ)"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 1,
-        "trip_id": "P1_holiday_1_141"
-      },
-      {
-        "time": "07:51",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_holiday_0_9"
-      },
-      {
-        "time": "07:57",
-        "headsign": {
-          "en": "Whitefield (Kadugodi)",
-          "kn": "ವೈಟ್‌ಫೀಲ್ಡ್ (ಕಾಡುಗೋಡಿ)"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 1,
-        "trip_id": "P1_holiday_1_142"
-      },
-      {
-        "time": "08:01",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_holiday_0_10"
-      },
-      {
-        "time": "08:07",
-        "headsign": {
-          "en": "Whitefield (Kadugodi)",
-          "kn": "ವೈಟ್‌ಫೀಲ್ಡ್ (ಕಾಡುಗೋಡಿ)"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 1,
-        "trip_id": "P1_holiday_1_143"
-      },
-      {
-        "time": "08:11",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_holiday_0_11"
-      },
-      {
-        "time": "08:17",
-        "headsign": {
-          "en": "Whitefield (Kadugodi)",
-          "kn": "ವೈಟ್‌ಫೀಲ್ಡ್ (ಕಾಡುಗೋಡಿ)"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 1,
-        "trip_id": "P1_holiday_1_144"
-      },
-      {
-        "time": "08:21",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_holiday_0_12"
-      },
-      {
-        "time": "08:27",
-        "headsign": {
-          "en": "Whitefield (Kadugodi)",
-          "kn": "ವೈಟ್‌ಫೀಲ್ಡ್ (ಕಾಡುಗೋಡಿ)"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 1,
-        "trip_id": "P1_holiday_1_145"
-      },
-      {
-        "time": "08:31",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_holiday_0_13"
-      },
-      {
-        "time": "08:35",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_holiday_0_14"
-      },
-      {
-        "time": "08:37",
-        "headsign": {
-          "en": "Whitefield (Kadugodi)",
-          "kn": "ವೈಟ್‌ಫೀಲ್ಡ್ (ಕಾಡುಗೋಡಿ)"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 1,
-        "trip_id": "P1_holiday_1_146"
-      },
-      {
-        "time": "08:43",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_holiday_0_15"
-      },
-      {
-        "time": "08:47",
-        "headsign": {
-          "en": "Whitefield (Kadugodi)",
-          "kn": "ವೈಟ್‌ಫೀಲ್ಡ್ (ಕಾಡುಗೋಡಿ)"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 1,
-        "trip_id": "P1_holiday_1_147"
-      },
-      {
-        "time": "08:51",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_holiday_0_16"
-      },
-      {
-        "time": "08:57",
-        "headsign": {
-          "en": "Whitefield (Kadugodi)",
-          "kn": "ವೈಟ್‌ಫೀಲ್ಡ್ (ಕಾಡುಗೋಡಿ)"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 1,
-        "trip_id": "P1_holiday_1_148"
-      },
-      {
-        "time": "08:59",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_holiday_0_17"
-      },
-      {
-        "time": "09:07",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_holiday_0_18"
-      },
-      {
-        "time": "09:07",
-        "headsign": {
-          "en": "Whitefield (Kadugodi)",
-          "kn": "ವೈಟ್‌ಫೀಲ್ಡ್ (ಕಾಡುಗೋಡಿ)"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 1,
-        "trip_id": "P1_holiday_1_149"
-      },
-      {
-        "time": "09:13",
-        "headsign": {
-          "en": "Whitefield (Kadugodi)",
-          "kn": "ವೈಟ್‌ಫೀಲ್ಡ್ (ಕಾಡುಗೋಡಿ)"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 1,
-        "trip_id": "P1_holiday_1_150"
-      },
-      {
-        "time": "09:15",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_holiday_0_19"
-      },
-      {
-        "time": "09:21",
-        "headsign": {
-          "en": "Whitefield (Kadugodi)",
-          "kn": "ವೈಟ್‌ಫೀಲ್ಡ್ (ಕಾಡುಗೋಡಿ)"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 1,
-        "trip_id": "P1_holiday_1_151"
-      },
-      {
-        "time": "09:23",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_holiday_0_20"
-      },
-      {
-        "time": "09:29",
-        "headsign": {
-          "en": "Whitefield (Kadugodi)",
-          "kn": "ವೈಟ್‌ಫೀಲ್ಡ್ (ಕಾಡುಗೋಡಿ)"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 1,
-        "trip_id": "P1_holiday_1_152"
-      },
-      {
-        "time": "09:31",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_holiday_0_21"
-      },
-      {
-        "time": "09:37",
-        "headsign": {
-          "en": "Whitefield (Kadugodi)",
-          "kn": "ವೈಟ್‌ಫೀಲ್ಡ್ (ಕಾಡುಗೋಡಿ)"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 1,
-        "trip_id": "P1_holiday_1_153"
-      },
-      {
-        "time": "09:39",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_holiday_0_22"
-      },
-      {
-        "time": "09:45",
-        "headsign": {
-          "en": "Whitefield (Kadugodi)",
-          "kn": "ವೈಟ್‌ಫೀಲ್ಡ್ (ಕಾಡುಗೋಡಿ)"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 1,
-        "trip_id": "P1_holiday_1_154"
-      },
-      {
-        "time": "09:47",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_holiday_0_23"
-      },
-      {
-        "time": "09:53",
-        "headsign": {
-          "en": "Whitefield (Kadugodi)",
-          "kn": "ವೈಟ್‌ಫೀಲ್ಡ್ (ಕಾಡುಗೋಡಿ)"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 1,
-        "trip_id": "P1_holiday_1_155"
-      },
-      {
-        "time": "09:55",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_holiday_0_24"
-      },
-      {
-        "time": "10:01",
-        "headsign": {
-          "en": "Whitefield (Kadugodi)",
-          "kn": "ವೈಟ್‌ಫೀಲ್ಡ್ (ಕಾಡುಗೋಡಿ)"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 1,
-        "trip_id": "P1_holiday_1_156"
-      },
-      {
-        "time": "10:03",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_holiday_0_25"
-      },
-      {
-        "time": "10:09",
-        "headsign": {
-          "en": "Whitefield (Kadugodi)",
-          "kn": "ವೈಟ್‌ಫೀಲ್ಡ್ (ಕಾಡುಗೋಡಿ)"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 1,
-        "trip_id": "P1_holiday_1_157"
-      },
-      {
-        "time": "10:11",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_holiday_0_26"
-      },
-      {
-        "time": "10:17",
-        "headsign": {
-          "en": "Whitefield (Kadugodi)",
-          "kn": "ವೈಟ್‌ಫೀಲ್ಡ್ (ಕಾಡುಗೋಡಿ)"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 1,
-        "trip_id": "P1_holiday_1_158"
-      },
-      {
-        "time": "10:19",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_holiday_0_27"
-      },
-      {
-        "time": "10:25",
-        "headsign": {
-          "en": "Whitefield (Kadugodi)",
-          "kn": "ವೈಟ್‌ಫೀಲ್ಡ್ (ಕಾಡುಗೋಡಿ)"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 1,
-        "trip_id": "P1_holiday_1_159"
-      },
-      {
-        "time": "10:27",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_holiday_0_28"
-      },
-      {
-        "time": "10:33",
-        "headsign": {
-          "en": "Whitefield (Kadugodi)",
-          "kn": "ವೈಟ್‌ಫೀಲ್ಡ್ (ಕಾಡುಗೋಡಿ)"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 1,
-        "trip_id": "P1_holiday_1_160"
-      },
-      {
-        "time": "10:35",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_holiday_0_29"
-      },
-      {
-        "time": "10:41",
-        "headsign": {
-          "en": "Whitefield (Kadugodi)",
-          "kn": "ವೈಟ್‌ಫೀಲ್ಡ್ (ಕಾಡುಗೋಡಿ)"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 1,
-        "trip_id": "P1_holiday_1_161"
-      },
-      {
-        "time": "10:43",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_holiday_0_30"
-      },
-      {
-        "time": "10:49",
-        "headsign": {
-          "en": "Whitefield (Kadugodi)",
-          "kn": "ವೈಟ್‌ಫೀಲ್ಡ್ (ಕಾಡುಗೋಡಿ)"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 1,
-        "trip_id": "P1_holiday_1_162"
-      },
-      {
-        "time": "10:51",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_holiday_0_31"
-      },
-      {
-        "time": "10:57",
-        "headsign": {
-          "en": "Whitefield (Kadugodi)",
-          "kn": "ವೈಟ್‌ಫೀಲ್ಡ್ (ಕಾಡುಗೋಡಿ)"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 1,
-        "trip_id": "P1_holiday_1_163"
-      },
-      {
-        "time": "10:59",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_holiday_0_32"
-      },
-      {
-        "time": "11:05",
-        "headsign": {
-          "en": "Whitefield (Kadugodi)",
-          "kn": "ವೈಟ್‌ಫೀಲ್ಡ್ (ಕಾಡುಗೋಡಿ)"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 1,
-        "trip_id": "P1_holiday_1_164"
-      },
-      {
-        "time": "11:07",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_holiday_0_33"
-      },
-      {
-        "time": "11:13",
-        "headsign": {
-          "en": "Whitefield (Kadugodi)",
-          "kn": "ವೈಟ್‌ಫೀಲ್ಡ್ (ಕಾಡುಗೋಡಿ)"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 1,
-        "trip_id": "P1_holiday_1_165"
-      },
-      {
-        "time": "11:15",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_holiday_0_34"
-      },
-      {
-        "time": "11:21",
-        "headsign": {
-          "en": "Whitefield (Kadugodi)",
-          "kn": "ವೈಟ್‌ಫೀಲ್ಡ್ (ಕಾಡುಗೋಡಿ)"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 1,
-        "trip_id": "P1_holiday_1_166"
-      },
-      {
-        "time": "11:23",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_holiday_0_35"
-      },
-      {
-        "time": "11:29",
-        "headsign": {
-          "en": "Whitefield (Kadugodi)",
-          "kn": "ವೈಟ್‌ಫೀಲ್ಡ್ (ಕಾಡುಗೋಡಿ)"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 1,
-        "trip_id": "P1_holiday_1_167"
-      },
-      {
-        "time": "11:31",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_holiday_0_36"
-      },
-      {
-        "time": "11:37",
-        "headsign": {
-          "en": "Whitefield (Kadugodi)",
-          "kn": "ವೈಟ್‌ಫೀಲ್ಡ್ (ಕಾಡುಗೋಡಿ)"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 1,
-        "trip_id": "P1_holiday_1_168"
-      },
-      {
-        "time": "11:39",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_holiday_0_37"
-      },
-      {
-        "time": "11:45",
-        "headsign": {
-          "en": "Whitefield (Kadugodi)",
-          "kn": "ವೈಟ್‌ಫೀಲ್ಡ್ (ಕಾಡುಗೋಡಿ)"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 1,
-        "trip_id": "P1_holiday_1_169"
-      },
-      {
-        "time": "11:47",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_holiday_0_38"
-      },
-      {
-        "time": "11:53",
-        "headsign": {
-          "en": "Whitefield (Kadugodi)",
-          "kn": "ವೈಟ್‌ಫೀಲ್ಡ್ (ಕಾಡುಗೋಡಿ)"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 1,
-        "trip_id": "P1_holiday_1_170"
-      },
-      {
-        "time": "11:55",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_holiday_0_39"
-      },
-      {
-        "time": "12:01",
-        "headsign": {
-          "en": "Whitefield (Kadugodi)",
-          "kn": "ವೈಟ್‌ಫೀಲ್ಡ್ (ಕಾಡುಗೋಡಿ)"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 1,
-        "trip_id": "P1_holiday_1_171"
-      },
-      {
-        "time": "12:03",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_holiday_0_40"
-      },
-      {
-        "time": "12:09",
-        "headsign": {
-          "en": "Whitefield (Kadugodi)",
-          "kn": "ವೈಟ್‌ಫೀಲ್ಡ್ (ಕಾಡುಗೋಡಿ)"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 1,
-        "trip_id": "P1_holiday_1_172"
-      },
-      {
-        "time": "12:11",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_holiday_0_41"
-      },
-      {
-        "time": "12:17",
-        "headsign": {
-          "en": "Whitefield (Kadugodi)",
-          "kn": "ವೈಟ್‌ಫೀಲ್ಡ್ (ಕಾಡುಗೋಡಿ)"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 1,
-        "trip_id": "P1_holiday_1_173"
-      },
-      {
-        "time": "12:19",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_holiday_0_42"
-      },
-      {
-        "time": "12:25",
-        "headsign": {
-          "en": "Whitefield (Kadugodi)",
-          "kn": "ವೈಟ್‌ಫೀಲ್ಡ್ (ಕಾಡುಗೋಡಿ)"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 1,
-        "trip_id": "P1_holiday_1_174"
-      },
-      {
-        "time": "12:27",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_holiday_0_43"
-      },
-      {
-        "time": "12:33",
-        "headsign": {
-          "en": "Whitefield (Kadugodi)",
-          "kn": "ವೈಟ್‌ಫೀಲ್ಡ್ (ಕಾಡುಗೋಡಿ)"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 1,
-        "trip_id": "P1_holiday_1_175"
-      },
-      {
-        "time": "12:35",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_holiday_0_44"
-      },
-      {
-        "time": "12:41",
-        "headsign": {
-          "en": "Whitefield (Kadugodi)",
-          "kn": "ವೈಟ್‌ಫೀಲ್ಡ್ (ಕಾಡುಗೋಡಿ)"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 1,
-        "trip_id": "P1_holiday_1_176"
-      },
-      {
-        "time": "12:43",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_holiday_0_45"
-      },
-      {
-        "time": "12:49",
-        "headsign": {
-          "en": "Whitefield (Kadugodi)",
-          "kn": "ವೈಟ್‌ಫೀಲ್ಡ್ (ಕಾಡುಗೋಡಿ)"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 1,
-        "trip_id": "P1_holiday_1_177"
-      },
-      {
-        "time": "12:51",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_holiday_0_46"
-      },
-      {
-        "time": "12:57",
-        "headsign": {
-          "en": "Whitefield (Kadugodi)",
-          "kn": "ವೈಟ್‌ಫೀಲ್ಡ್ (ಕಾಡುಗೋಡಿ)"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 1,
-        "trip_id": "P1_holiday_1_178"
-      },
-      {
-        "time": "12:59",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_holiday_0_47"
-      },
-      {
-        "time": "13:05",
-        "headsign": {
-          "en": "Whitefield (Kadugodi)",
-          "kn": "ವೈಟ್‌ಫೀಲ್ಡ್ (ಕಾಡುಗೋಡಿ)"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 1,
-        "trip_id": "P1_holiday_1_179"
-      },
-      {
-        "time": "13:07",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_holiday_0_48"
-      },
-      {
-        "time": "13:13",
-        "headsign": {
-          "en": "Whitefield (Kadugodi)",
-          "kn": "ವೈಟ್‌ಫೀಲ್ಡ್ (ಕಾಡುಗೋಡಿ)"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 1,
-        "trip_id": "P1_holiday_1_180"
-      },
-      {
-        "time": "13:15",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_holiday_0_49"
-      },
-      {
-        "time": "13:21",
-        "headsign": {
-          "en": "Whitefield (Kadugodi)",
-          "kn": "ವೈಟ್‌ಫೀಲ್ಡ್ (ಕಾಡುಗೋಡಿ)"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 1,
-        "trip_id": "P1_holiday_1_181"
-      },
-      {
-        "time": "13:23",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_holiday_0_50"
-      },
-      {
-        "time": "13:29",
-        "headsign": {
-          "en": "Whitefield (Kadugodi)",
-          "kn": "ವೈಟ್‌ಫೀಲ್ಡ್ (ಕಾಡುಗೋಡಿ)"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 1,
-        "trip_id": "P1_holiday_1_182"
-      },
-      {
-        "time": "13:31",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_holiday_0_51"
-      },
-      {
-        "time": "13:37",
-        "headsign": {
-          "en": "Whitefield (Kadugodi)",
-          "kn": "ವೈಟ್‌ಫೀಲ್ಡ್ (ಕಾಡುಗೋಡಿ)"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 1,
-        "trip_id": "P1_holiday_1_183"
-      },
-      {
-        "time": "13:39",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_holiday_0_52"
-      },
-      {
-        "time": "13:45",
-        "headsign": {
-          "en": "Whitefield (Kadugodi)",
-          "kn": "ವೈಟ್‌ಫೀಲ್ಡ್ (ಕಾಡುಗೋಡಿ)"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 1,
-        "trip_id": "P1_holiday_1_184"
-      },
-      {
-        "time": "13:47",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_holiday_0_53"
-      },
-      {
-        "time": "13:53",
-        "headsign": {
-          "en": "Whitefield (Kadugodi)",
-          "kn": "ವೈಟ್‌ಫೀಲ್ಡ್ (ಕಾಡುಗೋಡಿ)"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 1,
-        "trip_id": "P1_holiday_1_185"
-      },
-      {
-        "time": "13:55",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_holiday_0_54"
-      },
-      {
-        "time": "14:01",
-        "headsign": {
-          "en": "Whitefield (Kadugodi)",
-          "kn": "ವೈಟ್‌ಫೀಲ್ಡ್ (ಕಾಡುಗೋಡಿ)"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 1,
-        "trip_id": "P1_holiday_1_186"
-      },
-      {
-        "time": "14:03",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_holiday_0_55"
-      },
-      {
-        "time": "14:09",
-        "headsign": {
-          "en": "Whitefield (Kadugodi)",
-          "kn": "ವೈಟ್‌ಫೀಲ್ಡ್ (ಕಾಡುಗೋಡಿ)"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 1,
-        "trip_id": "P1_holiday_1_187"
-      },
-      {
-        "time": "14:11",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_holiday_0_56"
-      },
-      {
-        "time": "14:17",
-        "headsign": {
-          "en": "Whitefield (Kadugodi)",
-          "kn": "ವೈಟ್‌ಫೀಲ್ಡ್ (ಕಾಡುಗೋಡಿ)"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 1,
-        "trip_id": "P1_holiday_1_188"
-      },
-      {
-        "time": "14:19",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_holiday_0_57"
-      },
-      {
-        "time": "14:25",
-        "headsign": {
-          "en": "Whitefield (Kadugodi)",
-          "kn": "ವೈಟ್‌ಫೀಲ್ಡ್ (ಕಾಡುಗೋಡಿ)"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 1,
-        "trip_id": "P1_holiday_1_189"
-      },
-      {
-        "time": "14:27",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_holiday_0_58"
-      },
-      {
-        "time": "14:33",
-        "headsign": {
-          "en": "Whitefield (Kadugodi)",
-          "kn": "ವೈಟ್‌ಫೀಲ್ಡ್ (ಕಾಡುಗೋಡಿ)"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 1,
-        "trip_id": "P1_holiday_1_190"
-      },
-      {
-        "time": "14:35",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_holiday_0_59"
-      },
-      {
-        "time": "14:41",
-        "headsign": {
-          "en": "Whitefield (Kadugodi)",
-          "kn": "ವೈಟ್‌ಫೀಲ್ಡ್ (ಕಾಡುಗೋಡಿ)"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 1,
-        "trip_id": "P1_holiday_1_191"
-      },
-      {
-        "time": "14:43",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_holiday_0_60"
-      },
-      {
-        "time": "14:49",
-        "headsign": {
-          "en": "Whitefield (Kadugodi)",
-          "kn": "ವೈಟ್‌ಫೀಲ್ಡ್ (ಕಾಡುಗೋಡಿ)"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 1,
-        "trip_id": "P1_holiday_1_192"
-      },
-      {
-        "time": "14:51",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_holiday_0_61"
-      },
-      {
-        "time": "14:57",
-        "headsign": {
-          "en": "Whitefield (Kadugodi)",
-          "kn": "ವೈಟ್‌ಫೀಲ್ಡ್ (ಕಾಡುಗೋಡಿ)"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 1,
-        "trip_id": "P1_holiday_1_193"
-      },
-      {
-        "time": "14:59",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_holiday_0_62"
-      },
-      {
-        "time": "15:05",
-        "headsign": {
-          "en": "Whitefield (Kadugodi)",
-          "kn": "ವೈಟ್‌ಫೀಲ್ಡ್ (ಕಾಡುಗೋಡಿ)"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 1,
-        "trip_id": "P1_holiday_1_194"
-      },
-      {
-        "time": "15:07",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_holiday_0_63"
-      },
-      {
-        "time": "15:13",
-        "headsign": {
-          "en": "Whitefield (Kadugodi)",
-          "kn": "ವೈಟ್‌ಫೀಲ್ಡ್ (ಕಾಡುಗೋಡಿ)"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 1,
-        "trip_id": "P1_holiday_1_195"
-      },
-      {
-        "time": "15:15",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_holiday_0_64"
-      },
-      {
-        "time": "15:21",
-        "headsign": {
-          "en": "Whitefield (Kadugodi)",
-          "kn": "ವೈಟ್‌ಫೀಲ್ಡ್ (ಕಾಡುಗೋಡಿ)"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 1,
-        "trip_id": "P1_holiday_1_196"
-      },
-      {
-        "time": "15:23",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_holiday_0_65"
-      },
-      {
-        "time": "15:29",
-        "headsign": {
-          "en": "Whitefield (Kadugodi)",
-          "kn": "ವೈಟ್‌ಫೀಲ್ಡ್ (ಕಾಡುಗೋಡಿ)"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 1,
-        "trip_id": "P1_holiday_1_197"
-      },
-      {
-        "time": "15:31",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_holiday_0_66"
-      },
-      {
-        "time": "15:37",
-        "headsign": {
-          "en": "Whitefield (Kadugodi)",
-          "kn": "ವೈಟ್‌ಫೀಲ್ಡ್ (ಕಾಡುಗೋಡಿ)"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 1,
-        "trip_id": "P1_holiday_1_198"
-      },
-      {
-        "time": "15:39",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_holiday_0_67"
-      },
-      {
-        "time": "15:45",
-        "headsign": {
-          "en": "Whitefield (Kadugodi)",
-          "kn": "ವೈಟ್‌ಫೀಲ್ಡ್ (ಕಾಡುಗೋಡಿ)"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 1,
-        "trip_id": "P1_holiday_1_199"
-      },
-      {
-        "time": "15:47",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_holiday_0_68"
-      },
-      {
-        "time": "15:53",
-        "headsign": {
-          "en": "Whitefield (Kadugodi)",
-          "kn": "ವೈಟ್‌ಫೀಲ್ಡ್ (ಕಾಡುಗೋಡಿ)"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 1,
-        "trip_id": "P1_holiday_1_200"
-      },
-      {
-        "time": "15:55",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_holiday_0_69"
-      },
-      {
-        "time": "16:01",
-        "headsign": {
-          "en": "Whitefield (Kadugodi)",
-          "kn": "ವೈಟ್‌ಫೀಲ್ಡ್ (ಕಾಡುಗೋಡಿ)"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 1,
-        "trip_id": "P1_holiday_1_201"
-      },
-      {
-        "time": "16:03",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_holiday_0_70"
-      },
-      {
-        "time": "16:09",
-        "headsign": {
-          "en": "Whitefield (Kadugodi)",
-          "kn": "ವೈಟ್‌ಫೀಲ್ಡ್ (ಕಾಡುಗೋಡಿ)"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 1,
-        "trip_id": "P1_holiday_1_202"
-      },
-      {
-        "time": "16:11",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_holiday_0_71"
-      },
-      {
-        "time": "16:17",
-        "headsign": {
-          "en": "Whitefield (Kadugodi)",
-          "kn": "ವೈಟ್‌ಫೀಲ್ಡ್ (ಕಾಡುಗೋಡಿ)"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 1,
-        "trip_id": "P1_holiday_1_203"
-      },
-      {
-        "time": "16:19",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_holiday_0_72"
-      },
-      {
-        "time": "16:25",
-        "headsign": {
-          "en": "Whitefield (Kadugodi)",
-          "kn": "ವೈಟ್‌ಫೀಲ್ಡ್ (ಕಾಡುಗೋಡಿ)"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 1,
-        "trip_id": "P1_holiday_1_204"
-      },
-      {
-        "time": "16:27",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_holiday_0_73"
-      },
-      {
-        "time": "16:33",
-        "headsign": {
-          "en": "Whitefield (Kadugodi)",
-          "kn": "ವೈಟ್‌ಫೀಲ್ಡ್ (ಕಾಡುಗೋಡಿ)"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 1,
-        "trip_id": "P1_holiday_1_205"
-      },
-      {
-        "time": "16:35",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_holiday_0_74"
-      },
-      {
-        "time": "16:41",
-        "headsign": {
-          "en": "Whitefield (Kadugodi)",
-          "kn": "ವೈಟ್‌ಫೀಲ್ಡ್ (ಕಾಡುಗೋಡಿ)"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 1,
-        "trip_id": "P1_holiday_1_206"
-      },
-      {
-        "time": "16:43",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_holiday_0_75"
-      },
-      {
-        "time": "16:49",
-        "headsign": {
-          "en": "Whitefield (Kadugodi)",
-          "kn": "ವೈಟ್‌ಫೀಲ್ಡ್ (ಕಾಡುಗೋಡಿ)"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 1,
-        "trip_id": "P1_holiday_1_207"
-      },
-      {
-        "time": "16:51",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_holiday_0_76"
-      },
-      {
-        "time": "16:57",
-        "headsign": {
-          "en": "Whitefield (Kadugodi)",
-          "kn": "ವೈಟ್‌ಫೀಲ್ಡ್ (ಕಾಡುಗೋಡಿ)"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 1,
-        "trip_id": "P1_holiday_1_208"
-      },
-      {
-        "time": "16:59",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_holiday_0_77"
-      },
-      {
-        "time": "17:05",
-        "headsign": {
-          "en": "Whitefield (Kadugodi)",
-          "kn": "ವೈಟ್‌ಫೀಲ್ಡ್ (ಕಾಡುಗೋಡಿ)"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 1,
-        "trip_id": "P1_holiday_1_209"
-      },
-      {
-        "time": "17:07",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_holiday_0_78"
-      },
-      {
-        "time": "17:13",
-        "headsign": {
-          "en": "Whitefield (Kadugodi)",
-          "kn": "ವೈಟ್‌ಫೀಲ್ಡ್ (ಕಾಡುಗೋಡಿ)"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 1,
-        "trip_id": "P1_holiday_1_210"
-      },
-      {
-        "time": "17:15",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_holiday_0_79"
-      },
-      {
-        "time": "17:21",
-        "headsign": {
-          "en": "Whitefield (Kadugodi)",
-          "kn": "ವೈಟ್‌ಫೀಲ್ಡ್ (ಕಾಡುಗೋಡಿ)"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 1,
-        "trip_id": "P1_holiday_1_211"
-      },
-      {
-        "time": "17:23",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_holiday_0_80"
-      },
-      {
-        "time": "17:29",
-        "headsign": {
-          "en": "Whitefield (Kadugodi)",
-          "kn": "ವೈಟ್‌ಫೀಲ್ಡ್ (ಕಾಡುಗೋಡಿ)"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 1,
-        "trip_id": "P1_holiday_1_212"
-      },
-      {
-        "time": "17:31",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_holiday_0_81"
-      },
-      {
-        "time": "17:37",
-        "headsign": {
-          "en": "Whitefield (Kadugodi)",
-          "kn": "ವೈಟ್‌ಫೀಲ್ಡ್ (ಕಾಡುಗೋಡಿ)"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 1,
-        "trip_id": "P1_holiday_1_213"
-      },
-      {
-        "time": "17:39",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_holiday_0_82"
-      },
-      {
-        "time": "17:45",
-        "headsign": {
-          "en": "Whitefield (Kadugodi)",
-          "kn": "ವೈಟ್‌ಫೀಲ್ಡ್ (ಕಾಡುಗೋಡಿ)"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 1,
-        "trip_id": "P1_holiday_1_214"
-      },
-      {
-        "time": "17:47",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_holiday_0_83"
-      },
-      {
-        "time": "17:53",
-        "headsign": {
-          "en": "Whitefield (Kadugodi)",
-          "kn": "ವೈಟ್‌ಫೀಲ್ಡ್ (ಕಾಡುಗೋಡಿ)"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 1,
-        "trip_id": "P1_holiday_1_215"
-      },
-      {
-        "time": "17:55",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_holiday_0_84"
-      },
-      {
-        "time": "18:01",
-        "headsign": {
-          "en": "Whitefield (Kadugodi)",
-          "kn": "ವೈಟ್‌ಫೀಲ್ಡ್ (ಕಾಡುಗೋಡಿ)"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 1,
-        "trip_id": "P1_holiday_1_216"
-      },
-      {
-        "time": "18:03",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_holiday_0_85"
-      },
-      {
-        "time": "18:09",
-        "headsign": {
-          "en": "Whitefield (Kadugodi)",
-          "kn": "ವೈಟ್‌ಫೀಲ್ಡ್ (ಕಾಡುಗೋಡಿ)"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 1,
-        "trip_id": "P1_holiday_1_217"
-      },
-      {
-        "time": "18:11",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_holiday_0_86"
-      },
-      {
-        "time": "18:17",
-        "headsign": {
-          "en": "Whitefield (Kadugodi)",
-          "kn": "ವೈಟ್‌ಫೀಲ್ಡ್ (ಕಾಡುಗೋಡಿ)"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 1,
-        "trip_id": "P1_holiday_1_218"
-      },
-      {
-        "time": "18:19",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_holiday_0_87"
-      },
-      {
-        "time": "18:25",
-        "headsign": {
-          "en": "Whitefield (Kadugodi)",
-          "kn": "ವೈಟ್‌ಫೀಲ್ಡ್ (ಕಾಡುಗೋಡಿ)"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 1,
-        "trip_id": "P1_holiday_1_219"
-      },
-      {
-        "time": "18:27",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_holiday_0_88"
-      },
-      {
-        "time": "18:33",
-        "headsign": {
-          "en": "Whitefield (Kadugodi)",
-          "kn": "ವೈಟ್‌ಫೀಲ್ಡ್ (ಕಾಡುಗೋಡಿ)"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 1,
-        "trip_id": "P1_holiday_1_220"
-      },
-      {
-        "time": "18:35",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_holiday_0_89"
-      },
-      {
-        "time": "18:41",
-        "headsign": {
-          "en": "Whitefield (Kadugodi)",
-          "kn": "ವೈಟ್‌ಫೀಲ್ಡ್ (ಕಾಡುಗೋಡಿ)"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 1,
-        "trip_id": "P1_holiday_1_221"
-      },
-      {
-        "time": "18:43",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_holiday_0_90"
-      },
-      {
-        "time": "18:49",
-        "headsign": {
-          "en": "Whitefield (Kadugodi)",
-          "kn": "ವೈಟ್‌ಫೀಲ್ಡ್ (ಕಾಡುಗೋಡಿ)"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 1,
-        "trip_id": "P1_holiday_1_222"
-      },
-      {
-        "time": "18:51",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_holiday_0_91"
-      },
-      {
-        "time": "18:57",
-        "headsign": {
-          "en": "Whitefield (Kadugodi)",
-          "kn": "ವೈಟ್‌ಫೀಲ್ಡ್ (ಕಾಡುಗೋಡಿ)"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 1,
-        "trip_id": "P1_holiday_1_223"
-      },
-      {
-        "time": "18:59",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_holiday_0_92"
-      },
-      {
-        "time": "19:05",
-        "headsign": {
-          "en": "Whitefield (Kadugodi)",
-          "kn": "ವೈಟ್‌ಫೀಲ್ಡ್ (ಕಾಡುಗೋಡಿ)"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 1,
-        "trip_id": "P1_holiday_1_224"
-      },
-      {
-        "time": "19:07",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_holiday_0_93"
-      },
-      {
-        "time": "19:13",
-        "headsign": {
-          "en": "Whitefield (Kadugodi)",
-          "kn": "ವೈಟ್‌ಫೀಲ್ಡ್ (ಕಾಡುಗೋಡಿ)"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 1,
-        "trip_id": "P1_holiday_1_225"
-      },
-      {
-        "time": "19:15",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_holiday_0_94"
-      },
-      {
-        "time": "19:21",
-        "headsign": {
-          "en": "Whitefield (Kadugodi)",
-          "kn": "ವೈಟ್‌ಫೀಲ್ಡ್ (ಕಾಡುಗೋಡಿ)"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 1,
-        "trip_id": "P1_holiday_1_226"
-      },
-      {
-        "time": "19:23",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_holiday_0_95"
-      },
-      {
-        "time": "19:29",
-        "headsign": {
-          "en": "Whitefield (Kadugodi)",
-          "kn": "ವೈಟ್‌ಫೀಲ್ಡ್ (ಕಾಡುಗೋಡಿ)"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 1,
-        "trip_id": "P1_holiday_1_227"
-      },
-      {
-        "time": "19:31",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_holiday_0_96"
-      },
-      {
-        "time": "19:37",
-        "headsign": {
-          "en": "Whitefield (Kadugodi)",
-          "kn": "ವೈಟ್‌ಫೀಲ್ಡ್ (ಕಾಡುಗೋಡಿ)"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 1,
-        "trip_id": "P1_holiday_1_228"
-      },
-      {
-        "time": "19:39",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_holiday_0_97"
-      },
-      {
-        "time": "19:45",
-        "headsign": {
-          "en": "Whitefield (Kadugodi)",
-          "kn": "ವೈಟ್‌ಫೀಲ್ಡ್ (ಕಾಡುಗೋಡಿ)"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 1,
-        "trip_id": "P1_holiday_1_229"
-      },
-      {
-        "time": "19:47",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_holiday_0_98"
-      },
-      {
-        "time": "19:53",
-        "headsign": {
-          "en": "Whitefield (Kadugodi)",
-          "kn": "ವೈಟ್‌ಫೀಲ್ಡ್ (ಕಾಡುಗೋಡಿ)"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 1,
-        "trip_id": "P1_holiday_1_230"
-      },
-      {
-        "time": "19:55",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_holiday_0_99"
-      },
-      {
-        "time": "20:01",
-        "headsign": {
-          "en": "Whitefield (Kadugodi)",
-          "kn": "ವೈಟ್‌ಫೀಲ್ಡ್ (ಕಾಡುಗೋಡಿ)"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 1,
-        "trip_id": "P1_holiday_1_231"
-      },
-      {
-        "time": "20:03",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_holiday_0_100"
-      },
-      {
-        "time": "20:09",
-        "headsign": {
-          "en": "Whitefield (Kadugodi)",
-          "kn": "ವೈಟ್‌ಫೀಲ್ಡ್ (ಕಾಡುಗೋಡಿ)"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 1,
-        "trip_id": "P1_holiday_1_232"
-      },
-      {
-        "time": "20:11",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_holiday_0_101"
-      },
-      {
-        "time": "20:17",
-        "headsign": {
-          "en": "Whitefield (Kadugodi)",
-          "kn": "ವೈಟ್‌ಫೀಲ್ಡ್ (ಕಾಡುಗೋಡಿ)"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 1,
-        "trip_id": "P1_holiday_1_233"
-      },
-      {
-        "time": "20:19",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_holiday_0_102"
-      },
-      {
-        "time": "20:25",
-        "headsign": {
-          "en": "Whitefield (Kadugodi)",
-          "kn": "ವೈಟ್‌ಫೀಲ್ಡ್ (ಕಾಡುಗೋಡಿ)"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 1,
-        "trip_id": "P1_holiday_1_234"
-      },
-      {
-        "time": "20:27",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_holiday_0_103"
-      },
-      {
-        "time": "20:33",
-        "headsign": {
-          "en": "Whitefield (Kadugodi)",
-          "kn": "ವೈಟ್‌ಫೀಲ್ಡ್ (ಕಾಡುಗೋಡಿ)"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 1,
-        "trip_id": "P1_holiday_1_235"
-      },
-      {
-        "time": "20:35",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_holiday_0_104"
-      },
-      {
-        "time": "20:41",
-        "headsign": {
-          "en": "Whitefield (Kadugodi)",
-          "kn": "ವೈಟ್‌ಫೀಲ್ಡ್ (ಕಾಡುಗೋಡಿ)"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 1,
-        "trip_id": "P1_holiday_1_236"
-      },
-      {
-        "time": "20:43",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_holiday_0_105"
-      },
-      {
-        "time": "20:49",
-        "headsign": {
-          "en": "Whitefield (Kadugodi)",
-          "kn": "ವೈಟ್‌ಫೀಲ್ಡ್ (ಕಾಡುಗೋಡಿ)"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 1,
-        "trip_id": "P1_holiday_1_237"
-      },
-      {
-        "time": "20:51",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_holiday_0_106"
-      },
-      {
-        "time": "20:57",
-        "headsign": {
-          "en": "Whitefield (Kadugodi)",
-          "kn": "ವೈಟ್‌ಫೀಲ್ಡ್ (ಕಾಡುಗೋಡಿ)"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 1,
-        "trip_id": "P1_holiday_1_238"
-      },
-      {
-        "time": "20:59",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_holiday_0_107"
-      },
-      {
-        "time": "21:05",
-        "headsign": {
-          "en": "Whitefield (Kadugodi)",
-          "kn": "ವೈಟ್‌ಫೀಲ್ಡ್ (ಕಾಡುಗೋಡಿ)"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 1,
-        "trip_id": "P1_holiday_1_239"
-      },
-      {
-        "time": "21:07",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_holiday_0_108"
-      },
-      {
-        "time": "21:13",
-        "headsign": {
-          "en": "Whitefield (Kadugodi)",
-          "kn": "ವೈಟ್‌ಫೀಲ್ಡ್ (ಕಾಡುಗೋಡಿ)"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 1,
-        "trip_id": "P1_holiday_1_240"
-      },
-      {
-        "time": "21:15",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_holiday_0_109"
-      },
-      {
-        "time": "21:21",
-        "headsign": {
-          "en": "Whitefield (Kadugodi)",
-          "kn": "ವೈಟ್‌ಫೀಲ್ಡ್ (ಕಾಡುಗೋಡಿ)"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 1,
-        "trip_id": "P1_holiday_1_241"
-      },
-      {
-        "time": "21:22",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_holiday_0_110"
-      },
-      {
-        "time": "21:29",
-        "headsign": {
-          "en": "Whitefield (Kadugodi)",
-          "kn": "ವೈಟ್‌ಫೀಲ್ಡ್ (ಕಾಡುಗೋಡಿ)"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 1,
-        "trip_id": "P1_holiday_1_242"
-      },
-      {
-        "time": "21:32",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_holiday_0_111"
-      },
-      {
-        "time": "21:37",
-        "headsign": {
-          "en": "Whitefield (Kadugodi)",
-          "kn": "ವೈಟ್‌ಫೀಲ್ಡ್ (ಕಾಡುಗೋಡಿ)"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 1,
-        "trip_id": "P1_holiday_1_243"
-      },
-      {
-        "time": "21:42",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_holiday_0_112"
-      },
-      {
-        "time": "21:45",
-        "headsign": {
-          "en": "Whitefield (Kadugodi)",
-          "kn": "ವೈಟ್‌ಫೀಲ್ಡ್ (ಕಾಡುಗೋಡಿ)"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 1,
-        "trip_id": "P1_holiday_1_244"
-      },
-      {
-        "time": "21:52",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_holiday_0_113"
-      },
-      {
-        "time": "21:55",
-        "headsign": {
-          "en": "Whitefield (Kadugodi)",
-          "kn": "ವೈಟ್‌ಫೀಲ್ಡ್ (ಕಾಡುಗೋಡಿ)"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 1,
-        "trip_id": "P1_holiday_1_245"
-      },
-      {
-        "time": "22:02",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_holiday_0_114"
-      },
-      {
-        "time": "22:05",
-        "headsign": {
-          "en": "Whitefield (Kadugodi)",
-          "kn": "ವೈಟ್‌ಫೀಲ್ಡ್ (ಕಾಡುಗೋಡಿ)"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 1,
-        "trip_id": "P1_holiday_1_246"
-      },
-      {
-        "time": "22:12",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_holiday_0_115"
-      },
-      {
-        "time": "22:15",
-        "headsign": {
-          "en": "Whitefield (Kadugodi)",
-          "kn": "ವೈಟ್‌ಫೀಲ್ಡ್ (ಕಾಡುಗೋಡಿ)"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 1,
-        "trip_id": "P1_holiday_1_247"
-      },
-      {
-        "time": "22:22",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_holiday_0_116"
-      },
-      {
-        "time": "22:25",
-        "headsign": {
-          "en": "Whitefield (Kadugodi)",
-          "kn": "ವೈಟ್‌ಫೀಲ್ಡ್ (ಕಾಡುಗೋಡಿ)"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 1,
-        "trip_id": "P1_holiday_1_248"
-      },
-      {
-        "time": "22:32",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_holiday_0_117"
-      },
-      {
-        "time": "22:35",
-        "headsign": {
-          "en": "Whitefield (Kadugodi)",
-          "kn": "ವೈಟ್‌ಫೀಲ್ಡ್ (ಕಾಡುಗೋಡಿ)"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 1,
-        "trip_id": "P1_holiday_1_249"
-      },
-      {
-        "time": "22:42",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_holiday_0_118"
-      },
-      {
-        "time": "22:45",
-        "headsign": {
-          "en": "Whitefield (Kadugodi)",
-          "kn": "ವೈಟ್‌ಫೀಲ್ಡ್ (ಕಾಡುಗೋಡಿ)"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 1,
-        "trip_id": "P1_holiday_1_250"
-      },
-      {
-        "time": "22:52",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_holiday_0_119"
-      },
-      {
-        "time": "22:55",
-        "headsign": {
-          "en": "Whitefield (Kadugodi)",
-          "kn": "ವೈಟ್‌ಫೀಲ್ಡ್ (ಕಾಡುಗೋಡಿ)"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 1,
-        "trip_id": "P1_holiday_1_251"
-      },
-      {
-        "time": "23:02",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_holiday_0_120"
-      },
-      {
-        "time": "23:05",
-        "headsign": {
-          "en": "Whitefield (Kadugodi)",
-          "kn": "ವೈಟ್‌ಫೀಲ್ಡ್ (ಕಾಡುಗೋಡಿ)"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 1,
-        "trip_id": "P1_holiday_1_252"
-      },
-      {
-        "time": "23:12",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_holiday_0_121"
-      },
-      {
-        "time": "23:15",
-        "headsign": {
-          "en": "Whitefield (Kadugodi)",
-          "kn": "ವೈಟ್‌ಫೀಲ್ಡ್ (ಕಾಡುಗೋಡಿ)"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 1,
-        "trip_id": "P1_holiday_1_253"
-      },
-      {
-        "time": "23:22",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_holiday_0_122"
-      },
-      {
-        "time": "23:32",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_holiday_0_123"
-      },
-      {
-        "time": "23:42",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_holiday_0_124"
-      },
-      {
-        "time": "23:52",
-        "headsign": {
-          "en": "Challaghatta",
-          "kn": "ಚಲ್ಲಘಟ್ಟ"
-        },
-        "route_id": "P1",
-        "route_name": "Purple",
-        "route_color": "8C2877",
-        "direction_id": 0,
-        "trip_id": "P1_holiday_0_125"
-      }
-    ]
+    "holiday": []
   },
   "color": "purple"
 }
