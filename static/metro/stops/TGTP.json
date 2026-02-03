@@ -113,18 +113,6 @@
         "trip_id": "G1_weekday_1_205"
       },
       {
-        "time": "06:40",
-        "headsign": {
-          "en": "Peenya Industry",
-          "kn": "ಪೀಣ್ಯ ಇಂಡಸ್ಟ್ರಿ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_weekday_1_315"
-      },
-      {
         "time": "06:44",
         "headsign": {
           "en": "Silk Institute",
@@ -137,18 +125,6 @@
         "trip_id": "G1_weekday_0_2"
       },
       {
-        "time": "06:45",
-        "headsign": {
-          "en": "Peenya Industry",
-          "kn": "ಪೀಣ್ಯ ಇಂಡಸ್ಟ್ರಿ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_weekday_1_316"
-      },
-      {
         "time": "06:48",
         "headsign": {
           "en": "Madavara"
@@ -158,30 +134,6 @@
         "route_color": "009933",
         "direction_id": 1,
         "trip_id": "G1_weekday_1_206"
-      },
-      {
-        "time": "06:50",
-        "headsign": {
-          "en": "Peenya Industry",
-          "kn": "ಪೀಣ್ಯ ಇಂಡಸ್ಟ್ರಿ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_weekday_1_317"
-      },
-      {
-        "time": "06:55",
-        "headsign": {
-          "en": "Peenya Industry",
-          "kn": "ಪೀಣ್ಯ ಇಂಡಸ್ಟ್ರಿ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_weekday_1_318"
       },
       {
         "time": "06:59",
@@ -196,18 +148,6 @@
         "trip_id": "G1_weekday_0_3"
       },
       {
-        "time": "07:00",
-        "headsign": {
-          "en": "Peenya Industry",
-          "kn": "ಪೀಣ್ಯ ಇಂಡಸ್ಟ್ರಿ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_weekday_1_319"
-      },
-      {
         "time": "07:03",
         "headsign": {
           "en": "Madavara"
@@ -217,30 +157,6 @@
         "route_color": "009933",
         "direction_id": 1,
         "trip_id": "G1_weekday_1_207"
-      },
-      {
-        "time": "07:05",
-        "headsign": {
-          "en": "Peenya Industry",
-          "kn": "ಪೀಣ್ಯ ಇಂಡಸ್ಟ್ರಿ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_weekday_1_320"
-      },
-      {
-        "time": "07:10",
-        "headsign": {
-          "en": "Peenya Industry",
-          "kn": "ಪೀಣ್ಯ ಇಂಡಸ್ಟ್ರಿ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_weekday_1_321"
       },
       {
         "time": "07:13",
@@ -266,30 +182,6 @@
         "trip_id": "G1_weekday_0_4"
       },
       {
-        "time": "07:15",
-        "headsign": {
-          "en": "Peenya Industry",
-          "kn": "ಪೀಣ್ಯ ಇಂಡಸ್ಟ್ರಿ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_weekday_1_322"
-      },
-      {
-        "time": "07:20",
-        "headsign": {
-          "en": "Peenya Industry",
-          "kn": "ಪೀಣ್ಯ ಇಂಡಸ್ಟ್ರಿ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_weekday_1_323"
-      },
-      {
         "time": "07:23",
         "headsign": {
           "en": "Madavara"
@@ -299,18 +191,6 @@
         "route_color": "009933",
         "direction_id": 1,
         "trip_id": "G1_weekday_1_209"
-      },
-      {
-        "time": "07:25",
-        "headsign": {
-          "en": "Peenya Industry",
-          "kn": "ಪೀಣ್ಯ ಇಂಡಸ್ಟ್ರಿ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_weekday_1_324"
       },
       {
         "time": "07:29",
@@ -325,18 +205,6 @@
         "trip_id": "G1_weekday_0_5"
       },
       {
-        "time": "07:30",
-        "headsign": {
-          "en": "Peenya Industry",
-          "kn": "ಪೀಣ್ಯ ಇಂಡಸ್ಟ್ರಿ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_weekday_1_325"
-      },
-      {
         "time": "07:33",
         "headsign": {
           "en": "Madavara"
@@ -348,16 +216,16 @@
         "trip_id": "G1_weekday_1_210"
       },
       {
-        "time": "07:35",
+        "time": "07:36",
         "headsign": {
-          "en": "Peenya Industry",
-          "kn": "ಪೀಣ್ಯ ಇಂಡಸ್ಟ್ರಿ"
+          "en": "Silk Institute",
+          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
         },
         "route_id": "G1",
         "route_name": "Green",
         "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_weekday_1_326"
+        "direction_id": 0,
+        "trip_id": "G1_weekday_0_315"
       },
       {
         "time": "07:39",
@@ -372,16 +240,16 @@
         "trip_id": "G1_weekday_0_6"
       },
       {
-        "time": "07:40",
+        "time": "07:41",
         "headsign": {
-          "en": "Peenya Industry",
-          "kn": "ಪೀಣ್ಯ ಇಂಡಸ್ಟ್ರಿ"
+          "en": "Silk Institute",
+          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
         },
         "route_id": "G1",
         "route_name": "Green",
         "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_weekday_1_327"
+        "direction_id": 0,
+        "trip_id": "G1_weekday_0_316"
       },
       {
         "time": "07:43",
@@ -395,16 +263,16 @@
         "trip_id": "G1_weekday_1_211"
       },
       {
-        "time": "07:45",
+        "time": "07:46",
         "headsign": {
-          "en": "Peenya Industry",
-          "kn": "ಪೀಣ್ಯ ಇಂಡಸ್ಟ್ರಿ"
+          "en": "Silk Institute",
+          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
         },
         "route_id": "G1",
         "route_name": "Green",
         "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_weekday_1_328"
+        "direction_id": 0,
+        "trip_id": "G1_weekday_0_317"
       },
       {
         "time": "07:49",
@@ -419,16 +287,16 @@
         "trip_id": "G1_weekday_0_7"
       },
       {
-        "time": "07:50",
+        "time": "07:51",
         "headsign": {
-          "en": "Peenya Industry",
-          "kn": "ಪೀಣ್ಯ ಇಂಡಸ್ಟ್ರಿ"
+          "en": "Silk Institute",
+          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
         },
         "route_id": "G1",
         "route_name": "Green",
         "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_weekday_1_329"
+        "direction_id": 0,
+        "trip_id": "G1_weekday_0_318"
       },
       {
         "time": "07:53",
@@ -442,16 +310,16 @@
         "trip_id": "G1_weekday_1_212"
       },
       {
-        "time": "07:55",
+        "time": "07:56",
         "headsign": {
-          "en": "Peenya Industry",
-          "kn": "ಪೀಣ್ಯ ಇಂಡಸ್ಟ್ರಿ"
+          "en": "Silk Institute",
+          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
         },
         "route_id": "G1",
         "route_name": "Green",
         "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_weekday_1_330"
+        "direction_id": 0,
+        "trip_id": "G1_weekday_0_319"
       },
       {
         "time": "07:59",
@@ -466,16 +334,16 @@
         "trip_id": "G1_weekday_0_8"
       },
       {
-        "time": "08:00",
+        "time": "08:01",
         "headsign": {
-          "en": "Peenya Industry",
-          "kn": "ಪೀಣ್ಯ ಇಂಡಸ್ಟ್ರಿ"
+          "en": "Silk Institute",
+          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
         },
         "route_id": "G1",
         "route_name": "Green",
         "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_weekday_1_331"
+        "direction_id": 0,
+        "trip_id": "G1_weekday_0_320"
       },
       {
         "time": "08:03",
@@ -489,16 +357,16 @@
         "trip_id": "G1_weekday_1_213"
       },
       {
-        "time": "08:05",
+        "time": "08:06",
         "headsign": {
-          "en": "Peenya Industry",
-          "kn": "ಪೀಣ್ಯ ಇಂಡಸ್ಟ್ರಿ"
+          "en": "Silk Institute",
+          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
         },
         "route_id": "G1",
         "route_name": "Green",
         "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_weekday_1_332"
+        "direction_id": 0,
+        "trip_id": "G1_weekday_0_321"
       },
       {
         "time": "08:09",
@@ -513,16 +381,16 @@
         "trip_id": "G1_weekday_0_9"
       },
       {
-        "time": "08:10",
+        "time": "08:11",
         "headsign": {
-          "en": "Peenya Industry",
-          "kn": "ಪೀಣ್ಯ ಇಂಡಸ್ಟ್ರಿ"
+          "en": "Silk Institute",
+          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
         },
         "route_id": "G1",
         "route_name": "Green",
         "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_weekday_1_333"
+        "direction_id": 0,
+        "trip_id": "G1_weekday_0_322"
       },
       {
         "time": "08:13",
@@ -536,16 +404,16 @@
         "trip_id": "G1_weekday_1_214"
       },
       {
-        "time": "08:15",
+        "time": "08:16",
         "headsign": {
-          "en": "Peenya Industry",
-          "kn": "ಪೀಣ್ಯ ಇಂಡಸ್ಟ್ರಿ"
+          "en": "Silk Institute",
+          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
         },
         "route_id": "G1",
         "route_name": "Green",
         "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_weekday_1_334"
+        "direction_id": 0,
+        "trip_id": "G1_weekday_0_323"
       },
       {
         "time": "08:19",
@@ -560,16 +428,16 @@
         "trip_id": "G1_weekday_0_10"
       },
       {
-        "time": "08:20",
+        "time": "08:21",
         "headsign": {
-          "en": "Peenya Industry",
-          "kn": "ಪೀಣ್ಯ ಇಂಡಸ್ಟ್ರಿ"
+          "en": "Silk Institute",
+          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
         },
         "route_id": "G1",
         "route_name": "Green",
         "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_weekday_1_335"
+        "direction_id": 0,
+        "trip_id": "G1_weekday_0_324"
       },
       {
         "time": "08:23",
@@ -583,16 +451,16 @@
         "trip_id": "G1_weekday_1_215"
       },
       {
-        "time": "08:25",
+        "time": "08:26",
         "headsign": {
-          "en": "Peenya Industry",
-          "kn": "ಪೀಣ್ಯ ಇಂಡಸ್ಟ್ರಿ"
+          "en": "Silk Institute",
+          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
         },
         "route_id": "G1",
         "route_name": "Green",
         "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_weekday_1_336"
+        "direction_id": 0,
+        "trip_id": "G1_weekday_0_325"
       },
       {
         "time": "08:29",
@@ -607,16 +475,16 @@
         "trip_id": "G1_weekday_0_11"
       },
       {
-        "time": "08:30",
+        "time": "08:31",
         "headsign": {
-          "en": "Peenya Industry",
-          "kn": "ಪೀಣ್ಯ ಇಂಡಸ್ಟ್ರಿ"
+          "en": "Silk Institute",
+          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
         },
         "route_id": "G1",
         "route_name": "Green",
         "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_weekday_1_337"
+        "direction_id": 0,
+        "trip_id": "G1_weekday_0_326"
       },
       {
         "time": "08:33",
@@ -630,16 +498,16 @@
         "trip_id": "G1_weekday_1_216"
       },
       {
-        "time": "08:35",
+        "time": "08:36",
         "headsign": {
-          "en": "Peenya Industry",
-          "kn": "ಪೀಣ್ಯ ಇಂಡಸ್ಟ್ರಿ"
+          "en": "Silk Institute",
+          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
         },
         "route_id": "G1",
         "route_name": "Green",
         "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_weekday_1_338"
+        "direction_id": 0,
+        "trip_id": "G1_weekday_0_327"
       },
       {
         "time": "08:39",
@@ -654,16 +522,16 @@
         "trip_id": "G1_weekday_0_12"
       },
       {
-        "time": "08:40",
+        "time": "08:41",
         "headsign": {
-          "en": "Peenya Industry",
-          "kn": "ಪೀಣ್ಯ ಇಂಡಸ್ಟ್ರಿ"
+          "en": "Silk Institute",
+          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
         },
         "route_id": "G1",
         "route_name": "Green",
         "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_weekday_1_339"
+        "direction_id": 0,
+        "trip_id": "G1_weekday_0_328"
       },
       {
         "time": "08:43",
@@ -677,16 +545,16 @@
         "trip_id": "G1_weekday_1_217"
       },
       {
-        "time": "08:45",
+        "time": "08:46",
         "headsign": {
-          "en": "Peenya Industry",
-          "kn": "ಪೀಣ್ಯ ಇಂಡಸ್ಟ್ರಿ"
+          "en": "Silk Institute",
+          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
         },
         "route_id": "G1",
         "route_name": "Green",
         "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_weekday_1_340"
+        "direction_id": 0,
+        "trip_id": "G1_weekday_0_329"
       },
       {
         "time": "08:49",
@@ -701,16 +569,16 @@
         "trip_id": "G1_weekday_0_13"
       },
       {
-        "time": "08:50",
+        "time": "08:51",
         "headsign": {
-          "en": "Peenya Industry",
-          "kn": "ಪೀಣ್ಯ ಇಂಡಸ್ಟ್ರಿ"
+          "en": "Silk Institute",
+          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
         },
         "route_id": "G1",
         "route_name": "Green",
         "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_weekday_1_341"
+        "direction_id": 0,
+        "trip_id": "G1_weekday_0_330"
       },
       {
         "time": "08:53",
@@ -724,16 +592,16 @@
         "trip_id": "G1_weekday_1_218"
       },
       {
-        "time": "08:55",
+        "time": "08:56",
         "headsign": {
-          "en": "Peenya Industry",
-          "kn": "ಪೀಣ್ಯ ಇಂಡಸ್ಟ್ರಿ"
+          "en": "Silk Institute",
+          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
         },
         "route_id": "G1",
         "route_name": "Green",
         "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_weekday_1_342"
+        "direction_id": 0,
+        "trip_id": "G1_weekday_0_331"
       },
       {
         "time": "08:59",
@@ -748,16 +616,16 @@
         "trip_id": "G1_weekday_0_14"
       },
       {
-        "time": "09:00",
+        "time": "09:01",
         "headsign": {
-          "en": "Peenya Industry",
-          "kn": "ಪೀಣ್ಯ ಇಂಡಸ್ಟ್ರಿ"
+          "en": "Silk Institute",
+          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
         },
         "route_id": "G1",
         "route_name": "Green",
         "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_weekday_1_343"
+        "direction_id": 0,
+        "trip_id": "G1_weekday_0_332"
       },
       {
         "time": "09:03",
@@ -771,16 +639,16 @@
         "trip_id": "G1_weekday_1_219"
       },
       {
-        "time": "09:05",
+        "time": "09:06",
         "headsign": {
-          "en": "Peenya Industry",
-          "kn": "ಪೀಣ್ಯ ಇಂಡಸ್ಟ್ರಿ"
+          "en": "Silk Institute",
+          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
         },
         "route_id": "G1",
         "route_name": "Green",
         "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_weekday_1_344"
+        "direction_id": 0,
+        "trip_id": "G1_weekday_0_333"
       },
       {
         "time": "09:09",
@@ -795,16 +663,16 @@
         "trip_id": "G1_weekday_0_15"
       },
       {
-        "time": "09:10",
+        "time": "09:11",
         "headsign": {
-          "en": "Peenya Industry",
-          "kn": "ಪೀಣ್ಯ ಇಂಡಸ್ಟ್ರಿ"
+          "en": "Silk Institute",
+          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
         },
         "route_id": "G1",
         "route_name": "Green",
         "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_weekday_1_345"
+        "direction_id": 0,
+        "trip_id": "G1_weekday_0_334"
       },
       {
         "time": "09:13",
@@ -818,16 +686,16 @@
         "trip_id": "G1_weekday_1_220"
       },
       {
-        "time": "09:15",
+        "time": "09:16",
         "headsign": {
-          "en": "Peenya Industry",
-          "kn": "ಪೀಣ್ಯ ಇಂಡಸ್ಟ್ರಿ"
+          "en": "Silk Institute",
+          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
         },
         "route_id": "G1",
         "route_name": "Green",
         "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_weekday_1_346"
+        "direction_id": 0,
+        "trip_id": "G1_weekday_0_335"
       },
       {
         "time": "09:19",
@@ -842,16 +710,16 @@
         "trip_id": "G1_weekday_0_16"
       },
       {
-        "time": "09:20",
+        "time": "09:21",
         "headsign": {
-          "en": "Peenya Industry",
-          "kn": "ಪೀಣ್ಯ ಇಂಡಸ್ಟ್ರಿ"
+          "en": "Silk Institute",
+          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
         },
         "route_id": "G1",
         "route_name": "Green",
         "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_weekday_1_347"
+        "direction_id": 0,
+        "trip_id": "G1_weekday_0_336"
       },
       {
         "time": "09:23",
@@ -865,16 +733,16 @@
         "trip_id": "G1_weekday_1_221"
       },
       {
-        "time": "09:25",
+        "time": "09:26",
         "headsign": {
-          "en": "Peenya Industry",
-          "kn": "ಪೀಣ್ಯ ಇಂಡಸ್ಟ್ರಿ"
+          "en": "Silk Institute",
+          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
         },
         "route_id": "G1",
         "route_name": "Green",
         "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_weekday_1_348"
+        "direction_id": 0,
+        "trip_id": "G1_weekday_0_337"
       },
       {
         "time": "09:29",
@@ -889,16 +757,16 @@
         "trip_id": "G1_weekday_0_17"
       },
       {
-        "time": "09:30",
+        "time": "09:31",
         "headsign": {
-          "en": "Peenya Industry",
-          "kn": "ಪೀಣ್ಯ ಇಂಡಸ್ಟ್ರಿ"
+          "en": "Silk Institute",
+          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
         },
         "route_id": "G1",
         "route_name": "Green",
         "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_weekday_1_349"
+        "direction_id": 0,
+        "trip_id": "G1_weekday_0_338"
       },
       {
         "time": "09:33",
@@ -912,16 +780,16 @@
         "trip_id": "G1_weekday_1_222"
       },
       {
-        "time": "09:35",
+        "time": "09:36",
         "headsign": {
-          "en": "Peenya Industry",
-          "kn": "ಪೀಣ್ಯ ಇಂಡಸ್ಟ್ರಿ"
+          "en": "Silk Institute",
+          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
         },
         "route_id": "G1",
         "route_name": "Green",
         "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_weekday_1_350"
+        "direction_id": 0,
+        "trip_id": "G1_weekday_0_339"
       },
       {
         "time": "09:39",
@@ -936,16 +804,16 @@
         "trip_id": "G1_weekday_0_18"
       },
       {
-        "time": "09:40",
+        "time": "09:41",
         "headsign": {
-          "en": "Peenya Industry",
-          "kn": "ಪೀಣ್ಯ ಇಂಡಸ್ಟ್ರಿ"
+          "en": "Silk Institute",
+          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
         },
         "route_id": "G1",
         "route_name": "Green",
         "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_weekday_1_351"
+        "direction_id": 0,
+        "trip_id": "G1_weekday_0_340"
       },
       {
         "time": "09:43",
@@ -959,16 +827,16 @@
         "trip_id": "G1_weekday_1_223"
       },
       {
-        "time": "09:45",
+        "time": "09:46",
         "headsign": {
-          "en": "Peenya Industry",
-          "kn": "ಪೀಣ್ಯ ಇಂಡಸ್ಟ್ರಿ"
+          "en": "Silk Institute",
+          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
         },
         "route_id": "G1",
         "route_name": "Green",
         "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_weekday_1_352"
+        "direction_id": 0,
+        "trip_id": "G1_weekday_0_341"
       },
       {
         "time": "09:49",
@@ -983,16 +851,16 @@
         "trip_id": "G1_weekday_0_19"
       },
       {
-        "time": "09:50",
+        "time": "09:51",
         "headsign": {
-          "en": "Peenya Industry",
-          "kn": "ಪೀಣ್ಯ ಇಂಡಸ್ಟ್ರಿ"
+          "en": "Silk Institute",
+          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
         },
         "route_id": "G1",
         "route_name": "Green",
         "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_weekday_1_353"
+        "direction_id": 0,
+        "trip_id": "G1_weekday_0_342"
       },
       {
         "time": "09:53",
@@ -1006,16 +874,16 @@
         "trip_id": "G1_weekday_1_224"
       },
       {
-        "time": "09:55",
+        "time": "09:56",
         "headsign": {
-          "en": "Peenya Industry",
-          "kn": "ಪೀಣ್ಯ ಇಂಡಸ್ಟ್ರಿ"
+          "en": "Silk Institute",
+          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
         },
         "route_id": "G1",
         "route_name": "Green",
         "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_weekday_1_354"
+        "direction_id": 0,
+        "trip_id": "G1_weekday_0_343"
       },
       {
         "time": "09:59",
@@ -1030,16 +898,16 @@
         "trip_id": "G1_weekday_0_20"
       },
       {
-        "time": "10:00",
+        "time": "10:01",
         "headsign": {
-          "en": "Peenya Industry",
-          "kn": "ಪೀಣ್ಯ ಇಂಡಸ್ಟ್ರಿ"
+          "en": "Silk Institute",
+          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
         },
         "route_id": "G1",
         "route_name": "Green",
         "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_weekday_1_355"
+        "direction_id": 0,
+        "trip_id": "G1_weekday_0_344"
       },
       {
         "time": "10:03",
@@ -1053,16 +921,16 @@
         "trip_id": "G1_weekday_1_225"
       },
       {
-        "time": "10:05",
+        "time": "10:06",
         "headsign": {
-          "en": "Peenya Industry",
-          "kn": "ಪೀಣ್ಯ ಇಂಡಸ್ಟ್ರಿ"
+          "en": "Silk Institute",
+          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
         },
         "route_id": "G1",
         "route_name": "Green",
         "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_weekday_1_356"
+        "direction_id": 0,
+        "trip_id": "G1_weekday_0_345"
       },
       {
         "time": "10:09",
@@ -1077,16 +945,16 @@
         "trip_id": "G1_weekday_0_21"
       },
       {
-        "time": "10:10",
+        "time": "10:11",
         "headsign": {
-          "en": "Peenya Industry",
-          "kn": "ಪೀಣ್ಯ ಇಂಡಸ್ಟ್ರಿ"
+          "en": "Silk Institute",
+          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
         },
         "route_id": "G1",
         "route_name": "Green",
         "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_weekday_1_357"
+        "direction_id": 0,
+        "trip_id": "G1_weekday_0_346"
       },
       {
         "time": "10:13",
@@ -1100,16 +968,16 @@
         "trip_id": "G1_weekday_1_226"
       },
       {
-        "time": "10:15",
+        "time": "10:16",
         "headsign": {
-          "en": "Peenya Industry",
-          "kn": "ಪೀಣ್ಯ ಇಂಡಸ್ಟ್ರಿ"
+          "en": "Silk Institute",
+          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
         },
         "route_id": "G1",
         "route_name": "Green",
         "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_weekday_1_358"
+        "direction_id": 0,
+        "trip_id": "G1_weekday_0_347"
       },
       {
         "time": "10:19",
@@ -1124,16 +992,16 @@
         "trip_id": "G1_weekday_0_22"
       },
       {
-        "time": "10:20",
+        "time": "10:21",
         "headsign": {
-          "en": "Peenya Industry",
-          "kn": "ಪೀಣ್ಯ ಇಂಡಸ್ಟ್ರಿ"
+          "en": "Silk Institute",
+          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
         },
         "route_id": "G1",
         "route_name": "Green",
         "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_weekday_1_359"
+        "direction_id": 0,
+        "trip_id": "G1_weekday_0_348"
       },
       {
         "time": "10:23",
@@ -1145,6 +1013,18 @@
         "route_color": "009933",
         "direction_id": 1,
         "trip_id": "G1_weekday_1_227"
+      },
+      {
+        "time": "10:26",
+        "headsign": {
+          "en": "Silk Institute",
+          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
+        },
+        "route_id": "G1",
+        "route_name": "Green",
+        "route_color": "009933",
+        "direction_id": 0,
+        "trip_id": "G1_weekday_0_349"
       },
       {
         "time": "10:29",
@@ -1159,6 +1039,18 @@
         "trip_id": "G1_weekday_0_23"
       },
       {
+        "time": "10:31",
+        "headsign": {
+          "en": "Silk Institute",
+          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
+        },
+        "route_id": "G1",
+        "route_name": "Green",
+        "route_color": "009933",
+        "direction_id": 0,
+        "trip_id": "G1_weekday_0_350"
+      },
+      {
         "time": "10:33",
         "headsign": {
           "en": "Madavara"
@@ -1168,6 +1060,18 @@
         "route_color": "009933",
         "direction_id": 1,
         "trip_id": "G1_weekday_1_228"
+      },
+      {
+        "time": "10:36",
+        "headsign": {
+          "en": "Silk Institute",
+          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
+        },
+        "route_id": "G1",
+        "route_name": "Green",
+        "route_color": "009933",
+        "direction_id": 0,
+        "trip_id": "G1_weekday_0_351"
       },
       {
         "time": "10:39",
@@ -1182,6 +1086,18 @@
         "trip_id": "G1_weekday_0_24"
       },
       {
+        "time": "10:41",
+        "headsign": {
+          "en": "Silk Institute",
+          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
+        },
+        "route_id": "G1",
+        "route_name": "Green",
+        "route_color": "009933",
+        "direction_id": 0,
+        "trip_id": "G1_weekday_0_352"
+      },
+      {
         "time": "10:43",
         "headsign": {
           "en": "Madavara"
@@ -1191,6 +1107,18 @@
         "route_color": "009933",
         "direction_id": 1,
         "trip_id": "G1_weekday_1_229"
+      },
+      {
+        "time": "10:46",
+        "headsign": {
+          "en": "Silk Institute",
+          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
+        },
+        "route_id": "G1",
+        "route_name": "Green",
+        "route_color": "009933",
+        "direction_id": 0,
+        "trip_id": "G1_weekday_0_353"
       },
       {
         "time": "10:49",
@@ -1205,6 +1133,18 @@
         "trip_id": "G1_weekday_0_25"
       },
       {
+        "time": "10:51",
+        "headsign": {
+          "en": "Silk Institute",
+          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
+        },
+        "route_id": "G1",
+        "route_name": "Green",
+        "route_color": "009933",
+        "direction_id": 0,
+        "trip_id": "G1_weekday_0_354"
+      },
+      {
         "time": "10:53",
         "headsign": {
           "en": "Madavara"
@@ -1214,6 +1154,18 @@
         "route_color": "009933",
         "direction_id": 1,
         "trip_id": "G1_weekday_1_230"
+      },
+      {
+        "time": "10:56",
+        "headsign": {
+          "en": "Silk Institute",
+          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
+        },
+        "route_id": "G1",
+        "route_name": "Green",
+        "route_color": "009933",
+        "direction_id": 0,
+        "trip_id": "G1_weekday_0_355"
       },
       {
         "time": "10:59",
@@ -1228,6 +1180,18 @@
         "trip_id": "G1_weekday_0_26"
       },
       {
+        "time": "11:01",
+        "headsign": {
+          "en": "Silk Institute",
+          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
+        },
+        "route_id": "G1",
+        "route_name": "Green",
+        "route_color": "009933",
+        "direction_id": 0,
+        "trip_id": "G1_weekday_0_356"
+      },
+      {
         "time": "11:03",
         "headsign": {
           "en": "Madavara"
@@ -1237,6 +1201,18 @@
         "route_color": "009933",
         "direction_id": 1,
         "trip_id": "G1_weekday_1_231"
+      },
+      {
+        "time": "11:06",
+        "headsign": {
+          "en": "Silk Institute",
+          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
+        },
+        "route_id": "G1",
+        "route_name": "Green",
+        "route_color": "009933",
+        "direction_id": 0,
+        "trip_id": "G1_weekday_0_357"
       },
       {
         "time": "11:09",
@@ -1251,6 +1227,18 @@
         "trip_id": "G1_weekday_0_27"
       },
       {
+        "time": "11:11",
+        "headsign": {
+          "en": "Silk Institute",
+          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
+        },
+        "route_id": "G1",
+        "route_name": "Green",
+        "route_color": "009933",
+        "direction_id": 0,
+        "trip_id": "G1_weekday_0_358"
+      },
+      {
         "time": "11:12",
         "headsign": {
           "en": "Madavara"
@@ -1260,6 +1248,18 @@
         "route_color": "009933",
         "direction_id": 1,
         "trip_id": "G1_weekday_1_232"
+      },
+      {
+        "time": "11:16",
+        "headsign": {
+          "en": "Silk Institute",
+          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
+        },
+        "route_id": "G1",
+        "route_name": "Green",
+        "route_color": "009933",
+        "direction_id": 0,
+        "trip_id": "G1_weekday_0_359"
       },
       {
         "time": "11:19",
@@ -2113,18 +2113,6 @@
         "trip_id": "G1_weekday_0_64"
       },
       {
-        "time": "16:11",
-        "headsign": {
-          "en": "Peenya Industry",
-          "kn": "ಪೀಣ್ಯ ಇಂಡಸ್ಟ್ರಿ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_weekday_1_360"
-      },
-      {
         "time": "16:16",
         "headsign": {
           "en": "Madavara"
@@ -2134,18 +2122,6 @@
         "route_color": "009933",
         "direction_id": 1,
         "trip_id": "G1_weekday_1_270"
-      },
-      {
-        "time": "16:16",
-        "headsign": {
-          "en": "Peenya Industry",
-          "kn": "ಪೀಣ್ಯ ಇಂಡಸ್ಟ್ರಿ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_weekday_1_361"
       },
       {
         "time": "16:17",
@@ -2158,18 +2134,6 @@
         "route_color": "009933",
         "direction_id": 0,
         "trip_id": "G1_weekday_0_65"
-      },
-      {
-        "time": "16:21",
-        "headsign": {
-          "en": "Peenya Industry",
-          "kn": "ಪೀಣ್ಯ ಇಂಡಸ್ಟ್ರಿ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_weekday_1_362"
       },
       {
         "time": "16:24",
@@ -2195,30 +2159,6 @@
         "trip_id": "G1_weekday_0_66"
       },
       {
-        "time": "16:26",
-        "headsign": {
-          "en": "Peenya Industry",
-          "kn": "ಪೀಣ್ಯ ಇಂಡಸ್ಟ್ರಿ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_weekday_1_363"
-      },
-      {
-        "time": "16:31",
-        "headsign": {
-          "en": "Peenya Industry",
-          "kn": "ಪೀಣ್ಯ ಇಂಡಸ್ಟ್ರಿ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_weekday_1_364"
-      },
-      {
         "time": "16:32",
         "headsign": {
           "en": "Madavara"
@@ -2242,18 +2182,6 @@
         "trip_id": "G1_weekday_0_67"
       },
       {
-        "time": "16:36",
-        "headsign": {
-          "en": "Peenya Industry",
-          "kn": "ಪೀಣ್ಯ ಇಂಡಸ್ಟ್ರಿ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_weekday_1_365"
-      },
-      {
         "time": "16:40",
         "headsign": {
           "en": "Madavara"
@@ -2275,30 +2203,6 @@
         "route_color": "009933",
         "direction_id": 0,
         "trip_id": "G1_weekday_0_68"
-      },
-      {
-        "time": "16:41",
-        "headsign": {
-          "en": "Peenya Industry",
-          "kn": "ಪೀಣ್ಯ ಇಂಡಸ್ಟ್ರಿ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_weekday_1_366"
-      },
-      {
-        "time": "16:46",
-        "headsign": {
-          "en": "Peenya Industry",
-          "kn": "ಪೀಣ್ಯ ಇಂಡಸ್ಟ್ರಿ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_weekday_1_367"
       },
       {
         "time": "16:48",
@@ -2335,30 +2239,6 @@
         "trip_id": "G1_weekday_1_275"
       },
       {
-        "time": "16:51",
-        "headsign": {
-          "en": "Peenya Industry",
-          "kn": "ಪೀಣ್ಯ ಇಂಡಸ್ಟ್ರಿ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_weekday_1_368"
-      },
-      {
-        "time": "16:56",
-        "headsign": {
-          "en": "Peenya Industry",
-          "kn": "ಪೀಣ್ಯ ಇಂಡಸ್ಟ್ರಿ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_weekday_1_369"
-      },
-      {
         "time": "16:57",
         "headsign": {
           "en": "Silk Institute",
@@ -2382,18 +2262,6 @@
         "trip_id": "G1_weekday_1_276"
       },
       {
-        "time": "17:01",
-        "headsign": {
-          "en": "Peenya Industry",
-          "kn": "ಪೀಣ್ಯ ಇಂಡಸ್ಟ್ರಿ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_weekday_1_370"
-      },
-      {
         "time": "17:05",
         "headsign": {
           "en": "Silk Institute",
@@ -2406,18 +2274,6 @@
         "trip_id": "G1_weekday_0_71"
       },
       {
-        "time": "17:06",
-        "headsign": {
-          "en": "Peenya Industry",
-          "kn": "ಪೀಣ್ಯ ಇಂಡಸ್ಟ್ರಿ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_weekday_1_371"
-      },
-      {
         "time": "17:11",
         "headsign": {
           "en": "Madavara"
@@ -2427,18 +2283,6 @@
         "route_color": "009933",
         "direction_id": 1,
         "trip_id": "G1_weekday_1_277"
-      },
-      {
-        "time": "17:11",
-        "headsign": {
-          "en": "Peenya Industry",
-          "kn": "ಪೀಣ್ಯ ಇಂಡಸ್ಟ್ರಿ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_weekday_1_372"
       },
       {
         "time": "17:15",
@@ -2453,18 +2297,6 @@
         "trip_id": "G1_weekday_0_72"
       },
       {
-        "time": "17:16",
-        "headsign": {
-          "en": "Peenya Industry",
-          "kn": "ಪೀಣ್ಯ ಇಂಡಸ್ಟ್ರಿ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_weekday_1_373"
-      },
-      {
         "time": "17:21",
         "headsign": {
           "en": "Madavara"
@@ -2474,18 +2306,6 @@
         "route_color": "009933",
         "direction_id": 1,
         "trip_id": "G1_weekday_1_278"
-      },
-      {
-        "time": "17:21",
-        "headsign": {
-          "en": "Peenya Industry",
-          "kn": "ಪೀಣ್ಯ ಇಂಡಸ್ಟ್ರಿ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_weekday_1_374"
       },
       {
         "time": "17:25",
@@ -2500,18 +2320,6 @@
         "trip_id": "G1_weekday_0_73"
       },
       {
-        "time": "17:26",
-        "headsign": {
-          "en": "Peenya Industry",
-          "kn": "ಪೀಣ್ಯ ಇಂಡಸ್ಟ್ರಿ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_weekday_1_375"
-      },
-      {
         "time": "17:31",
         "headsign": {
           "en": "Madavara"
@@ -2521,18 +2329,6 @@
         "route_color": "009933",
         "direction_id": 1,
         "trip_id": "G1_weekday_1_279"
-      },
-      {
-        "time": "17:31",
-        "headsign": {
-          "en": "Peenya Industry",
-          "kn": "ಪೀಣ್ಯ ಇಂಡಸ್ಟ್ರಿ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_weekday_1_376"
       },
       {
         "time": "17:35",
@@ -2547,16 +2343,28 @@
         "trip_id": "G1_weekday_0_74"
       },
       {
-        "time": "17:36",
+        "time": "17:35",
         "headsign": {
-          "en": "Peenya Industry",
-          "kn": "ಪೀಣ್ಯ ಇಂಡಸ್ಟ್ರಿ"
+          "en": "Silk Institute",
+          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
         },
         "route_id": "G1",
         "route_name": "Green",
         "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_weekday_1_377"
+        "direction_id": 0,
+        "trip_id": "G1_weekday_0_360"
+      },
+      {
+        "time": "17:40",
+        "headsign": {
+          "en": "Silk Institute",
+          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
+        },
+        "route_id": "G1",
+        "route_name": "Green",
+        "route_color": "009933",
+        "direction_id": 0,
+        "trip_id": "G1_weekday_0_361"
       },
       {
         "time": "17:41",
@@ -2568,18 +2376,6 @@
         "route_color": "009933",
         "direction_id": 1,
         "trip_id": "G1_weekday_1_280"
-      },
-      {
-        "time": "17:41",
-        "headsign": {
-          "en": "Peenya Industry",
-          "kn": "ಪೀಣ್ಯ ಇಂಡಸ್ಟ್ರಿ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_weekday_1_378"
       },
       {
         "time": "17:45",
@@ -2594,16 +2390,28 @@
         "trip_id": "G1_weekday_0_75"
       },
       {
-        "time": "17:46",
+        "time": "17:45",
         "headsign": {
-          "en": "Peenya Industry",
-          "kn": "ಪೀಣ್ಯ ಇಂಡಸ್ಟ್ರಿ"
+          "en": "Silk Institute",
+          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
         },
         "route_id": "G1",
         "route_name": "Green",
         "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_weekday_1_379"
+        "direction_id": 0,
+        "trip_id": "G1_weekday_0_362"
+      },
+      {
+        "time": "17:50",
+        "headsign": {
+          "en": "Silk Institute",
+          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
+        },
+        "route_id": "G1",
+        "route_name": "Green",
+        "route_color": "009933",
+        "direction_id": 0,
+        "trip_id": "G1_weekday_0_363"
       },
       {
         "time": "17:51",
@@ -2615,18 +2423,6 @@
         "route_color": "009933",
         "direction_id": 1,
         "trip_id": "G1_weekday_1_281"
-      },
-      {
-        "time": "17:51",
-        "headsign": {
-          "en": "Peenya Industry",
-          "kn": "ಪೀಣ್ಯ ಇಂಡಸ್ಟ್ರಿ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_weekday_1_380"
       },
       {
         "time": "17:55",
@@ -2641,16 +2437,28 @@
         "trip_id": "G1_weekday_0_76"
       },
       {
-        "time": "17:56",
+        "time": "17:55",
         "headsign": {
-          "en": "Peenya Industry",
-          "kn": "ಪೀಣ್ಯ ಇಂಡಸ್ಟ್ರಿ"
+          "en": "Silk Institute",
+          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
         },
         "route_id": "G1",
         "route_name": "Green",
         "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_weekday_1_381"
+        "direction_id": 0,
+        "trip_id": "G1_weekday_0_364"
+      },
+      {
+        "time": "18:00",
+        "headsign": {
+          "en": "Silk Institute",
+          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
+        },
+        "route_id": "G1",
+        "route_name": "Green",
+        "route_color": "009933",
+        "direction_id": 0,
+        "trip_id": "G1_weekday_0_365"
       },
       {
         "time": "18:01",
@@ -2662,18 +2470,6 @@
         "route_color": "009933",
         "direction_id": 1,
         "trip_id": "G1_weekday_1_282"
-      },
-      {
-        "time": "18:01",
-        "headsign": {
-          "en": "Peenya Industry",
-          "kn": "ಪೀಣ್ಯ ಇಂಡಸ್ಟ್ರಿ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_weekday_1_382"
       },
       {
         "time": "18:05",
@@ -2688,16 +2484,28 @@
         "trip_id": "G1_weekday_0_77"
       },
       {
-        "time": "18:06",
+        "time": "18:05",
         "headsign": {
-          "en": "Peenya Industry",
-          "kn": "ಪೀಣ್ಯ ಇಂಡಸ್ಟ್ರಿ"
+          "en": "Silk Institute",
+          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
         },
         "route_id": "G1",
         "route_name": "Green",
         "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_weekday_1_383"
+        "direction_id": 0,
+        "trip_id": "G1_weekday_0_366"
+      },
+      {
+        "time": "18:10",
+        "headsign": {
+          "en": "Silk Institute",
+          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
+        },
+        "route_id": "G1",
+        "route_name": "Green",
+        "route_color": "009933",
+        "direction_id": 0,
+        "trip_id": "G1_weekday_0_367"
       },
       {
         "time": "18:11",
@@ -2709,18 +2517,6 @@
         "route_color": "009933",
         "direction_id": 1,
         "trip_id": "G1_weekday_1_283"
-      },
-      {
-        "time": "18:11",
-        "headsign": {
-          "en": "Peenya Industry",
-          "kn": "ಪೀಣ್ಯ ಇಂಡಸ್ಟ್ರಿ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_weekday_1_384"
       },
       {
         "time": "18:15",
@@ -2735,16 +2531,28 @@
         "trip_id": "G1_weekday_0_78"
       },
       {
-        "time": "18:16",
+        "time": "18:15",
         "headsign": {
-          "en": "Peenya Industry",
-          "kn": "ಪೀಣ್ಯ ಇಂಡಸ್ಟ್ರಿ"
+          "en": "Silk Institute",
+          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
         },
         "route_id": "G1",
         "route_name": "Green",
         "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_weekday_1_385"
+        "direction_id": 0,
+        "trip_id": "G1_weekday_0_368"
+      },
+      {
+        "time": "18:20",
+        "headsign": {
+          "en": "Silk Institute",
+          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
+        },
+        "route_id": "G1",
+        "route_name": "Green",
+        "route_color": "009933",
+        "direction_id": 0,
+        "trip_id": "G1_weekday_0_369"
       },
       {
         "time": "18:21",
@@ -2756,18 +2564,6 @@
         "route_color": "009933",
         "direction_id": 1,
         "trip_id": "G1_weekday_1_284"
-      },
-      {
-        "time": "18:21",
-        "headsign": {
-          "en": "Peenya Industry",
-          "kn": "ಪೀಣ್ಯ ಇಂಡಸ್ಟ್ರಿ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_weekday_1_386"
       },
       {
         "time": "18:25",
@@ -2782,16 +2578,28 @@
         "trip_id": "G1_weekday_0_79"
       },
       {
-        "time": "18:26",
+        "time": "18:25",
         "headsign": {
-          "en": "Peenya Industry",
-          "kn": "ಪೀಣ್ಯ ಇಂಡಸ್ಟ್ರಿ"
+          "en": "Silk Institute",
+          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
         },
         "route_id": "G1",
         "route_name": "Green",
         "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_weekday_1_387"
+        "direction_id": 0,
+        "trip_id": "G1_weekday_0_370"
+      },
+      {
+        "time": "18:30",
+        "headsign": {
+          "en": "Silk Institute",
+          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
+        },
+        "route_id": "G1",
+        "route_name": "Green",
+        "route_color": "009933",
+        "direction_id": 0,
+        "trip_id": "G1_weekday_0_371"
       },
       {
         "time": "18:31",
@@ -2803,18 +2611,6 @@
         "route_color": "009933",
         "direction_id": 1,
         "trip_id": "G1_weekday_1_285"
-      },
-      {
-        "time": "18:31",
-        "headsign": {
-          "en": "Peenya Industry",
-          "kn": "ಪೀಣ್ಯ ಇಂಡಸ್ಟ್ರಿ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_weekday_1_388"
       },
       {
         "time": "18:35",
@@ -2829,16 +2625,28 @@
         "trip_id": "G1_weekday_0_80"
       },
       {
-        "time": "18:36",
+        "time": "18:35",
         "headsign": {
-          "en": "Peenya Industry",
-          "kn": "ಪೀಣ್ಯ ಇಂಡಸ್ಟ್ರಿ"
+          "en": "Silk Institute",
+          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
         },
         "route_id": "G1",
         "route_name": "Green",
         "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_weekday_1_389"
+        "direction_id": 0,
+        "trip_id": "G1_weekday_0_372"
+      },
+      {
+        "time": "18:40",
+        "headsign": {
+          "en": "Silk Institute",
+          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
+        },
+        "route_id": "G1",
+        "route_name": "Green",
+        "route_color": "009933",
+        "direction_id": 0,
+        "trip_id": "G1_weekday_0_373"
       },
       {
         "time": "18:41",
@@ -2850,18 +2658,6 @@
         "route_color": "009933",
         "direction_id": 1,
         "trip_id": "G1_weekday_1_286"
-      },
-      {
-        "time": "18:41",
-        "headsign": {
-          "en": "Peenya Industry",
-          "kn": "ಪೀಣ್ಯ ಇಂಡಸ್ಟ್ರಿ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_weekday_1_390"
       },
       {
         "time": "18:45",
@@ -2876,16 +2672,28 @@
         "trip_id": "G1_weekday_0_81"
       },
       {
-        "time": "18:46",
+        "time": "18:45",
         "headsign": {
-          "en": "Peenya Industry",
-          "kn": "ಪೀಣ್ಯ ಇಂಡಸ್ಟ್ರಿ"
+          "en": "Silk Institute",
+          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
         },
         "route_id": "G1",
         "route_name": "Green",
         "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_weekday_1_391"
+        "direction_id": 0,
+        "trip_id": "G1_weekday_0_374"
+      },
+      {
+        "time": "18:50",
+        "headsign": {
+          "en": "Silk Institute",
+          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
+        },
+        "route_id": "G1",
+        "route_name": "Green",
+        "route_color": "009933",
+        "direction_id": 0,
+        "trip_id": "G1_weekday_0_375"
       },
       {
         "time": "18:51",
@@ -2897,18 +2705,6 @@
         "route_color": "009933",
         "direction_id": 1,
         "trip_id": "G1_weekday_1_287"
-      },
-      {
-        "time": "18:51",
-        "headsign": {
-          "en": "Peenya Industry",
-          "kn": "ಪೀಣ್ಯ ಇಂಡಸ್ಟ್ರಿ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_weekday_1_392"
       },
       {
         "time": "18:55",
@@ -2923,16 +2719,28 @@
         "trip_id": "G1_weekday_0_82"
       },
       {
-        "time": "18:56",
+        "time": "18:55",
         "headsign": {
-          "en": "Peenya Industry",
-          "kn": "ಪೀಣ್ಯ ಇಂಡಸ್ಟ್ರಿ"
+          "en": "Silk Institute",
+          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
         },
         "route_id": "G1",
         "route_name": "Green",
         "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_weekday_1_393"
+        "direction_id": 0,
+        "trip_id": "G1_weekday_0_376"
+      },
+      {
+        "time": "19:00",
+        "headsign": {
+          "en": "Silk Institute",
+          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
+        },
+        "route_id": "G1",
+        "route_name": "Green",
+        "route_color": "009933",
+        "direction_id": 0,
+        "trip_id": "G1_weekday_0_377"
       },
       {
         "time": "19:01",
@@ -2944,18 +2752,6 @@
         "route_color": "009933",
         "direction_id": 1,
         "trip_id": "G1_weekday_1_288"
-      },
-      {
-        "time": "19:01",
-        "headsign": {
-          "en": "Peenya Industry",
-          "kn": "ಪೀಣ್ಯ ಇಂಡಸ್ಟ್ರಿ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_weekday_1_394"
       },
       {
         "time": "19:05",
@@ -2970,16 +2766,28 @@
         "trip_id": "G1_weekday_0_83"
       },
       {
-        "time": "19:06",
+        "time": "19:05",
         "headsign": {
-          "en": "Peenya Industry",
-          "kn": "ಪೀಣ್ಯ ಇಂಡಸ್ಟ್ರಿ"
+          "en": "Silk Institute",
+          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
         },
         "route_id": "G1",
         "route_name": "Green",
         "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_weekday_1_395"
+        "direction_id": 0,
+        "trip_id": "G1_weekday_0_378"
+      },
+      {
+        "time": "19:10",
+        "headsign": {
+          "en": "Silk Institute",
+          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
+        },
+        "route_id": "G1",
+        "route_name": "Green",
+        "route_color": "009933",
+        "direction_id": 0,
+        "trip_id": "G1_weekday_0_379"
       },
       {
         "time": "19:11",
@@ -2991,18 +2799,6 @@
         "route_color": "009933",
         "direction_id": 1,
         "trip_id": "G1_weekday_1_289"
-      },
-      {
-        "time": "19:11",
-        "headsign": {
-          "en": "Peenya Industry",
-          "kn": "ಪೀಣ್ಯ ಇಂಡಸ್ಟ್ರಿ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_weekday_1_396"
       },
       {
         "time": "19:15",
@@ -3017,16 +2813,28 @@
         "trip_id": "G1_weekday_0_84"
       },
       {
-        "time": "19:16",
+        "time": "19:15",
         "headsign": {
-          "en": "Peenya Industry",
-          "kn": "ಪೀಣ್ಯ ಇಂಡಸ್ಟ್ರಿ"
+          "en": "Silk Institute",
+          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
         },
         "route_id": "G1",
         "route_name": "Green",
         "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_weekday_1_397"
+        "direction_id": 0,
+        "trip_id": "G1_weekday_0_380"
+      },
+      {
+        "time": "19:20",
+        "headsign": {
+          "en": "Silk Institute",
+          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
+        },
+        "route_id": "G1",
+        "route_name": "Green",
+        "route_color": "009933",
+        "direction_id": 0,
+        "trip_id": "G1_weekday_0_381"
       },
       {
         "time": "19:21",
@@ -3038,18 +2846,6 @@
         "route_color": "009933",
         "direction_id": 1,
         "trip_id": "G1_weekday_1_290"
-      },
-      {
-        "time": "19:21",
-        "headsign": {
-          "en": "Peenya Industry",
-          "kn": "ಪೀಣ್ಯ ಇಂಡಸ್ಟ್ರಿ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_weekday_1_398"
       },
       {
         "time": "19:25",
@@ -3064,16 +2860,28 @@
         "trip_id": "G1_weekday_0_85"
       },
       {
-        "time": "19:26",
+        "time": "19:25",
         "headsign": {
-          "en": "Peenya Industry",
-          "kn": "ಪೀಣ್ಯ ಇಂಡಸ್ಟ್ರಿ"
+          "en": "Silk Institute",
+          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
         },
         "route_id": "G1",
         "route_name": "Green",
         "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_weekday_1_399"
+        "direction_id": 0,
+        "trip_id": "G1_weekday_0_382"
+      },
+      {
+        "time": "19:30",
+        "headsign": {
+          "en": "Silk Institute",
+          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
+        },
+        "route_id": "G1",
+        "route_name": "Green",
+        "route_color": "009933",
+        "direction_id": 0,
+        "trip_id": "G1_weekday_0_383"
       },
       {
         "time": "19:31",
@@ -3085,18 +2893,6 @@
         "route_color": "009933",
         "direction_id": 1,
         "trip_id": "G1_weekday_1_291"
-      },
-      {
-        "time": "19:31",
-        "headsign": {
-          "en": "Peenya Industry",
-          "kn": "ಪೀಣ್ಯ ಇಂಡಸ್ಟ್ರಿ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_weekday_1_400"
       },
       {
         "time": "19:35",
@@ -3111,16 +2907,28 @@
         "trip_id": "G1_weekday_0_86"
       },
       {
-        "time": "19:36",
+        "time": "19:35",
         "headsign": {
-          "en": "Peenya Industry",
-          "kn": "ಪೀಣ್ಯ ಇಂಡಸ್ಟ್ರಿ"
+          "en": "Silk Institute",
+          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
         },
         "route_id": "G1",
         "route_name": "Green",
         "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_weekday_1_401"
+        "direction_id": 0,
+        "trip_id": "G1_weekday_0_384"
+      },
+      {
+        "time": "19:40",
+        "headsign": {
+          "en": "Silk Institute",
+          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
+        },
+        "route_id": "G1",
+        "route_name": "Green",
+        "route_color": "009933",
+        "direction_id": 0,
+        "trip_id": "G1_weekday_0_385"
       },
       {
         "time": "19:41",
@@ -3134,16 +2942,16 @@
         "trip_id": "G1_weekday_1_292"
       },
       {
-        "time": "19:41",
+        "time": "19:45",
         "headsign": {
-          "en": "Peenya Industry",
-          "kn": "ಪೀಣ್ಯ ಇಂಡಸ್ಟ್ರಿ"
+          "en": "Silk Institute",
+          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
         },
         "route_id": "G1",
         "route_name": "Green",
         "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_weekday_1_402"
+        "direction_id": 0,
+        "trip_id": "G1_weekday_0_87"
       },
       {
         "time": "19:45",
@@ -3155,7 +2963,19 @@
         "route_name": "Green",
         "route_color": "009933",
         "direction_id": 0,
-        "trip_id": "G1_weekday_0_87"
+        "trip_id": "G1_weekday_0_386"
+      },
+      {
+        "time": "19:50",
+        "headsign": {
+          "en": "Silk Institute",
+          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
+        },
+        "route_id": "G1",
+        "route_name": "Green",
+        "route_color": "009933",
+        "direction_id": 0,
+        "trip_id": "G1_weekday_0_387"
       },
       {
         "time": "19:51",
@@ -3181,6 +3001,30 @@
         "trip_id": "G1_weekday_0_88"
       },
       {
+        "time": "19:55",
+        "headsign": {
+          "en": "Silk Institute",
+          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
+        },
+        "route_id": "G1",
+        "route_name": "Green",
+        "route_color": "009933",
+        "direction_id": 0,
+        "trip_id": "G1_weekday_0_388"
+      },
+      {
+        "time": "20:00",
+        "headsign": {
+          "en": "Silk Institute",
+          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
+        },
+        "route_id": "G1",
+        "route_name": "Green",
+        "route_color": "009933",
+        "direction_id": 0,
+        "trip_id": "G1_weekday_0_389"
+      },
+      {
         "time": "20:01",
         "headsign": {
           "en": "Madavara"
@@ -3202,6 +3046,30 @@
         "route_color": "009933",
         "direction_id": 0,
         "trip_id": "G1_weekday_0_89"
+      },
+      {
+        "time": "20:05",
+        "headsign": {
+          "en": "Silk Institute",
+          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
+        },
+        "route_id": "G1",
+        "route_name": "Green",
+        "route_color": "009933",
+        "direction_id": 0,
+        "trip_id": "G1_weekday_0_390"
+      },
+      {
+        "time": "20:10",
+        "headsign": {
+          "en": "Silk Institute",
+          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
+        },
+        "route_id": "G1",
+        "route_name": "Green",
+        "route_color": "009933",
+        "direction_id": 0,
+        "trip_id": "G1_weekday_0_391"
       },
       {
         "time": "20:11",
@@ -3227,6 +3095,30 @@
         "trip_id": "G1_weekday_0_90"
       },
       {
+        "time": "20:15",
+        "headsign": {
+          "en": "Silk Institute",
+          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
+        },
+        "route_id": "G1",
+        "route_name": "Green",
+        "route_color": "009933",
+        "direction_id": 0,
+        "trip_id": "G1_weekday_0_392"
+      },
+      {
+        "time": "20:20",
+        "headsign": {
+          "en": "Silk Institute",
+          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
+        },
+        "route_id": "G1",
+        "route_name": "Green",
+        "route_color": "009933",
+        "direction_id": 0,
+        "trip_id": "G1_weekday_0_393"
+      },
+      {
         "time": "20:21",
         "headsign": {
           "en": "Madavara"
@@ -3248,6 +3140,30 @@
         "route_color": "009933",
         "direction_id": 0,
         "trip_id": "G1_weekday_0_91"
+      },
+      {
+        "time": "20:25",
+        "headsign": {
+          "en": "Silk Institute",
+          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
+        },
+        "route_id": "G1",
+        "route_name": "Green",
+        "route_color": "009933",
+        "direction_id": 0,
+        "trip_id": "G1_weekday_0_394"
+      },
+      {
+        "time": "20:30",
+        "headsign": {
+          "en": "Silk Institute",
+          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
+        },
+        "route_id": "G1",
+        "route_name": "Green",
+        "route_color": "009933",
+        "direction_id": 0,
+        "trip_id": "G1_weekday_0_395"
       },
       {
         "time": "20:31",
@@ -3282,6 +3198,18 @@
         "route_color": "009933",
         "direction_id": 0,
         "trip_id": "G1_weekday_0_92"
+      },
+      {
+        "time": "20:35",
+        "headsign": {
+          "en": "Silk Institute",
+          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
+        },
+        "route_id": "G1",
+        "route_name": "Green",
+        "route_color": "009933",
+        "direction_id": 0,
+        "trip_id": "G1_weekday_0_396"
       },
       {
         "time": "20:40",
@@ -6257,2872 +6185,7 @@
         "trip_id": "G1_sunday_0_109"
       }
     ],
-    "holiday": [
-      {
-        "time": "05:03",
-        "headsign": {
-          "en": "Madavara"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_holiday_1_125"
-      },
-      {
-        "time": "05:18",
-        "headsign": {
-          "en": "Madavara"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_holiday_1_126"
-      },
-      {
-        "time": "05:33",
-        "headsign": {
-          "en": "Madavara"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_holiday_1_127"
-      },
-      {
-        "time": "05:48",
-        "headsign": {
-          "en": "Madavara"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_holiday_1_128"
-      },
-      {
-        "time": "06:03",
-        "headsign": {
-          "en": "Madavara"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_holiday_1_129"
-      },
-      {
-        "time": "06:14",
-        "headsign": {
-          "en": "Silk Institute",
-          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 0,
-        "trip_id": "G1_holiday_0_0"
-      },
-      {
-        "time": "06:18",
-        "headsign": {
-          "en": "Madavara"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_holiday_1_130"
-      },
-      {
-        "time": "06:29",
-        "headsign": {
-          "en": "Silk Institute",
-          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 0,
-        "trip_id": "G1_holiday_0_1"
-      },
-      {
-        "time": "06:33",
-        "headsign": {
-          "en": "Madavara"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_holiday_1_131"
-      },
-      {
-        "time": "06:44",
-        "headsign": {
-          "en": "Silk Institute",
-          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 0,
-        "trip_id": "G1_holiday_0_2"
-      },
-      {
-        "time": "06:48",
-        "headsign": {
-          "en": "Madavara"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_holiday_1_132"
-      },
-      {
-        "time": "06:59",
-        "headsign": {
-          "en": "Silk Institute",
-          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 0,
-        "trip_id": "G1_holiday_0_3"
-      },
-      {
-        "time": "07:03",
-        "headsign": {
-          "en": "Madavara"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_holiday_1_133"
-      },
-      {
-        "time": "07:13",
-        "headsign": {
-          "en": "Madavara"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_holiday_1_134"
-      },
-      {
-        "time": "07:14",
-        "headsign": {
-          "en": "Silk Institute",
-          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 0,
-        "trip_id": "G1_holiday_0_4"
-      },
-      {
-        "time": "07:23",
-        "headsign": {
-          "en": "Madavara"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_holiday_1_135"
-      },
-      {
-        "time": "07:29",
-        "headsign": {
-          "en": "Silk Institute",
-          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 0,
-        "trip_id": "G1_holiday_0_5"
-      },
-      {
-        "time": "07:33",
-        "headsign": {
-          "en": "Madavara"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_holiday_1_136"
-      },
-      {
-        "time": "07:39",
-        "headsign": {
-          "en": "Silk Institute",
-          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 0,
-        "trip_id": "G1_holiday_0_6"
-      },
-      {
-        "time": "07:43",
-        "headsign": {
-          "en": "Madavara"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_holiday_1_137"
-      },
-      {
-        "time": "07:49",
-        "headsign": {
-          "en": "Silk Institute",
-          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 0,
-        "trip_id": "G1_holiday_0_7"
-      },
-      {
-        "time": "07:53",
-        "headsign": {
-          "en": "Madavara"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_holiday_1_138"
-      },
-      {
-        "time": "07:59",
-        "headsign": {
-          "en": "Silk Institute",
-          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 0,
-        "trip_id": "G1_holiday_0_8"
-      },
-      {
-        "time": "08:03",
-        "headsign": {
-          "en": "Madavara"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_holiday_1_139"
-      },
-      {
-        "time": "08:09",
-        "headsign": {
-          "en": "Silk Institute",
-          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 0,
-        "trip_id": "G1_holiday_0_9"
-      },
-      {
-        "time": "08:13",
-        "headsign": {
-          "en": "Madavara"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_holiday_1_140"
-      },
-      {
-        "time": "08:17",
-        "headsign": {
-          "en": "Silk Institute",
-          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 0,
-        "trip_id": "G1_holiday_0_10"
-      },
-      {
-        "time": "08:23",
-        "headsign": {
-          "en": "Madavara"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_holiday_1_141"
-      },
-      {
-        "time": "08:25",
-        "headsign": {
-          "en": "Silk Institute",
-          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 0,
-        "trip_id": "G1_holiday_0_11"
-      },
-      {
-        "time": "08:33",
-        "headsign": {
-          "en": "Silk Institute",
-          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 0,
-        "trip_id": "G1_holiday_0_12"
-      },
-      {
-        "time": "08:33",
-        "headsign": {
-          "en": "Madavara"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_holiday_1_142"
-      },
-      {
-        "time": "08:41",
-        "headsign": {
-          "en": "Silk Institute",
-          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 0,
-        "trip_id": "G1_holiday_0_13"
-      },
-      {
-        "time": "08:43",
-        "headsign": {
-          "en": "Madavara"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_holiday_1_143"
-      },
-      {
-        "time": "08:49",
-        "headsign": {
-          "en": "Silk Institute",
-          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 0,
-        "trip_id": "G1_holiday_0_14"
-      },
-      {
-        "time": "08:51",
-        "headsign": {
-          "en": "Madavara"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_holiday_1_144"
-      },
-      {
-        "time": "08:57",
-        "headsign": {
-          "en": "Silk Institute",
-          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 0,
-        "trip_id": "G1_holiday_0_15"
-      },
-      {
-        "time": "08:59",
-        "headsign": {
-          "en": "Madavara"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_holiday_1_145"
-      },
-      {
-        "time": "09:05",
-        "headsign": {
-          "en": "Silk Institute",
-          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 0,
-        "trip_id": "G1_holiday_0_16"
-      },
-      {
-        "time": "09:07",
-        "headsign": {
-          "en": "Madavara"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_holiday_1_146"
-      },
-      {
-        "time": "09:13",
-        "headsign": {
-          "en": "Silk Institute",
-          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 0,
-        "trip_id": "G1_holiday_0_17"
-      },
-      {
-        "time": "09:15",
-        "headsign": {
-          "en": "Madavara"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_holiday_1_147"
-      },
-      {
-        "time": "09:21",
-        "headsign": {
-          "en": "Silk Institute",
-          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 0,
-        "trip_id": "G1_holiday_0_18"
-      },
-      {
-        "time": "09:23",
-        "headsign": {
-          "en": "Madavara"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_holiday_1_148"
-      },
-      {
-        "time": "09:29",
-        "headsign": {
-          "en": "Silk Institute",
-          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 0,
-        "trip_id": "G1_holiday_0_19"
-      },
-      {
-        "time": "09:31",
-        "headsign": {
-          "en": "Madavara"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_holiday_1_149"
-      },
-      {
-        "time": "09:37",
-        "headsign": {
-          "en": "Silk Institute",
-          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 0,
-        "trip_id": "G1_holiday_0_20"
-      },
-      {
-        "time": "09:39",
-        "headsign": {
-          "en": "Madavara"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_holiday_1_150"
-      },
-      {
-        "time": "09:45",
-        "headsign": {
-          "en": "Silk Institute",
-          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 0,
-        "trip_id": "G1_holiday_0_21"
-      },
-      {
-        "time": "09:47",
-        "headsign": {
-          "en": "Madavara"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_holiday_1_151"
-      },
-      {
-        "time": "09:53",
-        "headsign": {
-          "en": "Silk Institute",
-          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 0,
-        "trip_id": "G1_holiday_0_22"
-      },
-      {
-        "time": "09:55",
-        "headsign": {
-          "en": "Madavara"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_holiday_1_152"
-      },
-      {
-        "time": "10:01",
-        "headsign": {
-          "en": "Silk Institute",
-          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 0,
-        "trip_id": "G1_holiday_0_23"
-      },
-      {
-        "time": "10:03",
-        "headsign": {
-          "en": "Madavara"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_holiday_1_153"
-      },
-      {
-        "time": "10:09",
-        "headsign": {
-          "en": "Silk Institute",
-          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 0,
-        "trip_id": "G1_holiday_0_24"
-      },
-      {
-        "time": "10:11",
-        "headsign": {
-          "en": "Madavara"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_holiday_1_154"
-      },
-      {
-        "time": "10:17",
-        "headsign": {
-          "en": "Silk Institute",
-          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 0,
-        "trip_id": "G1_holiday_0_25"
-      },
-      {
-        "time": "10:19",
-        "headsign": {
-          "en": "Madavara"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_holiday_1_155"
-      },
-      {
-        "time": "10:25",
-        "headsign": {
-          "en": "Silk Institute",
-          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 0,
-        "trip_id": "G1_holiday_0_26"
-      },
-      {
-        "time": "10:27",
-        "headsign": {
-          "en": "Madavara"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_holiday_1_156"
-      },
-      {
-        "time": "10:33",
-        "headsign": {
-          "en": "Silk Institute",
-          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 0,
-        "trip_id": "G1_holiday_0_27"
-      },
-      {
-        "time": "10:35",
-        "headsign": {
-          "en": "Madavara"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_holiday_1_157"
-      },
-      {
-        "time": "10:41",
-        "headsign": {
-          "en": "Silk Institute",
-          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 0,
-        "trip_id": "G1_holiday_0_28"
-      },
-      {
-        "time": "10:43",
-        "headsign": {
-          "en": "Madavara"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_holiday_1_158"
-      },
-      {
-        "time": "10:49",
-        "headsign": {
-          "en": "Silk Institute",
-          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 0,
-        "trip_id": "G1_holiday_0_29"
-      },
-      {
-        "time": "10:51",
-        "headsign": {
-          "en": "Madavara"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_holiday_1_159"
-      },
-      {
-        "time": "10:57",
-        "headsign": {
-          "en": "Silk Institute",
-          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 0,
-        "trip_id": "G1_holiday_0_30"
-      },
-      {
-        "time": "10:59",
-        "headsign": {
-          "en": "Madavara"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_holiday_1_160"
-      },
-      {
-        "time": "11:05",
-        "headsign": {
-          "en": "Silk Institute",
-          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 0,
-        "trip_id": "G1_holiday_0_31"
-      },
-      {
-        "time": "11:07",
-        "headsign": {
-          "en": "Madavara"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_holiday_1_161"
-      },
-      {
-        "time": "11:13",
-        "headsign": {
-          "en": "Silk Institute",
-          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 0,
-        "trip_id": "G1_holiday_0_32"
-      },
-      {
-        "time": "11:15",
-        "headsign": {
-          "en": "Madavara"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_holiday_1_162"
-      },
-      {
-        "time": "11:21",
-        "headsign": {
-          "en": "Silk Institute",
-          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 0,
-        "trip_id": "G1_holiday_0_33"
-      },
-      {
-        "time": "11:23",
-        "headsign": {
-          "en": "Madavara"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_holiday_1_163"
-      },
-      {
-        "time": "11:29",
-        "headsign": {
-          "en": "Silk Institute",
-          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 0,
-        "trip_id": "G1_holiday_0_34"
-      },
-      {
-        "time": "11:31",
-        "headsign": {
-          "en": "Madavara"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_holiday_1_164"
-      },
-      {
-        "time": "11:37",
-        "headsign": {
-          "en": "Silk Institute",
-          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 0,
-        "trip_id": "G1_holiday_0_35"
-      },
-      {
-        "time": "11:39",
-        "headsign": {
-          "en": "Madavara"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_holiday_1_165"
-      },
-      {
-        "time": "11:45",
-        "headsign": {
-          "en": "Silk Institute",
-          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 0,
-        "trip_id": "G1_holiday_0_36"
-      },
-      {
-        "time": "11:47",
-        "headsign": {
-          "en": "Madavara"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_holiday_1_166"
-      },
-      {
-        "time": "11:53",
-        "headsign": {
-          "en": "Silk Institute",
-          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 0,
-        "trip_id": "G1_holiday_0_37"
-      },
-      {
-        "time": "11:55",
-        "headsign": {
-          "en": "Madavara"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_holiday_1_167"
-      },
-      {
-        "time": "12:01",
-        "headsign": {
-          "en": "Silk Institute",
-          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 0,
-        "trip_id": "G1_holiday_0_38"
-      },
-      {
-        "time": "12:03",
-        "headsign": {
-          "en": "Madavara"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_holiday_1_168"
-      },
-      {
-        "time": "12:09",
-        "headsign": {
-          "en": "Silk Institute",
-          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 0,
-        "trip_id": "G1_holiday_0_39"
-      },
-      {
-        "time": "12:11",
-        "headsign": {
-          "en": "Madavara"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_holiday_1_169"
-      },
-      {
-        "time": "12:17",
-        "headsign": {
-          "en": "Silk Institute",
-          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 0,
-        "trip_id": "G1_holiday_0_40"
-      },
-      {
-        "time": "12:19",
-        "headsign": {
-          "en": "Madavara"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_holiday_1_170"
-      },
-      {
-        "time": "12:25",
-        "headsign": {
-          "en": "Silk Institute",
-          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 0,
-        "trip_id": "G1_holiday_0_41"
-      },
-      {
-        "time": "12:27",
-        "headsign": {
-          "en": "Madavara"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_holiday_1_171"
-      },
-      {
-        "time": "12:33",
-        "headsign": {
-          "en": "Silk Institute",
-          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 0,
-        "trip_id": "G1_holiday_0_42"
-      },
-      {
-        "time": "12:35",
-        "headsign": {
-          "en": "Madavara"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_holiday_1_172"
-      },
-      {
-        "time": "12:41",
-        "headsign": {
-          "en": "Silk Institute",
-          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 0,
-        "trip_id": "G1_holiday_0_43"
-      },
-      {
-        "time": "12:43",
-        "headsign": {
-          "en": "Madavara"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_holiday_1_173"
-      },
-      {
-        "time": "12:49",
-        "headsign": {
-          "en": "Silk Institute",
-          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 0,
-        "trip_id": "G1_holiday_0_44"
-      },
-      {
-        "time": "12:51",
-        "headsign": {
-          "en": "Madavara"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_holiday_1_174"
-      },
-      {
-        "time": "12:57",
-        "headsign": {
-          "en": "Silk Institute",
-          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 0,
-        "trip_id": "G1_holiday_0_45"
-      },
-      {
-        "time": "12:59",
-        "headsign": {
-          "en": "Madavara"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_holiday_1_175"
-      },
-      {
-        "time": "13:05",
-        "headsign": {
-          "en": "Silk Institute",
-          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 0,
-        "trip_id": "G1_holiday_0_46"
-      },
-      {
-        "time": "13:07",
-        "headsign": {
-          "en": "Madavara"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_holiday_1_176"
-      },
-      {
-        "time": "13:13",
-        "headsign": {
-          "en": "Silk Institute",
-          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 0,
-        "trip_id": "G1_holiday_0_47"
-      },
-      {
-        "time": "13:15",
-        "headsign": {
-          "en": "Madavara"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_holiday_1_177"
-      },
-      {
-        "time": "13:21",
-        "headsign": {
-          "en": "Silk Institute",
-          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 0,
-        "trip_id": "G1_holiday_0_48"
-      },
-      {
-        "time": "13:23",
-        "headsign": {
-          "en": "Madavara"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_holiday_1_178"
-      },
-      {
-        "time": "13:29",
-        "headsign": {
-          "en": "Silk Institute",
-          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 0,
-        "trip_id": "G1_holiday_0_49"
-      },
-      {
-        "time": "13:31",
-        "headsign": {
-          "en": "Madavara"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_holiday_1_179"
-      },
-      {
-        "time": "13:37",
-        "headsign": {
-          "en": "Silk Institute",
-          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 0,
-        "trip_id": "G1_holiday_0_50"
-      },
-      {
-        "time": "13:39",
-        "headsign": {
-          "en": "Madavara"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_holiday_1_180"
-      },
-      {
-        "time": "13:45",
-        "headsign": {
-          "en": "Silk Institute",
-          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 0,
-        "trip_id": "G1_holiday_0_51"
-      },
-      {
-        "time": "13:47",
-        "headsign": {
-          "en": "Madavara"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_holiday_1_181"
-      },
-      {
-        "time": "13:53",
-        "headsign": {
-          "en": "Silk Institute",
-          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 0,
-        "trip_id": "G1_holiday_0_52"
-      },
-      {
-        "time": "13:55",
-        "headsign": {
-          "en": "Madavara"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_holiday_1_182"
-      },
-      {
-        "time": "14:01",
-        "headsign": {
-          "en": "Silk Institute",
-          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 0,
-        "trip_id": "G1_holiday_0_53"
-      },
-      {
-        "time": "14:03",
-        "headsign": {
-          "en": "Madavara"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_holiday_1_183"
-      },
-      {
-        "time": "14:09",
-        "headsign": {
-          "en": "Silk Institute",
-          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 0,
-        "trip_id": "G1_holiday_0_54"
-      },
-      {
-        "time": "14:11",
-        "headsign": {
-          "en": "Madavara"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_holiday_1_184"
-      },
-      {
-        "time": "14:17",
-        "headsign": {
-          "en": "Silk Institute",
-          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 0,
-        "trip_id": "G1_holiday_0_55"
-      },
-      {
-        "time": "14:19",
-        "headsign": {
-          "en": "Madavara"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_holiday_1_185"
-      },
-      {
-        "time": "14:25",
-        "headsign": {
-          "en": "Silk Institute",
-          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 0,
-        "trip_id": "G1_holiday_0_56"
-      },
-      {
-        "time": "14:27",
-        "headsign": {
-          "en": "Madavara"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_holiday_1_186"
-      },
-      {
-        "time": "14:33",
-        "headsign": {
-          "en": "Silk Institute",
-          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 0,
-        "trip_id": "G1_holiday_0_57"
-      },
-      {
-        "time": "14:35",
-        "headsign": {
-          "en": "Madavara"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_holiday_1_187"
-      },
-      {
-        "time": "14:41",
-        "headsign": {
-          "en": "Silk Institute",
-          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 0,
-        "trip_id": "G1_holiday_0_58"
-      },
-      {
-        "time": "14:43",
-        "headsign": {
-          "en": "Madavara"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_holiday_1_188"
-      },
-      {
-        "time": "14:49",
-        "headsign": {
-          "en": "Silk Institute",
-          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 0,
-        "trip_id": "G1_holiday_0_59"
-      },
-      {
-        "time": "14:51",
-        "headsign": {
-          "en": "Madavara"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_holiday_1_189"
-      },
-      {
-        "time": "14:57",
-        "headsign": {
-          "en": "Silk Institute",
-          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 0,
-        "trip_id": "G1_holiday_0_60"
-      },
-      {
-        "time": "14:59",
-        "headsign": {
-          "en": "Madavara"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_holiday_1_190"
-      },
-      {
-        "time": "15:05",
-        "headsign": {
-          "en": "Silk Institute",
-          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 0,
-        "trip_id": "G1_holiday_0_61"
-      },
-      {
-        "time": "15:07",
-        "headsign": {
-          "en": "Madavara"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_holiday_1_191"
-      },
-      {
-        "time": "15:13",
-        "headsign": {
-          "en": "Silk Institute",
-          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 0,
-        "trip_id": "G1_holiday_0_62"
-      },
-      {
-        "time": "15:15",
-        "headsign": {
-          "en": "Madavara"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_holiday_1_192"
-      },
-      {
-        "time": "15:21",
-        "headsign": {
-          "en": "Silk Institute",
-          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 0,
-        "trip_id": "G1_holiday_0_63"
-      },
-      {
-        "time": "15:23",
-        "headsign": {
-          "en": "Madavara"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_holiday_1_193"
-      },
-      {
-        "time": "15:29",
-        "headsign": {
-          "en": "Silk Institute",
-          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 0,
-        "trip_id": "G1_holiday_0_64"
-      },
-      {
-        "time": "15:31",
-        "headsign": {
-          "en": "Madavara"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_holiday_1_194"
-      },
-      {
-        "time": "15:37",
-        "headsign": {
-          "en": "Silk Institute",
-          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 0,
-        "trip_id": "G1_holiday_0_65"
-      },
-      {
-        "time": "15:39",
-        "headsign": {
-          "en": "Madavara"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_holiday_1_195"
-      },
-      {
-        "time": "15:45",
-        "headsign": {
-          "en": "Silk Institute",
-          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 0,
-        "trip_id": "G1_holiday_0_66"
-      },
-      {
-        "time": "15:47",
-        "headsign": {
-          "en": "Madavara"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_holiday_1_196"
-      },
-      {
-        "time": "15:53",
-        "headsign": {
-          "en": "Silk Institute",
-          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 0,
-        "trip_id": "G1_holiday_0_67"
-      },
-      {
-        "time": "15:55",
-        "headsign": {
-          "en": "Madavara"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_holiday_1_197"
-      },
-      {
-        "time": "16:01",
-        "headsign": {
-          "en": "Silk Institute",
-          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 0,
-        "trip_id": "G1_holiday_0_68"
-      },
-      {
-        "time": "16:03",
-        "headsign": {
-          "en": "Madavara"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_holiday_1_198"
-      },
-      {
-        "time": "16:09",
-        "headsign": {
-          "en": "Silk Institute",
-          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 0,
-        "trip_id": "G1_holiday_0_69"
-      },
-      {
-        "time": "16:11",
-        "headsign": {
-          "en": "Madavara"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_holiday_1_199"
-      },
-      {
-        "time": "16:17",
-        "headsign": {
-          "en": "Silk Institute",
-          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 0,
-        "trip_id": "G1_holiday_0_70"
-      },
-      {
-        "time": "16:19",
-        "headsign": {
-          "en": "Madavara"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_holiday_1_200"
-      },
-      {
-        "time": "16:25",
-        "headsign": {
-          "en": "Silk Institute",
-          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 0,
-        "trip_id": "G1_holiday_0_71"
-      },
-      {
-        "time": "16:27",
-        "headsign": {
-          "en": "Madavara"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_holiday_1_201"
-      },
-      {
-        "time": "16:33",
-        "headsign": {
-          "en": "Silk Institute",
-          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 0,
-        "trip_id": "G1_holiday_0_72"
-      },
-      {
-        "time": "16:35",
-        "headsign": {
-          "en": "Madavara"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_holiday_1_202"
-      },
-      {
-        "time": "16:41",
-        "headsign": {
-          "en": "Silk Institute",
-          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 0,
-        "trip_id": "G1_holiday_0_73"
-      },
-      {
-        "time": "16:43",
-        "headsign": {
-          "en": "Madavara"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_holiday_1_203"
-      },
-      {
-        "time": "16:49",
-        "headsign": {
-          "en": "Silk Institute",
-          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 0,
-        "trip_id": "G1_holiday_0_74"
-      },
-      {
-        "time": "16:51",
-        "headsign": {
-          "en": "Madavara"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_holiday_1_204"
-      },
-      {
-        "time": "16:57",
-        "headsign": {
-          "en": "Silk Institute",
-          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 0,
-        "trip_id": "G1_holiday_0_75"
-      },
-      {
-        "time": "16:59",
-        "headsign": {
-          "en": "Madavara"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_holiday_1_205"
-      },
-      {
-        "time": "17:05",
-        "headsign": {
-          "en": "Silk Institute",
-          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 0,
-        "trip_id": "G1_holiday_0_76"
-      },
-      {
-        "time": "17:07",
-        "headsign": {
-          "en": "Madavara"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_holiday_1_206"
-      },
-      {
-        "time": "17:13",
-        "headsign": {
-          "en": "Silk Institute",
-          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 0,
-        "trip_id": "G1_holiday_0_77"
-      },
-      {
-        "time": "17:15",
-        "headsign": {
-          "en": "Madavara"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_holiday_1_207"
-      },
-      {
-        "time": "17:21",
-        "headsign": {
-          "en": "Silk Institute",
-          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 0,
-        "trip_id": "G1_holiday_0_78"
-      },
-      {
-        "time": "17:23",
-        "headsign": {
-          "en": "Madavara"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_holiday_1_208"
-      },
-      {
-        "time": "17:29",
-        "headsign": {
-          "en": "Silk Institute",
-          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 0,
-        "trip_id": "G1_holiday_0_79"
-      },
-      {
-        "time": "17:31",
-        "headsign": {
-          "en": "Madavara"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_holiday_1_209"
-      },
-      {
-        "time": "17:37",
-        "headsign": {
-          "en": "Silk Institute",
-          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 0,
-        "trip_id": "G1_holiday_0_80"
-      },
-      {
-        "time": "17:39",
-        "headsign": {
-          "en": "Madavara"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_holiday_1_210"
-      },
-      {
-        "time": "17:45",
-        "headsign": {
-          "en": "Silk Institute",
-          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 0,
-        "trip_id": "G1_holiday_0_81"
-      },
-      {
-        "time": "17:47",
-        "headsign": {
-          "en": "Madavara"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_holiday_1_211"
-      },
-      {
-        "time": "17:53",
-        "headsign": {
-          "en": "Silk Institute",
-          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 0,
-        "trip_id": "G1_holiday_0_82"
-      },
-      {
-        "time": "17:55",
-        "headsign": {
-          "en": "Madavara"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_holiday_1_212"
-      },
-      {
-        "time": "18:01",
-        "headsign": {
-          "en": "Silk Institute",
-          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 0,
-        "trip_id": "G1_holiday_0_83"
-      },
-      {
-        "time": "18:03",
-        "headsign": {
-          "en": "Madavara"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_holiday_1_213"
-      },
-      {
-        "time": "18:09",
-        "headsign": {
-          "en": "Silk Institute",
-          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 0,
-        "trip_id": "G1_holiday_0_84"
-      },
-      {
-        "time": "18:11",
-        "headsign": {
-          "en": "Madavara"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_holiday_1_214"
-      },
-      {
-        "time": "18:17",
-        "headsign": {
-          "en": "Silk Institute",
-          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 0,
-        "trip_id": "G1_holiday_0_85"
-      },
-      {
-        "time": "18:19",
-        "headsign": {
-          "en": "Madavara"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_holiday_1_215"
-      },
-      {
-        "time": "18:25",
-        "headsign": {
-          "en": "Silk Institute",
-          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 0,
-        "trip_id": "G1_holiday_0_86"
-      },
-      {
-        "time": "18:27",
-        "headsign": {
-          "en": "Madavara"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_holiday_1_216"
-      },
-      {
-        "time": "18:33",
-        "headsign": {
-          "en": "Silk Institute",
-          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 0,
-        "trip_id": "G1_holiday_0_87"
-      },
-      {
-        "time": "18:35",
-        "headsign": {
-          "en": "Madavara"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_holiday_1_217"
-      },
-      {
-        "time": "18:41",
-        "headsign": {
-          "en": "Silk Institute",
-          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 0,
-        "trip_id": "G1_holiday_0_88"
-      },
-      {
-        "time": "18:43",
-        "headsign": {
-          "en": "Madavara"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_holiday_1_218"
-      },
-      {
-        "time": "18:49",
-        "headsign": {
-          "en": "Silk Institute",
-          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 0,
-        "trip_id": "G1_holiday_0_89"
-      },
-      {
-        "time": "18:51",
-        "headsign": {
-          "en": "Madavara"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_holiday_1_219"
-      },
-      {
-        "time": "18:57",
-        "headsign": {
-          "en": "Silk Institute",
-          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 0,
-        "trip_id": "G1_holiday_0_90"
-      },
-      {
-        "time": "18:59",
-        "headsign": {
-          "en": "Madavara"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_holiday_1_220"
-      },
-      {
-        "time": "19:05",
-        "headsign": {
-          "en": "Silk Institute",
-          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 0,
-        "trip_id": "G1_holiday_0_91"
-      },
-      {
-        "time": "19:07",
-        "headsign": {
-          "en": "Madavara"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_holiday_1_221"
-      },
-      {
-        "time": "19:13",
-        "headsign": {
-          "en": "Silk Institute",
-          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 0,
-        "trip_id": "G1_holiday_0_92"
-      },
-      {
-        "time": "19:15",
-        "headsign": {
-          "en": "Madavara"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_holiday_1_222"
-      },
-      {
-        "time": "19:21",
-        "headsign": {
-          "en": "Silk Institute",
-          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 0,
-        "trip_id": "G1_holiday_0_93"
-      },
-      {
-        "time": "19:23",
-        "headsign": {
-          "en": "Madavara"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_holiday_1_223"
-      },
-      {
-        "time": "19:29",
-        "headsign": {
-          "en": "Silk Institute",
-          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 0,
-        "trip_id": "G1_holiday_0_94"
-      },
-      {
-        "time": "19:31",
-        "headsign": {
-          "en": "Madavara"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_holiday_1_224"
-      },
-      {
-        "time": "19:37",
-        "headsign": {
-          "en": "Silk Institute",
-          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 0,
-        "trip_id": "G1_holiday_0_95"
-      },
-      {
-        "time": "19:39",
-        "headsign": {
-          "en": "Madavara"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_holiday_1_225"
-      },
-      {
-        "time": "19:45",
-        "headsign": {
-          "en": "Silk Institute",
-          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 0,
-        "trip_id": "G1_holiday_0_96"
-      },
-      {
-        "time": "19:47",
-        "headsign": {
-          "en": "Madavara"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_holiday_1_226"
-      },
-      {
-        "time": "19:53",
-        "headsign": {
-          "en": "Silk Institute",
-          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 0,
-        "trip_id": "G1_holiday_0_97"
-      },
-      {
-        "time": "19:55",
-        "headsign": {
-          "en": "Madavara"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_holiday_1_227"
-      },
-      {
-        "time": "20:01",
-        "headsign": {
-          "en": "Silk Institute",
-          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 0,
-        "trip_id": "G1_holiday_0_98"
-      },
-      {
-        "time": "20:03",
-        "headsign": {
-          "en": "Madavara"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_holiday_1_228"
-      },
-      {
-        "time": "20:09",
-        "headsign": {
-          "en": "Silk Institute",
-          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 0,
-        "trip_id": "G1_holiday_0_99"
-      },
-      {
-        "time": "20:11",
-        "headsign": {
-          "en": "Madavara"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_holiday_1_229"
-      },
-      {
-        "time": "20:17",
-        "headsign": {
-          "en": "Silk Institute",
-          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 0,
-        "trip_id": "G1_holiday_0_100"
-      },
-      {
-        "time": "20:19",
-        "headsign": {
-          "en": "Madavara"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_holiday_1_230"
-      },
-      {
-        "time": "20:25",
-        "headsign": {
-          "en": "Silk Institute",
-          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 0,
-        "trip_id": "G1_holiday_0_101"
-      },
-      {
-        "time": "20:27",
-        "headsign": {
-          "en": "Madavara"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_holiday_1_231"
-      },
-      {
-        "time": "20:33",
-        "headsign": {
-          "en": "Silk Institute",
-          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 0,
-        "trip_id": "G1_holiday_0_102"
-      },
-      {
-        "time": "20:35",
-        "headsign": {
-          "en": "Madavara"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_holiday_1_232"
-      },
-      {
-        "time": "20:41",
-        "headsign": {
-          "en": "Silk Institute",
-          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 0,
-        "trip_id": "G1_holiday_0_103"
-      },
-      {
-        "time": "20:43",
-        "headsign": {
-          "en": "Madavara"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_holiday_1_233"
-      },
-      {
-        "time": "20:49",
-        "headsign": {
-          "en": "Silk Institute",
-          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 0,
-        "trip_id": "G1_holiday_0_104"
-      },
-      {
-        "time": "20:51",
-        "headsign": {
-          "en": "Madavara"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_holiday_1_234"
-      },
-      {
-        "time": "20:57",
-        "headsign": {
-          "en": "Silk Institute",
-          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 0,
-        "trip_id": "G1_holiday_0_105"
-      },
-      {
-        "time": "20:59",
-        "headsign": {
-          "en": "Madavara"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_holiday_1_235"
-      },
-      {
-        "time": "21:05",
-        "headsign": {
-          "en": "Silk Institute",
-          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 0,
-        "trip_id": "G1_holiday_0_106"
-      },
-      {
-        "time": "21:07",
-        "headsign": {
-          "en": "Madavara"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_holiday_1_236"
-      },
-      {
-        "time": "21:13",
-        "headsign": {
-          "en": "Silk Institute",
-          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 0,
-        "trip_id": "G1_holiday_0_107"
-      },
-      {
-        "time": "21:15",
-        "headsign": {
-          "en": "Madavara"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_holiday_1_237"
-      },
-      {
-        "time": "21:21",
-        "headsign": {
-          "en": "Silk Institute",
-          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 0,
-        "trip_id": "G1_holiday_0_108"
-      },
-      {
-        "time": "21:23",
-        "headsign": {
-          "en": "Madavara"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_holiday_1_238"
-      },
-      {
-        "time": "21:29",
-        "headsign": {
-          "en": "Silk Institute",
-          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 0,
-        "trip_id": "G1_holiday_0_109"
-      },
-      {
-        "time": "21:31",
-        "headsign": {
-          "en": "Madavara"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_holiday_1_239"
-      },
-      {
-        "time": "21:39",
-        "headsign": {
-          "en": "Silk Institute",
-          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 0,
-        "trip_id": "G1_holiday_0_110"
-      },
-      {
-        "time": "21:39",
-        "headsign": {
-          "en": "Madavara"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_holiday_1_240"
-      },
-      {
-        "time": "21:47",
-        "headsign": {
-          "en": "Madavara"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_holiday_1_241"
-      },
-      {
-        "time": "21:49",
-        "headsign": {
-          "en": "Silk Institute",
-          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 0,
-        "trip_id": "G1_holiday_0_111"
-      },
-      {
-        "time": "21:57",
-        "headsign": {
-          "en": "Madavara"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_holiday_1_242"
-      },
-      {
-        "time": "21:59",
-        "headsign": {
-          "en": "Silk Institute",
-          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 0,
-        "trip_id": "G1_holiday_0_112"
-      },
-      {
-        "time": "22:07",
-        "headsign": {
-          "en": "Madavara"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_holiday_1_243"
-      },
-      {
-        "time": "22:09",
-        "headsign": {
-          "en": "Silk Institute",
-          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 0,
-        "trip_id": "G1_holiday_0_113"
-      },
-      {
-        "time": "22:17",
-        "headsign": {
-          "en": "Madavara"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_holiday_1_244"
-      },
-      {
-        "time": "22:19",
-        "headsign": {
-          "en": "Silk Institute",
-          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 0,
-        "trip_id": "G1_holiday_0_114"
-      },
-      {
-        "time": "22:27",
-        "headsign": {
-          "en": "Madavara"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_holiday_1_245"
-      },
-      {
-        "time": "22:29",
-        "headsign": {
-          "en": "Silk Institute",
-          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 0,
-        "trip_id": "G1_holiday_0_115"
-      },
-      {
-        "time": "22:37",
-        "headsign": {
-          "en": "Madavara"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_holiday_1_246"
-      },
-      {
-        "time": "22:39",
-        "headsign": {
-          "en": "Silk Institute",
-          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 0,
-        "trip_id": "G1_holiday_0_116"
-      },
-      {
-        "time": "22:47",
-        "headsign": {
-          "en": "Madavara"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_holiday_1_247"
-      },
-      {
-        "time": "22:49",
-        "headsign": {
-          "en": "Silk Institute",
-          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 0,
-        "trip_id": "G1_holiday_0_117"
-      },
-      {
-        "time": "22:59",
-        "headsign": {
-          "en": "Silk Institute",
-          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 0,
-        "trip_id": "G1_holiday_0_118"
-      },
-      {
-        "time": "22:59",
-        "headsign": {
-          "en": "Madavara"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 1,
-        "trip_id": "G1_holiday_1_248"
-      },
-      {
-        "time": "23:09",
-        "headsign": {
-          "en": "Silk Institute",
-          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 0,
-        "trip_id": "G1_holiday_0_119"
-      },
-      {
-        "time": "23:19",
-        "headsign": {
-          "en": "Silk Institute",
-          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 0,
-        "trip_id": "G1_holiday_0_120"
-      },
-      {
-        "time": "23:31",
-        "headsign": {
-          "en": "Silk Institute",
-          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 0,
-        "trip_id": "G1_holiday_0_121"
-      },
-      {
-        "time": "23:43",
-        "headsign": {
-          "en": "Silk Institute",
-          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 0,
-        "trip_id": "G1_holiday_0_122"
-      },
-      {
-        "time": "23:58",
-        "headsign": {
-          "en": "Silk Institute",
-          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 0,
-        "trip_id": "G1_holiday_0_123"
-      },
-      {
-        "time": "00:13",
-        "headsign": {
-          "en": "Silk Institute",
-          "kn": "ರೇಷ್ಮೆ ಸಂಸ್ಥೆ"
-        },
-        "route_id": "G1",
-        "route_name": "Green",
-        "route_color": "009933",
-        "direction_id": 0,
-        "trip_id": "G1_holiday_0_124"
-      }
-    ]
+    "holiday": []
   },
   "color": "green"
 }

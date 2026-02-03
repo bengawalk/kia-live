@@ -1412,7 +1412,7 @@
         "route_name": "Yellow",
         "route_color": "FFD700",
         "direction_id": 0,
-        "trip_id": "Y1_sunday_0_58"
+        "trip_id": "Y1_sunday_0_64"
       },
       {
         "time": "07:10",
@@ -1426,145 +1426,7 @@
         "trip_id": "Y1_sunday_1_0"
       },
       {
-        "time": "07:21",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_sunday_0_59"
-      },
-      {
-        "time": "07:32",
-        "headsign": {
-          "en": "Bommasandra"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 1,
-        "trip_id": "Y1_sunday_1_1"
-      },
-      {
-        "time": "07:36",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_sunday_0_60"
-      },
-      {
-        "time": "07:47",
-        "headsign": {
-          "en": "Bommasandra"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 1,
-        "trip_id": "Y1_sunday_1_2"
-      },
-      {
-        "time": "07:51",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_sunday_0_61"
-      },
-      {
-        "time": "08:02",
-        "headsign": {
-          "en": "Bommasandra"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 1,
-        "trip_id": "Y1_sunday_1_3"
-      },
-      {
-        "time": "08:06",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_sunday_0_62"
-      },
-      {
-        "time": "08:17",
-        "headsign": {
-          "en": "Bommasandra"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 1,
-        "trip_id": "Y1_sunday_1_4"
-      },
-      {
-        "time": "08:21",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_sunday_0_63"
-      },
-      {
-        "time": "08:32",
-        "headsign": {
-          "en": "Bommasandra"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 1,
-        "trip_id": "Y1_sunday_1_5"
-      },
-      {
-        "time": "08:36",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_sunday_0_64"
-      },
-      {
-        "time": "08:47",
-        "headsign": {
-          "en": "Bommasandra"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 1,
-        "trip_id": "Y1_sunday_1_6"
-      },
-      {
-        "time": "08:51",
+        "time": "07:24",
         "headsign": {
           "en": "Rashtreeya Vidyalaya Road",
           "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
@@ -1576,7 +1438,7 @@
         "trip_id": "Y1_sunday_0_65"
       },
       {
-        "time": "09:02",
+        "time": "07:28",
         "headsign": {
           "en": "Bommasandra"
         },
@@ -1584,10 +1446,10 @@
         "route_name": "Yellow",
         "route_color": "FFD700",
         "direction_id": 1,
-        "trip_id": "Y1_sunday_1_7"
+        "trip_id": "Y1_sunday_1_1"
       },
       {
-        "time": "09:06",
+        "time": "07:42",
         "headsign": {
           "en": "Rashtreeya Vidyalaya Road",
           "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
@@ -1599,7 +1461,7 @@
         "trip_id": "Y1_sunday_0_66"
       },
       {
-        "time": "09:17",
+        "time": "07:46",
         "headsign": {
           "en": "Bommasandra"
         },
@@ -1607,10 +1469,10 @@
         "route_name": "Yellow",
         "route_color": "FFD700",
         "direction_id": 1,
-        "trip_id": "Y1_sunday_1_8"
+        "trip_id": "Y1_sunday_1_2"
       },
       {
-        "time": "09:21",
+        "time": "08:00",
         "headsign": {
           "en": "Rashtreeya Vidyalaya Road",
           "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
@@ -1622,7 +1484,7 @@
         "trip_id": "Y1_sunday_0_67"
       },
       {
-        "time": "09:32",
+        "time": "08:04",
         "headsign": {
           "en": "Bommasandra"
         },
@@ -1630,10 +1492,10 @@
         "route_name": "Yellow",
         "route_color": "FFD700",
         "direction_id": 1,
-        "trip_id": "Y1_sunday_1_9"
+        "trip_id": "Y1_sunday_1_3"
       },
       {
-        "time": "09:36",
+        "time": "08:18",
         "headsign": {
           "en": "Rashtreeya Vidyalaya Road",
           "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
@@ -1645,7 +1507,7 @@
         "trip_id": "Y1_sunday_0_68"
       },
       {
-        "time": "09:47",
+        "time": "08:22",
         "headsign": {
           "en": "Bommasandra"
         },
@@ -1653,10 +1515,10 @@
         "route_name": "Yellow",
         "route_color": "FFD700",
         "direction_id": 1,
-        "trip_id": "Y1_sunday_1_10"
+        "trip_id": "Y1_sunday_1_4"
       },
       {
-        "time": "09:51",
+        "time": "08:36",
         "headsign": {
           "en": "Rashtreeya Vidyalaya Road",
           "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
@@ -1668,7 +1530,7 @@
         "trip_id": "Y1_sunday_0_69"
       },
       {
-        "time": "10:02",
+        "time": "08:40",
         "headsign": {
           "en": "Bommasandra"
         },
@@ -1676,10 +1538,10 @@
         "route_name": "Yellow",
         "route_color": "FFD700",
         "direction_id": 1,
-        "trip_id": "Y1_sunday_1_11"
+        "trip_id": "Y1_sunday_1_5"
       },
       {
-        "time": "10:06",
+        "time": "08:54",
         "headsign": {
           "en": "Rashtreeya Vidyalaya Road",
           "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
@@ -1691,7 +1553,7 @@
         "trip_id": "Y1_sunday_0_70"
       },
       {
-        "time": "10:17",
+        "time": "08:58",
         "headsign": {
           "en": "Bommasandra"
         },
@@ -1699,10 +1561,10 @@
         "route_name": "Yellow",
         "route_color": "FFD700",
         "direction_id": 1,
-        "trip_id": "Y1_sunday_1_12"
+        "trip_id": "Y1_sunday_1_6"
       },
       {
-        "time": "10:25",
+        "time": "09:12",
         "headsign": {
           "en": "Rashtreeya Vidyalaya Road",
           "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
@@ -1714,7 +1576,7 @@
         "trip_id": "Y1_sunday_0_71"
       },
       {
-        "time": "10:32",
+        "time": "09:16",
         "headsign": {
           "en": "Bommasandra"
         },
@@ -1722,10 +1584,10 @@
         "route_name": "Yellow",
         "route_color": "FFD700",
         "direction_id": 1,
-        "trip_id": "Y1_sunday_1_13"
+        "trip_id": "Y1_sunday_1_7"
       },
       {
-        "time": "10:44",
+        "time": "09:30",
         "headsign": {
           "en": "Rashtreeya Vidyalaya Road",
           "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
@@ -1737,7 +1599,7 @@
         "trip_id": "Y1_sunday_0_72"
       },
       {
-        "time": "10:47",
+        "time": "09:34",
         "headsign": {
           "en": "Bommasandra"
         },
@@ -1745,10 +1607,10 @@
         "route_name": "Yellow",
         "route_color": "FFD700",
         "direction_id": 1,
-        "trip_id": "Y1_sunday_1_14"
+        "trip_id": "Y1_sunday_1_8"
       },
       {
-        "time": "11:03",
+        "time": "09:48",
         "headsign": {
           "en": "Rashtreeya Vidyalaya Road",
           "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
@@ -1760,7 +1622,7 @@
         "trip_id": "Y1_sunday_0_73"
       },
       {
-        "time": "11:06",
+        "time": "09:52",
         "headsign": {
           "en": "Bommasandra"
         },
@@ -1768,10 +1630,10 @@
         "route_name": "Yellow",
         "route_color": "FFD700",
         "direction_id": 1,
-        "trip_id": "Y1_sunday_1_15"
+        "trip_id": "Y1_sunday_1_9"
       },
       {
-        "time": "11:22",
+        "time": "10:06",
         "headsign": {
           "en": "Rashtreeya Vidyalaya Road",
           "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
@@ -1783,7 +1645,7 @@
         "trip_id": "Y1_sunday_0_74"
       },
       {
-        "time": "11:25",
+        "time": "10:10",
         "headsign": {
           "en": "Bommasandra"
         },
@@ -1791,10 +1653,10 @@
         "route_name": "Yellow",
         "route_color": "FFD700",
         "direction_id": 1,
-        "trip_id": "Y1_sunday_1_16"
+        "trip_id": "Y1_sunday_1_10"
       },
       {
-        "time": "11:41",
+        "time": "10:24",
         "headsign": {
           "en": "Rashtreeya Vidyalaya Road",
           "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
@@ -1806,7 +1668,7 @@
         "trip_id": "Y1_sunday_0_75"
       },
       {
-        "time": "11:44",
+        "time": "10:28",
         "headsign": {
           "en": "Bommasandra"
         },
@@ -1814,10 +1676,10 @@
         "route_name": "Yellow",
         "route_color": "FFD700",
         "direction_id": 1,
-        "trip_id": "Y1_sunday_1_17"
+        "trip_id": "Y1_sunday_1_11"
       },
       {
-        "time": "12:00",
+        "time": "10:42",
         "headsign": {
           "en": "Rashtreeya Vidyalaya Road",
           "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
@@ -1829,7 +1691,7 @@
         "trip_id": "Y1_sunday_0_76"
       },
       {
-        "time": "12:03",
+        "time": "10:46",
         "headsign": {
           "en": "Bommasandra"
         },
@@ -1837,10 +1699,10 @@
         "route_name": "Yellow",
         "route_color": "FFD700",
         "direction_id": 1,
-        "trip_id": "Y1_sunday_1_18"
+        "trip_id": "Y1_sunday_1_12"
       },
       {
-        "time": "12:19",
+        "time": "11:00",
         "headsign": {
           "en": "Rashtreeya Vidyalaya Road",
           "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
@@ -1852,7 +1714,7 @@
         "trip_id": "Y1_sunday_0_77"
       },
       {
-        "time": "12:22",
+        "time": "11:04",
         "headsign": {
           "en": "Bommasandra"
         },
@@ -1860,10 +1722,10 @@
         "route_name": "Yellow",
         "route_color": "FFD700",
         "direction_id": 1,
-        "trip_id": "Y1_sunday_1_19"
+        "trip_id": "Y1_sunday_1_13"
       },
       {
-        "time": "12:38",
+        "time": "11:18",
         "headsign": {
           "en": "Rashtreeya Vidyalaya Road",
           "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
@@ -1875,7 +1737,7 @@
         "trip_id": "Y1_sunday_0_78"
       },
       {
-        "time": "12:41",
+        "time": "11:22",
         "headsign": {
           "en": "Bommasandra"
         },
@@ -1883,10 +1745,10 @@
         "route_name": "Yellow",
         "route_color": "FFD700",
         "direction_id": 1,
-        "trip_id": "Y1_sunday_1_20"
+        "trip_id": "Y1_sunday_1_14"
       },
       {
-        "time": "12:57",
+        "time": "11:32",
         "headsign": {
           "en": "Rashtreeya Vidyalaya Road",
           "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
@@ -1898,7 +1760,7 @@
         "trip_id": "Y1_sunday_0_79"
       },
       {
-        "time": "13:00",
+        "time": "11:40",
         "headsign": {
           "en": "Bommasandra"
         },
@@ -1906,10 +1768,10 @@
         "route_name": "Yellow",
         "route_color": "FFD700",
         "direction_id": 1,
-        "trip_id": "Y1_sunday_1_21"
+        "trip_id": "Y1_sunday_1_15"
       },
       {
-        "time": "13:16",
+        "time": "11:46",
         "headsign": {
           "en": "Rashtreeya Vidyalaya Road",
           "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
@@ -1921,7 +1783,7 @@
         "trip_id": "Y1_sunday_0_80"
       },
       {
-        "time": "13:19",
+        "time": "11:58",
         "headsign": {
           "en": "Bommasandra"
         },
@@ -1929,10 +1791,10 @@
         "route_name": "Yellow",
         "route_color": "FFD700",
         "direction_id": 1,
-        "trip_id": "Y1_sunday_1_22"
+        "trip_id": "Y1_sunday_1_16"
       },
       {
-        "time": "13:35",
+        "time": "12:00",
         "headsign": {
           "en": "Rashtreeya Vidyalaya Road",
           "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
@@ -1944,7 +1806,7 @@
         "trip_id": "Y1_sunday_0_81"
       },
       {
-        "time": "13:38",
+        "time": "12:12",
         "headsign": {
           "en": "Bommasandra"
         },
@@ -1952,10 +1814,10 @@
         "route_name": "Yellow",
         "route_color": "FFD700",
         "direction_id": 1,
-        "trip_id": "Y1_sunday_1_23"
+        "trip_id": "Y1_sunday_1_17"
       },
       {
-        "time": "13:54",
+        "time": "12:14",
         "headsign": {
           "en": "Rashtreeya Vidyalaya Road",
           "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
@@ -1967,7 +1829,7 @@
         "trip_id": "Y1_sunday_0_82"
       },
       {
-        "time": "13:57",
+        "time": "12:26",
         "headsign": {
           "en": "Bommasandra"
         },
@@ -1975,10 +1837,10 @@
         "route_name": "Yellow",
         "route_color": "FFD700",
         "direction_id": 1,
-        "trip_id": "Y1_sunday_1_24"
+        "trip_id": "Y1_sunday_1_18"
       },
       {
-        "time": "14:13",
+        "time": "12:28",
         "headsign": {
           "en": "Rashtreeya Vidyalaya Road",
           "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
@@ -1990,7 +1852,7 @@
         "trip_id": "Y1_sunday_0_83"
       },
       {
-        "time": "14:16",
+        "time": "12:40",
         "headsign": {
           "en": "Bommasandra"
         },
@@ -1998,10 +1860,10 @@
         "route_name": "Yellow",
         "route_color": "FFD700",
         "direction_id": 1,
-        "trip_id": "Y1_sunday_1_25"
+        "trip_id": "Y1_sunday_1_19"
       },
       {
-        "time": "14:32",
+        "time": "12:42",
         "headsign": {
           "en": "Rashtreeya Vidyalaya Road",
           "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
@@ -2013,7 +1875,7 @@
         "trip_id": "Y1_sunday_0_84"
       },
       {
-        "time": "14:35",
+        "time": "12:54",
         "headsign": {
           "en": "Bommasandra"
         },
@@ -2021,10 +1883,10 @@
         "route_name": "Yellow",
         "route_color": "FFD700",
         "direction_id": 1,
-        "trip_id": "Y1_sunday_1_26"
+        "trip_id": "Y1_sunday_1_20"
       },
       {
-        "time": "14:51",
+        "time": "12:56",
         "headsign": {
           "en": "Rashtreeya Vidyalaya Road",
           "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
@@ -2036,7 +1898,7 @@
         "trip_id": "Y1_sunday_0_85"
       },
       {
-        "time": "14:54",
+        "time": "13:08",
         "headsign": {
           "en": "Bommasandra"
         },
@@ -2044,10 +1906,10 @@
         "route_name": "Yellow",
         "route_color": "FFD700",
         "direction_id": 1,
-        "trip_id": "Y1_sunday_1_27"
+        "trip_id": "Y1_sunday_1_21"
       },
       {
-        "time": "15:10",
+        "time": "13:10",
         "headsign": {
           "en": "Rashtreeya Vidyalaya Road",
           "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
@@ -2059,7 +1921,7 @@
         "trip_id": "Y1_sunday_0_86"
       },
       {
-        "time": "15:13",
+        "time": "13:22",
         "headsign": {
           "en": "Bommasandra"
         },
@@ -2067,10 +1929,10 @@
         "route_name": "Yellow",
         "route_color": "FFD700",
         "direction_id": 1,
-        "trip_id": "Y1_sunday_1_28"
+        "trip_id": "Y1_sunday_1_22"
       },
       {
-        "time": "15:29",
+        "time": "13:24",
         "headsign": {
           "en": "Rashtreeya Vidyalaya Road",
           "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
@@ -2082,7 +1944,7 @@
         "trip_id": "Y1_sunday_0_87"
       },
       {
-        "time": "15:32",
+        "time": "13:36",
         "headsign": {
           "en": "Bommasandra"
         },
@@ -2090,1239 +1952,7 @@
         "route_name": "Yellow",
         "route_color": "FFD700",
         "direction_id": 1,
-        "trip_id": "Y1_sunday_1_29"
-      },
-      {
-        "time": "15:48",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_sunday_0_88"
-      },
-      {
-        "time": "15:51",
-        "headsign": {
-          "en": "Bommasandra"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 1,
-        "trip_id": "Y1_sunday_1_30"
-      },
-      {
-        "time": "16:07",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_sunday_0_89"
-      },
-      {
-        "time": "16:10",
-        "headsign": {
-          "en": "Bommasandra"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 1,
-        "trip_id": "Y1_sunday_1_31"
-      },
-      {
-        "time": "16:26",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_sunday_0_90"
-      },
-      {
-        "time": "16:29",
-        "headsign": {
-          "en": "Bommasandra"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 1,
-        "trip_id": "Y1_sunday_1_32"
-      },
-      {
-        "time": "16:41",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_sunday_0_91"
-      },
-      {
-        "time": "16:48",
-        "headsign": {
-          "en": "Bommasandra"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 1,
-        "trip_id": "Y1_sunday_1_33"
-      },
-      {
-        "time": "16:56",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_sunday_0_92"
-      },
-      {
-        "time": "17:07",
-        "headsign": {
-          "en": "Bommasandra"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 1,
-        "trip_id": "Y1_sunday_1_34"
-      },
-      {
-        "time": "17:11",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_sunday_0_93"
-      },
-      {
-        "time": "17:22",
-        "headsign": {
-          "en": "Bommasandra"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 1,
-        "trip_id": "Y1_sunday_1_35"
-      },
-      {
-        "time": "17:26",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_sunday_0_94"
-      },
-      {
-        "time": "17:37",
-        "headsign": {
-          "en": "Bommasandra"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 1,
-        "trip_id": "Y1_sunday_1_36"
-      },
-      {
-        "time": "17:41",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_sunday_0_95"
-      },
-      {
-        "time": "17:52",
-        "headsign": {
-          "en": "Bommasandra"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 1,
-        "trip_id": "Y1_sunday_1_37"
-      },
-      {
-        "time": "17:56",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_sunday_0_96"
-      },
-      {
-        "time": "18:07",
-        "headsign": {
-          "en": "Bommasandra"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 1,
-        "trip_id": "Y1_sunday_1_38"
-      },
-      {
-        "time": "18:11",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_sunday_0_97"
-      },
-      {
-        "time": "18:22",
-        "headsign": {
-          "en": "Bommasandra"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 1,
-        "trip_id": "Y1_sunday_1_39"
-      },
-      {
-        "time": "18:26",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_sunday_0_98"
-      },
-      {
-        "time": "18:37",
-        "headsign": {
-          "en": "Bommasandra"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 1,
-        "trip_id": "Y1_sunday_1_40"
-      },
-      {
-        "time": "18:41",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_sunday_0_99"
-      },
-      {
-        "time": "18:52",
-        "headsign": {
-          "en": "Bommasandra"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 1,
-        "trip_id": "Y1_sunday_1_41"
-      },
-      {
-        "time": "18:56",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_sunday_0_100"
-      },
-      {
-        "time": "19:07",
-        "headsign": {
-          "en": "Bommasandra"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 1,
-        "trip_id": "Y1_sunday_1_42"
-      },
-      {
-        "time": "19:11",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_sunday_0_101"
-      },
-      {
-        "time": "19:22",
-        "headsign": {
-          "en": "Bommasandra"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 1,
-        "trip_id": "Y1_sunday_1_43"
-      },
-      {
-        "time": "19:26",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_sunday_0_102"
-      },
-      {
-        "time": "19:37",
-        "headsign": {
-          "en": "Bommasandra"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 1,
-        "trip_id": "Y1_sunday_1_44"
-      },
-      {
-        "time": "19:41",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_sunday_0_103"
-      },
-      {
-        "time": "19:52",
-        "headsign": {
-          "en": "Bommasandra"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 1,
-        "trip_id": "Y1_sunday_1_45"
-      },
-      {
-        "time": "19:56",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_sunday_0_104"
-      },
-      {
-        "time": "20:07",
-        "headsign": {
-          "en": "Bommasandra"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 1,
-        "trip_id": "Y1_sunday_1_46"
-      },
-      {
-        "time": "20:11",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_sunday_0_105"
-      },
-      {
-        "time": "20:22",
-        "headsign": {
-          "en": "Bommasandra"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 1,
-        "trip_id": "Y1_sunday_1_47"
-      },
-      {
-        "time": "20:26",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_sunday_0_106"
-      },
-      {
-        "time": "20:37",
-        "headsign": {
-          "en": "Bommasandra"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 1,
-        "trip_id": "Y1_sunday_1_48"
-      },
-      {
-        "time": "20:41",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_sunday_0_107"
-      },
-      {
-        "time": "20:52",
-        "headsign": {
-          "en": "Bommasandra"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 1,
-        "trip_id": "Y1_sunday_1_49"
-      },
-      {
-        "time": "20:56",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_sunday_0_108"
-      },
-      {
-        "time": "21:07",
-        "headsign": {
-          "en": "Bommasandra"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 1,
-        "trip_id": "Y1_sunday_1_50"
-      },
-      {
-        "time": "21:11",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_sunday_0_109"
-      },
-      {
-        "time": "21:22",
-        "headsign": {
-          "en": "Bommasandra"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 1,
-        "trip_id": "Y1_sunday_1_51"
-      },
-      {
-        "time": "21:26",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_sunday_0_110"
-      },
-      {
-        "time": "21:37",
-        "headsign": {
-          "en": "Bommasandra"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 1,
-        "trip_id": "Y1_sunday_1_52"
-      },
-      {
-        "time": "21:41",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_sunday_0_111"
-      },
-      {
-        "time": "21:52",
-        "headsign": {
-          "en": "Bommasandra"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 1,
-        "trip_id": "Y1_sunday_1_53"
-      },
-      {
-        "time": "21:56",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_sunday_0_112"
-      },
-      {
-        "time": "22:11",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_sunday_0_113"
-      },
-      {
-        "time": "22:12",
-        "headsign": {
-          "en": "Bommasandra"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 1,
-        "trip_id": "Y1_sunday_1_54"
-      },
-      {
-        "time": "22:26",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_sunday_0_114"
-      },
-      {
-        "time": "22:40",
-        "headsign": {
-          "en": "Bommasandra"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 1,
-        "trip_id": "Y1_sunday_1_55"
-      },
-      {
-        "time": "23:10",
-        "headsign": {
-          "en": "Bommasandra"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 1,
-        "trip_id": "Y1_sunday_1_56"
-      },
-      {
-        "time": "23:40",
-        "headsign": {
-          "en": "Bommasandra"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 1,
-        "trip_id": "Y1_sunday_1_57"
-      }
-    ],
-    "holiday": [
-      {
-        "time": "06:06",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_holiday_0_61"
-      },
-      {
-        "time": "06:10",
-        "headsign": {
-          "en": "Bommasandra"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 1,
-        "trip_id": "Y1_holiday_1_0"
-      },
-      {
-        "time": "06:31",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_holiday_0_62"
-      },
-      {
-        "time": "06:35",
-        "headsign": {
-          "en": "Bommasandra"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 1,
-        "trip_id": "Y1_holiday_1_1"
-      },
-      {
-        "time": "06:46",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_holiday_0_63"
-      },
-      {
-        "time": "06:57",
-        "headsign": {
-          "en": "Bommasandra"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 1,
-        "trip_id": "Y1_holiday_1_2"
-      },
-      {
-        "time": "07:01",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_holiday_0_64"
-      },
-      {
-        "time": "07:12",
-        "headsign": {
-          "en": "Bommasandra"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 1,
-        "trip_id": "Y1_holiday_1_3"
-      },
-      {
-        "time": "07:16",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_holiday_0_65"
-      },
-      {
-        "time": "07:27",
-        "headsign": {
-          "en": "Bommasandra"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 1,
-        "trip_id": "Y1_holiday_1_4"
-      },
-      {
-        "time": "07:31",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_holiday_0_66"
-      },
-      {
-        "time": "07:42",
-        "headsign": {
-          "en": "Bommasandra"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 1,
-        "trip_id": "Y1_holiday_1_5"
-      },
-      {
-        "time": "07:46",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_holiday_0_67"
-      },
-      {
-        "time": "07:57",
-        "headsign": {
-          "en": "Bommasandra"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 1,
-        "trip_id": "Y1_holiday_1_6"
-      },
-      {
-        "time": "08:01",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_holiday_0_68"
-      },
-      {
-        "time": "08:12",
-        "headsign": {
-          "en": "Bommasandra"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 1,
-        "trip_id": "Y1_holiday_1_7"
-      },
-      {
-        "time": "08:16",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_holiday_0_69"
-      },
-      {
-        "time": "08:27",
-        "headsign": {
-          "en": "Bommasandra"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 1,
-        "trip_id": "Y1_holiday_1_8"
-      },
-      {
-        "time": "08:31",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_holiday_0_70"
-      },
-      {
-        "time": "08:42",
-        "headsign": {
-          "en": "Bommasandra"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 1,
-        "trip_id": "Y1_holiday_1_9"
-      },
-      {
-        "time": "08:46",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_holiday_0_71"
-      },
-      {
-        "time": "08:57",
-        "headsign": {
-          "en": "Bommasandra"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 1,
-        "trip_id": "Y1_holiday_1_10"
-      },
-      {
-        "time": "09:01",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_holiday_0_72"
-      },
-      {
-        "time": "09:12",
-        "headsign": {
-          "en": "Bommasandra"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 1,
-        "trip_id": "Y1_holiday_1_11"
-      },
-      {
-        "time": "09:16",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_holiday_0_73"
-      },
-      {
-        "time": "09:27",
-        "headsign": {
-          "en": "Bommasandra"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 1,
-        "trip_id": "Y1_holiday_1_12"
-      },
-      {
-        "time": "09:31",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_holiday_0_74"
-      },
-      {
-        "time": "09:42",
-        "headsign": {
-          "en": "Bommasandra"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 1,
-        "trip_id": "Y1_holiday_1_13"
-      },
-      {
-        "time": "09:50",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_holiday_0_75"
-      },
-      {
-        "time": "09:57",
-        "headsign": {
-          "en": "Bommasandra"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 1,
-        "trip_id": "Y1_holiday_1_14"
-      },
-      {
-        "time": "10:09",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_holiday_0_76"
-      },
-      {
-        "time": "10:12",
-        "headsign": {
-          "en": "Bommasandra"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 1,
-        "trip_id": "Y1_holiday_1_15"
-      },
-      {
-        "time": "10:28",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_holiday_0_77"
-      },
-      {
-        "time": "10:31",
-        "headsign": {
-          "en": "Bommasandra"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 1,
-        "trip_id": "Y1_holiday_1_16"
-      },
-      {
-        "time": "10:47",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_holiday_0_78"
-      },
-      {
-        "time": "10:50",
-        "headsign": {
-          "en": "Bommasandra"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 1,
-        "trip_id": "Y1_holiday_1_17"
-      },
-      {
-        "time": "11:06",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_holiday_0_79"
-      },
-      {
-        "time": "11:09",
-        "headsign": {
-          "en": "Bommasandra"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 1,
-        "trip_id": "Y1_holiday_1_18"
-      },
-      {
-        "time": "11:25",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_holiday_0_80"
-      },
-      {
-        "time": "11:28",
-        "headsign": {
-          "en": "Bommasandra"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 1,
-        "trip_id": "Y1_holiday_1_19"
-      },
-      {
-        "time": "11:44",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_holiday_0_81"
-      },
-      {
-        "time": "11:47",
-        "headsign": {
-          "en": "Bommasandra"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 1,
-        "trip_id": "Y1_holiday_1_20"
-      },
-      {
-        "time": "12:03",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_holiday_0_82"
-      },
-      {
-        "time": "12:06",
-        "headsign": {
-          "en": "Bommasandra"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 1,
-        "trip_id": "Y1_holiday_1_21"
-      },
-      {
-        "time": "12:22",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_holiday_0_83"
-      },
-      {
-        "time": "12:25",
-        "headsign": {
-          "en": "Bommasandra"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 1,
-        "trip_id": "Y1_holiday_1_22"
-      },
-      {
-        "time": "12:41",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_holiday_0_84"
-      },
-      {
-        "time": "12:44",
-        "headsign": {
-          "en": "Bommasandra"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 1,
-        "trip_id": "Y1_holiday_1_23"
-      },
-      {
-        "time": "13:00",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_holiday_0_85"
-      },
-      {
-        "time": "13:03",
-        "headsign": {
-          "en": "Bommasandra"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 1,
-        "trip_id": "Y1_holiday_1_24"
-      },
-      {
-        "time": "13:19",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_holiday_0_86"
-      },
-      {
-        "time": "13:22",
-        "headsign": {
-          "en": "Bommasandra"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 1,
-        "trip_id": "Y1_holiday_1_25"
+        "trip_id": "Y1_sunday_1_23"
       },
       {
         "time": "13:38",
@@ -3334,10 +1964,10 @@
         "route_name": "Yellow",
         "route_color": "FFD700",
         "direction_id": 0,
-        "trip_id": "Y1_holiday_0_87"
+        "trip_id": "Y1_sunday_0_88"
       },
       {
-        "time": "13:41",
+        "time": "13:50",
         "headsign": {
           "en": "Bommasandra"
         },
@@ -3345,10 +1975,10 @@
         "route_name": "Yellow",
         "route_color": "FFD700",
         "direction_id": 1,
-        "trip_id": "Y1_holiday_1_26"
+        "trip_id": "Y1_sunday_1_24"
       },
       {
-        "time": "13:57",
+        "time": "13:52",
         "headsign": {
           "en": "Rashtreeya Vidyalaya Road",
           "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
@@ -3357,10 +1987,10 @@
         "route_name": "Yellow",
         "route_color": "FFD700",
         "direction_id": 0,
-        "trip_id": "Y1_holiday_0_88"
+        "trip_id": "Y1_sunday_0_89"
       },
       {
-        "time": "14:00",
+        "time": "14:04",
         "headsign": {
           "en": "Bommasandra"
         },
@@ -3368,10 +1998,10 @@
         "route_name": "Yellow",
         "route_color": "FFD700",
         "direction_id": 1,
-        "trip_id": "Y1_holiday_1_27"
+        "trip_id": "Y1_sunday_1_25"
       },
       {
-        "time": "14:16",
+        "time": "14:06",
         "headsign": {
           "en": "Rashtreeya Vidyalaya Road",
           "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
@@ -3380,10 +2010,10 @@
         "route_name": "Yellow",
         "route_color": "FFD700",
         "direction_id": 0,
-        "trip_id": "Y1_holiday_0_89"
+        "trip_id": "Y1_sunday_0_90"
       },
       {
-        "time": "14:19",
+        "time": "14:18",
         "headsign": {
           "en": "Bommasandra"
         },
@@ -3391,10 +2021,10 @@
         "route_name": "Yellow",
         "route_color": "FFD700",
         "direction_id": 1,
-        "trip_id": "Y1_holiday_1_28"
+        "trip_id": "Y1_sunday_1_26"
       },
       {
-        "time": "14:35",
+        "time": "14:20",
         "headsign": {
           "en": "Rashtreeya Vidyalaya Road",
           "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
@@ -3403,10 +2033,10 @@
         "route_name": "Yellow",
         "route_color": "FFD700",
         "direction_id": 0,
-        "trip_id": "Y1_holiday_0_90"
+        "trip_id": "Y1_sunday_0_91"
       },
       {
-        "time": "14:38",
+        "time": "14:32",
         "headsign": {
           "en": "Bommasandra"
         },
@@ -3414,10 +2044,10 @@
         "route_name": "Yellow",
         "route_color": "FFD700",
         "direction_id": 1,
-        "trip_id": "Y1_holiday_1_29"
+        "trip_id": "Y1_sunday_1_27"
       },
       {
-        "time": "14:54",
+        "time": "14:34",
         "headsign": {
           "en": "Rashtreeya Vidyalaya Road",
           "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
@@ -3426,10 +2056,10 @@
         "route_name": "Yellow",
         "route_color": "FFD700",
         "direction_id": 0,
-        "trip_id": "Y1_holiday_0_91"
+        "trip_id": "Y1_sunday_0_92"
       },
       {
-        "time": "14:57",
+        "time": "14:46",
         "headsign": {
           "en": "Bommasandra"
         },
@@ -3437,10 +2067,10 @@
         "route_name": "Yellow",
         "route_color": "FFD700",
         "direction_id": 1,
-        "trip_id": "Y1_holiday_1_30"
+        "trip_id": "Y1_sunday_1_28"
       },
       {
-        "time": "15:13",
+        "time": "14:48",
         "headsign": {
           "en": "Rashtreeya Vidyalaya Road",
           "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
@@ -3449,21 +2079,67 @@
         "route_name": "Yellow",
         "route_color": "FFD700",
         "direction_id": 0,
-        "trip_id": "Y1_holiday_0_92"
+        "trip_id": "Y1_sunday_0_93"
+      },
+      {
+        "time": "15:00",
+        "headsign": {
+          "en": "Bommasandra"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 1,
+        "trip_id": "Y1_sunday_1_29"
+      },
+      {
+        "time": "15:02",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_sunday_0_94"
+      },
+      {
+        "time": "15:14",
+        "headsign": {
+          "en": "Bommasandra"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 1,
+        "trip_id": "Y1_sunday_1_30"
       },
       {
         "time": "15:16",
         "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_sunday_0_95"
+      },
+      {
+        "time": "15:28",
+        "headsign": {
           "en": "Bommasandra"
         },
         "route_id": "Y1",
         "route_name": "Yellow",
         "route_color": "FFD700",
         "direction_id": 1,
-        "trip_id": "Y1_holiday_1_31"
+        "trip_id": "Y1_sunday_1_31"
       },
       {
-        "time": "15:32",
+        "time": "15:30",
         "headsign": {
           "en": "Rashtreeya Vidyalaya Road",
           "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
@@ -3472,10 +2148,10 @@
         "route_name": "Yellow",
         "route_color": "FFD700",
         "direction_id": 0,
-        "trip_id": "Y1_holiday_0_93"
+        "trip_id": "Y1_sunday_0_96"
       },
       {
-        "time": "15:35",
+        "time": "15:42",
         "headsign": {
           "en": "Bommasandra"
         },
@@ -3483,10 +2159,10 @@
         "route_name": "Yellow",
         "route_color": "FFD700",
         "direction_id": 1,
-        "trip_id": "Y1_holiday_1_32"
+        "trip_id": "Y1_sunday_1_32"
       },
       {
-        "time": "15:51",
+        "time": "15:44",
         "headsign": {
           "en": "Rashtreeya Vidyalaya Road",
           "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
@@ -3495,10 +2171,10 @@
         "route_name": "Yellow",
         "route_color": "FFD700",
         "direction_id": 0,
-        "trip_id": "Y1_holiday_0_94"
+        "trip_id": "Y1_sunday_0_97"
       },
       {
-        "time": "15:54",
+        "time": "15:56",
         "headsign": {
           "en": "Bommasandra"
         },
@@ -3506,33 +2182,33 @@
         "route_name": "Yellow",
         "route_color": "FFD700",
         "direction_id": 1,
-        "trip_id": "Y1_holiday_1_33"
+        "trip_id": "Y1_sunday_1_33"
+      },
+      {
+        "time": "15:58",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_sunday_0_98"
       },
       {
         "time": "16:10",
         "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_holiday_0_95"
-      },
-      {
-        "time": "16:13",
-        "headsign": {
           "en": "Bommasandra"
         },
         "route_id": "Y1",
         "route_name": "Yellow",
         "route_color": "FFD700",
         "direction_id": 1,
-        "trip_id": "Y1_holiday_1_34"
+        "trip_id": "Y1_sunday_1_34"
       },
       {
-        "time": "16:29",
+        "time": "16:12",
         "headsign": {
           "en": "Rashtreeya Vidyalaya Road",
           "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
@@ -3541,10 +2217,10 @@
         "route_name": "Yellow",
         "route_color": "FFD700",
         "direction_id": 0,
-        "trip_id": "Y1_holiday_0_96"
+        "trip_id": "Y1_sunday_0_99"
       },
       {
-        "time": "16:32",
+        "time": "16:24",
         "headsign": {
           "en": "Bommasandra"
         },
@@ -3552,10 +2228,10 @@
         "route_name": "Yellow",
         "route_color": "FFD700",
         "direction_id": 1,
-        "trip_id": "Y1_holiday_1_35"
+        "trip_id": "Y1_sunday_1_35"
       },
       {
-        "time": "16:44",
+        "time": "16:26",
         "headsign": {
           "en": "Rashtreeya Vidyalaya Road",
           "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
@@ -3564,10 +2240,10 @@
         "route_name": "Yellow",
         "route_color": "FFD700",
         "direction_id": 0,
-        "trip_id": "Y1_holiday_0_97"
+        "trip_id": "Y1_sunday_0_100"
       },
       {
-        "time": "16:51",
+        "time": "16:38",
         "headsign": {
           "en": "Bommasandra"
         },
@@ -3575,10 +2251,10 @@
         "route_name": "Yellow",
         "route_color": "FFD700",
         "direction_id": 1,
-        "trip_id": "Y1_holiday_1_36"
+        "trip_id": "Y1_sunday_1_36"
       },
       {
-        "time": "16:59",
+        "time": "16:40",
         "headsign": {
           "en": "Rashtreeya Vidyalaya Road",
           "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
@@ -3587,10 +2263,10 @@
         "route_name": "Yellow",
         "route_color": "FFD700",
         "direction_id": 0,
-        "trip_id": "Y1_holiday_0_98"
+        "trip_id": "Y1_sunday_0_101"
       },
       {
-        "time": "17:10",
+        "time": "16:52",
         "headsign": {
           "en": "Bommasandra"
         },
@@ -3598,10 +2274,10 @@
         "route_name": "Yellow",
         "route_color": "FFD700",
         "direction_id": 1,
-        "trip_id": "Y1_holiday_1_37"
+        "trip_id": "Y1_sunday_1_37"
       },
       {
-        "time": "17:14",
+        "time": "16:54",
         "headsign": {
           "en": "Rashtreeya Vidyalaya Road",
           "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
@@ -3610,10 +2286,10 @@
         "route_name": "Yellow",
         "route_color": "FFD700",
         "direction_id": 0,
-        "trip_id": "Y1_holiday_0_99"
+        "trip_id": "Y1_sunday_0_102"
       },
       {
-        "time": "17:25",
+        "time": "17:06",
         "headsign": {
           "en": "Bommasandra"
         },
@@ -3621,10 +2297,10 @@
         "route_name": "Yellow",
         "route_color": "FFD700",
         "direction_id": 1,
-        "trip_id": "Y1_holiday_1_38"
+        "trip_id": "Y1_sunday_1_38"
       },
       {
-        "time": "17:29",
+        "time": "17:08",
         "headsign": {
           "en": "Rashtreeya Vidyalaya Road",
           "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
@@ -3633,10 +2309,10 @@
         "route_name": "Yellow",
         "route_color": "FFD700",
         "direction_id": 0,
-        "trip_id": "Y1_holiday_0_100"
+        "trip_id": "Y1_sunday_0_103"
       },
       {
-        "time": "17:40",
+        "time": "17:20",
         "headsign": {
           "en": "Bommasandra"
         },
@@ -3644,10 +2320,10 @@
         "route_name": "Yellow",
         "route_color": "FFD700",
         "direction_id": 1,
-        "trip_id": "Y1_holiday_1_39"
+        "trip_id": "Y1_sunday_1_39"
       },
       {
-        "time": "17:44",
+        "time": "17:22",
         "headsign": {
           "en": "Rashtreeya Vidyalaya Road",
           "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
@@ -3656,10 +2332,10 @@
         "route_name": "Yellow",
         "route_color": "FFD700",
         "direction_id": 0,
-        "trip_id": "Y1_holiday_0_101"
+        "trip_id": "Y1_sunday_0_104"
       },
       {
-        "time": "17:55",
+        "time": "17:34",
         "headsign": {
           "en": "Bommasandra"
         },
@@ -3667,10 +2343,10 @@
         "route_name": "Yellow",
         "route_color": "FFD700",
         "direction_id": 1,
-        "trip_id": "Y1_holiday_1_40"
+        "trip_id": "Y1_sunday_1_40"
       },
       {
-        "time": "17:59",
+        "time": "17:36",
         "headsign": {
           "en": "Rashtreeya Vidyalaya Road",
           "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
@@ -3679,10 +2355,10 @@
         "route_name": "Yellow",
         "route_color": "FFD700",
         "direction_id": 0,
-        "trip_id": "Y1_holiday_0_102"
+        "trip_id": "Y1_sunday_0_105"
       },
       {
-        "time": "18:10",
+        "time": "17:48",
         "headsign": {
           "en": "Bommasandra"
         },
@@ -3690,10 +2366,10 @@
         "route_name": "Yellow",
         "route_color": "FFD700",
         "direction_id": 1,
-        "trip_id": "Y1_holiday_1_41"
+        "trip_id": "Y1_sunday_1_41"
       },
       {
-        "time": "18:14",
+        "time": "17:50",
         "headsign": {
           "en": "Rashtreeya Vidyalaya Road",
           "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
@@ -3702,10 +2378,10 @@
         "route_name": "Yellow",
         "route_color": "FFD700",
         "direction_id": 0,
-        "trip_id": "Y1_holiday_0_103"
+        "trip_id": "Y1_sunday_0_106"
       },
       {
-        "time": "18:25",
+        "time": "18:02",
         "headsign": {
           "en": "Bommasandra"
         },
@@ -3713,10 +2389,10 @@
         "route_name": "Yellow",
         "route_color": "FFD700",
         "direction_id": 1,
-        "trip_id": "Y1_holiday_1_42"
+        "trip_id": "Y1_sunday_1_42"
       },
       {
-        "time": "18:29",
+        "time": "18:04",
         "headsign": {
           "en": "Rashtreeya Vidyalaya Road",
           "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
@@ -3725,10 +2401,10 @@
         "route_name": "Yellow",
         "route_color": "FFD700",
         "direction_id": 0,
-        "trip_id": "Y1_holiday_0_104"
+        "trip_id": "Y1_sunday_0_107"
       },
       {
-        "time": "18:40",
+        "time": "18:16",
         "headsign": {
           "en": "Bommasandra"
         },
@@ -3736,33 +2412,56 @@
         "route_name": "Yellow",
         "route_color": "FFD700",
         "direction_id": 1,
-        "trip_id": "Y1_holiday_1_43"
+        "trip_id": "Y1_sunday_1_43"
+      },
+      {
+        "time": "18:18",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_sunday_0_108"
+      },
+      {
+        "time": "18:30",
+        "headsign": {
+          "en": "Bommasandra"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 1,
+        "trip_id": "Y1_sunday_1_44"
+      },
+      {
+        "time": "18:32",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_sunday_0_109"
       },
       {
         "time": "18:44",
         "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_holiday_0_105"
-      },
-      {
-        "time": "18:55",
-        "headsign": {
           "en": "Bommasandra"
         },
         "route_id": "Y1",
         "route_name": "Yellow",
         "route_color": "FFD700",
         "direction_id": 1,
-        "trip_id": "Y1_holiday_1_44"
+        "trip_id": "Y1_sunday_1_45"
       },
       {
-        "time": "18:59",
+        "time": "18:46",
         "headsign": {
           "en": "Rashtreeya Vidyalaya Road",
           "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
@@ -3771,10 +2470,10 @@
         "route_name": "Yellow",
         "route_color": "FFD700",
         "direction_id": 0,
-        "trip_id": "Y1_holiday_0_106"
+        "trip_id": "Y1_sunday_0_110"
       },
       {
-        "time": "19:10",
+        "time": "18:58",
         "headsign": {
           "en": "Bommasandra"
         },
@@ -3782,7 +2481,30 @@
         "route_name": "Yellow",
         "route_color": "FFD700",
         "direction_id": 1,
-        "trip_id": "Y1_holiday_1_45"
+        "trip_id": "Y1_sunday_1_46"
+      },
+      {
+        "time": "19:00",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_sunday_0_111"
+      },
+      {
+        "time": "19:12",
+        "headsign": {
+          "en": "Bommasandra"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 1,
+        "trip_id": "Y1_sunday_1_47"
       },
       {
         "time": "19:14",
@@ -3794,10 +2516,10 @@
         "route_name": "Yellow",
         "route_color": "FFD700",
         "direction_id": 0,
-        "trip_id": "Y1_holiday_0_107"
+        "trip_id": "Y1_sunday_0_112"
       },
       {
-        "time": "19:25",
+        "time": "19:26",
         "headsign": {
           "en": "Bommasandra"
         },
@@ -3805,10 +2527,10 @@
         "route_name": "Yellow",
         "route_color": "FFD700",
         "direction_id": 1,
-        "trip_id": "Y1_holiday_1_46"
+        "trip_id": "Y1_sunday_1_48"
       },
       {
-        "time": "19:29",
+        "time": "19:28",
         "headsign": {
           "en": "Rashtreeya Vidyalaya Road",
           "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
@@ -3817,7 +2539,7 @@
         "route_name": "Yellow",
         "route_color": "FFD700",
         "direction_id": 0,
-        "trip_id": "Y1_holiday_0_108"
+        "trip_id": "Y1_sunday_0_113"
       },
       {
         "time": "19:40",
@@ -3828,10 +2550,10 @@
         "route_name": "Yellow",
         "route_color": "FFD700",
         "direction_id": 1,
-        "trip_id": "Y1_holiday_1_47"
+        "trip_id": "Y1_sunday_1_49"
       },
       {
-        "time": "19:44",
+        "time": "19:42",
         "headsign": {
           "en": "Rashtreeya Vidyalaya Road",
           "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
@@ -3840,10 +2562,10 @@
         "route_name": "Yellow",
         "route_color": "FFD700",
         "direction_id": 0,
-        "trip_id": "Y1_holiday_0_109"
+        "trip_id": "Y1_sunday_0_114"
       },
       {
-        "time": "19:55",
+        "time": "19:54",
         "headsign": {
           "en": "Bommasandra"
         },
@@ -3851,10 +2573,10 @@
         "route_name": "Yellow",
         "route_color": "FFD700",
         "direction_id": 1,
-        "trip_id": "Y1_holiday_1_48"
+        "trip_id": "Y1_sunday_1_50"
       },
       {
-        "time": "19:59",
+        "time": "19:56",
         "headsign": {
           "en": "Rashtreeya Vidyalaya Road",
           "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
@@ -3863,21 +2585,44 @@
         "route_name": "Yellow",
         "route_color": "FFD700",
         "direction_id": 0,
-        "trip_id": "Y1_holiday_0_110"
+        "trip_id": "Y1_sunday_0_115"
+      },
+      {
+        "time": "20:08",
+        "headsign": {
+          "en": "Bommasandra"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 1,
+        "trip_id": "Y1_sunday_1_51"
       },
       {
         "time": "20:10",
         "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_sunday_0_116"
+      },
+      {
+        "time": "20:22",
+        "headsign": {
           "en": "Bommasandra"
         },
         "route_id": "Y1",
         "route_name": "Yellow",
         "route_color": "FFD700",
         "direction_id": 1,
-        "trip_id": "Y1_holiday_1_49"
+        "trip_id": "Y1_sunday_1_52"
       },
       {
-        "time": "20:14",
+        "time": "20:24",
         "headsign": {
           "en": "Rashtreeya Vidyalaya Road",
           "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
@@ -3886,10 +2631,10 @@
         "route_name": "Yellow",
         "route_color": "FFD700",
         "direction_id": 0,
-        "trip_id": "Y1_holiday_0_111"
+        "trip_id": "Y1_sunday_0_117"
       },
       {
-        "time": "20:25",
+        "time": "20:36",
         "headsign": {
           "en": "Bommasandra"
         },
@@ -3897,10 +2642,10 @@
         "route_name": "Yellow",
         "route_color": "FFD700",
         "direction_id": 1,
-        "trip_id": "Y1_holiday_1_50"
+        "trip_id": "Y1_sunday_1_53"
       },
       {
-        "time": "20:29",
+        "time": "20:38",
         "headsign": {
           "en": "Rashtreeya Vidyalaya Road",
           "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
@@ -3909,10 +2654,10 @@
         "route_name": "Yellow",
         "route_color": "FFD700",
         "direction_id": 0,
-        "trip_id": "Y1_holiday_0_112"
+        "trip_id": "Y1_sunday_0_118"
       },
       {
-        "time": "20:40",
+        "time": "20:50",
         "headsign": {
           "en": "Bommasandra"
         },
@@ -3920,10 +2665,10 @@
         "route_name": "Yellow",
         "route_color": "FFD700",
         "direction_id": 1,
-        "trip_id": "Y1_holiday_1_51"
+        "trip_id": "Y1_sunday_1_54"
       },
       {
-        "time": "20:44",
+        "time": "20:52",
         "headsign": {
           "en": "Rashtreeya Vidyalaya Road",
           "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
@@ -3932,10 +2677,10 @@
         "route_name": "Yellow",
         "route_color": "FFD700",
         "direction_id": 0,
-        "trip_id": "Y1_holiday_0_113"
+        "trip_id": "Y1_sunday_0_119"
       },
       {
-        "time": "20:55",
+        "time": "21:04",
         "headsign": {
           "en": "Bommasandra"
         },
@@ -3943,10 +2688,10 @@
         "route_name": "Yellow",
         "route_color": "FFD700",
         "direction_id": 1,
-        "trip_id": "Y1_holiday_1_52"
+        "trip_id": "Y1_sunday_1_55"
       },
       {
-        "time": "20:59",
+        "time": "21:06",
         "headsign": {
           "en": "Rashtreeya Vidyalaya Road",
           "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
@@ -3955,10 +2700,10 @@
         "route_name": "Yellow",
         "route_color": "FFD700",
         "direction_id": 0,
-        "trip_id": "Y1_holiday_0_114"
+        "trip_id": "Y1_sunday_0_120"
       },
       {
-        "time": "21:10",
+        "time": "21:18",
         "headsign": {
           "en": "Bommasandra"
         },
@@ -3966,10 +2711,10 @@
         "route_name": "Yellow",
         "route_color": "FFD700",
         "direction_id": 1,
-        "trip_id": "Y1_holiday_1_53"
+        "trip_id": "Y1_sunday_1_56"
       },
       {
-        "time": "21:14",
+        "time": "21:20",
         "headsign": {
           "en": "Rashtreeya Vidyalaya Road",
           "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
@@ -3978,21 +2723,10 @@
         "route_name": "Yellow",
         "route_color": "FFD700",
         "direction_id": 0,
-        "trip_id": "Y1_holiday_0_115"
+        "trip_id": "Y1_sunday_0_121"
       },
       {
-        "time": "21:25",
-        "headsign": {
-          "en": "Bommasandra"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 1,
-        "trip_id": "Y1_holiday_1_54"
-      },
-      {
-        "time": "21:29",
+        "time": "21:34",
         "headsign": {
           "en": "Rashtreeya Vidyalaya Road",
           "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
@@ -4001,10 +2735,10 @@
         "route_name": "Yellow",
         "route_color": "FFD700",
         "direction_id": 0,
-        "trip_id": "Y1_holiday_0_116"
+        "trip_id": "Y1_sunday_0_122"
       },
       {
-        "time": "21:40",
+        "time": "21:36",
         "headsign": {
           "en": "Bommasandra"
         },
@@ -4012,10 +2746,10 @@
         "route_name": "Yellow",
         "route_color": "FFD700",
         "direction_id": 1,
-        "trip_id": "Y1_holiday_1_55"
+        "trip_id": "Y1_sunday_1_57"
       },
       {
-        "time": "21:44",
+        "time": "21:48",
         "headsign": {
           "en": "Rashtreeya Vidyalaya Road",
           "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
@@ -4024,7 +2758,7 @@
         "route_name": "Yellow",
         "route_color": "FFD700",
         "direction_id": 0,
-        "trip_id": "Y1_holiday_0_117"
+        "trip_id": "Y1_sunday_0_123"
       },
       {
         "time": "21:55",
@@ -4035,10 +2769,10 @@
         "route_name": "Yellow",
         "route_color": "FFD700",
         "direction_id": 1,
-        "trip_id": "Y1_holiday_1_56"
+        "trip_id": "Y1_sunday_1_58"
       },
       {
-        "time": "21:59",
+        "time": "22:02",
         "headsign": {
           "en": "Rashtreeya Vidyalaya Road",
           "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
@@ -4047,19 +2781,7 @@
         "route_name": "Yellow",
         "route_color": "FFD700",
         "direction_id": 0,
-        "trip_id": "Y1_holiday_0_118"
-      },
-      {
-        "time": "22:14",
-        "headsign": {
-          "en": "Rashtreeya Vidyalaya Road",
-          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 0,
-        "trip_id": "Y1_holiday_0_119"
+        "trip_id": "Y1_sunday_0_124"
       },
       {
         "time": "22:15",
@@ -4070,10 +2792,10 @@
         "route_name": "Yellow",
         "route_color": "FFD700",
         "direction_id": 1,
-        "trip_id": "Y1_holiday_1_57"
+        "trip_id": "Y1_sunday_1_59"
       },
       {
-        "time": "22:29",
+        "time": "22:16",
         "headsign": {
           "en": "Rashtreeya Vidyalaya Road",
           "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
@@ -4082,10 +2804,22 @@
         "route_name": "Yellow",
         "route_color": "FFD700",
         "direction_id": 0,
-        "trip_id": "Y1_holiday_0_120"
+        "trip_id": "Y1_sunday_0_125"
       },
       {
-        "time": "22:40",
+        "time": "22:30",
+        "headsign": {
+          "en": "Rashtreeya Vidyalaya Road",
+          "kn": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 0,
+        "trip_id": "Y1_sunday_0_126"
+      },
+      {
+        "time": "22:35",
         "headsign": {
           "en": "Bommasandra"
         },
@@ -4093,10 +2827,10 @@
         "route_name": "Yellow",
         "route_color": "FFD700",
         "direction_id": 1,
-        "trip_id": "Y1_holiday_1_58"
+        "trip_id": "Y1_sunday_1_60"
       },
       {
-        "time": "23:05",
+        "time": "22:55",
         "headsign": {
           "en": "Bommasandra"
         },
@@ -4104,10 +2838,10 @@
         "route_name": "Yellow",
         "route_color": "FFD700",
         "direction_id": 1,
-        "trip_id": "Y1_holiday_1_59"
+        "trip_id": "Y1_sunday_1_61"
       },
       {
-        "time": "23:30",
+        "time": "23:20",
         "headsign": {
           "en": "Bommasandra"
         },
@@ -4115,9 +2849,21 @@
         "route_name": "Yellow",
         "route_color": "FFD700",
         "direction_id": 1,
-        "trip_id": "Y1_holiday_1_60"
+        "trip_id": "Y1_sunday_1_62"
+      },
+      {
+        "time": "23:45",
+        "headsign": {
+          "en": "Bommasandra"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 1,
+        "trip_id": "Y1_sunday_1_63"
       }
-    ]
+    ],
+    "holiday": []
   },
   "color": "yellow"
 }
