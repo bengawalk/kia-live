@@ -694,7 +694,7 @@
         "trip_id": "Y1_sunday_1_0"
       },
       {
-        "time": "07:38",
+        "time": "07:34",
         "headsign": {
           "en": "Bommasandra"
         },
@@ -705,7 +705,7 @@
         "trip_id": "Y1_sunday_1_1"
       },
       {
-        "time": "07:53",
+        "time": "07:52",
         "headsign": {
           "en": "Bommasandra"
         },
@@ -716,7 +716,7 @@
         "trip_id": "Y1_sunday_1_2"
       },
       {
-        "time": "08:08",
+        "time": "08:10",
         "headsign": {
           "en": "Bommasandra"
         },
@@ -727,7 +727,7 @@
         "trip_id": "Y1_sunday_1_3"
       },
       {
-        "time": "08:23",
+        "time": "08:28",
         "headsign": {
           "en": "Bommasandra"
         },
@@ -738,7 +738,7 @@
         "trip_id": "Y1_sunday_1_4"
       },
       {
-        "time": "08:38",
+        "time": "08:46",
         "headsign": {
           "en": "Bommasandra"
         },
@@ -749,7 +749,7 @@
         "trip_id": "Y1_sunday_1_5"
       },
       {
-        "time": "08:53",
+        "time": "09:04",
         "headsign": {
           "en": "Bommasandra"
         },
@@ -760,7 +760,7 @@
         "trip_id": "Y1_sunday_1_6"
       },
       {
-        "time": "09:08",
+        "time": "09:22",
         "headsign": {
           "en": "Bommasandra"
         },
@@ -771,7 +771,7 @@
         "trip_id": "Y1_sunday_1_7"
       },
       {
-        "time": "09:23",
+        "time": "09:40",
         "headsign": {
           "en": "Bommasandra"
         },
@@ -782,7 +782,7 @@
         "trip_id": "Y1_sunday_1_8"
       },
       {
-        "time": "09:38",
+        "time": "09:58",
         "headsign": {
           "en": "Bommasandra"
         },
@@ -793,7 +793,7 @@
         "trip_id": "Y1_sunday_1_9"
       },
       {
-        "time": "09:53",
+        "time": "10:16",
         "headsign": {
           "en": "Bommasandra"
         },
@@ -804,7 +804,7 @@
         "trip_id": "Y1_sunday_1_10"
       },
       {
-        "time": "10:08",
+        "time": "10:34",
         "headsign": {
           "en": "Bommasandra"
         },
@@ -815,7 +815,7 @@
         "trip_id": "Y1_sunday_1_11"
       },
       {
-        "time": "10:23",
+        "time": "10:52",
         "headsign": {
           "en": "Bommasandra"
         },
@@ -826,7 +826,7 @@
         "trip_id": "Y1_sunday_1_12"
       },
       {
-        "time": "10:38",
+        "time": "11:10",
         "headsign": {
           "en": "Bommasandra"
         },
@@ -837,7 +837,7 @@
         "trip_id": "Y1_sunday_1_13"
       },
       {
-        "time": "10:53",
+        "time": "11:28",
         "headsign": {
           "en": "Bommasandra"
         },
@@ -848,7 +848,7 @@
         "trip_id": "Y1_sunday_1_14"
       },
       {
-        "time": "11:12",
+        "time": "11:46",
         "headsign": {
           "en": "Bommasandra"
         },
@@ -859,7 +859,7 @@
         "trip_id": "Y1_sunday_1_15"
       },
       {
-        "time": "11:31",
+        "time": "12:04",
         "headsign": {
           "en": "Bommasandra"
         },
@@ -870,7 +870,7 @@
         "trip_id": "Y1_sunday_1_16"
       },
       {
-        "time": "11:50",
+        "time": "12:18",
         "headsign": {
           "en": "Bommasandra"
         },
@@ -881,7 +881,7 @@
         "trip_id": "Y1_sunday_1_17"
       },
       {
-        "time": "12:09",
+        "time": "12:32",
         "headsign": {
           "en": "Bommasandra"
         },
@@ -892,7 +892,7 @@
         "trip_id": "Y1_sunday_1_18"
       },
       {
-        "time": "12:28",
+        "time": "12:46",
         "headsign": {
           "en": "Bommasandra"
         },
@@ -903,7 +903,7 @@
         "trip_id": "Y1_sunday_1_19"
       },
       {
-        "time": "12:47",
+        "time": "13:00",
         "headsign": {
           "en": "Bommasandra"
         },
@@ -914,7 +914,7 @@
         "trip_id": "Y1_sunday_1_20"
       },
       {
-        "time": "13:06",
+        "time": "13:14",
         "headsign": {
           "en": "Bommasandra"
         },
@@ -925,7 +925,7 @@
         "trip_id": "Y1_sunday_1_21"
       },
       {
-        "time": "13:25",
+        "time": "13:28",
         "headsign": {
           "en": "Bommasandra"
         },
@@ -936,7 +936,7 @@
         "trip_id": "Y1_sunday_1_22"
       },
       {
-        "time": "13:44",
+        "time": "13:42",
         "headsign": {
           "en": "Bommasandra"
         },
@@ -947,7 +947,7 @@
         "trip_id": "Y1_sunday_1_23"
       },
       {
-        "time": "14:03",
+        "time": "13:56",
         "headsign": {
           "en": "Bommasandra"
         },
@@ -958,7 +958,7 @@
         "trip_id": "Y1_sunday_1_24"
       },
       {
-        "time": "14:22",
+        "time": "14:10",
         "headsign": {
           "en": "Bommasandra"
         },
@@ -969,7 +969,7 @@
         "trip_id": "Y1_sunday_1_25"
       },
       {
-        "time": "14:41",
+        "time": "14:24",
         "headsign": {
           "en": "Bommasandra"
         },
@@ -980,7 +980,7 @@
         "trip_id": "Y1_sunday_1_26"
       },
       {
-        "time": "15:00",
+        "time": "14:38",
         "headsign": {
           "en": "Bommasandra"
         },
@@ -991,7 +991,7 @@
         "trip_id": "Y1_sunday_1_27"
       },
       {
-        "time": "15:19",
+        "time": "14:52",
         "headsign": {
           "en": "Bommasandra"
         },
@@ -1002,7 +1002,7 @@
         "trip_id": "Y1_sunday_1_28"
       },
       {
-        "time": "15:38",
+        "time": "15:06",
         "headsign": {
           "en": "Bommasandra"
         },
@@ -1013,7 +1013,7 @@
         "trip_id": "Y1_sunday_1_29"
       },
       {
-        "time": "15:57",
+        "time": "15:20",
         "headsign": {
           "en": "Bommasandra"
         },
@@ -1024,7 +1024,7 @@
         "trip_id": "Y1_sunday_1_30"
       },
       {
-        "time": "16:16",
+        "time": "15:34",
         "headsign": {
           "en": "Bommasandra"
         },
@@ -1035,7 +1035,7 @@
         "trip_id": "Y1_sunday_1_31"
       },
       {
-        "time": "16:35",
+        "time": "15:48",
         "headsign": {
           "en": "Bommasandra"
         },
@@ -1046,7 +1046,7 @@
         "trip_id": "Y1_sunday_1_32"
       },
       {
-        "time": "16:54",
+        "time": "16:02",
         "headsign": {
           "en": "Bommasandra"
         },
@@ -1057,7 +1057,7 @@
         "trip_id": "Y1_sunday_1_33"
       },
       {
-        "time": "17:13",
+        "time": "16:16",
         "headsign": {
           "en": "Bommasandra"
         },
@@ -1068,7 +1068,7 @@
         "trip_id": "Y1_sunday_1_34"
       },
       {
-        "time": "17:28",
+        "time": "16:30",
         "headsign": {
           "en": "Bommasandra"
         },
@@ -1079,7 +1079,7 @@
         "trip_id": "Y1_sunday_1_35"
       },
       {
-        "time": "17:43",
+        "time": "16:44",
         "headsign": {
           "en": "Bommasandra"
         },
@@ -1090,7 +1090,7 @@
         "trip_id": "Y1_sunday_1_36"
       },
       {
-        "time": "17:58",
+        "time": "16:58",
         "headsign": {
           "en": "Bommasandra"
         },
@@ -1101,7 +1101,7 @@
         "trip_id": "Y1_sunday_1_37"
       },
       {
-        "time": "18:13",
+        "time": "17:12",
         "headsign": {
           "en": "Bommasandra"
         },
@@ -1112,7 +1112,7 @@
         "trip_id": "Y1_sunday_1_38"
       },
       {
-        "time": "18:28",
+        "time": "17:26",
         "headsign": {
           "en": "Bommasandra"
         },
@@ -1123,7 +1123,7 @@
         "trip_id": "Y1_sunday_1_39"
       },
       {
-        "time": "18:43",
+        "time": "17:40",
         "headsign": {
           "en": "Bommasandra"
         },
@@ -1134,7 +1134,7 @@
         "trip_id": "Y1_sunday_1_40"
       },
       {
-        "time": "18:58",
+        "time": "17:54",
         "headsign": {
           "en": "Bommasandra"
         },
@@ -1145,7 +1145,7 @@
         "trip_id": "Y1_sunday_1_41"
       },
       {
-        "time": "19:13",
+        "time": "18:08",
         "headsign": {
           "en": "Bommasandra"
         },
@@ -1156,7 +1156,7 @@
         "trip_id": "Y1_sunday_1_42"
       },
       {
-        "time": "19:28",
+        "time": "18:22",
         "headsign": {
           "en": "Bommasandra"
         },
@@ -1167,7 +1167,7 @@
         "trip_id": "Y1_sunday_1_43"
       },
       {
-        "time": "19:43",
+        "time": "18:36",
         "headsign": {
           "en": "Bommasandra"
         },
@@ -1178,7 +1178,7 @@
         "trip_id": "Y1_sunday_1_44"
       },
       {
-        "time": "19:58",
+        "time": "18:50",
         "headsign": {
           "en": "Bommasandra"
         },
@@ -1189,7 +1189,7 @@
         "trip_id": "Y1_sunday_1_45"
       },
       {
-        "time": "20:13",
+        "time": "19:04",
         "headsign": {
           "en": "Bommasandra"
         },
@@ -1200,7 +1200,7 @@
         "trip_id": "Y1_sunday_1_46"
       },
       {
-        "time": "20:28",
+        "time": "19:18",
         "headsign": {
           "en": "Bommasandra"
         },
@@ -1211,7 +1211,7 @@
         "trip_id": "Y1_sunday_1_47"
       },
       {
-        "time": "20:43",
+        "time": "19:32",
         "headsign": {
           "en": "Bommasandra"
         },
@@ -1222,7 +1222,7 @@
         "trip_id": "Y1_sunday_1_48"
       },
       {
-        "time": "20:58",
+        "time": "19:46",
         "headsign": {
           "en": "Bommasandra"
         },
@@ -1233,7 +1233,7 @@
         "trip_id": "Y1_sunday_1_49"
       },
       {
-        "time": "21:13",
+        "time": "20:00",
         "headsign": {
           "en": "Bommasandra"
         },
@@ -1244,7 +1244,7 @@
         "trip_id": "Y1_sunday_1_50"
       },
       {
-        "time": "21:28",
+        "time": "20:14",
         "headsign": {
           "en": "Bommasandra"
         },
@@ -1255,7 +1255,7 @@
         "trip_id": "Y1_sunday_1_51"
       },
       {
-        "time": "21:43",
+        "time": "20:28",
         "headsign": {
           "en": "Bommasandra"
         },
@@ -1266,7 +1266,7 @@
         "trip_id": "Y1_sunday_1_52"
       },
       {
-        "time": "21:58",
+        "time": "20:42",
         "headsign": {
           "en": "Bommasandra"
         },
@@ -1277,7 +1277,7 @@
         "trip_id": "Y1_sunday_1_53"
       },
       {
-        "time": "22:18",
+        "time": "20:56",
         "headsign": {
           "en": "Bommasandra"
         },
@@ -1288,7 +1288,7 @@
         "trip_id": "Y1_sunday_1_54"
       },
       {
-        "time": "22:46",
+        "time": "21:10",
         "headsign": {
           "en": "Bommasandra"
         },
@@ -1299,7 +1299,7 @@
         "trip_id": "Y1_sunday_1_55"
       },
       {
-        "time": "23:16",
+        "time": "21:24",
         "headsign": {
           "en": "Bommasandra"
         },
@@ -1310,7 +1310,7 @@
         "trip_id": "Y1_sunday_1_56"
       },
       {
-        "time": "23:46",
+        "time": "21:42",
         "headsign": {
           "en": "Bommasandra"
         },
@@ -1319,624 +1319,6 @@
         "route_color": "FFD700",
         "direction_id": 1,
         "trip_id": "Y1_sunday_1_57"
-      }
-    ],
-    "holiday": [
-      {
-        "time": "06:16",
-        "headsign": {
-          "en": "Bommasandra"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 1,
-        "trip_id": "Y1_holiday_1_0"
-      },
-      {
-        "time": "06:41",
-        "headsign": {
-          "en": "Bommasandra"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 1,
-        "trip_id": "Y1_holiday_1_1"
-      },
-      {
-        "time": "07:03",
-        "headsign": {
-          "en": "Bommasandra"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 1,
-        "trip_id": "Y1_holiday_1_2"
-      },
-      {
-        "time": "07:18",
-        "headsign": {
-          "en": "Bommasandra"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 1,
-        "trip_id": "Y1_holiday_1_3"
-      },
-      {
-        "time": "07:33",
-        "headsign": {
-          "en": "Bommasandra"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 1,
-        "trip_id": "Y1_holiday_1_4"
-      },
-      {
-        "time": "07:48",
-        "headsign": {
-          "en": "Bommasandra"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 1,
-        "trip_id": "Y1_holiday_1_5"
-      },
-      {
-        "time": "08:03",
-        "headsign": {
-          "en": "Bommasandra"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 1,
-        "trip_id": "Y1_holiday_1_6"
-      },
-      {
-        "time": "08:18",
-        "headsign": {
-          "en": "Bommasandra"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 1,
-        "trip_id": "Y1_holiday_1_7"
-      },
-      {
-        "time": "08:33",
-        "headsign": {
-          "en": "Bommasandra"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 1,
-        "trip_id": "Y1_holiday_1_8"
-      },
-      {
-        "time": "08:48",
-        "headsign": {
-          "en": "Bommasandra"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 1,
-        "trip_id": "Y1_holiday_1_9"
-      },
-      {
-        "time": "09:03",
-        "headsign": {
-          "en": "Bommasandra"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 1,
-        "trip_id": "Y1_holiday_1_10"
-      },
-      {
-        "time": "09:18",
-        "headsign": {
-          "en": "Bommasandra"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 1,
-        "trip_id": "Y1_holiday_1_11"
-      },
-      {
-        "time": "09:33",
-        "headsign": {
-          "en": "Bommasandra"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 1,
-        "trip_id": "Y1_holiday_1_12"
-      },
-      {
-        "time": "09:48",
-        "headsign": {
-          "en": "Bommasandra"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 1,
-        "trip_id": "Y1_holiday_1_13"
-      },
-      {
-        "time": "10:03",
-        "headsign": {
-          "en": "Bommasandra"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 1,
-        "trip_id": "Y1_holiday_1_14"
-      },
-      {
-        "time": "10:18",
-        "headsign": {
-          "en": "Bommasandra"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 1,
-        "trip_id": "Y1_holiday_1_15"
-      },
-      {
-        "time": "10:37",
-        "headsign": {
-          "en": "Bommasandra"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 1,
-        "trip_id": "Y1_holiday_1_16"
-      },
-      {
-        "time": "10:56",
-        "headsign": {
-          "en": "Bommasandra"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 1,
-        "trip_id": "Y1_holiday_1_17"
-      },
-      {
-        "time": "11:15",
-        "headsign": {
-          "en": "Bommasandra"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 1,
-        "trip_id": "Y1_holiday_1_18"
-      },
-      {
-        "time": "11:34",
-        "headsign": {
-          "en": "Bommasandra"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 1,
-        "trip_id": "Y1_holiday_1_19"
-      },
-      {
-        "time": "11:53",
-        "headsign": {
-          "en": "Bommasandra"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 1,
-        "trip_id": "Y1_holiday_1_20"
-      },
-      {
-        "time": "12:12",
-        "headsign": {
-          "en": "Bommasandra"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 1,
-        "trip_id": "Y1_holiday_1_21"
-      },
-      {
-        "time": "12:31",
-        "headsign": {
-          "en": "Bommasandra"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 1,
-        "trip_id": "Y1_holiday_1_22"
-      },
-      {
-        "time": "12:50",
-        "headsign": {
-          "en": "Bommasandra"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 1,
-        "trip_id": "Y1_holiday_1_23"
-      },
-      {
-        "time": "13:09",
-        "headsign": {
-          "en": "Bommasandra"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 1,
-        "trip_id": "Y1_holiday_1_24"
-      },
-      {
-        "time": "13:28",
-        "headsign": {
-          "en": "Bommasandra"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 1,
-        "trip_id": "Y1_holiday_1_25"
-      },
-      {
-        "time": "13:47",
-        "headsign": {
-          "en": "Bommasandra"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 1,
-        "trip_id": "Y1_holiday_1_26"
-      },
-      {
-        "time": "14:06",
-        "headsign": {
-          "en": "Bommasandra"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 1,
-        "trip_id": "Y1_holiday_1_27"
-      },
-      {
-        "time": "14:25",
-        "headsign": {
-          "en": "Bommasandra"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 1,
-        "trip_id": "Y1_holiday_1_28"
-      },
-      {
-        "time": "14:44",
-        "headsign": {
-          "en": "Bommasandra"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 1,
-        "trip_id": "Y1_holiday_1_29"
-      },
-      {
-        "time": "15:03",
-        "headsign": {
-          "en": "Bommasandra"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 1,
-        "trip_id": "Y1_holiday_1_30"
-      },
-      {
-        "time": "15:22",
-        "headsign": {
-          "en": "Bommasandra"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 1,
-        "trip_id": "Y1_holiday_1_31"
-      },
-      {
-        "time": "15:41",
-        "headsign": {
-          "en": "Bommasandra"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 1,
-        "trip_id": "Y1_holiday_1_32"
-      },
-      {
-        "time": "16:00",
-        "headsign": {
-          "en": "Bommasandra"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 1,
-        "trip_id": "Y1_holiday_1_33"
-      },
-      {
-        "time": "16:19",
-        "headsign": {
-          "en": "Bommasandra"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 1,
-        "trip_id": "Y1_holiday_1_34"
-      },
-      {
-        "time": "16:38",
-        "headsign": {
-          "en": "Bommasandra"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 1,
-        "trip_id": "Y1_holiday_1_35"
-      },
-      {
-        "time": "16:57",
-        "headsign": {
-          "en": "Bommasandra"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 1,
-        "trip_id": "Y1_holiday_1_36"
-      },
-      {
-        "time": "17:16",
-        "headsign": {
-          "en": "Bommasandra"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 1,
-        "trip_id": "Y1_holiday_1_37"
-      },
-      {
-        "time": "17:31",
-        "headsign": {
-          "en": "Bommasandra"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 1,
-        "trip_id": "Y1_holiday_1_38"
-      },
-      {
-        "time": "17:46",
-        "headsign": {
-          "en": "Bommasandra"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 1,
-        "trip_id": "Y1_holiday_1_39"
-      },
-      {
-        "time": "18:01",
-        "headsign": {
-          "en": "Bommasandra"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 1,
-        "trip_id": "Y1_holiday_1_40"
-      },
-      {
-        "time": "18:16",
-        "headsign": {
-          "en": "Bommasandra"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 1,
-        "trip_id": "Y1_holiday_1_41"
-      },
-      {
-        "time": "18:31",
-        "headsign": {
-          "en": "Bommasandra"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 1,
-        "trip_id": "Y1_holiday_1_42"
-      },
-      {
-        "time": "18:46",
-        "headsign": {
-          "en": "Bommasandra"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 1,
-        "trip_id": "Y1_holiday_1_43"
-      },
-      {
-        "time": "19:01",
-        "headsign": {
-          "en": "Bommasandra"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 1,
-        "trip_id": "Y1_holiday_1_44"
-      },
-      {
-        "time": "19:16",
-        "headsign": {
-          "en": "Bommasandra"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 1,
-        "trip_id": "Y1_holiday_1_45"
-      },
-      {
-        "time": "19:31",
-        "headsign": {
-          "en": "Bommasandra"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 1,
-        "trip_id": "Y1_holiday_1_46"
-      },
-      {
-        "time": "19:46",
-        "headsign": {
-          "en": "Bommasandra"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 1,
-        "trip_id": "Y1_holiday_1_47"
-      },
-      {
-        "time": "20:01",
-        "headsign": {
-          "en": "Bommasandra"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 1,
-        "trip_id": "Y1_holiday_1_48"
-      },
-      {
-        "time": "20:16",
-        "headsign": {
-          "en": "Bommasandra"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 1,
-        "trip_id": "Y1_holiday_1_49"
-      },
-      {
-        "time": "20:31",
-        "headsign": {
-          "en": "Bommasandra"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 1,
-        "trip_id": "Y1_holiday_1_50"
-      },
-      {
-        "time": "20:46",
-        "headsign": {
-          "en": "Bommasandra"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 1,
-        "trip_id": "Y1_holiday_1_51"
-      },
-      {
-        "time": "21:01",
-        "headsign": {
-          "en": "Bommasandra"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 1,
-        "trip_id": "Y1_holiday_1_52"
-      },
-      {
-        "time": "21:16",
-        "headsign": {
-          "en": "Bommasandra"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 1,
-        "trip_id": "Y1_holiday_1_53"
-      },
-      {
-        "time": "21:31",
-        "headsign": {
-          "en": "Bommasandra"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 1,
-        "trip_id": "Y1_holiday_1_54"
-      },
-      {
-        "time": "21:46",
-        "headsign": {
-          "en": "Bommasandra"
-        },
-        "route_id": "Y1",
-        "route_name": "Yellow",
-        "route_color": "FFD700",
-        "direction_id": 1,
-        "trip_id": "Y1_holiday_1_55"
       },
       {
         "time": "22:01",
@@ -1947,7 +1329,7 @@
         "route_name": "Yellow",
         "route_color": "FFD700",
         "direction_id": 1,
-        "trip_id": "Y1_holiday_1_56"
+        "trip_id": "Y1_sunday_1_58"
       },
       {
         "time": "22:21",
@@ -1958,10 +1340,10 @@
         "route_name": "Yellow",
         "route_color": "FFD700",
         "direction_id": 1,
-        "trip_id": "Y1_holiday_1_57"
+        "trip_id": "Y1_sunday_1_59"
       },
       {
-        "time": "22:46",
+        "time": "22:41",
         "headsign": {
           "en": "Bommasandra"
         },
@@ -1969,10 +1351,10 @@
         "route_name": "Yellow",
         "route_color": "FFD700",
         "direction_id": 1,
-        "trip_id": "Y1_holiday_1_58"
+        "trip_id": "Y1_sunday_1_60"
       },
       {
-        "time": "23:11",
+        "time": "23:01",
         "headsign": {
           "en": "Bommasandra"
         },
@@ -1980,10 +1362,10 @@
         "route_name": "Yellow",
         "route_color": "FFD700",
         "direction_id": 1,
-        "trip_id": "Y1_holiday_1_59"
+        "trip_id": "Y1_sunday_1_61"
       },
       {
-        "time": "23:36",
+        "time": "23:26",
         "headsign": {
           "en": "Bommasandra"
         },
@@ -1991,9 +1373,21 @@
         "route_name": "Yellow",
         "route_color": "FFD700",
         "direction_id": 1,
-        "trip_id": "Y1_holiday_1_60"
+        "trip_id": "Y1_sunday_1_62"
+      },
+      {
+        "time": "23:51",
+        "headsign": {
+          "en": "Bommasandra"
+        },
+        "route_id": "Y1",
+        "route_name": "Yellow",
+        "route_color": "FFD700",
+        "direction_id": 1,
+        "trip_id": "Y1_sunday_1_63"
       }
-    ]
+    ],
+    "holiday": []
   },
   "color": "yellow"
 }
