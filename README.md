@@ -54,4 +54,4 @@ The app is intended to function as PWA.
 
 
 
-For further discussions feel free to join the [bengawalk discord server](https://discord.gg/NwQF9y3SjJ)
+For further discussions feel free to join the [bengawalk discord server](https://discord.gg/NM3yVpZyu6)
