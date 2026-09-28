@@ -75,6 +75,13 @@ export const AIRPORT_LOCATION: number[] = [13.199110535079635, 77.70822021568426
 export const AIRPORT_SOFTLOCK: number[] = [13.205024620008803, 77.70808412641674, 2.5]
 // export const CITY_SOFTLOCK: number[] = [12.90683, 77.60127, 11.64]
 export const DEFAULT_LOCATION: number[] = [12.977769, 77.572762];
+// Bengaluru region incl. airport, as [[west, south], [east, north]]; map can't be panned/zoomed out past this
+export const BLR_BOUNDS: [[number, number], [number, number]] = [[77.2, 12.55], [78.1, 13.5]];
+
+export function isNearBengaluru(latitude: number, longitude: number): boolean {
+	const [[west, south], [east, north]] = BLR_BOUNDS;
+	return latitude >= south && latitude <= north && longitude >= west && longitude <= east;
+}
 
 export const LINE_LABEL_STYLE: LayerSpecification = {
 	type: 'symbol',

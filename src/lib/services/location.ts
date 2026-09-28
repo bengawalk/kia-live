@@ -1,5 +1,5 @@
 import { inputLocation, userLocation } from '$lib/stores/location';
-import { DEFAULT_LOCATION } from '$lib/constants';
+import { DEFAULT_LOCATION, isNearBengaluru } from '$lib/constants';
 import { fitMapToPoints, updateMarker } from '$lib/services/map';
 import { setMarkerTapped } from '$lib/services/discovery';
 import { get } from 'svelte/store';
@@ -11,8 +11,16 @@ export function pollUserLocation() {
 		userLocation.set(position);
 		lastLoc = position;
 		if(firstTime) {
-			inputLocation.set(undefined);
-			fitMapToPoints([[position.coords.longitude, position.coords.latitude]]);
+			if(isNearBengaluru(position.coords.latitude, position.coords.longitude)) {
+				inputLocation.set(undefined);
+				fitMapToPoints([[position.coords.longitude, position.coords.latitude]]);
+			} else {
+				inputLocation.set({
+					latitude: DEFAULT_LOCATION[0],
+					longitude: DEFAULT_LOCATION[1]
+				});
+				fitMapToPoints([[DEFAULT_LOCATION[1], DEFAULT_LOCATION[0]]]);
+			}
 		}
 		firstTime = false;
 	}, () => {
@@ -39,7 +47,7 @@ function locationUpdate() {
 		updateMarker(input === undefined ? 'USER_LOCATION' : 'USER_LOCATION_INACTIVE', [undefined, undefined], user.coords.latitude, user.coords.longitude);
 		if(!input) updateMarker('INPUT_LOCATION', [undefined, undefined], undefined, undefined);
 	}
-	if(input !== undefined) updateMarker('INPUT_LOCATION', [undefined, undefined], input.latitude, input.longitude, () => {if(!get(isPlanning)) setMarkerTapped(); inputLocation.set(undefined);});
+	if(input !== undefined) updateMarker('INPUT_LOCATION', [undefined, undefined], input.latitude, input.longitude, () => {if(!get(isPlanning)) setMarkerTapped(); const u = get(userLocation); if(u && isNearBengaluru(u.coords.latitude, u.coords.longitude)) inputLocation.set(undefined);});
 	if(!input && !user && !firstTime) inputLocation.set({
 		latitude: DEFAULT_LOCATION[0],
 		longitude: DEFAULT_LOCATION[1]

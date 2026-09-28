@@ -1,4 +1,5 @@
 import {
+	BLR_BOUNDS,
 	BUS_PNG_URL,
 	LINE_COLLISION_STYLE,
 	LINE_LABEL_STYLE,
@@ -29,6 +30,7 @@ export function loadMap(mapContainer: HTMLElement | string): maplibregl.Map {
 		style: 'https://basemaps.cartocdn.com/gl/positron-gl-style/style.json',
 		center: [77.6, 13.02], // Default to Bengaluru
 		zoom: 10.9, // Default zoom level
+		maxBounds: BLR_BOUNDS, // Vector tiles get slow when zoomed out, keep to Bengaluru
 		dragRotate: false, // Disable rotation
 		attributionControl: false
 	});

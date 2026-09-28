@@ -33,7 +33,7 @@ import {
 	updateLayer,
 	updateMarker
 } from '$lib/services/map';
-import { AIRPORT_LOCATION, AIRPORT_SOFTLOCK, DEFAULT_LOCATION, MAP_STYLES } from '$lib/constants';
+import { AIRPORT_LOCATION, AIRPORT_SOFTLOCK, DEFAULT_LOCATION, MAP_STYLES, isNearBengaluru } from '$lib/constants';
 import { language } from '$lib/stores/language';
 
 const tappableLayers = Object.keys(MAP_STYLES).filter((key) => MAP_STYLES[key].type === 0);
@@ -820,7 +820,8 @@ export function handleTap(e: MapMouseEvent) {
 		inputLoc &&
 		haversineDistance(e.lngLat.lat, e.lngLat.lng, inputLoc.latitude, inputLoc.longitude) <= 75
 	) {
-		if (!get(userLocation))
+		const user = get(userLocation);
+		if (!user || !isNearBengaluru(user.coords.latitude, user.coords.longitude))
 			inputLocation.set({ latitude: DEFAULT_LOCATION[0], longitude: DEFAULT_LOCATION[1] });
 		else inputLocation.set(undefined);
 		return;
