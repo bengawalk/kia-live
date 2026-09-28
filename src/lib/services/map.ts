@@ -25,32 +25,8 @@ export type NavMode = 'walking' | 'driving-traffic' | 'cycling' | 'driving'
 export function loadMap(mapContainer: HTMLElement | string): maplibregl.Map {
 	map = new maplibregl.Map({
 		container: mapContainer,
-		style: {
-			version: 8,
-			sources: {
-				'carto-positron': {
-					type: 'raster',
-					tiles: [
-						'https://a.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png',
-						'https://b.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png',
-						'https://c.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png',
-						'https://d.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png'
-					],
-					tileSize: 256,
-					attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
-				}
-			},
-			layers: [
-				{
-					id: 'carto-positron-layer',
-					type: 'raster',
-					source: 'carto-positron',
-					minzoom: 0,
-					maxzoom: 22
-				}
-			],
-			glyphs: 'https://demotiles.maplibre.org/font/{fontstack}/{range}.pbf'
-		},
+		// CARTO's raster basemaps now require an API key; the vector style does not
+		style: 'https://basemaps.cartocdn.com/gl/positron-gl-style/style.json',
 		center: [77.6, 13.02], // Default to Bengaluru
 		zoom: 10.9, // Default zoom level
 		dragRotate: false, // Disable rotation
