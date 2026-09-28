@@ -600,7 +600,7 @@ export function updateBusMarker(
 			source: sourceId,
 			layout: {
 				'text-field': ['get', 'label'],
-				'text-font': ['IBM Plex Sans Bold', 'Arial Unicode MS Bold'],
+				'text-font': ['Open Sans Bold'],
 				'text-size': [
 					'interpolate',
 					['linear'],
@@ -721,7 +721,7 @@ export function updateMarker(
 		styleLayer.source = layerType;
 		styleLayer.layout = {
 			'text-field': ['get', 'labelX'],
-			'text-font': ['IBM Plex Sans Regular'],
+			'text-font': ['Open Sans Regular'],
 			'text-variable-anchor': ['top', 'left'],
 			'text-radial-offset': 1.0,
 			'text-justify': 'auto',

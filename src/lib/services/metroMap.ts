@@ -98,7 +98,7 @@ export async function loadMetroLines() {
 				source: 'metro-lines',
 				layout: {
 					'text-field': ['get', 'name'],
-					'text-font': ['IBM Plex Sans Regular'],
+					'text-font': ['Open Sans Regular'],
 					'symbol-placement': 'line',
 					'text-rotation-alignment': 'map',
 					'text-pitch-alignment': 'viewport',
@@ -228,7 +228,7 @@ export async function loadMetroStops() {
 					'text-field': currentLang === 'kn'
 						? ['get', 'stop_name_kn']
 						: ['get', 'stop_name'],
-					'text-font': ['IBM Plex Sans Regular'],
+					'text-font': ['Open Sans Regular'],
 					'text-variable-anchor': ['top', 'left', 'bottom', 'right'],
 					'text-radial-offset': 2, // Following POINT_LABEL_STYLE
 					'text-justify': 'auto',

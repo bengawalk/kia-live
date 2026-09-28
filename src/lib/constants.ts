@@ -83,7 +83,7 @@ export const LINE_LABEL_STYLE: LayerSpecification = {
 	layout: {
 		'symbol-placement': 'line-center',
 		'text-field': ['get', 'label'],
-		'text-font': ['IBM Plex Sans Regular'],
+		'text-font': ['Open Sans Regular'],
 		'text-rotation-alignment': 'viewport',
 		'icon-text-fit': 'both',
 		'icon-rotation-alignment': 'viewport',
@@ -117,7 +117,7 @@ export const POINT_LABEL_STYLE: LayerSpecification = {
 	source: '',
 	layout: {
 		'text-field': ['get', 'label'],
-		'text-font': ['IBM Plex Sans Regular'],
+		'text-font': ['Open Sans Regular'],
 		'text-variable-anchor': ['left', 'top'],
 		'text-radial-offset': 0.85,
 		'text-justify': 'auto',
@@ -130,7 +130,7 @@ export const POINT_LABEL_STYLE_OVERLAP: LayerSpecification = {
 	source: '',
 	layout: {
 		'text-field': ['get', 'label'],
-		'text-font': ['IBM Plex Sans Regular'],
+		'text-font': ['Open Sans Regular'],
 		'text-variable-anchor': ['left', 'top'],
 		'text-radial-offset': 0.85,
 		'text-justify': 'auto',
